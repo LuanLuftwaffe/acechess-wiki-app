@@ -7,10 +7,18 @@ import ctypes
 import tempfile
 from pathlib import Path
 
-# Fix Windows stdout encoding
-if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
+# Fix Windows stdout encoding when running with a console attached
+if sys.stdout is not None:
     try:
-        sys.stdout.reconfigure(encoding='utf-8')
+        if getattr(sys.stdout, 'encoding', None) and sys.stdout.encoding.lower() != 'utf-8':
+            sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+
+if sys.stderr is not None:
+    try:
+        if getattr(sys.stderr, 'encoding', None) and sys.stderr.encoding.lower() != 'utf-8':
+            sys.stderr.reconfigure(encoding='utf-8')
     except Exception:
         pass
 
