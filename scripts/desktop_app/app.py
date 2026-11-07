@@ -13,12 +13,33 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
     except Exception:
         pass
 
+def get_project_root():
+    if getattr(sys, 'frozen', False):
+        exe_path = Path(sys.executable).resolve()
+        exe_dir = exe_path.parent
+        if exe_dir.name.lower() == 'dist':
+            return exe_dir.parent
+        if (exe_dir.parent / "docs").exists():
+            return exe_dir.parent
+        if (exe_dir / "docs").exists():
+            return exe_dir
+        cwd = Path(os.getcwd()).resolve()
+        if cwd.name.lower() == 'dist':
+            return cwd.parent
+        if (cwd / "docs").exists():
+            return cwd
+        if (cwd.parent / "docs").exists():
+            return cwd.parent
+        return exe_dir.parent
+    else:
+        return Path(__file__).resolve().parent.parent.parent
+
 if getattr(sys, 'frozen', False):
     BUNDLE_DIR = Path(sys._MEIPASS)
-    PROJECT_ROOT = Path(os.getcwd())
 else:
     BUNDLE_DIR = Path(__file__).resolve().parent
-    PROJECT_ROOT = BUNDLE_DIR.parent.parent
+
+PROJECT_ROOT = get_project_root()
 
 # Patched PC assets directory
 PC_PATCHED_SRC = PROJECT_ROOT / "docs" / "reverse-engineering" / "hok_vi_pack_pc" / "patched_files" / "WXQ_Data" / "Package" / "builtin"
@@ -73,15 +94,25 @@ class DesktopAppApi:
             if not builtin_dst.exists():
                 return {"success": False, "message": f"Không tìm thấy thư mục: {builtin_dst}"}
 
-            if not PC_PATCHED_SRC.exists():
-                return {"success": False, "message": f"Không tìm thấy nguồn file vá: {PC_PATCHED_SRC}"}
+            patch_src = PC_PATCHED_SRC
+            if not patch_src.exists():
+                for alt in [
+                    PROJECT_ROOT.parent / "docs" / "reverse-engineering" / "hok_vi_pack_pc" / "patched_files" / "WXQ_Data" / "Package" / "builtin",
+                    Path(r"C:\Users\ThienDuong\Downloads\Rebuild-APK\docs\reverse-engineering\hok_vi_pack_pc\patched_files\WXQ_Data\Package\builtin")
+                ]:
+                    if alt.exists():
+                        patch_src = alt
+                        break
+
+            if not patch_src.exists():
+                return {"success": False, "message": f"Không tìm thấy nguồn file vá: {patch_src}"}
 
             # 1. Create backup if first time
             backup_dst = gp / "WXQ_Data" / "Package" / "builtin_backup"
             if not backup_dst.exists():
                 backup_dst.mkdir(parents=True, exist_ok=True)
-                for root, dirs, files in os.walk(PC_PATCHED_SRC):
-                    rel = Path(root).relative_to(PC_PATCHED_SRC)
+                for root, dirs, files in os.walk(patch_src):
+                    rel = Path(root).relative_to(patch_src)
                     for f in files:
                         orig_file = builtin_dst / rel / f
                         if orig_file.exists():
@@ -91,8 +122,8 @@ class DesktopAppApi:
 
             # 2. Copy patched files
             copied_count = 0
-            for root, dirs, files in os.walk(PC_PATCHED_SRC):
-                rel = Path(root).relative_to(PC_PATCHED_SRC)
+            for root, dirs, files in os.walk(patch_src):
+                rel = Path(root).relative_to(patch_src)
                 for f in files:
                     src_file = Path(root) / f
                     target_file = builtin_dst / rel / f
