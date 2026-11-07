@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AceChess Companion & Patcher</title>
+  <title>Ace Chess Wiki & Tool Việt Hóa</title>
   <style>
     :root {
       --bg-dark: #0a0e17;
@@ -54,23 +54,29 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 15px;
       letter-spacing: 0.5px;
       color: var(--gold-bright);
-      text-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+    }
+
+    .brand-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-bright);
     }
 
     .brand-tag {
       font-size: 11px;
-      background: linear-gradient(135deg, rgba(203, 180, 108, 0.2), rgba(255, 215, 0, 0.05));
+      background: rgba(203, 180, 108, 0.15);
       border: 1px solid var(--border-gold);
       color: var(--gold-primary);
-      padding: 3px 8px;
+      padding: 2px 7px;
       border-radius: 4px;
       font-weight: 600;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.6px;
     }
 
     .nav-tabs {
@@ -83,7 +89,7 @@
     }
 
     .nav-tab {
-      padding: 7px 18px;
+      padding: 7px 16px;
       border-radius: 6px;
       font-size: 13px;
       font-weight: 600;
@@ -95,6 +101,11 @@
       gap: 8px;
     }
 
+    .nav-tab svg {
+      stroke: currentColor;
+      flex-shrink: 0;
+    }
+
     .nav-tab:hover {
       color: var(--text-main);
       background: rgba(255, 255, 255, 0.04);
@@ -104,6 +115,10 @@
       color: #0a0e17;
       background: linear-gradient(135deg, #ffd700, #e6c66b);
       box-shadow: 0 2px 10px rgba(255, 215, 0, 0.25);
+    }
+
+    .nav-tab.active svg {
+      stroke: #0a0e17;
     }
 
     .header-actions {
@@ -182,13 +197,13 @@
       background: #0d121f;
     }
 
-    /* Tool Patcher Panel */
+    /* Patcher Panels */
     .tab-content-container {
       flex: 1;
       overflow-y: auto;
       padding: 24px 32px;
       display: grid;
-      grid-template-columns: 420px 1fr;
+      grid-template-columns: 430px 1fr;
       gap: 24px;
     }
 
@@ -205,7 +220,7 @@
     }
 
     .card-title {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
       color: var(--gold-bright);
       display: flex;
@@ -213,6 +228,12 @@
       gap: 8px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       padding-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card-title svg {
+      stroke: var(--gold-bright);
     }
 
     .info-list {
@@ -235,7 +256,7 @@
       font-weight: 600;
       color: var(--text-main);
       text-align: right;
-      max-width: 240px;
+      max-width: 250px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -267,6 +288,7 @@
       color: #fff;
       font-size: 13px;
       outline: none;
+      transition: border-color 0.2s;
     }
 
     .text-input:focus {
@@ -275,10 +297,10 @@
 
     .btn-action {
       width: 100%;
-      padding: 12px 16px;
-      border-radius: 8px;
+      padding: 11px 16px;
+      border-radius: 7px;
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 600;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -288,15 +310,19 @@
       border: 1px solid transparent;
     }
 
+    .btn-action svg {
+      stroke: currentColor;
+    }
+
     .btn-gold {
       background: linear-gradient(135deg, #ffd700, #cbb46c);
       color: #0a0e17;
-      box-shadow: 0 4px 16px rgba(255, 215, 0, 0.25);
+      box-shadow: 0 4px 14px rgba(255, 215, 0, 0.2);
     }
 
     .btn-gold:hover {
       transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+      box-shadow: 0 6px 18px rgba(255, 215, 0, 0.35);
     }
 
     .btn-outline {
@@ -321,10 +347,14 @@
       background: rgba(255, 255, 255, 0.05);
       color: var(--text-main);
       white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
     }
 
     .btn-sm:hover {
-      border-color: var(--gold-bright);
+      border-color: var(--border-gold);
       color: var(--gold-bright);
     }
 
@@ -370,13 +400,13 @@
     }
 
     .log-info { color: #38bdf8; }
-    .log-success { color: #4ade80; font-weight: bold; }
+    .log-success { color: #4ade80; font-weight: 600; }
     .log-warn { color: #facc15; }
-    .log-error { color: #f87171; font-weight: bold; }
+    .log-error { color: #f87171; font-weight: 600; }
 
     .toggle-section {
       background: rgba(0, 0, 0, 0.25);
-      border: 1px dashed rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 8px;
       padding: 12px;
       display: flex;
@@ -390,20 +420,43 @@
   <!-- Top Navigation Header -->
   <header>
     <div class="brand">
-      <span>⚔️ ACE CHESS WIKI</span>
-      <span class="brand-tag">COMPANION & PATCHER</span>
+      <div class="brand-icon">
+        <!-- SVG Shield Icon -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+      </div>
+      <span>Ace Chess Wiki</span>
+      <span class="brand-tag">Bản vá 1.8.0.1</span>
     </div>
 
-    <!-- Navigation Tabs (Only 3 tabs as requested) -->
+    <!-- Navigation Tabs (Only 3 tabs, Clean SVG Icons) -->
     <div class="nav-tabs">
       <div class="nav-tab active" onclick="switchTab('wiki')">
-        <span>🌐 Cẩm Nang Wiki</span>
+        <!-- SVG Globe Icon -->
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <span>Cẩm nang Wiki</span>
       </div>
       <div class="nav-tab" onclick="switchTab('pc')">
-        <span>🖥️ Việt Hóa Game PC (WXQ)</span>
+        <!-- SVG Monitor Icon -->
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
+        </svg>
+        <span>Bản vá PC (WXQ)</span>
       </div>
       <div class="nav-tab" onclick="switchTab('mobile')">
-        <span>📶 Việt Hóa Mobile (Wi-Fi / USB)</span>
+        <!-- SVG Smartphone Icon -->
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+          <line x1="12" y1="18" x2="12.01" y2="18"></line>
+        </svg>
+        <span>Bản vá Mobile</span>
       </div>
     </div>
 
@@ -411,10 +464,15 @@
     <div class="header-actions">
       <div class="device-badge">
         <span class="status-dot" id="global-status-dot"></span>
-        <span id="global-status-text">Đang kiểm tra trạng thái...</span>
+        <span id="global-status-text">Đang kiểm tra...</span>
       </div>
-      <button class="btn-icon" title="Quét lại" onclick="refreshAllStatus()">
-        🔄
+      <button class="btn-icon" title="Làm mới trạng thái" onclick="refreshAllStatus()">
+        <!-- SVG Refresh Icon -->
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 4 23 10 17 10"></polyline>
+          <polyline points="1 20 1 14 7 14"></polyline>
+          <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+        </svg>
       </button>
     </div>
   </header>
@@ -432,56 +490,79 @@
         <!-- Control Box PC -->
         <div class="card">
           <div class="card-title">
-            <span>🖥️ CÀI ĐẶT VIỆT HÓA GAME PC (WXQ LAUNCHER)</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            <span>Cài đặt bản dịch PC (WXQ Launcher)</span>
           </div>
 
           <div class="input-group">
-            <span class="input-label">Thư mục Game WXQ trên PC:</span>
+            <span class="input-label">Thư mục cài đặt game WXQ:</span>
             <div class="input-row">
               <input type="text" class="text-input" id="pc-game-path" value="C:\Program Files\WXQLauncher\WXQ">
-              <button class="btn-sm" onclick="checkPCStatus()">Kiểm Tra</button>
+              <button class="btn-sm" onclick="checkPCStatus()">Kiểm tra</button>
             </div>
           </div>
 
           <div class="info-list">
             <div class="info-row">
-              <span class="info-label">Trạng thái Game PC:</span>
-              <span class="info-val" id="pc-status-val" style="color: var(--accent-green);">Đã tìm thấy game</span>
+              <span class="info-label">Trạng thái game:</span>
+              <span class="info-val" id="pc-status-val" style="color: var(--accent-green);">Đã phát hiện</span>
             </div>
             <div class="info-row">
               <span class="info-label">Tệp thực thi:</span>
               <span class="info-val">WXQ.exe (64-bit)</span>
             </div>
             <div class="info-row">
-              <span class="info-label">Gói từ điển PC:</span>
-              <span class="info-val">203,534 từ (Bản 1.8.0.1)</span>
+              <span class="info-label">Dữ liệu bản dịch:</span>
+              <span class="info-val">203,534 chuỗi (1.8.0.1)</span>
             </div>
             <div class="info-row">
-              <span class="info-label">Số gói database:</span>
-              <span class="info-val">15 file (.db QtsVFS)</span>
+              <span class="info-label">Tệp cơ sở dữ liệu:</span>
+              <span class="info-val">15 tệp .db (QtsVFS)</span>
             </div>
           </div>
 
           <button class="btn-action btn-gold" onclick="runInstallPCPatch()">
-            <span>🚀 Cài / Cập Nhật Việt Hóa PC (1-Chạm)</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Cài đặt bản dịch PC</span>
           </button>
           <button class="btn-action btn-outline" onclick="runRestorePCOriginal()">
-            <span>🔄 Trả Về Bản Gốc PC (Để Cập Nhật Game)</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+              <polyline points="3 3 3 8 8 8"></polyline>
+            </svg>
+            <span>Khôi phục dữ liệu gốc</span>
           </button>
           <button class="btn-action btn-outline" onclick="launchPCGame()">
-            <span>🎮 Mở Game WXQ Launcher Ngay</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span>Khởi chạy WXQ.exe</span>
           </button>
         </div>
 
         <!-- Terminal Output PC -->
         <div class="card terminal-card">
           <div class="terminal-header">
-            <span class="card-title" style="margin: 0; border: none; padding: 0;">📋 NHẬT KÝ VIỆT HÓA PC</span>
+            <span class="card-title" style="margin: 0; border: none; padding: 0;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+              Nhật ký xử lý PC
+            </span>
             <button class="btn-sm" onclick="clearLogs('log-terminal-pc')">Xóa log</button>
           </div>
           <div class="terminal-body" id="log-terminal-pc">
-            <div class="log-line"><span class="log-time">[HỆ THỐNG]</span> <span class="log-info">[INFO]</span> Mô-đun Việt hóa PC WXQ Launcher đã kích hoạt.</div>
-            <div class="log-line"><span class="log-time">[HỆ THỐNG]</span> <span class="log-info">[INFO]</span> Thư mục mặc định: C:\Program Files\WXQLauncher\WXQ</div>
+            <div class="log-line"><span class="log-time">[HỆ THỐNG]</span> <span class="log-info">[INFO]</span> Mô-đun bản vá PC sẵn sàng.</div>
+            <div class="log-line"><span class="log-time">[HỆ THỐNG]</span> <span class="log-info">[INFO]</span> Thư mục mục tiêu: C:\Program Files\WXQLauncher\WXQ</div>
           </div>
         </div>
       </div>
@@ -493,31 +574,43 @@
         <!-- Control Box Mobile -->
         <div class="card">
           <div class="card-title">
-            <span>📶 GỠ LỖI WI-FI (KHÔNG DÂY) & USB CHO MOBILE</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+              <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+              <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+              <line x1="12" y1="20" x2="12.01" y2="20"></line>
+            </svg>
+            <span>Gỡ lỗi không dây (Wi-Fi) & USB</span>
           </div>
 
           <!-- Wireless Connection Form -->
           <div class="input-group">
-            <span class="input-label">Địa chỉ IP & Cổng gỡ lỗi Wi-Fi điện thoại:</span>
+            <span class="input-label">Địa chỉ IP & Cổng kết nối Wi-Fi:</span>
             <div class="input-row">
-              <input type="text" class="text-input" id="wifi-ip-port" placeholder="192.168.1.50:38475">
-              <button class="btn-sm btn-gold" style="color: #000;" onclick="connectWirelessADB()">Kết Nối</button>
+              <input type="text" class="text-input" id="wifi-ip-port" placeholder="Ví dụ: 192.168.1.50:38475">
+              <button class="btn-sm btn-gold" style="color: #000;" onclick="connectWirelessADB()">Kết nối</button>
             </div>
           </div>
 
           <!-- Optional Pairing Section for Android 11+ -->
           <div class="toggle-section">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <span class="input-label" style="color: var(--gold-bright);">⚙️ Ghép đôi lần đầu (Android 11+ Pairing):</span>
+              <span class="input-label" style="color: var(--gold-bright); display: flex; align-items: center; gap: 6px;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+                Ghép đôi thiết bị (Android 11+)
+              </span>
               <input type="checkbox" id="toggle-pairing" onchange="togglePairingFields()">
             </div>
             <div id="pairing-fields" style="display: none; gap: 8px; flex-direction: column;">
               <div class="input-row">
                 <input type="text" class="text-input" id="pairing-port" placeholder="Cổng ghép đôi (VD: 41295)">
-                <input type="text" class="text-input" id="pairing-code" placeholder="Mã ghép đôi (6 số)">
+                <input type="text" class="text-input" id="pairing-code" placeholder="Mã ghép đôi 6 số">
               </div>
               <span style="font-size: 11px; color: var(--text-muted);">
-                * Mở Cài đặt > Tùy chọn nhà phát triển > Gỡ lỗi không dây > Ghép nối bằng mã.
+                Vào Cài đặt > Tùy chọn nhà phát triển > Gỡ lỗi không dây > Ghép nối thiết bị bằng mã ghép nối.
               </span>
             </div>
           </div>
@@ -528,34 +621,52 @@
               <span class="info-val" id="mobile-device-val">Chưa có kết nối</span>
             </div>
             <div class="info-row">
-              <span class="info-label">Kiểu kết nối:</span>
+              <span class="info-label">Phương thức:</span>
               <span class="info-val" id="mobile-type-val">Wi-Fi / USB / MEmu</span>
             </div>
             <div class="info-row">
-              <span class="info-label">Game HoK Ace:</span>
+              <span class="info-label">Gói ứng dụng:</span>
               <span class="info-val" id="mobile-game-val">com.tencent.tmgp.osgame</span>
             </div>
           </div>
 
           <button class="btn-action btn-gold" onclick="runInstallMobilePatch()">
-            <span>🚀 Cài / Cập Nhật Việt Hóa Mobile (1-Chạm)</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Cài đặt bản dịch Mobile</span>
           </button>
           <button class="btn-action btn-outline" onclick="runRestoreMobileOriginal()">
-            <span>🔄 Trả Về Bản Gốc Mobile (Để Cập Nhật Game)</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+              <polyline points="3 3 3 8 8 8"></polyline>
+            </svg>
+            <span>Khôi phục dữ liệu gốc</span>
           </button>
           <button class="btn-action btn-outline" onclick="launchMobileGame()">
-            <span>🎮 Mở Game Trên Điện Thoại / Giả Lập</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span>Khởi chạy game trên thiết bị</span>
           </button>
         </div>
 
         <!-- Terminal Output Mobile -->
         <div class="card terminal-card">
           <div class="terminal-header">
-            <span class="card-title" style="margin: 0; border: none; padding: 0;">📋 NHẬT KÝ GỠ LỖI MOBILE</span>
+            <span class="card-title" style="margin: 0; border: none; padding: 0;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+              Nhật ký xử lý Mobile
+            </span>
             <button class="btn-sm" onclick="clearLogs('log-terminal-mobile')">Xóa log</button>
           </div>
           <div class="terminal-body" id="log-terminal-mobile">
-            <div class="log-line"><span class="log-time">[ADB]</span> <span class="log-info">[INFO]</span> Hệ thống gỡ lỗi Wi-Fi & USB sẵn sàng.</div>
+            <div class="log-line"><span class="log-time">[ADB]</span> <span class="log-info">[INFO]</span> Giao thức ADB Wi-Fi & USB sẵn sàng.</div>
             <div class="log-line"><span class="log-time">[ADB]</span> <span class="log-info">[INFO]</span> Có thể nhập IP Wi-Fi hoặc cắm cáp USB bật Gỡ lỗi USB.</div>
           </div>
         </div>
@@ -583,13 +694,11 @@
       }
     }
 
-    // Toggle Pairing Fields
     function togglePairingFields() {
       const chk = document.getElementById('toggle-pairing');
       document.getElementById('pairing-fields').style.display = chk.checked ? 'flex' : 'none';
     }
 
-    // Logging helper
     function appendLog(termId, level, message) {
       const terminal = document.getElementById(termId);
       if (!terminal) return;
@@ -613,7 +722,6 @@
       appendLog(termId, 'INFO', 'Đã xóa nhật ký.');
     }
 
-    // Status Checking
     async function refreshAllStatus() {
       checkPCStatus();
       refreshMobileStatus();
@@ -622,16 +730,16 @@
     // --- PC WXQ API ---
     async function checkPCStatus() {
       const path = document.getElementById('pc-game-path').value.trim();
-      appendLog('log-terminal-pc', 'INFO', `Đang kiểm tra thư mục Game PC: ${path}...`);
+      appendLog('log-terminal-pc', 'INFO', `Kiểm tra thư mục: ${path}...`);
       if (window.pywebview && window.pywebview.api) {
         const res = await window.pywebview.api.check_pc_game(path);
         const statusEl = document.getElementById('pc-status-val');
         if (res.exists) {
-          statusEl.innerText = res.patched ? 'Đã Cài Việt Hóa' : 'Bản Gốc (Tiếng Trung)';
+          statusEl.innerText = res.patched ? 'Đã cài bản dịch' : 'Bản gốc (chưa vá)';
           statusEl.style.color = res.patched ? 'var(--accent-green)' : 'var(--gold-bright)';
-          appendLog('log-terminal-pc', 'SUCCESS', `Tìm thấy WXQ.exe! Trạng thái: ${statusEl.innerText}`);
+          appendLog('log-terminal-pc', 'SUCCESS', `Phát hiện WXQ.exe: ${statusEl.innerText}`);
         } else {
-          statusEl.innerText = 'Chưa tìm thấy game';
+          statusEl.innerText = 'Không tìm thấy game';
           statusEl.style.color = 'var(--accent-red)';
           appendLog('log-terminal-pc', 'WARN', 'Không tìm thấy WXQ.exe tại đường dẫn trên.');
         }
@@ -640,7 +748,7 @@
 
     async function runInstallPCPatch() {
       const path = document.getElementById('pc-game-path').value.trim();
-      appendLog('log-terminal-pc', 'INFO', 'Bắt đầu nạp 15 tệp database QtsVFS Việt Hóa vào WXQ Launcher...');
+      appendLog('log-terminal-pc', 'INFO', 'Sao chép 15 tệp database QtsVFS và xóa cache game...');
       if (window.pywebview && window.pywebview.api) {
         const res = await window.pywebview.api.install_pc_patch(path);
         appendLog('log-terminal-pc', res.success ? 'SUCCESS' : 'ERROR', res.message);
@@ -650,7 +758,7 @@
 
     async function runRestorePCOriginal() {
       const path = document.getElementById('pc-game-path').value.trim();
-      appendLog('log-terminal-pc', 'INFO', 'Khôi phục các tệp gốc và dọn sạch QtsVFSCache...');
+      appendLog('log-terminal-pc', 'INFO', 'Khôi phục tệp gốc và dọn cache QtsVFS...');
       if (window.pywebview && window.pywebview.api) {
         const res = await window.pywebview.api.restore_pc_game(path);
         appendLog('log-terminal-pc', res.success ? 'SUCCESS' : 'ERROR', res.message);
@@ -668,7 +776,7 @@
 
     // --- Mobile Wireless & USB API ---
     async function refreshMobileStatus() {
-      appendLog('log-terminal-mobile', 'INFO', 'Đang quét thiết bị Mobile qua ADB...');
+      appendLog('log-terminal-mobile', 'INFO', 'Quét thiết bị kết nối qua ADB...');
       if (window.pywebview && window.pywebview.api) {
         const res = await window.pywebview.api.get_mobile_status();
         const dot = document.getElementById('global-status-dot');
@@ -679,16 +787,16 @@
 
         if (res.connected) {
           dot.className = 'status-dot online';
-          txt.innerText = `${res.deviceId} (${res.type})`;
+          txt.innerText = `${res.deviceId}`;
           devEl.innerText = res.deviceId;
           typeEl.innerText = res.type;
           gameEl.innerText = res.pkgInstalled ? 'Đã cài đặt (1.8.0.1)' : 'Chưa cài game';
-          appendLog('log-terminal-mobile', 'SUCCESS', `Đã kết nối: ${res.deviceId} - ${res.type}`);
+          appendLog('log-terminal-mobile', 'SUCCESS', `Đã kết nối thiết bị: ${res.deviceId} (${res.type})`);
         } else {
           dot.className = 'status-dot';
-          txt.innerText = 'Chưa kết nối Mobile';
+          txt.innerText = 'Chưa kết nối';
           devEl.innerText = 'Không có kết nối';
-          appendLog('log-terminal-mobile', 'WARN', 'Chưa có thiết bị nào kết nối qua Wi-Fi hoặc USB.');
+          appendLog('log-terminal-mobile', 'WARN', 'Không phát hiện thiết bị qua Wi-Fi hoặc USB.');
         }
       }
     }
@@ -700,11 +808,11 @@
       const pairingCode = document.getElementById('pairing-code').value.trim();
 
       if (!ipPort) {
-        alert('Vui lòng nhập Địa chỉ IP và Cổng Wi-Fi (VD: 192.168.1.50:38475)!');
+        alert('Vui lòng nhập Địa chỉ IP và Cổng Wi-Fi (Ví dụ: 192.168.1.50:38475)');
         return;
       }
 
-      appendLog('log-terminal-mobile', 'INFO', `Đang thiết lập kết nối không dây tới ${ipPort}...`);
+      appendLog('log-terminal-mobile', 'INFO', `Kết nối không dây tới ${ipPort}...`);
       if (window.pywebview && window.pywebview.api) {
         const res = await window.pywebview.api.connect_wireless_adb(ipPort, isPairing ? pairingPort : null, isPairing ? pairingCode : null);
         appendLog('log-terminal-mobile', res.success ? 'SUCCESS' : 'ERROR', res.message);
@@ -713,7 +821,7 @@
     }
 
     async function runInstallMobilePatch() {
-      appendLog('log-terminal-mobile', 'INFO', 'Bắt đầu nạp gói font Bahnschrift & QtsVFSCache vào Mobile...');
+      appendLog('log-terminal-mobile', 'INFO', 'Nạp gói font và cấu hình bản dịch vào thiết bị...');
       if (window.pywebview && window.pywebview.api) {
         const res = await window.pywebview.api.install_mobile_patch();
         appendLog('log-terminal-mobile', res.success ? 'SUCCESS' : 'ERROR', res.message);
@@ -721,7 +829,7 @@
     }
 
     async function runRestoreMobileOriginal() {
-      appendLog('log-terminal-mobile', 'INFO', 'Đưa game trên Mobile về APK nền sạch để tự cập nhật...');
+      appendLog('log-terminal-mobile', 'INFO', 'Khôi phục trạng thái APK nền trên thiết bị...');
       if (window.pywebview && window.pywebview.api) {
         const res = await window.pywebview.api.restore_mobile_original();
         appendLog('log-terminal-mobile', res.success ? 'SUCCESS' : 'ERROR', res.message);
@@ -729,13 +837,12 @@
     }
 
     async function launchMobileGame() {
-      appendLog('log-terminal-mobile', 'INFO', 'Gửi lệnh mở game trên điện thoại...');
+      appendLog('log-terminal-mobile', 'INFO', 'Khởi chạy game trên thiết bị...');
       if (window.pywebview && window.pywebview.api) {
         await window.pywebview.api.launch_mobile_game();
       }
     }
 
-    // Auto initialize on load
     window.addEventListener('pywebviewready', () => {
       refreshAllStatus();
     });
