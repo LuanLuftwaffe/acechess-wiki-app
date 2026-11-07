@@ -23,6 +23,13 @@ try:
 except Exception:
     pass
 
+# Set Windows AppUserModelID for explicit Taskbar icon and grouping
+if os.name == 'nt':
+    try:
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID('acechess.wiki.companion.patcher')
+    except Exception:
+        pass
+
 import webview
 
 def is_admin():
