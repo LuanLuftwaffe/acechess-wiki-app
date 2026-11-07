@@ -3,6 +3,7 @@ import sys
 import json
 import shutil
 import subprocess
+import ctypes
 import webview
 from pathlib import Path
 
@@ -12,6 +13,26 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
         sys.stdout.reconfigure(encoding='utf-8')
     except Exception:
         pass
+
+def is_admin():
+    """Checks if the process has administrator privileges on Windows."""
+    try:
+        return ctypes.windll.shell32.IsUserAnAdmin()
+    except Exception:
+        return False
+
+def check_and_elevate():
+    """Relaunches program with UAC Administrator privilege if not already elevated."""
+    if os.name == 'nt' and not is_admin():
+        try:
+            if getattr(sys, 'frozen', False):
+                exe = sys.executable
+                params = " ".join([f'"{arg}"' for arg in sys.argv[1:]])
+                ret = ctypes.windll.shell32.ShellExecuteW(None, "runas", exe, params, None, 1)
+                if ret > 32:
+                    sys.exit(0)
+        except Exception:
+            pass
 
 def get_project_root():
     if getattr(sys, 'frozen', False):
@@ -311,6 +332,7 @@ class DesktopAppApi:
             return {"success": False, "message": str(e)}
 
 def main():
+    check_and_elevate()
     api = DesktopAppApi()
     html_file = str(BUNDLE_DIR / "index.html")
 

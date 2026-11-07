@@ -463,8 +463,8 @@
     <!-- Right Status -->
     <div class="header-actions">
       <div class="device-badge">
-        <span class="status-dot" id="global-status-dot"></span>
-        <span id="global-status-text">Đang kiểm tra...</span>
+        <span class="status-dot online" id="global-status-dot"></span>
+        <span id="global-status-text">Sẵn sàng</span>
       </div>
       <button class="btn-icon" title="Làm mới trạng thái" onclick="refreshAllStatus()">
         <!-- SVG Refresh Icon -->
@@ -723,8 +723,13 @@
     }
 
     async function refreshAllStatus() {
-      checkPCStatus();
-      refreshMobileStatus();
+      const activeTab = document.querySelector('.nav-tab.active');
+      if (!activeTab) return;
+      if (activeTab.innerText.includes('PC')) {
+        checkPCStatus();
+      } else if (activeTab.innerText.includes('Mobile')) {
+        refreshMobileStatus();
+      }
     }
 
     // --- PC WXQ API ---
@@ -844,10 +849,7 @@
     }
 
     window.addEventListener('pywebviewready', () => {
-      refreshAllStatus();
-    });
-    window.addEventListener('DOMContentLoaded', () => {
-      setTimeout(refreshAllStatus, 500);
+      // Sẵn sàng. Chỉ kiểm tra trạng thái khi người dùng chủ động chuyển tab
     });
   </script>
 </body>
