@@ -4,7 +4,7 @@ import json
 import shutil
 import subprocess
 import ctypes
-import webview
+import tempfile
 from pathlib import Path
 
 # Fix Windows stdout encoding
@@ -14,6 +14,17 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
     except Exception:
         pass
 
+# Configure WebView2 to run reliably under any security context (standard or elevated)
+os.environ['WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS'] = '--no-sandbox'
+try:
+    wv2_dir = Path(os.environ.get('LOCALAPPDATA', os.path.expanduser('~'))) / 'AceChessCompanion_WV2'
+    wv2_dir.mkdir(parents=True, exist_ok=True)
+    os.environ['WEBVIEW2_USER_DATA_FOLDER'] = str(wv2_dir)
+except Exception:
+    pass
+
+import webview
+
 def is_admin():
     """Checks if the process has administrator privileges on Windows."""
     try:
@@ -21,18 +32,40 @@ def is_admin():
     except Exception:
         return False
 
-def check_and_elevate():
-    """Relaunches program with UAC Administrator privilege if not already elevated."""
-    if os.name == 'nt' and not is_admin():
-        try:
-            if getattr(sys, 'frozen', False):
-                exe = sys.executable
-                params = " ".join([f'"{arg}"' for arg in sys.argv[1:]])
-                ret = ctypes.windll.shell32.ShellExecuteW(None, "runas", exe, params, None, 1)
-                if ret > 32:
-                    sys.exit(0)
-        except Exception:
-            pass
+def is_dir_writable(path: Path) -> bool:
+    """Checks if a directory is directly writable without elevation."""
+    if not path.exists():
+        return False
+    test_f = path / ".perm_check.tmp"
+    try:
+        test_f.write_text("test")
+        test_f.unlink()
+        return True
+    except Exception:
+        return False
+
+def run_elevated_ps_script(ps_content: str):
+    """Executes a temporary PowerShell script with elevated (UAC) privileges."""
+    tmp_path = None
+    try:
+        with tempfile.NamedTemporaryFile('w', suffix='.ps1', delete=False, encoding='utf-8') as f:
+            f.write(ps_content)
+            tmp_path = f.name
+
+        ps_cmd = f"Start-Process powershell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File \"\"{tmp_path}\"\"' -Verb RunAs -Wait"
+        res = subprocess.run(["powershell.exe", "-NoProfile", "-Command", ps_cmd], capture_output=True, text=True)
+        if res.returncode == 0:
+            return True, "Thành công"
+        else:
+            return False, "Quyền Quản trị viên (UAC) bị từ chối hoặc thao tác bị gián đoạn."
+    except Exception as e:
+        return False, str(e)
+    finally:
+        if tmp_path and os.path.exists(tmp_path):
+            try:
+                os.remove(tmp_path)
+            except Exception:
+                pass
 
 def get_project_root():
     if getattr(sys, 'frozen', False):
@@ -128,42 +161,79 @@ class DesktopAppApi:
             if not patch_src.exists():
                 return {"success": False, "message": f"Không tìm thấy nguồn file vá: {patch_src}"}
 
-            # 1. Create backup if first time
-            backup_dst = gp / "WXQ_Data" / "Package" / "builtin_backup"
-            if not backup_dst.exists():
-                backup_dst.mkdir(parents=True, exist_ok=True)
+            if is_dir_writable(builtin_dst):
+                # 1. Create backup if first time
+                backup_dst = gp / "WXQ_Data" / "Package" / "builtin_backup"
+                if not backup_dst.exists():
+                    backup_dst.mkdir(parents=True, exist_ok=True)
+                    for root, dirs, files in os.walk(patch_src):
+                        rel = Path(root).relative_to(patch_src)
+                        for f in files:
+                            orig_file = builtin_dst / rel / f
+                            if orig_file.exists():
+                                bak_target = backup_dst / rel / f
+                                bak_target.parent.mkdir(parents=True, exist_ok=True)
+                                shutil.copy2(orig_file, bak_target)
+
+                # 2. Copy patched files
+                copied_count = 0
                 for root, dirs, files in os.walk(patch_src):
                     rel = Path(root).relative_to(patch_src)
                     for f in files:
-                        orig_file = builtin_dst / rel / f
-                        if orig_file.exists():
-                            bak_target = backup_dst / rel / f
-                            bak_target.parent.mkdir(parents=True, exist_ok=True)
-                            shutil.copy2(orig_file, bak_target)
+                        src_file = Path(root) / f
+                        target_file = builtin_dst / rel / f
+                        target_file.parent.mkdir(parents=True, exist_ok=True)
+                        shutil.copy2(src_file, target_file)
+                        copied_count += 1
 
-            # 2. Copy patched files
-            copied_count = 0
-            for root, dirs, files in os.walk(patch_src):
-                rel = Path(root).relative_to(patch_src)
-                for f in files:
-                    src_file = Path(root) / f
-                    target_file = builtin_dst / rel / f
-                    target_file.parent.mkdir(parents=True, exist_ok=True)
-                    shutil.copy2(src_file, target_file)
-                    copied_count += 1
-
-            # 3. Clear QtsVFSCache so game is forced to load new files
-            cache_dir = gp / "QtsDataFolder" / "QtsVFSCache" / "packages"
-            if cache_dir.exists():
-                try:
+                # 3. Clear QtsVFSCache so game is forced to load new files
+                cache_dir = gp / "QtsDataFolder" / "QtsVFSCache" / "packages"
+                if cache_dir.exists():
                     shutil.rmtree(cache_dir, ignore_errors=True)
-                except Exception:
-                    pass
 
-            return {
-                "success": True,
-                "message": f"Đã áp dụng thành công {copied_count} tệp database QtsVFS Việt Hóa và xóa sạch bộ nhớ đệm (QtsVFSCache)!"
-            }
+                return {
+                    "success": True,
+                    "message": f"Đã áp dụng thành công {copied_count} tệp database QtsVFS Việt Hóa và xóa sạch bộ nhớ đệm (QtsVFSCache)!"
+                }
+            else:
+                # Protected directory (e.g. C:\Program Files) -> Execute elevated PowerShell script
+                ps_script = f"""
+$ErrorActionPreference = 'Stop'
+$gp = '{gp}'
+$src = '{patch_src}'
+$builtin = Join-Path $gp 'WXQ_Data\\Package\\builtin'
+$backup = Join-Path $gp 'WXQ_Data\\Package\\builtin_backup'
+$cache = Join-Path $gp 'QtsDataFolder\\QtsVFSCache\\packages'
+
+if (-not (Test-Path $backup)) {{
+    New-Item -ItemType Directory -Force -Path $backup | Out-Null
+    Get-ChildItem -Path $src -Recurse -File | ForEach-Object {{
+        $rel = $_.FullName.Substring($src.Length).TrimStart('\\', '/')
+        $orig = Join-Path $builtin $rel
+        if (Test-Path $orig) {{
+            $bakTarget = Join-Path $backup $rel
+            $bakDir = Split-Path $bakTarget -Parent
+            if (-not (Test-Path $bakDir)) {{ New-Item -ItemType Directory -Force -Path $bakDir | Out-Null }}
+            Copy-Item -Path $orig -Destination $bakTarget -Force
+        }}
+    }}
+}}
+
+Copy-Item -Path "$src\\*" -Destination $builtin -Recurse -Force
+
+if (Test-Path $cache) {{
+    Remove-Item -Path $cache -Recurse -Force -ErrorAction SilentlyContinue
+}}
+exit 0
+"""
+                ok, err = run_elevated_ps_script(ps_script)
+                if ok:
+                    return {
+                        "success": True,
+                        "message": "Đã cấp quyền Quản trị viên và cài đặt thành công gói Việt Hóa PC cùng xóa bộ nhớ đệm!"
+                    }
+                else:
+                    return {"success": False, "message": f"Cài đặt thất bại: {err}"}
         except Exception as e:
             return {"success": False, "message": f"Lỗi cài đặt Việt hóa PC: {e}"}
 
@@ -177,25 +247,54 @@ class DesktopAppApi:
             if not backup_dst.exists():
                 return {"success": False, "message": "Không tìm thấy thư mục sao lưu gốc (builtin_backup)!"}
 
-            restored_count = 0
-            for root, dirs, files in os.walk(backup_dst):
-                rel = Path(root).relative_to(backup_dst)
-                for f in files:
-                    src_file = Path(root) / f
-                    target_file = builtin_dst / rel / f
-                    target_file.parent.mkdir(parents=True, exist_ok=True)
-                    shutil.copy2(src_file, target_file)
-                    restored_count += 1
+            if is_dir_writable(builtin_dst):
+                restored_count = 0
+                for root, dirs, files in os.walk(backup_dst):
+                    rel = Path(root).relative_to(backup_dst)
+                    for f in files:
+                        src_file = Path(root) / f
+                        target_file = builtin_dst / rel / f
+                        target_file.parent.mkdir(parents=True, exist_ok=True)
+                        shutil.copy2(src_file, target_file)
+                        restored_count += 1
 
-            # Clear cache
-            cache_dir = gp / "QtsDataFolder" / "QtsVFSCache" / "packages"
-            if cache_dir.exists():
-                shutil.rmtree(cache_dir, ignore_errors=True)
+                # Clear cache
+                cache_dir = gp / "QtsDataFolder" / "QtsVFSCache" / "packages"
+                if cache_dir.exists():
+                    shutil.rmtree(cache_dir, ignore_errors=True)
 
-            return {
-                "success": True,
-                "message": f"Đã khôi phục thành công {restored_count} tệp gốc và dọn sạch cache. Game có thể cập nhật chính thức an toàn!"
-            }
+                return {
+                    "success": True,
+                    "message": f"Đã khôi phục thành công {restored_count} tệp gốc và dọn sạch cache. Game có thể cập nhật chính thức an toàn!"
+                }
+            else:
+                # Protected directory -> Execute elevated helper
+                ps_script = f"""
+$ErrorActionPreference = 'Stop'
+$gp = '{gp}'
+$builtin = Join-Path $gp 'WXQ_Data\\Package\\builtin'
+$backup = Join-Path $gp 'WXQ_Data\\Package\\builtin_backup'
+$cache = Join-Path $gp 'QtsDataFolder\\QtsVFSCache\\packages'
+
+if (-not (Test-Path $backup)) {{
+    exit 2
+}}
+
+Copy-Item -Path "$backup\\*" -Destination $builtin -Recurse -Force
+
+if (Test-Path $cache) {{
+    Remove-Item -Path $cache -Recurse -Force -ErrorAction SilentlyContinue
+}}
+exit 0
+"""
+                ok, err = run_elevated_ps_script(ps_script)
+                if ok:
+                    return {
+                        "success": True,
+                        "message": "Đã cấp quyền Quản trị viên và khôi phục thành công các tệp gốc PC cùng xóa bộ nhớ đệm!"
+                    }
+                else:
+                    return {"success": False, "message": f"Khôi phục thất bại: {err}"}
         except Exception as e:
             return {"success": False, "message": f"Lỗi hoàn tác bản gốc PC: {e}"}
 
@@ -332,7 +431,6 @@ class DesktopAppApi:
             return {"success": False, "message": str(e)}
 
 def main():
-    check_and_elevate()
     api = DesktopAppApi()
     html_file = str(BUNDLE_DIR / "index.html")
 
