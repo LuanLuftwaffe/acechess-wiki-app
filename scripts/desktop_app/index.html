@@ -7,7 +7,7 @@
   <style>
     :root {
       --bg-dark: #0a0e17;
-      --bg-card: rgba(18, 26, 42, 0.85);
+      --bg-card: rgba(18, 26, 42, 0.88);
       --bg-card-hover: rgba(26, 38, 62, 0.95);
       --border-gold: rgba(203, 180, 108, 0.35);
       --border-gold-glow: #ffd700;
@@ -40,7 +40,7 @@
 
     /* Top Navigation Header */
     header {
-      background: rgba(10, 14, 23, 0.95);
+      background: rgba(10, 14, 23, 0.96);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-gold);
       height: 58px;
@@ -56,7 +56,7 @@
       align-items: center;
       gap: 12px;
       font-weight: 700;
-      font-size: 17px;
+      font-size: 16px;
       letter-spacing: 0.5px;
       color: var(--gold-bright);
       text-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
@@ -183,12 +183,12 @@
     }
 
     /* Tool Patcher Panel */
-    .patcher-container {
+    .tab-content-container {
       flex: 1;
       overflow-y: auto;
       padding: 24px 32px;
       display: grid;
-      grid-template-columns: 380px 1fr;
+      grid-template-columns: 420px 1fr;
       gap: 24px;
     }
 
@@ -199,13 +199,15 @@
       padding: 20px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
     .card-title {
       font-size: 15px;
       font-weight: 700;
       color: var(--gold-bright);
-      margin-bottom: 16px;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -216,8 +218,7 @@
     .info-list {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-bottom: 20px;
+      gap: 10px;
     }
 
     .info-row {
@@ -233,6 +234,43 @@
     .info-val {
       font-weight: 600;
       color: var(--text-main);
+      text-align: right;
+      max-width: 240px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .input-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .input-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .text-input {
+      flex: 1;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      padding: 8px 12px;
+      color: #fff;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .text-input:focus {
+      border-color: var(--gold-bright);
     }
 
     .btn-action {
@@ -247,7 +285,6 @@
       justify-content: center;
       gap: 8px;
       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-      margin-bottom: 10px;
       border: 1px solid transparent;
     }
 
@@ -274,7 +311,24 @@
       color: var(--gold-bright);
     }
 
-    /* Console Terminal */
+    .btn-sm {
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      white-space: nowrap;
+    }
+
+    .btn-sm:hover {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+    }
+
+    /* Terminal Output */
     .terminal-card {
       display: flex;
       flex-direction: column;
@@ -286,7 +340,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 10px;
     }
 
     .terminal-body {
@@ -299,7 +354,7 @@
       font-size: 12.5px;
       line-height: 1.6;
       overflow-y: auto;
-      max-height: 480px;
+      max-height: 500px;
       color: #cbd5e1;
       user-select: text;
     }
@@ -319,127 +374,46 @@
     .log-warn { color: #facc15; }
     .log-error { color: #f87171; font-weight: bold; }
 
-    /* Customizer Panel */
-    .customizer-container {
-      flex: 1;
-      overflow: hidden;
+    .toggle-section {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px dashed rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      padding: 12px;
       display: flex;
       flex-direction: column;
-      padding: 24px 32px;
-      gap: 16px;
-    }
-
-    .search-bar {
-      display: flex;
-      gap: 12px;
-    }
-
-    .input-search {
-      flex: 1;
-      background: var(--bg-card);
-      border: 1px solid var(--border-gold);
-      border-radius: 8px;
-      padding: 10px 16px;
-      color: var(--text-main);
-      font-size: 14px;
-      outline: none;
-    }
-
-    .input-search:focus {
-      border-color: var(--gold-bright);
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
-    }
-
-    .table-wrapper {
-      flex: 1;
-      overflow-y: auto;
-      background: var(--bg-card);
-      border: 1px solid var(--border-gold);
-      border-radius: 10px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-      text-align: left;
-    }
-
-    th {
-      background: rgba(10, 14, 23, 0.95);
-      color: var(--gold-bright);
-      padding: 12px 16px;
-      font-weight: 700;
-      position: sticky;
-      top: 0;
-      border-bottom: 1px solid var(--border-gold);
-    }
-
-    td {
-      padding: 12px 16px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      vertical-align: top;
-      user-select: text;
-    }
-
-    tr:hover td {
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .edit-input {
-      width: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 6px;
-      padding: 6px 10px;
-      color: #fff;
-      font-size: 13px;
-      outline: none;
-    }
-
-    .edit-input:focus {
-      border-color: var(--gold-bright);
-    }
-
-    .btn-sm {
-      padding: 6px 12px;
-      font-size: 12px;
-      border-radius: 4px;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
+      gap: 10px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Header -->
+  <!-- Top Navigation Header -->
   <header>
     <div class="brand">
       <span>⚔️ ACE CHESS WIKI</span>
       <span class="brand-tag">COMPANION & PATCHER</span>
     </div>
 
-    <!-- Navigation Tabs -->
+    <!-- Navigation Tabs (Only 3 tabs as requested) -->
     <div class="nav-tabs">
       <div class="nav-tab active" onclick="switchTab('wiki')">
         <span>🌐 Cẩm Nang Wiki</span>
       </div>
-      <div class="nav-tab" onclick="switchTab('patcher')">
-        <span>⚡ Tool Cài Việt Hóa</span>
+      <div class="nav-tab" onclick="switchTab('pc')">
+        <span>🖥️ Việt Hóa Game PC (WXQ)</span>
       </div>
-      <div class="nav-tab" onclick="switchTab('customizer')">
-        <span>✍️ Sửa Văn Phong</span>
+      <div class="nav-tab" onclick="switchTab('mobile')">
+        <span>📶 Việt Hóa Mobile (Wi-Fi / USB)</span>
       </div>
     </div>
 
-    <!-- Right Status Indicator -->
+    <!-- Right Status -->
     <div class="header-actions">
       <div class="device-badge">
-        <span class="status-dot" id="status-dot"></span>
-        <span id="device-status-text">Đang quét thiết bị...</span>
+        <span class="status-dot" id="global-status-dot"></span>
+        <span id="global-status-text">Đang kiểm tra trạng thái...</span>
       </div>
-      <button class="btn-icon" title="Quét lại thiết bị" onclick="refreshDevice()">
+      <button class="btn-icon" title="Quét lại" onclick="refreshAllStatus()">
         🔄
       </button>
     </div>
@@ -447,97 +421,143 @@
 
   <!-- Main Viewports -->
   <main>
-    <!-- 1. Web Wiki View -->
+    <!-- TAB 1: WEB WIKI -->
     <section class="view-panel active" id="view-wiki">
       <iframe class="wiki-iframe-wrapper" id="wiki-frame" src="https://covuonggia-wiki.vercel.app"></iframe>
     </section>
 
-    <!-- 2. Patcher Tool View -->
-    <section class="view-panel" id="view-patcher">
-      <div class="patcher-container">
-        <!-- Control Box -->
+    <!-- TAB 2: VIỆT HÓA GAME PC (WXQ LAUNCHER) -->
+    <section class="view-panel" id="view-pc">
+      <div class="tab-content-container">
+        <!-- Control Box PC -->
         <div class="card">
           <div class="card-title">
-            <span>📱 TRẠNG THÁI THIẾT BỊ & GAME</span>
+            <span>🖥️ CÀI ĐẶT VIỆT HÓA GAME PC (WXQ LAUNCHER)</span>
           </div>
-          <div class="info-list">
-            <div class="info-row">
-              <span class="info-label">Thiết bị kết nối:</span>
-              <span class="info-val" id="info-device">Chưa phát hiện</span>
-            </div>
-            <div class="info-row">
-              <span class="info-label">Loại thiết bị:</span>
-              <span class="info-val" id="info-type">MEmu / Android</span>
-            </div>
-            <div class="info-row">
-              <span class="info-label">Gói game:</span>
-              <span class="info-val" id="info-pkg">com.tencent.tmgp.osgame</span>
-            </div>
-            <div class="info-row">
-              <span class="info-label">Phiên bản game:</span>
-              <span class="info-val" id="info-ver">1.8.0.1</span>
-            </div>
-            <div class="info-row">
-              <span class="info-label">Trạng thái APK:</span>
-              <span class="info-val" id="info-apk-state" style="color: var(--accent-green);">Bản Việt Hoá (Localized)</span>
+
+          <div class="input-group">
+            <span class="input-label">Thư mục Game WXQ trên PC:</span>
+            <div class="input-row">
+              <input type="text" class="text-input" id="pc-game-path" value="C:\Program Files\WXQLauncher\WXQ">
+              <button class="btn-sm" onclick="checkPCStatus()">Kiểm Tra</button>
             </div>
           </div>
 
-          <button class="btn-action btn-gold" onclick="runInstallPatch()">
-            <span>🚀 Cài / Cập Nhật Việt Hóa (1-Chạm)</span>
+          <div class="info-list">
+            <div class="info-row">
+              <span class="info-label">Trạng thái Game PC:</span>
+              <span class="info-val" id="pc-status-val" style="color: var(--accent-green);">Đã tìm thấy game</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Tệp thực thi:</span>
+              <span class="info-val">WXQ.exe (64-bit)</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Gói từ điển PC:</span>
+              <span class="info-val">203,534 từ (Bản 1.8.0.1)</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Số gói database:</span>
+              <span class="info-val">15 file (.db QtsVFS)</span>
+            </div>
+          </div>
+
+          <button class="btn-action btn-gold" onclick="runInstallPCPatch()">
+            <span>🚀 Cài / Cập Nhật Việt Hóa PC (1-Chạm)</span>
           </button>
-          <button class="btn-action btn-outline" onclick="runRestoreOriginal()">
-            <span>🔄 Trả Về Bản Gốc (Để Cập Nhật Game)</span>
+          <button class="btn-action btn-outline" onclick="runRestorePCOriginal()">
+            <span>🔄 Trả Về Bản Gốc PC (Để Cập Nhật Game)</span>
           </button>
-          <button class="btn-action btn-outline" onclick="launchGame()">
-            <span>🎮 Khởi Động Game Trên Giả Lập / Máy</span>
-          </button>
-          <button class="btn-action btn-outline" onclick="switchTab('customizer')">
-            <span>✍️ Nạp Bản Dịch Riêng Của Bạn</span>
+          <button class="btn-action btn-outline" onclick="launchPCGame()">
+            <span>🎮 Mở Game WXQ Launcher Ngay</span>
           </button>
         </div>
 
-        <!-- Terminal Output -->
+        <!-- Terminal Output PC -->
         <div class="card terminal-card">
           <div class="terminal-header">
-            <span class="card-title" style="margin: 0; border: none; padding: 0;">📋 NHẬT KÝ HOẠT ĐỘNG THỜI GIAN THỰC</span>
-            <button class="btn-sm btn-outline" onclick="clearLogs()">Xóa log</button>
+            <span class="card-title" style="margin: 0; border: none; padding: 0;">📋 NHẬT KÝ VIỆT HÓA PC</span>
+            <button class="btn-sm" onclick="clearLogs('log-terminal-pc')">Xóa log</button>
           </div>
-          <div class="terminal-body" id="log-terminal">
-            <div class="log-line"><span class="log-time">[00:00:00]</span> <span class="log-info">[INFO]</span> Khởi tạo hệ thống AceChess Companion...</div>
-            <div class="log-line"><span class="log-time">[00:00:01]</span> <span class="log-info">[ADB]</span> Đang kiểm tra kết nối với cổng 127.0.0.1:21503 (MEmu)...</div>
+          <div class="terminal-body" id="log-terminal-pc">
+            <div class="log-line"><span class="log-time">[HỆ THỐNG]</span> <span class="log-info">[INFO]</span> Mô-đun Việt hóa PC WXQ Launcher đã kích hoạt.</div>
+            <div class="log-line"><span class="log-time">[HỆ THỐNG]</span> <span class="log-info">[INFO]</span> Thư mục mặc định: C:\Program Files\WXQLauncher\WXQ</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. Customizer View -->
-    <section class="view-panel" id="view-customizer">
-      <div class="customizer-container">
-        <div class="search-bar">
-          <input type="text" class="input-search" id="term-search-input" placeholder="Tìm kiếm tên tướng, trang bị, kỹ năng (ví dụ: Doanh Chính, Gia Cát Lượng, Sách Thí Thần)..." onkeydown="if(event.key==='Enter') searchTerms()">
-          <button class="btn-sm btn-gold" style="padding: 10px 24px;" onclick="searchTerms()">🔍 Tìm Kiếm</button>
-          <button class="btn-sm btn-outline" style="padding: 10px 24px;" onclick="saveAndApplyCustom()">💾 Lưu & Nạp Vào Game</button>
+    <!-- TAB 3: VIỆT HÓA MOBILE (GỠ LỖI WI-FI & USB) -->
+    <section class="view-panel" id="view-mobile">
+      <div class="tab-content-container">
+        <!-- Control Box Mobile -->
+        <div class="card">
+          <div class="card-title">
+            <span>📶 GỠ LỖI WI-FI (KHÔNG DÂY) & USB CHO MOBILE</span>
+          </div>
+
+          <!-- Wireless Connection Form -->
+          <div class="input-group">
+            <span class="input-label">Địa chỉ IP & Cổng gỡ lỗi Wi-Fi điện thoại:</span>
+            <div class="input-row">
+              <input type="text" class="text-input" id="wifi-ip-port" placeholder="192.168.1.50:38475">
+              <button class="btn-sm btn-gold" style="color: #000;" onclick="connectWirelessADB()">Kết Nối</button>
+            </div>
+          </div>
+
+          <!-- Optional Pairing Section for Android 11+ -->
+          <div class="toggle-section">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="input-label" style="color: var(--gold-bright);">⚙️ Ghép đôi lần đầu (Android 11+ Pairing):</span>
+              <input type="checkbox" id="toggle-pairing" onchange="togglePairingFields()">
+            </div>
+            <div id="pairing-fields" style="display: none; gap: 8px; flex-direction: column;">
+              <div class="input-row">
+                <input type="text" class="text-input" id="pairing-port" placeholder="Cổng ghép đôi (VD: 41295)">
+                <input type="text" class="text-input" id="pairing-code" placeholder="Mã ghép đôi (6 số)">
+              </div>
+              <span style="font-size: 11px; color: var(--text-muted);">
+                * Mở Cài đặt > Tùy chọn nhà phát triển > Gỡ lỗi không dây > Ghép nối bằng mã.
+              </span>
+            </div>
+          </div>
+
+          <div class="info-list">
+            <div class="info-row">
+              <span class="info-label">Thiết bị hiện tại:</span>
+              <span class="info-val" id="mobile-device-val">Chưa có kết nối</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Kiểu kết nối:</span>
+              <span class="info-val" id="mobile-type-val">Wi-Fi / USB / MEmu</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Game HoK Ace:</span>
+              <span class="info-val" id="mobile-game-val">com.tencent.tmgp.osgame</span>
+            </div>
+          </div>
+
+          <button class="btn-action btn-gold" onclick="runInstallMobilePatch()">
+            <span>🚀 Cài / Cập Nhật Việt Hóa Mobile (1-Chạm)</span>
+          </button>
+          <button class="btn-action btn-outline" onclick="runRestoreMobileOriginal()">
+            <span>🔄 Trả Về Bản Gốc Mobile (Để Cập Nhật Game)</span>
+          </button>
+          <button class="btn-action btn-outline" onclick="launchMobileGame()">
+            <span>🎮 Mở Game Trên Điện Thoại / Giả Lập</span>
+          </button>
         </div>
 
-        <div class="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th style="width: 140px;">Mã Định Danh (ID)</th>
-                <th style="width: 25%;">Tiếng Trung Gốc</th>
-                <th style="width: 30%;">Bản Dịch Hiện Tại</th>
-                <th>Văn Phong Của Bạn (Chỉnh Sửa Trực Tiếp)</th>
-              </tr>
-            </thead>
-            <tbody id="terms-tbody">
-              <tr>
-                <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 40px;">
-                  Hãy nhập từ khóa tìm kiếm phía trên (ví dụ: "Doanh Chính", "Tướng", "Trang bị") để sửa văn phong.
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <!-- Terminal Output Mobile -->
+        <div class="card terminal-card">
+          <div class="terminal-header">
+            <span class="card-title" style="margin: 0; border: none; padding: 0;">📋 NHẬT KÝ GỠ LỖI MOBILE</span>
+            <button class="btn-sm" onclick="clearLogs('log-terminal-mobile')">Xóa log</button>
+          </div>
+          <div class="terminal-body" id="log-terminal-mobile">
+            <div class="log-line"><span class="log-time">[ADB]</span> <span class="log-info">[INFO]</span> Hệ thống gỡ lỗi Wi-Fi & USB sẵn sàng.</div>
+            <div class="log-line"><span class="log-time">[ADB]</span> <span class="log-info">[INFO]</span> Có thể nhập IP Wi-Fi hoặc cắm cáp USB bật Gỡ lỗi USB.</div>
+          </div>
         </div>
       </div>
     </section>
@@ -552,18 +572,27 @@
       if (tabId === 'wiki') {
         document.querySelectorAll('.nav-tab')[0].classList.add('active');
         document.getElementById('view-wiki').classList.add('active');
-      } else if (tabId === 'patcher') {
+      } else if (tabId === 'pc') {
         document.querySelectorAll('.nav-tab')[1].classList.add('active');
-        document.getElementById('view-patcher').classList.add('active');
-      } else if (tabId === 'customizer') {
+        document.getElementById('view-pc').classList.add('active');
+        checkPCStatus();
+      } else if (tabId === 'mobile') {
         document.querySelectorAll('.nav-tab')[2].classList.add('active');
-        document.getElementById('view-customizer').classList.add('active');
+        document.getElementById('view-mobile').classList.add('active');
+        refreshMobileStatus();
       }
     }
 
+    // Toggle Pairing Fields
+    function togglePairingFields() {
+      const chk = document.getElementById('toggle-pairing');
+      document.getElementById('pairing-fields').style.display = chk.checked ? 'flex' : 'none';
+    }
+
     // Logging helper
-    function appendLog(level, message) {
-      const terminal = document.getElementById('log-terminal');
+    function appendLog(termId, level, message) {
+      const terminal = document.getElementById(termId);
+      if (!terminal) return;
       const now = new Date().toTimeString().split(' ')[0];
       const div = document.createElement('div');
       div.className = 'log-line';
@@ -578,161 +607,140 @@
       terminal.scrollTop = terminal.scrollHeight;
     }
 
-    function clearLogs() {
-      document.getElementById('log-terminal').innerHTML = '';
-      appendLog('INFO', 'Đã xóa nhật ký.');
+    function clearLogs(termId) {
+      const terminal = document.getElementById(termId);
+      if (terminal) terminal.innerHTML = '';
+      appendLog(termId, 'INFO', 'Đã xóa nhật ký.');
     }
 
-    // Python API Bridges
-    async function refreshDevice() {
-      appendLog('INFO', 'Đang quét thiết bị kết nối qua ADB...');
+    // Status Checking
+    async function refreshAllStatus() {
+      checkPCStatus();
+      refreshMobileStatus();
+    }
+
+    // --- PC WXQ API ---
+    async function checkPCStatus() {
+      const path = document.getElementById('pc-game-path').value.trim();
+      appendLog('log-terminal-pc', 'INFO', `Đang kiểm tra thư mục Game PC: ${path}...`);
       if (window.pywebview && window.pywebview.api) {
-        try {
-          const res = await window.pywebview.api.get_device_status();
-          updateDeviceUI(res);
-        } catch(e) {
-          appendLog('ERROR', 'Lỗi gọi API Python: ' + e);
+        const res = await window.pywebview.api.check_pc_game(path);
+        const statusEl = document.getElementById('pc-status-val');
+        if (res.exists) {
+          statusEl.innerText = res.patched ? 'Đã Cài Việt Hóa' : 'Bản Gốc (Tiếng Trung)';
+          statusEl.style.color = res.patched ? 'var(--accent-green)' : 'var(--gold-bright)';
+          appendLog('log-terminal-pc', 'SUCCESS', `Tìm thấy WXQ.exe! Trạng thái: ${statusEl.innerText}`);
+        } else {
+          statusEl.innerText = 'Chưa tìm thấy game';
+          statusEl.style.color = 'var(--accent-red)';
+          appendLog('log-terminal-pc', 'WARN', 'Không tìm thấy WXQ.exe tại đường dẫn trên.');
         }
-      } else {
-        appendLog('WARN', 'Chạy ở chế độ Web (Chưa kết nối Python API). Giả lập kiểm tra...');
-        setTimeout(() => {
-          updateDeviceUI({
-            connected: true,
-            deviceId: '127.0.0.1:21503',
-            type: 'MEmu Emulator',
-            pkgInstalled: true,
-            version: '1.8.0.1',
-            apkState: 'Bản Việt Hoá (Localized)'
-          });
-        }, 500);
       }
     }
 
-    function updateDeviceUI(res) {
-      const dot = document.getElementById('status-dot');
-      const txt = document.getElementById('device-status-text');
-      const infoDev = document.getElementById('info-device');
-      const infoType = document.getElementById('info-type');
-      const infoVer = document.getElementById('info-ver');
-      const infoState = document.getElementById('info-apk-state');
-
-      if (res.connected) {
-        dot.className = 'status-dot online';
-        txt.innerText = `${res.deviceId} (${res.type})`;
-        infoDev.innerText = res.deviceId;
-        infoType.innerText = res.type;
-        infoVer.innerText = res.version || '1.8.0.1';
-        infoState.innerText = res.apkState || 'Bản Việt Hoá (Localized)';
-        appendLog('SUCCESS', `Đã phát hiện thiết bị: ${res.deviceId} - Game ${res.version}`);
-      } else {
-        dot.className = 'status-dot';
-        txt.innerText = 'Chưa phát hiện thiết bị';
-        infoDev.innerText = 'Không có kết nối';
-        appendLog('WARN', 'Không phát hiện thiết bị. Hãy mở MEmu hoặc cắm cáp USB bật Gỡ lỗi USB.');
-      }
-    }
-
-    async function runInstallPatch() {
-      appendLog('INFO', 'Bắt đầu quá trình Cài Đặt / Cập Nhật Việt Hóa...');
+    async function runInstallPCPatch() {
+      const path = document.getElementById('pc-game-path').value.trim();
+      appendLog('log-terminal-pc', 'INFO', 'Bắt đầu nạp 15 tệp database QtsVFS Việt Hóa vào WXQ Launcher...');
       if (window.pywebview && window.pywebview.api) {
-        const res = await window.pywebview.api.install_patch();
-        appendLog(res.success ? 'SUCCESS' : 'ERROR', res.message);
-      } else {
-        appendLog('INFO', 'Nạp gói font tiếng Việt Bahnschrift...');
-        setTimeout(() => appendLog('INFO', 'Cập nhật QtsVFSCache gói chữ 1.db, 4.db...'), 600);
-        setTimeout(() => appendLog('SUCCESS', 'Hoàn tất! Game đã được Việt hóa 100%.'), 1400);
+        const res = await window.pywebview.api.install_pc_patch(path);
+        appendLog('log-terminal-pc', res.success ? 'SUCCESS' : 'ERROR', res.message);
+        checkPCStatus();
       }
     }
 
-    async function runRestoreOriginal() {
-      appendLog('INFO', 'Tiến hành khôi phục APK gốc để cập nhật game...');
+    async function runRestorePCOriginal() {
+      const path = document.getElementById('pc-game-path').value.trim();
+      appendLog('log-terminal-pc', 'INFO', 'Khôi phục các tệp gốc và dọn sạch QtsVFSCache...');
       if (window.pywebview && window.pywebview.api) {
-        const res = await window.pywebview.api.restore_original();
-        appendLog(res.success ? 'SUCCESS' : 'ERROR', res.message);
-      } else {
-        setTimeout(() => appendLog('SUCCESS', 'Đã trả về bản nền gốc sạch sẽ. Game có thể tự update an toàn!'), 800);
+        const res = await window.pywebview.api.restore_pc_game(path);
+        appendLog('log-terminal-pc', res.success ? 'SUCCESS' : 'ERROR', res.message);
+        checkPCStatus();
       }
     }
 
-    async function launchGame() {
-      appendLog('INFO', 'Gửi lệnh mở game com.tencent.tmgp.osgame...');
+    async function launchPCGame() {
+      const path = document.getElementById('pc-game-path').value.trim();
+      appendLog('log-terminal-pc', 'INFO', 'Khởi chạy WXQ.exe...');
       if (window.pywebview && window.pywebview.api) {
-        await window.pywebview.api.launch_game();
+        await window.pywebview.api.launch_pc_game(path);
       }
     }
 
-    // Search dictionary
-    async function searchTerms() {
-      const kw = document.getElementById('term-search-input').value.trim();
-      if (!kw) return;
-      appendLog('INFO', `Đang tìm kiếm thuật ngữ "${kw}" trong kho từ điển 249k chuỗi...`);
-
+    // --- Mobile Wireless & USB API ---
+    async function refreshMobileStatus() {
+      appendLog('log-terminal-mobile', 'INFO', 'Đang quét thiết bị Mobile qua ADB...');
       if (window.pywebview && window.pywebview.api) {
-        const results = await window.pywebview.api.search_dictionary(kw);
-        renderTable(results);
-      } else {
-        // Mock sample results if running standalone
-        renderTable([
-          { id: 'c7838cf6983f389995119ed6', zh: '在本活动期间使用英雄嬴政造成2000点伤害', vi: 'Dùng Tướng Doanh Chính gây 2000 điểm sát thương trong thời gian hoạt động này' },
-          { id: '2adad10b91e83545e14cc1e7', zh: '在本活动期间使用英雄诸葛亮造成2000点伤害', vi: 'Dùng Tướng Gia Cát Lượng gây 2000 điểm sát thương trong thời gian hoạt động này' },
-          { id: '0dc1e561e73a297bc83a5314', zh: '获得2张【诸葛亮】+1件【噬神之书】。', vi: 'Nhận 2 lá 【Gia Cát Lượng】 + 1 【Sách Thí Thần】.' }
-        ]);
+        const res = await window.pywebview.api.get_mobile_status();
+        const dot = document.getElementById('global-status-dot');
+        const txt = document.getElementById('global-status-text');
+        const devEl = document.getElementById('mobile-device-val');
+        const typeEl = document.getElementById('mobile-type-val');
+        const gameEl = document.getElementById('mobile-game-val');
+
+        if (res.connected) {
+          dot.className = 'status-dot online';
+          txt.innerText = `${res.deviceId} (${res.type})`;
+          devEl.innerText = res.deviceId;
+          typeEl.innerText = res.type;
+          gameEl.innerText = res.pkgInstalled ? 'Đã cài đặt (1.8.0.1)' : 'Chưa cài game';
+          appendLog('log-terminal-mobile', 'SUCCESS', `Đã kết nối: ${res.deviceId} - ${res.type}`);
+        } else {
+          dot.className = 'status-dot';
+          txt.innerText = 'Chưa kết nối Mobile';
+          devEl.innerText = 'Không có kết nối';
+          appendLog('log-terminal-mobile', 'WARN', 'Chưa có thiết bị nào kết nối qua Wi-Fi hoặc USB.');
+        }
       }
     }
 
-    function renderTable(list) {
-      const tbody = document.getElementById('terms-tbody');
-      tbody.innerHTML = '';
-      if (!list || list.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: var(--text-muted); padding: 30px;">Không tìm thấy thuật ngữ phù hợp.</td></tr>';
+    async function connectWirelessADB() {
+      const ipPort = document.getElementById('wifi-ip-port').value.trim();
+      const isPairing = document.getElementById('toggle-pairing').checked;
+      const pairingPort = document.getElementById('pairing-port').value.trim();
+      const pairingCode = document.getElementById('pairing-code').value.trim();
+
+      if (!ipPort) {
+        alert('Vui lòng nhập Địa chỉ IP và Cổng Wi-Fi (VD: 192.168.1.50:38475)!');
         return;
       }
-      list.forEach(item => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-          <td style="font-family: monospace; color: var(--accent-blue);">${item.id}</td>
-          <td style="color: #94a3b8;">${escapeHtml(item.zh)}</td>
-          <td>${escapeHtml(item.vi)}</td>
-          <td><input type="text" class="edit-input" data-id="${item.id}" value="${escapeHtml(item.vi)}"></td>
-        `;
-        tbody.appendChild(tr);
-      });
-      appendLog('SUCCESS', `Đã tìm thấy ${list.length} mục phù hợp.`);
-    }
 
-    function escapeHtml(text) {
-      if (!text) return '';
-      return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-    }
-
-    async function saveAndApplyCustom() {
-      const inputs = document.querySelectorAll('.edit-input');
-      const modifications = [];
-      inputs.forEach(input => {
-        modifications.push({
-          id: input.getAttribute('data-id'),
-          new_vi: input.value
-        });
-      });
-      if (modifications.length === 0) {
-        alert('Chưa có thuật ngữ nào để lưu!');
-        return;
-      }
-      appendLog('INFO', `Đang lưu ${modifications.length} văn phong tùy chỉnh...`);
+      appendLog('log-terminal-mobile', 'INFO', `Đang thiết lập kết nối không dây tới ${ipPort}...`);
       if (window.pywebview && window.pywebview.api) {
-        const res = await window.pywebview.api.save_custom_modifications(modifications);
-        appendLog('SUCCESS', res.message);
-      } else {
-        appendLog('SUCCESS', `Đã lưu thành công ${modifications.length} thuật ngữ theo văn phong của bạn!`);
+        const res = await window.pywebview.api.connect_wireless_adb(ipPort, isPairing ? pairingPort : null, isPairing ? pairingCode : null);
+        appendLog('log-terminal-mobile', res.success ? 'SUCCESS' : 'ERROR', res.message);
+        refreshMobileStatus();
+      }
+    }
+
+    async function runInstallMobilePatch() {
+      appendLog('log-terminal-mobile', 'INFO', 'Bắt đầu nạp gói font Bahnschrift & QtsVFSCache vào Mobile...');
+      if (window.pywebview && window.pywebview.api) {
+        const res = await window.pywebview.api.install_mobile_patch();
+        appendLog('log-terminal-mobile', res.success ? 'SUCCESS' : 'ERROR', res.message);
+      }
+    }
+
+    async function runRestoreMobileOriginal() {
+      appendLog('log-terminal-mobile', 'INFO', 'Đưa game trên Mobile về APK nền sạch để tự cập nhật...');
+      if (window.pywebview && window.pywebview.api) {
+        const res = await window.pywebview.api.restore_mobile_original();
+        appendLog('log-terminal-mobile', res.success ? 'SUCCESS' : 'ERROR', res.message);
+      }
+    }
+
+    async function launchMobileGame() {
+      appendLog('log-terminal-mobile', 'INFO', 'Gửi lệnh mở game trên điện thoại...');
+      if (window.pywebview && window.pywebview.api) {
+        await window.pywebview.api.launch_mobile_game();
       }
     }
 
     // Auto initialize on load
     window.addEventListener('pywebviewready', () => {
-      refreshDevice();
+      refreshAllStatus();
     });
     window.addEventListener('DOMContentLoaded', () => {
-      setTimeout(refreshDevice, 600);
+      setTimeout(refreshAllStatus, 500);
     });
   </script>
 </body>
