@@ -1,0 +1,674 @@
+[
+  {
+    "id": 49,
+    "name": "Gold Subscription",
+    "description": "ได้รับเงินรางวัลในช่วงเริ่มต้นของแต่ละด่าน!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 50,
+    "name": "Prismatic Party",
+    "description": "นี่คือศึกตัดสินครั้งสุดท้าย! ทำให้ Augment ทั้งหมดในเกมนี้เป็นระดับ Prismatic",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 51,
+    "name": "Prismatic Finale",
+    "description": "เตรียมตัวให้พร้อมสำหรับ ฉากจบสุดอลังการไปกับ Augment ชิ้นที่สามระดับ Prismatic!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 52,
+    "name": "Prismatic Prelude",
+    "description": "เปิดฉากการต่อสู้ด้วย Augment ชิ้นแรกระดับ Prismatic!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 53,
+    "name": "Scuttle Puddle",
+    "description": "สังเวียนต่อสู้ในเกมนี้รายล้อมไปด้วย Crab ที่ถือครองสมบัติเพิ่มเติม!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 54,
+    "name": "Crab Rave",
+    "description": "สังเวียนต่อสู้ในเกมนี้รายล้อมไปด้วย Crab ที่ถือครองสมบัติเพิ่มเติม! แต่หลังด่าน 5 ขึ้นไป พวกมันจะอันตรายแบบสุด ๆ!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 55,
+    "name": "Loot Subscription",
+    "description": "ได้รับสมบัติหลากหลายระดับในช่วงเริ่มต้นของแต่ละด่าน!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 56,
+    "name": "Golden Gala",
+    "description": "ตั้งเป้าคว้าเหรียญทอง ไปกับ Augment ระดับ Gold 3 ชิ้น!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 57,
+    "name": "Component Anvils",
+    "description": "ได้รับ Component Anvil 2 ชิ้น เลือกอาวุธประจำตัวได้เลย!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 58,
+    "name": "Trainer Golems",
+    "description": "ฝึกฝน Golem ของคุณ! เพราะมันมาพร้อม Emblem แบบสุ่มถึง 3 ชิ้น",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 60,
+    "name": "3-Cost Start",
+    "description": "เริ่มเกมมาพร้อมกับแชมเปี้ยนราคา 3 ทองแบบสุ่ม 1 ตัว",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 61,
+    "name": "Upgraded Champion",
+    "description": "เริ่มเกมมาพร้อมกับแชมเปี้ยนราคา 1 ทอง 2 ดาวหนึ่งตัว",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 62,
+    "name": "Augment Round Swap",
+    "description": "Augment จะปรากฏเร็วขึ้นในเกมนี้",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 63,
+    "name": "Earlier Snax",
+    "description": "ได้รับ Power Snax ชิ้นที่ 2 ในรอบ 2-6 แทนที่จะเป็นรอบ 3-6",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 64,
+    "name": "The Grand Finals",
+    "description": "นี่คือรอบชิงชนะเลิศ! เพราะงั้นต้องลุยเองแล้วนะเหล่าแชมเปี้ยน",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 65,
+    "name": "Beach Episode",
+    "description": "อนิเมะตอนพิเศษไปเที่ยวชายหาด! ได้รับลูกบอลชายหาดที่นักวางแผนสามารถโยนไปมาได้!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 66,
+    "name": "Regal Rumble",
+    "description": "รอบวงล้อร่วมมีผู้เข้าแข่งขันเพิ่มมากขึ้น!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 67,
+    "name": "Winner's Circle",
+    "description": "หลังประกาศท็อป 4 ผู้เล่นที่เหลืออยู่จะได้รับ 10 ทองและ Component Anvil 2 ชิ้น",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 68,
+    "name": "Gold Subscription",
+    "description": "Zoe มอบทองให้กับคุณในทุก ๆ ด่าน ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 69,
+    "name": "Prismatic Party",
+    "description": "Aurelion Sol ยกระดับ Augment ทุกชิ้นให้เป็น Prismatic!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 70,
+    "name": "Prismatic Finale",
+    "description": "Aurelion Sol ยกระดับ Augment ชิ้นสุดท้ายให้เป็น Prismatic!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 71,
+    "name": "Prismatic Prelude",
+    "description": "Aurelion Sol ยกระดับ Augment ชิ้นแรกให้เป็น Prismatic!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 72,
+    "name": "Scuttle Puddle",
+    "description": "Bard อัญเชิญสหาย Scuttle ในเกมนี้!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 73,
+    "name": "Crab Rave",
+    "description": "Bard อัญเชิญสหาย Scuttle มาเริ่มต้นความหรรษาใน Crab Rave!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 75,
+    "name": "Golden Gala",
+    "description": "Sohm ทำให้ Augment ทั้งหมดในเกมนี้เป็นระดับ Gold ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 76,
+    "name": "Component Anvils",
+    "description": "Swain มอบ Component Anvil 2 ชิ้นให้กับคุณ ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 77,
+    "name": "Trainer Golems",
+    "description": "Sohm อัญเชิญ Golem ที่มาพร้อม Emblem 3 ชิ้นเข้าสู่สนาม",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 78,
+    "name": "3-Cost Start",
+    "description": "เริ่มเกมมาพร้อมกับแชมเปี้ยนราคา 3 ทองแบบสุ่ม 1 ตัว",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 79,
+    "name": "Upgraded Champion",
+    "description": "เริ่มเกมมาพร้อมกับแชมเปี้ยนราคา 1 ทอง 2 ดาวหนึ่งตัว",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 80,
+    "name": "Treasurier Dragon",
+    "description": "รอบ Treasure Dragon เพิ่มเติมที่มาพร้อมข้อเสนอพิเศษจะปรากฏตัวในด่าน 3-7!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 81,
+    "name": "Dragon Herald",
+    "description": "Choncc มอบ Dragon หนึ่งตัวที่มีระดับเท่ากันให้ผู้เล่นทุกคน!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 82,
+    "name": "Draconic Subscription",
+    "description": "Idas มอบสมบัติเพิ่มเติมให้กับคุณในทุก ๆ ด่าน ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 83,
+    "name": "Artifact Anvil",
+    "description": "Swain มอบ Artifact Anvil ให้กับคุณ ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 84,
+    "name": "Golden Gala",
+    "description": "Twisted Fate เปิดไพ่ทำให้ Augment ทั้งหมดในเกมนี้เป็นระดับ Gold",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 85,
+    "name": "Prismatic Party",
+    "description": "Seraphine เปลี่ยน Augment ทั้งหมดในเกมนี้ให้เป็นระดับ Prismatic",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 86,
+    "name": "Prismatic Finale",
+    "description": "Seraphine เปลี่ยน Augment ทั้งหมดในเกมนี้ให้เป็นระดับ Prismatic",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 87,
+    "name": "Prismatic Prelude",
+    "description": "Zilean เร่งอายุ Augment ชิ้นสุดท้ายจนสมบูรณ์แบบ ทำให้เป็นระดับ Prismatic ในเกมนี้",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 88,
+    "name": "3-Cost Start",
+    "description": "เริ่มเกมมาพร้อมกับแชมเปี้ยนราคา 3 ทองแบบสุ่ม 1 ตัว",
+    "percentage": 7.0,
+    "setNumber": 16
+  },
+  {
+    "id": 89,
+    "name": "2-Cost Start",
+    "description": "เริ่มเกมมาพร้อมกับแชมเปี้ยนราคา 2 ทองแบบสุ่ม 1 ตัว",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 90,
+    "name": "HACK: Upgraded Start",
+    "description": "Ekko อัปเกรดแชมเปี้ยนเริ่มต้นของคุณให้กลายเป็น 2 ดาว",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 91,
+    "name": "Component Anvils",
+    "description": "Poppy มอบ Component Anvil 2 ชิ้นให้กับคุณ",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 92,
+    "name": "Scuttle Puddle",
+    "description": "Rift Herald เต้นอย่างมีความสุข ทำให้เกมนี้เต็มไปด้วย Crab ที่ถือครองสมบัติเพิ่มเติม",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 93,
+    "name": "Loot Subscription",
+    "description": "Zoe มอบสมบัติหลากหลายระดับให้กับคุณ ในช่วงเริ่มต้นของแต่ละด่าน!",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 94,
+    "name": "Emblem Ensemble",
+    "description": "Ryze มอบ Emblem แบบสุ่ม 3 ชิ้น เพื่อเริ่มต้นการผจญภัยของคุณ",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 95,
+    "name": "Gold Subscription",
+    "description": "Tahm Kench มอบทองให้กับคุณในทุก ๆ ด่าน",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 96,
+    "name": "Augment Round Swap",
+    "description": "LeBlanc ชักใย Augment ให้ปรากฏเร็วขึ้นในเกมนี้",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 97,
+    "name": "ไม่มี Encounter",
+    "description": "ช่างเป็นวันแสนสงบในรูนเทอร์รา ทำให้ไม่มี Encounter ในเกมนี้",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 98,
+    "name": "Howling Abyss",
+    "description": "ได้รับแชมเปี้ยนราคา 1 ทองแบบสุ่ม 5 ตัว เพื่อเข้าต่อสู้ใน Howling Abyss",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 99,
+    "name": "Silver Scrapes",
+    "description": "ผู้เล่น 2 คนสุดท้ายที่เหลือรอดได้รับ 70 ทอง สำหรับศึกตัดสินสุดยิ่งใหญ่",
+    "percentage": 7.0,
+    "setNumber": 16
+  },
+  {
+    "id": 100,
+    "name": "Reckoner Arena",
+    "description": "ทุก ๆ ครั้งที่ผู้เล่นถูกกำจัด Draven จะมอบทองให้กับผู้เล่นที่ยังเหลืออยู่ ตามจำนวนผู้เล่นที่ถูกกำจัดไป",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 101,
+    "name": "Scouting Party",
+    "description": "หน่วยสำรวจของ Teemo ค้นพบแต้มสุ่มใหม่ Augment +1 ครั้งสำหรับ Augment ทั้งหมด",
+    "percentage": 4.0,
+    "setNumber": 16
+  },
+  {
+    "id": 102,
+    "name": "Gwen's Gifts",
+    "description": "Gwen มอบชิ้นส่วนไอเทมและกรรไกรสุดพิเศษให้กับผู้เล่น หลังจบรอบวงล้อร่วม 3 รอบแรก",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 103,
+    "name": "Carousel of Vitality",
+    "description": "Irelia เพิ่มพลังวงล้อร่วม 2 รอบแรกให้เร็วขึ้น และมาพร้อมสมบัติพิเศษ!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 104,
+    "name": "Fireworks",
+    "description": "Darius มอบแพ็คเกจดอกไม้ไฟให้กับคุณในรอบ 2-7 และ 3-7 จากนั้นเฉลิมฉลองปีแห่งม้าไปด้วยกันในรอบ 4-7!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 105,
+    "name": "Growing Prosperity<br>",
+    "description": "Ornn หล่อหลอม Anvil ที่ทรงพลังขึ้นเรื่อย ๆ ในช่วงเริ่มต้นของแต่ละด่าน!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 106,
+    "name": "Off to the Races!",
+    "description": "Sejuani จัดการแข่งขันในรอบ 2-4 ทุกคนต้องทายผลผู้ชนะ และจะได้รับสมบัติตามจำนวนที่ทายผลถูกต้อง!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 107,
+    "name": "Year of the Horse",
+    "description": "Sejuani เรียกม้านำโชคขึ้นมาในม้านั่งของคุณ ซึ่งวิ่ง 1 ช่องเมื่อชนะ และ 2 ช่องเมื่อแพ้ ได้รับรางวัลเมื่อเข้าเส้นชัย!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 108,
+    "name": "Howling Abyss",
+    "description": "ได้รับแชมเปี้ยนราคา 1 ทองแบบสุ่ม 5 ตัว เพื่อร่วมฉลองงานเทศกาล!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 109,
+    "name": "Scouting Party",
+    "description": "Fiora แสดงทักษะและมอบแต้มสุ่มใหม่ Augment +1 ครั้ง สำหรับ Augment ทั้งหมด",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 110,
+    "name": "Component Anvils",
+    "description": "Ornn หล่อหลอม Component Anvil 2 ชิ้นให้กับคุณ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 111,
+    "name": "Prismatic Party",
+    "description": "Swain จุดไฟเฉลิมฉลองและทำให้ Augment ทั้งหมดในเกมนี้เป็นระดับ Prismatic",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 112,
+    "name": "Scuttle Puddle",
+    "description": "Twisted Fate จั่วไพ่ได้ดีสุด ๆ อัญเชิญ Scuttle มาร่วมเฉลิมฉลองไปด้วยกัน!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 113,
+    "name": "Prismatic Prelude",
+    "description": "Swain จุดไฟเฉลิมฉลองและทำให้ Augment ชิ้นแรกในเกมนี้เป็นระดับ Prismatic",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 114,
+    "name": "Loot Subscription",
+    "description": "Tahm Kench มอบของขวัญให้กับคุณในทุก ๆ ด่าน ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 115,
+    "name": "ไม่มี Encounter",
+    "description": "ทุกคนออกไปฉลองกันหมด! ทำให้ไม่มี Encounter ในเกมนี้ ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 116,
+    "name": "2-Cost Start",
+    "description": "Jarvan IV อัปเกรดแชมเปี้ยนเริ่มต้นของคุณให้กลายเป็น 2 ดาวในเกมนี้",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 117,
+    "name": "Gold Subscription",
+    "description": "Tahm Kench มอบทองให้กับคุณในทุก ๆ ด่าน ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 118,
+    "name": "Crab Rave",
+    "description": "Twisted Fate จั่วไพ่ได้ดีสุด ๆ อัญเชิญ Scuttle มาเข้าร่วมกับคุณใน Crab Rave!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 119,
+    "name": "Silver Scrapes",
+    "description": "ผู้เล่น 2 คนสุดท้ายที่เหลือรอดได้รับ 70 ทอง สำหรับศึกตัดสินสุดยิ่งใหญ่",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 120,
+    "name": "Prismatic Finale",
+    "description": "Swain จุดไฟเฉลิมฉลองและทำให้ Augment ชิ้นสุดท้ายในเกมนี้เป็นระดับ Prismatic",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 121,
+    "name": "Augment Round Swap",
+    "description": "Jarvan IV บัญชาให้ Augment ปรากฏเร็วขึ้นในเกมนี้",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 122,
+    "name": "Reckoner Arena",
+    "description": "ทุกครั้งที่ผู้เล่นถูกกำจัด Azir จะมอบทองให้กับ ผู้เล่นที่เหลืออยู่ตามจำนวนผู้เล่นที่ถูกกำจัดไป",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 123,
+    "name": "Golden Gala",
+    "description": "Annie ทำให้ Augment ทั้งหมดในเกมนี้เป็นระดับ Gold ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 124,
+    "name": "3-Cost Start",
+    "description": "เริ่มเกมมาพร้อมกับแชมเปี้ยนราคา 3 ทองแบบสุ่ม 1 ตัว",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 125,
+    "name": "2-Cost Start",
+    "description": "เริ่มเกมมาพร้อมกับแชมเปี้ยนราคา 2 ทองแบบสุ่ม 1 ตัว",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 126,
+    "name": "HACK: Upgraded Start",
+    "description": "Katarina อัปเกรดแชมเปี้ยนเริ่มต้นของคุณให้กลายเป็น 2 ดาว",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 147,
+    "name": "2 Cost Start",
+    "description": "เริ่มเกมมาพร้อมแชมเปี้ยนราคา 2 ทองแบบสุ่ม 1 ตัว",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 148,
+    "name": "3 Cost Start",
+    "description": "เริ่มเกมมาพร้อมแชมเปี้ยนราคา 3 ทองแบบสุ่ม 1 ตัว",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 149,
+    "name": "Cheaper Levels",
+    "description": "แต่ละเลเวลใช้ XP น้อยลง 2 หน่วย",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 150,
+    "name": "Completed Item Anvil",
+    "description": "เริ่มเกมมาพร้อม Completed Item Anvil 1 ชิ้น",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 151,
+    "name": "Component Anvil",
+    "description": "เริ่มเกมมาพร้อม Component Anvil 2 ชิ้น",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 152,
+    "name": "Emblem Ensemble",
+    "description": "เริ่มเกมพร้อมกับ Emblem 3 ชิ้นแบบสุ่ม",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 153,
+    "name": "ศึกตัดสินสุดท้าย!",
+    "description": "ผู้เล่น 2 คนสุดท้ายได้รับ 70 ทองสำหรับศึกตัดสินสุดยิ่งใหญ่",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 154,
+    "name": "Gold Subscription",
+    "description": "ได้รับทองแบบสุ่มในทุก ๆ ด่าน โดยผู้เล่นทุกคนจะได้รับเท่ากัน",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 155,
+    "name": "Golden Finale",
+    "description": "Augment ชิ้นสุดท้ายในเกมนี้เป็นระดับ Gold",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 156,
+    "name": "Golden Gala",
+    "description": "Augment ทั้งหมดในเกมนี้เป็นระดับ Gold",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 157,
+    "name": "Golden Prelude",
+    "description": "Augment ชิ้นแรกในเกมนี้เป็นระดับ Gold",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 158,
+    "name": "Howling Abyss",
+    "description": "เริ่มเกมมาพร้อมยูนิตราคา 1 ทองแบบสุ่ม 5 ตัว",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 159,
+    "name": "ตีไอเทม",
+    "description": "ผู้เล่นทุกคนเริ่มเกมมาพร้อม Completed Item Anvil 2 ชิ้น",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 160,
+    "name": "ไม่มี Encounter",
+    "description": "ไม่มี Encounter ในเกมนี้",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 161,
+    "name": "Prismatic Finisher",
+    "description": "Augment ชิ้นสุดท้ายในเกมนี้เป็นระดับ Prismatic",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 162,
+    "name": "Prismatic Opener",
+    "description": "Augment ชิ้นแรกในเกมนี้เป็นระดับ Prismatic",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 163,
+    "name": "Prismatic Party",
+    "description": "Augment ทั้งหมดในเกมนี้เป็นระดับ Prismatic",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 164,
+    "name": "Reroll Subscription",
+    "description": "ได้รับแต้มสุ่มใหม่ร้านค้าฟรีในช่วงเริ่มต้นของทุก ๆ ด่าน",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 165,
+    "name": "Scouting Party",
+    "description": "ได้รับแต้มสุ่มใหม่ Augment +1 ครั้งในเกมนี้",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 166,
+    "name": "Upgraded Start",
+    "description": "เริ่มเกมมาพร้อมแชมเปี้ยน 2 ดาว 1 ตัว",
+    "percentage": 5.0,
+    "setNumber": 18
+  }
+]

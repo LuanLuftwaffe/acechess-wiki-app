@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/item_trend_composition_by_level_0" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/rvActiveTrait" android:layout_width="match_parent" android:layout_height="wrap_content" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/rvChampion" android:tag="binding_1" android:layout_width="match_parent" android:layout_height="wrap_content" app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+</LinearLayout>

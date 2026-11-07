@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/dialog_summoner_match_details_0" android:background="@color/colorPrimary" android:padding="24.0dp" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="@style/TextAppearance.Material3.TitleLarge" android:textColor="@color/colorTextPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/match_info" />
+    <TextView android:textAppearance="@style/TextAppearance.Material3.LabelMedium" android:textColor="@color/colorTextDisable" android:id="@id/txtMatchId" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <TextView android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/colorTextSecondary" android:id="@id/txtContent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" />
+</LinearLayout>

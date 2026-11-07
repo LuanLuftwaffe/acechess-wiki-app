@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:tag="layout/dialog_privacy_policy_0" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:paddingBottom="5.0dp" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:orientation="vertical" android:background="@color/colorPrimaryDark" android:padding="24.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall" android:textColor="@color/colorDialogTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/privacy_policy" />
+            
+            <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textColor="@color/colorDialogTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:text="1. Cam kết quyền riêng tư" />
+            <TextView android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/colorDialogContent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dp" android:text="Ace Chess Wiki tôn trọng và cam kết bảo vệ quyền riêng tư của mọi người dùng. Ứng dụng cung cấp các công cụ tra cứu, cẩm nang và tiện ích hỗ trợ chơi game Đấu Trường Chân Lý hoàn toàn độc lập." />
+            
+            <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textColor="@color/colorDialogTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:text="2. Thu thập và sử dụng dữ liệu" />
+            <TextView android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/colorDialogContent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dp" android:text="Ứng dụng không thu thập thông tin nhận dạng cá nhân, số điện thoại hay tài khoản ngân hàng. Toàn bộ thiết lập cá nhân như danh sách đội hình yêu thích hay cấu hình bong bóng đều được lưu trữ trực tiếp trên thiết bị của bạn." />
+            
+            <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textColor="@color/colorDialogTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:text="3. Quyền hạn ứng dụng" />
+            <TextView android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/colorTextSecondary" android:id="@id/txtServiceProvidersContent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dp" android:text="Quyền hiển thị trên các ứng dụng khác (Bong bóng tiện ích) chỉ được sử dụng khi bạn bật tính năng này nhằm giúp việc tra cứu trong lúc chơi game thuận tiện hơn." />
+            
+            <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textColor="@color/colorTextPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:text="4. Bảo mật dữ liệu" />
+            <TextView android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/colorTextSecondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dp" android:text="Chúng tôi áp dụng các tiêu chuẩn bảo mật hiện đại nhằm đảm bảo an toàn cho dữ liệu cục bộ trên máy và không chia sẻ dữ liệu với bất kỳ bên thứ ba nào." />
+            
+            <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textColor="@color/colorTextPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:text="5. Thay đổi và liên hệ" />
+            <TextView android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/colorTextSecondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dp" android:text="Chính sách này có thể được cập nhật trong các phiên bản tiếp theo. Mọi câu hỏi xin gửi về kênh cộng đồng chính thức của Ace Chess Wiki." />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:orientation="vertical" android:background="@color/colorPrimary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <TextView android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/colorTextSecondary" android:gravity="center" android:paddingTop="15.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/you_must_agree" />
+        <com.google.android.material.button.MaterialButton android:textColor="@color/colorAccent" android:layout_gravity="center" android:id="@id/txtCancel" android:tag="binding_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/I_agree" style="@style/Widget.Material3.Button.TextButton" />
+    </LinearLayout>
+</RelativeLayout>

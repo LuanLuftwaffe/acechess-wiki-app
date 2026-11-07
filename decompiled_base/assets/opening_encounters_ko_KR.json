@@ -1,0 +1,674 @@
+[
+  {
+    "id": 49,
+    "name": "골드 구독",
+    "description": "각 스테이지 시작 시 상금을 획득합니다!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 50,
+    "name": "프리즘 연회",
+    "description": "최후의 결전입니다! 이번 게임의 모든 증강이 프리즘으로 변합니다.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 51,
+    "name": "프리즘 대단원",
+    "description": "세 번째 프리즘 증강으로 멋진 마무리를 준비하세요!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 52,
+    "name": "프리즘 전주곡",
+    "description": "이번 전투는 프리즘 증강과 함께 시작됩니다!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 53,
+    "name": "바위 게 웅덩이",
+    "description": "결투장이 추가 전리품을 지닌 게로 가득 찹니다.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 54,
+    "name": "광란의 게판",
+    "description": "결투장이 추가 전리품을 지닌 게로 가득 찹니다. 게는 스테이지 5 이후 극도로 위험해집니다.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 55,
+    "name": "전리품 정기 구독",
+    "description": "각 스테이지 시작 시 매우 다양한 전리품을 획득합니다!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 56,
+    "name": "골드 향연",
+    "description": "골드 증강 3개로 골드를 노리세요!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 57,
+    "name": "조합 아이템 모루",
+    "description": "조합 아이템 모루 2개를 획득합니다. 무기를 선택해 주세요!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 58,
+    "name": "조련사 골렘",
+    "description": "골렘을 조련하세요! 골렘은 무작위 상징 3개를 장착하고 있습니다.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 60,
+    "name": "3단계 시작",
+    "description": "무작위 3단계 챔피언 1명을 보유한 상태로 게임을 시작합니다.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 61,
+    "name": "업그레이드된 챔피언",
+    "description": "무작위 2성 1단계 챔피언을 지닌 상태에서 시작합니다.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 62,
+    "name": "증강 라운드 교체",
+    "description": "이번 게임에서 증강이 더 일찍 제공됩니다.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 63,
+    "name": "빠른 간식",
+    "description": "두 번째 파워 간식이 3-6이 아닌 2-6에서 제공됩니다.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 64,
+    "name": "최종 결승",
+    "description": "최종 결승입니다! 챔피언답게, 스스로 헤쳐 나가야 합니다.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 65,
+    "name": "물놀이 에피소드",
+    "description": "물놀이 에피소드! 전략가가 던질 수 있는 물놀이 공을 획득합니다!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 66,
+    "name": "장엄한 격돌",
+    "description": "공동 선택에서 더 많은 경쟁자가 등장합니다!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 67,
+    "name": "승자의 전당",
+    "description": "상위 4위 확정 후 남은 플레이어가 10골드와 조합 아이템 모루 2개를 획득합니다.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 68,
+    "name": "골드 구독",
+    "description": "조이가 스테이지마다 골드를 제공합니다. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 69,
+    "name": "프리즘 연회",
+    "description": "아우렐리온 솔이 모든 증강을 프리즘으로 격상시킵니다!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 70,
+    "name": "프리즘 대단원",
+    "description": "아우렐리온 솔이 마지막 증강을 프리즘으로 격상시킵니다!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 71,
+    "name": "프리즘 전주곡",
+    "description": "아우렐리온 솔이 첫 증강을 프리즘으로 격상시킵니다!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 72,
+    "name": "바위 게 웅덩이",
+    "description": "바드가 바위 게 친구들을 소환합니다!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 73,
+    "name": "광란의 게판",
+    "description": "바드가 바위 게 친구들을 소환해 광란의 게판을 시작합니다!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 75,
+    "name": "골드 향연",
+    "description": "솜이 이번 게임의 모든 증강을 골드로 만듭니다. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 76,
+    "name": "조합 아이템 모루",
+    "description": "스웨인이 조합 아이템 모루 2개를 제공합니다. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 77,
+    "name": "조련사 골렘",
+    "description": "솜이 전장에 상징 3개를 장착한 골렘을 소환합니다.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 78,
+    "name": "3단계 시작",
+    "description": "무작위 3단계 챔피언 1명을 보유한 상태로 게임을 시작합니다.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 79,
+    "name": "업그레이드된 챔피언",
+    "description": "무작위 2성 1단계 챔피언을 지닌 상태에서 시작합니다.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 80,
+    "name": "보물 관리 용",
+    "description": "3-7에 특별한 선물을 지닌 추가 보물 용이 등장합니다!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 81,
+    "name": "용의 전령",
+    "description": "배불뚝이가 모든 플레이어에게 동일한 단계의 용을 제공합니다.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 82,
+    "name": "용족 정기 구독",
+    "description": "이다스가 스테이지마다 추가 전리품을 제공합니다. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 83,
+    "name": "유물 모루",
+    "description": "스웨인이 유물 모루 1개를 제공합니다. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 84,
+    "name": "골드 향연",
+    "description": "트위스티드 페이트가 이번 게임에서 모든 증강을 골드 등급으로 제공합니다.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 85,
+    "name": "프리즘 연회",
+    "description": "세라핀이 이번 게임의 모든 증강을 프리즘으로 바꿉니다.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 86,
+    "name": "프리즘 대단원",
+    "description": "세라핀이 이번 게임의 모든 증강을 프리즘으로 바꿉니다.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 87,
+    "name": "프리즘 전주곡",
+    "description": "질리언이 세월의 힘으로 마지막 증강을 완벽하게 만듭니다. 이번 게임의 마지막 증강이 프리즘이 됩니다.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 88,
+    "name": "3단계 시작",
+    "description": "무작위 3단계 챔피언 1명을 보유한 상태로 게임을 시작합니다.",
+    "percentage": 7.0,
+    "setNumber": 16
+  },
+  {
+    "id": 89,
+    "name": "2단계 시작",
+    "description": "무작위 2단계 챔피언 1명을 보유한 상태로 게임을 시작합니다.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 90,
+    "name": "해킹: 업그레이드된 시작",
+    "description": "에코가 시작 챔피언을 2성으로 업그레이드합니다.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 91,
+    "name": "조합 아이템 모루",
+    "description": "뽀삐가 조합 아이템 모루 2개를 제공합니다.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 92,
+    "name": "바위 게 웅덩이",
+    "description": "협곡의 전령이 게임을 추가 전리품을 지닌 게로 가득 채웁니다.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 93,
+    "name": "전리품 정기 구독",
+    "description": "조이가 각 스테이지 시작 시 매우 다양한 전리품을 제공합니다!",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 94,
+    "name": "상징 집결",
+    "description": "라이즈가 여정의 시작에 앞서 무작위 상징 3개를 제공합니다.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 95,
+    "name": "골드 구독",
+    "description": "탐 켄치가 스테이지마다 골드를 제공합니다.",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 96,
+    "name": "증강 라운드 교체",
+    "description": "르블랑이 이번 게임에서 증강이 더 일찍 제공되도록 조작합니다.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 97,
+    "name": "조우자가 등장하지 않습니다.",
+    "description": "룬테라에 평온한 날이 찾아왔습니다. 이번 게임에서 조우자가 등장하지 않습니다.",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 98,
+    "name": "칼바람 나락",
+    "description": "칼바람 나락에서 전투를 치를 무작위 1단계 유닛 5명을 획득합니다.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 99,
+    "name": "Silver Scrapes",
+    "description": "마지막 2명의 생존 플레이어가 영웅적인 최종 전투를 앞두고 70골드를 획득합니다.",
+    "percentage": 7.0,
+    "setNumber": 16
+  },
+  {
+    "id": 100,
+    "name": "검투사 결투장",
+    "description": "플레이어가 탈락할 때마다 드레이븐이 생존한 플레이어에게 탈락한 플레이어 수에 따라 골드 보상을 제공합니다.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 101,
+    "name": "정찰대",
+    "description": "티모의 정찰대가 모든 증강에서 증강 새로고침 +1회를 발견했습니다.",
+    "percentage": 4.0,
+    "setNumber": 16
+  },
+  {
+    "id": 102,
+    "name": "그웬의 선물",
+    "description": "첫 공동 선택 3회 후 그웬이 플레이어에게 조합 아이템 1개와 특별한 가위 1개를 선물합니다.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 103,
+    "name": "활력의 공동 선택",
+    "description": "이렐리아가 추가 속도와 추가 특별 전리품으로 처음 두 번의 공동 선택을 강화합니다!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 104,
+    "name": "불꽃놀이",
+    "description": "2-7 및 3-7에서 다리우스가 전장에 불꽃축제를 열고, 4-7에서 말띠 해를 기념합니다!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 105,
+    "name": "커져가는 번영<br>",
+    "description": "오른이 각 스테이지 시작 시 위력이 높아지는 모루를 제작합니다!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 106,
+    "name": "경주 시작!",
+    "description": "세주아니가 2-4에서 경주를 엽니다. 모두가 승자를 예상하며, 정답 수에 따라 전리품을 받습니다.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 107,
+    "name": "말띠 해",
+    "description": "대기석에 행운의 말 등장! 승리 시 1칸, 패배 시 2칸 이동해 완주 시 보상을 제공합니다.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 108,
+    "name": "칼바람 나락",
+    "description": "축제를 기념하며 무작위 1단계 챔피언 다섯을 획득합니다.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 109,
+    "name": "정찰대",
+    "description": "피오라가 모든 증강에 대해 증강 새로고침 +1회를 민첩하게 제공합니다.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 110,
+    "name": "조합 아이템 모루",
+    "description": "오른이 조합 아이템 모루 2개를 제공합니다.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 111,
+    "name": "프리즘 연회",
+    "description": "스웨인이 축제에 불을 밝히고 모든 증강을 프리즘으로 만듭니다.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 112,
+    "name": "바위 게 웅덩이",
+    "description": "트위스티드 페이트가 유리한 패를 나눠주며 바위 게를 소환하고 축제에 합류합니다!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 113,
+    "name": "프리즘 전주곡",
+    "description": "스웨인이 축제에 불을 밝히고 첫 증강을 프리즘으로 만듭니다.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 114,
+    "name": "전리품 정기 구독",
+    "description": "탐 켄치가 스테이지마다 보상을 제공합니다. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 115,
+    "name": "조우자가 등장하지 않습니다.",
+    "description": "모두가 축제를 즐기느라 바쁩니다! 이번 게임에서 조우자가 등장하지 않습니다. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 116,
+    "name": "2단계 시작",
+    "description": "자르반 4세가 이 게임에서 시작 챔피언을 2성으로 업그레이드합니다.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 117,
+    "name": "골드 구독",
+    "description": "탐 켄치가 스테이지마다 골드를 제공합니다. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 118,
+    "name": "광란의 게판",
+    "description": "트위스티드 페이트가 유리한 패를 나눠주며 바위 게를 소환하고 광란의 게판에 합류합니다!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 119,
+    "name": "Silver Scrapes",
+    "description": "마지막 2명의 생존 플레이어가 영웅적인 최종 전투를 앞두고 70골드를 획득합니다.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 120,
+    "name": "프리즘 대단원",
+    "description": "스웨인이 축제에 불을 밝히고 마지막 증강을 프리즘으로 만듭니다.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 121,
+    "name": "증강 라운드 교체",
+    "description": "자르반 4세가 이번 게임에서 증강이 더 일찍 제공되도록 명령합니다.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 122,
+    "name": "검투사 결투장",
+    "description": "플레이어가 탈락할 때마다 아지르가 생존 플레이어에게 탈락 플레이어 수에 따른 골드를 제공합니다.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 123,
+    "name": "골드 향연",
+    "description": "애니가 이번 게임의 모든 증강을 골드로 만듭니다. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 124,
+    "name": "3단계 시작",
+    "description": "무작위 3단계 챔피언 1명을 보유한 상태로 게임을 시작합니다.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 125,
+    "name": "2단계 시작",
+    "description": "무작위 2단계 챔피언 1명을 보유한 상태로 게임을 시작합니다.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 126,
+    "name": "해킹: 업그레이드된 시작",
+    "description": "카타리나가 시작 챔피언을 2성으로 업그레이드합니다.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 147,
+    "name": "2단계 시작",
+    "description": "무작위 2단계 챔피언 1명을 보유한 상태로 게임을 시작합니다.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 148,
+    "name": "3단계 시작",
+    "description": "무작위 3단계 챔피언 1명을 보유한 상태로 게임을 시작합니다.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 149,
+    "name": "저렴한 레벨 업",
+    "description": "각 레벨의 필요 경험치가 2 감소합니다.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 150,
+    "name": "완성 아이템 모루",
+    "description": "Start with a completed item anvil.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 151,
+    "name": "조합 아이템 모루",
+    "description": "조합 아이템 모루 2개를 보유한 상태로 시작합니다.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 152,
+    "name": "상징 집결",
+    "description": "무작위 상징 3개를 보유한 상태로 시작합니다.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 153,
+    "name": "최후의 결전",
+    "description": "마지막 2명의 플레이어가 영웅적인 최종 전투를 앞두고 70골드를 획득합니다.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 154,
+    "name": "골드 구독",
+    "description": "스테이지마다 골드를 무작위로 획득합니다. 모든 플레이어가 같은 양의 골드를 획득합니다.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 155,
+    "name": "골드 대단원",
+    "description": "이번 게임에서 얻는 마지막 증강이 골드 등급이 됩니다. ",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 156,
+    "name": "골드 향연",
+    "description": "이번 게임에서 얻는 모든 증강이 골드 등급이 됩니다.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 157,
+    "name": "골드 전주곡",
+    "description": "이번 게임에서 처음으로 얻는 증강이 골드 등급이 됩니다. ",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 158,
+    "name": "칼바람 나락",
+    "description": "무작위 1단계 유닛 5명을 보유한 상태로 시작합니다.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 159,
+    "name": "아이템 대장간",
+    "description": "모든 플레이어가 완성 아이템 모루 2개를 지닌 상태에서 시작합니다.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 160,
+    "name": "조우자 없음",
+    "description": "이번 게임에서 조우자가 등장하지 않습니다.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 161,
+    "name": "프리즘 마무리",
+    "description": "이번 게임에서 얻는 마지막 증강이 프리즘 등급이 됩니다.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 162,
+    "name": "프리즘 전주곡",
+    "description": "이번 게임에서 처음으로 얻는 증강이 프리즘 등급이 됩니다.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 163,
+    "name": "프리즘 연회",
+    "description": "이번 게임에서 얻는 모든 증강이 프리즘 등급이 됩니다.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 164,
+    "name": "골드 구독",
+    "description": "매 스테이지 시작 시 무료 상점 새로고침을 획득합니다.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 165,
+    "name": "정찰대",
+    "description": "이번 게임에서 증강 새로고침 +1회를 얻습니다.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 166,
+    "name": "업그레이드된 시작",
+    "description": "2성 챔피언 1명을 보유한 상태로 게임을 시작합니다.",
+    "percentage": 5.0,
+    "setNumber": 18
+  }
+]

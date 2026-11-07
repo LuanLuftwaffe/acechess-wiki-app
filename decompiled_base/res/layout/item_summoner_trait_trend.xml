@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView android:tag="layout/item_summoner_trait_trend_0" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dp" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/llRootView" android:paddingTop="5.0dp" android:paddingBottom="5.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="10.0dp" android:paddingEnd="10.0dp">
+        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <FrameLayout android:id="@id/flPrimaryTraitBackground" android:background="@drawable/shape_hexagon" android:layout_width="36.0dp" android:layout_height="40.0dp">
+                <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:id="@id/imgPrimaryTrait" android:layout_width="20.0dp" android:layout_height="20.0dp" android:tint="@color/colorBlack" />
+            </FrameLayout>
+            <FrameLayout android:id="@id/flSecondaryTraitBackground" android:background="@drawable/shape_hexagon" android:layout_width="27.0dp" android:layout_height="30.0dp" android:layout_marginTop="29.0dp" android:layout_marginStart="19.0dp">
+                <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:id="@id/imgSecondaryTrait" android:layout_width="15.0dp" android:layout_height="15.0dp" android:tint="@color/colorBlack" />
+            </FrameLayout>
+        </FrameLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="8.0dp">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textAppearance="@style/TextAppearance.Material3.LabelMedium" android:textColor="@color/colorTextPrimary" android:id="@id/txtPrimaryTraitCount" android:background="@drawable/shape_rounded_gray" android:paddingTop="3.0dp" android:paddingBottom="3.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:paddingStart="6.0dp" android:paddingEnd="6.0dp" />
+                <TextView android:textAppearance="@style/TextAppearance.Material3.TitleSmall" android:textColor="@color/colorTextPrimary" android:id="@id/txtPrimaryTraitName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/unknown" android:layout_marginStart="8.0dp" />
+                <View android:layout_width="0.0dp" android:layout_height="1.0dp" android:layout_weight="1.0" />
+                <TextView android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/colorTextDisable" android:id="@id/txtTraitTrendAverageRank" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="#0.0 Avg." android:layout_marginStart="8.0dp" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dp">
+                <TextView android:textAppearance="@style/TextAppearance.Material3.LabelMedium" android:textColor="@color/colorTextPrimary" android:id="@id/txtSecondaryTraitCount" android:background="@drawable/shape_rounded_gray" android:paddingTop="3.0dp" android:paddingBottom="3.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:paddingStart="6.0dp" android:paddingEnd="6.0dp" />
+                <TextView android:textAppearance="@style/TextAppearance.Material3.TitleSmall" android:textColor="@color/colorTextPrimary" android:id="@id/txtSecondaryTraitName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/unknown" android:layout_marginStart="8.0dp" />
+                <View android:layout_width="0.0dp" android:layout_height="1.0dp" android:layout_weight="1.0" />
+                <TextView android:textAppearance="@style/TextAppearance.Material3.BodySmall" android:textColor="@color/colorTextSecondary" android:id="@id/txtTraitTrendGames" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 Game" android:layout_marginStart="8.0dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

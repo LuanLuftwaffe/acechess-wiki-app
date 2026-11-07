@@ -1,0 +1,9 @@
+.class public Lcom/google/android/gms/actions/SearchIntents;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# static fields
+.field public static final ACTION_SEARCH:Ljava/lang/String; = "com.google.android.gms.actions.SEARCH_ACTION"
+
+.field public static final EXTRA_QUERY:Ljava/lang/String; = "query"

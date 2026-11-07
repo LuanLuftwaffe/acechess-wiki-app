@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/download_layout" android:background="?colorSurface" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/lay_download_title" android:layout_width="match_parent" android:layout_height="@dimen/web_common_title_height" layout="@layout/lay_sap_title" />
+    <RelativeLayout android:id="@id/sap_download_list_layout" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="20.0dp" android:layout_above="@id/sap_down_bottom_layout" android:layout_below="@id/lay_download_title">
+        <View android:background="?colorOutlineVariant" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_alignParentTop="true" />
+        <ExpandableListView android:id="@id/list_download" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent" android:groupIndicator="@null" android:divider="#00000000" android:dividerHeight="0.0dp" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/sap_download_empty_layout" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@id/sap_down_bottom_layout" android:layout_below="@id/lay_download_title">
+        <TextView android:textSize="14.0sp" android:textColor="?colorOnSurface" android:gravity="center" android:id="@id/sap_download_empty_txt" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/sap_web_download_empty_msg" android:layout_centerInParent="true" />
+        <View android:background="@drawable/default_no_img" android:layout_width="42.299988dp" android:layout_height="40.0dp" android:layout_marginBottom="20.0dp" android:layout_above="@id/sap_download_empty_txt" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/sap_down_bottom_layout" android:background="?colorSurfaceVariant" android:visibility="gone" android:layout_width="match_parent" android:layout_height="50.0dp" android:layout_alignParentBottom="true">
+        <View android:background="?colorOutlineVariant" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_alignParentTop="true" />
+        <com.google.android.material.button.MaterialButton android:textSize="14.0sp" android:id="@id/sap_download_select_all_btn" android:layout_width="100.0dp" android:layout_height="34.0dp" android:layout_marginLeft="13.299988dp" android:text="@string/select_all" android:lines="1" android:layout_centerVertical="true" android:textAllCaps="false" style="@style/Widget.Material3.Button.OutlinedButton" />
+        <TextView android:textSize="12.0sp" android:textColor="?colorOnSurfaceVariant" android:id="@id/sap_download_select_cnt_txt" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="13.299988dp" android:text="@string/select_all" android:lines="1" android:layout_toLeftOf="@id/sap_download_share_btn_layout" android:layout_toRightOf="@id/sap_download_select_all_btn" android:layout_centerVertical="true" />
+        <RelativeLayout android:id="@id/sap_download_share_btn_layout" android:layout_width="45.0dp" android:layout_height="match_parent" android:layout_alignParentRight="true">
+            <View android:background="@drawable/bottom_menu_share_btn" android:layout_width="20.0dp" android:layout_height="20.0dp" android:layout_marginRight="13.0dp" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

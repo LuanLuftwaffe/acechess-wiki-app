@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bookmark_add_app_show_type">
+        <item>Gần đây (theo thứ tự cài đặt)</item>
+        <item>Mặc định (theo thứ tự cài đặt)</item>
+        <item>Thứ tự tăng dần (AZ)</item>
+        <item>Thứ tự giảm dần (ZA)</item>
+    </string-array>
+</resources>

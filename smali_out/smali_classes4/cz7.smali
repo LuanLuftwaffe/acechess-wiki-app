@@ -1,0 +1,44 @@
+.class public abstract Lcz7;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# static fields
+.field public static final a:Laz7;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    sget v0, Lmu7;->a:I
+
+    .line 2
+    .line 3
+    new-instance v0, Laz7;
+
+    .line 4
+    .line 5
+    invoke-direct {v0}, Laz7;-><init>()V
+
+    .line 6
+    .line 7
+    .line 8
+    sput-object v0, Lcz7;->a:Laz7;
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+.method public static a()Laz7;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lcz7;->a:Laz7;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method

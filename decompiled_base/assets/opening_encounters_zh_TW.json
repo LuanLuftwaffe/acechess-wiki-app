@@ -1,0 +1,674 @@
+[
+  {
+    "id": 49,
+    "name": "招財進寶",
+    "description": "每個階段開始時都會取得現金獎勵！",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 50,
+    "name": "稜鏡派對",
+    "description": "終極對決開始啦！此對戰所有增幅裝置皆為稜鏡級。",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 51,
+    "name": "稜鏡終曲",
+    "description": "準備迎接精彩壓軸，第三件增幅裝置將會是稜鏡級！",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 52,
+    "name": "稜鏡序曲",
+    "description": "這場戰鬥將以稜鏡增幅裝置開局！",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 53,
+    "name": "河蟹水坑",
+    "description": "場上將出現滿滿的螃蟹，裡頭藏有額外戰利品。",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 54,
+    "name": "螃蟹狂歡派對",
+    "description": "場上將出現滿滿的螃蟹，裡頭藏有額外戰利品。但階段5後牠們會變得格外致命！",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 55,
+    "name": "戰利品訂閱",
+    "description": "每個階段開始時都會獲得各式各樣的戰利品！",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 56,
+    "name": "黃金舞會",
+    "description": "三件金級增幅裝置讓你金光閃閃！",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 57,
+    "name": "道具組件鐵砧",
+    "description": "獲得2個組件鐵砧。選擇你的武器！",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 58,
+    "name": "訓練魔像",
+    "description": "訓練你的魔像！它帶有3枚隨機徽章。",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 60,
+    "name": "3費英雄開局",
+    "description": "以1位隨機的3費英雄開局。",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 61,
+    "name": "升級英雄",
+    "description": "對戰開始時獲得1個2星1費英雄。",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 62,
+    "name": "增幅裝置回合替換",
+    "description": "本場對戰將提早發放增幅裝置。",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 63,
+    "name": "早發的乾糧",
+    "description": "第二份強化乾糧改在2-6階段提供，而非3-6階段。",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 64,
+    "name": "最終決戰",
+    "description": "決戰時刻到了！英雄，你只能靠自己啦。",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 65,
+    "name": "海灘特別篇",
+    "description": "海灘特別篇！獲得1顆可供聯盟棋手玩耍的海灘球！",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 66,
+    "name": "群雄逐鹿",
+    "description": "聯合徵召將有更多競爭者！",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 67,
+    "name": "強者之席",
+    "description": "前4名出爐後，進入4強的玩家將獲得10金錢與2個組件鐵砧。",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 68,
+    "name": "招財進寶",
+    "description": "柔依每個階段給予我方金錢 ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 69,
+    "name": "稜鏡派對",
+    "description": "翱銳龍獸使所有增幅裝置化升為稜鏡等級！",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 70,
+    "name": "稜鏡終曲",
+    "description": "翱銳龍獸使最後一件增幅裝置化升為稜鏡等級！",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 71,
+    "name": "稜鏡序曲",
+    "description": "翱銳龍獸使第一件增幅裝置化升為稜鏡等級！",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 72,
+    "name": "河蟹水坑",
+    "description": "巴德召喚他的河蟹夥伴！",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 73,
+    "name": "螃蟹狂歡派對",
+    "description": "巴德召喚河蟹夥伴展開螃蟹狂歡！",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 75,
+    "name": "黃金舞會",
+    "description": "頌沐使本局所有增幅裝置成為金級。 ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 76,
+    "name": "道具組件鐵砧",
+    "description": "斯溫賦予2個組件鐵砧。 ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 77,
+    "name": "訓練魔像",
+    "description": "頌沐召喚一隻裝備3枚紋章的魔像到我方盤面。",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 78,
+    "name": "3費英雄開局",
+    "description": "以1位隨機的3費英雄開局。",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 79,
+    "name": "升級英雄",
+    "description": "對戰開始時獲得1個2星1費英雄。",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 80,
+    "name": "豪華寶藏龍",
+    "description": "3-7階段額外出現一隻提供特殊獎勵的寶藏龍！",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 81,
+    "name": "龍族信使",
+    "description": "巴豆龍賦予所有玩家一隻同階級的龍！",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 82,
+    "name": "龍裔訂閱",
+    "description": "埃達斯每個階段給予我方額外戰利品。 ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 83,
+    "name": "神器鐵砧",
+    "description": "斯溫賦予一個神器鐵砧。 ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 84,
+    "name": "黃金舞會",
+    "description": "逆命使本局的增幅裝置全為金級。",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 85,
+    "name": "稜鏡派對",
+    "description": "瑟菈紛將本局所有增幅裝置變成稜鏡等級。",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 86,
+    "name": "稜鏡終曲",
+    "description": "瑟菈紛將本局所有增幅裝置變成稜鏡等級。",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 87,
+    "name": "稜鏡序曲",
+    "description": "本局最後一個增幅裝置經過極靈的時光淬鍊，變為稜鏡等級。",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 88,
+    "name": "3費英雄開局",
+    "description": "以1位隨機的3費英雄開局。",
+    "percentage": 7.0,
+    "setNumber": 16
+  },
+  {
+    "id": 89,
+    "name": "2費英雄開局",
+    "description": "以1位隨機的2費英雄開局。",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 90,
+    "name": "駭入：開場升級",
+    "description": "艾克將我方開局英雄升至2星。",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 91,
+    "name": "道具組件鐵砧",
+    "description": "波比給予我方2個組件鐵砧。",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 92,
+    "name": "河蟹水坑",
+    "description": "預示者開心地在對戰中塞滿藏有額外戰利品的河蟹。",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 93,
+    "name": "戰利品訂閱",
+    "description": "每階段開始時，柔依會提供五花八門的戰利品！",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 94,
+    "name": "徽章交響樂",
+    "description": "雷茲提供3枚隨機徽章，助你開啟旅途。",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 95,
+    "name": "招財進寶",
+    "description": "貪啃奇每階段給予我方金錢。",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 96,
+    "name": "增幅裝置回合替換",
+    "description": "勒布朗操控了增幅裝置，使本場對戰的增幅裝置提前出現。",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 97,
+    "name": "無遭遇戰。",
+    "description": "符文大地又迎來平靜的一天。本局不會碰上奇遇。",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 98,
+    "name": "咆嘯深淵",
+    "description": "咆嘯深淵風太強，吹來5個隨機1費英雄。",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 99,
+    "name": "戰歌響起",
+    "description": "奮戰到最後的2名選手獲得金錢，準備展開巔峰決戰。",
+    "percentage": 7.0,
+    "setNumber": 16
+  },
+  {
+    "id": 100,
+    "name": "角鬥士競技場",
+    "description": "每有玩家被淘汰，達瑞文會根據淘汰人數贈予存活玩家金錢獎勵。",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 101,
+    "name": "偵察兵團",
+    "description": "提摩的偵察兵團捎來消息，所有增幅裝置的重抽次數+1。",
+    "percentage": 4.0,
+    "setNumber": 16
+  },
+  {
+    "id": 102,
+    "name": "關的贈禮",
+    "description": "前3場聯合徵召後，關贈予玩家1個組件及1把特殊剪刀。",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 103,
+    "name": "活力聯合徵召",
+    "description": "伊瑞莉雅使頭兩次聯合徵召加快，並加入了額外的特殊戰利品！",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 104,
+    "name": "煙火",
+    "description": "在2-7和3-7階段，達瑞斯會在我方棋盤上贈送煙火包。在4-7階段，歡慶馬年！",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 105,
+    "name": "欣欣向榮<br>",
+    "description": "鄂爾在每個階段開始時，都會鍛造一個威力越來越強的鐵砧！",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 106,
+    "name": "賽跑開始！",
+    "description": "史瓦妮在2-4階段舉辦一場賽馬。所有人猜測贏家，並根據猜對的人數獲得戰利品！",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 107,
+    "name": "馬年奔騰",
+    "description": "史瓦妮在我方備戰區放置一匹幸運馬，每贏一場前進1格，每輸一場前進2格。幸運馬抵達終點時，可獲得獎勵！",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 108,
+    "name": "咆嘯深淵",
+    "description": "獲得5個隨機1費英雄，一同歡慶佳節！",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 109,
+    "name": "偵察兵團",
+    "description": "菲歐拉巧妙地為所有增幅裝置增加1次重抽機會。",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 110,
+    "name": "道具組件鐵砧",
+    "description": "鄂爾為我方製作2個組件鐵砧。",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 111,
+    "name": "稜鏡派對",
+    "description": "斯溫點亮慶典，使所有增幅裝置成為稜鏡級。",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 112,
+    "name": "河蟹水坑",
+    "description": "逆命發出制勝手牌，召喚河蟹加入慶典！",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 113,
+    "name": "稜鏡序曲",
+    "description": "斯溫點亮慶典，使第一件增幅裝置成為稜鏡級。",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 114,
+    "name": "戰利品訂閱",
+    "description": "貪啃奇每階段給予我方獎勵。 ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 115,
+    "name": "無遭遇戰。",
+    "description": "所有人都在慶祝！本局不會碰上奇遇。 ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 116,
+    "name": "2費英雄開局",
+    "description": "嘉文四世將我方本局的開局英雄升至2費。",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 117,
+    "name": "招財進寶",
+    "description": "貪啃奇每階段給予我方金錢。 ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 118,
+    "name": "螃蟹狂歡派對",
+    "description": "逆命發出制勝手牌，召喚河蟹加入螃蟹狂歡派對！",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 119,
+    "name": "戰歌響起",
+    "description": "奮戰到最後的2名選手獲得金錢，準備展開巔峰決戰。",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 120,
+    "name": "稜鏡終曲",
+    "description": "斯溫點亮慶典，使最後一件增幅裝置成為稜鏡級。",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 121,
+    "name": "增幅裝置回合替換",
+    "description": "嘉文四世命令本局的增幅裝置提前出現。",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 122,
+    "name": "角鬥士競技場",
+    "description": "每有玩家遭淘汰，阿祈爾會根據淘汰人數贈予存活玩家金錢獎勵。",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 123,
+    "name": "黃金舞會",
+    "description": "安妮使本局所有增幅裝置成為金級。 ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 124,
+    "name": "3費英雄開局",
+    "description": "以1位隨機的3費英雄開局。",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 125,
+    "name": "2費英雄開局",
+    "description": "以1位隨機的2費英雄開局。",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 126,
+    "name": "駭入：開場升級",
+    "description": "卡特蓮娜將我方開局英雄升至2星。",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 147,
+    "name": "2費英雄開局",
+    "description": "以1位隨機的2費英雄開局。",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 148,
+    "name": "3費英雄開局",
+    "description": "以1位隨機的3費英雄開局。",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 149,
+    "name": "升級折扣",
+    "description": "升級所需經驗值減少2點。",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 150,
+    "name": "完整道具鐵砧",
+    "description": "對戰開始時獲得一個完整道具鐵砧。",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 151,
+    "name": "道具組件鐵砧",
+    "description": "起手獲得2個組件鐵砧。",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 152,
+    "name": "徽章交響樂",
+    "description": "對戰開始時獲得3枚隨機徽章。",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 153,
+    "name": "最終對決",
+    "description": "晉級至前2名的選手將獲得70金錢，準備展開巔峰決戰。",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 154,
+    "name": "招財進寶",
+    "description": "每個階段獲得隨機數量的金錢。所有玩家獲得一樣的金錢。",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 155,
+    "name": "金級終曲",
+    "description": "此棋局最後一件增幅裝置會是金級。",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 156,
+    "name": "黃金舞會",
+    "description": "此棋局所有增幅裝置選項都會是金級。",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 157,
+    "name": "金級序曲",
+    "description": "此棋局第一件增幅裝置會是金級。",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 158,
+    "name": "咆嘯深淵",
+    "description": "開場獲得5個隨機1費英雄。",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 159,
+    "name": "道具鑄造場",
+    "description": "所有玩家開始時獲得2個完整道具鐵砧。",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 160,
+    "name": "本局無奇遇",
+    "description": "本局不會碰上奇遇。",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 161,
+    "name": "稜鏡終結特效",
+    "description": "本局最後一件增幅裝置會是稜鏡等級。",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 162,
+    "name": "稜鏡開場",
+    "description": "此棋局第一件增幅裝置會是稜鏡等級。",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 163,
+    "name": "稜鏡派對",
+    "description": "此棋局所有增幅裝置選項都會是稜鏡等級。",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 164,
+    "name": "重抽訂閱",
+    "description": "每階段開始時，獲得免費商店重抽次數。",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 165,
+    "name": "偵察兵團",
+    "description": "本局增幅裝置的重抽次數+1。",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 166,
+    "name": "開場升級",
+    "description": "本局以一名2星英雄開局。",
+    "percentage": 5.0,
+    "setNumber": 18
+  }
+]

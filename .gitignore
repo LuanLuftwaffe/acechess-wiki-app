@@ -1,0 +1,32 @@
+# Large binary and build artifacts
+*.apk
+*.apks
+*.idsig
+dist/*
+!dist/LoLChess_1.383_Mod_SideBySide.apk.zip
+!dist/README.md
+
+# Apktool build cache
+decompiled_base/build/
+
+# Heavy original/temporary dumps and backups
+backups/
+extracted/
+dumps/
+ui_extract/
+decompiled_vi/
+decompiled_xxhdpi/
+
+# HoK Ace specific patcher files and huge reverse-engineering game assets
+patchers/
+docs/reverse-engineering/hok_vi_pack_pc/
+docs/reverse-engineering/hok_vi_pack_android/
+
+# Python & System caches
+__pycache__/
+*.py[cod]
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+desktop.ini

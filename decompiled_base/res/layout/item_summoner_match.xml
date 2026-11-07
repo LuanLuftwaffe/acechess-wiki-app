@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView android:id="@id/svMatch" android:tag="layout/item_summoner_match_0" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dp" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.card.MaterialCardView android:layout_width="wrap_content" android:layout_height="115.0dp">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/llRootView" android:layout_width="wrap_content" android:layout_height="match_parent" android:foreground="@drawable/ripple_background">
+            <View android:orientation="vertical" android:id="@id/viewResult" android:tag="binding_1" android:background="@color/colorAccentDark" android:layout_width="5.0dp" android:layout_height="match_parent" />
+            <FrameLayout android:id="@id/championFl" android:layout_width="60.0dp" android:layout_height="60.0dp" android:layout_marginStart="10.0dp">
+                <ImageView android:layout_gravity="center" android:id="@id/imgCompanion" android:tag="binding_2" android:layout_width="match_parent" android:layout_height="match_parent" />
+                <FrameLayout android:layout_gravity="end|bottom" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:id="@id/imgLevel" android:background="@drawable/shape_rounded_level" android:layout_width="22.0dp" android:layout_height="22.0dp" />
+                    <TextView android:textSize="12.0sp" android:textColor="@color/colorTextPrimary" android:layout_gravity="center" android:id="@id/txtLevel" android:tag="binding_3" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </FrameLayout>
+            </FrameLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/llInfo" android:layout_width="110.0dp" android:layout_height="wrap_content" android:layout_marginStart="10.0dp">
+                <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textColor="@color/colorTextPrimary" android:ellipsize="end" android:id="@id/txtPlacement" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/first_place" android:maxLines="1" android:fontFamily="@font/roboto_medium" />
+                <TextView android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textSize="13.0sp" android:textColor="@color/colorTextSecondary" android:ellipsize="end" android:id="@id/txtMatchTypeDuration" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dp" android:text="@string/ranked" android:maxLines="2" />
+                <TextView android:textAppearance="@style/TextAppearance.Material3.BodySmall" android:textColor="@color/colorTextDisable" android:ellipsize="end" android:id="@id/txtMatchCreation" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dp" android:text="mm/dd/yyyy" android:maxLines="1" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/llAugments" android:paddingTop="10.0dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginStart="5.0dp">
+                <ImageView android:id="@id/imgFirstAugment" android:layout_width="22.0dp" android:layout_height="22.0dp" android:foreground="@drawable/ripple_background" />
+                <ImageView android:id="@id/imgSecondAugment" android:layout_width="22.0dp" android:layout_height="22.0dp" android:layout_marginTop="5.0dp" android:foreground="@drawable/ripple_background" />
+                <ImageView android:id="@id/imgThirdAugment" android:layout_width="22.0dp" android:layout_height="22.0dp" android:layout_marginTop="5.0dp" android:foreground="@drawable/ripple_background" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="600.0dp" android:layout_height="wrap_content" android:layout_marginStart="10.0dp">
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="5.0dp">
+                    <com.lolchess.tft.common.view.MatchUnit android:id="@id/firstMatchUnit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="4.0dp" />
+                    <com.lolchess.tft.common.view.MatchUnit android:id="@id/secondMatchUnit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="4.0dp" />
+                    <com.lolchess.tft.common.view.MatchUnit android:id="@id/thirdMatchUnit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="4.0dp" />
+                    <com.lolchess.tft.common.view.MatchUnit android:id="@id/fourthMatchUnit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="4.0dp" />
+                    <com.lolchess.tft.common.view.MatchUnit android:id="@id/fifthMatchUnit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="4.0dp" />
+                    <com.lolchess.tft.common.view.MatchUnit android:id="@id/sixthMatchUnit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="4.0dp" />
+                    <com.lolchess.tft.common.view.MatchUnit android:id="@id/seventhMatchUnit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="4.0dp" />
+                    <com.lolchess.tft.common.view.MatchUnit android:id="@id/eighthMatchUnit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="4.0dp" />
+                    <com.lolchess.tft.common.view.MatchUnit android:id="@id/ninthMatchUnit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="4.0dp" />
+                    <com.lolchess.tft.common.view.MatchUnit android:id="@id/tenthMatchUnit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="4.0dp" />
+                    <ImageButton android:layout_gravity="end|center" android:id="@id/btnCopyTeamPlannerCode" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/baseline_content_copy_24" android:layout_marginStart="10.0dp" app:tint="@color/colorTextDisable" />
+                </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView android:id="@id/rvTrait" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dp" android:layout_marginStart="2.6999817dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</HorizontalScrollView>

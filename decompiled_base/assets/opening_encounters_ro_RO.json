@@ -1,0 +1,674 @@
+[
+  {
+    "id": 49,
+    "name": "Abonament la aur",
+    "description": "Primește un premiu în bani la începutul fiecărei etape!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 50,
+    "name": "Petrecere prismatică",
+    "description": "E confruntarea finală! Toate augmentările sunt prismatice în acest joc.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 51,
+    "name": "Final prismatic",
+    "description": "Pregătește-te pentru un final măreț – a treia augmentare e prismatică!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 52,
+    "name": "Preludiu prismatic",
+    "description": "Această bătălie începe cu o augmentare prismatică!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 53,
+    "name": "Balta cu Crabi",
+    "description": "Arena e plină de crabi cu recompense bonus.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 54,
+    "name": "Petrecerea Crabilor",
+    "description": "Arena e plină de crabi cu recompense bonus. După etapa 5, aceștia sunt PERICOLE MORTALE.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 55,
+    "name": "Abonament la recompense",
+    "description": "Primește recompense foarte variate la începutul fiecărei etape!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 56,
+    "name": "Gala de aur",
+    "description": "Obține aurul cu trei augmentări aurii!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 57,
+    "name": "Nicovale cu componente",
+    "description": "Primești două ''Nicovale cu componente''. Alege-ți arma!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 58,
+    "name": "Golemi antrenori",
+    "description": "Antrenează-ți golemul! Are 3 embleme aleatorii.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 60,
+    "name": "Început cu cost de 3",
+    "description": "Începi acest meci cu un campion aleatoriu de 3 aur.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 61,
+    "name": "Campion îmbunătățit",
+    "description": "Începi jocul cu un campion aleatoriu de 1 aur la 2 stele.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 62,
+    "name": "Schimbul rundei de augmentări",
+    "description": "Augmentările sunt oferite mai devreme în acest meci.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 63,
+    "name": "Snax mai devreme",
+    "description": "Al doilea ''Snax de putere'' este oferit în runda 2-6 în loc de runda 3-6.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 64,
+    "name": "Marea finală",
+    "description": "E marea finală! Ești pe cont propriu, campionule.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 65,
+    "name": "Episod la plajă",
+    "description": "Episod la plajă! Primești o minge de plajă pe care tacticienii o pot arunca!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 66,
+    "name": "Încăierare regală",
+    "description": "Caruselele au mai mulți concurenți în ele!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 67,
+    "name": "Cercul câștigătorilor",
+    "description": "După top 4, jucătorii rămași primesc 10 aur și două ''Nicovale cu componente''.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 68,
+    "name": "Abonament la aur",
+    "description": "Zoe îți oferă aur în fiecare etapă. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 69,
+    "name": "Petrecere prismatică",
+    "description": "Aurelion Sol face toate augmentările să fie prismatice!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 70,
+    "name": "Final prismatic",
+    "description": "Aurelion Sol face ultima augmentare să fie prismatică!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 71,
+    "name": "Preludiu prismatic",
+    "description": "Aurelion Sol face prima augmentare să fie prismatică!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 72,
+    "name": "Balta cu Crabi",
+    "description": "Bard își invocă prietenii crabi!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 73,
+    "name": "Petrecerea Crabilor",
+    "description": "Bard își invocă prietenii crabi să înceapă Petrecerea Crabilor!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 75,
+    "name": "Gala de aur",
+    "description": "Datorită lui Sohm, toate augmentările oferite în acest joc vor fi aurii. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 76,
+    "name": "Nicovale cu componente",
+    "description": "Swain îți oferă 2 ''Nicovale cu componente''. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 77,
+    "name": "Golemi antrenori",
+    "description": "Sohm invocă pe tabla ta un golem echipat cu 3 embleme.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 78,
+    "name": "Început cu cost de 3",
+    "description": "Începi acest meci cu un campion aleatoriu de 3 aur.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 79,
+    "name": "Campion îmbunătățit",
+    "description": "Începi jocul cu un campion aleatoriu de 1 aur la 2 stele.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 80,
+    "name": "Dragon trezorier",
+    "description": "În runda 3-7, apare un dragon al comorii suplimentar cu oferte speciale!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 81,
+    "name": "Solul dragonului",
+    "description": "Choncc le oferă tuturor jucătorilor un dragon de aceeași categorie!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 82,
+    "name": "Abonament draconic",
+    "description": "Idas îți oferă recompense bonus în fiecare etapă. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 83,
+    "name": "Nicovala artefactelor",
+    "description": "Swain îți oferă o ''Nicovală a artefactelor''. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 84,
+    "name": "Gala de aur",
+    "description": "Twisted Fate împarte doar augmentări aurii în acest joc.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 85,
+    "name": "Petrecere prismatică",
+    "description": "Seraphine transformă toate augmentările din acest joc în augmentări prismatice.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 86,
+    "name": "Final prismatic",
+    "description": "Seraphine transformă toate augmentările din acest joc în augmentări prismatice.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 87,
+    "name": "Preludiu prismatic",
+    "description": "Zilean aduce la perfecțiune ultima augmentare. În acest joc, va fi prismatică.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 88,
+    "name": "Început cu cost de 3",
+    "description": "Începi acest meci cu un campion aleatoriu de 3 aur.",
+    "percentage": 7.0,
+    "setNumber": 16
+  },
+  {
+    "id": 89,
+    "name": "Început cu cost de 2",
+    "description": "Începi acest meci cu un campion aleatoriu de 2 aur.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 90,
+    "name": "HACK: Început îmbunătățit",
+    "description": "Ekko îți îmbunătățește campionul de început la 2 stele.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 91,
+    "name": "Nicovale cu componente",
+    "description": "Poppy îți oferă două ''Nicovale cu componente''.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 92,
+    "name": "Balta cu Crabi",
+    "description": "Solul Riftului umple cu bucurie jocul de crabi cu recompense bonus.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 93,
+    "name": "Abonament la recompense",
+    "description": "Zoe îți oferă recompense foarte variate la începutul fiecărei etape!",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 94,
+    "name": "Ansamblul emblemelor",
+    "description": "Ryze îți oferă 3 embleme aleatorii ca să-ți începi călătoria.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 95,
+    "name": "Abonament la aur",
+    "description": "Tahm Kench îți oferă aur în fiecare etapă.",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 96,
+    "name": "Schimbul rundei de augmentări",
+    "description": "LeBlanc manipulează augmentările, pentru a fi oferite mai devreme în acest joc.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 97,
+    "name": "Nicio întâlnire.",
+    "description": "E o zi calmă în Runeterra. În acest meci nu au loc întâlniri.",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 98,
+    "name": "Abisul Urletelor",
+    "description": "Primești 5 campioni aleatorii de 1 aur cu care să lupți în Abisul Urletelor.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 99,
+    "name": "Silver Scrapes",
+    "description": "Ultimii doi jucători rămași primesc 70 aur pentru o luptă epică de final.",
+    "percentage": 7.0,
+    "setNumber": 16
+  },
+  {
+    "id": 100,
+    "name": "Arena Călăului",
+    "description": "Când un jucător este eliminat, Draven recompensează jucătorii rămași cu aur per jucător eliminat.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 101,
+    "name": "Grup de cercetare",
+    "description": "Grupul de cercetare al lui Teemo a găsit +1 reîncărcare a augmentărilor pentru toate augmentările.",
+    "percentage": 4.0,
+    "setNumber": 16
+  },
+  {
+    "id": 102,
+    "name": "Cadourile lui Gwen",
+    "description": "După primele 3 carusele, Gwen le oferă jucătorilor o componentă și o foarfecă specială.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 103,
+    "name": "Caruselul vitalității",
+    "description": "Irelia crește viteza primelor două carusele și oferă recompense speciale!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 104,
+    "name": "Artificii",
+    "description": "În rundele 2-7 și 307, Darius îți oferă cadou pachete cu artificii pe tablă. În runda 4-7, sărbătorește Anul Calului!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 105,
+    "name": "Prosperitate crescândă<br>",
+    "description": "Ornn făurește o nicovală cu putere tot mai mare la începutul fiecărei etape!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 106,
+    "name": "La curse!",
+    "description": "Sejuani organizează o cursă în runda 2-4. Cei ce ghicesc câștigătorul primesc recompense în funcție de numărul lor!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 107,
+    "name": "Anul Calului",
+    "description": "Sejuani oferă un cal norocos pe bancă. El ocupă 1 loc per victorie și 2 per înfrângere. Primești recompense la final!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 108,
+    "name": "Abisul Urletelor",
+    "description": "Primești 5 campioni aleatorii de 1 aur pentru a sărbători festivalul!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 109,
+    "name": "Grup de cercetare",
+    "description": "Fiora oferă cu grație +1 reîncărcare a augmentărilor pentru toate augmentările.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 110,
+    "name": "Nicovale cu componente",
+    "description": "Ornn îți construiește 2 ''Nicovale cu componente''.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 111,
+    "name": "Petrecere prismatică",
+    "description": "Swain dă drumul festivităților, făcând ca toate augmentările să devină prismatice.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 112,
+    "name": "Balta cu Crabi",
+    "description": "Twisted Fate împarte cărți câștigătoare, chemând Crabul din Rift la sărbătoare!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 113,
+    "name": "Preludiu prismatic",
+    "description": "Swain dă drumul festivităților, făcând prima augmentare să devină prismatică.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 114,
+    "name": "Abonament la recompense",
+    "description": "Tahm Kench îți oferă recompense în fiecare etapă. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 115,
+    "name": "Nicio întâlnire.",
+    "description": "Toată lumea sărbătorește! În acest meci nu au loc întâlniri. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 116,
+    "name": "Început cu cost de 2",
+    "description": "Jarvan IV îți îmbunătățește campionul de început la 2 stele în acest joc.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 117,
+    "name": "Abonament la aur",
+    "description": "Tahm Kench îți oferă aur în fiecare etapă. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 118,
+    "name": "Petrecerea Crabilor",
+    "description": "Twisted Fate împarte cărți câștigătoare, chemând Crabul din Rift la Petrecerea Crabilor!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 119,
+    "name": "Silver Scrapes",
+    "description": "Ultimii doi jucători rămași primesc 70 aur pentru o luptă epică de final.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 120,
+    "name": "Final prismatic",
+    "description": "Swain dă drumul festivităților, făcând ultima augmentare să devină prismatică.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 121,
+    "name": "Schimbul rundei de augmentări",
+    "description": "Jarvan IV le ordonă augmentărilor să fie oferite mai devreme în acest joc.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 122,
+    "name": "Arena Călăului",
+    "description": "Când un jucător este eliminat, Azir recompensează jucătorii rămași cu aur per jucător eliminat.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 123,
+    "name": "Gala de aur",
+    "description": "Datorită lui Annie, toate augmentările oferite în acest joc vor fi aurii. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 124,
+    "name": "Început cu cost de 3",
+    "description": "Începi acest meci cu un campion aleatoriu de 3 aur.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 125,
+    "name": "Început cu cost de 2",
+    "description": "Începi acest meci cu un campion aleatoriu de 2 aur.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 126,
+    "name": "HACK: Început îmbunătățit",
+    "description": "Katarina îți îmbunătățește campionul de început la 2 stele.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 147,
+    "name": "2 Cost Start",
+    "description": "Start with a random 2-cost champion this game.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 148,
+    "name": "3 Cost Start",
+    "description": "Start with a random 3-cost champion this game.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 149,
+    "name": "Cheaper Levels",
+    "description": "Each level costs 2 XP less.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 150,
+    "name": "Completed Item Anvil",
+    "description": "Start with a completed item anvil.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 151,
+    "name": "Component Anvils",
+    "description": "Start with 2 component anvils.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 152,
+    "name": "Emblem Ensemble",
+    "description": "Start with 3 random emblems.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 153,
+    "name": "Final Showdown",
+    "description": "The final two players gain 70 gold for an epic final fight.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 154,
+    "name": "Gold Subscription",
+    "description": "Every stage, gain a random amount of gold. All players gain the same amount.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 155,
+    "name": "Golden Finale",
+    "description": "The last augment offered this game will be gold tier.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 156,
+    "name": "Golden Gala",
+    "description": "All augments offered this game will be gold tier.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 157,
+    "name": "Golden Prelude",
+    "description": "The first augment offered this game will be gold tier.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 158,
+    "name": "Howling Abyss",
+    "description": "Start with 5 random 1-cost units.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 159,
+    "name": "Item Forge",
+    "description": "All players start with 2 completed item anvils.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 160,
+    "name": "No Encounter",
+    "description": "There is no encounter this game.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 161,
+    "name": "Prismatic Finisher",
+    "description": "The last augment offered this game will be prismatic tier.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 162,
+    "name": "Prismatic Opener",
+    "description": "The first augment offered this game will be prismatic tier.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 163,
+    "name": "Prismatic Party",
+    "description": "All augments offered this game will be prismatic tier.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 164,
+    "name": "Reroll Subscription",
+    "description": "At the start of every stage, gain free Shop rerolls.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 165,
+    "name": "Scouting Party",
+    "description": "Gain +1 Augment rerolls this game.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 166,
+    "name": "Upgraded Start",
+    "description": "Start with a 2-star champion this game.",
+    "percentage": 5.0,
+    "setNumber": 18
+  }
+]

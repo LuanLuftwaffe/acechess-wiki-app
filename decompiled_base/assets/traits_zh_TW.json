@@ -1,0 +1,1256 @@
+[
+  {
+    "id": "DA_18_Elderwood",
+    "name": "神木精靈",
+    "description": "獲得可放置的神木精靈植物。",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1597,
+        "style": 1,
+        "description": "一棵石皮樹和一株生命花",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1598,
+        "style": 3,
+        "description": "第二棵石皮樹，且石皮樹增加200生命",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1599,
+        "style": 5,
+        "description": "以及深林保護者",
+        "maxUnits": 8,
+        "minUnits": 7
+      },
+      {
+        "id": 1600,
+        "style": 5,
+        "description": "植物升至2星",
+        "maxUnits": 10,
+        "minUnits": 9
+      },
+      {
+        "id": 1601,
+        "style": 6,
+        "description": "植物升至3星，整座森林醒了過來",
+        "maxUnits": 25000,
+        "minUnits": 11
+      }
+    ],
+    "topFour": 100,
+    "winRate": 95.2,
+    "averagePlacement": 1.1,
+    "playRate": 0.01,
+    "statusDescriptions": [
+      "神木精靈（9） （9）召喚額外生命：140% ⇒ 125%"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_18_LuxUniqueTrait",
+    "name": "聖靈使",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1602,
+        "style": 4,
+        "description": "備戰區或盤面上有1名聖靈使時，商店中所有其他聖靈使的特性都轉化為與該聖靈使相同。<br><br>聖靈使所選擇的特性算作兩次特性加成。",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 66.6,
+    "winRate": 25.4,
+    "averagePlacement": 3.6,
+    "playRate": 1.58,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Slayer",
+    "name": "劫肆者",
+    "description": "劫肆者獲得10%全能吸血。此外，劫肆者會造成額外傷害，對生命低於50%的單位時傷害加倍。",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1603,
+        "style": 1,
+        "description": "12%額外傷害",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1604,
+        "style": 3,
+        "description": "25%額外傷害",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1605,
+        "style": 5,
+        "description": "40%額外傷害",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 60.7,
+    "winRate": 9.6,
+    "averagePlacement": 4.2,
+    "playRate": 0.03,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_DravenUniqueTrait18",
+    "name": "賞金獵手",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1606,
+        "style": 4,
+        "description": "選擇賞金。我方最強大的達瑞文可以推進賞金進度來獲得獎勵。完成賞金後，可選擇另一個。",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 51.9,
+    "winRate": 22.7,
+    "averagePlacement": 4.2,
+    "playRate": 1.59,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Solar",
+    "name": "日輝之光",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1607,
+        "style": 5,
+        "description": "我方英雄獲得5%最大生命的護盾，並造成8%額外魔法傷害。每有1名不同的3星英雄，獲得額外加成：<br><br>1：每有1名3星英雄，護盾值和魔法傷害增加1%。<br>3：15% %i:scaleAS%和12 %i:scaleArmor%%i:scaleMR%<br>5：將40%的額外魔法傷害轉化為真實傷害。<br>8：戰鬥每經過4秒，就有1名3星英雄升至4星。",
+        "maxUnits": 25000,
+        "minUnits": 3
+      }
+    ],
+    "topFour": 55.1,
+    "winRate": 13.2,
+    "averagePlacement": 4.2,
+    "playRate": 1.44,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Sprykin",
+    "name": "百戰老兵",
+    "description": "獲得毛茸茸大夥伴。將百戰老兵放到毛茸茸大夥伴上來選擇騎乘者。",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1608,
+        "style": 1,
+        "description": "騎乘者獲得<br>15% %i:scaleHealth%和15% %i:scaleAS%",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1609,
+        "style": 3,
+        "description": "40% %i:scaleHealth% 35% %i:scaleAS%，且50%的毛茸茸大夥伴技能套用到我方百戰老兵英雄",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1610,
+        "style": 5,
+        "description": "55% %i:scaleHealth% 55% %i:scaleAS%，且100%的毛茸茸大夥伴技能套用到我方百戰老兵英雄",
+        "maxUnits": 25000,
+        "minUnits": 7
+      }
+    ],
+    "topFour": 59.8,
+    "winRate": 10.2,
+    "averagePlacement": 4.1,
+    "playRate": 0.01,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Adaptor",
+    "name": "幻化者",
+    "description": "天生：視物攻或魔攻何者較高，幻化者的技能會隨之變化。<br><br>幻化者增加魔攻或物攻(視何者較高)。",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "D",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1611,
+        "style": 1,
+        "description": "25%或",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1612,
+        "style": 3,
+        "description": "35%或",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1613,
+        "style": 5,
+        "description": "50%或",
+        "maxUnits": 25000,
+        "minUnits": 4
+      }
+    ],
+    "topFour": 75,
+    "winRate": 15.4,
+    "averagePlacement": 3.3,
+    "playRate": 0.02,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Coven",
+    "name": "女巫",
+    "description": "透過擊殺英雄來收集精華，輸掉玩家戰鬥還能獲得更多。<br><br>累積40精華時，可選擇將精華轉換為獎勵，或繼續收集精華。每項獎勵所需的精華數量會逐步增加。",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "D",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1614,
+        "style": 1,
+        "description": "每次擊殺便獲得2精華，每次輸掉便獲得22精華",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1615,
+        "style": 3,
+        "description": "每次擊殺便獲得2，每次輸掉便獲得28",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1616,
+        "style": 3,
+        "description": "每次擊殺便獲得3，每次輸掉便獲得35",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1617,
+        "style": 5,
+        "description": "每次擊殺便獲得10，每次輸掉便獲得60",
+        "maxUnits": 25000,
+        "minUnits": 7
+      }
+    ],
+    "topFour": 47.6,
+    "winRate": 15.7,
+    "averagePlacement": 4.6,
+    "playRate": 0.52,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Eclipse",
+    "name": "日蝕",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1618,
+        "style": 1,
+        "description": "在10秒戰鬥後，日蝕會擊殺生命最低的敵軍，每隔3.5秒重複一次。",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 0,
+    "winRate": 0,
+    "averagePlacement": 0,
+    "playRate": 0,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Hunter",
+    "name": "獵手",
+    "description": "獵手增加物攻。如果獵手連續3秒沒有更換目標，會獲得10%傷害增幅。",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1619,
+        "style": 1,
+        "description": "20% %i:scaleAD%",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1620,
+        "style": 3,
+        "description": "30% %i:scaleAD%",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1621,
+        "style": 3,
+        "description": "45% %i:scaleAD%",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1622,
+        "style": 5,
+        "description": "65% %i:scaleAD%",
+        "maxUnits": 25000,
+        "minUnits": 5
+      }
+    ],
+    "topFour": 61.7,
+    "winRate": 9.6,
+    "averagePlacement": 4,
+    "playRate": 0.01,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Maokai_UniqueTrait",
+    "name": "原始林",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1623,
+        "style": 4,
+        "description": "每當有敵軍在3格內死亡，獲得30永久最大生命。<br><br>目前：0",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 52.9,
+    "winRate": 19.8,
+    "averagePlacement": 4.2,
+    "playRate": 2.44,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Battlemage",
+    "name": "巨岩壁壘",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "D",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1624,
+        "style": 4,
+        "description": "每有一位敵軍以巨岩壁壘為目標，便增加10雙防。",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 47.8,
+    "winRate": 9.6,
+    "averagePlacement": 4.6,
+    "playRate": 0.91,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_Primal18",
+    "name": "野性",
+    "description": "在四大野性祝福中選擇一項。",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1625,
+        "style": 1,
+        "description": "???",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1626,
+        "style": 5,
+        "description": "???",
+        "maxUnits": 25000,
+        "minUnits": 4
+      }
+    ],
+    "topFour": 58.5,
+    "winRate": 12.1,
+    "averagePlacement": 4.1,
+    "playRate": 0.18,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Greenfather",
+    "name": "綠林",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1627,
+        "style": 4,
+        "description": "當我方最強大的埃爾文施放技能時，獲得1顆種子，每次戰鬥多3顆。埃爾文用5顆種子在我方盤面栽種一個棋格，站在上面的單位可獲得增益。<br><br>種子：0 / 5<br><br>目前環境：",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 58.2,
+    "winRate": 22.6,
+    "averagePlacement": 4,
+    "playRate": 2.53,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Invoker",
+    "name": "神諭者",
+    "description": "我方隊伍獲得魔力回復，神諭者的魔力回復效果提升。",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1628,
+        "style": 1,
+        "description": "1 %i:scaleManaRegen% | 3 %i:scaleManaRegen%",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1629,
+        "style": 3,
+        "description": "1 %i:scaleManaRegen% | 4 %i:scaleManaRegen%",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1630,
+        "style": 3,
+        "description": "2 %i:scaleManaRegen% | 6 %i:scaleManaRegen%",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1631,
+        "style": 5,
+        "description": "2 %i:scaleManaRegen% | 8 %i:scaleManaRegen%",
+        "maxUnits": 25000,
+        "minUnits": 5
+      }
+    ],
+    "topFour": 60.4,
+    "winRate": 15.1,
+    "averagePlacement": 4,
+    "playRate": 0.12,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Rapidfire",
+    "name": "速射",
+    "description": "我方隊伍增加10%攻速。速射英雄每次普攻都會獲得更多攻速，最多可累加10層。",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1632,
+        "style": 1,
+        "description": "每次普攻+3% %i:scaleAS%",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1633,
+        "style": 3,
+        "description": "每次普攻+5% %i:scaleAS%",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1634,
+        "style": 3,
+        "description": "每次普攻+7% %i:scaleAS%",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1635,
+        "style": 5,
+        "description": "每次普攻+10% %i:scaleAS%",
+        "maxUnits": 25000,
+        "minUnits": 5
+      }
+    ],
+    "topFour": 59.4,
+    "winRate": 13.6,
+    "averagePlacement": 4,
+    "playRate": 0.31,
+    "statusDescriptions": [
+      "速射 每次普攻攻速：3/5/8/12% ⇒ 3/5/7/10%"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_Juggernaut18",
+    "name": "重裝戰士",
+    "description": "我方隊伍增加續戰力。重裝戰士增加更多。",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1636,
+        "style": 1,
+        "description": "4% %i:scaleDR%或20% %i:scaleDR%",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1637,
+        "style": 3,
+        "description": "6% %i:scaleDR%或30% %i:scaleDR%",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1638,
+        "style": 5,
+        "description": "8% %i:scaleDR%或42% %i:scaleDR%",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 51.4,
+    "winRate": 13.5,
+    "averagePlacement": 4.4,
+    "playRate": 5.69,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Inferno",
+    "name": "地獄火使者",
+    "description": "地獄火使者傷害會<TFTKeyword>燃燒</TFTKeyword>並造成33%<TFTKeyword>重創</TFTKeyword>，持續3秒。地獄火使者燃燒可與其他燃燒效果累加。",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1639,
+        "style": 1,
+        "description": "1%燃燒",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1640,
+        "style": 3,
+        "description": "戰鬥結束後，點燃1格沒有地獄火使者英雄的商店欄位，刷新出高一階的英雄",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1641,
+        "style": 5,
+        "description": "點燃2格商店欄位，3%燃燒",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1642,
+        "style": 5,
+        "description": "點燃4格商店欄位，4%燃燒",
+        "maxUnits": 25000,
+        "minUnits": 7
+      }
+    ],
+    "topFour": 62.4,
+    "winRate": 22.9,
+    "averagePlacement": 3.7,
+    "playRate": 0.03,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_AluneUniqueTrait18",
+    "name": "調節",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1643,
+        "style": 4,
+        "description": "我方最強大的亞盧妮在每次施放技能後進入新的月相。當月亮為半月或更小時，我方隊伍增加5%續戰力。若月亮更大，我方隊伍獲得7%傷害增幅。",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 65.4,
+    "winRate": 21.8,
+    "averagePlacement": 3.7,
+    "playRate": 1.78,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Rival",
+    "name": "仇敵",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1644,
+        "style": 5,
+        "description": "場上只有1名仇敵時才會生效。<br><br>仇敵擊殺敵軍時會累積參與擊殺數，若擊殺另一名仇敵，獲得3擊殺數。",
+        "maxUnits": 1,
+        "minUnits": 1
+      },
+      {
+        "id": 1645,
+        "style": 5,
+        "description": "仇敵可以同時上場。卡力斯施放技能獲得魔力時，雷葛爾獲得該數值50%的魔力。雷葛爾施放技能回復自己生命時，卡力斯獲得該回復量100%的生命。",
+        "maxUnits": 25000,
+        "minUnits": 2
+      }
+    ],
+    "topFour": 52.9,
+    "winRate": 13.6,
+    "averagePlacement": 4.3,
+    "playRate": 1.29,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Vanguard",
+    "name": "先鋒戰士",
+    "description": "戰鬥開始且生命降至50%時：先鋒戰士獲得最大生命護盾，持續10秒。",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1646,
+        "style": 1,
+        "description": "18%最大生命",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1647,
+        "style": 3,
+        "description": "30%最大生命",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1648,
+        "style": 5,
+        "description": "40%最大生命。受護盾保護時，獲得5%續戰力。",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 65.5,
+    "winRate": 25,
+    "averagePlacement": 3.6,
+    "playRate": 0.1,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Brawler",
+    "name": "武鬥家",
+    "description": "我方隊伍增加120最大生命。武鬥家增加更多。",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1649,
+        "style": 1,
+        "description": "25% %i:scaleHealth%",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1650,
+        "style": 3,
+        "description": "40% %i:scaleHealth%",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1651,
+        "style": 5,
+        "description": "65% %i:scaleHealth%",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 63.8,
+    "winRate": 18.3,
+    "averagePlacement": 3.6,
+    "playRate": 0.02,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Blackthorn",
+    "name": "黑荊棘",
+    "description": "戰鬥開始前，位於黑荊棘棋格的友軍會被獻祭，為友方英雄提供生命。<br><br>黑荊棘英雄會根據獻祭者的職業、星等與費用獲得額外能力值。",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1652,
+        "style": 1,
+        "description": "175 %i:scaleHealth%",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1653,
+        "style": 3,
+        "description": "350 %i:scaleHealth%；增益強化30%",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1654,
+        "style": 5,
+        "description": "600 %i:scaleHealth%；增益強化50%",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 63.4,
+    "winRate": 22.3,
+    "averagePlacement": 3.8,
+    "playRate": 0.11,
+    "statusDescriptions": [
+      "黑荊棘 （6）強化加成：60% ⇒ 50% 基礎魔攻犧牲：12%傷害增幅 + 2魔力回復 ⇒ 10%傷害增幅 + 2魔力回復"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_18_Executioner",
+    "name": "處刑者",
+    "description": "",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1655,
+        "style": 1,
+        "description": "處刑者獲得<TFTKeyword>精準</TFTKeyword>和15%暴擊率。",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1656,
+        "style": 3,
+        "description": "此外，敵軍持續流血3秒，受到25%額外真實傷害。",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1657,
+        "style": 5,
+        "description": "流血傷害增加到35%。",
+        "maxUnits": 25000,
+        "minUnits": 4
+      }
+    ],
+    "topFour": 69,
+    "winRate": 19.3,
+    "averagePlacement": 3.5,
+    "playRate": 0.62,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_ApexPredator",
+    "name": "頂尖掠食者",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1658,
+        "style": 4,
+        "description": "遠古巨龍會占用2個隊伍人口，且使峽谷巨獸特性+2。",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 56.8,
+    "winRate": 21.1,
+    "averagePlacement": 4,
+    "playRate": 1.93,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_Riftbeast18",
+    "name": "峽谷巨獸",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1659,
+        "style": 1,
+        "description": "使用首領標記賦予峽谷巨獸專屬增益",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1660,
+        "style": 3,
+        "description": "每3場戰鬥後，下一輪商店將被峽谷巨獸占據。",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1661,
+        "style": 5,
+        "description": "戰鬥開始時及之後每5秒，峽谷巨獸獲得<br>5% %i:scaleAD% 5% %i:scaleAP% 6% %i:scaleAS%<br>+5 %i:scaleArmor% +5 %i:scaleMR% +50 %i:scaleHealth% +1 %i:scaleManaRegen%",
+        "maxUnits": 9,
+        "minUnits": 7
+      },
+      {
+        "id": 1662,
+        "style": 5,
+        "description": "最大隊伍規模+2",
+        "maxUnits": 25000,
+        "minUnits": 10
+      }
+    ],
+    "topFour": 90.2,
+    "winRate": 42.7,
+    "averagePlacement": 2.3,
+    "playRate": 0.09,
+    "statusDescriptions": [
+      "峽谷巨獸（7） 物攻／魔攻：6% ⇒ 5%"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_18_Caustic",
+    "name": "腐蝕",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1663,
+        "style": 4,
+        "description": "腐蝕傷害會對敵軍造成30%削抗和破甲，持續4秒。",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 53.6,
+    "winRate": 8.3,
+    "averagePlacement": 4.4,
+    "playRate": 1.95,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Fae",
+    "name": "妖精",
+    "description": "我方隊伍造成的傷害、治療和護盾會吸引皮克斯。<br><br>每隻皮克斯會賦予妖精英雄物攻和魔攻，當他們的生命低於50%時，會根據皮克斯數量治療生命。",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "D",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1664,
+        "style": 1,
+        "description": "4.5% 和3%治療。",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1665,
+        "style": 5,
+        "description": "7% 和5%治療。在吸引7隻皮克斯後，接下來會吸引黃金皮克斯，黃金皮克斯會帶來金錢",
+        "maxUnits": 25000,
+        "minUnits": 4
+      }
+    ],
+    "topFour": 47.1,
+    "winRate": 14.4,
+    "averagePlacement": 4.6,
+    "playRate": 0.2,
+    "statusDescriptions": [
+      "妖精（2/4） 治療量：2.5/4% ⇒ 3/5% 第四個皮克斯門檻：30000 ⇒ 25,000 第五個皮克斯門檻：70000 ⇒ 60,000 第六個皮克斯門檻：110000 ⇒ 100,000"
+    ],
+    "status": 1
+  },
+  {
+    "id": "DA_18_Lunar",
+    "name": "月光使者",
+    "description": "月光使者英雄與相鄰友軍會獲得攻速和魔攻。月光使者英雄額外增加100%。",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1666,
+        "style": 1,
+        "description": "7% %i:scaleAS%，7% %i:scaleAP%",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1667,
+        "style": 3,
+        "description": "10% %i:scaleAS%，12% %i:scaleAP%",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1668,
+        "style": 3,
+        "description": "14% %i:scaleAS%，16% %i:scaleAP%",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1669,
+        "style": 5,
+        "description": "18% %i:scaleAS%，20% %i:scaleAP%",
+        "maxUnits": 25000,
+        "minUnits": 5
+      }
+    ],
+    "topFour": 76.9,
+    "winRate": 26.6,
+    "averagePlacement": 3.1,
+    "playRate": 0.06,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Defender",
+    "name": "捍衛者",
+    "description": "我方隊伍增加12雙防。捍衛者增加更多。",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1670,
+        "style": 1,
+        "description": "25",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1671,
+        "style": 3,
+        "description": "60",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1672,
+        "style": 5,
+        "description": "115",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 53,
+    "winRate": 11.7,
+    "averagePlacement": 4.3,
+    "playRate": 0.23,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Spellweaver",
+    "name": "術士",
+    "description": "我方隊伍增加10%魔攻。術士增加更多魔攻，且每當一位術士施放技能時，所有術士都會額外獲得魔攻。",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1673,
+        "style": 1,
+        "description": "10% %i:scaleAP%，每次施放再獲得+1%%i:scaleAP%",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1674,
+        "style": 3,
+        "description": "30% %i:scaleAP%，每次施放再獲得+1%%i:scaleAP%",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1675,
+        "style": 5,
+        "description": "55% %i:scaleAP%，每次施放再獲得+2% %i:scaleAP%",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 69.2,
+    "winRate": 24.8,
+    "averagePlacement": 3.5,
+    "playRate": 0.14,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_ZyraUniqueTrait",
+    "name": "荊棘少女",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1676,
+        "style": 4,
+        "description": "我方隊伍增加5%續戰力，若枷蘿的植物存活6株以上，增加到10%。",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 52.1,
+    "winRate": 12.3,
+    "averagePlacement": 4.4,
+    "playRate": 2.03,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_FloraFatalis18",
+    "name": "絕命花華",
+    "description": "絕命花華英雄在參與擊殺時會收割目標，獲得：",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1677,
+        "style": 1,
+        "description": "10魔力",
+        "maxUnits": 1,
+        "minUnits": 1
+      },
+      {
+        "id": 1678,
+        "style": 5,
+        "description": "並回復生命最低的友軍7%最大生命。",
+        "maxUnits": 25000,
+        "minUnits": 2
+      }
+    ],
+    "topFour": 55.4,
+    "winRate": 13.8,
+    "averagePlacement": 4.2,
+    "playRate": 2.4,
+    "statusDescriptions": [
+      "絕命花華 最大生命治療量：8% ⇒ 7%"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_18_Summoner",
+    "name": "喚物大師",
+    "description": "喚物大師會用不同方式強化其召喚物。<br><br>約瑞科：+30%生命<br>阿祈爾：+20%傷害<br>巨喙鳥媽媽：+20%傷害<br>枷蘿：+4次植物攻擊",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1679,
+        "style": 1,
+        "description": "強化召喚物",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1680,
+        "style": 5,
+        "description": "每項效果提升50%",
+        "maxUnits": 25000,
+        "minUnits": 3
+      }
+    ],
+    "topFour": 55.1,
+    "winRate": 13.8,
+    "averagePlacement": 4.2,
+    "playRate": 1.83,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Blossom",
+    "name": "盛放繁花",
+    "description": "戰鬥結束後，你的神火獲得強化。<br><br>盛放繁花英雄增加物攻、魔攻與10%最大生命。",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1681,
+        "style": 1,
+        "description": "神火會升級，12%%i:scaleAD%%i:scaleAP%",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1682,
+        "style": 3,
+        "description": "每間商店都會有神火，30%%i:scaleAD%%i:scaleAP%",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1683,
+        "style": 5,
+        "description": "購買神火候獲得4金錢，50% %i:scaleAD%%i:scaleAP%",
+        "maxUnits": 8,
+        "minUnits": 7
+      },
+      {
+        "id": 1684,
+        "style": 5,
+        "description": "每回合你可以購買2神火，55% %i:scaleAD%%i:scaleAP%",
+        "maxUnits": 10,
+        "minUnits": 9
+      },
+      {
+        "id": 1685,
+        "style": 6,
+        "description": "神火充溢力量，100% %i:scaleAD%%i:scaleAP%",
+        "maxUnits": 25000,
+        "minUnits": 11
+      }
+    ],
+    "topFour": 100,
+    "winRate": 86.8,
+    "averagePlacement": 1.2,
+    "playRate": 0,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_Emerald18",
+    "name": "翡翠化身",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1686,
+        "style": 4,
+        "description": "將一名友軍拖曳到我方最強大的塔里克身上組成搭檔，該友軍可以獲得塔里克技能的強大加成。",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 58.2,
+    "winRate": 20.7,
+    "averagePlacement": 4,
+    "playRate": 3.41,
+    "statusDescriptions": [],
+    "status": null
+  }
+]

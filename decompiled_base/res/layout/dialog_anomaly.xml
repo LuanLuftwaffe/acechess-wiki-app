@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:tag="layout/dialog_anomaly_0" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:background="@color/colorPrimary" android:padding="@dimen/dialog_padding" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:id="@id/llRootView" android:layout_width="match_parent" android:layout_height="match_parent">
+            <ImageView android:layout_gravity="center" android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_anomaly_white" />
+            <TextView android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall" android:textColor="@color/colorTextPrimary" android:layout_gravity="center" android:tag="binding_1" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.lolchess.tft.common.view.TextViewWithImages android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/colorTextSecondary" android:id="@id/txtItemDescription" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" />
+        </LinearLayout>
+        <TextView android:textAppearance="@style/TextAppearance.Material3.TitleLarge" android:textColor="@color/colorTextPrimary" android:layout_gravity="center_horizontal" android:id="@id/txtDataNotFound" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/data_not_found" />
+    </FrameLayout>
+</androidx.core.widget.NestedScrollView>

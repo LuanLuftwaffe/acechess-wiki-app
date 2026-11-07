@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/settings_graph" app:startDestination="@id/settingsFragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="SettingsFragment" android:name="com.lolchess.tft.ui.settings.views.SettingsFragment" android:id="@id/settingsFragment">
+        <action android:id="@id/action_settingsFragment_to_adjustBubbleSizeDialog" app:destination="@id/adjustBubbleSizeDialog" />
+        <action android:id="@id/action_settingsFragment_to_privacyPolicyDialog" app:destination="@id/privacyPolicyDialog" />
+        <action android:id="@id/action_settingsFragment_to_creditDialog" app:destination="@id/creditDialog" />
+        <action android:id="@id/action_settingsFragment_to_introductionActivity" app:destination="@id/introductionActivity" />
+        <action android:id="@id/action_settingsFragment_to_settingsEditBubbleFragment" app:destination="@id/settingsEditBubbleFragment" />
+    </fragment>
+    <activity android:label="IntroductionActivity" android:name="com.lolchess.tft.ui.intro.views.IntroductionActivity" android:id="@id/introductionActivity">
+        <argument android:name="isLanguageChange" app:argType="boolean" />
+    </activity>
+    <dialog android:label="AdjustBubbleSizeDialog" android:name="com.lolchess.tft.ui.settings.dialog.AdjustBubbleSizeDialog" android:id="@id/adjustBubbleSizeDialog" />
+    <dialog android:label="PrivacyPolicyDialog" android:name="com.lolchess.tft.ui.settings.dialog.PrivacyPolicyDialog" android:id="@id/privacyPolicyDialog" />
+    <dialog android:label="CreditDialog" android:name="com.lolchess.tft.ui.settings.dialog.CreditDialog" android:id="@id/creditDialog" />
+    <fragment android:label="@string/edit_bubble_order" android:name="com.lolchess.tft.ui.settings.views.SettingsEditBubbleFragment" android:id="@id/settingsEditBubbleFragment" />
+</navigation>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_gravity="center|bottom" android:id="@id/flRemoveBubble" android:paddingTop="20.0dp" android:paddingBottom="@dimen/remove_bubble_padding_bottom" android:clipChildren="false" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="wrap_content" android:translationY="200.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:layout_gravity="center" android:id="@id/flRemoveBubbleContent" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:layout_gravity="center" android:id="@id/imgRemoveBubble" android:background="@drawable/circle_remove_bubble" android:layout_width="50.0dp" android:layout_height="50.0dp" />
+        <ImageView android:layout_gravity="center" android:id="@id/imgFakeBubble" android:background="@drawable/bg_fake_remove_bubble" android:padding="6.0dp" android:layout_width="55.0dp" android:layout_height="55.0dp" android:src="@drawable/ic_logo_circle" android:alpha="0.3" android:scaleX="0.85" android:scaleY="0.85" />
+        <ImageView android:layout_gravity="center" android:layout_width="28.0dp" android:layout_height="28.0dp" android:src="@drawable/ic_close_white_24dp" android:alpha="0.7" />
+    </FrameLayout>
+</FrameLayout>

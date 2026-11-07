@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@color/colorDrawer" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioGroup android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingEnd="10.0dp">
+        <RadioButton android:textColor="@color/colorTextSecondary" android:layout_gravity="start" android:id="@id/radTeamComposition" android:paddingTop="10.0dp" android:paddingBottom="10.0dp" android:layout_width="match_parent" android:layout_height="match_parent" android:textAlignment="textStart" android:layoutDirection="rtl" android:buttonTint="@color/colorWhite" />
+        <RadioButton android:textColor="@color/colorTextSecondary" android:layout_gravity="start" android:id="@id/radMyTeamComposition" android:paddingTop="10.0dp" android:paddingBottom="10.0dp" android:layout_width="match_parent" android:layout_height="match_parent" android:textAlignment="textStart" android:layoutDirection="rtl" android:buttonTint="@color/colorWhite" />
+        <RadioButton android:textColor="@color/colorTextSecondary" android:layout_gravity="start" android:id="@id/radBoth" android:paddingTop="10.0dp" android:paddingBottom="10.0dp" android:layout_width="match_parent" android:layout_height="match_parent" android:textAlignment="textStart" android:layoutDirection="rtl" android:buttonTint="@color/colorWhite" />
+    </RadioGroup>
+</LinearLayout>

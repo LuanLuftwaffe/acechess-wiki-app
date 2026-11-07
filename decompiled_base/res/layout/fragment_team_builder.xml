@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:tag="layout/fragment_team_builder_0" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.material.appbar.AppBarLayout android:background="@color/colorPrimaryDark" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="wrap_content" app:liftOnScroll="true">
+        <com.google.android.material.appbar.MaterialToolbar android:id="@id/toolbar" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_scrollEffect="compress" app:layout_scrollFlags="scroll|enterAlways|snap" app:menu="@menu/menu_team_builder" app:navigationIcon="@drawable/ic_menu_white_24dp" app:navigationIconTint="@color/colorTextPrimary" app:title="@string/team_builder" />
+        <LinearLayout android:orientation="vertical" android:id="@id/llPlacementZone" android:paddingTop="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="16.0dp" android:paddingEnd="16.0dp">
+            <LinearLayout android:orientation="horizontal" android:id="@id/llFirstRow" android:layout_width="match_parent" android:layout_height="50.0dp" android:elevation="4.0dp">
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/llSecondRow" android:layout_width="match_parent" android:layout_height="50.0dp" android:elevation="3.0dp">
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/llThirdRow" android:layout_width="match_parent" android:layout_height="50.0dp" android:elevation="2.0dp">
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/llFourthRow" android:layout_width="match_parent" android:layout_height="50.0dp" android:elevation="1.0dp">
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+                <com.lolchess.tft.common.view.PlacementHexView android:layout_width="50.0dp" android:layout_height="match_parent" android:foreground="@drawable/ripple_circle_background" />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView android:orientation="horizontal" android:id="@id/rvActiveTrait" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dp" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp">
+            <HorizontalScrollView android:id="@id/svCategory" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_marginEnd="15.0dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@id/txtItems" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+                <com.google.android.flexbox.FlexboxLayout android:layout_width="wrap_content" android:layout_height="wrap_content" app:flexDirection="row">
+                    <TextView android:textAppearance="@style/TextAppearance.Material3.LabelSmall" android:textSize="13.0sp" android:textColor="@drawable/text_selector_champion_pool" android:ellipsize="end" android:id="@id/txtCategoryOrigin" android:background="@drawable/selector_champion_pool_category" android:paddingTop="6.0dp" android:paddingBottom="6.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/origin" android:maxLines="1" android:paddingStart="10.0dp" android:paddingEnd="10.0dp" />
+                    <TextView android:textAppearance="@style/TextAppearance.Material3.LabelSmall" android:textSize="13.0sp" android:textColor="@drawable/text_selector_champion_pool" android:ellipsize="end" android:id="@id/txtCategoryClass" android:background="@drawable/selector_champion_pool_category" android:paddingTop="6.0dp" android:paddingBottom="6.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/classs" android:maxLines="1" android:paddingStart="10.0dp" android:paddingEnd="10.0dp" android:layout_marginStart="5.0dp" />
+                    <TextView android:textAppearance="@style/TextAppearance.Material3.LabelSmall" android:textSize="13.0sp" android:textColor="@drawable/text_selector_champion_pool" android:ellipsize="end" android:id="@id/txtCategoryName" android:background="@drawable/selector_champion_pool_category" android:paddingTop="6.0dp" android:paddingBottom="6.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/name" android:maxLines="1" android:paddingStart="10.0dp" android:paddingEnd="10.0dp" android:layout_marginStart="5.0dp" />
+                    <TextView android:textAppearance="@style/TextAppearance.Material3.LabelSmall" android:textSize="13.0sp" android:textColor="@drawable/text_selector_champion_pool" android:ellipsize="end" android:id="@id/txtCategoryCost" android:background="@drawable/selector_champion_pool_category" android:paddingTop="6.0dp" android:paddingBottom="6.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cost" android:maxLines="1" android:paddingStart="10.0dp" android:paddingEnd="10.0dp" android:layout_marginStart="5.0dp" />
+                </com.google.android.flexbox.FlexboxLayout>
+            </HorizontalScrollView>
+            <TextView android:textAppearance="@style/TextAppearance.Material3.LabelSmall" android:textSize="13.0sp" android:textColor="@drawable/text_selector_champion_pool" android:id="@id/txtItems" android:background="@drawable/selector_champion_pool_category" android:paddingTop="6.0dp" android:paddingBottom="6.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/items" android:paddingStart="10.0dp" android:paddingEnd="10.0dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dp" android:paddingStart="16.0dp" android:paddingEnd="16.0dp" app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rvChampionPool" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="match_parent" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rvChampionPoolTrait" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="match_parent" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rvItemPool" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="match_parent" />
+    </FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:tag="layout/item_overlay_utility_land_0" android:layout_width="match_parent" android:layout_height="match_parent" android:baselineAligned="false" android:weightSum="2.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:tag="binding_1" android:background="@color/colorPrimary" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+        <include android:id="@id/layoutChampion" android:visibility="invisible" layout="@layout/layout_champion_details" />
+        <include android:id="@id/layoutItem" android:visibility="invisible" layout="@layout/dialog_item" />
+    </FrameLayout>
+    <include android:id="@id/layoutUtility" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0" layout="@layout/layout_utility" />
+</LinearLayout>

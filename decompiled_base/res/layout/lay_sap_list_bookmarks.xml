@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?android:selectableItemBackground" android:layout_width="match_parent" android:layout_height="60.0dp" android:layout_marginLeft="13.299988dp" android:layout_marginRight="13.299988dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/list_bookmarks_lay1" android:layout_width="wrap_content" android:layout_height="60.0dp">
+        <ImageView android:id="@id/iv_bookmarks_img" android:layout_width="20.0dp" android:layout_height="20.0dp" android:layout_marginLeft="10.0dp" android:layout_marginRight="13.299988dp" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/list_bookmarks_lay2" android:layout_width="wrap_content" android:layout_height="60.0dp" android:layout_toLeftOf="@id/list_bookmarks_lay3" android:layout_toRightOf="@id/list_bookmarks_lay1">
+        <TextView android:textSize="12.0sp" android:textStyle="bold" android:textColor="?colorOnSurface" android:id="@id/tv_bookmarks_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dp" android:singleLine="true" />
+        <TextView android:textSize="10.0sp" android:textColor="?colorOnSurfaceVariant" android:id="@id/tv_bookmarks_url" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dp" android:singleLine="true" />
+    </LinearLayout>
+    <RelativeLayout android:id="@id/list_bookmarks_lay3" android:layout_width="60.0dp" android:layout_height="60.0dp" android:layout_alignParentRight="true">
+        <View android:id="@id/iv_bookmarks_star" android:background="@drawable/bookmark_icon01" android:layout_width="16.599976dp" android:layout_height="16.599976dp" android:layout_marginRight="10.0dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <View android:background="?colorOutlineVariant" android:layout_width="match_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" />
+</RelativeLayout>

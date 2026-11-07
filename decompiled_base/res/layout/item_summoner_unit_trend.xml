@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView android:tag="layout/item_summoner_unit_trend_0" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dp" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/llRootView" android:paddingTop="10.0dp" android:paddingBottom="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="10.0dp" android:paddingEnd="6.0dp">
+        <com.lolchess.tft.common.view.ChampionSquareView android:id="@id/imgChampion" android:tag="binding_1" android:layout_width="48.0dp" android:layout_height="48.0dp" app:unlockIconSize="14.0dp" />
+        <LinearLayout android:orientation="vertical" android:layout_width="80.0dp" android:layout_height="wrap_content" android:layout_marginStart="8.0dp">
+            <TextView android:textAppearance="@style/TextAppearance.Material3.TitleSmall" android:textColor="@color/colorTextPrimary" android:ellipsize="end" android:id="@id/txtChampionName" android:tag="binding_2" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="1" />
+            <TextView android:textAppearance="@style/TextAppearance.Material3.LabelMedium" android:textColor="@color/colorTextSecondary" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/txtAverageRank" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dp" android:maxLines="1" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:weightSum="3.0" android:layout_marginStart="6.0dp">
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <LinearLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_star_yellow_500_18dp" app:tint="@color/colorSynergyStatusBronze" />
+                </LinearLayout>
+                <TextView android:textAppearance="@style/TextAppearance.Material3.BodySmall" android:textColor="@color/colorTextSecondary" android:ellipsize="end" android:gravity="center" android:id="@id/txtTier1Count" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dp" android:text="0 Game" android:maxLines="1" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <LinearLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_star_yellow_500_18dp" app:tint="@color/colorSynergyStatusSilver" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_star_yellow_500_18dp" app:tint="@color/colorSynergyStatusSilver" />
+                </LinearLayout>
+                <TextView android:textAppearance="@style/TextAppearance.Material3.BodySmall" android:textColor="@color/colorTextSecondary" android:ellipsize="end" android:gravity="center" android:id="@id/txtTier2Count" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dp" android:text="0 Game" android:maxLines="1" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <LinearLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_star_yellow_500_18dp" app:tint="@color/colorSynergyStatusGold" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_star_yellow_500_18dp" app:tint="@color/colorSynergyStatusGold" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_star_yellow_500_18dp" app:tint="@color/colorSynergyStatusGold" />
+                </LinearLayout>
+                <TextView android:textAppearance="@style/TextAppearance.Material3.BodySmall" android:textColor="@color/colorTextSecondary" android:ellipsize="end" android:gravity="center" android:id="@id/txtTier3Count" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dp" android:text="0 Game" android:maxLines="1" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

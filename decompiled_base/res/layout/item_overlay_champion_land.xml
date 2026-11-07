@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:tag="layout/item_overlay_champion_land_0" android:background="@color/colorPrimaryDark" android:layout_width="match_parent" android:layout_height="match_parent" android:baselineAligned="false" android:weightSum="2.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:tag="binding_1" android:padding="5.0dp" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+        <include android:id="@id/layoutChampionDetails" layout="@layout/layout_champion_details" />
+    </FrameLayout>
+    <FrameLayout android:tag="binding_2" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+        <include android:id="@id/layoutChampions" layout="@layout/item_overlay_champion" />
+    </FrameLayout>
+</LinearLayout>

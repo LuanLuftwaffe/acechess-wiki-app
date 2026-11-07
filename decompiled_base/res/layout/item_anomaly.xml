@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView android:tag="layout/item_anomaly_0" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:paddingTop="12.0dp" android:paddingBottom="12.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:foreground="@drawable/ripple_background">
+            <ImageView android:id="@id/imgItem" android:background="@drawable/shape_stroke_color_accent" android:layout_width="40.0dp" android:layout_height="40.0dp" android:src="@drawable/ic_anomaly" android:layout_marginStart="16.0dp" />
+            <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="8.0dp" android:layout_marginEnd="16.0dp">
+                <TextView android:textAppearance="@style/TextAppearance.Material3.TitleSmall" android:textSize="14.0sp" android:textColor="@color/colorTextPrimary" android:id="@id/txtItemName" android:tag="binding_1" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <com.lolchess.tft.common.view.TextViewWithImages android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textSize="13.0sp" android:textColor="@color/colorTextSecondary" android:id="@id/txtItemDescription" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

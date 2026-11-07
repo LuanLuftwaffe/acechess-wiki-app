@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:tag="layout/fragment_summoner_trend_0" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+        <TextView android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/colorTextDisable" android:gravity="center" android:id="@id/txtEmptyContent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dp" android:text="@string/recent_matches_empty" android:layout_marginStart="20.0dp" android:layout_marginEnd="20.0dp" />
+        <LinearLayout android:orientation="vertical" android:id="@id/llContent" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
+            <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textColor="@color/colorTextPrimary" android:ellipsize="end" android:paddingTop="15.0dp" android:paddingBottom="13.5dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/most_frequent_units" android:maxLines="1" android:paddingStart="16.0dp" android:paddingEnd="16.0dp" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rvSummonerUnitTrend" android:layout_width="match_parent" android:layout_height="wrap_content" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textColor="@color/colorTextPrimary" android:ellipsize="end" android:paddingTop="15.0dp" android:paddingBottom="13.5dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/most_frequent_trait_combination" android:maxLines="1" android:paddingStart="16.0dp" android:paddingEnd="10.0dp" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rvSummonerTraitTrend" android:layout_width="match_parent" android:layout_height="wrap_content" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

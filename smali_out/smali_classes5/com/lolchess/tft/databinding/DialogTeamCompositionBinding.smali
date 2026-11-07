@@ -1,0 +1,299 @@
+.class public abstract Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;
+.super Landroidx/databinding/ViewDataBinding;
+.source "SourceFile"
+
+
+# instance fields
+.field public final flTier:Landroid/widget/FrameLayout;
+
+.field public final imgFirstAnomaly:Landroid/widget/TextView;
+
+.field public final imgFirstAugment:Lcom/lolchess/tft/common/view/GridViewSquareItem;
+
+.field public final imgSecondAnomaly:Landroid/widget/TextView;
+
+.field public final imgSecondAugment:Lcom/lolchess/tft/common/view/GridViewSquareItem;
+
+.field public final imgThirdAnomaly:Landroid/widget/TextView;
+
+.field public final imgThirdAugment:Lcom/lolchess/tft/common/view/GridViewSquareItem;
+
+.field public final llAnomaly:Lcom/google/android/flexbox/FlexboxLayout;
+
+.field public final llAugments:Landroid/widget/LinearLayout;
+
+.field protected mIsOverlay:Z
+    .annotation runtime Landroidx/databinding/Bindable;
+    .end annotation
+.end field
+
+.field protected mTeamComposition:Lcom/lolchess/tft/model/team/TeamComposition;
+    .annotation runtime Landroidx/databinding/Bindable;
+    .end annotation
+.end field
+
+.field public final placementHexesView:Lcom/lolchess/tft/common/view/PlacementHexesView;
+
+.field public final rvCarousel:Landroidx/recyclerview/widget/RecyclerView;
+
+.field public final rvEarlyChampions:Landroidx/recyclerview/widget/RecyclerView;
+
+.field public final rvItemRequired:Landroidx/recyclerview/widget/RecyclerView;
+
+.field public final rvOption:Landroidx/recyclerview/widget/RecyclerView;
+
+.field public final txtCarousel:Landroid/widget/TextView;
+
+.field public final txtTeamName:Landroid/widget/TextView;
+
+.field public final txtTeamTier:Landroid/widget/TextView;
+
+
+# direct methods
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/FrameLayout;Landroid/widget/TextView;Lcom/lolchess/tft/common/view/GridViewSquareItem;Landroid/widget/TextView;Lcom/lolchess/tft/common/view/GridViewSquareItem;Landroid/widget/TextView;Lcom/lolchess/tft/common/view/GridViewSquareItem;Lcom/google/android/flexbox/FlexboxLayout;Landroid/widget/LinearLayout;Lcom/lolchess/tft/common/view/PlacementHexesView;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
+    .locals 0
+
+    .line 1
+    invoke-direct/range {p0 .. p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p4, p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->flTier:Landroid/widget/FrameLayout;
+
+    .line 5
+    .line 6
+    iput-object p5, p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->imgFirstAnomaly:Landroid/widget/TextView;
+
+    .line 7
+    .line 8
+    iput-object p6, p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->imgFirstAugment:Lcom/lolchess/tft/common/view/GridViewSquareItem;
+
+    .line 9
+    .line 10
+    iput-object p7, p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->imgSecondAnomaly:Landroid/widget/TextView;
+
+    .line 11
+    .line 12
+    iput-object p8, p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->imgSecondAugment:Lcom/lolchess/tft/common/view/GridViewSquareItem;
+
+    .line 13
+    .line 14
+    iput-object p9, p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->imgThirdAnomaly:Landroid/widget/TextView;
+
+    .line 15
+    .line 16
+    iput-object p10, p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->imgThirdAugment:Lcom/lolchess/tft/common/view/GridViewSquareItem;
+
+    .line 17
+    .line 18
+    iput-object p11, p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->llAnomaly:Lcom/google/android/flexbox/FlexboxLayout;
+
+    .line 19
+    .line 20
+    iput-object p12, p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->llAugments:Landroid/widget/LinearLayout;
+
+    .line 21
+    .line 22
+    iput-object p13, p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->placementHexesView:Lcom/lolchess/tft/common/view/PlacementHexesView;
+
+    .line 23
+    .line 24
+    iput-object p14, p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->rvCarousel:Landroidx/recyclerview/widget/RecyclerView;
+
+    .line 25
+    .line 26
+    iput-object p15, p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->rvEarlyChampions:Landroidx/recyclerview/widget/RecyclerView;
+
+    .line 27
+    .line 28
+    move-object/from16 p1, p16
+
+    .line 29
+    .line 30
+    iput-object p1, p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->rvItemRequired:Landroidx/recyclerview/widget/RecyclerView;
+
+    .line 31
+    .line 32
+    move-object/from16 p1, p17
+
+    .line 33
+    .line 34
+    iput-object p1, p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->rvOption:Landroidx/recyclerview/widget/RecyclerView;
+
+    .line 35
+    .line 36
+    move-object/from16 p1, p18
+
+    .line 37
+    .line 38
+    iput-object p1, p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->txtCarousel:Landroid/widget/TextView;
+
+    .line 39
+    .line 40
+    move-object/from16 p1, p19
+
+    .line 41
+    .line 42
+    iput-object p1, p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->txtTeamName:Landroid/widget/TextView;
+
+    .line 43
+    .line 44
+    move-object/from16 p1, p20
+
+    .line 45
+    .line 46
+    iput-object p1, p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->txtTeamTier:Landroid/widget/TextView;
+
+    .line 47
+    .line 48
+    return-void
+.end method
+
+.method public static bind(Landroid/view/View;)Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;
+    .locals 1
+
+    .line 1
+    invoke-static {}, Landroidx/databinding/DataBindingUtil;->getDefaultComponent()Landroidx/databinding/DataBindingComponent;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-static {p0, v0}, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->bind(Landroid/view/View;Ljava/lang/Object;)Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    return-object p0
+.end method
+
+.method public static bind(Landroid/view/View;Ljava/lang/Object;)Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 10
+    sget v0, Lcom/lolchess/tft/R$layout;->dialog_team_composition:I
+
+    invoke-static {p1, p0, v0}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
+
+    move-result-object p0
+
+    check-cast p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;
+
+    return-object p0
+.end method
+
+.method public static inflate(Landroid/view/LayoutInflater;)Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;
+    .locals 1
+
+    .line 13
+    invoke-static {}, Landroidx/databinding/DataBindingUtil;->getDefaultComponent()Landroidx/databinding/DataBindingComponent;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->inflate(Landroid/view/LayoutInflater;Ljava/lang/Object;)Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static inflate(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Z)Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;
+    .locals 1
+
+    .line 14
+    invoke-static {}, Landroidx/databinding/DataBindingUtil;->getDefaultComponent()Landroidx/databinding/DataBindingComponent;
+
+    move-result-object v0
+
+    invoke-static {p0, p1, p2, v0}, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->inflate(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;ZLjava/lang/Object;)Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static inflate(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;ZLjava/lang/Object;)Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 12
+    sget v0, Lcom/lolchess/tft/R$layout;->dialog_team_composition:I
+
+    invoke-static {p0, v0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;->inflateInternal(Landroid/view/LayoutInflater;ILandroid/view/ViewGroup;ZLjava/lang/Object;)Landroidx/databinding/ViewDataBinding;
+
+    move-result-object p0
+
+    check-cast p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;
+
+    return-object p0
+.end method
+
+.method public static inflate(Landroid/view/LayoutInflater;Ljava/lang/Object;)Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;
+    .locals 3
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 1
+    sget v0, Lcom/lolchess/tft/R$layout;->dialog_team_composition:I
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    const/4 v2, 0x0
+
+    .line 5
+    invoke-static {p0, v0, v1, v2, p1}, Landroidx/databinding/ViewDataBinding;->inflateInternal(Landroid/view/LayoutInflater;ILandroid/view/ViewGroup;ZLjava/lang/Object;)Landroidx/databinding/ViewDataBinding;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    check-cast p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;
+
+    .line 10
+    .line 11
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public getIsOverlay()Z
+    .locals 0
+
+    .line 1
+    iget-boolean p0, p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->mIsOverlay:Z
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getTeamComposition()Lcom/lolchess/tft/model/team/TeamComposition;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lcom/lolchess/tft/databinding/DialogTeamCompositionBinding;->mTeamComposition:Lcom/lolchess/tft/model/team/TeamComposition;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public abstract setIsOverlay(Z)V
+.end method
+
+.method public abstract setTeamComposition(Lcom/lolchess/tft/model/team/TeamComposition;)V
+.end method

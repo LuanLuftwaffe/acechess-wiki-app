@@ -1,0 +1,674 @@
+[
+  {
+    "id": 49,
+    "name": "Gold Subscription",
+    "description": "Receive a cash prize at the start of each Stage!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 50,
+    "name": "Prismatic Party",
+    "description": "It's the ultimate showdown! All augments are Prismatic this game.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 51,
+    "name": "Prismatic Finale",
+    "description": "Get ready for a big finale with a Prismatic third augment!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 52,
+    "name": "Prismatic Prelude",
+    "description": "This battle begins with a Prismatic augment!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 53,
+    "name": "Scuttle Puddle",
+    "description": "The arena is filled with crabs carrying bonus loot.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 54,
+    "name": "Crab Rave",
+    "description": "The arena is filled with crabs carrying bonus loot. After Stage 5 they are DEADLY HAZARDS.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 55,
+    "name": "Loot Subscription",
+    "description": "Get highly varied loot at the start of each stage!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 56,
+    "name": "Golden Gala",
+    "description": "Go for the gold with three Gold augments!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 57,
+    "name": "Component Anvils",
+    "description": "Get two component anvils. Choose your weapon!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 58,
+    "name": "Trainer Golems",
+    "description": "Train your Golem! It has 3 random emblems.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 60,
+    "name": "3-Cost Start",
+    "description": "Start with a random 3-cost champion this game.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 61,
+    "name": "Upgraded Champion",
+    "description": "Start with a 2-star 1-cost champion.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 62,
+    "name": "Augment Round Swap",
+    "description": "Augments are given earlier this game.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 63,
+    "name": "Earlier Snax",
+    "description": "The second Power Snax is given at 2-6 instead of 3-6.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 64,
+    "name": "The Grand Finals",
+    "description": "It's the Grand Finals! You're on your own, champion.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 65,
+    "name": "Beach Episode",
+    "description": "Beach Episode! Gain a beach ball that Tacticians can toss around!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 66,
+    "name": "Regal Rumble",
+    "description": "Carousels have more competitors on them!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 67,
+    "name": "Winner's Circle",
+    "description": "After Top 4, remaining players gain 10 gold and two Component Anvils.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 68,
+    "name": "Gold Subscription",
+    "description": "Zoe gives you gold on every stage. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 69,
+    "name": "Prismatic Party",
+    "description": "Aurelion Sol ascends all Augments to be Prismatic!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 70,
+    "name": "Prismatic Finale",
+    "description": "Aurelion Sol ascends the last Augment to be Prismatic!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 71,
+    "name": "Prismatic Prelude",
+    "description": "Aurelion Sol ascends the first Augment to be Prismatic!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 72,
+    "name": "Scuttle Puddle",
+    "description": "Bard summons his Scuttle buddies!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 73,
+    "name": "Crab Rave",
+    "description": "Bard summons Scuttle buddies to start the Crab Rave!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 75,
+    "name": "Golden Gala",
+    "description": "Sohm makes all Augments Gold in this game. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 76,
+    "name": "Component Anvils",
+    "description": "Swain gives you 2 Component Anvils. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 77,
+    "name": "Trainer Golems",
+    "description": "Sohm summons a golem equipped with 3 Emblems to your board.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 78,
+    "name": "3-Cost Start",
+    "description": "Start with a random 3-cost champion this game.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 79,
+    "name": "Upgraded Champion",
+    "description": "Start with a 2-star 1-cost champion.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 80,
+    "name": "Treasurier Dragon",
+    "description": "An additional Treasure Dragon with special offerings to appear on 3-7!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 81,
+    "name": "Dragon Herald",
+    "description": "Choncc grants all players a Dragon of the same tier!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 82,
+    "name": "Draconic Subscription",
+    "description": "Idas grants you extra loot each stage. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 83,
+    "name": "Artifact Anvil",
+    "description": "Swain gives you an Artifact Anvil. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 84,
+    "name": "Golden Gala",
+    "description": "Twisted Fate deals out all gold tier augments this game.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 85,
+    "name": "Prismatic Party",
+    "description": "Seraphine turns all augments to prismatic tier this game.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 86,
+    "name": "Prismatic Finale",
+    "description": "Seraphine turns all augments to prismatic tier this game.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 87,
+    "name": "Prismatic Prelude",
+    "description": "Zilean ages the last augment to perfection. It will be prismatic this game.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 88,
+    "name": "3-Cost Start",
+    "description": "Start with a random 3-cost champion this game.",
+    "percentage": 7.0,
+    "setNumber": 16
+  },
+  {
+    "id": 89,
+    "name": "2-Cost Start",
+    "description": "Start with a random 2-cost champion this game.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 90,
+    "name": "HACK: Upgraded Start",
+    "description": "Ekko upgrades your starting champion to 2-star.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 91,
+    "name": "Component Anvils",
+    "description": "Poppy grants you two component anvils.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 92,
+    "name": "Scuttle Puddle",
+    "description": "Rift Herald happily fills the game with crabs carrying bonus loot.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 93,
+    "name": "Loot Subscription",
+    "description": "Zoe gives you highly varied loot at the start of each stage!",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 94,
+    "name": "Emblem Ensemble",
+    "description": "Ryze grants you 3 random emblems to begin your journey.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 95,
+    "name": "Gold Subscription",
+    "description": "Tahm Kench grants you gold each stage.",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 96,
+    "name": "Augment Round Swap",
+    "description": "LeBlanc manipulates augments to be offered earlier this game.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 97,
+    "name": "No encounter.",
+    "description": "It's a calm day in Runeterra. No encounter this game.",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 98,
+    "name": "Howling Abyss",
+    "description": "Gain 5 random 1-costs to fight on the Howling Abyss.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 99,
+    "name": "Silver Scrapes",
+    "description": "The last two surviving players gain 70 gold for an epic final fight.",
+    "percentage": 7.0,
+    "setNumber": 16
+  },
+  {
+    "id": 100,
+    "name": "Reckoner Arena",
+    "description": "Whenever a player is eliminated, Draven rewards surviving players with gold per eliminated player.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 101,
+    "name": "Scouting Party",
+    "description": "Teemo's scouting party has found +1 Augment reroll for all augments.",
+    "percentage": 4.0,
+    "setNumber": 16
+  },
+  {
+    "id": 102,
+    "name": "Gwen's Gifts",
+    "description": "After the first 3 carousels, Gwen gifts players a component and a special pair of scissors.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 103,
+    "name": "Carousel of Vitality",
+    "description": "Irelia supercharges the first two carousels with extra speed and extra special loot!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 104,
+    "name": "Fireworks",
+    "description": "On 2-7 and 3-7, Darius gifts fireworks packages on your board. On 4-7, celebrate the Year of the Horse!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 105,
+    "name": "Growing Prosperity<br>",
+    "description": "Ornn forges an anvil of increasing power at the beginning of each stage!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 106,
+    "name": "Off to the Races!",
+    "description": "Sejuani holds a race on 2-4. Everyone guesses the winner and gets loot based on the number of correct guesses!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 107,
+    "name": "Year of the Horse",
+    "description": "Sejuani grants a lucky horse on your bench that runs 1 slot per win and 2 per loss. Get rewards when it finishes!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 108,
+    "name": "Howling Abyss",
+    "description": "Gain 5 random 1-costs to to celebrate the festival!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 109,
+    "name": "Scouting Party",
+    "description": "Fiora deftly grants +1 Augment reroll for all augments.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 110,
+    "name": "Component Anvils",
+    "description": "Ornn forges you 2 Component Anvils.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 111,
+    "name": "Prismatic Party",
+    "description": "Swain lights up the celebration and makes all augments Prismatic.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 112,
+    "name": "Scuttle Puddle",
+    "description": "Twisted Fate deals a winning hand, summoning Scuttle to join the celebration!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 113,
+    "name": "Prismatic Prelude",
+    "description": "Swain lights up the celebration and makes the first augment Prismatic.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 114,
+    "name": "Loot Subscription",
+    "description": "Tahm Kench grants you rewards every stage. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 115,
+    "name": "No encounter.",
+    "description": "Everyone's out celebrating! No encounter this game. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 116,
+    "name": "2-Cost Start",
+    "description": "Jarvan IV upgrades your starting champion to 2-cost this game.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 117,
+    "name": "Gold Subscription",
+    "description": "Tahm Kench grants you gold every stage. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 118,
+    "name": "Crab Rave",
+    "description": "Twisted Fate deals a winning hand, summoning Scuttle to join the Crab Rave!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 119,
+    "name": "Silver Scrapes",
+    "description": "The last two surviving players gain 70 gold for an epic final fight.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 120,
+    "name": "Prismatic Finale",
+    "description": "Swain lights up the celebration and makes the last augment Prismatic.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 121,
+    "name": "Augment Round Swap",
+    "description": "Jarvan IV commands augments to be offered earlier this game.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 122,
+    "name": "Reckoner Arena",
+    "description": "Whenever a player is eliminated, Azir rewards surviving players with gold per eliminated player.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 123,
+    "name": "Golden Gala",
+    "description": "Annie makes all Augments Gold in this game. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 124,
+    "name": "3-Cost Start",
+    "description": "Start with a random 3-cost champion this game.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 125,
+    "name": "2-Cost Start",
+    "description": "Start with a random 2-cost champion this game.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 126,
+    "name": "HACK: Upgraded Start",
+    "description": "Katarina upgrades your starting champion to 2-star.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 147,
+    "name": "2 Cost Start",
+    "description": "Start with a random 2-cost champion this game.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 148,
+    "name": "3 Cost Start",
+    "description": "Start with a random 3-cost champion this game.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 149,
+    "name": "Cheaper Levels",
+    "description": "Each level costs 2 XP less.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 150,
+    "name": "Completed Item Anvil",
+    "description": "Start with a completed item anvil.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 151,
+    "name": "Component Anvils",
+    "description": "Start with 2 component anvils.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 152,
+    "name": "Emblem Ensemble",
+    "description": "Start with 3 random emblems.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 153,
+    "name": "Final Showdown",
+    "description": "The final two players gain 70 gold for an epic final fight.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 154,
+    "name": "Gold Subscription",
+    "description": "Every stage, gain a random amount of gold. All players gain the same amount.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 155,
+    "name": "Golden Finale",
+    "description": "The last augment offered this game will be gold tier.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 156,
+    "name": "Golden Gala",
+    "description": "All augments offered this game will be gold tier.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 157,
+    "name": "Golden Prelude",
+    "description": "The first augment offered this game will be gold tier.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 158,
+    "name": "Howling Abyss",
+    "description": "Start with 5 random 1-cost units.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 159,
+    "name": "Item Forge",
+    "description": "All players start with 2 completed item anvils.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 160,
+    "name": "No Encounter",
+    "description": "There is no encounter this game.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 161,
+    "name": "Prismatic Finisher",
+    "description": "The last augment offered this game will be prismatic tier.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 162,
+    "name": "Prismatic Opener",
+    "description": "The first augment offered this game will be prismatic tier.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 163,
+    "name": "Prismatic Party",
+    "description": "All augments offered this game will be prismatic tier.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 164,
+    "name": "Reroll Subscription",
+    "description": "At the start of every stage, gain free Shop rerolls.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 165,
+    "name": "Scouting Party",
+    "description": "Gain +1 Augment rerolls this game.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 166,
+    "name": "Upgraded Start",
+    "description": "Start with a 2-star champion this game.",
+    "percentage": 5.0,
+    "setNumber": 18
+  }
+]

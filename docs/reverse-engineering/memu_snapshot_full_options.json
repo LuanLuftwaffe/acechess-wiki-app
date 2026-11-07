@@ -1,0 +1,1700 @@
+{
+  "timestamp": "2026-11-03T18:43:40.075765",
+  "package": "com.tencent.tmgp.osgame",
+  "apk_status": {
+    "code_path": "/data/app/com.tencent.tmgp.osgame-5vWrcVUL0CapfdVempDyCA==",
+    "sha256": "3b20f0469bdddc24136f553f67ba12ef79b66db68b034b1049e0c9b242ca3b84",
+    "signatures": "signatures=PackageSignatures{e20b58b version:3, signatures:[d682ef1c], past signatures:[]}"
+  },
+  "custom_features": {
+    "hokvi_dir_files_count": 21,
+    "hokvi_files": [
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/ai-collect/enabled",
+        "size": 0
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/lineup-search-vi.enabled",
+        "size": 0
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/music/battle-enabled",
+        "size": 0
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/music/enabled",
+        "size": 0
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/music/ngth.mp3",
+        "size": 5226201
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/music/titles.txt",
+        "size": 97
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/showtime/T_OS_Choose_T2_C3_Light_03.rgba",
+        "size": 262144
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/showtime/config.json",
+        "size": 381
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/showtime/enabled",
+        "size": 0
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/showtime/scene_Choose_T2_01.rgba",
+        "size": 1048576
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/showtime/scene_Choose_T2_02.rgba",
+        "size": 1048576
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/showtime/scene_Choose_T2_05.rgba",
+        "size": 262144
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/showtime/scene_Choose_T2_06.rgba",
+        "size": 262144
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/showtime/scene_Choose_T2_07.rgba",
+        "size": 262144
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/showtime/scene_Choose_T2_08.rgba",
+        "size": 262144
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/showtime/scene_Choose_T2_09.rgba",
+        "size": 524288
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/showtime/scene_Choose_T2_10.rgba",
+        "size": 524288
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/showtime/scene_Choose_T2_11.rgba",
+        "size": 2097152
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/showtime/scene_Choose_T2_12.rgba",
+        "size": 2097152
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/showtime/scene_Choose_T2_13.rgba",
+        "size": 2097152
+      },
+      {
+        "path": "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/showtime/scene_Choose_T2_14.rgba",
+        "size": 2097152
+      }
+    ],
+    "showtime_config": "{\"format\":\"hokvi-showtime\",\"schema\":2,\"split\":true,\"images\":true,\"final\":{\"left\":{\"kind\":\"text\",\"text\":\"ANH\",\"invert\":false,\"image\":\"\"},\"right\":{\"kind\":\"image\",\"text\":\"EM\",\"invert\":false,\"image\":\"b62dc462c6ab372a.img\"}},\"effect\":{\"left\":{\"kind\":\"text\",\"text\":\"BỐN\",\"invert\":false,\"image\":\"\"},\"right\":{\"kind\":\"image\",\"text\":\"NĂM\",\"invert\":false,\"image\":\"4383f681cf37f369.img\"}}}",
+    "music_titles": "# hokvi-music-lib: app HOKVI quan ly thu muc nay (thu tu = thu tu trong app)\r\nngth.mp3\tngth\tHOKVI"
+  },
+  "internal_files_count": 399,
+  "internal_files": [
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/MSDK.mmap3",
+      "size": 163840
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/QtsVFS.log",
+      "size": 106161
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/Watchdog/BrokenList.db",
+      "size": 16384
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/Watchdog/History.db",
+      "size": 16384
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/Watchdog/PatchList.db",
+      "size": 16384
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/Watchdog/StorageStatus.db",
+      "size": 16384
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/0/0.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/0/0.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1/1.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1/1.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/10/10.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/10/10.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1010000000/1010000000.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1010000000/1010000000.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1010010320/1010010320.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1010010320/1010010320.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020000000/1020000000.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020000000/1020000000.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020001001/1020001001.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020001001/1020001001.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020001101/1020001101.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020001101/1020001101.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020002101/1020002101.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020002101/1020002101.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020002201/1020002201.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020002201/1020002201.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020002401/1020002401.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020002401/1020002401.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020002501/1020002501.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020002501/1020002501.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020003101/1020003101.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020003101/1020003101.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020003201/1020003201.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020003201/1020003201.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020003301/1020003301.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020003301/1020003301.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020003401/1020003401.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020003401/1020003401.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020003501/1020003501.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020003501/1020003501.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020003601/1020003601.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020003601/1020003601.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020003801/1020003801.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020003801/1020003801.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020003901/1020003901.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020003901/1020003901.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020004001/1020004001.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020004001/1020004001.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020004101/1020004101.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020004101/1020004101.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020004301/1020004301.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020004301/1020004301.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020004302/1020004302.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020004302/1020004302.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020005001/1020005001.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1020005001/1020005001.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1040000200/1040000200.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1040000200/1040000200.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1040000205/1040000205.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1040000205/1040000205.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1040000206/1040000206.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1040000206/1040000206.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050000000/1050000000.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050000000/1050000000.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050000195/1050000195.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050000195/1050000195.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050000644/1050000644.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050000644/1050000644.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050002041/1050002041.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050002041/1050002041.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050002322/1050002322.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050002322/1050002322.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050003988/1050003988.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050003988/1050003988.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050005494/1050005494.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050005494/1050005494.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050006114/1050006114.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050006114/1050006114.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050008032/1050008032.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050008032/1050008032.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050009056/1050009056.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050009056/1050009056.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050009453/1050009453.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050009453/1050009453.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050010405/1050010405.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050010405/1050010405.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050010537/1050010537.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050010537/1050010537.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050011484/1050011484.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050011484/1050011484.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050012697/1050012697.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050012697/1050012697.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050013061/1050013061.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050013061/1050013061.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050013728/1050013728.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050013728/1050013728.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050015988/1050015988.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050015988/1050015988.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050016095/1050016095.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050016095/1050016095.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050016808/1050016808.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050016808/1050016808.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050016884/1050016884.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050016884/1050016884.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050018044/1050018044.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050018044/1050018044.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050018756/1050018756.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050018756/1050018756.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050019154/1050019154.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050019154/1050019154.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050019411/1050019411.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050019411/1050019411.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050019504/1050019504.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050019504/1050019504.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050020144/1050020144.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050020144/1050020144.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050021839/1050021839.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050021839/1050021839.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050022625/1050022625.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050022625/1050022625.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050022839/1050022839.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050022839/1050022839.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050023082/1050023082.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050023082/1050023082.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050024422/1050024422.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050024422/1050024422.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050024793/1050024793.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050024793/1050024793.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050025006/1050025006.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050025006/1050025006.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050025892/1050025892.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050025892/1050025892.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050026083/1050026083.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050026083/1050026083.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050026798/1050026798.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050026798/1050026798.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050026812/1050026812.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050026812/1050026812.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050027878/1050027878.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050027878/1050027878.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050027920/1050027920.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050027920/1050027920.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050028802/1050028802.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050028802/1050028802.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050028894/1050028894.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050028894/1050028894.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050030304/1050030304.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050030304/1050030304.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050031701/1050031701.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050031701/1050031701.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050032534/1050032534.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050032534/1050032534.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050033752/1050033752.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050033752/1050033752.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050034702/1050034702.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050034702/1050034702.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050035120/1050035120.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050035120/1050035120.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050035425/1050035425.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050035425/1050035425.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050035545/1050035545.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050035545/1050035545.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050036390/1050036390.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050036390/1050036390.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050036634/1050036634.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050036634/1050036634.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050036672/1050036672.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050036672/1050036672.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050036815/1050036815.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050036815/1050036815.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050036949/1050036949.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050036949/1050036949.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050037255/1050037255.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050037255/1050037255.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050037258/1050037258.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050037258/1050037258.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050038258/1050038258.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050038258/1050038258.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050038873/1050038873.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050038873/1050038873.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050040644/1050040644.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050040644/1050040644.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050040842/1050040842.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050040842/1050040842.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050041063/1050041063.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050041063/1050041063.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050041504/1050041504.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050041504/1050041504.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050043932/1050043932.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050043932/1050043932.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050044495/1050044495.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050044495/1050044495.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050044796/1050044796.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050044796/1050044796.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050045119/1050045119.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050045119/1050045119.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050046839/1050046839.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050046839/1050046839.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050047061/1050047061.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050047061/1050047061.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050048456/1050048456.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050048456/1050048456.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050048761/1050048761.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050048761/1050048761.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050049594/1050049594.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050049594/1050049594.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050049657/1050049657.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050049657/1050049657.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050049851/1050049851.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050049851/1050049851.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050051796/1050051796.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050051796/1050051796.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050053503/1050053503.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050053503/1050053503.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050056383/1050056383.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050056383/1050056383.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050058131/1050058131.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050058131/1050058131.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050060346/1050060346.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050060346/1050060346.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050061878/1050061878.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050061878/1050061878.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050062648/1050062648.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050062648/1050062648.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050063117/1050063117.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050063117/1050063117.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050063487/1050063487.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050063487/1050063487.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050064384/1050064384.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050064384/1050064384.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050064797/1050064797.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050064797/1050064797.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050065084/1050065084.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050065084/1050065084.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050065896/1050065896.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050065896/1050065896.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050066092/1050066092.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050066092/1050066092.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050066354/1050066354.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050066354/1050066354.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050066539/1050066539.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050066539/1050066539.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050067467/1050067467.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050067467/1050067467.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050067571/1050067571.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050067571/1050067571.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050067645/1050067645.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050067645/1050067645.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050067833/1050067833.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050067833/1050067833.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050068036/1050068036.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050068036/1050068036.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050068424/1050068424.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050068424/1050068424.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050068844/1050068844.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050068844/1050068844.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050068959/1050068959.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050068959/1050068959.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050070032/1050070032.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050070032/1050070032.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050070451/1050070451.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050070451/1050070451.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050070974/1050070974.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050070974/1050070974.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050071030/1050071030.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050071030/1050071030.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050071217/1050071217.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050071217/1050071217.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050071594/1050071594.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050071594/1050071594.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050072690/1050072690.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050072690/1050072690.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050073975/1050073975.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050073975/1050073975.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050074078/1050074078.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050074078/1050074078.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050074207/1050074207.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050074207/1050074207.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050074777/1050074777.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050074777/1050074777.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050074945/1050074945.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050074945/1050074945.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050074993/1050074993.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050074993/1050074993.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050075710/1050075710.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050075710/1050075710.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050080589/1050080589.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050080589/1050080589.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050080679/1050080679.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050080679/1050080679.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050081852/1050081852.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050081852/1050081852.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050081892/1050081892.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050081892/1050081892.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050082819/1050082819.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050082819/1050082819.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050083258/1050083258.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050083258/1050083258.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050083331/1050083331.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050083331/1050083331.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050085589/1050085589.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050085589/1050085589.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050086037/1050086037.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050086037/1050086037.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050088564/1050088564.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050088564/1050088564.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050089077/1050089077.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050089077/1050089077.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050091097/1050091097.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050091097/1050091097.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050091211/1050091211.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050091211/1050091211.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050092364/1050092364.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050092364/1050092364.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050092443/1050092443.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050092443/1050092443.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050092527/1050092527.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050092527/1050092527.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050092549/1050092549.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050092549/1050092549.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050093206/1050093206.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050093206/1050093206.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050094722/1050094722.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050094722/1050094722.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050094828/1050094828.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050094828/1050094828.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050094977/1050094977.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050094977/1050094977.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050095042/1050095042.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050095042/1050095042.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050095735/1050095735.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050095735/1050095735.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050096127/1050096127.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050096127/1050096127.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050098095/1050098095.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050098095/1050098095.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050098101/1050098101.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050098101/1050098101.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050098843/1050098843.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050098843/1050098843.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050099942/1050099942.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1050099942/1050099942.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1060000000/1060000000.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/1060000000/1060000000.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/2/2.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/2/2.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/21/21.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/21/21.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/22/22.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/22/22.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/23/23.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/23/23.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/24/24.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/24/24.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/25/25.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/25/25.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/26/26.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/26/26.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/27/27.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/27/27.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/28/28.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/28/28.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/29/29.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/29/29.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/3/3.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/3/3.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/30/30.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/30/30.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/4/4.db",
+      "size": 114688
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/4/4.info",
+      "size": 36
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/QtsVFSCache/packages/builtin/Globalindex/GlobalIndexPrime.data",
+      "size": 1316942
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/ace_shell_di.dat",
+      "size": 22
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/ano_tmp/SpeedUpCCH.dat",
+      "size": 28
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/ano_tmp/ace_cache_db.dat",
+      "size": 20
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/ano_tmp/ace_shell_db.dat",
+      "size": 40
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/ano_tmp/atti_obv.dat",
+      "size": 175
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/ano_tmp/fake_uiui.dat",
+      "size": 31
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/ano_tmp/h_rcd.dat",
+      "size": 12
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/ano_tmp/kvcache8.dat",
+      "size": 64
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/ano_tmp/vm/up_cache.dat",
+      "size": 32
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/beacon/prop_V1",
+      "size": 618
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/bqLog/wrapper_log/normal1.log",
+      "size": 2767
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/ccs_config/bqid.txt",
+      "size": 32
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/ccs_config/ccs.log",
+      "size": 848
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/ccs_config/last_connect_info.json",
+      "size": 61
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/ccs_config/portrait.json",
+      "size": 858
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/ccs_config/settings_local.json",
+      "size": 43
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/ccs_config/task_data_download.json",
+      "size": 0
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/ccs_config/task_ts_download.json",
+      "size": 0
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/com.tencent.qimei.sdk.QimeiSDK",
+      "size": 262
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/com.tencent.tdm.qimei.sdk.QimeiSDK",
+      "size": 326
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/qm/QV1com.tencent.qimei.sdk.QimeiSDK2e9d17f2cb1500f8",
+      "size": 0
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/qm/QV1com.tencent.tdm.qimei.sdk.QimeiSDKc2009844da43a85e",
+      "size": 0
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/qm/bdf53262e23a2306",
+      "size": 1024
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/qm/cm_c87d3074c9937163e75c402d70b04c0e",
+      "size": 0
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/qm/cm_ce15c95bcb0c04db3e0b278bc0f80daf",
+      "size": 0
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/qm/lccNoCN",
+      "size": 0
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/tdm_track.dat",
+      "size": 40
+    },
+    {
+      "path": "/data/data/com.tencent.tmgp.osgame/files/tri_init",
+      "size": 0
+    }
+  ],
+  "shared_prefs_raw": "<?xml version='1.0' encoding='utf-8' standalone='yes' ?>\r\n<map>\r\n    <boolean name=\"api_cache\" value=\"true\" />\r\n    <boolean name=\"sec_tuy_chon\" value=\"true\" />\r\n    <string name=\"game_kind_cache\">1793704353313|2026128099|font</string>\r\n    <boolean name=\"kenh_beta\" value=\"true\" />\r\n    <boolean name=\"battle_music\" value=\"true\" />\r\n    <string name=\"applied_release\">android-1.8.0.1-r71</string>\r\n    <long name=\"last_version_code\" value=\"180171\" />\r\n    <long name=\"lineup_news_ver\" value=\"20261031181738\" />\r\n    <string name=\"viet_apk_stamp\">1793704353313|2026128099</string>\r\n    <boolean name=\"sec_co_gi_moi\" value=\"true\" />\r\n    <string name=\"applied_content\">{&quot;text&quot;:&quot;92cec3ef8045025fe7d63655321ad212ca8cb819404a9a59576fb888873317c0&quot;,&quot;images&quot;:false,&quot;apk&quot;:&quot;3b20f0469bdddc24136f553f67ba12ef79b66db68b034b1049e0c9b242ca3b84&quot;,&quot;image_shas&quot;:{&quot;10&quot;:&quot;49be3d7da47d3c1031658621e609551262c08c2fa0a2742b00a4905abe583e23&quot;,&quot;1050016095&quot;:&quot;7a862e907c104e5629caf65ebe1e3f2ffcee672f978975aea8184afee038805f&quot;,&quot;1050034702&quot;:&quot;4a4399f76c3b05ea72a78d181aa6d98e699e65d86a87643d402a0dea7fdf49f4&quot;,&quot;1050085589&quot;:&quot;dfd3e01caf7d50e6fc35527d8a273110be082ddd2dfe3f678929dd203c0d7eba&quot;,&quot;15&quot;:&quot;c791fbf691260285491b78881209b3eddb8446fbdb474ab4075863ba8579c8fb&quot;,&quot;19&quot;:&quot;e6e6f0ff23b661c24b3a1ac55a10ba530d0ae6b20c04d2885c68b2a9779a6beb&quot;},&quot;quy_tac&quot;:true}</string>\r\n    <string name=\"app_notify_key\">180171</string>\r\n    <string name=\"applied_ver\">1.8.0.1</string>\r\n    <long name=\"lineup_news_done\" value=\"20261031181738\" />\r\n    <boolean name=\"showtime_pending\" value=\"false\" />\r\n    <boolean name=\"music_bg\" value=\"true\" />\r\n    <boolean name=\"game_flags_pending\" value=\"false\" />\r\n    <string name=\"showtime_last\">đã áp dụng cuối ANH / [ảnh]; nháy BỐN / [ảnh]</string>\r\n    <boolean name=\"feedback_ask\" value=\"false\" />\r\n    <string name=\"music_bg_last\">thư viện nhạc riêng: chờ quyền shell để bật trong game</string>\r\n    <string name=\"lineup_vi_last\">gói v20261031181738 đã kiểm, chờ quyền shell để ghi vào game</string>\r\n    <string name=\"last_job\">auto</string>\r\n    <boolean name=\"ai_collect\" value=\"true\" />\r\n    <boolean name=\"sec_thong_tin\" value=\"true\" />\r\n    <string name=\"pending_install\">{&quot;kind&quot;:&quot;key&quot;,&quot;row&quot;:{&quot;sha256&quot;:&quot;310523d06fde0764f05c6f1f2210fa93890db78424cf933b4def868c17ed5d59&quot;,&quot;size&quot;:2026148579,&quot;title&quot;:&quot;APK chìa khoá (Debuggable)&quot;,&quot;remote&quot;:{&quot;from_goc&quot;:{&quot;url&quot;:&quot;https:\\/\\/s3.cloudfly.vn\\/wxq\\/android\\/vi-patch\\/1.8.0.1\\/r71\\/apk\\/key.apkdelta2&quot;,&quot;sha256&quot;:&quot;05d1fbb7591ffd1c644cf53a00d82b697f5fdcaef132534f0c5a474421905c8a&quot;,&quot;size&quot;:192010},&quot;to_goc&quot;:{&quot;url&quot;:&quot;https:\\/\\/s3.cloudfly.vn\\/wxq\\/android\\/vi-patch\\/1.8.0.1\\/r71\\/apk\\/key-goc.apkdelta2&quot;,&quot;sha256&quot;:&quot;b0649e405c7873e988b5bb3def890cfda781647cbbe5f9248249cb6dcb9ae885&quot;,&quot;size&quot;:315056}}},&quot;stamp&quot;:&quot;1793704353313|2026128099&quot;,&quot;marker&quot;:{&quot;game_version&quot;:&quot;1.8.0.1&quot;,&quot;release&quot;:&quot;android-1.8.0.1-r71&quot;,&quot;content&quot;:&quot;c1:023eacaa54e2d99b6397f8eed999fdebb87d8c480318239e4ce523b810f2424a&quot;,&quot;content_parts&quot;:{&quot;text&quot;:&quot;92cec3ef8045025fe7d63655321ad212ca8cb819404a9a59576fb888873317c0&quot;,&quot;images&quot;:false,&quot;apk&quot;:&quot;3b20f0469bdddc24136f553f67ba12ef79b66db68b034b1049e0c9b242ca3b84&quot;,&quot;image_shas&quot;:{&quot;10&quot;:&quot;49be3d7da47d3c1031658621e609551262c08c2fa0a2742b00a4905abe583e23&quot;,&quot;1050016095&quot;:&quot;7a862e907c104e5629caf65ebe1e3f2ffcee672f978975aea8184afee038805f&quot;,&quot;1050034702&quot;:&quot;4a4399f76c3b05ea72a78d181aa6d98e699e65d86a87643d402a0dea7fdf49f4&quot;,&quot;1050085589&quot;:&quot;dfd3e01caf7d50e6fc35527d8a273110be082ddd2dfe3f678929dd203c0d7eba&quot;,&quot;15&quot;:&quot;c791fbf691260285491b78881209b3eddb8446fbdb474ab4075863ba8579c8fb&quot;,&quot;19&quot;:&quot;e6e6f0ff23b661c24b3a1ac55a10ba530d0ae6b20c04d2885c68b2a9779a6beb&quot;},&quot;quy_tac&quot;:true},&quot;by&quot;:&quot;app&quot;,&quot;time&quot;:&quot;2026-11-03 19:12&quot;}}</string>\r\n    <boolean name=\"images\" value=\"true\" />\r\n    <string name=\"last_state\">TREO</string>\r\n    <boolean name=\"chain\" value=\"false\" />\r\n    <long name=\"ai_collect_bytes\" value=\"-1\" />\r\n    <string name=\"ai_vi_last\">gói v20261031170554 đã kiểm, chờ quyền shell để ghi vào game</string>\r\n    <boolean name=\"help_seen\" value=\"true\" />\r\n    <boolean name=\"showtime_on\" value=\"true\" />\r\n    <string name=\"device_ver\">1.8.0.1</string>\r\n    <string name=\"showtime_config\">{&quot;format&quot;:&quot;hokvi-showtime&quot;,&quot;schema&quot;:2,&quot;split&quot;:true,&quot;images&quot;:true,&quot;final&quot;:{&quot;left&quot;:{&quot;kind&quot;:&quot;text&quot;,&quot;text&quot;:&quot;ANH&quot;,&quot;invert&quot;:false,&quot;image&quot;:&quot;&quot;},&quot;right&quot;:{&quot;kind&quot;:&quot;image&quot;,&quot;text&quot;:&quot;EM&quot;,&quot;invert&quot;:false,&quot;image&quot;:&quot;b62dc462c6ab372a.img&quot;}},&quot;effect&quot;:{&quot;left&quot;:{&quot;kind&quot;:&quot;text&quot;,&quot;text&quot;:&quot;BỐN&quot;,&quot;invert&quot;:false,&quot;image&quot;:&quot;&quot;},&quot;right&quot;:{&quot;kind&quot;:&quot;image&quot;,&quot;text&quot;:&quot;NĂM&quot;,&quot;invert&quot;:false,&quot;image&quot;:&quot;4383f681cf37f369.img&quot;}}}</string>\r\n    <long name=\"ai_collect_lines\" value=\"-1\" />\r\n    <boolean name=\"sec_theo_may\" value=\"true\" />\r\n    <boolean name=\"vfx_tuong\" value=\"true\" />\r\n    <string name=\"game_flags_last\">đã áp: thu thập câu AI BẬT, tìm đội hình tiếng Việt BẬT, nhạc trong trận BẬT [OWNER 10076:1015 771 /storage/emulated/0/Android/data/com.tencent.tmgp.osgame/files/HOKVI/ai-collect | OWNER 10076:1015 771 /storage/emulated/0/Android/data/com.tencent.tmgp.osgame/files/HOKVI]</string>\r\n    <long name=\"lineup_news_posts\" value=\"10134\" />\r\n    <string name=\"notify_seen_keys\">on-dinh:app:180171</string>\r\n    <string name=\"official_url\">https://s3.cloudfly.vn/wxq/downloads/android/1.8.0.1/r71/HOKVI-VietHoa-App-1.8.0.1-r71-lite.apk</string>\r\n    <boolean name=\"lineup_search_vi\" value=\"true\" />\r\n    <boolean name=\"sec_nhat_ky\" value=\"true\" />\r\n    <string name=\"apk_hash_cache\">/data/app/com.tencent.tmgp.osgame-xA-FFXtplqMSGbQx1KfEmg==/base.apk|2026265394|1793697966000&#9;sha&#9;38ee88dbe00d3f8deaeacfbfb75d13ddc0b7e78e8b1cca359954fb511a55ec94&#10;/data/app/com.tencent.tmgp.osgame-xA-FFXtplqMSGbQx1KfEmg==/base.apk|2026265394|1793697966000&#9;content&#9;7ea5fd067ccdf22e86a5823cfa2c4c3a4a59e8c0922d05beb0b538c0eea358bc&#10;/data/app/com.tencent.tmgp.osgame-CXaYyKE8BD1H9BmSFhNJ3Q==/base.apk|2026128099|1793700807000&#9;sha&#9;2b8708f6e1ccae22c4e39af4befec459c6e89af3b5c019b4583aa3338b2d1f54&#10;/data/app/com.tencent.tmgp.osgame-IFsIvqLQH2YZIGYj4LR4sA==/base.apk|2026148579|1793701295000&#9;sha&#9;310523d06fde0764f05c6f1f2210fa93890db78424cf933b4def868c17ed5d59&#10;/data/app/com.tencent.tmgp.osgame-rrzupqeAZVPkg_GNnCmNyw==/base.apk|2026128099|1793701487000&#9;sha&#9;3b20f0469bdddc24136f553f67ba12ef79b66db68b034b1049e0c9b242ca3b84&#10;/data/app/com.tencent.tmgp.osgame-V-0d2GX8x5vnC5nK8sODWg==/base.apk|2026148579|1793704248000&#9;sha&#9;310523d06fde0764f05c6f1f2210fa93890db78424cf933b4def868c17ed5d59&#10;/data/app/com.tencent.tmgp.osgame-5vWrcVUL0CapfdVempDyCA==/base.apk|2026128099|1793704336000&#9;sha&#9;3b20f0469bdddc24136f553f67ba12ef79b66db68b034b1049e0c9b242ca3b84</string>\r\n</map>"
+}

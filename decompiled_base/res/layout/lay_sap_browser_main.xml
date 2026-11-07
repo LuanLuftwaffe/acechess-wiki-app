@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/main_layout" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:orientation="horizontal" android:id="@id/lay_sap_search_action_bar" android:background="?colorSurface" android:layout_width="match_parent" android:layout_height="48.0dp" android:layout_marginTop="-48.0dp">
+        <LinearLayout android:gravity="center_vertical" android:background="@drawable/res_sap_search_round_bg" android:paddingLeft="10.0dp" android:paddingRight="4.0dp" android:focusableInTouchMode="true" android:clipChildren="false" android:clipToPadding="false" android:descendantFocusability="beforeDescendants" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="10.0dp" android:layout_marginTop="5.0dp" android:layout_marginBottom="5.0dp" android:layout_toLeftOf="@id/lay_option_menu_btn" android:layout_alignParentLeft="true">
+            <ImageView android:id="@id/search_icon" android:background="@null" android:clickable="false" android:layout_width="20.0dp" android:layout_height="20.0dp" android:src="@drawable/ic_search_24" android:contentDescription="@null" />
+            <TextView android:textSize="15.0sp" android:textColor="?colorOnSurface" android:textColorHint="?colorOnSurfaceVariant" android:gravity="left|center" android:id="@id/search" android:background="@null" android:paddingLeft="8.0dp" android:paddingTop="5.0dp" android:paddingRight="5.0dp" android:paddingBottom="5.0dp" android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="0.0dp" android:layout_height="wrap_content" android:hint="@string/search_hint" android:maxLines="1" android:singleLine="true" android:layout_weight="1.0" />
+        </LinearLayout>
+        <RelativeLayout android:id="@id/lay_option_menu_btn" android:background="?selectableItemBackgroundBorderless" android:layout_width="48.0dp" android:layout_height="match_parent" android:layout_alignParentRight="true">
+            <ImageView android:background="@null" android:clickable="false" android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_menu_24" android:layout_centerInParent="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout android:background="?colorSurface" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_below="@id/lay_sap_search_action_bar">
+        <com.google.android.material.progressindicator.LinearProgressIndicator android:id="@id/activity_bar" android:layout_width="match_parent" android:layout_height="wrap_content" android:indeterminate="false" app:indicatorColor="?colorPrimary" app:trackColor="@android:color/transparent" app:trackThickness="2.0dp" />
+        <View android:id="@id/lay_btn_group_line" android:background="@color/tlinecolor" android:layout_width="match_parent" android:layout_height="0.100000024dp" />
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:id="@id/swipe_refresh_layout" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@id/bottom_lay" android:layout_below="@id/lay_btn_group_line">
+            <FrameLayout android:id="@id/content_frame" android:layout_width="match_parent" android:layout_height="match_parent" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/bottom_lay" android:background="?colorSurface" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <View android:id="@id/sap_web_bottom_top_dev_line" android:background="@color/sap_web_more_normal_line" android:layout_width="match_parent" android:layout_height="1.0px" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/sap_web_bottom_action_layout" android:layout_width="match_parent" android:layout_height="48.0dp" android:splitMotionEvents="false">
+                <RelativeLayout android:id="@id/action_back_layout" android:background="?selectableItemBackgroundBorderless" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+                    <ImageView android:id="@id/action_back" android:clickable="false" android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_arrow_back_24" android:layout_centerInParent="true" android:contentDescription="@string/cmn_action_back" />
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/action_setting_layout" android:background="?selectableItemBackgroundBorderless" android:visibility="gone" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+                    <ImageView android:id="@id/action_setting" android:clickable="false" android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_settings_24" android:layout_centerInParent="true" />
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/action_forward_layout" android:background="?selectableItemBackgroundBorderless" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+                    <ImageView android:id="@id/action_forward" android:clickable="false" android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_arrow_forward_24" android:layout_centerInParent="true" android:contentDescription="@string/action_forward" />
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/action_comment_layout" android:background="?selectableItemBackgroundBorderless" android:visibility="gone" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+                    <ImageView android:id="@id/action_comment" android:clickable="false" android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_tab_24" android:layout_centerInParent="true" />
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/action_btn_more_layout" android:background="?selectableItemBackgroundBorderless" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+                    <ImageView android:id="@id/btn_more" android:clickable="false" android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_more_horiz_24" android:layout_centerInParent="true" android:contentDescription="@null" />
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/action_btn_home_layout" android:background="?selectableItemBackgroundBorderless" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+                    <ImageView android:id="@id/btn_home" android:clickable="false" android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_home_24" android:layout_centerInParent="true" android:contentDescription="@null" />
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/action_btn_pageinfo_layout" android:background="?selectableItemBackgroundBorderless" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+                    <ImageView android:id="@id/btn_pageinfo" android:clickable="false" android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_refresh_24" android:layout_centerInParent="true" android:contentDescription="@null" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <include android:id="@id/sap_browser_more_expand" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@id/bottom_lay" layout="@layout/lay_sap_browser_more" />
+    </RelativeLayout>
+    <include android:id="@id/web_page_search_layout" android:visibility="gone" android:layout_width="match_parent" android:layout_height="50.0dp" android:layout_alignParentTop="true" layout="@layout/lay_sap_web_search" />
+    <include android:id="@id/inc_option_menu_layout" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" layout="@layout/lay_sap_option_menu" />
+</RelativeLayout>

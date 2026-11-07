@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/item_team_composition_required_item_0" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:layout_gravity="center" android:id="@id/imgItem" android:tag="binding_1" android:layout_width="0.0dp" android:layout_height="0.0dp" android:foreground="@drawable/ripple_circle_background" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintDimensionRatio="H,1:1" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <FrameLayout android:layout_gravity="end|bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="@id/imgItem" app:layout_constraintEnd_toEndOf="@id/imgItem">
+        <ImageView android:background="@drawable/shape_rounded_black_color_accent_stroke" android:layout_width="16.0dp" android:layout_height="16.0dp" />
+        <TextView android:textSize="8.0sp" android:textColor="@color/colorTextSecondary" android:layout_gravity="center" android:id="@id/txtItemNumber" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/roboto_medium" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

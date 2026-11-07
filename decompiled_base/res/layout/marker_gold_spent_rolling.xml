@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/shape_marker_gold_spent_in_level" android:paddingTop="5.0dp" android:paddingBottom="5.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="20.0dp" android:paddingEnd="20.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="@style/TextAppearance.Material3.LabelSmall" android:textColor="@color/colorTextDisable" android:id="@id/txtLevel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Level 4" />
+    <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textStyle="bold" android:textColor="@color/colorTextPrimary" android:id="@id/txtGold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="5" />
+</LinearLayout>

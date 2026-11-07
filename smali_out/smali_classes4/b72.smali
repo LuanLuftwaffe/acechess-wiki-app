@@ -1,0 +1,38 @@
+.class public final synthetic Lb72;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lkotlin/jvm/functions/Function0;
+
+
+# instance fields
+.field public final synthetic a:Lcom/unity3d/services/core/di/UnityAdsModule;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcom/unity3d/services/core/di/UnityAdsModule;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lb72;->a:Lcom/unity3d/services/core/di/UnityAdsModule;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lb72;->a:Lcom/unity3d/services/core/di/UnityAdsModule;
+
+    invoke-static {p0}, Lcom/unity3d/services/core/di/ServiceProvider;->T2(Lcom/unity3d/services/core/di/UnityAdsModule;)Lcom/unity3d/services/core/domain/ISDKDispatchers;
+
+    move-result-object p0
+
+    return-object p0
+.end method

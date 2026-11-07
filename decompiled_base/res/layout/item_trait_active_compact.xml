@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:tag="layout/item_trait_active_compact_0" android:layout_width="30.0dp" android:layout_height="30.0dp" android:foreground="@drawable/ripple_circle_background"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:tag="binding_1" android:layout_width="15.0dp" android:layout_height="15.0dp" android:tint="@color/colorBlack" />
+    <ImageView android:layout_gravity="start|bottom" android:tag="binding_2" android:layout_width="15.0dp" android:layout_height="15.0dp" android:layout_marginStart="3.0dp" />
+</FrameLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/ic_menu_24" android:title="More" app:showAsAction="always">
+        <menu>
+            <item android:icon="@drawable/ic_bookmark_24" android:id="@id/action_add_bookmark" android:title="@string/action_add_bookmark" />
+            <item android:icon="@drawable/ic_add_to_home_screen_24" android:id="@id/action_add_home" android:title="@string/menu_addhome" />
+            <item android:icon="@drawable/ic_search_24" android:id="@id/action_page_find" android:title="@string/action_page_find" />
+        </menu>
+    </item>
+</menu>

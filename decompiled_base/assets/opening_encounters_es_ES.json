@@ -1,0 +1,674 @@
+[
+  {
+    "id": 49,
+    "name": "Suscripción dorada",
+    "description": "Recibe un premio en metálico al comienzo de cada fase.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 50,
+    "name": "Fiesta prismática",
+    "description": "¡El enfrentamiento definitivo! En esta partida, todos los aumentos son prismáticos.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 51,
+    "name": "Final prismático",
+    "description": "¡Prepárate para un final de película con un tercer aumento prismático!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 52,
+    "name": "Preludio prismático",
+    "description": "¡Esta batalla comienza con un aumento prismático!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 53,
+    "name": "El Charco del escurridizo",
+    "description": "La arena está repleta de cangrejos que otorgan botín adicional.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 54,
+    "name": "Fiestorro de cangrejos",
+    "description": "La arena está repleta de cangrejos que otorgan botín adicional. Tras la fase 5, ¡se convierten en una AMENAZA PELIGROSÍSIMA!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 55,
+    "name": "Suscripción de botín",
+    "description": "¡Consigue botín variado al comienzo de cada fase!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 56,
+    "name": "Gala dorada",
+    "description": "¡A por la victoria con tres aumentos dorados!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 57,
+    "name": "Yunque de componentes",
+    "description": "Obtienes 2 Yunques de componente. ¡Elige tu arma!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 58,
+    "name": "Gólem de entreno",
+    "description": "¡Entrena a tu gólem! Tiene 3 emblemas aleatorios.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 60,
+    "name": "Inicio de coste 3",
+    "description": "Empiezas con un campeón aleatorio de coste 3 en esta partida.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 61,
+    "name": "Campeón mejorado",
+    "description": "Comienza con un campeón de 2 estrellas de coste 1.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 62,
+    "name": "Cambio de ronda de aumentos",
+    "description": "Los aumentos se ofrecerán antes en esta partida.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 63,
+    "name": "Snack anticipado",
+    "description": "La segunda galleta de mejora se obtiene en la fase 2-6, en lugar de la fase 3-6.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 64,
+    "name": "La gran final",
+    "description": "¡Es la gran final! Buena suerte.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 65,
+    "name": "Episodio en la playa",
+    "description": "¡Episodio en la playa! Obtienes 1 bola de playa que los estrategas se pasan entre ellos.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 66,
+    "name": "Reyerta regia",
+    "description": "¡Ahora los carruseles tienen más unidades!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 67,
+    "name": "Círculo de la victoria",
+    "description": "Cuando solo queden los 4 mejores jugadores, estos recibirán 10 de oro y 2 Yunques de componente.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 68,
+    "name": "Suscripción dorada",
+    "description": "Zoe te otorga oro en cada fase. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 69,
+    "name": "Fiesta prismática",
+    "description": "Aurelion Sol asciende todos los aumentos para que sean prismáticos.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 70,
+    "name": "Final prismático",
+    "description": "Aurelion Sol asciende el último aumento para que sea prismático.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 71,
+    "name": "Preludio prismático",
+    "description": "Aurelion Sol asciende el primer aumento para que sea prismático.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 72,
+    "name": "El Charco del escurridizo",
+    "description": "¡Bardo da rienda suelta a sus colegas los escurridizos!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 73,
+    "name": "Fiestorro de cangrejos",
+    "description": "¡Los compas escurridizos de Bardo dan comienzo al Fiestorro de cangrejos!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 75,
+    "name": "Gala dorada",
+    "description": "Sohm hace que todos los aumentos de esta partida sean dorados. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 76,
+    "name": "Yunque de componentes",
+    "description": "Swain te otorga 2 Yunques de componente. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 77,
+    "name": "Gólem de entreno",
+    "description": "Sohm invoca un gólem con 3 emblemas a tu tablero.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 78,
+    "name": "Inicio de coste 3",
+    "description": "Empiezas con un campeón aleatorio de coste 3 en esta partida.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 79,
+    "name": "Campeón mejorado",
+    "description": "Comienza con un campeón de 2 estrellas de coste 1.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 80,
+    "name": "Dragón tesorero",
+    "description": "En la fase 3-7, ¡aparecerá un dragón del tesoro adicional con ofertas especiales!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 81,
+    "name": "Heraldo de dragón",
+    "description": "Choncc otorga a todos los jugadores 1 dragón del mismo nivel.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 82,
+    "name": "Suscripción dracónica",
+    "description": "Idas te otorga botín adicional en cada fase. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 83,
+    "name": "Yunque de artefacto",
+    "description": "Swain te otorga 1 Yunque de artefacto. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 84,
+    "name": "Gala dorada",
+    "description": "Twisted Fate reparte aumentos dorados en esta partida.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 85,
+    "name": "Fiesta prismática",
+    "description": "Seraphine convierte todos los aumentos en prismáticos durante esta partida.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 86,
+    "name": "Final prismático",
+    "description": "Seraphine convierte todos los aumentos en prismáticos durante esta partida.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 87,
+    "name": "Preludio prismático",
+    "description": "Zilean madura el último aumento para que alcance la perfección. En esta partida, ¡será prismático!",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 88,
+    "name": "Inicio de coste 3",
+    "description": "Empiezas con un campeón aleatorio de coste 3 en esta partida.",
+    "percentage": 7.0,
+    "setNumber": 16
+  },
+  {
+    "id": 89,
+    "name": "Inicio de coste 2",
+    "description": "Empiezas con un campeón aleatorio de coste 2 en esta partida.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 90,
+    "name": "HACKEO: Inicio mejorado",
+    "description": "Ekko mejora tu campeón inicial a 2 estrellas.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 91,
+    "name": "Yunque de componentes",
+    "description": "Poppy te otorga 2 yunques de componente.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 92,
+    "name": "El Charco del escurridizo",
+    "description": "Con una sonrisa de oreja a oreja, el Heraldo de la Grieta llena la arena de cangrejos que otorgan botín adicional.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 93,
+    "name": "Suscripción de botín",
+    "description": "Zoe te otorga botín variado al comienzo de cada fase.",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 94,
+    "name": "¡Emblemas, uníos!",
+    "description": "Ryze te otorga 3 emblemas aleatorios para que comiences tu aventura.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 95,
+    "name": "Suscripción dorada",
+    "description": "Tahm Kench te otorga oro en cada fase.",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 96,
+    "name": "Cambio de ronda de aumentos",
+    "description": "LeBlanc manipula los aumentos para que se ofrezcan antes.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 97,
+    "name": "No hay encuentro",
+    "description": "La calma reina hoy en Runaterra. No habrá encuentros en esta partida.",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 98,
+    "name": "Abismo de los Lamentos",
+    "description": "Obtienes 5 unidades de coste 1 aleatorias para luchar en el Abismo de los Lamentos.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 99,
+    "name": "Calderilla plateada",
+    "description": "Los dos últimos jugadores supervivientes ganan 70 de oro para librar una batalla final épica.",
+    "percentage": 7.0,
+    "setNumber": 16
+  },
+  {
+    "id": 100,
+    "name": "Arena de la Ordalía",
+    "description": "Cada vez que se elimina a un jugador, Draven otorga oro a los supervivientes por jugador eliminado.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 101,
+    "name": "Grupo de exploración",
+    "description": "El grupo de exploración de Teemo ha encontrado +1 cambio de aumentos para todos los aumentos.",
+    "percentage": 4.0,
+    "setNumber": 16
+  },
+  {
+    "id": 102,
+    "name": "Regalos de Gwen",
+    "description": "Tras los 3 primeros carruseles, Gwen otorga a los jugadores 1 componente y tijeras especiales.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 103,
+    "name": "Carrusel de vitalidad",
+    "description": "¡Irelia sobrecarga los dos primeros carruseles con velocidad adicional y botín especial!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 104,
+    "name": "Fuegos artificiales",
+    "description": "En las rondas 2-7 y 3-7, Darius reparte fuegos artificiales por el tablero. En la ronda 4-7, ¡celebra el año del caballo!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 105,
+    "name": "Prosperidad mayor<br>",
+    "description": "¡Ornn forja un yunque cada vez más poderoso al principio de cada fase!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 106,
+    "name": "¡A las carreras!",
+    "description": "Sejuani hará una carrera en 2-4. ¡Todos intentarán adivinar un ganador y recibirán botín según los aciertos!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 107,
+    "name": "Año del caballo",
+    "description": "Sejuani pone en tu banquillo un caballo que avanza 1 por victoria y 2 por derrota. ¡Al final te recompensará!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 108,
+    "name": "Abismo de los Lamentos",
+    "description": "¡Otorga 5 unidades de coste 1 aleatorias para celebrar el festival!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 109,
+    "name": "Grupo de exploración",
+    "description": "Fiora otorga +1 cambio de aumentos para todos los aumentos.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 110,
+    "name": "Yunque de componentes",
+    "description": "Ornn te forja 2 Yunques de componente.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 111,
+    "name": "Fiesta prismática",
+    "description": "Swain se suma a la celebración y hace que todos los aumentos sean prismáticos.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 112,
+    "name": "El Charco del escurridizo",
+    "description": "Twisted Fate apuesta a lo grande e invoca al escurridizo para que se una a la celebración.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 113,
+    "name": "Preludio prismático",
+    "description": "Swain se suma a la celebración y hace que el primer aumento sea prismático.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 114,
+    "name": "Suscripción de botín",
+    "description": "Tahm Kench te otorga recompensas en cada fase. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 115,
+    "name": "No hay encuentro",
+    "description": "¡Todo el mundo se une a la fiesta! No habrá encuentros en esta partida. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 116,
+    "name": "Inicio de coste 2",
+    "description": "Jarvan IV mejora tu campeón inicial a 2 estrellas en esta partida.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 117,
+    "name": "Suscripción dorada",
+    "description": "Tahm Kench te otorga oro en cada fase. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 118,
+    "name": "Fiestorro de cangrejos",
+    "description": "Twisted Fate apuesta a lo grande e invoca al escurridizo para que se una al Fiestorro de cangrejos.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 119,
+    "name": "Calderilla plateada",
+    "description": "Los dos últimos jugadores supervivientes ganan 70 de oro para librar una batalla final épica.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 120,
+    "name": "Final prismático",
+    "description": "Swain se suma a la celebración y hace que el último aumento sea prismático.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 121,
+    "name": "Cambio de ronda de aumentos",
+    "description": "Jarvan IV ordena que se entreguen los aumentos antes de tiempo en esta partida.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 122,
+    "name": "Arena de la Ordalía",
+    "description": "Cada vez que se elimina a un jugador, Azir otorga oro a los supervivientes por jugador eliminado.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 123,
+    "name": "Gala dorada",
+    "description": "Annie hace que todos los aumentos de esta partida sean dorados. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 124,
+    "name": "Inicio de coste 3",
+    "description": "Empiezas con un campeón aleatorio de coste 3 en esta partida.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 125,
+    "name": "Inicio de coste 2",
+    "description": "Empiezas con un campeón aleatorio de coste 2 en esta partida.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 126,
+    "name": "HACKEO: Inicio mejorado",
+    "description": "Katarina mejora tu campeón inicial a 2 estrellas.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 147,
+    "name": "Inicio de coste 2",
+    "description": "Empiezas con un campeón aleatorio de coste 2 en esta partida.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 148,
+    "name": "Inicio de coste 3",
+    "description": "Empiezas con un campeón aleatorio de coste 3 en esta partida.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 149,
+    "name": "Niveles más baratos",
+    "description": "Cada nivel cuesta 2 de EXP menos.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 150,
+    "name": "Yunque de objeto completo",
+    "description": "Empiezas con 1 Yunque de objeto completo.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 151,
+    "name": "Yunques de componente",
+    "description": "Comienzas con 2 yunques de componente.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 152,
+    "name": "¡Emblemas, uníos!",
+    "description": "Empiezas con 3 emblemas aleatorios.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 153,
+    "name": "Enfrentamiento final",
+    "description": "Los dos últimos jugadores que queden ganan 70 de oro para librar una batalla final épica.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 154,
+    "name": "Suscripción dorada",
+    "description": "En cada fase, obtienes una cantidad aleatoria de oro. Todos los jugadores obtienen la misma cantidad.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 155,
+    "name": "Final dorado",
+    "description": "El último aumento que se ofrece en esta partida será dorado.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 156,
+    "name": "Gala dorada",
+    "description": "Todos los aumentos que se ofrecen en esta partida serán dorados.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 157,
+    "name": "Preludio dorado",
+    "description": "El primer aumento que se ofrece en esta partida será dorado.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 158,
+    "name": "Abismo de los Lamentos",
+    "description": "Empiezas con 5 unidades de coste 1 aleatorias.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 159,
+    "name": "Forja de objetos",
+    "description": "Todos los jugadores empiezan con 2 yunques de objetos completos.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 160,
+    "name": "No hay encuentro",
+    "description": "No habrá encuentros en esta partida.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 161,
+    "name": "Golpe final prismático",
+    "description": "El último aumento que se ofrece en esta partida será prismático.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 162,
+    "name": "Apertura prismática",
+    "description": "El primer aumento que se ofrece en esta partida será prismático.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 163,
+    "name": "Fiesta prismática",
+    "description": "Todos los aumentos que se ofrezcan en esta partida serán prismáticos.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 164,
+    "name": "Subscripción de cambios de tienda",
+    "description": "Al comienzo de cada fase, obtienes cambios de tienda gratis.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 165,
+    "name": "Grupo de exploración",
+    "description": "Obtienes +1 cambio de aumentos esta partida.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 166,
+    "name": "Inicio mejorado",
+    "description": "Empiezas con un campeón de 2 estrellas en esta partida.",
+    "percentage": 5.0,
+    "setNumber": 18
+  }
+]

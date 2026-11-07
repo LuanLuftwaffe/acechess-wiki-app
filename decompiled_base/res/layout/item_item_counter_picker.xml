@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/item_item_counter_picker_0" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:layout_gravity="center" android:layout_width="48.0dp" android:layout_height="wrap_content" android:layout_marginTop="10.0dp">
+        <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center" android:id="@id/imgItem" android:tag="binding_1" android:background="@drawable/shape_stroke_color_accent" android:layout_width="44.0dp" android:layout_height="44.0dp" android:layout_marginTop="8.0dp" android:foreground="@drawable/ripple_background" />
+        </LinearLayout>
+        <FrameLayout android:layout_gravity="end|top" android:id="@id/flItemCounter" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:background="@drawable/shape_suggested_counter" android:layout_width="18.0dp" android:layout_height="18.0dp" />
+            <TextView android:textAppearance="@style/TextAppearance.Material3.LabelSmall" android:textColor="@color/colorTextSecondary" android:layout_gravity="center" android:id="@id/txtItemCounter" android:tag="binding_3" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </FrameLayout>
+    </FrameLayout>
+    <TextView android:textAppearance="@style/TextAppearance.Material3.BodySmall" android:textSize="12.0sp" android:textColor="@color/colorTextPrimary" android:ellipsize="end" android:gravity="center|top" android:layout_gravity="center" android:id="@id/txtItemName" android:tag="binding_4" android:layout_width="match_parent" android:layout_height="50.0dp" android:layout_marginTop="5.0dp" android:maxLines="3" android:layout_marginStart="6.0dp" android:layout_marginEnd="6.0dp" />
+    <FrameLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dp" android:layout_marginStart="6.0dp" android:layout_marginEnd="6.0dp">
+        <TextView android:textColor="@color/colorAccentLight" android:gravity="center" android:layout_gravity="start" android:id="@id/btnDecrease" android:layout_width="20.0dp" android:layout_height="20.0dp" android:foreground="@drawable/ripple_circle_background" android:tint="@color/colorAccentLight" android:text="-" />
+        <TextView android:textColor="@color/colorAccentLight" android:gravity="center" android:layout_gravity="end" android:id="@id/btnIncrease" android:layout_width="20.0dp" android:layout_height="20.0dp" android:foreground="@drawable/ripple_circle_background" android:tint="@color/colorAccentLight" android:text="+" />
+    </FrameLayout>
+</LinearLayout>

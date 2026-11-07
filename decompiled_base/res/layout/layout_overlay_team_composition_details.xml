@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:background="@color/colorBackgroundAlternative" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:orientation="vertical" android:paddingBottom="10.0dp" android:layout_width="match_parent" android:layout_height="match_parent">
+        <FrameLayout android:id="@id/flTier" android:background="@color/yellow" android:layout_width="26.0dp" android:layout_height="26.0dp" android:layout_marginTop="15.0dp" android:layout_alignParentTop="true" android:layout_marginEnd="16.0dp" android:layout_alignParentEnd="true">
+            <TextView android:textSize="15.0sp" android:textStyle="bold" android:textColor="@color/colorBlack" android:layout_gravity="center" android:id="@id/txtTeamTier" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="S" />
+        </FrameLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp">
+            <TextView android:textSize="22.0sp" android:textColor="@color/colorTextPrimary" android:id="@id/txtTeamName" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/unknown" android:textAllCaps="true" android:layout_marginStart="16.0dp" android:layout_marginEnd="38.0dp" />
+            <TextView android:textColor="@color/colorTextSecondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:text="@string/early_champions" android:layout_marginStart="16.0dp" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rvEarlyChampions" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+            <TextView android:textColor="@color/colorTextSecondary" android:id="@id/txtCarousel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:text="@string/carousel" android:layout_marginStart="16.0dp" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rvCarousel" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+            <TextView android:textColor="@color/colorTextSecondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:text="@string/options_alternatives" android:layout_marginStart="16.0dp" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rvOption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+            <TextView android:textColor="@color/colorTextSecondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:text="@string/base_items_required" android:layout_marginStart="16.0dp" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rvItemRequired" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+            <com.lolchess.tft.common.view.PlacementHexesView android:id="@id/placementHexesView" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" app:hvOverlayLandscape="true" />
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,674 @@
+[
+  {
+    "id": 49,
+    "name": "Assinatura de Ouro",
+    "description": "Receba um prêmio em dinheiro no começo de cada Estágio!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 50,
+    "name": "Festa Prismática",
+    "description": "É o confronto supremo! Todos os Aprimoramentos serão Prismáticos nesta partida.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 51,
+    "name": "Final Prismático",
+    "description": "Prepare-se para um final de arrasar com um terceiro Aprimoramento Prismático!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 52,
+    "name": "Prelúdio Prismático",
+    "description": "A batalha começa com um Aprimoramento Prismático!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 53,
+    "name": "Poça do Aronguejo",
+    "description": "A arena está repleta de Aronguejos carregando espólios adicionais.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 54,
+    "name": "Rave dos Caranguejos",
+    "description": "A arena está repleta de Aronguejos carregando espólios adicionais. Depois do Estágio 5, eles viram AMEAÇAS MORTAIS.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 55,
+    "name": "Assinatura de Espólios",
+    "description": "Receba uma grande variedade de espólios no começo de cada Estágio!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 56,
+    "name": "Baile Dourado",
+    "description": "Vá atrás do ouro com três Aprimoramentos Ouro!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 57,
+    "name": "Bigornas de Componentes",
+    "description": "Recebe duas Bigornas de Componentes. Escolha sua arma!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 58,
+    "name": "Golens de Treinamento",
+    "description": "Treine seu Golem! Tem 3 Emblemas aleatórios.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 60,
+    "name": "Início de Custo 3",
+    "description": "Começa a partida com um Campeão aleatório de custo 3.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 61,
+    "name": "Campeão aprimorado",
+    "description": "Começa com um Campeão 2 estrelas de custo 1.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 62,
+    "name": "Troca da Rodada de Aprimoramento",
+    "description": "Os Aprimoramentos serão adiantados nesta partida.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 63,
+    "name": "Poritos Adiantado",
+    "description": "O segundo Poritos de Poder é concedido na rodada 2-6 (e não na 3-6).",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 64,
+    "name": "A Grande Final",
+    "description": "Chegou a Grande Final! Agora, você está por sua conta.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 65,
+    "name": "Episódio da Praia",
+    "description": "Episódio da Praia! Recebe uma bola de praia para os Estrategistas brincarem!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 66,
+    "name": "Batalha Majestosa",
+    "description": "Os carrosséis têm mais concorrentes!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 67,
+    "name": "Círculo da Vitória",
+    "description": "Após os Top 4, os jogadores restantes ganham 10 de ouro e duas Bigornas de Componentes.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 68,
+    "name": "Assinatura de Ouro",
+    "description": "Zoe concede ouro a cada Estágio. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 69,
+    "name": "Festa Prismática",
+    "description": "Aurelion Sol transforma todos os Aprimoramentos em Prismáticos!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 70,
+    "name": "Final Prismático",
+    "description": "Aurelion Sol transforma o último Aprimoramento em Prismático!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 71,
+    "name": "Prelúdio Prismático",
+    "description": "Aurelion Sol transforma o primeiro Aprimoramento em Prismático!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 72,
+    "name": "Poça do Aronguejo",
+    "description": "Bardo invoca seus Aronguinhos!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 73,
+    "name": "Rave dos Caranguejos",
+    "description": "Bardo invoca Aronguinhos para começar a Rave dos Caranguejos!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 75,
+    "name": "Baile Dourado",
+    "description": "Sohm transforma todos os Aprimoramentos nesta partida em Ouro. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 76,
+    "name": "Bigornas de Componentes",
+    "description": "Swain concede 2 Bigornas de Componentes a você. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 77,
+    "name": "Golens de Treinamento",
+    "description": "Sohm invoca um golem equipado com 3 Emblemas ao seu tabuleiro.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 78,
+    "name": "Início de Custo 3",
+    "description": "Começa a partida com um Campeão aleatório de custo 3.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 79,
+    "name": "Campeão aprimorado",
+    "description": "Começa com um Campeão 2 estrelas de custo 1.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 80,
+    "name": "Dragão Tesoureiro",
+    "description": "Outro Dragão do Tesouro com ofertas especiais aparece na rodada 3-7!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 81,
+    "name": "Arauto Dragão",
+    "description": "Choncc concede um Dragão do mesmo tier a todos os jogadores!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 82,
+    "name": "Assinatura Dracônica",
+    "description": "Idas concede espólios a mais em cada Estágio. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 83,
+    "name": "Bigorna de Artefato",
+    "description": "Swain concede uma Bigorna de Artefato a você. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 84,
+    "name": "Baile Dourado",
+    "description": "Twisted Fate distribui todos os Aprimoramentos de tier ouro na partida.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 85,
+    "name": "Festa Prismática",
+    "description": "Seraphine transforma todos os Aprimoramentos em Prismáticos nesta partida.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 86,
+    "name": "Final Prismático",
+    "description": "Seraphine transforma todos os Aprimoramentos em Prismáticos nesta partida.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 87,
+    "name": "Prelúdio Prismático",
+    "description": "Zilean envelhece o último Aprimoramento até a perfeição. Ele será Prismático nesta partida.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 88,
+    "name": "Início de Custo 3",
+    "description": "Começa a partida com um Campeão aleatório de custo 3.",
+    "percentage": 7.0,
+    "setNumber": 16
+  },
+  {
+    "id": 89,
+    "name": "Início de Custo 2",
+    "description": "Começa a partida com um Campeão aleatório de custo 2.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 90,
+    "name": "HACK: Início Aprimorado",
+    "description": "Ekko aprimora seu Campeão inicial para 2 Estrelas.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 91,
+    "name": "Bigornas de Componentes",
+    "description": "Poppy concede duas Bigornas de Componentes.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 92,
+    "name": "Poça do Aronguejo",
+    "description": "O Arauto do Vale enche a partida de Aronguejos carregando espólios adicionais.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 93,
+    "name": "Assinatura de Espólios",
+    "description": "Zoe concede uma grande variedade de espólios no começo de cada Estágio!",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 94,
+    "name": "Coleção de Emblemas",
+    "description": "Ryze concede a você 3 Emblemas aleatórios para começar sua jornada.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 95,
+    "name": "Assinatura de Ouro",
+    "description": "Tahm Kench concede ouro a cada Estágio.",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 96,
+    "name": "Troca da Rodada de Aprimoramento",
+    "description": "LeBlanc manipula Aprimoramentos para que eles sejam oferecidos antes na partida.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 97,
+    "name": "Nenhum encontro.",
+    "description": "É um dia tranquilo em Runeterra. Sem encontros nesta partida.",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 98,
+    "name": "Howling Abyss",
+    "description": "Recebe 5 unidades aleatórias de custo 1 para lutar em Howling Abyss.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 99,
+    "name": "Silver Scrapes",
+    "description": "Os dois últimos jogadores sobreviventes ganham 70 de ouro para uma luta final épica.",
+    "percentage": 7.0,
+    "setNumber": 16
+  },
+  {
+    "id": 100,
+    "name": "Arena dos Desafiadores",
+    "description": "Sempre que um jogador é eliminado, Draven recompensa os jogadores sobreviventes com ouro por jogador eliminado.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 101,
+    "name": "Equipe de Exploração",
+    "description": "A equipe de exploração do Teemo encontrou +1 atualização de Aprimoramento para todos os Aprimoramentos.",
+    "percentage": 4.0,
+    "setNumber": 16
+  },
+  {
+    "id": 102,
+    "name": "Presentes da Gwen",
+    "description": "Após os 3 primeiros carrosséis, Gwen recompensa jogadores com um componente e uma tesoura especial.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 103,
+    "name": "Carrossel da Vitalidade",
+    "description": "Irelia sobrecarrega os dois primeiros carrosséis com velocidade extra e espólios especiais!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 104,
+    "name": "Fogos de Artifício",
+    "description": "No 2-7 e no 3-7, Darius oferece fogos de artifício como presente. No 4-7, celebre o Ano do Cavalo!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 105,
+    "name": "Prosperidade Crescente<br>",
+    "description": "Ornn forja uma Bigorna de poder crescente no início de cada estágio!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 106,
+    "name": "Apostando Corrida!",
+    "description": "Sejuani realiza uma corrida no 2-4. Todos tentam prever o vencedor e ganham espólios conforme os acertos!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 107,
+    "name": "Ano do Cavalo",
+    "description": "Sejuani concede um cavalo da sorte que corre 1 espaço por vitória e 2 por derrota. Ao chegar ao fim, concede recompensas!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 108,
+    "name": "Howling Abyss",
+    "description": "Recebe 5 unidades aleatórias de custo 1 para celebrar o festival!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 109,
+    "name": "Equipe de Exploração",
+    "description": "Fiora concede +1 de troca de Aprimoramento para todos os aprimoramentos.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 110,
+    "name": "Bigornas de Componentes",
+    "description": "Ornn forja 2 Bigornas de Componentes para você.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 111,
+    "name": "Festa Prismática",
+    "description": "Swain anima a festa e transforma todos os Aprimoramentos em Prismáticos.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 112,
+    "name": "Poça do Aronguejo",
+    "description": "Twisted Fate distribui cartas da sorte, invocando Aronguejos para a comemoração!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 113,
+    "name": "Prelúdio Prismático",
+    "description": "Swain anima a festa e transforma o primeiro Aprimoramento em Prismático.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 114,
+    "name": "Assinatura de Espólios",
+    "description": "Tahm Kench concede recompensas a cada Estágio. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 115,
+    "name": "Nenhum encontro.",
+    "description": "Todo mundo está ocupado comemorando! Sem encontros nesta partida. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 116,
+    "name": "Início de Custo 2",
+    "description": "Jarvan IV aprimora seu Campeão inicial para custo 2 nesta partida.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 117,
+    "name": "Assinatura de Ouro",
+    "description": "Tahm Kench concede ouro a cada Estágio. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 118,
+    "name": "Rave dos Caranguejos",
+    "description": "Twisted Fate distribui cartas da sorte, invocando Aronguejos para a Rave dos Caranguejos!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 119,
+    "name": "Silver Scrapes",
+    "description": "Os dois últimos jogadores sobreviventes ganham 70 de ouro para uma luta final épica.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 120,
+    "name": "Final Prismático",
+    "description": "Swain anima a festa e transforma o último Aprimoramento em Prismático.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 121,
+    "name": "Troca da Rodada de Aprimoramento",
+    "description": "Jarvan IV ordena que aprimoramentos sejam oferecidos mais cedo nesta partida.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 122,
+    "name": "Arena dos Desafiadores",
+    "description": "Sempre que uma pessoa é eliminada, Azir recompensa os sobreviventes com ouro por pessoa eliminada.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 123,
+    "name": "Baile Dourado",
+    "description": "Annie transforma todos os Aprimoramentos nesta partida em Ouro. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 124,
+    "name": "Início de Custo 3",
+    "description": "Começa a partida com um Campeão aleatório de custo 3.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 125,
+    "name": "Início de Custo 2",
+    "description": "Começa a partida com um Campeão aleatório de custo 2.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 126,
+    "name": "HACK: Início Aprimorado",
+    "description": "Katarina aprimora seu Campeão inicial para 2 Estrelas.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 147,
+    "name": "Início de Custo 2",
+    "description": "Começa a partida com um Campeão aleatório de custo 2.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 148,
+    "name": "Início de Custo 3",
+    "description": "Começa a partida com um Campeão aleatório de custo 3.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 149,
+    "name": "Níveis Econômicos",
+    "description": "Cada nível custa 2 de EXP a menos.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 150,
+    "name": "Bigorna de Item Completo",
+    "description": "Começa com uma Bigorna de Item Completo.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 151,
+    "name": "Bigornas de Componentes",
+    "description": "Começa com 2 Bigornas de Componentes.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 152,
+    "name": "Coleção de Emblemas",
+    "description": "Começa com 3 Emblemas aleatórios.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 153,
+    "name": "Confronto Final",
+    "description": "Os dois últimos jogadores recebem 70 de ouro para uma luta final épica.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 154,
+    "name": "Assinatura de Ouro",
+    "description": "Em todo Estágio, recebe uma quantidade aleatória de ouro. Todos os jogadores recebem a mesma quantidade.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 155,
+    "name": "Final Dourado",
+    "description": "O último Aprimoramento oferecido nesta partida será de tier Ouro.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 156,
+    "name": "Baile Dourado",
+    "description": "Todos os Aprimoramentos oferecidos nesta partida serão de tier Ouro.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 157,
+    "name": "Prelúdio Dourado",
+    "description": "O primeiro Aprimoramento oferecido nesta partida será de tier Ouro.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 158,
+    "name": "Howling Abyss",
+    "description": "Começa com 5 unidades aleatórias de custo 1.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 159,
+    "name": "Forja de Item",
+    "description": "Todos os jogadores começam com 2 Bigornas de Item Completo.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 160,
+    "name": "Nenhum Encontro",
+    "description": "Sem encontros nesta partida.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 161,
+    "name": "Finalizador Prismático",
+    "description": "O último Aprimoramento oferecido nesta partida será de tier Prismático.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 162,
+    "name": "Abertura Prismática",
+    "description": "O primeiro Aprimoramento oferecido nesta partida será de tier Prismático.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 163,
+    "name": "Festa Prismática",
+    "description": "Todos os Aprimoramentos oferecidos nesta partida serão de tier Prismático.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 164,
+    "name": "Assinatura de Atualização",
+    "description": "No início de cada Estágio, recebe atualizações gratuitas da Loja.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 165,
+    "name": "Equipe de Exploração",
+    "description": "Recebe +1 atualização para Aprimoramentos nesta partida.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 166,
+    "name": "Início Aprimorado",
+    "description": "Começa a partida com um Campeão de 2 Estrelas.",
+    "percentage": 5.0,
+    "setNumber": 18
+  }
+]

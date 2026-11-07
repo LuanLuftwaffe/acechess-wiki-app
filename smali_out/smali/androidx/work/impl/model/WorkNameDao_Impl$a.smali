@@ -1,0 +1,147 @@
+.class public Landroidx/work/impl/model/WorkNameDao_Impl$a;
+.super Landroidx/room/EntityInsertionAdapter;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Landroidx/work/impl/model/WorkNameDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field public final synthetic a:Landroidx/work/impl/model/WorkNameDao_Impl;
+
+
+# direct methods
+.method public constructor <init>(Landroidx/work/impl/model/WorkNameDao_Impl;Landroidx/room/RoomDatabase;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Landroidx/work/impl/model/WorkNameDao_Impl$a;->a:Landroidx/work/impl/model/WorkNameDao_Impl;
+
+    .line 2
+    .line 3
+    invoke-direct {p0, p2}, Landroidx/room/EntityInsertionAdapter;-><init>(Landroidx/room/RoomDatabase;)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public bridge synthetic bind(Landroidx/sqlite/db/SupportSQLiteStatement;Ljava/lang/Object;)V
+    .locals 0
+
+    .line 1
+    check-cast p2, Landroidx/work/impl/model/WorkName;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1, p2}, Landroidx/work/impl/model/WorkNameDao_Impl$a;->d(Landroidx/sqlite/db/SupportSQLiteStatement;Landroidx/work/impl/model/WorkName;)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public createQuery()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    const-string p0, "INSERT OR IGNORE INTO `WorkName` (`name`,`work_spec_id`) VALUES (?,?)"
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public d(Landroidx/sqlite/db/SupportSQLiteStatement;Landroidx/work/impl/model/WorkName;)V
+    .locals 1
+
+    .line 1
+    invoke-virtual {p2}, Landroidx/work/impl/model/WorkName;->getName()Ljava/lang/String;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    const/4 v0, 0x1
+
+    .line 6
+    if-nez p0, :cond_0
+
+    .line 7
+    .line 8
+    invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+
+    .line 9
+    .line 10
+    .line 11
+    goto :goto_0
+
+    .line 12
+    :cond_0
+    invoke-virtual {p2}, Landroidx/work/impl/model/WorkName;->getName()Ljava/lang/String;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p0
+
+    .line 16
+    invoke-interface {p1, v0, p0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
+
+    .line 17
+    .line 18
+    .line 19
+    :goto_0
+    invoke-virtual {p2}, Landroidx/work/impl/model/WorkName;->getWorkSpecId()Ljava/lang/String;
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-object p0
+
+    .line 23
+    const/4 v0, 0x2
+
+    .line 24
+    if-nez p0, :cond_1
+
+    .line 25
+    .line 26
+    invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+
+    .line 27
+    .line 28
+    .line 29
+    return-void
+
+    .line 30
+    :cond_1
+    invoke-virtual {p2}, Landroidx/work/impl/model/WorkName;->getWorkSpecId()Ljava/lang/String;
+
+    .line 31
+    .line 32
+    .line 33
+    move-result-object p0
+
+    .line 34
+    invoke-interface {p1, v0, p0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
+
+    .line 35
+    .line 36
+    .line 37
+    return-void
+.end method

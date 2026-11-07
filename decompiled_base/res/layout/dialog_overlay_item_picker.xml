@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/dialog_overlay_item_picker_0" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:textColor="@color/colorTextPrimary" android:textColorHint="@color/colorTextDisable" android:id="@id/edtSearch" android:background="@color/colorBlack" android:layout_width="match_parent" android:layout_height="?actionBarSize" android:hint="@string/item_name" android:drawablePadding="15.0dp" android:inputType="text" android:imeOptions="actionDone" android:drawableStart="@drawable/ic_search_white_24dp" android:paddingStart="16.0dp" android:paddingEnd="16.0dp" android:layout_marginEnd="10.0dp" android:importantForAutofill="no" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/rvItemPicker" android:paddingBottom="30.0dp" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="wrap_content" />
+</LinearLayout>

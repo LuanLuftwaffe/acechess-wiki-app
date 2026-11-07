@@ -1,0 +1,16 @@
+.class public interface abstract Lcom/google/android/gms/internal/measurement/zzts;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# virtual methods
+.method public zza(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    return-void
+.end method

@@ -1,0 +1,1256 @@
+[
+  {
+    "id": "DA_18_Elderwood",
+    "name": "Bosque ancestral",
+    "description": "Obtienes plantas de Bosque ancestral que puedes colocar.",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1597,
+        "style": 1,
+        "description": "Un árbol de rocorteza y un vitalbrote.",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1598,
+        "style": 3,
+        "description": "Un segundo árbol de rocorteza y los árboles de rocorteza obtienen 200 de vida.",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1599,
+        "style": 5,
+        "description": "El protector de bosquejondo.",
+        "maxUnits": 8,
+        "minUnits": 7
+      },
+      {
+        "id": 1600,
+        "style": 5,
+        "description": "Las plantas suben a 2 estrellas.",
+        "maxUnits": 10,
+        "minUnits": 9
+      },
+      {
+        "id": 1601,
+        "style": 6,
+        "description": "Las plantas suben a 3 estrellas y el bosque cobra vida.",
+        "maxUnits": 25000,
+        "minUnits": 11
+      }
+    ],
+    "topFour": 100,
+    "winRate": 95.2,
+    "averagePlacement": 1.1,
+    "playRate": 0.01,
+    "statusDescriptions": [
+      "Elderwood (9) 9-Piece Summon Bonus Health: 140% ⇒ 125%"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_18_LuxUniqueTrait",
+    "name": "Avatar",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1602,
+        "style": 4,
+        "description": "Tener un avatar en el banquillo o en el tablero hace que el resto de avatares de tu tienda adquieran el atributo del mismo.<br><br>El atributo elegido por el avatar cuenta dos veces para las bonificaciones de los atributos.",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 66.6,
+    "winRate": 25.4,
+    "averagePlacement": 3.6,
+    "playRate": 1.58,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Slayer",
+    "name": "Asolador",
+    "description": "Los asoladores obtienen un 10% de omnisucción. Además, los asoladores infligen daño adicional, que se duplica contra unidades con menos de un 50% de vida.",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1603,
+        "style": 1,
+        "description": "12% de daño adicional.",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1604,
+        "style": 3,
+        "description": "25% de daño adicional.",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1605,
+        "style": 5,
+        "description": "40% de daño adicional.",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 60.7,
+    "winRate": 9.6,
+    "averagePlacement": 4.2,
+    "playRate": 0.03,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_DravenUniqueTrait18",
+    "name": "Cazarretos",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1606,
+        "style": 4,
+        "description": "Elige un botín. Tu Draven más fuerte puede progresar con el botín para conseguir su recompensa. Al completar un botín, elige otro.",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 51.9,
+    "winRate": 22.7,
+    "averagePlacement": 4.2,
+    "playRate": 1.59,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Solar",
+    "name": "Solar",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1607,
+        "style": 5,
+        "description": "Tus campeones obtienen un escudo equivalente a un 5% de la vida máxima e infligen un 8% de daño mágico adicional. Otorga bonificaciones adicionales por cada campeón de 3 estrellas único:<br><br>1: El escudo y el daño mágico aumentan un 1% por cada campeón de 3 estrellas.<br>3: 15%%i:scaleAS% y 12%i:scaleArmor%%i:scaleMR%.<br>5: Convierte un 40% del daño mágico adicional en daño verdadero.<br>8: Cada 4 s de combate, un campeón de 3 estrellas asciende a 4 estrellas.",
+        "maxUnits": 25000,
+        "minUnits": 3
+      }
+    ],
+    "topFour": 55.1,
+    "winRate": 13.2,
+    "averagePlacement": 4.2,
+    "playRate": 1.44,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Sprykin",
+    "name": "Vivaz",
+    "description": "Obtienes a la bestia inseparable. Coloca a una unidad vivaz sobre tu besti para elegir a su jinete.",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1608,
+        "style": 1,
+        "description": "El jinete obtiene un<br>15% %i:scaleHealth% y un 15% %i:scaleAS%.",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1609,
+        "style": 3,
+        "description": "40% %i:scaleHealth%, un 35% %i:scaleAS% y un 50% de la habilidad de tu besti se aplica a tus campeones vivaces.",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1610,
+        "style": 5,
+        "description": "55% %i:scaleHealth%, un 55% %i:scaleAS% y un 100% de la habilidad de tu besti se aplica a tus campeones vivaces.",
+        "maxUnits": 25000,
+        "minUnits": 7
+      }
+    ],
+    "topFour": 59.8,
+    "winRate": 10.2,
+    "averagePlacement": 4.1,
+    "playRate": 0.01,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Adaptor",
+    "name": "Versátil",
+    "description": "Innato: Las habilidades de Adaptación cambian según si su daño de ataque o su poder de habilidad es mayor.<br><br>Las unidades de Versátil obtienen poder de habilidad o daño de ataque, según cuál de los dos sea mayor.",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "D",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1611,
+        "style": 1,
+        "description": "25% O",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1612,
+        "style": 3,
+        "description": "35% O",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1613,
+        "style": 5,
+        "description": "50%.",
+        "maxUnits": 25000,
+        "minUnits": 4
+      }
+    ],
+    "topFour": 75,
+    "winRate": 15.4,
+    "averagePlacement": 3.3,
+    "playRate": 0.02,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Coven",
+    "name": "Aquelarre",
+    "description": "Acumula esencia al asesinar campeones, y más al perder combates contra jugadores.<br><br>A partir de 40 de esencia, elige entre convertir la esencia en recompensas o seguir acumulándola. Cada recompensa requiere una cantidad de esencia cada vez mayor.",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "D",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1614,
+        "style": 1,
+        "description": "2 de esencia por asesinato, 22 de esencia por derrota.",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1615,
+        "style": 3,
+        "description": "2 por asesinato, 28 por derrota.",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1616,
+        "style": 3,
+        "description": "3 por asesinato, 35 por derrota.",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1617,
+        "style": 5,
+        "description": "10 por asesinato, 60 por derrota.",
+        "maxUnits": 25000,
+        "minUnits": 7
+      }
+    ],
+    "topFour": 47.6,
+    "winRate": 15.7,
+    "averagePlacement": 4.6,
+    "playRate": 0.52,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Eclipse",
+    "name": "Eclipse",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1618,
+        "style": 1,
+        "description": "Tras 10 s de combate, el eclipse ejecuta al enemigo con menos vida, y se repite cada 3.5 s.",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 0,
+    "winRate": 0,
+    "averagePlacement": 0,
+    "playRate": 0,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Hunter",
+    "name": "Cazador",
+    "description": "Los cazadores obtienen daño de ataque. Si un cazador no ha cambiado de objetivo durante 3 s, obtiene un 10% de amplificación de daño.",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1619,
+        "style": 1,
+        "description": "20% %i:scaleAD%.",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1620,
+        "style": 3,
+        "description": "30% %i:scaleAD%.",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1621,
+        "style": 3,
+        "description": "45% %i:scaleAD%",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1622,
+        "style": 5,
+        "description": "65% %i:scaleAD%.",
+        "maxUnits": 25000,
+        "minUnits": 5
+      }
+    ],
+    "topFour": 61.7,
+    "winRate": 9.6,
+    "averagePlacement": 4,
+    "playRate": 0.01,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Maokai_UniqueTrait",
+    "name": "Frondantigua",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1623,
+        "style": 4,
+        "description": "Cada vez que un enemigo muere en un radio de 3 hexágonos, obtienes 30 de vida máxima permanente.<br><br>Actual: 0",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 52.9,
+    "winRate": 19.8,
+    "averagePlacement": 4.2,
+    "playRate": 2.44,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Battlemage",
+    "name": "Monolito",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "D",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1624,
+        "style": 4,
+        "description": "Los monolitos obtienen 10 de armadura y de resistencia mágica por cada enemigo que los marque como objetivo.",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 47.8,
+    "winRate": 9.6,
+    "averagePlacement": 4.6,
+    "playRate": 0.91,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_Primal18",
+    "name": "Primigenio",
+    "description": "Elige una de entre cuatro bendiciones primigenias.",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1625,
+        "style": 1,
+        "description": "???",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1626,
+        "style": 5,
+        "description": "???",
+        "maxUnits": 25000,
+        "minUnits": 4
+      }
+    ],
+    "topFour": 58.5,
+    "winRate": 12.1,
+    "averagePlacement": 4.1,
+    "playRate": 0.18,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Greenfather",
+    "name": "Padre Arborescente",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1627,
+        "style": 4,
+        "description": "Obtienes 1 semilla cuando tu Ivern más fuerte lanza una habilidad, y 3 más cada combate. Ivern usa 5 semillas para hacer crecer un hexágono en tu tablero que otorga una bonificación a su ocupante.<br><br>Semillas: 0/5<br><br>Bioma actual:",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 58.2,
+    "winRate": 22.6,
+    "averagePlacement": 4,
+    "playRate": 2.53,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Invoker",
+    "name": "Conjurador",
+    "description": "Tu equipo obtiene regeneración de maná, que aumenta para los conjuradores.",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1628,
+        "style": 1,
+        "description": "1 de %i:scaleManaRegen% | 3 %i:scaleManaRegen%.",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1629,
+        "style": 3,
+        "description": "1 %i:scaleManaRegen% | 4 %i:scaleManaRegen%.",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1630,
+        "style": 3,
+        "description": "2 %i:scaleManaRegen% | 6 %i:scaleManaRegen%.",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1631,
+        "style": 5,
+        "description": "2 %i:scaleManaRegen% | 8 %i:scaleManaRegen%.",
+        "maxUnits": 25000,
+        "minUnits": 5
+      }
+    ],
+    "topFour": 60.4,
+    "winRate": 15.1,
+    "averagePlacement": 4,
+    "playRate": 0.12,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Rapidfire",
+    "name": "Fuego rápido",
+    "description": "Tu equipo obtiene un 10% de velocidad de ataque. Los campeones de Fuego rápido obtienen más con cada ataque, hasta un máximo de 10 acumulaciones.",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1632,
+        "style": 1,
+        "description": "+3% %i:scaleAS% por ataque.",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1633,
+        "style": 3,
+        "description": "+5% %i:scaleAS% por ataque.",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1634,
+        "style": 3,
+        "description": "+7% %i:scaleAS% por ataque.",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1635,
+        "style": 5,
+        "description": "+10% %i:scaleAS% por ataque.",
+        "maxUnits": 25000,
+        "minUnits": 5
+      }
+    ],
+    "topFour": 59.4,
+    "winRate": 13.6,
+    "averagePlacement": 4,
+    "playRate": 0.31,
+    "statusDescriptions": [
+      "Rapidfire AS Per Attack: 3/5/8/12% ⇒ 3/5/7/10%"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_Juggernaut18",
+    "name": "Coloso",
+    "description": "El equipo obtiene durabilidad. Los colosos obtienen más.",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1636,
+        "style": 1,
+        "description": "4% %i:scaleDR% o 20% %i:scaleDR%.",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1637,
+        "style": 3,
+        "description": "6% %i:scaleDR% o 30% %i:scaleDR%.",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1638,
+        "style": 5,
+        "description": "8% %i:scaleDR% o 42% %i:scaleDR%.",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 51.4,
+    "winRate": 13.5,
+    "averagePlacement": 4.4,
+    "playRate": 5.69,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Inferno",
+    "name": "Infernal",
+    "description": "El daño de los infernales <TFTKeyword>quema</TFTKeyword> y aplica un 33% de <TFTKeyword>heridas graves</TFTKeyword> a los enemigos durante 3 s. La quemadura de Infernal se acumula con otras quemaduras.",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1639,
+        "style": 1,
+        "description": "1% de quemadura.",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1640,
+        "style": 3,
+        "description": "Tras el combate, 1 de los huecos de la tienda sin campeones infernales se queman y ofrecen un campeón de un nivel superior.",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1641,
+        "style": 5,
+        "description": "Quema 2 huecos de la tienda, 3% de quemadura.",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1642,
+        "style": 5,
+        "description": "Quema 4 huecos de la tienda, 4% de quemadura.",
+        "maxUnits": 25000,
+        "minUnits": 7
+      }
+    ],
+    "topFour": 62.4,
+    "winRate": 22.9,
+    "averagePlacement": 3.7,
+    "playRate": 0.03,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_AluneUniqueTrait18",
+    "name": "Afín",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1643,
+        "style": 4,
+        "description": "Tu Alune más fuerte cambia a una nueva fase de la luna tras cada lanzamiento. Mientras la luna esté medio llena o menos, tu equipo obtiene un 5% de durabilidad. Mientras esté en una fase superior, tu equipo obtiene un 7% de amplificación de daño.",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 65.4,
+    "winRate": 21.8,
+    "averagePlacement": 3.7,
+    "playRate": 1.78,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Rival",
+    "name": "Rival",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1644,
+        "style": 5,
+        "description": "Solo se activa al desplegar a 1 rival.<br><br>Los rivales acumulan eliminaciones, y obtienen 3 si asesinan a otro rival.",
+        "maxUnits": 1,
+        "minUnits": 1
+      },
+      {
+        "id": 1645,
+        "style": 5,
+        "description": "Es posible desplegar a los rivales juntos. Cuando Kha'Zix obtiene maná con su habilidad, Rengar obtiene un 50% de ese maná. Cuando Rengar se cura con su habilidad, Kha'Zix obtiene un 100% de esa curación.",
+        "maxUnits": 25000,
+        "minUnits": 2
+      }
+    ],
+    "topFour": 52.9,
+    "winRate": 13.6,
+    "averagePlacement": 4.3,
+    "playRate": 1.29,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Vanguard",
+    "name": "Vanguardia",
+    "description": "Al comienzo del combate y cuando su vida es inferior a un 50%, las unidades de Vanguardia obtienen un escudo según su vida máxima durante 10 s.",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1646,
+        "style": 1,
+        "description": "18% de la vida máxima.",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1647,
+        "style": 3,
+        "description": "30% de la vida máxima.",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1648,
+        "style": 5,
+        "description": "40% de la vida máxima. Mientras tienen un escudo, obtienen un 5% de durabilidad.",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 65.5,
+    "winRate": 25,
+    "averagePlacement": 3.6,
+    "playRate": 0.1,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Brawler",
+    "name": "Luchador",
+    "description": "Tu equipo obtiene 120 de vida máxima. Los luchadores obtienen más.",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1649,
+        "style": 1,
+        "description": "25% %i:scaleHealth%.",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1650,
+        "style": 3,
+        "description": "40% %i:scaleHealth%.",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1651,
+        "style": 5,
+        "description": "65% %i:scaleHealth%.",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 63.8,
+    "winRate": 18.3,
+    "averagePlacement": 3.6,
+    "playRate": 0.02,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Blackthorn",
+    "name": "Espina negra",
+    "description": "El aliado en el hexágono de Espina negra se sacrifica antes del combate, lo que otorga vida a tus campeones.<br><br>Los campeones de Espina negra obtienen estadísticas adicionales según el rol, el nivel de estrellas y el coste del sacrificio.",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1652,
+        "style": 1,
+        "description": "175 %i:scaleHealth%.",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1653,
+        "style": 3,
+        "description": "350 %i:scaleHealth%. La bonificación es un 30% más potente.",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1654,
+        "style": 5,
+        "description": "600 %i:scaleHealth%. La bonificación es un 50% más potente.",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 63.4,
+    "winRate": 22.3,
+    "averagePlacement": 3.8,
+    "playRate": 0.11,
+    "statusDescriptions": [
+      "Blackthorn 6 Piece Enhanced Bonus: 60% ⇒ 50% Base AP Sacrifice: 12% Damage Amp + 2 Mana Regen ⇒ 10% Damage Amp + 2 Mana Regen"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_18_Executioner",
+    "name": "Exterminador",
+    "description": "",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1655,
+        "style": 1,
+        "description": "Los exterminadores obtienen <TFTKeyword>Precisión</TFTKeyword> y un 15% de probabilidad de impacto crítico.",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1656,
+        "style": 3,
+        "description": "Además, los enemigos se desangran y reciben un 25% de daño verdadero adicional a lo largo de 3 s.",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1657,
+        "style": 5,
+        "description": "El daño de sangrado aumenta a un 35%.",
+        "maxUnits": 25000,
+        "minUnits": 4
+      }
+    ],
+    "topFour": 69,
+    "winRate": 19.3,
+    "averagePlacement": 3.5,
+    "playRate": 0.62,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_ApexPredator",
+    "name": "Depredador alfa",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1658,
+        "style": 4,
+        "description": "El Dragón anciano ocupa 2 ranuras de equipo y otorga +2 al atributo Bestia de la Grieta.",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 56.8,
+    "winRate": 21.1,
+    "averagePlacement": 4,
+    "playRate": 1.93,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_Riftbeast18",
+    "name": "Bestia de la Grieta",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1659,
+        "style": 1,
+        "description": "Usa la marca alfa para otorgar a una bestia de la Grieta su mejora única.",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1660,
+        "style": 3,
+        "description": "Cada 3 combates, tu próxima tienda se llenará de bestias de la Grieta.",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1661,
+        "style": 5,
+        "description": "Al comienzo del combate y cada 5 s, las bestias de la Grieta obtienen un <br>5% %i:scaleAD%, un 5% %i:scaleAP%, un 6% %i:scaleAS%<br>+5 %i:scaleArmor%, +5 %i:scaleMR%, +50 %i:scaleHealth% y +1 %i:scaleManaRegen%.",
+        "maxUnits": 9,
+        "minUnits": 7
+      },
+      {
+        "id": 1662,
+        "style": 5,
+        "description": "+2 de tamaño máximo del equipo.",
+        "maxUnits": 25000,
+        "minUnits": 10
+      }
+    ],
+    "topFour": 90.2,
+    "winRate": 42.7,
+    "averagePlacement": 2.3,
+    "playRate": 0.09,
+    "statusDescriptions": [
+      "Riftbeast (7) AD/AP: 6% ⇒ 5%"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_18_Caustic",
+    "name": "Cáustico",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1663,
+        "style": 4,
+        "description": "El daño de las unidades cáusticas desgarra y resquebraja un 30% a los enemigos durante 4 s.",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 53.6,
+    "winRate": 8.3,
+    "averagePlacement": 4.4,
+    "playRate": 1.95,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Fae",
+    "name": "Hada",
+    "description": "El daño, la curación y los escudos de tu equipo atraen a hadas.<br><br>Cada hada otorga daño de ataque y poder de habilidad a los campeones feéricos. Cuando su vida cae por debajo de un 50%, se curan por cada hada.",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "D",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1664,
+        "style": 1,
+        "description": "4.5% y 3% de curación.",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1665,
+        "style": 5,
+        "description": "7% y 5% de curación. Tras atraer a 7 hadas, empezarás a atraer a hadas doradas, que otorgan oro.",
+        "maxUnits": 25000,
+        "minUnits": 4
+      }
+    ],
+    "topFour": 47.1,
+    "winRate": 14.4,
+    "averagePlacement": 4.6,
+    "playRate": 0.2,
+    "statusDescriptions": [
+      "Fae (2/4) Heal: 2.5/4% ⇒ 3/5% 4th Pixie Threshold: 30000 ⇒ 25,000 5th Pixie Threshold: 70000 ⇒ 60,000 6th Pixie Threshold: 110000 ⇒ 100,000"
+    ],
+    "status": 1
+  },
+  {
+    "id": "DA_18_Lunar",
+    "name": "Lunar",
+    "description": "Los campeones lunares y los aliados adyacentes obtienen velocidad de ataque y poder de habilidad. Los campeones lunares obtienen un 100% más.",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1666,
+        "style": 1,
+        "description": "7% %i:scaleAS%, 7% %i:scaleAP%.",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1667,
+        "style": 3,
+        "description": "10% %i:scaleAS%, 12% %i:scaleAP%.",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1668,
+        "style": 3,
+        "description": "14% %i:scaleAS%, 16% %i:scaleAP%.",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1669,
+        "style": 5,
+        "description": "18% %i:scaleAS%, 20% %i:scaleAP%.",
+        "maxUnits": 25000,
+        "minUnits": 5
+      }
+    ],
+    "topFour": 76.9,
+    "winRate": 26.6,
+    "averagePlacement": 3.1,
+    "playRate": 0.06,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Defender",
+    "name": "Defensor",
+    "description": "Tu equipo obtiene 12 de armadura y resistencia mágica. Los defensores obtienen más.",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1670,
+        "style": 1,
+        "description": "25.",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1671,
+        "style": 3,
+        "description": "60.",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1672,
+        "style": 5,
+        "description": "115.",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 53,
+    "winRate": 11.7,
+    "averagePlacement": 4.3,
+    "playRate": 0.23,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Spellweaver",
+    "name": "Tejehechizos",
+    "description": "Tu equipo obtiene un 10% de poder de habilidad. Cada vez que un tejehechizos lanza su habilidad, todos los tejehechizos obtienen poder de habilidad adicional.",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1673,
+        "style": 1,
+        "description": "10% de %i:scaleAP% + 1% de %i:scaleAP% por habilidad.",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1674,
+        "style": 3,
+        "description": "30% de %i:scaleAP% + 1% de %i:scaleAP% por habilidad.",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1675,
+        "style": 5,
+        "description": "55% de %i:scaleAP% + 2% de %i:scaleAP% por habilidad.",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 69.2,
+    "winRate": 24.8,
+    "averagePlacement": 3.5,
+    "playRate": 0.14,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_ZyraUniqueTrait",
+    "name": "Dama de las espinas",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1676,
+        "style": 4,
+        "description": "Tu equipo obtiene un 5% de durabilidad, que aumenta a un 10% si hay 6 o más plantas de Zyra vivas.",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 52.1,
+    "winRate": 12.3,
+    "averagePlacement": 4.4,
+    "playRate": 2.03,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_FloraFatalis18",
+    "name": "Flora fatalis",
+    "description": "Los campeones de Flora fatalis cosechan a los enemigos al eliminarlos, lo que otorga:",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1677,
+        "style": 1,
+        "description": "10 de maná.",
+        "maxUnits": 1,
+        "minUnits": 1
+      },
+      {
+        "id": 1678,
+        "style": 5,
+        "description": "Un 7% de la vida máxima al aliado con menos vida.",
+        "maxUnits": 25000,
+        "minUnits": 2
+      }
+    ],
+    "topFour": 55.4,
+    "winRate": 13.8,
+    "averagePlacement": 4.2,
+    "playRate": 2.4,
+    "statusDescriptions": [
+      "Flora Fatalis Max Health Healing: 8% ⇒ 7%"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_18_Summoner",
+    "name": "Invocador",
+    "description": "Los invocadores potencian sus invocaciones de diferentes formas.<br><br>Yorick: +30% de vida.<br>Azir: +20% de daño.<br>Mamipicu: +20% de daño.<br>Zyra: +4 ataques de plantas.",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1679,
+        "style": 1,
+        "description": "Potencia a las invocaciones.",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1680,
+        "style": 5,
+        "description": "Mejora todos los efectos un 50%.",
+        "maxUnits": 25000,
+        "minUnits": 3
+      }
+    ],
+    "topFour": 55.1,
+    "winRate": 13.8,
+    "averagePlacement": 4.2,
+    "playRate": 1.83,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Blossom",
+    "name": "Brote",
+    "description": "Tras el combate, tus fuegos fatuos se potencian.<br><br>Los campeones de Brote obtienen daño de ataque, poder de habilidad y un 10% de vida máxima.",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1681,
+        "style": 1,
+        "description": "Los fuegos fatuos se mejoran, 12% %i:scaleAD%%i:scaleAP%.",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1682,
+        "style": 3,
+        "description": "Hay fuegos fatuos en todas las tiendas, 30% %i:scaleAD%%i:scaleAP%.",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1683,
+        "style": 5,
+        "description": "Obtienes 4 de oro tras comprar un fuego fatuo, 50% %i:scaleAD%%i:scaleAP%.",
+        "maxUnits": 8,
+        "minUnits": 7
+      },
+      {
+        "id": 1684,
+        "style": 5,
+        "description": "Puedes comprar 2 fuegos fatuos por ronda, 55% %i:scaleAD%%i:scaleAP%.",
+        "maxUnits": 10,
+        "minUnits": 9
+      },
+      {
+        "id": 1685,
+        "style": 6,
+        "description": "Los fuegos fatuos rebosan de poder, 100% %i:scaleAD%%i:scaleAP%.",
+        "maxUnits": 25000,
+        "minUnits": 11
+      }
+    ],
+    "topFour": 100,
+    "winRate": 86.8,
+    "averagePlacement": 1.2,
+    "playRate": 0,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_Emerald18",
+    "name": "Aspecto de esmeralda",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1686,
+        "style": 4,
+        "description": "Arrastra a un aliado sobre tu Taric más fuerte para vincularlos, lo que otorga al aliado poderosas bonificaciones con la habilidad de Taric.",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 58.2,
+    "winRate": 20.7,
+    "averagePlacement": 4,
+    "playRate": 3.41,
+    "statusDescriptions": [],
+    "status": null
+  }
+]

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_home" android:id="@id/championFragment" android:title="@string/champions" />
+    <item android:icon="@drawable/ic_team_comp" android:id="@id/teamCompositionFragment" android:title="@string/meta" />
+    <item android:icon="@drawable/ic_account_circle_white_24dp" android:id="@id/summonerSearchFragment" android:title="@string/summoners" />
+    <item android:icon="@drawable/ic_trending_up_white_24dp" android:id="@id/trendFragment" android:title="@string/trends" />
+    <item android:icon="@drawable/ic_tool" android:id="@id/teamBuilderFragment" android:title="@string/builder" />
+</menu>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:tag="layout/fragment_summoner_league_0" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/llRootView" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@color/colorPrimaryDark" android:layout_width="match_parent" android:layout_height="?actionBarSize">
+            <TextView android:textAppearance="@style/TextAppearance.Material3.TitleLarge" android:textColor="@color/colorTextPrimary" android:id="@id/txtTier" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAllCaps="false" android:paddingStart="16.0dp" android:paddingEnd="16.0dp" />
+            <com.google.android.material.tabs.TabLayout android:id="@id/tabLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:elevation="0.0dp" app:tabIndicatorColor="@color/colorAccent" app:tabIndicatorFullWidth="false" app:tabMode="fixed" app:tabSelectedTextColor="@color/colorAccent" app:tabTextAppearance="@style/TabLayoutTextStyle" />
+        </LinearLayout>
+        <com.facebook.shimmer.ShimmerFrameLayout android:id="@id/shimmerViewContainer" android:tag="binding_1" android:layout_width="match_parent" android:layout_height="match_parent">
+            <include layout="@layout/placeholder_summoner_league" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+        <androidx.viewpager2.widget.ViewPager2 android:id="@id/vpSummonerLeague" android:background="@color/colorPrimaryDark" android:layout_width="match_parent" android:layout_height="match_parent" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

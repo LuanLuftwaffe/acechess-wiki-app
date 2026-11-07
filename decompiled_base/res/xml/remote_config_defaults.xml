@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaults>
+    <entry>
+        <key>admob_banner_id</key>
+        <value>ca-app-pub-8535619715994322/3846434066</value>
+    </entry>
+    <entry>
+        <key>admob_interstitial_id</key>
+        <value>ca-app-pub-8535619715994322/7458376019</value>
+    </entry>
+    <entry>
+        <key>admob_overlay_banner_id</key>
+        <value>ca-app-pub-8535619715994322/8774884196</value>
+    </entry>
+    <entry>
+        <key>admob_app_open_id</key>
+        <value>ca-app-pub-8535619715994322/7922400854</value>
+    </entry>
+</defaults>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="find_in_page_input_bg">#3f4949</color>
+    <color name="option_menu_bg">#1c2627</color>
+    <color name="sap_material_fallback_error">#f2b8b5</color>
+    <color name="sap_material_fallback_on_surface">#e6e1e5</color>
+    <color name="sap_material_fallback_on_surface_variant">#cac4d0</color>
+    <color name="sap_search_bar_bg">#1e2426</color>
+    <color name="tab_bar_bg">#182021</color>
+    <color name="tab_bg_selected">#1c2627</color>
+    <color name="tab_bg_unselected">#2a3435</color>
+</resources>

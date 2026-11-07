@@ -1,0 +1,1256 @@
+[
+  {
+    "id": "DA_18_Elderwood",
+    "name": "Elderwood",
+    "description": "ได้รับต้นไม้ Elderwood ที่สามารถนำไปวางในสนาม",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1597,
+        "style": 1,
+        "description": "Stonebark Tree และ Lifebloom",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1598,
+        "style": 3,
+        "description": "ได้รับ Stonebark Tree ต้นที่สอง และ Stonebark Tree ได้รับพลังชีวิต 200 หน่วย",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1599,
+        "style": 5,
+        "description": "และได้รับ Deepwood Protector",
+        "maxUnits": 8,
+        "minUnits": 7
+      },
+      {
+        "id": 1600,
+        "style": 5,
+        "description": "ต้นไม้กลายเป็น 2 ดาว",
+        "maxUnits": 10,
+        "minUnits": 9
+      },
+      {
+        "id": 1601,
+        "style": 6,
+        "description": "ต้นไม้กลายเป็น 3 ดาว และผืนป่ามีชีวิตขึ้นมาอีกครั้ง",
+        "maxUnits": 25000,
+        "minUnits": 11
+      }
+    ],
+    "topFour": 100,
+    "winRate": 95.2,
+    "averagePlacement": 1.1,
+    "playRate": 0.01,
+    "statusDescriptions": [
+      "Elderwood (9) โบนัสพลังชีวิตยูนิตซัมมอน: 140% ⇒ 125%"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_18_LuxUniqueTrait",
+    "name": "Avatar",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1602,
+        "style": 4,
+        "description": "การมี Avatar อยู่บนม้านั่งหรือบนสนามจะเปลี่ยน Avatar ทุกตัวในร้านค้าให้กลายเป็นคุณสมบัตินั้น<br><br>คุณสมบัติที่ Avatar เลือกนับเป็น +2 แก่ตัวคุณสมบัติ",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 66.6,
+    "winRate": 25.4,
+    "averagePlacement": 3.6,
+    "playRate": 1.58,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Slayer",
+    "name": "Ravager",
+    "description": "Ravager ได้รับดูดเลือดต่อความเสียหายที่ทำได้ 10% อีกทั้งสร้างโบนัสความเสียหายแก่ศัตรู เพิ่มเป็นสองเท่าเมื่อโจมตียูนิตที่พลังชีวิตต่ำกว่า 50%",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1603,
+        "style": 1,
+        "description": "โบนัสความเสียหาย 12%",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1604,
+        "style": 3,
+        "description": "โบนัสความเสียหาย 25%",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1605,
+        "style": 5,
+        "description": "โบนัสความเสียหาย 40%",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 60.7,
+    "winRate": 9.6,
+    "averagePlacement": 4.2,
+    "playRate": 0.03,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_DravenUniqueTrait18",
+    "name": "Bounty Seeker",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1606,
+        "style": 4,
+        "description": "เลือกค่าหัว ซึ่ง Draven ที่แข็งแกร่งที่สุดสามารถเพิ่มความคืบหน้าเพื่อรับรางวัล จากนั้นเมื่อล่าค่าหัวสำเร็จ ได้เลือกค่าหัวอีกครั้ง",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 51.9,
+    "winRate": 22.7,
+    "averagePlacement": 4.2,
+    "playRate": 1.59,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Solar",
+    "name": "Solar",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1607,
+        "style": 5,
+        "description": "แชมเปี้ยนของคุณได้รับโล่ป้องกัน 5% จากพลังชีวิตสูงสุด สร้างโบนัสความเสียหายเวท 8% และได้รับโบนัสเพิ่มเติมตามจำนวนแชมเปี้ยน 3 ดาวที่ไม่ซ้ำกันแต่ละตัว:<br><br>1: โล่ป้องกันและความเสียหายเวทเพิ่มขึ้น 1% ต่อแชมเปี้ยน 3 ดาว <br>3: ได้รับ 15% %i:scaleAS% และ 12 %i:scaleArmor%%i:scaleMR% หน่วย<br>5: แปลง 40% ของโบนัสความเสียหายเวทเป็นความเสียหายจริง<br>8: ทุก 4 วินาทีในการต่อสู้ แชมเปี้ยน 3 ดาวของคุณจุติเป็นร่าง 4 ดาว",
+        "maxUnits": 25000,
+        "minUnits": 3
+      }
+    ],
+    "topFour": 55.1,
+    "winRate": 13.2,
+    "averagePlacement": 4.2,
+    "playRate": 1.44,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Sprykin",
+    "name": "Sprykin",
+    "description": "อัญเชิญ Big Furry Friend ออกมา ซึ่งสามารถวาง Sprykin ลงบนตัว BFF เพื่อขึ้นขี่หลัง",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1608,
+        "style": 1,
+        "description": "ยูนิตที่ขึ้นขี่ได้รับ<br>15% %i:scaleHealth% และ 15% %i:scaleAS%",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1609,
+        "style": 3,
+        "description": "40% %i:scaleHealth%, 35% %i:scaleAS% และสกิลของ BFF 50% จะส่งผลต่อแชมเปี้ยน Sprykin ทั้งหมดด้วย",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1610,
+        "style": 5,
+        "description": "55% %i:scaleHealth%, 55% %i:scaleAS% และสกิลของ BFF 100% จะส่งผลต่อแชมเปี้ยน Sprykin ทั้งหมดด้วย",
+        "maxUnits": 25000,
+        "minUnits": 7
+      }
+    ],
+    "topFour": 59.8,
+    "winRate": 10.2,
+    "averagePlacement": 4.1,
+    "playRate": 0.01,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Adaptor",
+    "name": "Adaptor",
+    "description": "ติดตัว: สกิลของ Adaptor เปลี่ยนแปลงไปขึ้นอยู่กับว่าค่าพลังโจมตีหรือพลังเวทสูงกว่า<br><br>อีกทั้งได้รับพลังเวทหรือพลังโจมตีเพิ่ม ขึ้นอยู่กับว่าค่าไหนสูงกว่าด้วย",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "D",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1611,
+        "style": 1,
+        "description": "25% หรือ",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1612,
+        "style": 3,
+        "description": "35% หรือ",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1613,
+        "style": 5,
+        "description": "50% หรือ",
+        "maxUnits": 25000,
+        "minUnits": 4
+      }
+    ],
+    "topFour": 75,
+    "winRate": 15.4,
+    "averagePlacement": 3.3,
+    "playRate": 0.02,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Coven",
+    "name": "Coven",
+    "description": "เก็บสะสมแก่นวิญญาณจากการสังหารแชมเปี้ยน บวกเพิ่มอีกหากพ่ายแพ้รอบต่อสู้กับผู้เล่น<br><br>จากนั้นเริ่มต้นที่แก่นวิญญาณ 40 หน่วย จะได้เลือกเปลี่ยนแก่นวิญญาณเป็นรางวัล หรือเก็บสะสมต่อไป โดยรางวัลแต่ละครั้งต้องใช้แก่นวิญญาณเพิ่มขึ้นเรื่อย ๆ",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "D",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1614,
+        "style": 1,
+        "description": "แก่นวิญญาณ 2 หน่วยเมื่อสังหาร, 22 หน่วยเมื่อพ่ายแพ้",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1615,
+        "style": 3,
+        "description": "2 หน่วยเมื่อสังหาร, 28 หน่วยเมื่อพ่ายแพ้",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1616,
+        "style": 3,
+        "description": "3 หน่วยเมื่อสังหาร, 35 หน่วยเมื่อพ่ายแพ้",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1617,
+        "style": 5,
+        "description": "10 หน่วยเมื่อสังหาร, 60 หน่วยเมื่อพ่ายแพ้",
+        "maxUnits": 25000,
+        "minUnits": 7
+      }
+    ],
+    "topFour": 47.6,
+    "winRate": 15.7,
+    "averagePlacement": 4.6,
+    "playRate": 0.52,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Eclipse",
+    "name": "Eclipse",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1618,
+        "style": 1,
+        "description": "Eclipse สังหารศัตรูที่มีพลังชีวิตน้อยที่สุดในทันที หลังการต่อสู้ผ่านไป 10 วินาที จากนั้นสังหารซ้ำอีกครั้งในทุก ๆ 3.5 วินาที",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 0,
+    "winRate": 0,
+    "averagePlacement": 0,
+    "playRate": 0,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Hunter",
+    "name": "Hunter",
+    "description": "Hunter ได้รับพลังโจมตีเพิ่มเติม และหาก Hunter ไม่ได้สลับไปเล็งเป้าหมายใหม่เป็นเวลา 3 วินาที พวกเขาจะได้รับการคูณความเสียหาย 10%",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1619,
+        "style": 1,
+        "description": "20% %i:scaleAD%",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1620,
+        "style": 3,
+        "description": "30% %i:scaleAD%",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1621,
+        "style": 3,
+        "description": "45% %i:scaleAD%",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1622,
+        "style": 5,
+        "description": "65% %i:scaleAD%",
+        "maxUnits": 25000,
+        "minUnits": 5
+      }
+    ],
+    "topFour": 61.7,
+    "winRate": 9.6,
+    "averagePlacement": 4,
+    "playRate": 0.01,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Maokai_UniqueTrait",
+    "name": "Old Growth",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1623,
+        "style": 4,
+        "description": "ได้รับพลังชีวิตสูงสุดถาวร 30 หน่วย ทุก ๆ ครั้งที่ศัตรูถูกสังหารในระยะ 3 ช่อง<br><br>ปัจจุบัน: 0 หน่วย",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 52.9,
+    "winRate": 19.8,
+    "averagePlacement": 4.2,
+    "playRate": 2.44,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Battlemage",
+    "name": "Monolith",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "D",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1624,
+        "style": 4,
+        "description": "Monolith ได้รับเกราะและต้านทานเวท 10 หน่วย ตามจำนวนศัตรูที่เล็งพวกเขาเป็นเป้าหมาย",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 47.8,
+    "winRate": 9.6,
+    "averagePlacement": 4.6,
+    "playRate": 0.91,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_Primal18",
+    "name": "Primal",
+    "description": "เลือก 1 ใน 4 พรแห่ง Primal",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1625,
+        "style": 1,
+        "description": "???",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1626,
+        "style": 5,
+        "description": "???",
+        "maxUnits": 25000,
+        "minUnits": 4
+      }
+    ],
+    "topFour": 58.5,
+    "winRate": 12.1,
+    "averagePlacement": 4.1,
+    "playRate": 0.18,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Greenfather",
+    "name": "Greenfather",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1627,
+        "style": 4,
+        "description": "Ivern ที่แข็งแกร่งที่สุดเก็บเมล็ดพันธุ์ 1 เมล็ดในทุกครั้งที่ร่ายสกิล และได้รับเพิ่ม 3 เมล็ดในทุกรอบการต่อสู้ โดย Ivern จะใช้ 5 เมล็ดเพื่อสร้างช่องพิเศษบนสนาม ซึ่งมอบโบนัสให้กับยูนิตในช่องนั้น <br><br>เมล็ดพันธุ์: 0 / 5 เมล็ด<br><br>ไบโอมปัจจุบัน:",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 58.2,
+    "winRate": 22.6,
+    "averagePlacement": 4,
+    "playRate": 2.53,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Invoker",
+    "name": "Invoker",
+    "description": "ทีมของคุณได้รับฟื้นฟูมานาเพิ่มเติม โดย Invoker จะได้รับมากขึ้น",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1628,
+        "style": 1,
+        "description": "1 %i:scaleManaRegen% หน่วย | 3 %i:scaleManaRegen% หน่วย",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1629,
+        "style": 3,
+        "description": "1 %i:scaleManaRegen% หน่วย | 4 %i:scaleManaRegen% หน่วย",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1630,
+        "style": 3,
+        "description": "2 %i:scaleManaRegen% หน่วย | 6 %i:scaleManaRegen% หน่วย",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1631,
+        "style": 5,
+        "description": "2 %i:scaleManaRegen% หน่วย | 8 %i:scaleManaRegen% หน่วย",
+        "maxUnits": 25000,
+        "minUnits": 5
+      }
+    ],
+    "topFour": 60.4,
+    "winRate": 15.1,
+    "averagePlacement": 4,
+    "playRate": 0.12,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Rapidfire",
+    "name": "Rapidfire",
+    "description": "ทีมของคุณได้รับความเร็วโจมตี 10% โดยแชมเปี้ยน Rapidfire จะได้รับเพิ่มเติมในทุกครั้งที่โจมตี สูงสุดที่ 10 สแตค",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1632,
+        "style": 1,
+        "description": "+3% %i:scaleAS% ต่อการโจมตี",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1633,
+        "style": 3,
+        "description": "+5% %i:scaleAS% ต่อการโจมตี",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1634,
+        "style": 3,
+        "description": "+7% %i:scaleAS% ต่อการโจมตี",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1635,
+        "style": 5,
+        "description": "+10% %i:scaleAS% ต่อการโจมตี",
+        "maxUnits": 25000,
+        "minUnits": 5
+      }
+    ],
+    "topFour": 59.4,
+    "winRate": 13.6,
+    "averagePlacement": 4,
+    "playRate": 0.31,
+    "statusDescriptions": [
+      "Rapidfire ความเร็วโจมตีต่อการโจมตี: 3/5/8/12% ⇒ 3/5/7/10%"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_Juggernaut18",
+    "name": "Juggernaut",
+    "description": "ทีมของคุณได้รับความทนทาน โดย Juggernaut จะได้รับมากขึ้น",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1636,
+        "style": 1,
+        "description": "4% %i:scaleDR% หรือ 20% %i:scaleDR%",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1637,
+        "style": 3,
+        "description": "6% %i:scaleDR% หรือ 30% %i:scaleDR%",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1638,
+        "style": 5,
+        "description": "8% %i:scaleDR% หรือ 42% %i:scaleDR%",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 51.4,
+    "winRate": 13.5,
+    "averagePlacement": 4.4,
+    "playRate": 5.69,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Inferno",
+    "name": "Inferno",
+    "description": "Inferno <TFTKeyword>เผา</TFTKeyword>ศัตรูและสร้าง<TFTKeyword>บาดแผล</TFTKeyword> 33% เป็นเวลา 3 วินาทีเมื่อสร้างความเสียหาย เอฟเฟกต์เผาของ Inferno สามารถสแตคกับเอฟเฟกต์เผาอื่น ๆ ได้",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1639,
+        "style": 1,
+        "description": "เผา 1%",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1640,
+        "style": 3,
+        "description": "ช่องร้านค้า 1 ช่องที่ไม่ใช่แชมเปี้ยน Inferno ลุกโชติช่วงเมื่อจบการต่อสู้ สุ่มปรากฏแชมเปี้ยนที่มีระดับสูงขึ้นหนึ่งระดับ",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1641,
+        "style": 5,
+        "description": "ช่องร้านค้าลุกโชติช่วง 2 ช่อง, เผา 3%",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1642,
+        "style": 5,
+        "description": "ช่องร้านค้าลุกโชติช่วง 4 ช่อง, เผา 4%",
+        "maxUnits": 25000,
+        "minUnits": 7
+      }
+    ],
+    "topFour": 62.4,
+    "winRate": 22.9,
+    "averagePlacement": 3.7,
+    "playRate": 0.03,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_AluneUniqueTrait18",
+    "name": "Attuned",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1643,
+        "style": 4,
+        "description": "Alune ที่แข็งแกร่งที่สุดหมุนเวียนช่วงแสงจันทร์ในทุกครั้งที่ร่ายสกิล โดยขณะดวงจันทร์สว่างครึ่งดวงหรือน้อยกว่า ทีมของคุณได้รับความทนทาน 5% แต่หากดวงจันทร์สว่างเกินครึ่งดวง ได้รับการคูณความเสียหาย 7%",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 65.4,
+    "winRate": 21.8,
+    "averagePlacement": 3.7,
+    "playRate": 1.78,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Rival",
+    "name": "Rival",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1644,
+        "style": 5,
+        "description": "โบนัสทำงานเมื่อใช้ Rival เพียง 1 ตัวในสนาม<br><br>Rival เริ่มสะสมแต้มโค่นล้ม และได้รับ 3 แต้มหากโค่นล้ม Rival ตัวอื่น",
+        "maxUnits": 1,
+        "minUnits": 1
+      },
+      {
+        "id": 1645,
+        "style": 5,
+        "description": "Rival สามารถใช้งานในสนามได้พร้อมกัน เมื่อ Kha'Zix ได้รับมานาจากสกิลของเขา Rengar จะได้รับมานาส่วนนั้นด้วย 50% และเมื่อ Rengar ฮีลจากสกิลของเขา Kha'Zix จะได้รับฮีลส่วนนั้นด้วย 100%",
+        "maxUnits": 25000,
+        "minUnits": 2
+      }
+    ],
+    "topFour": 52.9,
+    "winRate": 13.6,
+    "averagePlacement": 4.3,
+    "playRate": 1.29,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Vanguard",
+    "name": "Vanguard",
+    "description": "เมื่อเริ่มการต่อสู้และเมื่อพลังชีวิตเหลือน้อยกว่า 50% Vanguard จะได้รับโล่ป้องกันจากพลังชีวิตสูงสุดเป็นเวลา 10 วินาที",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1646,
+        "style": 1,
+        "description": "18% จากพลังชีวิตสูงสุด",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1647,
+        "style": 3,
+        "description": "30% จากพลังชีวิตสูงสุด",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1648,
+        "style": 5,
+        "description": "40% จากพลังชีวิตสูงสุด และได้รับความทนทาน 5% ขณะมีโล่ป้องกัน",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 65.5,
+    "winRate": 25,
+    "averagePlacement": 3.6,
+    "playRate": 0.1,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Brawler",
+    "name": "Brawler",
+    "description": "ทีมของคุณได้รับพลังชีวิตสูงสุด 120 หน่วย โดย Brawler จะได้รับมากขึ้น",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1649,
+        "style": 1,
+        "description": "25% %i:scaleHealth%",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1650,
+        "style": 3,
+        "description": "40% %i:scaleHealth%",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1651,
+        "style": 5,
+        "description": "65% %i:scaleHealth%",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 63.8,
+    "winRate": 18.3,
+    "averagePlacement": 3.6,
+    "playRate": 0.02,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Blackthorn",
+    "name": "Blackthorn",
+    "description": "สังเวยพันธมิตรบนช่อง Blackthorn ก่อนเริ่มการต่อสู้ เพื่อมอบพลังชีวิตให้กับแชมเปี้ยนภายในทีม<br><br>แชมเปี้ยน Blackthorn ได้รับค่าสถานะเพิ่มเติมขึ้นอยู่กับบทบาท ระดับดาว และราคาของยูนิตที่สังเวยไป",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1652,
+        "style": 1,
+        "description": "175 %i:scaleHealth% หน่วย",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1653,
+        "style": 3,
+        "description": "350 %i:scaleHealth% หน่วย, โบนัสเพิ่มขึ้น 30%",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1654,
+        "style": 5,
+        "description": "600 %i:scaleHealth% หน่วย, โบนัสเพิ่มขึ้น 50%",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 63.4,
+    "winRate": 22.3,
+    "averagePlacement": 3.8,
+    "playRate": 0.11,
+    "statusDescriptions": [
+      "Blackthorn (6) โบนัสเสริมพลัง: 60% ⇒ 50% สังเวยยูนิตสายเวท: คูณความเสียหาย 12% + ฟื้นฟูมานา 2 หน่วย ⇒ คูณความเสียหาย 10% + ฟื้นฟูมานา 2 หน่วย"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_18_Executioner",
+    "name": "Executioner",
+    "description": "",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1655,
+        "style": 1,
+        "description": "Executioner ได้รับสถานะ<TFTKeyword>แม่นยำ</TFTKeyword>และโอกาสคริติคอล 15%",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1656,
+        "style": 3,
+        "description": "อีกทั้งทำให้ศัตรูเลือดไหล สร้างความเสียหายจริงเพิ่มเติม 25% ในช่วงเวลา 3 วินาที",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1657,
+        "style": 5,
+        "description": "ความเสียหายเลือดไหลเพิ่มขึ้นเป็น 35%",
+        "maxUnits": 25000,
+        "minUnits": 4
+      }
+    ],
+    "topFour": 69,
+    "winRate": 19.3,
+    "averagePlacement": 3.5,
+    "playRate": 0.62,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_ApexPredator",
+    "name": "Apex Predator",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1658,
+        "style": 4,
+        "description": "Elder Dragon ใช้ช่องทีม 2 ช่อง แต่มอบ +2 แก่คุณสมบัติ Riftbeast",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 56.8,
+    "winRate": 21.1,
+    "averagePlacement": 4,
+    "playRate": 1.93,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_Riftbeast18",
+    "name": "RiftBeast",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1659,
+        "style": 1,
+        "description": "ใช้ Alpha Mark เพื่อมอบบัฟพิเศษให้กับ Riftbeast",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1660,
+        "style": 3,
+        "description": "ทุก ๆ 3 รอบการต่อสู้ ร้านค้าครั้งถัดไปจะเต็มไปด้วย Riftbeast",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1661,
+        "style": 5,
+        "description": "เมื่อเริ่มการต่อสู้และทุก ๆ 5 วินาที Riftbeast เติบโตและได้รับ <br>5% %i:scaleAD%, 5% %i:scaleAP%, 6% %i:scaleAS%<br>+5 %i:scaleArmor% หน่วย, +5 %i:scaleMR% หน่วย, +50 %i:scaleHealth% หน่วย, +1 %i:scaleManaRegen% หน่วย",
+        "maxUnits": 9,
+        "minUnits": 7
+      },
+      {
+        "id": 1662,
+        "style": 5,
+        "description": "ขนาดทีมสูงสุด +2 หน่วย",
+        "maxUnits": 25000,
+        "minUnits": 10
+      }
+    ],
+    "topFour": 90.2,
+    "winRate": 42.7,
+    "averagePlacement": 2.3,
+    "playRate": 0.09,
+    "statusDescriptions": [
+      "Riftbeast (7) พลังโจมตี/พลังเวท: 6% ⇒ 5%"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_18_Caustic",
+    "name": "Caustic",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1663,
+        "style": 4,
+        "description": "Caustic ฉีกกระชากและสะบั้นศัตรู 30% เป็นเวลา 4 วินาทีเมื่อสร้างความเสียหาย",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 53.6,
+    "winRate": 8.3,
+    "averagePlacement": 4.4,
+    "playRate": 1.95,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Fae",
+    "name": "Fae",
+    "description": "ทีมของคุณดึงดูด Pixie เมื่อสร้างความเสียหาย ฮีลพลังชีวิต และมอบโล่ป้องกัน<br><br>โดยแชมเปี้ยน Fae จะได้รับพลังโจมตีและพลังเวทเพิ่มต่อ Pixie แต่ละตัว อีกทั้งเมื่อพลังชีวิตลดลงต่ำกว่า 50% พวกเขาจะฮีลพลังชีวิตตามจำนวน Pixie ด้วย",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "D",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1664,
+        "style": 1,
+        "description": "4.5% และฮีลพลังชีวิต 3%",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1665,
+        "style": 5,
+        "description": "7% , ฮีลพลังชีวิต 5% และหลังดึงดูด Pixie ครบ 7 ตัว จะเริ่มดึงดูด Golden Pixie แทน ซึ่งมอบทองให้เป็นรางวัล",
+        "maxUnits": 25000,
+        "minUnits": 4
+      }
+    ],
+    "topFour": 47.1,
+    "winRate": 14.4,
+    "averagePlacement": 4.6,
+    "playRate": 0.2,
+    "statusDescriptions": [
+      "Fae (2/4) การฮีล: 2.5/4% ⇒ 3/5% เงื่อนไข Pixie ตัวที่ 4: 30,000 ⇒ 25,000 เงื่อนไข Pixie ตัวที่ 5: 70,000 ⇒ 60,000 เงื่อนไข Pixie ตัวที่ 6: 110,000 ⇒ 100,000"
+    ],
+    "status": 1
+  },
+  {
+    "id": "DA_18_Lunar",
+    "name": "Lunar",
+    "description": "แชมเปี้ยน Lunar และพันธมิตรที่อยู่ติดกันได้รับความเร็วโจมตีและพลังเวท โดยแชมเปี้ยน Lunar จะได้รับมากขึ้น 100%",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1666,
+        "style": 1,
+        "description": "7% %i:scaleAS%, 7% %i:scaleAP%",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1667,
+        "style": 3,
+        "description": "10% %i:scaleAS%, 12% %i:scaleAP%",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1668,
+        "style": 3,
+        "description": "14% %i:scaleAS%, 16% %i:scaleAP%",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1669,
+        "style": 5,
+        "description": "18% %i:scaleAS%, 20% %i:scaleAP%",
+        "maxUnits": 25000,
+        "minUnits": 5
+      }
+    ],
+    "topFour": 76.9,
+    "winRate": 26.6,
+    "averagePlacement": 3.1,
+    "playRate": 0.06,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Defender",
+    "name": "Defender",
+    "description": "ทีมของคุณได้รับเกราะและต้านทานเวท 12 หน่วย โดย Defender จะได้รับมากขึ้น",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1670,
+        "style": 1,
+        "description": "25 หน่วย",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1671,
+        "style": 3,
+        "description": "60 หน่วย<br>",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1672,
+        "style": 5,
+        "description": "115 หน่วย",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 53,
+    "winRate": 11.7,
+    "averagePlacement": 4.3,
+    "playRate": 0.23,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Spellweaver",
+    "name": "Spellweaver",
+    "description": "ทีมของคุณได้รับพลังเวท 10% โดย Spellweaver จะได้รับมากขึ้น บวกเพิ่มเติมในทุกครั้งที่ Spellweaver ร่ายสกิล",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1673,
+        "style": 1,
+        "description": "10% %i:scaleAP%, +1% %i:scaleAP% ต่อการร่าย",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1674,
+        "style": 3,
+        "description": "30% %i:scaleAP%, +1% %i:scaleAP% ต่อการร่าย",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1675,
+        "style": 5,
+        "description": "55% %i:scaleAP%, +2% %i:scaleAP% ต่อการร่าย",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 69.2,
+    "winRate": 24.8,
+    "averagePlacement": 3.5,
+    "playRate": 0.14,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_ZyraUniqueTrait",
+    "name": "Thornmaiden",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1676,
+        "style": 4,
+        "description": "ทีมของคุณได้รับความทนทาน 5% เพิ่มขึ้นเป็น 10% หากต้นไม้ของ Zyra 6 ต้นขึ้นไปยังมีชีวิตอยู่",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 52.1,
+    "winRate": 12.3,
+    "averagePlacement": 4.4,
+    "playRate": 2.03,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_FloraFatalis18",
+    "name": "Flora Fatalis",
+    "description": "แชมเปี้ยน Flora Fatalis เก็บเกี่ยวศัตรูทุก ๆ ครั้งที่โค่นล้ม ทำให้ได้รับ:",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1677,
+        "style": 1,
+        "description": "มานา 10 หน่วย",
+        "maxUnits": 1,
+        "minUnits": 1
+      },
+      {
+        "id": 1678,
+        "style": 5,
+        "description": "และฮีลพันธมิตรที่พลังชีวิตน้อยที่สุด 7% จากพลังชีวิตสูงสุดด้วย",
+        "maxUnits": 25000,
+        "minUnits": 2
+      }
+    ],
+    "topFour": 55.4,
+    "winRate": 13.8,
+    "averagePlacement": 4.2,
+    "playRate": 2.4,
+    "statusDescriptions": [
+      "Flora Fatalis ฟื้นฟูพลังชีวิตสูงสุด: 8% ⇒ 7%"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_18_Summoner",
+    "name": "Summoner",
+    "description": "Summoner เสริมพลังยูนิตซัมมอนในรูปแบบที่แตกต่างกัน<br><br>Yorick: พลังชีวิต +30%<br>Azir: ความเสียหาย +20%<br>Mama Beak: ความเสียหาย +20%<br>Zyra: ต้นไม้โจมตีเพิ่ม +4 ครั้ง",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1679,
+        "style": 1,
+        "description": "เสริมพลังยูนิตซัมมอน",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1680,
+        "style": 5,
+        "description": "เพิ่มเอฟเฟกต์แต่ละอย่างขึ้น 50%",
+        "maxUnits": 25000,
+        "minUnits": 3
+      }
+    ],
+    "topFour": 55.1,
+    "winRate": 13.8,
+    "averagePlacement": 4.2,
+    "playRate": 1.83,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Blossom",
+    "name": "Blossom",
+    "description": "Blossom ช่วยเสริมพลัง Wisp หลังจบทุกรอบการต่อสู้<br><br>แชมเปี้ยน Blossom ได้รับพลังโจมตี พลังเวท และพลังชีวิตสูงสุด 10%",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1681,
+        "style": 1,
+        "description": "อัปเกรด Wisp, ได้รับ %i:scaleAD%%i:scaleAP% 12%",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1682,
+        "style": 3,
+        "description": "Wisp ปรากฏในทุกร้านค้า, ได้รับ %i:scaleAD%%i:scaleAP% 30%",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1683,
+        "style": 5,
+        "description": "ได้รับ 4 ทองหลังจากซื้อ Wisp, ได้รับ %i:scaleAD%%i:scaleAP% 50%",
+        "maxUnits": 8,
+        "minUnits": 7
+      },
+      {
+        "id": 1684,
+        "style": 5,
+        "description": "ซื้อ Wisp ได้ 2 ครั้งต่อรอบ, ได้รับ %i:scaleAD%%i:scaleAP% 55%",
+        "maxUnits": 10,
+        "minUnits": 9
+      },
+      {
+        "id": 1685,
+        "style": 6,
+        "description": "Wisp เปี่ยมล้นไปด้วยพลัง, ได้รับ %i:scaleAD%%i:scaleAP% 100%",
+        "maxUnits": 25000,
+        "minUnits": 11
+      }
+    ],
+    "topFour": 100,
+    "winRate": 86.8,
+    "averagePlacement": 1.2,
+    "playRate": 0,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_Emerald18",
+    "name": "Emerald Aspect",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1686,
+        "style": 4,
+        "description": "ลากพันธมิตรไปวางทับ Taric ที่แข็งแกร่งที่สุดเพื่อจับคู่ และสกิลของ Taric จะมอบโบนัสทรงพลังให้กับคู่หู",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 58.2,
+    "winRate": 20.7,
+    "averagePlacement": 4,
+    "playRate": 3.41,
+    "statusDescriptions": [],
+    "status": null
+  }
+]

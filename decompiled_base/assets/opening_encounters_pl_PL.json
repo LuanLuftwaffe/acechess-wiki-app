@@ -1,0 +1,674 @@
+[
+  {
+    "id": 49,
+    "name": "Złota Subskrypcja",
+    "description": "Otrzymasz nagrodę pieniężną na początku każdego etapu!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 50,
+    "name": "Pryzmatyczna Impreza",
+    "description": "Czas na ostateczną rozgrywkę! W tej grze wszystkie ulepszenia są pryzmatyczne.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 51,
+    "name": "Pryzmatyczny Finał",
+    "description": "Przygotujcie się na wielki finał z trzecim ulepszeniem, które będzie pryzmatyczne!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 52,
+    "name": "Pryzmatyczne Preludium",
+    "description": "Ta walka rozpoczyna się z ulepszeniem pryzmatycznym!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 53,
+    "name": "Kałuża Wędrowniczka",
+    "description": "Arena pełna jest krabów z dodatkowymi łupami.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 54,
+    "name": "Krabia Impreza",
+    "description": "Arena pełna jest krabów z dodatkowymi łupami. Po etapie 5. zmieniają się one w ŚMIERTELNE ZAGROŻENIE.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 55,
+    "name": "Subskrypcja Na Łupy",
+    "description": "Otrzymasz bardzo zróżnicowane łupy na początku każdego etapu!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 56,
+    "name": "Złota Gala",
+    "description": "Osiągnij sukces z trzema złotymi ulepszeniami!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 57,
+    "name": "Kowadła Składników",
+    "description": "Zdobywasz 2 Kowadła Składników. Wybierz swoją broń!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 58,
+    "name": "Golemy Trenerzy",
+    "description": "Trenuj swojego Golema! Ma on 3 losowe emblematy.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 60,
+    "name": "Początek z 3. kategorią",
+    "description": "Zaczynasz z losowym bohaterem 3. kategorii w tej grze.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 61,
+    "name": "Ulepszony Bohater",
+    "description": "Zaczynasz z 2-gwiazdkowym bohaterem o koszcie 1.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 62,
+    "name": "Zamiana Rund Ulepszeń",
+    "description": "Ulepszenia w tej grze będą przyznawane wcześniej.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 63,
+    "name": "Wczesne Śniadanie",
+    "description": "Otrzymasz drugą Przekąskę Mocy w rundzie 2-6, a nie 3-6.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 64,
+    "name": "Wielki Finał",
+    "description": "To już Wielki Finał! Musisz polegać na sobie.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 65,
+    "name": "Zabawa na plaży",
+    "description": "Zabawa na plaży! Zdobywasz piłkę, którą mogą odbijać między sobą Taktycy!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 66,
+    "name": "Królewskie Starcie",
+    "description": "Karuzele mają więcej zawodników!",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 67,
+    "name": "Krąg Zwycięzców",
+    "description": "Po top 4 pozostali gracze zyskują 10 szt. złota i dwa Kowadła Składników.",
+    "percentage": 0.0,
+    "setNumber": 15
+  },
+  {
+    "id": 68,
+    "name": "Złota Subskrypcja",
+    "description": "Zoe zapewnia ci złoto na każdym etapie. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 69,
+    "name": "Pryzmatyczna Impreza",
+    "description": "Aurelion Sol sprawia, że wszystkie ulepszenia są pryzmatyczne!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 70,
+    "name": "Pryzmatyczny Finał",
+    "description": "Aurelion Sol sprawia, że ostatnie ulepszenie jest pryzmatyczne!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 71,
+    "name": "Pryzmatyczne Preludium",
+    "description": "Aurelion Sol sprawia, że pierwsze ulepszenie jest pryzmatyczne!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 72,
+    "name": "Kałuża Wędrowniczka",
+    "description": "Bard przywołuje Wędrowniczki!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 73,
+    "name": "Krabia Impreza",
+    "description": "Bard przywołuje Wędrowniczki, aby rozpocząć Krabią Imprezę!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 75,
+    "name": "Złota Gala",
+    "description": "Sohm sprawia, że wszystkie ulepszenia podczas tej gry są złote. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 76,
+    "name": "Kowadła Składników",
+    "description": "Swain daje ci 2 Kowadła Składników. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 77,
+    "name": "Golemy Trenerzy",
+    "description": "Sohm przywołuje na twoją planszę golema wyposażonego w 3 emblematy.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 78,
+    "name": "Początek z 3. kategorią",
+    "description": "Zaczynasz z losowym bohaterem 3. kategorii w tej grze.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 79,
+    "name": "Ulepszony Bohater",
+    "description": "Zaczynasz z 2-gwiazdkowym bohaterem o koszcie 1.",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 80,
+    "name": "Smok Cenniejszych Skarbów",
+    "description": "Dodatkowy Smok Skarbów ze specjalnymi darami pojawi się na etapie 3-7!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 81,
+    "name": "Smoczy Herold",
+    "description": "Choncc zapewnia wszystkim graczom smoka tej samej kategorii!",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 82,
+    "name": "Smocza Subskrypcja",
+    "description": "Idas zapewnia ci na każdym etapie dodatkowe łupy. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 83,
+    "name": "Kowadło Artefaktów",
+    "description": "Swain daje ci Kowadło Artefaktów. ",
+    "percentage": 0.0,
+    "setNumber": 7
+  },
+  {
+    "id": 84,
+    "name": "Złota Gala",
+    "description": "Twisted Fate rozdaje w tej grze wszystkie złote ulepszenia.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 85,
+    "name": "Pryzmatyczna Impreza",
+    "description": "Seraphine zmienia w tej grze wszystkie ulepszenia na pryzmatyczne.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 86,
+    "name": "Pryzmatyczny Finał",
+    "description": "Seraphine zmienia w tej grze wszystkie ulepszenia na pryzmatyczne.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 87,
+    "name": "Pryzmatyczne Preludium",
+    "description": "Zilean postarza ostatnie ulepszenie, aż nie stanie się idealne. Będzie w tej grze pryzmatyczne.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 88,
+    "name": "Początek z 3. kategorią",
+    "description": "Zaczynasz z losowym bohaterem 3. kategorii w tej grze.",
+    "percentage": 7.0,
+    "setNumber": 16
+  },
+  {
+    "id": 89,
+    "name": "Początek z 2. kategorią",
+    "description": "Zaczynasz z losowym bohaterem 2. kategorii w tej grze.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 90,
+    "name": "HAK: Lepszy start",
+    "description": "Ekko ulepsza początkowego bohatera do 2 gwiazdek.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 91,
+    "name": "Kowadła Składników",
+    "description": "Poppy zapewnia ci dwa Kowadła Składników.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 92,
+    "name": "Kałuża Wędrowniczka",
+    "description": "Herold z radością wypełnia grę krabami z dodatkowymi łupami.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 93,
+    "name": "Subskrypcja Na Łupy",
+    "description": "Zoe daje ci bardzo zróżnicowane łupy na początku każdego etapu!",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 94,
+    "name": "Zestaw Emblematów",
+    "description": "Ryze zapewnia ci 3 losowe emblematy na dobry początek podróży.",
+    "percentage": 3.9,
+    "setNumber": 16
+  },
+  {
+    "id": 95,
+    "name": "Złota Subskrypcja",
+    "description": "Tahm Kench zapewnia ci złoto na każdym etapie.",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 96,
+    "name": "Zamiana Rund Ulepszeń",
+    "description": "LeBlanc manipuluje ulepszeniami, dzięki czemu będą w tej grze oferowane wcześniej.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 97,
+    "name": "Brak spotkań.",
+    "description": "Mamy spokojny dzień w Runeterze. W tej grze nie ma spotkań.",
+    "percentage": 5.0,
+    "setNumber": 16
+  },
+  {
+    "id": 98,
+    "name": "Howling Abyss",
+    "description": "Zdobywasz 5 losowych bohaterów 1. kategorii do walki na Howling Abyss.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 99,
+    "name": "Silver Scrapes",
+    "description": "Ostatnich dwóch graczy zyskuje 70 szt. złota na epicką walkę ostateczną.",
+    "percentage": 7.0,
+    "setNumber": 16
+  },
+  {
+    "id": 100,
+    "name": "Arena Waleczników",
+    "description": "Gdy jakiś gracz zostanie wyeliminowany, Draven nagradza ocalałych złotem za każdego wyeliminowanego gracza.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 101,
+    "name": "Drużyna Zwiadowcza",
+    "description": "Drużyna zwiadowcza Teemo znalazła +1 wymianę dla wszystkich ulepszeń.",
+    "percentage": 4.0,
+    "setNumber": 16
+  },
+  {
+    "id": 102,
+    "name": "Dary Gwen",
+    "description": "Po 3 pierwszych karuzelach Gwen daje graczom składnik i specjalne nożyce.",
+    "percentage": 6.0,
+    "setNumber": 16
+  },
+  {
+    "id": 103,
+    "name": "Karuzela Witalności",
+    "description": "Irelia superdoładowuje dwie pierwsze karuzele dodatkową prędkością i wyjątkowymi łupami!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 104,
+    "name": "Fajerwerki",
+    "description": "Na etapach 2-7 i 3-7 Darius zostawia na twojej planszy fajerwerki. Na etapie 4-7 świętuj Rok Konia!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 105,
+    "name": "Rosnący Dobrobyt<br>",
+    "description": "Ornn wykuwa kowadło, którego moc rośnie na początku każdego etapu!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 106,
+    "name": "Na Wyścigi!",
+    "description": "Sejuani urządza wyścig (etap 2-4). Każdy obstawia zwycięzcę, a łupy zależą od trafionych obstawień!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 107,
+    "name": "Rok Konia",
+    "description": "Koń Sajuani przemierza 1 miejsce za każdą wygraną, a 2 za porażkę. Na mecie bedą nagrody!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 108,
+    "name": "Howling Abyss",
+    "description": "Zdobywasz 5 losowych bohaterów 1. kategorii, aby świętować na festiwalu!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 109,
+    "name": "Drużyna Zwiadowcza",
+    "description": "Fiora zręcznie zapewnia +1 odświeżenie ulepszeń dla wszystkich ulepszeń.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 110,
+    "name": "Kowadła Składników",
+    "description": "Ornn wytwarza dla ciebie 2 Kowadła Składników.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 111,
+    "name": "Pryzmatyczna Impreza",
+    "description": "Swain rozświetla uroczystość i sprawia, że wszystkie ulepszenia są pryzmatyczne.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 112,
+    "name": "Kałuża Wędrowniczka",
+    "description": "Twisted Fate rozdaje zwycięską rękę, przywołując Wędrowniczka, który dołącza do uroczystości!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 113,
+    "name": "Pryzmatyczne Preludium",
+    "description": "Swain rozświetla uroczystość i sprawia, że pierwsze ulepszenie jest pryzmatyczne.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 114,
+    "name": "Subskrypcja Na Łupy",
+    "description": "Tahm Kench zapewnia ci nagrody na każdym etapie. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 115,
+    "name": "Brak spotkań.",
+    "description": "Wszyscy świętują! W tej grze nie ma spotkań. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 116,
+    "name": "Początek z 2. kategorią",
+    "description": "W tej grze Jarvan IV ulepsza twojego początkowego bohatera do bohatera 2. kategorii.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 117,
+    "name": "Złota Subskrypcja",
+    "description": "Tahm Kench zapewnia ci złoto na każdym etapie. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 118,
+    "name": "Krabia Impreza",
+    "description": "Twisted Fate rozdaje zwycięską rękę, przywołując Wędrowniczka, który dołącza do Krabiej Imprezy!",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 119,
+    "name": "Silver Scrapes",
+    "description": "Ostatnich dwóch graczy zyskuje 70 szt. złota na epicką walkę ostateczną.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 120,
+    "name": "Pryzmatyczny Finał",
+    "description": "Swain rozświetla uroczystość i sprawia, że ostatnie ulepszenie jest pryzmatyczne.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 121,
+    "name": "Zamiana Rund Ulepszeń",
+    "description": "Jarvan IV nakazuje, aby ulepszenia były oferowane wcześniej w tej grze.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 122,
+    "name": "Arena Waleczników",
+    "description": "Gdy jakiś gracz zostanie wyeliminowany, Azir nagradza ocalałych złotem za każdego wyeliminowanego gracza.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 123,
+    "name": "Złota Gala",
+    "description": "Annie sprawia, że wszystkie ulepszenia podczas tej gry są złote. ",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 124,
+    "name": "Początek z 3. kategorią",
+    "description": "Zaczynasz z losowym bohaterem 3. kategorii w tej grze.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 125,
+    "name": "Początek z 2. kategorią",
+    "description": "Zaczynasz z losowym bohaterem 2. kategorii w tej grze.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 126,
+    "name": "HAK: Lepszy start",
+    "description": "Katarina ulepsza twojego początkowego bohatera do 2 gwiazdek.",
+    "percentage": 0.0,
+    "setNumber": 4
+  },
+  {
+    "id": 147,
+    "name": "Początek z 2. kategorią",
+    "description": "Zaczynasz z losowym bohaterem 2. kategorii w tej grze.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 148,
+    "name": "Początek z 3. kategorią",
+    "description": "Zaczynasz z losowym bohaterem 3. kategorii w tej grze.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 149,
+    "name": "Tańsze Poziomy",
+    "description": "Każdy poziom kosztuje o 2 PD mniej.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 150,
+    "name": "Kowadło Ukończonych Przedmiotów",
+    "description": "Zacznij z Kowadłem Ukończonych Przedmiotów.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 151,
+    "name": "Kowadła Składników",
+    "description": "Zaczynasz z 2 Kowadłami Składników.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 152,
+    "name": "Zestaw Emblematów",
+    "description": "Zaczynasz z 3 losowymi emblematami.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 153,
+    "name": "Ostateczne starcie",
+    "description": "Ostatnich dwóch graczy otrzymuje 70 sztuk złota na epicką walkę ostateczną.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 154,
+    "name": "Złota Subskrypcja",
+    "description": "Na każdym etapie zyskujesz losową liczbę sztuk złota. Wszyscy gracze zyskują go tyle samo.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 155,
+    "name": "Złoty Finał",
+    "description": "Ostatnie oferowane w tej grze ulepszenie będzie złote.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 156,
+    "name": "Złota Gala",
+    "description": "Wszystkie oferowane w tej grze ulepszenia będą złote.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 157,
+    "name": "Złote Preludium",
+    "description": "Pierwsze oferowane w tej grze ulepszenie będzie złote.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 158,
+    "name": "Howling Abyss",
+    "description": "Zaczynasz z 5 losowymi jednostkami 1. kategorii.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 159,
+    "name": "Kuźnia Przedmiotów",
+    "description": "Zaczynasz z 2 Kowadłami Ukończonych Przedmiotów.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 160,
+    "name": "Brak Spotkania",
+    "description": "W tej grze nie ma spotkań.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 161,
+    "name": "Pryzmatyczny efekt wykończenia",
+    "description": "Ostatnie oferowane w tej grze ulepszenie będzie pryzmatyczne.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 162,
+    "name": "Otwarcie Pryzmatyczne",
+    "description": "Pierwsze oferowane w tej grze ulepszenie będzie pryzmatyczne.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 163,
+    "name": "Pryzmatyczna Impreza",
+    "description": "Wszystkie oferowane w tej grze ulepszenia będą pryzmatyczne.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 164,
+    "name": "Subskrypcja odświeżeń",
+    "description": "Na początku każdego etapu dostajesz darmowe odświeżenia sklepu.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 165,
+    "name": "Drużyna Zwiadowcza",
+    "description": "Zyskujesz w tej grze 1 wymianę ulepszeń.",
+    "percentage": 5.0,
+    "setNumber": 18
+  },
+  {
+    "id": 166,
+    "name": "Lepszy Start",
+    "description": "Zaczynasz z 2-gwiazdkowym bohaterem w tej grze.",
+    "percentage": 5.0,
+    "setNumber": 18
+  }
+]

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:tag="layout/dialog_trend_composition_0" android:background="@color/colorSurface" android:paddingBottom="40.0dp" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:paddingTop="16.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <FrameLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp">
+            <TextView android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall" android:textColor="@color/colorTextPrimary" android:id="@id/txtTeamName" android:tag="binding_1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginEnd="36.0dp" />
+            <FrameLayout android:layout_gravity="end|center" android:id="@id/flTier" android:tag="binding_2" android:background="@color/yellow" android:layout_width="26.0dp" android:layout_height="26.0dp">
+                <TextView android:textAppearance="@style/TextAppearance.Material3.LabelLarge" android:textStyle="bold" android:textColor="@color/colorBlack" android:layout_gravity="center" android:id="@id/txtTeamTier" android:tag="binding_3" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </FrameLayout>
+        </FrameLayout>
+        <com.lolchess.tft.common.view.PlacementHexesView android:id="@id/placementHexesView" android:tag="binding_4" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" />
+        <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textColor="@color/colorTextPrimary" android:tag="binding_5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:text="@string/augments" android:layout_marginStart="16.0dp" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/llAugments" android:tag="binding_6" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:weightSum="8.0" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp">
+            <com.lolchess.tft.common.view.GridViewSquareItem android:id="@id/imgFirstAugment" android:tag="binding_7" android:background="@drawable/shape_stroke_color_accent" android:layout_width="0.0dp" android:layout_height="wrap_content" android:foreground="@drawable/ripple_background" android:layout_weight="1.0" />
+            <com.lolchess.tft.common.view.GridViewSquareItem android:id="@id/imgSecondAugment" android:tag="binding_8" android:background="@drawable/shape_stroke_color_accent" android:layout_width="0.0dp" android:layout_height="wrap_content" android:foreground="@drawable/ripple_background" android:layout_weight="1.0" android:layout_marginStart="8.0dp" />
+            <com.lolchess.tft.common.view.GridViewSquareItem android:id="@id/imgThirdAugment" android:tag="binding_9" android:background="@drawable/shape_stroke_color_accent" android:layout_width="0.0dp" android:layout_height="wrap_content" android:foreground="@drawable/ripple_background" android:layout_weight="1.0" android:layout_marginStart="8.0dp" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/llWinConditions" android:tag="binding_10" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp">
+            <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textColor="@color/colorTextPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/win_conditions" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rvWinCondition" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dp" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dp" android:weightSum="2.0" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp">
+            <LinearLayout android:orientation="vertical" android:id="@id/llCarries" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textColor="@color/colorTextPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/carries" />
+                <androidx.recyclerview.widget.RecyclerView android:orientation="horizontal" android:id="@id/rvCarries" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/llCarousel" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textColor="@color/colorTextPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/carousel" />
+                <androidx.recyclerview.widget.RecyclerView android:orientation="horizontal" android:id="@id/rvCarousel" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/llCompositionByLevel" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dp" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp">
+            <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textColor="@color/colorTextPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/composition_by_level" />
+            <LinearLayout android:gravity="center_vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp">
+                <TextView android:textAppearance="@style/TextAppearance.Material3.LabelLarge" android:textColor="@color/colorTextSecondary" android:id="@id/txtCurrentCompositionLevel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/level_short" android:fontFamily="@font/roboto_medium" />
+                <com.google.android.material.slider.Slider android:theme="@style/ThemeOverlay.SliderLabelColors" android:id="@id/sliderLevel" android:layout_width="match_parent" android:layout_height="wrap_content" app:thumbColor="@color/colorAccent" app:thumbRadius="6.0dp" app:tickColor="@color/colorAccent" app:trackColorActive="@color/colorAccent" app:trackColorInactive="@color/black_effective" app:trackHeight="5.0dp" />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rvTrendCompositionByLevel" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="-5.0dp" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </LinearLayout>
+        <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textColor="@color/colorTextPrimary" android:tag="binding_11" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dp" android:text="@string/gold_spent_rolling" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+        <com.github.mikephil.charting.charts.LineChart android:id="@id/lineChart" android:tag="binding_12" android:layout_width="match_parent" android:layout_height="250.0dp" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+        <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textColor="@color/colorTextPrimary" android:layout_gravity="center" android:tag="binding_13" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:text="@string/level" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

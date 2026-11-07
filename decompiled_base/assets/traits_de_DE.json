@@ -1,0 +1,1256 @@
+[
+  {
+    "id": "DA_18_Elderwood",
+    "name": "Ahnenholz",
+    "description": "Du erhältst platzierbare Ahnenholz-Pflanzen.",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1597,
+        "style": 1,
+        "description": "Ein Steinrindenbaum und eine Lebensblüte",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1598,
+        "style": 3,
+        "description": "Ein zweiter Steinrindenbaum, und Steinrindenbäume erhalten 200 Leben",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1599,
+        "style": 5,
+        "description": "und der Tiefenwald-Beschützer",
+        "maxUnits": 8,
+        "minUnits": 7
+      },
+      {
+        "id": 1600,
+        "style": 5,
+        "description": "Pflanzen erhalten Sternenaufwertung auf 2 Sterne",
+        "maxUnits": 10,
+        "minUnits": 9
+      },
+      {
+        "id": 1601,
+        "style": 6,
+        "description": "Pflanzen erhalten Sternenaufwertung auf 3 Sterne und der Wald erwacht zum Leben",
+        "maxUnits": 25000,
+        "minUnits": 11
+      }
+    ],
+    "topFour": 100,
+    "winRate": 95.2,
+    "averagePlacement": 1.1,
+    "playRate": 0.01,
+    "statusDescriptions": [
+      "Elderwood (9) 9-Piece Summon Bonus Health: 140% ⇒ 125%"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_18_LuxUniqueTrait",
+    "name": "Avatar",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1602,
+        "style": 4,
+        "description": "Wenn du einen Avatar auf deiner Championbank oder auf dem Spielfeld hast, dann nehmen alle anderen Avatare beim Händler dasselbe Attribut an.<br><br>Das ausgewählte Attribut des Avatars wird für Attributsboni doppelt gezählt.",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 66.6,
+    "winRate": 25.4,
+    "averagePlacement": 3.6,
+    "playRate": 1.58,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Slayer",
+    "name": "Verwüster",
+    "description": "Verwüster erhalten 10 % Omnivampir. Außerdem verursachen Verwüster zusätzlichen Schaden (verdoppelt gegen Einheiten mit weniger als 50 % Leben).",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1603,
+        "style": 1,
+        "description": "12 % zusätzlicher Schaden",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1604,
+        "style": 3,
+        "description": "25 % zusätzlicher Schaden",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1605,
+        "style": 5,
+        "description": "40 % zusätzlicher Schaden",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 60.7,
+    "winRate": 9.6,
+    "averagePlacement": 4.2,
+    "playRate": 0.03,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_DravenUniqueTrait18",
+    "name": "Kopfgeldsucher",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1606,
+        "style": 4,
+        "description": "Wähle ein Kopfgeld. Dein stärkster Draven kann Fortschritte bei dem Kopfgeld erzielen, um dessen Belohnung zu erhalten. Wähle nach Abschluss eines Kopfgelds ein weiteres aus.",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 51.9,
+    "winRate": 22.7,
+    "averagePlacement": 4.2,
+    "playRate": 1.59,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Solar",
+    "name": "Solar",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1607,
+        "style": 5,
+        "description": "Deine Champions erhalten einen Schild in Höhe von 5 % ihres maximalen Lebens und verursachen 8 % zusätzlichen magischen Schaden. Du erhältst zusätzliche Boni für jeden einzigartigen 3-Sterne-Champion:<br><br>1: Schild und magischer Schaden werden für jeden 3-Sterne-Champion um 1 % erhöht. <br>3: 15 % %i:scaleAS% und 12 %i:scaleArmor%%i:scaleMR%<br>5: Wandelt 40 % des zusätzlichen magischen Schadens in absoluten Schaden um.<br>8: Alle 4 Sekunden während des Kampfes steigt einer deiner 3-Sterne-Champions zu einem 4-Sterne-Champion auf.",
+        "maxUnits": 25000,
+        "minUnits": 3
+      }
+    ],
+    "topFour": 55.1,
+    "winRate": 13.2,
+    "averagePlacement": 4.2,
+    "playRate": 1.44,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Sprykin",
+    "name": "Flinkling",
+    "description": "Du erhältst den besten flauschigen Freund. Setze einen Flinkling auf den BFF, um seinen Reiter auszuwählen.",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1608,
+        "style": 1,
+        "description": "Der Reiter erhält<br>15 % %i:scaleHealth% und 15 % %i:scaleAS%",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1609,
+        "style": 3,
+        "description": "40 % %i:scaleHealth% 35 % %i:scaleAS%, und deine Flinkling-Champions erhalten 50 % der Fähigkeit des BFF",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1610,
+        "style": 5,
+        "description": "55 % %i:scaleHealth% 55 % %i:scaleAS%, und deine Flinkling-Champions erhalten 100 % der Fähigkeit des BFF.",
+        "maxUnits": 25000,
+        "minUnits": 7
+      }
+    ],
+    "topFour": 59.8,
+    "winRate": 10.2,
+    "averagePlacement": 4.1,
+    "playRate": 0.01,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Adaptor",
+    "name": "Anpasser",
+    "description": "Grundsätzlich: Die Fähigkeiten von Anpassern ändern sich je nachdem, ob ihr Angriffsschaden oder ihre Fähigkeitsstärke höher ist.<br><br>Anpasser erhalten Fähigkeitsstärke oder Angriffsschaden, je nachdem, welcher Wert höher ist.",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "D",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1611,
+        "style": 1,
+        "description": "25 % ODER",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1612,
+        "style": 3,
+        "description": "35 % ODER",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1613,
+        "style": 5,
+        "description": "50 % ODER",
+        "maxUnits": 25000,
+        "minUnits": 4
+      }
+    ],
+    "topFour": 75,
+    "winRate": 15.4,
+    "averagePlacement": 3.3,
+    "playRate": 0.02,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Coven",
+    "name": "Hexenzirkel",
+    "description": "Sammle Essenzen, indem du Champions tötest, und noch mehr, wenn du eine PvP-Runde verlierst.<br><br>Ab 40 Essenz(en) entscheidest du, ob du sie in Belohnungen umwandeln oder weitere sammeln möchtest. Für jede Belohnung werden immer größere Mengen an Essenz benötigt.",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "D",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1614,
+        "style": 1,
+        "description": "2 Essenz pro Kill, 22 Essenz pro Niederlage",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1615,
+        "style": 3,
+        "description": "2 pro Kill, 28 pro Niederlage",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1616,
+        "style": 3,
+        "description": "3 pro Kill, 35 pro Niederlage",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1617,
+        "style": 5,
+        "description": "10 pro Kill, 60 pro Niederlage",
+        "maxUnits": 25000,
+        "minUnits": 7
+      }
+    ],
+    "topFour": 47.6,
+    "winRate": 15.7,
+    "averagePlacement": 4.6,
+    "playRate": 0.52,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Eclipse",
+    "name": "Eklipse",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1618,
+        "style": 1,
+        "description": "Nach 10 Sekunde(n) im Kampf tötet die Eklipse den Gegner mit dem niedrigsten Leben. Dies wiederholt sich alle 3.5 Sekunden.",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 0,
+    "winRate": 0,
+    "averagePlacement": 0,
+    "playRate": 0,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Hunter",
+    "name": "Jäger",
+    "description": "Jäger erhalten Angriffsschaden. Wenn ein Jäger sein Ziel 3 Sekunden lang nicht gewechselt hat, erhält er 10 % Schadenssteigerung.",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1619,
+        "style": 1,
+        "description": "20 % %i:scaleAD%",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1620,
+        "style": 3,
+        "description": "30 % %i:scaleAD%",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1621,
+        "style": 3,
+        "description": "45 % %i:scaleAD%",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1622,
+        "style": 5,
+        "description": "65 % %i:scaleAD%",
+        "maxUnits": 25000,
+        "minUnits": 5
+      }
+    ],
+    "topFour": 61.7,
+    "winRate": 9.6,
+    "averagePlacement": 4,
+    "playRate": 0.01,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Maokai_UniqueTrait",
+    "name": "Wachstum der Urahnen",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1623,
+        "style": 4,
+        "description": "Wenn ein Gegner innerhalb von 3 Feldern stirbt, erhältst du 30 dauerhaftes maximales Leben.<br><br>Aktuell: 0",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 52.9,
+    "winRate": 19.8,
+    "averagePlacement": 4.2,
+    "playRate": 2.44,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Battlemage",
+    "name": "Monolith",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "D",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1624,
+        "style": 4,
+        "description": "Monolithe erhalten für jeden Gegner, der sie anvisiert, 10 Rüstung und Magieresistenz.",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 47.8,
+    "winRate": 9.6,
+    "averagePlacement": 4.6,
+    "playRate": 0.91,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_Primal18",
+    "name": "Urjäger",
+    "description": "Wähle einen von vier Urjäger-Segen.",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1625,
+        "style": 1,
+        "description": "???",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1626,
+        "style": 5,
+        "description": "???",
+        "maxUnits": 25000,
+        "minUnits": 4
+      }
+    ],
+    "topFour": 58.5,
+    "winRate": 12.1,
+    "averagePlacement": 4.1,
+    "playRate": 0.18,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Greenfather",
+    "name": "Hüter der Haine",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1627,
+        "style": 4,
+        "description": "Du erhältst 1 Samen, wenn dein stärkster Ivern seine Fähigkeit einsetzt, und zusätzliche 3 in jedem Kampf. Ivern verwendet 5 Samen, um ein Feld auf deinem Spielfeld zu bepflanzen, das seinem Bewohner einen Bonus gewährt.<br><br>Samen: 0 / 5<br><br>Aktuelles Biom:",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 58.2,
+    "winRate": 22.6,
+    "averagePlacement": 4,
+    "playRate": 2.53,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Invoker",
+    "name": "Anrufer",
+    "description": "Dein Team erhält Manaregeneration, die für Anrufer erhöht wird.",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1628,
+        "style": 1,
+        "description": "1 %i:scaleManaRegen% | 3 %i:scaleManaRegen%",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1629,
+        "style": 3,
+        "description": "1 %i:scaleManaRegen% | 4 %i:scaleManaRegen%",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1630,
+        "style": 3,
+        "description": "2 %i:scaleManaRegen% | 6 %i:scaleManaRegen%",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1631,
+        "style": 5,
+        "description": "2 %i:scaleManaRegen% | 8 %i:scaleManaRegen%",
+        "maxUnits": 25000,
+        "minUnits": 5
+      }
+    ],
+    "topFour": 60.4,
+    "winRate": 15.1,
+    "averagePlacement": 4,
+    "playRate": 0.12,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Rapidfire",
+    "name": "Schnellfeuer",
+    "description": "Dein Team erhält 10 % Angriffstempo. Schnellfeuer-Champions erhalten mit jedem Angriff mehr (bis zu 10 Steigerungen).",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1632,
+        "style": 1,
+        "description": "+3 % %i:scaleAS% pro Angriff",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1633,
+        "style": 3,
+        "description": "+5 % %i:scaleAS% pro Angriff",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1634,
+        "style": 3,
+        "description": "+7 % %i:scaleAS% pro Angriff",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1635,
+        "style": 5,
+        "description": "+10 % %i:scaleAS% pro Angriff",
+        "maxUnits": 25000,
+        "minUnits": 5
+      }
+    ],
+    "topFour": 59.4,
+    "winRate": 13.6,
+    "averagePlacement": 4,
+    "playRate": 0.31,
+    "statusDescriptions": [
+      "Rapidfire AS Per Attack: 3/5/8/12% ⇒ 3/5/7/10%"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_Juggernaut18",
+    "name": "Moloch",
+    "description": "Dein Team erhält Durchhaltevermögen. Moloche erhalten mehr.",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1636,
+        "style": 1,
+        "description": "4 % %i:scaleDR% oder 20 % %i:scaleDR%",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1637,
+        "style": 3,
+        "description": "6 % %i:scaleDR% oder 30 % %i:scaleDR%",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1638,
+        "style": 5,
+        "description": "8 % %i:scaleDR% oder 42 % %i:scaleDR%",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 51.4,
+    "winRate": 13.5,
+    "averagePlacement": 4.4,
+    "playRate": 5.69,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Inferno",
+    "name": "Feuerteufel",
+    "description": "Feuerteufel-Schaden <TFTKeyword>verbrennt</TFTKeyword> Gegner und belegt sie 3 Sekunden lang mit 33 % <TFTKeyword>Verwundung</TFTKeyword>. Feuerteufel-Verbrennungen sind mit anderen Verbrennungen kumulativ.",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1639,
+        "style": 1,
+        "description": "1 % Verbrennung",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1640,
+        "style": 3,
+        "description": "Nach dem Kampf entzünden sich 1 deiner Händlerplätze ohne Feuerteufel-Champion und enthalten einen Champion, der einen Rang höher ist",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1641,
+        "style": 5,
+        "description": "Entzündet 2 Händlerplätze, 3 % Verbrennung",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1642,
+        "style": 5,
+        "description": "Entzündet 4 Händlerplätze, 4 % Verbrennung",
+        "maxUnits": 25000,
+        "minUnits": 7
+      }
+    ],
+    "topFour": 62.4,
+    "winRate": 22.9,
+    "averagePlacement": 3.7,
+    "playRate": 0.03,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_AluneUniqueTrait18",
+    "name": "Eingestimmt",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1643,
+        "style": 4,
+        "description": "Deine stärkste Alune wechselt nach jeder Ausführung in eine neue Mondphase. Bei Halbmond oder weniger erhält dein Team 5 % Durchhaltevermögen. Ist der Mond voller, erhält dein Team 7 % Schadenssteigerung.",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 65.4,
+    "winRate": 21.8,
+    "averagePlacement": 3.7,
+    "playRate": 1.78,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Rival",
+    "name": "Rivale",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1644,
+        "style": 5,
+        "description": "Nur aktiv, wenn sich 1 Rivale in deinem Team befindet.<br><br>Rivalen sammeln Vollstreckungen und erhalten 3, wenn sie am Kill eines anderen Rivalen beteiligt sind.",
+        "maxUnits": 1,
+        "minUnits": 1
+      },
+      {
+        "id": 1645,
+        "style": 5,
+        "description": "Rivalen können zusammen auf dem Spielfeld platziert werden. Wenn Kha'Zix durch seine Fähigkeit Mana erhält, bekommt Rengar 50 % dieses Manas. Wenn Rengar sich mit seiner Fähigkeit heilt, erhält Kha'Zix 100 % dieser Heilung.",
+        "maxUnits": 25000,
+        "minUnits": 2
+      }
+    ],
+    "topFour": 52.9,
+    "winRate": 13.6,
+    "averagePlacement": 4.3,
+    "playRate": 1.29,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Vanguard",
+    "name": "Frontkämpfer",
+    "description": "Zu Beginn des Kampfes und nachdem ihr Leben unter 50 % fällt, erhalten Frontkämpfer 10 Sekunden lang einen Schild in Höhe ihres max. Lebens.",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1646,
+        "style": 1,
+        "description": "18 % des max. Lebens",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1647,
+        "style": 3,
+        "description": "30 % des max. Lebens",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1648,
+        "style": 5,
+        "description": "40 % des max. Lebens. Gewährt 5 % Durchhaltevermögen, während sie durch einen Schild geschützt sind.",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 65.5,
+    "winRate": 25,
+    "averagePlacement": 3.6,
+    "playRate": 0.1,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Brawler",
+    "name": "Raufbold",
+    "description": "Dein Team erhält 120 maximales Leben. Raufbolde erhalten mehr.",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1649,
+        "style": 1,
+        "description": "25 % %i:scaleHealth%",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1650,
+        "style": 3,
+        "description": "40 % %i:scaleHealth%",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1651,
+        "style": 5,
+        "description": "65 % %i:scaleHealth%",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 63.8,
+    "winRate": 18.3,
+    "averagePlacement": 3.6,
+    "playRate": 0.02,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Blackthorn",
+    "name": "Schwarzdorn",
+    "description": "Der Verbündete auf dem Schwarzdorn-Feld wird vor dem Kampf geopfert und gewährt deinen Champions Leben.<br><br>Schwarzdorn-Champions erhalten zusätzliche Werte, die von der Rolle, der Sternenwertung und den Kosten des Opfers abhängen.",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1652,
+        "style": 1,
+        "description": "175 %i:scaleHealth%",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1653,
+        "style": 3,
+        "description": "350 %i:scaleHealth%; Bonus ist 30 % stärker",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1654,
+        "style": 5,
+        "description": "600 %i:scaleHealth%; Bonus ist 50 % stärker",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 63.4,
+    "winRate": 22.3,
+    "averagePlacement": 3.8,
+    "playRate": 0.11,
+    "statusDescriptions": [
+      "Blackthorn 6 Piece Enhanced Bonus: 60% ⇒ 50% Base AP Sacrifice: 12% Damage Amp + 2 Mana Regen ⇒ 10% Damage Amp + 2 Mana Regen"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_18_Executioner",
+    "name": "Henker",
+    "description": "",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1655,
+        "style": 1,
+        "description": "Henker erhalten <TFTKeyword>Präzision</TFTKeyword> und 15 % Chance auf kritische Treffer.",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1656,
+        "style": 3,
+        "description": "Außerdem erleiden Gegner Blutungen, die über 3 Sekunden hinweg 25 % zusätzlichen absoluten Schaden verursachen.",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1657,
+        "style": 5,
+        "description": "Blutungsschaden erhöht auf 35 %.",
+        "maxUnits": 25000,
+        "minUnits": 4
+      }
+    ],
+    "topFour": 69,
+    "winRate": 19.3,
+    "averagePlacement": 3.5,
+    "playRate": 0.62,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_ApexPredator",
+    "name": "Meisterjäger",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1658,
+        "style": 4,
+        "description": "Der Ahnendrache nimmt 2 Teamplätze ein und gewährt +2 auf das Attribut „Kluftbestie“.",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 56.8,
+    "winRate": 21.1,
+    "averagePlacement": 4,
+    "playRate": 1.93,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_Riftbeast18",
+    "name": "Kluftbestie",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1659,
+        "style": 1,
+        "description": "Nutze die Alpha-Marke, um der Kluftbestie ihren einzigartigen Buff zu gewähren",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1660,
+        "style": 3,
+        "description": "Bei jedem 3. Kampf ist dein nächster Händler voller Kluftbestien.",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1661,
+        "style": 5,
+        "description": "Bei Kampfbeginn und alle 5 Sekunden wachsen Kluftbestien und erhalten <br>5 % %i:scaleAD% 5 % %i:scaleAP% 6 % %i:scaleAS%<br>+5 %i:scaleArmor% +5 %i:scaleMR% +50 %i:scaleHealth% +1 %i:scaleManaRegen%",
+        "maxUnits": 9,
+        "minUnits": 7
+      },
+      {
+        "id": 1662,
+        "style": 5,
+        "description": "+2 maximale Teamgröße",
+        "maxUnits": 25000,
+        "minUnits": 10
+      }
+    ],
+    "topFour": 90.2,
+    "winRate": 42.7,
+    "averagePlacement": 2.3,
+    "playRate": 0.09,
+    "statusDescriptions": [
+      "Riftbeast (7) AD/AP: 6% ⇒ 5%"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_18_Caustic",
+    "name": "Säurespucker",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1663,
+        "style": 4,
+        "description": "Der Schaden von Säurespuckern belegt Gegner 4 Sekunden lang mit „Magiefraktur“ und „Fraktur“ in Höhe von 30 %.",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 53.6,
+    "winRate": 8.3,
+    "averagePlacement": 4.4,
+    "playRate": 1.95,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Fae",
+    "name": "Fee",
+    "description": "Schaden, Heilung und Schilde deines Teams locken Elfen an.<br><br>Jede Elfe gewährt Feen Angriffsschaden und Fähigkeitsstärke, und wenn sie unter 50 % Leben fallen, werden sie für jede Elfe geheilt.",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "D",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1664,
+        "style": 1,
+        "description": "4.5 % und 3 % Heilung.",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1665,
+        "style": 5,
+        "description": "7 % und 5 % Heilung. Nachdem du 7 Elfen angelockt hast, lockst du stattdessen Goldelfen an, die Gold gewähren.",
+        "maxUnits": 25000,
+        "minUnits": 4
+      }
+    ],
+    "topFour": 47.1,
+    "winRate": 14.4,
+    "averagePlacement": 4.6,
+    "playRate": 0.2,
+    "statusDescriptions": [
+      "Fae (2/4) Heal: 2.5/4% ⇒ 3/5% 4th Pixie Threshold: 30000 ⇒ 25,000 5th Pixie Threshold: 70000 ⇒ 60,000 6th Pixie Threshold: 110000 ⇒ 100,000"
+    ],
+    "status": 1
+  },
+  {
+    "id": "DA_18_Lunar",
+    "name": "Lunar",
+    "description": "Lunar-Champions und angrenzende Verbündete erhalten Angriffstempo und Fähigkeitsstärke. Lunar-Champions erhalten 100 % mehr.",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1666,
+        "style": 1,
+        "description": "7 % %i:scaleAS%, 7 % %i:scaleAP%",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1667,
+        "style": 3,
+        "description": "10 % %i:scaleAS%, 12 % %i:scaleAP%",
+        "maxUnits": 3,
+        "minUnits": 3
+      },
+      {
+        "id": 1668,
+        "style": 3,
+        "description": "14 % %i:scaleAS%, 16 % %i:scaleAP%",
+        "maxUnits": 4,
+        "minUnits": 4
+      },
+      {
+        "id": 1669,
+        "style": 5,
+        "description": "18 % %i:scaleAS%, 20 % %i:scaleAP%",
+        "maxUnits": 25000,
+        "minUnits": 5
+      }
+    ],
+    "topFour": 76.9,
+    "winRate": 26.6,
+    "averagePlacement": 3.1,
+    "playRate": 0.06,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Defender",
+    "name": "Verteidiger",
+    "description": "Dein Team erhält 12 Rüstung und Magieresistenz. Verteidiger erhalten mehr.",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "A",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1670,
+        "style": 1,
+        "description": "25",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1671,
+        "style": 3,
+        "description": "60",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1672,
+        "style": 5,
+        "description": "115",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 53,
+    "winRate": 11.7,
+    "averagePlacement": 4.3,
+    "playRate": 0.23,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Spellweaver",
+    "name": "Zaubermeister",
+    "description": "Dein Team erhält 10 % Fähigkeitsstärke. Zaubermeister erhalten mehr, plus zusätzliche Fähigkeitsstärke, wenn ein Zaubermeister eine Fähigkeit aktiviert.",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1673,
+        "style": 1,
+        "description": "10 % %i:scaleAP%, +1 % %i:scaleAP% pro Aktivierung",
+        "maxUnits": 3,
+        "minUnits": 2
+      },
+      {
+        "id": 1674,
+        "style": 3,
+        "description": "30 % %i:scaleAP%, +1 % %i:scaleAP% pro Aktivierung",
+        "maxUnits": 5,
+        "minUnits": 4
+      },
+      {
+        "id": 1675,
+        "style": 5,
+        "description": "55 % %i:scaleAP%, +2 % %i:scaleAP% pro Aktivierung",
+        "maxUnits": 25000,
+        "minUnits": 6
+      }
+    ],
+    "topFour": 69.2,
+    "winRate": 24.8,
+    "averagePlacement": 3.5,
+    "playRate": 0.14,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_ZyraUniqueTrait",
+    "name": "Dornenmaid",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1676,
+        "style": 4,
+        "description": "Dein Team erhält 5 % Durchhaltevermögen, das sich auf 10 % erhöht, wenn 6 oder mehr von Zyras Pflanzen am Leben sind.",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 52.1,
+    "winRate": 12.3,
+    "averagePlacement": 4.4,
+    "playRate": 2.03,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_FloraFatalis18",
+    "name": "Flora Fatalis",
+    "description": "Flora Fatalis-Champions ernten Gegner nach Vollstreckungen und erhalten:",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1677,
+        "style": 1,
+        "description": "10 Mana",
+        "maxUnits": 1,
+        "minUnits": 1
+      },
+      {
+        "id": 1678,
+        "style": 5,
+        "description": "und gewähren dem Verbündeten mit dem niedrigsten Leben eine Heilung in Höhe von 7 % des maximalen Lebens.",
+        "maxUnits": 25000,
+        "minUnits": 2
+      }
+    ],
+    "topFour": 55.4,
+    "winRate": 13.8,
+    "averagePlacement": 4.2,
+    "playRate": 2.4,
+    "statusDescriptions": [
+      "Flora Fatalis Max Health Healing: 8% ⇒ 7%"
+    ],
+    "status": 2
+  },
+  {
+    "id": "DA_18_Summoner",
+    "name": "Beschwörer",
+    "description": "Beschwörer verstärken ihre Beschwörungen auf unterschiedliche Weise.<br><br>Yorick: +30 % Leben<br>Azir: +20 % Schaden<br>Mama Schnabel: +20 % Schaden<br>Zyra: +4 Pflanzenangriffe",
+    "bottomDescription": null,
+    "type": "class",
+    "tier": "C",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1679,
+        "style": 1,
+        "description": "Verstärkt Beschwörungen",
+        "maxUnits": 2,
+        "minUnits": 2
+      },
+      {
+        "id": 1680,
+        "style": 5,
+        "description": "Verbessert jeden Effekt um 50 %",
+        "maxUnits": 25000,
+        "minUnits": 3
+      }
+    ],
+    "topFour": 55.1,
+    "winRate": 13.8,
+    "averagePlacement": 4.2,
+    "playRate": 1.83,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_18_Blossom",
+    "name": "Blütenpracht",
+    "description": "Nach dem Kampf werden deine Geister verstärkt.<br><br>Blütenpracht-Champions erhalten Angriffsschaden, Fähigkeitsstärke und 10 % maximales Leben.",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "B",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1681,
+        "style": 1,
+        "description": "Geister werden aufgewertet, 12 % %i:scaleAD%%i:scaleAP%",
+        "maxUnits": 4,
+        "minUnits": 3
+      },
+      {
+        "id": 1682,
+        "style": 3,
+        "description": "Geister sind in jedem Händler, 30 % %i:scaleAD%%i:scaleAP%",
+        "maxUnits": 6,
+        "minUnits": 5
+      },
+      {
+        "id": 1683,
+        "style": 5,
+        "description": "Du erhältst 4 Gold, nachdem du einen Geist gekauft hast, 50 % %i:scaleAD%%i:scaleAP%",
+        "maxUnits": 8,
+        "minUnits": 7
+      },
+      {
+        "id": 1684,
+        "style": 5,
+        "description": "Du kannst 2 Geister pro Runde kaufen, 55 % %i:scaleAD%%i:scaleAP%",
+        "maxUnits": 10,
+        "minUnits": 9
+      },
+      {
+        "id": 1685,
+        "style": 6,
+        "description": "Geister quellen über vor Macht, 100 % %i:scaleAD%%i:scaleAP%",
+        "maxUnits": 25000,
+        "minUnits": 11
+      }
+    ],
+    "topFour": 100,
+    "winRate": 86.8,
+    "averagePlacement": 1.2,
+    "playRate": 0,
+    "statusDescriptions": [],
+    "status": null
+  },
+  {
+    "id": "DA_Emerald18",
+    "name": "Smaragdaspekt",
+    "description": "",
+    "bottomDescription": null,
+    "type": "origin",
+    "tier": "S",
+    "setNumber": 18,
+    "effects": [
+      {
+        "id": 1686,
+        "style": 4,
+        "description": "Zieh einen Verbündeten auf deinen stärksten Taric, um sie zu verbinden. Der Verbündete erhält durch Tarics Fähigkeit mächtige Boni.",
+        "maxUnits": 25000,
+        "minUnits": 1
+      }
+    ],
+    "topFour": 58.2,
+    "winRate": 20.7,
+    "averagePlacement": 4,
+    "playRate": 3.41,
+    "statusDescriptions": [],
+    "status": null
+  }
+]

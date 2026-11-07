@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:layout_width="230.0dp" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <LinearLayout android:orientation="vertical" android:background="@drawable/popup_bg" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="-28.299988dp" android:layout_below="@id/lay_sap_applist_title_img_layout">
+            <TextView android:textSize="12.0sp" android:textStyle="bold" android:textColor="@color/sap_common_dialog_txt" android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dp" android:layout_marginTop="38.599976dp" android:layout_marginRight="15.0dp" android:text="@string/select_app" android:layout_centerInParent="true" />
+            <GridView android:id="@id/sap_applist_grid" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dp" android:listSelector="#00000000" android:numColumns="3" />
+            <com.google.android.material.button.MaterialButton android:textSize="14.0sp" android:layout_gravity="center_horizontal" android:id="@id/sap_applist_dialog_positive_btn" android:layout_width="180.0dp" android:layout_height="34.0dp" android:layout_marginTop="20.0dp" android:layout_marginBottom="10.0dp" android:text="@string/cmn_action_ok" android:textAllCaps="false" style="@style/Widget.Material3.Button" />
+        </LinearLayout>
+        <RelativeLayout android:id="@id/lay_sap_applist_title_img_layout" android:background="@drawable/category_popup_icon" android:layout_width="56.599976dp" android:layout_height="56.599976dp" android:layout_centerHorizontal="true">
+            <RelativeLayout android:background="@drawable/category_popup_icon_bg" android:layout_width="52.599976dp" android:layout_height="52.599976dp" android:layout_centerInParent="true">
+                <ImageView android:id="@id/lay_sap_applist_title_img" android:layout_width="41.0dp" android:layout_height="41.0dp" android:layout_centerInParent="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

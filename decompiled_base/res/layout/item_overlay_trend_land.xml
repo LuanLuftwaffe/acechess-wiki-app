@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/item_overlay_trend_land_0" android:background="@color/colorPrimaryDark" android:paddingTop="5.0dp" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingStart="16.0dp" android:paddingEnd="16.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.flexbox.FlexboxLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" app:flexWrap="wrap">
+        <TextView android:textAppearance="@style/TextAppearance.Material3.LabelSmall" android:textSize="13.0sp" android:textColor="@drawable/text_selector_champion_pool" android:id="@id/txtCategoryTeamComposition" android:background="@drawable/selector_champion_pool_category" android:paddingTop="6.0dp" android:paddingBottom="6.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:text="@string/team_composition" android:paddingStart="10.0dp" android:paddingEnd="10.0dp" android:layout_marginEnd="8.0dp" />
+        <TextView android:textAppearance="@style/TextAppearance.Material3.LabelSmall" android:textSize="13.0sp" android:textColor="@drawable/text_selector_champion_pool" android:id="@id/txtCategoryItem" android:background="@drawable/selector_champion_pool_category" android:paddingTop="6.0dp" android:paddingBottom="6.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:text="@string/items" android:paddingStart="10.0dp" android:paddingEnd="10.0dp" android:layout_marginEnd="8.0dp" />
+        <TextView android:textAppearance="@style/TextAppearance.Material3.LabelSmall" android:textSize="13.0sp" android:textColor="@drawable/text_selector_champion_pool" android:id="@id/txtCategoryTrait" android:background="@drawable/selector_champion_pool_category" android:paddingTop="6.0dp" android:paddingBottom="6.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:text="@string/traits" android:paddingStart="10.0dp" android:paddingEnd="10.0dp" android:layout_marginEnd="8.0dp" />
+        <TextView android:textAppearance="@style/TextAppearance.Material3.LabelSmall" android:textSize="13.0sp" android:textColor="@drawable/text_selector_champion_pool" android:id="@id/txtCategoryChampion" android:background="@drawable/selector_champion_pool_category" android:paddingTop="6.0dp" android:paddingBottom="6.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:text="@string/champions" android:paddingStart="10.0dp" android:paddingEnd="10.0dp" />
+    </com.google.android.flexbox.FlexboxLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/llHeader" android:layout_width="match_parent" android:layout_height="20.0dp" android:layout_marginTop="10.0dp" android:weightSum="5.0">
+        <TextView android:textAppearance="@style/TextAppearance.Material3.LabelSmall" android:textColor="@color/colorTextDisable" android:ellipsize="end" android:gravity="start|center" android:id="@id/txtName" android:layout_width="0.0dp" android:layout_height="wrap_content" android:maxWidth="70.0dp" android:text="@string/name" android:maxLines="1" android:layout_weight="2.0" />
+        <TextView android:textAppearance="@style/TextAppearance.Material3.LabelSmall" android:textColor="@color/colorTextDisable" android:ellipsize="end" android:gravity="center" android:id="@id/txtAvgPlace" android:layout_width="0.0dp" android:layout_height="wrap_content" android:maxWidth="70.0dp" android:text="@string/avg_rank" android:maxLines="1" android:layout_weight="1.0" />
+        <TextView android:textAppearance="@style/TextAppearance.Material3.LabelSmall" android:textColor="@color/colorTextDisable" android:ellipsize="end" android:gravity="center" android:id="@id/txtWinRate" android:layout_width="0.0dp" android:layout_height="wrap_content" android:maxWidth="70.0dp" android:text="@string/win_rate" android:maxLines="1" android:layout_weight="1.0" />
+        <TextView android:textAppearance="@style/TextAppearance.Material3.LabelSmall" android:textColor="@color/colorTextDisable" android:ellipsize="end" android:gravity="center" android:id="@id/txtTop4" android:layout_width="0.0dp" android:layout_height="wrap_content" android:maxWidth="70.0dp" android:text="@string/top_4" android:maxLines="1" android:layout_weight="1.0" />
+    </LinearLayout>
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:orientation="horizontal" android:id="@id/llTrendComposition" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:weightSum="2.0">
+            <FrameLayout android:id="@id/flTrendCompositionDetails" android:tag="binding_1" android:visibility="invisible" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+                <include android:id="@id/layoutTrendComposition" layout="@layout/item_overlay_dialog_trend_composition" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+                <ProgressBar android:layout_gravity="center" android:id="@id/pbTeamCompositionLoading" android:layout_width="50.0dp" android:layout_height="50.0dp" />
+                <androidx.recyclerview.widget.RecyclerView android:id="@id/rvTeamComposition" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="match_parent" />
+            </FrameLayout>
+        </LinearLayout>
+        <FrameLayout android:id="@id/flItem" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="match_parent">
+            <ProgressBar android:layout_gravity="center" android:id="@id/pbItemLoading" android:layout_width="50.0dp" android:layout_height="50.0dp" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rvItem" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="match_parent" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/flTrait" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="match_parent">
+            <ProgressBar android:layout_gravity="center" android:id="@id/pbTraitLoading" android:layout_width="50.0dp" android:layout_height="50.0dp" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rvTrait" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="match_parent" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/flChampion" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="match_parent">
+            <ProgressBar android:layout_gravity="center" android:id="@id/pbChampionLoading" android:layout_width="50.0dp" android:layout_height="50.0dp" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rvChampion" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="match_parent" />
+        </FrameLayout>
+    </FrameLayout>
+</LinearLayout>

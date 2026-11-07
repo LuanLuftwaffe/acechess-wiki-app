@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:tag="layout/item_item_header_0" android:background="@color/colorPrimaryDark" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textColor="@color/colorTextPrimary" android:id="@id/txtItemType" android:tag="binding_1" android:paddingTop="15.0dp" android:paddingBottom="15.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="16.0dp" android:paddingEnd="16.0dp" />
+</FrameLayout>

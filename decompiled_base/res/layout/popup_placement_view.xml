@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView android:tag="layout/popup_placement_view_0" android:layout_width="wrap_content" android:layout_height="wrap_content" app:cardBackgroundColor="@color/colorDrawer"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:paddingTop="8.0dp" android:paddingBottom="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textAppearance="@style/TextAppearance.Material3.BodyLarge" android:textColor="@color/colorTextPrimary" android:gravity="center_vertical" android:id="@id/txtSetStars" android:layout_width="match_parent" android:layout_height="48.0dp" android:text="@string/set_stars" android:drawablePadding="12.0dp" android:paddingStart="12.0dp" android:paddingEnd="12.0dp" app:drawableStartCompat="@drawable/ic_baseline_star_rate_24" app:drawableTint="@color/colorTextPrimary" />
+        <TextView android:textAppearance="@style/TextAppearance.Material3.BodyLarge" android:textColor="@color/colorTextPrimary" android:gravity="center_vertical" android:id="@id/txtRemoveItems" android:layout_width="match_parent" android:layout_height="48.0dp" android:text="@string/remove_items" android:drawablePadding="12.0dp" android:paddingStart="12.0dp" android:paddingEnd="12.0dp" app:drawableStartCompat="@drawable/ic_baseline_remove_24" app:drawableTint="@color/colorTextPrimary" />
+        <TextView android:textAppearance="@style/TextAppearance.Material3.BodyLarge" android:textColor="@color/colorTextPrimary" android:gravity="center_vertical" android:id="@id/txtChampionInfo" android:layout_width="match_parent" android:layout_height="48.0dp" android:text="@string/champion_info" android:drawablePadding="12.0dp" android:paddingStart="12.0dp" android:paddingEnd="12.0dp" app:drawableStartCompat="@drawable/ic_equalizer_black_24dp" app:drawableTint="@color/colorTextPrimary" />
+        <LinearLayout android:gravity="center_vertical" android:id="@id/llSetHeadlinerTrait" android:layout_width="match_parent" android:layout_height="48.0dp" android:paddingStart="12.0dp" android:paddingEnd="12.0dp">
+            <ImageView android:id="@id/imgChosenIcon" android:layout_width="24.0dp" android:layout_height="24.0dp" />
+            <TextView android:textAppearance="@style/TextAppearance.Material3.BodyLarge" android:textColor="@color/colorTextPrimary" android:id="@id/txtChosenText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/set_headliner" android:layout_marginStart="12.0dp" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:id="@id/llSetChampionTrait" android:visibility="gone" android:layout_width="match_parent" android:layout_height="48.0dp" android:paddingStart="12.0dp" android:paddingEnd="12.0dp">
+            <ImageView android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_origin" app:tint="@color/colorTextPrimary" />
+            <TextView android:textAppearance="@style/TextAppearance.Material3.BodyLarge" android:textColor="@color/colorTextPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/select_trait" android:layout_marginStart="12.0dp" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:id="@id/llTransformMecha" android:visibility="gone" android:layout_width="match_parent" android:layout_height="48.0dp" android:paddingStart="12.0dp" android:paddingEnd="12.0dp">
+            <ImageView android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_mecha" app:tint="@color/colorTextPrimary" />
+            <TextView android:textAppearance="@style/TextAppearance.Material3.BodyLarge" android:textColor="@color/colorTextPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/transform_mecha" android:layout_marginStart="12.0dp" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

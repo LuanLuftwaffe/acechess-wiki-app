@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/advanced_setting_layout" android:background="?colorSurface" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/lay_sap_advanced_title" android:layout_width="match_parent" android:layout_height="@dimen/web_common_title_height" layout="@layout/lay_sap_title" />
+    <ScrollView android:id="@id/scrollView1" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_below="@id/lay_sap_advanced_title">
+        <LinearLayout android:orientation="vertical" android:paddingBottom="16.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:splitMotionEvents="false">
+            <TextView android:textSize="13.0sp" android:textColor="?colorOnSurfaceVariant" android:paddingTop="16.0dp" android:paddingBottom="8.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/section_on_exit" android:paddingStart="16.0dp" android:paddingEnd="16.0dp" />
+            <RelativeLayout android:id="@id/advanced_del_temp_file_layout" android:background="?selectableItemBackground" android:layout_width="match_parent" android:layout_height="56.0dp" android:paddingStart="16.0dp" android:paddingEnd="16.0dp">
+                <TextView android:textSize="16.0sp" android:textColor="?colorOnSurface" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/cache" android:layout_centerVertical="true" android:layout_marginEnd="56.0dp" />
+                <com.google.android.material.materialswitch.MaterialSwitch android:id="@id/advanced_checkbox_de_temp_file" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/advanced_clear_history_exit_layout" android:background="?selectableItemBackground" android:layout_width="match_parent" android:layout_height="56.0dp" android:paddingStart="16.0dp" android:paddingEnd="16.0dp">
+                <TextView android:textSize="16.0sp" android:textColor="?colorOnSurface" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/clear_history_exit" android:layout_centerVertical="true" android:layout_marginEnd="56.0dp" />
+                <com.google.android.material.materialswitch.MaterialSwitch android:id="@id/advanced_checkbox_clear_history_exit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/advanced_clear_cookies_exit_layout" android:background="?selectableItemBackground" android:layout_width="match_parent" android:layout_height="56.0dp" android:paddingStart="16.0dp" android:paddingEnd="16.0dp">
+                <TextView android:textSize="16.0sp" android:textColor="?colorOnSurface" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/clear_cookies_exit" android:layout_centerVertical="true" android:layout_marginEnd="56.0dp" />
+                <com.google.android.material.materialswitch.MaterialSwitch android:id="@id/advanced_checkbox_clear_cookies_exit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <View android:background="?colorOutlineVariant" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+            <TextView android:textSize="13.0sp" android:textColor="?colorOnSurfaceVariant" android:paddingTop="16.0dp" android:paddingBottom="8.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/section_content" android:paddingStart="16.0dp" android:paddingEnd="16.0dp" />
+            <RelativeLayout android:id="@id/advanced_image_block_layout" android:background="?selectableItemBackground" android:layout_width="match_parent" android:layout_height="56.0dp" android:paddingStart="16.0dp" android:paddingEnd="16.0dp">
+                <TextView android:textSize="16.0sp" android:textColor="?colorOnSurface" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/block" android:layout_centerVertical="true" android:layout_marginEnd="56.0dp" />
+                <com.google.android.material.materialswitch.MaterialSwitch android:id="@id/advanced_checkbox_image_block" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/advanced_data_saver_layout" android:background="?selectableItemBackground" android:layout_width="match_parent" android:layout_height="72.0dp" android:paddingStart="16.0dp" android:paddingEnd="16.0dp">
+                <TextView android:textSize="16.0sp" android:textColor="?colorOnSurface" android:id="@id/textView_data_saver_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:text="@string/data_saver_mode" android:layout_marginEnd="56.0dp" />
+                <TextView android:textSize="14.0sp" android:textColor="?colorOnSurfaceVariant" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" android:text="@string/data_saver_mode_desc" android:layout_below="@id/textView_data_saver_title" android:layout_marginEnd="56.0dp" />
+                <com.google.android.material.materialswitch.MaterialSwitch android:id="@id/advanced_checkbox_data_saver" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <View android:background="?colorOutlineVariant" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+            <TextView android:textSize="13.0sp" android:textColor="?colorOnSurfaceVariant" android:paddingTop="16.0dp" android:paddingBottom="8.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/section_privacy" android:paddingStart="16.0dp" android:paddingEnd="16.0dp" />
+            <RelativeLayout android:id="@id/advanced_cookies_permission_layout" android:background="?selectableItemBackground" android:layout_width="match_parent" android:layout_height="72.0dp" android:paddingStart="16.0dp" android:paddingEnd="16.0dp">
+                <TextView android:textSize="16.0sp" android:textColor="?colorOnSurface" android:id="@id/textView8" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:text="@string/cookies" android:layout_marginEnd="56.0dp" />
+                <TextView android:textSize="14.0sp" android:textColor="?colorOnSurfaceVariant" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" android:text="@string/recommended" android:layout_below="@id/textView8" android:layout_marginEnd="56.0dp" />
+                <com.google.android.material.materialswitch.MaterialSwitch android:id="@id/advanced_checkbox_cookies_permission" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/advanced_incognito_cookies_permission_layout" android:background="?selectableItemBackground" android:layout_width="match_parent" android:layout_height="56.0dp" android:paddingStart="16.0dp" android:paddingEnd="16.0dp">
+                <TextView android:textSize="16.0sp" android:textColor="?colorOnSurface" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/incognito_cookies" android:layout_centerVertical="true" android:layout_marginEnd="56.0dp" />
+                <com.google.android.material.materialswitch.MaterialSwitch android:id="@id/advanced_checkbox_incognito_cookies_permission" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/advanced_start_tab_layout" android:background="?selectableItemBackground" android:layout_width="match_parent" android:layout_height="56.0dp" android:paddingStart="16.0dp" android:paddingEnd="16.0dp">
+                <TextView android:textSize="16.0sp" android:textColor="?colorOnSurface" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/restore" android:layout_centerVertical="true" android:layout_marginEnd="56.0dp" />
+                <com.google.android.material.materialswitch.MaterialSwitch android:id="@id/advanced_checkbox_start_tab" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <View android:background="?colorOutlineVariant" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+            <TextView android:textSize="13.0sp" android:textColor="?colorOnSurfaceVariant" android:paddingTop="16.0dp" android:paddingBottom="8.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/section_clear_data" android:paddingStart="16.0dp" android:paddingEnd="16.0dp" />
+            <RelativeLayout android:id="@id/advanced_clear_cache_layout" android:background="?selectableItemBackground" android:layout_width="match_parent" android:layout_height="56.0dp" android:paddingStart="16.0dp" android:paddingEnd="16.0dp">
+                <TextView android:textSize="16.0sp" android:textColor="?colorOnSurface" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/clear_cache" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/advanced_clear_history_layout" android:background="?selectableItemBackground" android:layout_width="match_parent" android:layout_height="56.0dp" android:paddingStart="16.0dp" android:paddingEnd="16.0dp">
+                <TextView android:textSize="16.0sp" android:textColor="?colorOnSurface" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/advanced_clear_cookies_layout" android:background="?selectableItemBackground" android:layout_width="match_parent" android:layout_height="56.0dp" android:paddingStart="16.0dp" android:paddingEnd="16.0dp">
+                <TextView android:textSize="16.0sp" android:textColor="?colorOnSurface" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/clear_cookies" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <View android:background="?colorOutlineVariant" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+            <TextView android:textSize="13.0sp" android:textColor="?colorOnSurfaceVariant" android:paddingTop="16.0dp" android:paddingBottom="8.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/section_about" android:paddingStart="16.0dp" android:paddingEnd="16.0dp" />
+            <RelativeLayout android:id="@id/advanced_lay_version" android:background="?selectableItemBackground" android:layout_width="match_parent" android:layout_height="72.0dp" android:paddingStart="16.0dp" android:paddingEnd="16.0dp">
+                <TextView android:textSize="16.0sp" android:textColor="?colorOnSurface" android:id="@id/textView9" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dp" android:text="@string/version" />
+                <TextView android:textSize="14.0sp" android:textColor="?colorOnSurfaceVariant" android:id="@id/advanced_setting_version_txt" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" android:layout_below="@id/textView9" />
+            </RelativeLayout>
+            <View android:id="@id/advanced_sync_divider" android:background="?colorOutlineVariant" android:visibility="gone" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+            <RelativeLayout android:id="@id/advanced_setting_sync_layout" android:background="?selectableItemBackground" android:visibility="gone" android:layout_width="match_parent" android:layout_height="56.0dp" android:paddingStart="16.0dp" android:paddingEnd="16.0dp">
+                <TextView android:textSize="16.0sp" android:textColor="?colorOnSurface" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/setting_sync" android:layout_centerVertical="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

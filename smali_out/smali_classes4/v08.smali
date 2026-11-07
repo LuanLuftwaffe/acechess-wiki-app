@@ -1,0 +1,120 @@
+.class public final Lv08;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/google/android/gms/measurement/internal/zzjs;
+
+
+# instance fields
+.field public final a:Lcom/google/android/gms/internal/measurement/zzcy;
+
+.field public final synthetic b:Lcom/google/android/gms/measurement/internal/AppMeasurementDynamiteService;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/gms/measurement/internal/AppMeasurementDynamiteService;Lcom/google/android/gms/internal/measurement/zzcy;)V
+    .locals 0
+
+    .line 1
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Lv08;->b:Lcom/google/android/gms/measurement/internal/AppMeasurementDynamiteService;
+
+    .line 5
+    .line 6
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 7
+    .line 8
+    .line 9
+    iput-object p2, p0, Lv08;->a:Lcom/google/android/gms/internal/measurement/zzcy;
+
+    .line 10
+    .line 11
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onEvent(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;J)V
+    .locals 6
+
+    .line 1
+    :try_start_0
+    iget-object v0, p0, Lv08;->a:Lcom/google/android/gms/internal/measurement/zzcy;
+
+    .line 2
+    .line 3
+    move-object v1, p1
+
+    .line 4
+    move-object v2, p2
+
+    .line 5
+    move-object v3, p3
+
+    .line 6
+    move-wide v4, p4
+
+    .line 7
+    invoke-interface/range {v0 .. v5}, Lcom/google/android/gms/internal/measurement/zzcy;->zze(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;J)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 8
+    .line 9
+    .line 10
+    return-void
+
+    .line 11
+    :catch_0
+    move-exception v0
+
+    .line 12
+    move-object p1, v0
+
+    .line 13
+    iget-object p0, p0, Lv08;->b:Lcom/google/android/gms/measurement/internal/AppMeasurementDynamiteService;
+
+    .line 14
+    .line 15
+    iget-object p0, p0, Lcom/google/android/gms/measurement/internal/AppMeasurementDynamiteService;->a:Lcom/google/android/gms/measurement/internal/zzii;
+
+    .line 16
+    .line 17
+    if-eqz p0, :cond_0
+
+    .line 18
+    .line 19
+    invoke-virtual {p0}, Lcom/google/android/gms/measurement/internal/zzii;->zzbc()Lcom/google/android/gms/measurement/internal/zzhf;
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-object p0
+
+    .line 23
+    invoke-virtual {p0}, Lcom/google/android/gms/measurement/internal/zzhf;->zze()Lcom/google/android/gms/measurement/internal/zzhd;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object p0
+
+    .line 27
+    const-string p2, "Event listener threw exception"
+
+    .line 28
+    .line 29
+    invoke-virtual {p0, p2, p1}, Lcom/google/android/gms/measurement/internal/zzhd;->zzb(Ljava/lang/String;Ljava/lang/Object;)V
+
+    .line 30
+    .line 31
+    .line 32
+    :cond_0
+    return-void
+.end method

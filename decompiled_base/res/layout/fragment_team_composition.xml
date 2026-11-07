@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:tag="layout/fragment_team_composition_0" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:tag="binding_1" android:background="@color/colorPrimaryDark" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="wrap_content" app:liftOnScroll="true">
+        <com.google.android.material.appbar.MaterialToolbar android:id="@id/toolbar" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_scrollEffect="compress" app:layout_scrollFlags="scroll|enterAlways|snap" app:menu="@menu/menu_team_composition" app:navigationIcon="@drawable/ic_menu_white_24dp" app:navigationIconTint="@color/colorTextPrimary" app:title="@string/team_composition" />
+        <com.facebook.shimmer.ShimmerFrameLayout android:id="@id/shimmerViewContainer" android:tag="binding_2" android:layout_width="match_parent" android:layout_height="match_parent">
+            <include layout="@layout/placeholder_team_composition" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+        <include android:id="@id/errorLayout" layout="@layout/item_team_composition_error" />
+        <FrameLayout android:id="@id/flEmpty" android:layout_width="match_parent" android:layout_height="match_parent">
+            <TextView android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/colorTextDisable" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/txtEmpty" android:paddingTop="20.0dp" android:paddingBottom="20.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/trend_empty" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+        </FrameLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/rvTeamComposition" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

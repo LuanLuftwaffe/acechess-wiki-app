@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:gravity="center_vertical" android:tag="layout/item_edit_bubble_0" android:layout_width="match_parent" android:layout_height="50.0dp" android:paddingStart="16.0dp" android:paddingEnd="8.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/colorTextSecondary" android:layout_gravity="start|center" android:tag="binding_1" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <ImageView android:layout_gravity="end|center" android:id="@id/imgDragHandle" android:padding="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_baseline_drag_handle_24" app:tint="@color/colorTextPrimary" />
+</FrameLayout>

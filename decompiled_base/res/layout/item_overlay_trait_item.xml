@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView android:tag="layout/item_overlay_trait_item_0" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" app:contentPadding="10.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatImageView android:tag="binding_1" android:layout_width="24.0dp" android:layout_height="24.0dp" android:tint="@color/colorTextPrimary" />
+            <TextView android:textAppearance="@style/TextAppearance.Material3.TitleSmall" android:textSize="14.0sp" android:textColor="@color/colorTextPrimary" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/unknown" android:layout_marginStart="8.0dp" />
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView android:tag="binding_3" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+        <com.lolchess.tft.common.view.TextViewWithImages android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/colorTextSecondary" android:tag="binding_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" />
+        <androidx.recyclerview.widget.RecyclerView android:tag="binding_5" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        <com.lolchess.tft.common.view.TextViewWithImages android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/colorTextSecondary" android:tag="binding_6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

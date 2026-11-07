@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/dialog_adjust_bubble_size_0" android:background="@color/colorSurface" android:padding="24.0dp" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="@style/TextAppearance.Material3.TitleLarge" android:textColor="@color/colorDialogTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/adjust_bubble_size" />
+    <NumberPicker android:theme="@style/AppTheme.Picker" android:layout_gravity="center" android:id="@id/npBubbleSize" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dp" />
+    <com.google.android.material.button.MaterialButton android:textColor="@color/colorAccent" android:layout_gravity="end" android:id="@id/txtOK" android:tag="binding_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dp" android:text="@string/ok" style="@style/Widget.Material3.Button.TextButton" />
+</LinearLayout>

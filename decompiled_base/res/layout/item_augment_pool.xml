@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:tag="layout/item_augment_pool_0" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.lolchess.tft.common.view.GridViewSquareItem android:layout_gravity="center" android:id="@id/imgChampion" android:tag="binding_1" android:background="@drawable/shape_stroke_color_accent" android:layout_width="match_parent" android:layout_height="match_parent" android:foreground="@drawable/ripple_background" />
+</FrameLayout>

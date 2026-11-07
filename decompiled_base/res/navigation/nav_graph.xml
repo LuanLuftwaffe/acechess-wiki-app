@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/nav_graph" app:startDestination="@id/championFragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="DevicesFragment" android:name="com.lolchess.tft.ui.devices.DevicesFragment" android:id="@id/devicesFragment" />
+    <fragment android:label="@string/champions" android:name="com.lolchess.tft.ui.champion.views.ChampionFragment" android:id="@id/championFragment">
+        <action android:id="@id/action_championFragment_to_championFilterDialog" app:destination="@id/championFilterDialog" />
+        <action android:id="@id/action_championFragment_to_championSortDialog" app:destination="@id/championSortDialog" />
+        <action android:id="@id/action_championFragment_to_championDetailsFragment" app:destination="@id/championDetailsFragment" app:enterAnim="@anim/slide_in_bottom" app:exitAnim="@anim/stack_push" app:popEnterAnim="@anim/stack_pop" app:popExitAnim="@anim/slide_out_bottom" />
+    </fragment>
+    <fragment android:name="com.lolchess.tft.ui.champion.views.ChampionDetailsFragment" android:id="@id/championDetailsFragment">
+        <argument android:name="championId" app:argType="string" />
+        <action android:id="@id/action_championDetailsFragment_self" app:destination="@id/championDetailsFragment" app:enterAnim="@anim/slide_in_bottom" app:exitAnim="@anim/stack_push" app:popEnterAnim="@anim/stack_pop" app:popExitAnim="@anim/slide_out_bottom" />
+    </fragment>
+    <fragment android:label="@string/champion_stats" android:name="com.lolchess.tft.ui.champion.views.ChampionStatsFragment" android:id="@id/championStatsFragment" />
+    <fragment android:label="@string/items" android:name="com.lolchess.tft.ui.item.views.ItemFragment" android:id="@id/itemFragment">
+        <action android:id="@id/action_itemFragment_to_itemInventoryFragment" app:destination="@id/itemInventoryFragment" app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left" app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment android:label="ItemInventoryFragment" android:name="com.lolchess.tft.ui.item.views.ItemInventoryFragment" android:id="@id/itemInventoryFragment" />
+    <dialog android:label="ItemDialog" android:name="com.lolchess.tft.ui.item.dialog.ItemDialog" android:id="@id/itemDialog">
+        <argument android:name="itemId" app:argType="string" />
+    </dialog>
+    <fragment android:label="@string/augments" android:name="com.lolchess.tft.ui.augment.views.AugmentFragment" android:id="@id/augmentFragment" />
+    <fragment android:label="@string/traits" android:name="com.lolchess.tft.ui.trait.views.TraitFragment" android:id="@id/traitFragment" />
+    <fragment android:label="@string/encounters" android:name="com.lolchess.tft.ui.utility.views.EncounterFragment" android:id="@id/encountersFragment" />
+    <fragment android:label="@string/charms" android:name="com.lolchess.tft.ui.utility.views.CharmFragment" android:id="@id/charmsFragment">
+        <action android:id="@id/action_charmsFragment_to_charmSortDialog" app:destination="@id/charmSortDialog" />
+    </fragment>
+    <fragment android:label="@string/anomalies" android:name="com.lolchess.tft.ui.utility.views.AnomalyFragment" android:id="@id/anomalyFragment" />
+    <fragment android:label="@string/power_ups" android:name="com.lolchess.tft.ui.utility.views.PowerUpFragment" android:id="@id/powerupFragment" />
+    <fragment android:label="@string/wisps" android:name="com.lolchess.tft.ui.utility.views.WispFragment" android:id="@id/wispFragment">
+        <action android:id="@id/action_wispFragment_to_wispFilterDialog" app:destination="@id/wispFilterDialog" />
+    </fragment>
+    <dialog android:label="WispFilterDialog" android:name="com.lolchess.tft.ui.utility.dialog.WispFilterDialog" android:id="@id/wispFilterDialog">
+        <argument android:name="filterCategory" app:argType="string" />
+    </dialog>
+    <dialog android:label="AnomalyDialog" android:name="com.lolchess.tft.ui.utility.dialog.AnomalyDialog" android:id="@id/anomalyDialog">
+        <argument android:name="anomalyId" app:argType="string" />
+    </dialog>
+    <dialog android:label="PowerUpDialog" android:name="com.lolchess.tft.ui.trait.dialog.PowerUpDialog" android:id="@id/powerUpDialog">
+        <argument android:name="powerUpId" app:argType="string" />
+    </dialog>
+    <fragment android:label="@string/portals" android:name="com.lolchess.tft.ui.utility.views.PortalFragment" android:id="@id/portalsFragment" />
+    <fragment android:label="@string/pro_builds" android:name="com.lolchess.tft.ui.team.views.ProbuildsFragment" android:id="@id/probuildsFragment">
+        <action android:id="@id/action_probuildsFragment_to_summonerMatchDetailsFragment" app:destination="@id/summonerMatchDetailsFragment" />
+    </fragment>
+    <dialog android:label="AugmentDialog" android:name="com.lolchess.tft.ui.augment.dialog.AugmentDialog" android:id="@id/augmentDialog">
+        <argument android:name="augmentId" app:argType="string" />
+    </dialog>
+    <fragment android:label="@string/tier_list" android:name="com.lolchess.tft.ui.tier.views.TierListFragment" android:id="@id/tierListFragment" />
+    <fragment android:label="@string/utilities" android:name="com.lolchess.tft.ui.utility.views.UtilityFragment" android:id="@id/utilitiesFragment" />
+    <fragment android:label="@string/trends" android:name="com.lolchess.tft.ui.trend.views.TrendFragment" android:id="@id/trendFragment">
+        <action android:id="@id/action_trendFragment_to_trendCompositionDialog" app:destination="@id/trendCompositionDialog" />
+    </fragment>
+    <fragment android:label="@string/patch_notes" android:name="com.lolchess.tft.ui.patch.views.PatchNotesFragment" android:id="@id/patchNotesFragment" />
+    <fragment android:label="@string/summoners" android:name="com.lolchess.tft.ui.summoner.views.SummonerSearchFragment" android:id="@id/summonerSearchFragment">
+        <action android:id="@id/action_summonerSearchFragment_to_summonerDetailsFragment" app:destination="@id/summonerDetailsFragment" />
+    </fragment>
+    <fragment android:label="SummonerDetailsFragment" android:name="com.lolchess.tft.ui.summoner.views.SummonerDetailsFragment" android:id="@id/summonerDetailsFragment">
+        <argument android:name="summonerName" app:argType="string" app:nullable="true" />
+        <argument android:name="summonerId" app:argType="string" app:nullable="true" />
+        <argument android:name="regionEndpoint" app:argType="string" />
+        <argument android:name="isIdSearch" app:argType="boolean" />
+        <action android:id="@id/action_summonerDetailsFragment_to_summonerMatchDetailsFragment" app:destination="@id/summonerMatchDetailsFragment" />
+        <action android:id="@id/action_summonerDetailsFragment_to_summonerLeagueFragment" app:destination="@id/summonerLeagueFragment" app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left" app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment android:label="SummonerMatchDetailsFragment" android:name="com.lolchess.tft.ui.summoner.views.SummonerMatchDetailsFragment" android:id="@id/summonerMatchDetailsFragment">
+        <argument android:name="matchId" app:argType="string" />
+        <argument android:name="summonerPuuid" app:argType="string" />
+        <argument android:name="regionEndpoint" app:argType="string" />
+        <action android:id="@id/action_summonerMatchDetailsFragment_to_summonerDetailsFragment" app:destination="@id/summonerDetailsFragment" />
+        <action android:id="@id/action_summonerMatchDetailsFragment_to_matchInfoDialog" app:destination="@id/matchInfoDialog" />
+    </fragment>
+    <fragment android:label="SummonerLeagueFragment" android:name="com.lolchess.tft.ui.summoner.views.SummonerLeagueFragment" android:id="@id/summonerLeagueFragment">
+        <argument android:name="leaguePosition" app:argType="com.lolchess.tft.model.league.LeaguePosition" />
+        <argument android:name="regionEndpoint" app:argType="string" />
+        <action android:id="@id/action_summonerLeagueFragment_to_summonerDetailsFragment" app:destination="@id/summonerDetailsFragment" />
+    </fragment>
+    <fragment android:label="@string/synergy_builder" android:name="com.lolchess.tft.ui.builder.views.TraitEffectBuilderFragment" android:id="@id/synergyBuilderFragment" />
+    <fragment android:label="@string/team_builder" android:name="com.lolchess.tft.ui.builder.views.TeamBuilderFragment" android:id="@id/teamBuilderFragment">
+        <argument android:name="teamCompositionId" android:defaultValue="@null" app:argType="string" app:nullable="true" />
+        <action android:id="@id/action_teamBuilderFragment_to_teamBuilderSaveFragment" app:destination="@id/teamBuilderSaveFragment" />
+    </fragment>
+    <fragment android:label="@string/save_team_composition" android:name="com.lolchess.tft.ui.builder.views.TeamBuilderSaveFragment" android:id="@id/teamBuilderSaveFragment">
+        <argument android:name="teamCompositionId" app:argType="string" app:nullable="true" />
+        <argument android:name="unitList" app:argType="com.lolchess.tft.model.team.TeamBuilderUnit[]" />
+        <action android:id="@id/action_teamBuilderSaveFragment_to_augmentPickerDialog" app:destination="@id/augmentPickerDialog" />
+        <action android:id="@id/action_teamBuilderSaveFragment_to_teamBuilderAddChampionCategoryDialog" app:destination="@id/teamBuilderAddChampionCategoryDialog" />
+        <action android:id="@id/action_teamBuilderSaveFragment_to_myBuildsFragment" app:destination="@id/myBuildsFragment" app:popUpTo="@id/nav_graph" app:popUpToInclusive="true" />
+    </fragment>
+    <dialog android:label="AugmentPickerDialog" android:name="com.lolchess.tft.ui.augment.dialog.AugmentPickerDialog" android:id="@id/augmentPickerDialog">
+        <argument android:name="augmentList" app:argType="com.lolchess.tft.model.item.Augment[]" />
+    </dialog>
+    <dialog android:label="TeamBuilderAddChampionCategoryDialog" android:name="com.lolchess.tft.ui.builder.dialog.TeamBuilderAddChampionCategoryDialog" android:id="@id/teamBuilderAddChampionCategoryDialog">
+        <action android:id="@id/action_teamBuilderAddChampionCategoryDialog_to_championPickerDialog" app:destination="@id/championPickerDialog" />
+    </dialog>
+    <fragment android:label="@string/team_suggestion" android:name="com.lolchess.tft.ui.team.views.TeamCompositionSuggestionFragment" android:id="@id/teamCompositionSuggestionFragment">
+        <action android:id="@id/action_teamCompositionSuggestionFragment_to_championPickerDialog" app:destination="@id/championPickerDialog" />
+        <action android:id="@id/action_teamCompositionSuggestionFragment_to_itemCounterPickerDialog" app:destination="@id/itemCounterPickerDialog" />
+        <action android:id="@id/action_teamCompositionSuggestionFragment_to_teamCompositionDialog" app:destination="@id/teamCompositionDialog" />
+        <action android:id="@id/action_teamCompositionSuggestionFragment_to_myTeamCompositionDialog" app:destination="@id/myTeamCompositionDialog" />
+        <action android:id="@id/action_teamCompositionSuggestionFragment_to_trendCompositionDialog" app:destination="@id/trendCompositionDialog" />
+    </fragment>
+    <fragment android:label="@string/my_builds" android:name="com.lolchess.tft.ui.team.views.MyTeamCompositionFragment" android:id="@id/myBuildsFragment">
+        <action android:id="@id/action_myBuildsFragment_to_teamBuilderFragment" app:destination="@id/teamBuilderFragment" />
+        <action android:id="@id/action_myBuildsFragment_to_myTeamCompositionDialog" app:destination="@id/myTeamCompositionDialog" />
+    </fragment>
+    <dialog android:label="MyTeamCompositionDialog" android:name="com.lolchess.tft.ui.team.dialog.MyTeamCompositionDialog" android:id="@id/myTeamCompositionDialog">
+        <argument android:name="teamId" app:argType="integer" />
+    </dialog>
+    <fragment android:label="@string/team_composition" android:name="com.lolchess.tft.ui.team.views.TeamCompositionFragment" android:id="@id/teamCompositionFragment">
+        <action android:id="@id/action_teamCompositionFragment_to_teamCompositionDialog" app:destination="@id/teamCompositionDialog" />
+    </fragment>
+    <dialog android:label="TeamCompositionDialog" android:name="com.lolchess.tft.ui.team.dialog.TeamCompositionDialog" android:id="@id/teamCompositionDialog">
+        <argument android:name="teamComposition" app:argType="com.lolchess.tft.model.team.TeamComposition" />
+        <action android:id="@id/action_teamCompositionDialog_to_legendDialog" app:destination="@id/legendDialog" />
+    </dialog>
+    <dialog android:label="TrendCompositionDialog" android:name="com.lolchess.tft.ui.trend.dialog.TrendCompositionDialog" android:id="@id/trendCompositionDialog">
+        <argument android:name="trendComposition" app:argType="com.lolchess.tft.model.trend.TrendComposition" />
+    </dialog>
+    <fragment android:label="@string/loaded_dice" android:name="com.lolchess.tft.ui.utility.views.LoadedDiceFragment" android:id="@id/loadedDiceFragment">
+        <action android:id="@id/action_loadedDiceFragment_to_championPickerDialog" app:destination="@id/championPickerDialog" />
+    </fragment>
+    <dialog android:label="ChampionPickerDialog" android:name="com.lolchess.tft.ui.champion.dialog.ChampionPickerDialog" android:id="@id/championPickerDialog">
+        <argument android:name="isSingle" app:argType="boolean" />
+        <argument android:name="isLoadedDice" app:argType="boolean" />
+    </dialog>
+    <dialog android:label="ItemCounterPickerDialog" android:name="com.lolchess.tft.ui.item.dialog.ItemCounterPickerDialog" android:id="@id/itemCounterPickerDialog" />
+    <fragment android:label="@string/augment_odds" android:name="com.lolchess.tft.ui.utility.views.AugmentOddsFragment" android:id="@id/augmentOddsFragment" />
+    <fragment android:label="@string/origins" android:name="com.lolchess.tft.ui.trait.views.OriginFragment" android:id="@id/originFragment">
+        <argument android:name="traitType" android:defaultValue="origin" app:argType="string" />
+    </fragment>
+    <fragment android:label="@string/classes" android:name="com.lolchess.tft.ui.trait.views.ClassFragment" android:id="@id/classFragment">
+        <argument android:name="traitType" android:defaultValue="class" app:argType="string" />
+    </fragment>
+    <fragment android:label="@string/cosmetics" android:name="com.lolchess.tft.ui.cosmetics.views.CosmeticsFragment" android:id="@id/cosmeticsFragment">
+        <action android:id="@id/action_cosmeticsFragment_to_tacticianDialog" app:destination="@id/tacticianDialog" />
+        <action android:id="@id/action_cosmeticsFragment_to_arenaDialog" app:destination="@id/arenaDialog" />
+    </fragment>
+    <dialog android:label="TacticianDialog" android:name="com.lolchess.tft.ui.cosmetics.dialog.TacticianDialog" android:id="@id/tacticianDialog">
+        <argument android:name="tactician" app:argType="com.lolchess.tft.model.cosmetics.Tactician[]" />
+    </dialog>
+    <dialog android:label="ArenaDialog" android:name="com.lolchess.tft.ui.cosmetics.dialog.ArenaDialog" android:id="@id/arenaDialog">
+        <argument android:name="arena" app:argType="com.lolchess.tft.model.cosmetics.Arena" />
+    </dialog>
+    <dialog android:label="TraitActiveDialog" android:name="com.lolchess.tft.ui.trait.dialog.TraitActiveDialog" android:id="@id/traitActiveDialog">
+        <argument android:name="traitId" app:argType="string" />
+        <argument android:name="counter" app:argType="integer" />
+    </dialog>
+    <activity android:label="MainActivity" android:name="com.lolchess.tft.MainActivity" android:id="@id/mainActivity" />
+    <activity android:label="@string/settings" android:name="com.lolchess.tft.ui.settings.views.SettingsActivity" android:id="@id/settingsActivity" />
+    <activity android:label="@string/donate" android:name="com.lolchess.tft.ui.settings.views.DonateActivity" android:id="@id/donateActivity" />
+    <activity android:label="@string/summoners_rift" android:name="com.lolchess.tft.ui.settings.views.SummonersRiftActivity" android:id="@id/summonersRiftActivity" />
+    <dialog android:label="ChampionFilterDialog" android:name="com.lolchess.tft.ui.champion.dialog.ChampionFilterDialog" android:id="@id/championFilterDialog">
+        <argument android:name="filterCategory" app:argType="com.lolchess.tft.model.champion.FilterCategory" />
+        <argument android:name="origins" app:argType="com.lolchess.tft.model.trait.TraitMinimal[]" />
+        <argument android:name="classes" app:argType="com.lolchess.tft.model.trait.TraitMinimal[]" />
+        <argument android:name="previousFilterTabPosition" app:argType="integer" />
+    </dialog>
+    <dialog android:label="ChampionSortDialog" android:name="com.lolchess.tft.ui.champion.dialog.ChampionSortDialog" android:id="@id/championSortDialog">
+        <argument android:name="sortCategory" app:argType="string" />
+    </dialog>
+    <dialog android:label="CharmSortDialog" android:name="com.lolchess.tft.ui.utility.dialog.CharmSortDialog" android:id="@id/charmSortDialog">
+        <argument android:name="sortCategory" app:argType="string" />
+    </dialog>
+    <dialog android:label="LegendDialog" android:name="com.lolchess.tft.ui.augment.dialog.AugmentLegendDialog" android:id="@id/legendDialog">
+        <argument android:name="legendId" app:argType="integer" />
+    </dialog>
+    <dialog android:label="SummonerMatchDetailsDialog" android:name="com.lolchess.tft.ui.summoner.dialog.SummonerMatchDetailsDialog" android:id="@id/matchInfoDialog">
+        <argument android:name="matchInfo" app:argType="string" />
+        <argument android:name="matchId" app:argType="string" />
+    </dialog>
+    <action android:id="@id/action_global_championDetailsFragment" app:destination="@id/championDetailsFragment" app:enterAnim="@anim/slide_in_bottom" app:exitAnim="@anim/stack_push" app:popEnterAnim="@anim/stack_pop" app:popExitAnim="@anim/slide_out_bottom" />
+    <action android:id="@id/action_global_itemDialog" app:destination="@id/itemDialog" />
+    <action android:id="@id/action_global_traitActiveDialog" app:destination="@id/traitActiveDialog" />
+    <action android:id="@id/action_global_augmentDialog" app:destination="@id/augmentDialog" />
+    <action android:id="@id/action_global_legendDialog" app:destination="@id/legendDialog" />
+    <action android:id="@id/action_global_anomalyDialog" app:destination="@id/anomalyDialog" />
+    <action android:id="@id/action_global_powerUpDialog" app:destination="@id/powerUpDialog" />
+</navigation>

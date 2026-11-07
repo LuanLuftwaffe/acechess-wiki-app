@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/noti_background" android:layout_width="match_parent" android:layout_height="52.0dp" android:scaleType="fitXY" android:layout_alignParentTop="true" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/linearLayout2" android:focusableInTouchMode="false" android:clickable="false" android:layout_width="match_parent" android:layout_height="52.0dp" android:weightSum="6.0" android:layout_alignParentTop="true">
+        <RelativeLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="52.0dp" android:layout_weight="1.0">
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="35.0dp" android:layout_alignParentTop="true">
+                <ImageView android:id="@id/button1" android:padding="2.0dp" android:layout_width="35.0dp" android:layout_height="35.0dp" android:src="@drawable/ic_blue_companion" android:layout_centerInParent="true" />
+            </RelativeLayout>
+            <TextView android:textSize="@dimen/sap_browser_search_size" android:textColor="@color/colorTextSecondary" android:gravity="center_horizontal" android:id="@id/text1" android:paddingTop="2.0dp" android:paddingBottom="2.0dp" android:layout_width="match_parent" android:layout_height="17.0dp" android:text="@string/notibar_first_title" android:maxLines="1" android:singleLine="true" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+        <RelativeLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="52.0dp" android:layout_weight="1.0">
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="35.0dp" android:layout_alignParentTop="true">
+                <ImageView android:id="@id/button2" android:padding="6.0dp" android:layout_width="35.0dp" android:layout_height="35.0dp" android:src="@drawable/ic_bubble" android:tint="@color/colorWhite" android:layout_centerInParent="true" />
+            </RelativeLayout>
+            <TextView android:textSize="@dimen/sap_browser_search_size" android:textColor="@color/colorTextSecondary" android:gravity="center_horizontal" android:id="@id/text2" android:paddingTop="2.0dp" android:paddingBottom="2.0dp" android:layout_width="match_parent" android:layout_height="17.0dp" android:text="@string/notibar_second_title" android:maxLines="1" android:singleLine="true" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+        <RelativeLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="52.0dp" android:layout_weight="1.0">
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="35.0dp" android:layout_alignParentTop="true">
+                <ImageView android:id="@id/button3" android:padding="7.0dp" android:layout_width="35.0dp" android:layout_height="35.0dp" android:src="@drawable/ic_play_tft_mobile" android:tint="@color/colorWhite" android:layout_centerInParent="true" />
+            </RelativeLayout>
+            <TextView android:textSize="@dimen/sap_browser_search_size" android:textColor="@color/colorTextSecondary" android:gravity="center_horizontal" android:id="@id/text3" android:paddingTop="2.0dp" android:paddingBottom="2.0dp" android:layout_width="match_parent" android:layout_height="17.0dp" android:text="@string/notibar_third_title" android:maxLines="1" android:singleLine="true" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+        <RelativeLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="52.0dp" android:layout_weight="1.0">
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="35.0dp" android:layout_alignParentTop="true">
+                <ImageView android:id="@id/button4" android:padding="7.0dp" android:layout_width="35.0dp" android:layout_height="35.0dp" android:src="@drawable/ic_scroll" android:tint="@color/colorWhite" android:layout_centerInParent="true" />
+            </RelativeLayout>
+            <TextView android:textSize="@dimen/sap_browser_search_size" android:textColor="@color/colorTextSecondary" android:gravity="center_horizontal" android:id="@id/text4" android:paddingTop="2.0dp" android:paddingBottom="2.0dp" android:layout_width="match_parent" android:layout_height="17.0dp" android:text="@string/notibar_fourth_title" android:maxLines="1" android:singleLine="true" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+        <RelativeLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="52.0dp" android:layout_weight="1.0">
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="35.0dp" android:layout_alignParentTop="true">
+                <ImageView android:id="@id/button5" android:layout_width="35.0dp" android:layout_height="35.0dp" android:src="@drawable/notibar_icon_5" android:tint="@color/colorWhite" android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+            <TextView android:textSize="@dimen/sap_browser_search_size" android:textColor="@color/colorTextSecondary" android:gravity="center_horizontal" android:id="@id/text5" android:paddingTop="2.0dp" android:paddingBottom="2.0dp" android:layout_width="match_parent" android:layout_height="17.0dp" android:text="@string/notibar_fifth_title" android:maxLines="1" android:singleLine="true" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+        <RelativeLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="52.0dp" android:layout_weight="1.0">
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="35.0dp" android:layout_alignParentTop="true">
+                <ImageView android:id="@id/button6" android:layout_width="35.0dp" android:layout_height="35.0dp" android:src="@drawable/notibar_icon_6" android:tint="@color/colorWhite" android:layout_centerInParent="true" />
+            </RelativeLayout>
+            <TextView android:textSize="@dimen/sap_browser_search_size" android:textColor="@color/colorTextSecondary" android:gravity="center_horizontal" android:id="@id/text6" android:paddingTop="2.0dp" android:paddingBottom="2.0dp" android:layout_width="match_parent" android:layout_height="17.0dp" android:text="@string/noti_icon_web_search" android:maxLines="1" android:singleLine="true" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

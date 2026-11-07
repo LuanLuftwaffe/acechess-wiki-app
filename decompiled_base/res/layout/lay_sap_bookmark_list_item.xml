@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/res_sap_list_bg" android:layout_width="match_parent" android:layout_height="56.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:gravity="center_vertical" android:id="@id/favicon1" android:paddingLeft="2.0dp" android:paddingRight="2.0dp" android:layout_width="24.0dp" android:layout_height="24.0dp" android:layout_marginLeft="10.0dp" android:layout_marginRight="2.0dp" android:contentDescription="@null" />
+    <TextView android:textSize="18.0sp" android:textColor="@color/dark_text" android:gravity="center_vertical" android:id="@id/text1" android:padding="5.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="1" />
+</LinearLayout>

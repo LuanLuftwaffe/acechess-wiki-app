@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:tag="layout/fragment_team_composition_suggestion_0" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:background="@color/colorPrimaryDark" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="wrap_content" app:liftOnScroll="true">
+        <com.google.android.material.appbar.MaterialToolbar android:id="@id/toolbar" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_scrollEffect="compress" app:layout_scrollFlags="scroll|enterAlways|snap" app:navigationIcon="@drawable/ic_menu_white_24dp" app:navigationIconTint="@color/colorTextPrimary" app:title="@string/team_suggestion" />
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/llError" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
+            <TextView android:textColor="@color/colorTextDisable" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/txtEmptyContent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dp" android:text="@string/error_loading_team_comps" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+            <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <com.google.android.material.button.MaterialButton android:textColor="@color/colorOnSecondary" android:id="@id/btnTryAgain" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:layout_marginBottom="10.0dp" android:text="@string/re_try" android:backgroundTint="@color/colorAccent" />
+            </FrameLayout>
+        </LinearLayout>
+        <FrameLayout android:id="@id/flEmpty" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
+            <TextView android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/colorTextDisable" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/txtEmpty" android:paddingTop="20.0dp" android:paddingBottom="20.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/trend_empty" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+        </FrameLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView android:id="@id/scrollView" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textColor="@color/colorTextPrimary" android:paddingTop="15.0dp" android:paddingBottom="15.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/current_champions" android:layout_marginStart="16.0dp" />
+                <com.google.android.material.button.MaterialButton android:id="@id/btnAddChampion" android:layout_width="wrap_content" android:layout_height="wrap_content" app:icon="@drawable/ic_add_black_24dp" app:iconTint="@color/colorTextPrimary" style="?materialIconButtonStyle" />
+                <View android:layout_width="0.0dp" android:layout_height="1.0dp" android:layout_weight="1.0" />
+                <com.google.android.material.button.MaterialButton android:id="@id/btnClearChampion" android:layout_width="wrap_content" android:layout_height="wrap_content" app:icon="@drawable/ic_clear_white_24dp" app:iconTint="@color/colorTextPrimary" style="?materialIconButtonStyle" />
+            </LinearLayout>
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp">
+                <TextView android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/colorTextDisable" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/txtEmptyChampion" android:background="@color/colorSurface" android:paddingTop="20.0dp" android:paddingBottom="20.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/empty_champion_pool" />
+                <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/clChampionPool" android:background="@color/colorPrimary" android:padding="10.0dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <androidx.recyclerview.widget.RecyclerView android:id="@id/rvChampionPool" android:layout_width="0.0dp" android:layout_height="0.0dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_default="wrap" app:layout_constraintHeight_max="120.0dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textColor="@color/colorTextPrimary" android:paddingTop="15.0dp" android:paddingBottom="15.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/current_items" android:layout_marginStart="16.0dp" />
+                <com.google.android.material.button.MaterialButton android:id="@id/btnAddItem" android:layout_width="wrap_content" android:layout_height="wrap_content" app:icon="@drawable/ic_add_black_24dp" app:iconTint="@color/colorTextPrimary" style="?materialIconButtonStyle" />
+                <View android:layout_width="0.0dp" android:layout_height="1.0dp" android:layout_weight="1.0" />
+                <com.google.android.material.button.MaterialButton android:id="@id/btnClearItem" android:layout_width="wrap_content" android:layout_height="wrap_content" app:icon="@drawable/ic_clear_white_24dp" app:iconTint="@color/colorTextPrimary" style="?materialIconButtonStyle" />
+            </LinearLayout>
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp">
+                <TextView android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/colorTextDisable" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/txtEmptyItem" android:background="@color/colorSurface" android:paddingTop="20.0dp" android:paddingBottom="20.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/empty_item_pool" />
+                <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/clItemPool" android:background="@color/colorPrimary" android:padding="10.0dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <androidx.recyclerview.widget.RecyclerView android:id="@id/rvItemPool" android:layout_width="0.0dp" android:layout_height="0.0dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_default="wrap" app:layout_constraintHeight_max="120.0dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <View android:background="@color/colorAccentLight" android:visibility="gone" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginTop="15.0dp" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textColor="@color/colorTextPrimary" android:paddingTop="15.0dp" android:paddingBottom="15.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/suggested_team_compositions" android:layout_marginStart="16.0dp" />
+                <View android:layout_width="0.0dp" android:layout_height="1.0dp" android:layout_weight="1.0" />
+                <com.google.android.material.button.MaterialButton android:id="@id/btnTeamFilter" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" app:icon="@drawable/ic_more_vert_white_24dp" app:iconTint="@color/colorTextPrimary" style="?materialIconButtonStyle" />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rvSuggestedComposition" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
