@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AceChess Companion & Patcher</title>
+  <style>
+    :root {
+      --bg-dark: #0a0e17;
+      --bg-card: rgba(18, 26, 42, 0.85);
+      --bg-card-hover: rgba(26, 38, 62, 0.95);
+      --border-gold: rgba(203, 180, 108, 0.35);
+      --border-gold-glow: #ffd700;
+      --gold-primary: #e6c66b;
+      --gold-bright: #ffd700;
+      --text-main: #f0f4fc;
+      --text-muted: #8b9bb4;
+      --accent-blue: #38bdf8;
+      --accent-green: #22c55e;
+      --accent-red: #ef4444;
+      --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Top Navigation Header */
+    header {
+      background: rgba(10, 14, 23, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-gold);
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: 0.5px;
+      color: var(--gold-bright);
+      text-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+    }
+
+    .brand-tag {
+      font-size: 11px;
+      background: linear-gradient(135deg, rgba(203, 180, 108, 0.2), rgba(255, 215, 0, 0.05));
+      border: 1px solid var(--border-gold);
+      color: var(--gold-primary);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      background: rgba(15, 23, 42, 0.7);
+      padding: 4px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-tab {
+      padding: 7px 18px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-tab:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .nav-tab.active {
+      color: #0a0e17;
+      background: linear-gradient(135deg, #ffd700, #e6c66b);
+      box-shadow: 0 2px 10px rgba(255, 215, 0, 0.25);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .device-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 20px;
+      font-size: 12px;
+      color: var(--text-main);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-red);
+      box-shadow: 0 0 8px var(--accent-red);
+    }
+
+    .status-dot.online {
+      background: var(--accent-green);
+      box-shadow: 0 0 8px var(--accent-green);
+    }
+
+    .btn-icon {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .btn-icon:hover {
+      color: var(--gold-bright);
+      border-color: var(--border-gold);
+    }
+
+    /* Content Area */
+    main {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .view-panel {
+      position: absolute;
+      inset: 0;
+      display: none;
+      flex-direction: column;
+    }
+
+    .view-panel.active {
+      display: flex;
+    }
+
+    /* Webview Iframe */
+    .wiki-iframe-wrapper {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #0d121f;
+    }
+
+    /* Tool Patcher Panel */
+    .patcher-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px 32px;
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gold-bright);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 10px;
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+
+    .info-label {
+      color: var(--text-muted);
+    }
+
+    .info-val {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .btn-action {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-bottom: 10px;
+      border: 1px solid transparent;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #ffd700, #cbb46c);
+      color: #0a0e17;
+      box-shadow: 0 4px 16px rgba(255, 215, 0, 0.25);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--border-gold);
+      color: var(--gold-bright);
+    }
+
+    /* Console Terminal */
+    .terminal-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 520px;
+    }
+
+    .terminal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .terminal-body {
+      flex: 1;
+      background: rgba(5, 8, 14, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 14px;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 12.5px;
+      line-height: 1.6;
+      overflow-y: auto;
+      max-height: 480px;
+      color: #cbd5e1;
+      user-select: text;
+    }
+
+    .log-line {
+      margin-bottom: 4px;
+      word-break: break-all;
+    }
+
+    .log-time {
+      color: #64748b;
+      margin-right: 8px;
+    }
+
+    .log-info { color: #38bdf8; }
+    .log-success { color: #4ade80; font-weight: bold; }
+    .log-warn { color: #facc15; }
+    .log-error { color: #f87171; font-weight: bold; }
+
+    /* Customizer Panel */
+    .customizer-container {
+      flex: 1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 24px 32px;
+      gap: 16px;
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 12px;
+    }
+
+    .input-search {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 8px;
+      padding: 10px 16px;
+      color: var(--text-main);
+      font-size: 14px;
+      outline: none;
+    }
+
+    .input-search:focus {
+      border-color: var(--gold-bright);
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+    }
+
+    .table-wrapper {
+      flex: 1;
+      overflow-y: auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: left;
+    }
+
+    th {
+      background: rgba(10, 14, 23, 0.95);
+      color: var(--gold-bright);
+      padding: 12px 16px;
+      font-weight: 700;
+      position: sticky;
+      top: 0;
+      border-bottom: 1px solid var(--border-gold);
+    }
+
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      vertical-align: top;
+      user-select: text;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .edit-input {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      padding: 6px 10px;
+      color: #fff;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .edit-input:focus {
+      border-color: var(--gold-bright);
+    }
+
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 12px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header>
+    <div class="brand">
+      <span>⚔️ ACE CHESS WIKI</span>
+      <span class="brand-tag">COMPANION & PATCHER</span>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+      <div class="nav-tab active" onclick="switchTab('wiki')">
+        <span>🌐 Cẩm Nang Wiki</span>
+      </div>
+      <div class="nav-tab" onclick="switchTab('patcher')">
+        <span>⚡ Tool Cài Việt Hóa</span>
+      </div>
+      <div class="nav-tab" onclick="switchTab('customizer')">
+        <span>✍️ Sửa Văn Phong</span>
+      </div>
+    </div>
+
+    <!-- Right Status Indicator -->
+    <div class="header-actions">
+      <div class="device-badge">
+        <span class="status-dot" id="status-dot"></span>
+        <span id="device-status-text">Đang quét thiết bị...</span>
+      </div>
+      <button class="btn-icon" title="Quét lại thiết bị" onclick="refreshDevice()">
+        🔄
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Viewports -->
+  <main>
+    <!-- 1. Web Wiki View -->
+    <section class="view-panel active" id="view-wiki">
+      <iframe class="wiki-iframe-wrapper" id="wiki-frame" src="https://covuonggia-wiki.vercel.app"></iframe>
+    </section>
+
+    <!-- 2. Patcher Tool View -->
+    <section class="view-panel" id="view-patcher">
+      <div class="patcher-container">
+        <!-- Control Box -->
+        <div class="card">
+          <div class="card-title">
+            <span>📱 TRẠNG THÁI THIẾT BỊ & GAME</span>
+          </div>
+          <div class="info-list">
+            <div class="info-row">
+              <span class="info-label">Thiết bị kết nối:</span>
+              <span class="info-val" id="info-device">Chưa phát hiện</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Loại thiết bị:</span>
+              <span class="info-val" id="info-type">MEmu / Android</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Gói game:</span>
+              <span class="info-val" id="info-pkg">com.tencent.tmgp.osgame</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Phiên bản game:</span>
+              <span class="info-val" id="info-ver">1.8.0.1</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Trạng thái APK:</span>
+              <span class="info-val" id="info-apk-state" style="color: var(--accent-green);">Bản Việt Hoá (Localized)</span>
+            </div>
+          </div>
+
+          <button class="btn-action btn-gold" onclick="runInstallPatch()">
+            <span>🚀 Cài / Cập Nhật Việt Hóa (1-Chạm)</span>
+          </button>
+          <button class="btn-action btn-outline" onclick="runRestoreOriginal()">
+            <span>🔄 Trả Về Bản Gốc (Để Cập Nhật Game)</span>
+          </button>
+          <button class="btn-action btn-outline" onclick="launchGame()">
+            <span>🎮 Khởi Động Game Trên Giả Lập / Máy</span>
+          </button>
+          <button class="btn-action btn-outline" onclick="switchTab('customizer')">
+            <span>✍️ Nạp Bản Dịch Riêng Của Bạn</span>
+          </button>
+        </div>
+
+        <!-- Terminal Output -->
+        <div class="card terminal-card">
+          <div class="terminal-header">
+            <span class="card-title" style="margin: 0; border: none; padding: 0;">📋 NHẬT KÝ HOẠT ĐỘNG THỜI GIAN THỰC</span>
+            <button class="btn-sm btn-outline" onclick="clearLogs()">Xóa log</button>
+          </div>
+          <div class="terminal-body" id="log-terminal">
+            <div class="log-line"><span class="log-time">[00:00:00]</span> <span class="log-info">[INFO]</span> Khởi tạo hệ thống AceChess Companion...</div>
+            <div class="log-line"><span class="log-time">[00:00:01]</span> <span class="log-info">[ADB]</span> Đang kiểm tra kết nối với cổng 127.0.0.1:21503 (MEmu)...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Customizer View -->
+    <section class="view-panel" id="view-customizer">
+      <div class="customizer-container">
+        <div class="search-bar">
+          <input type="text" class="input-search" id="term-search-input" placeholder="Tìm kiếm tên tướng, trang bị, kỹ năng (ví dụ: Doanh Chính, Gia Cát Lượng, Sách Thí Thần)..." onkeydown="if(event.key==='Enter') searchTerms()">
+          <button class="btn-sm btn-gold" style="padding: 10px 24px;" onclick="searchTerms()">🔍 Tìm Kiếm</button>
+          <button class="btn-sm btn-outline" style="padding: 10px 24px;" onclick="saveAndApplyCustom()">💾 Lưu & Nạp Vào Game</button>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 140px;">Mã Định Danh (ID)</th>
+                <th style="width: 25%;">Tiếng Trung Gốc</th>
+                <th style="width: 30%;">Bản Dịch Hiện Tại</th>
+                <th>Văn Phong Của Bạn (Chỉnh Sửa Trực Tiếp)</th>
+              </tr>
+            </thead>
+            <tbody id="terms-tbody">
+              <tr>
+                <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 40px;">
+                  Hãy nhập từ khóa tìm kiếm phía trên (ví dụ: "Doanh Chính", "Tướng", "Trang bị") để sửa văn phong.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Tab Switching
+    function switchTab(tabId) {
+      document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.view-panel').forEach(p => p.classList.remove('active'));
+
+      if (tabId === 'wiki') {
+        document.querySelectorAll('.nav-tab')[0].classList.add('active');
+        document.getElementById('view-wiki').classList.add('active');
+      } else if (tabId === 'patcher') {
+        document.querySelectorAll('.nav-tab')[1].classList.add('active');
+        document.getElementById('view-patcher').classList.add('active');
+      } else if (tabId === 'customizer') {
+        document.querySelectorAll('.nav-tab')[2].classList.add('active');
+        document.getElementById('view-customizer').classList.add('active');
+      }
+    }
+
+    // Logging helper
+    function appendLog(level, message) {
+      const terminal = document.getElementById('log-terminal');
+      const now = new Date().toTimeString().split(' ')[0];
+      const div = document.createElement('div');
+      div.className = 'log-line';
+
+      let levelClass = 'log-info';
+      if (level === 'SUCCESS') levelClass = 'log-success';
+      if (level === 'WARN') levelClass = 'log-warn';
+      if (level === 'ERROR') levelClass = 'log-error';
+
+      div.innerHTML = `<span class="log-time">[${now}]</span> <span class="${levelClass}">[${level}]</span> ${message}`;
+      terminal.appendChild(div);
+      terminal.scrollTop = terminal.scrollHeight;
+    }
+
+    function clearLogs() {
+      document.getElementById('log-terminal').innerHTML = '';
+      appendLog('INFO', 'Đã xóa nhật ký.');
+    }
+
+    // Python API Bridges
+    async function refreshDevice() {
+      appendLog('INFO', 'Đang quét thiết bị kết nối qua ADB...');
+      if (window.pywebview && window.pywebview.api) {
+        try {
+          const res = await window.pywebview.api.get_device_status();
+          updateDeviceUI(res);
+        } catch(e) {
+          appendLog('ERROR', 'Lỗi gọi API Python: ' + e);
+        }
+      } else {
+        appendLog('WARN', 'Chạy ở chế độ Web (Chưa kết nối Python API). Giả lập kiểm tra...');
+        setTimeout(() => {
+          updateDeviceUI({
+            connected: true,
+            deviceId: '127.0.0.1:21503',
+            type: 'MEmu Emulator',
+            pkgInstalled: true,
+            version: '1.8.0.1',
+            apkState: 'Bản Việt Hoá (Localized)'
+          });
+        }, 500);
+      }
+    }
+
+    function updateDeviceUI(res) {
+      const dot = document.getElementById('status-dot');
+      const txt = document.getElementById('device-status-text');
+      const infoDev = document.getElementById('info-device');
+      const infoType = document.getElementById('info-type');
+      const infoVer = document.getElementById('info-ver');
+      const infoState = document.getElementById('info-apk-state');
+
+      if (res.connected) {
+        dot.className = 'status-dot online';
+        txt.innerText = `${res.deviceId} (${res.type})`;
+        infoDev.innerText = res.deviceId;
+        infoType.innerText = res.type;
+        infoVer.innerText = res.version || '1.8.0.1';
+        infoState.innerText = res.apkState || 'Bản Việt Hoá (Localized)';
+        appendLog('SUCCESS', `Đã phát hiện thiết bị: ${res.deviceId} - Game ${res.version}`);
+      } else {
+        dot.className = 'status-dot';
+        txt.innerText = 'Chưa phát hiện thiết bị';
+        infoDev.innerText = 'Không có kết nối';
+        appendLog('WARN', 'Không phát hiện thiết bị. Hãy mở MEmu hoặc cắm cáp USB bật Gỡ lỗi USB.');
+      }
+    }
+
+    async function runInstallPatch() {
+      appendLog('INFO', 'Bắt đầu quá trình Cài Đặt / Cập Nhật Việt Hóa...');
+      if (window.pywebview && window.pywebview.api) {
+        const res = await window.pywebview.api.install_patch();
+        appendLog(res.success ? 'SUCCESS' : 'ERROR', res.message);
+      } else {
+        appendLog('INFO', 'Nạp gói font tiếng Việt Bahnschrift...');
+        setTimeout(() => appendLog('INFO', 'Cập nhật QtsVFSCache gói chữ 1.db, 4.db...'), 600);
+        setTimeout(() => appendLog('SUCCESS', 'Hoàn tất! Game đã được Việt hóa 100%.'), 1400);
+      }
+    }
+
+    async function runRestoreOriginal() {
+      appendLog('INFO', 'Tiến hành khôi phục APK gốc để cập nhật game...');
+      if (window.pywebview && window.pywebview.api) {
+        const res = await window.pywebview.api.restore_original();
+        appendLog(res.success ? 'SUCCESS' : 'ERROR', res.message);
+      } else {
+        setTimeout(() => appendLog('SUCCESS', 'Đã trả về bản nền gốc sạch sẽ. Game có thể tự update an toàn!'), 800);
+      }
+    }
+
+    async function launchGame() {
+      appendLog('INFO', 'Gửi lệnh mở game com.tencent.tmgp.osgame...');
+      if (window.pywebview && window.pywebview.api) {
+        await window.pywebview.api.launch_game();
+      }
+    }
+
+    // Search dictionary
+    async function searchTerms() {
+      const kw = document.getElementById('term-search-input').value.trim();
+      if (!kw) return;
+      appendLog('INFO', `Đang tìm kiếm thuật ngữ "${kw}" trong kho từ điển 249k chuỗi...`);
+
+      if (window.pywebview && window.pywebview.api) {
+        const results = await window.pywebview.api.search_dictionary(kw);
+        renderTable(results);
+      } else {
+        // Mock sample results if running standalone
+        renderTable([
+          { id: 'c7838cf6983f389995119ed6', zh: '在本活动期间使用英雄嬴政造成2000点伤害', vi: 'Dùng Tướng Doanh Chính gây 2000 điểm sát thương trong thời gian hoạt động này' },
+          { id: '2adad10b91e83545e14cc1e7', zh: '在本活动期间使用英雄诸葛亮造成2000点伤害', vi: 'Dùng Tướng Gia Cát Lượng gây 2000 điểm sát thương trong thời gian hoạt động này' },
+          { id: '0dc1e561e73a297bc83a5314', zh: '获得2张【诸葛亮】+1件【噬神之书】。', vi: 'Nhận 2 lá 【Gia Cát Lượng】 + 1 【Sách Thí Thần】.' }
+        ]);
+      }
+    }
+
+    function renderTable(list) {
+      const tbody = document.getElementById('terms-tbody');
+      tbody.innerHTML = '';
+      if (!list || list.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: var(--text-muted); padding: 30px;">Không tìm thấy thuật ngữ phù hợp.</td></tr>';
+        return;
+      }
+      list.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td style="font-family: monospace; color: var(--accent-blue);">${item.id}</td>
+          <td style="color: #94a3b8;">${escapeHtml(item.zh)}</td>
+          <td>${escapeHtml(item.vi)}</td>
+          <td><input type="text" class="edit-input" data-id="${item.id}" value="${escapeHtml(item.vi)}"></td>
+        `;
+        tbody.appendChild(tr);
+      });
+      appendLog('SUCCESS', `Đã tìm thấy ${list.length} mục phù hợp.`);
+    }
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    async function saveAndApplyCustom() {
+      const inputs = document.querySelectorAll('.edit-input');
+      const modifications = [];
+      inputs.forEach(input => {
+        modifications.push({
+          id: input.getAttribute('data-id'),
+          new_vi: input.value
+        });
+      });
+      if (modifications.length === 0) {
+        alert('Chưa có thuật ngữ nào để lưu!');
+        return;
+      }
+      appendLog('INFO', `Đang lưu ${modifications.length} văn phong tùy chỉnh...`);
+      if (window.pywebview && window.pywebview.api) {
+        const res = await window.pywebview.api.save_custom_modifications(modifications);
+        appendLog('SUCCESS', res.message);
+      } else {
+        appendLog('SUCCESS', `Đã lưu thành công ${modifications.length} thuật ngữ theo văn phong của bạn!`);
+      }
+    }
+
+    // Auto initialize on load
+    window.addEventListener('pywebviewready', () => {
+      refreshDevice();
+    });
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(refreshDevice, 600);
+    });
+  </script>
+</body>
+</html>

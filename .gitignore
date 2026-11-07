@@ -4,10 +4,13 @@
 *.idsig
 dist/*
 !dist/LoLChess_1.383_Mod_SideBySide.apk.zip
+!dist/AceChess_Companion.exe
 !dist/README.md
 
-# Apktool build cache
+# Build caches
 decompiled_base/build/
+scripts/desktop_app/build/
+*.spec
 
 # Heavy original/temporary dumps and backups
 backups/
