@@ -9,9 +9,11 @@ import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -25,13 +27,15 @@ import vn.hokvi.viethoa.v2.ui.screens.PatchScreen
 import vn.hokvi.viethoa.v2.ui.screens.ShowtimeScreen
 import vn.hokvi.viethoa.v2.ui.theme.DarkBackground
 import vn.hokvi.viethoa.v2.ui.theme.DarkSurface
-import vn.hokvi.viethoa.v2.ui.theme.DarkSurfaceVariant
 import vn.hokvi.viethoa.v2.ui.theme.GoldPrimary
 import vn.hokvi.viethoa.v2.ui.theme.TextPrimary
 import vn.hokvi.viethoa.v2.ui.theme.TextSecondary
+import vn.hokvi.viethoa.v2.ui.viewmodel.DashboardViewModel
 
 @Composable
-fun AppNavHost() {
+fun AppNavHost(
+    dashboardViewModel: DashboardViewModel = viewModel()
+) {
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
@@ -78,7 +82,11 @@ fun AppNavHost() {
             modifier = Modifier.padding(innerPadding)
         ) {
             composable(Screen.Dashboard.route) {
+                val uiState by dashboardViewModel.uiState.collectAsState()
                 DashboardScreen(
+                    uiState = uiState,
+                    onRefresh = { dashboardViewModel.refreshStatus() },
+                    onRequestShizuku = { dashboardViewModel.requestShizukuPermission() },
                     onNavigateToPatch = {
                         navController.navigate(Screen.Patch.route)
                     },

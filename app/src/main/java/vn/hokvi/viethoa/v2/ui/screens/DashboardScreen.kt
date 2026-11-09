@@ -18,6 +18,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
@@ -28,6 +29,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import vn.hokvi.viethoa.v2.R
+import vn.hokvi.viethoa.v2.core.shell.ShellLogger
+import vn.hokvi.viethoa.v2.core.shell.ShellType
+import vn.hokvi.viethoa.v2.ui.theme.CrimsonError
+import vn.hokvi.viethoa.v2.ui.theme.CyanAccent
 import vn.hokvi.viethoa.v2.ui.theme.DarkBorder
 import vn.hokvi.viethoa.v2.ui.theme.DarkSurface
 import vn.hokvi.viethoa.v2.ui.theme.DarkSurfaceVariant
@@ -35,9 +40,13 @@ import vn.hokvi.viethoa.v2.ui.theme.EmeraldSuccess
 import vn.hokvi.viethoa.v2.ui.theme.GoldPrimary
 import vn.hokvi.viethoa.v2.ui.theme.TextPrimary
 import vn.hokvi.viethoa.v2.ui.theme.TextSecondary
+import vn.hokvi.viethoa.v2.ui.viewmodel.DashboardUiState
 
 @Composable
 fun DashboardScreen(
+    uiState: DashboardUiState,
+    onRefresh: () -> Unit,
+    onRequestShizuku: () -> Unit,
     onNavigateToPatch: () -> Unit,
     onNavigateToGuide: () -> Unit
 ) {
@@ -74,46 +83,94 @@ fun DashboardScreen(
             colors = CardDefaults.cardColors(containerColor = DarkSurface),
             shape = RoundedCornerShape(12.dp)
         ) {
-            Column(modifier = Modifier.padding(16.dp)) {
-                Text(
-                    text = stringResource(R.string.shell_status_title),
-                    style = MaterialTheme.typography.titleMedium,
-                    color = TextPrimary
-                )
-                Spacer(modifier = Modifier.height(8.dp))
+            Column(
+                modifier = Modifier.padding(16.dp),
+                verticalArrangement = Arrangement.spacedBy(10.dp)
+            ) {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = stringResource(R.string.shell_none_active),
-                        style = MaterialTheme.typography.bodyLarge,
-                        color = TextSecondary
+                        text = stringResource(R.string.shell_status_title),
+                        style = MaterialTheme.typography.titleMedium,
+                        color = TextPrimary
                     )
-                    Box(
-                        modifier = Modifier
-                            .clip(RoundedCornerShape(4.dp))
-                            .background(DarkSurfaceVariant)
-                            .padding(horizontal = 8.dp, vertical = 4.dp)
+
+                    if (uiState.isLoading) {
+                        CircularProgressIndicator(
+                            color = GoldPrimary,
+                            strokeWidth = 2.dp,
+                            modifier = Modifier.height(18.dp)
+                        )
+                    }
+                }
+
+                // Backend Badge
+                val (badgeText, badgeColor) = when (uiState.activeBackend) {
+                    ShellType.ROOT -> stringResource(R.string.shell_root_active) to EmeraldSuccess
+                    ShellType.SHIZUKU -> stringResource(R.string.shell_shizuku_active) to CyanAccent
+                    ShellType.ADB_WIRELESS -> stringResource(R.string.shell_adb_active) to CyanAccent
+                    ShellType.NONE -> stringResource(R.string.shell_none_active) to CrimsonError
+                }
+
+                Box(
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(6.dp))
+                        .background(DarkSurfaceVariant)
+                        .padding(horizontal = 10.dp, vertical = 6.dp)
+                ) {
+                    Text(
+                        text = badgeText,
+                        style = MaterialTheme.typography.bodyLarge,
+                        color = badgeColor
+                    )
+                }
+
+                // Detail message
+                Text(
+                    text = uiState.statusMessage.ifBlank { stringResource(R.string.shell_recommendation) },
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = TextSecondary
+                )
+
+                // Shell Action Buttons
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    if (uiState.isShizukuRunning && !uiState.hasShizukuPermission) {
+                        Button(
+                            onClick = onRequestShizuku,
+                            modifier = Modifier.weight(1f),
+                            shape = RoundedCornerShape(8.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = CyanAccent)
+                        ) {
+                            Text(
+                                text = stringResource(R.string.btn_request_shizuku),
+                                style = MaterialTheme.typography.labelLarge,
+                                color = MaterialTheme.colorScheme.onPrimary
+                            )
+                        }
+                    }
+
+                    OutlinedButton(
+                        onClick = onRefresh,
+                        modifier = Modifier.weight(1f),
+                        shape = RoundedCornerShape(8.dp)
                     ) {
                         Text(
-                            text = stringResource(R.string.shell_checking),
-                            style = MaterialTheme.typography.bodyMedium,
+                            text = stringResource(R.string.btn_recheck_permission),
+                            style = MaterialTheme.typography.labelLarge,
                             color = GoldPrimary
                         )
                     }
                 }
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(
-                    text = stringResource(R.string.shell_recommendation),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = TextSecondary
-                )
             }
         }
 
-        // Game Status Card
+        // Test Command Output Card (id command)
         Card(
             modifier = Modifier
                 .fillMaxWidth()
@@ -121,55 +178,108 @@ fun DashboardScreen(
             colors = CardDefaults.cardColors(containerColor = DarkSurface),
             shape = RoundedCornerShape(12.dp)
         ) {
-            Column(modifier = Modifier.padding(16.dp)) {
+            Column(
+                modifier = Modifier.padding(16.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
                 Text(
-                    text = stringResource(R.string.game_status_title),
+                    text = stringResource(R.string.shell_cmd_test_title),
                     style = MaterialTheme.typography.titleMedium,
                     color = TextPrimary
                 )
-                Spacer(modifier = Modifier.height(8.dp))
+
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(RoundedCornerShape(6.dp))
+                        .background(DarkSurfaceVariant)
+                        .padding(10.dp)
+                ) {
+                    Text(
+                        text = stringResource(
+                            R.string.shell_cmd_test_output,
+                            uiState.idCommandOutput.ifBlank { "..." }
+                        ),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = if (uiState.activeBackend != ShellType.NONE) EmeraldSuccess else CrimsonError
+                    )
+                }
+
                 Text(
-                    text = stringResource(R.string.game_package),
+                    text = stringResource(R.string.shell_log_path, ShellLogger.getLogFilePath()),
                     style = MaterialTheme.typography.bodyMedium,
                     color = TextSecondary
-                )
-                Spacer(modifier = Modifier.height(4.dp))
-                Text(
-                    text = stringResource(R.string.game_patch_status_original),
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = EmeraldSuccess
                 )
             }
         }
 
-        // Action Buttons
-        Button(
-            onClick = onNavigateToPatch,
+        // Recent Logs Preview
+        Card(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(48.dp),
-            shape = RoundedCornerShape(8.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = GoldPrimary)
+                .border(1.dp, DarkBorder, RoundedCornerShape(12.dp)),
+            colors = CardDefaults.cardColors(containerColor = DarkSurface),
+            shape = RoundedCornerShape(12.dp)
         ) {
-            Text(
-                text = stringResource(R.string.btn_apply_patch),
-                style = MaterialTheme.typography.labelLarge,
-                color = MaterialTheme.colorScheme.onPrimary
-            )
+            Column(
+                modifier = Modifier.padding(16.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                Text(
+                    text = stringResource(R.string.shell_recent_logs_title),
+                    style = MaterialTheme.typography.titleMedium,
+                    color = TextPrimary
+                )
+
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(RoundedCornerShape(6.dp))
+                        .background(DarkSurfaceVariant)
+                        .padding(10.dp)
+                ) {
+                    Text(
+                        text = uiState.recentLogs.ifBlank { stringResource(R.string.logs_empty) },
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = TextSecondary
+                    )
+                }
+            }
         }
 
-        OutlinedButton(
-            onClick = onNavigateToGuide,
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(48.dp),
-            shape = RoundedCornerShape(8.dp)
+        // Navigation Shortcuts
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            Text(
-                text = stringResource(R.string.nav_guide),
-                style = MaterialTheme.typography.labelLarge,
-                color = GoldPrimary
-            )
+            Button(
+                onClick = onNavigateToPatch,
+                modifier = Modifier
+                    .weight(1f)
+                    .height(48.dp),
+                shape = RoundedCornerShape(8.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = GoldPrimary)
+            ) {
+                Text(
+                    text = stringResource(R.string.btn_apply_patch),
+                    style = MaterialTheme.typography.labelLarge,
+                    color = MaterialTheme.colorScheme.onPrimary
+                )
+            }
+
+            OutlinedButton(
+                onClick = onNavigateToGuide,
+                modifier = Modifier
+                    .weight(1f)
+                    .height(48.dp),
+                shape = RoundedCornerShape(8.dp)
+            ) {
+                Text(
+                    text = stringResource(R.string.nav_guide),
+                    style = MaterialTheme.typography.labelLarge,
+                    color = GoldPrimary
+                )
+            }
         }
     }
 }

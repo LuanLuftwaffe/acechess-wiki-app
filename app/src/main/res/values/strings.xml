@@ -14,12 +14,17 @@
 
     <!-- Shell Status -->
     <string name="shell_status_title">Trạng thái quyền hệ thống</string>
+    <string name="shell_backend_label">Backend đang dùng: %1$s</string>
     <string name="shell_root_active">Quyền Root (su): Hoạt động</string>
     <string name="shell_shizuku_active">Shizuku: Đã cấp quyền</string>
     <string name="shell_adb_active">ADB Không Dây: Đã kết nối</string>
     <string name="shell_none_active">Chưa có quyền Shell khả dụng</string>
     <string name="shell_checking">Đang kiểm tra quyền...</string>
     <string name="shell_recommendation">Khuyến nghị kích hoạt Shizuku hoặc kết nối ADB không dây để áp dụng bản vá.</string>
+    <string name="shell_cmd_test_title">Lệnh kiểm tra: id</string>
+    <string name="shell_cmd_test_output">Kết quả: %1$s</string>
+    <string name="shell_log_path">Tệp nhật ký: %1$s</string>
+    <string name="shell_recent_logs_title">Nhật ký thực thi mới nhất (nhat-ky.txt)</string>
 
     <!-- Game Status -->
     <string name="game_status_title">Trạng thái Game Vương Giả</string>
@@ -38,6 +43,7 @@
     <string name="btn_sync_meta">Đồng bộ Meta &amp; AI</string>
     <string name="btn_connect_adb">Ghép mã ADB không dây</string>
     <string name="btn_request_shizuku">Cấp quyền Shizuku</string>
+    <string name="btn_recheck_permission">Kiểm tra lại quyền</string>
     <string name="btn_copy_logs">Sao chép nhật ký</string>
     <string name="btn_clear_logs">Xoá nhật ký</string>
     <string name="btn_refresh">Làm mới</string>

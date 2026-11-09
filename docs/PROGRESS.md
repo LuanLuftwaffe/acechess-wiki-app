@@ -52,10 +52,10 @@
   - Nhận diện 9 hồ sơ nhà sản xuất (OEM Profiles) và 15 chủ đề chuyên sâu (Topics).
   - Degrade trên Android $\le 10$ (ẩn ADB không dây, hiện topic `android_old`).
   - Trạng thái: [ ] Chưa thực hiện (Phase 8).
-- [ ] **Hàng 12: Chẩn Đoán Hệ Thống & Ghi Nhật Ký Toàn Diện**
+- [x] **Hàng 12: Chẩn Đoán Hệ Thống & Ghi Nhật Ký Toàn Diện**
   - Ghi nhật ký thực thi mọi lệnh shell vào `nhat-ky.txt` (timestamp, command, exit code, stderr, duration).
   - Thu thập thông số thiết bị và 200 dòng Logcat xuất ra `bao-cao-chan-doan-*.txt`.
-  - Trạng thái: [ ] Chưa thực hiện (Phase 1 khởi tạo logger, Phase 8 hoàn thiện báo cáo).
+  - Trạng thái: [x] Đã hoàn thành tầng ShellLogger tại Phase 1 (Phase 8 hoàn thiện báo cáo mở rộng).
 
 ---
 
@@ -93,13 +93,13 @@
 - [ ] Dịch vụ tiền tuyến `AdbKeepService` duy trì socket kết nối liên tục với `localhost`.
 
 ### Nhóm 6: Cầu Nối Shizuku & Root Tự Động
-- [ ] Thăm dò binary `su` và quyền Root của thiết bị (`RootShell`).
-- [ ] Thăm dò Binder IPC Shizuku Manager và xin cấp quyền nếu chưa cấp (`ShizukuShell`).
-- [ ] Bộ định tuyến `ShellResolver` ưu tiên theo thứ tự: Root -> Shizuku -> ADB không dây.
-- [ ] Hiển thị thông báo hướng dẫn cụ thể khi thiết bị chưa có quyền shell nào khả dụng.
+- [x] Thăm dò binary `su` và quyền Root của thiết bị (`RootShell`).
+- [x] Thăm dò Binder IPC Shizuku Manager và xin cấp quyền nếu chưa cấp (`ShizukuShell`).
+- [x] Bộ định tuyến `ShellResolver` ưu tiên theo thứ tự: Root -> Shizuku -> ADB không dây.
+- [x] Hiển thị thông báo hướng dẫn cụ thể khi thiết bị chưa có quyền shell nào khả dụng.
 
 ### Nhóm 7: Chẩn Đoán Hệ Thống & Báo Cáo Lỗi (`Diag` & `Feedback`)
-- [ ] Hàm duy nhất chạy lệnh shell có ghi log tập trung vào `nhat-ky.txt` (timestamp, command, exit code, stderr, duration).
+- [x] Hàm duy nhất chạy lệnh shell có ghi log tập trung vào `nhat-ky.txt` (timestamp, command, exit code, stderr, duration).
 - [ ] Trình thu thập thông số chẩn đoán: Dòng máy, Android OS, phiên bản ROM, SELinux status, game ver, storage.
 - [ ] Trích xuất 200 dòng Logcat gần nhất.
 - [ ] Tạo file báo cáo hoàn chỉnh `bao-cao-chan-doan-*.txt`.
@@ -122,13 +122,13 @@
   - [x] Tạo `docs/OPEN_QUESTIONS.md` & `docs/DATA_SCHEMAS.md` (Schema thực tế, phân định nguồn).
   - [x] Được Người dùng phê duyệt.
 
-- [ ] **Phase 1: Khung Dự Án, AndroidManifest Chuẩn & Tầng Shell Khởi Tạo**
-  - [ ] Cấu hình Gradle Project hoàn chỉnh, `./gradlew assembleDebug` pass.
-  - [ ] `AndroidManifest.xml` khai báo đủ 12 quyền (Mục 1.2), 1 Activity, 3 services/job, 2 receivers, 2 providers (Mục 1.3).
-  - [ ] Dựng tầng Shell: `ShellExecutor`, `RootShell`, `ShizukuShell`, `AdbWirelessShell` (stub), `ShellResolver`.
-  - [ ] Hàm chạy lệnh tập trung duy nhất ghi log đầy đủ ra `nhat-ky.txt`.
-  - [ ] UI Compose: Màn hình Trạng thái hiển thị backend khả dụng (Root/Shizuku/ADB), nút xin quyền Shizuku.
-  - [ ] Tiêu chí nghiệm thu Phase 1: Mở app, hiển thị đúng backend, ghi lệnh kiểm tra `id` ra `nhat-ky.txt`.
+- [x] **Phase 1: Khung Dự Án, AndroidManifest Chuẩn & Tầng Shell Khởi Tạo**
+  - [x] Cấu hình Gradle Project hoàn chỉnh, `./gradlew assembleDebug` pass (`app-debug.apk` ~28.9 MB).
+  - [x] `AndroidManifest.xml` khai báo đủ 12 quyền (Mục 1.2), 1 Activity, 3 services/job, 2 receivers, 2 providers (Mục 1.3).
+  - [x] Dựng tầng Shell: `ShellExecutor`, `RootShell`, `ShizukuShell` (reflection tương thích `ProcShell`), `AdbWirelessShell` (stub), `ShellResolver`.
+  - [x] Hàm chạy lệnh tập trung duy nhất ghi log đầy đủ ra `nhat-ky.txt`.
+  - [x] UI Compose: Màn hình Trạng thái hiển thị backend khả dụng (Root/Shizuku/ADB), nút xin quyền Shizuku.
+  - [x] Tiêu chí nghiệm thu Phase 1: Mở app, hiển thị đúng backend, ghi lệnh kiểm tra `id` ra `nhat-ky.txt`. Đã kiểm chứng thực tế trên MEmu (`uid=0(root)` qua Shizuku, exit code 0).
 
 - [ ] **Phase 2: Nhận Diện Trạng Thái Game & Thiết Bị**
   - [ ] Module `GameStateDetector`: Kiểm tra game `com.tencent.tmgp.osgame`, phiên bản game, phân loại 5 dạng APK (`goc`, `base`, `key`, `font`, `font_img`) bằng `FLAG_DEBUGGABLE` + kích thước + cache `(size, lastModified)`.

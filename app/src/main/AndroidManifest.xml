@@ -2,16 +2,31 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Permissions -->
+    <!-- 12 Quyền Hạn Bắt Buộc (Mục 1.2) -->
+    <!-- 1. Tải dữ liệu bản vá, đồng bộ meta -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="29" tools:ignore="ScopedStorage" />
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- 2. Giao tiếp với dịch vụ Shizuku -->
+    <uses-permission android:name="moe.shizuku.manager.permission.API_V23" />
+    <!-- 3. Yêu cầu cài đặt APK -->
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- 4. Gửi thông báo đẩy (mã ghép nối, cập nhật) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- 5. Chạy dịch vụ tiền tuyến giữ kết nối -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- 6. Dịch vụ tiền tuyến liên kết thiết bị trên Android 14+ (API 34) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
+    <!-- 7. Điều khiển trạng thái mạng phục vụ ghép nối không dây -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 8. Nhận gói Multicast mDNS quét cổng ADB không dây qua NSD -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <!-- 9. Kiểm tra tình trạng kết nối Internet -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 10. Kiểm tra trạng thái Wi-Fi -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 11. Giữ CPU thức trong quá trình tải và trích xuất dữ liệu -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 12. Tự kích hoạt tác vụ kiểm tra bản vá sau khi máy khởi động lại -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -19,9 +34,9 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.HokviVietHoa"
-        android:requestLegacyExternalStorage="true">
+        android:theme="@style/Theme.HokviVietHoa">
 
+        <!-- 1 Activity Duy Nhất (Mục 1.3) -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -32,7 +47,37 @@
             </intent-filter>
         </activity>
 
-        <!-- Shizuku Provider -->
+        <!-- 3 Services Chạy Ngầm (Mục 1.3) -->
+        <!-- 1. Dịch vụ ghép nối ADB không dây bằng mã PIN -->
+        <service
+            android:name=".service.adb.AdbPairService"
+            android:exported="false" />
+
+        <!-- 2. Dịch vụ tiền tuyến giữ kết nối socket ADB luôn mở -->
+        <service
+            android:name=".service.adb.AdbKeepService"
+            android:exported="false"
+            android:foregroundServiceType="connectedDevice" />
+
+        <!-- 3. Dịch vụ định kỳ kiểm tra bản cập nhật app và bản vá game -->
+        <service
+            android:name=".service.worker.UpdateCheckJobService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <!-- 2 Broadcast Receivers (Mục 1.3) -->
+        <!-- 1. Nhận kết quả từ Android PackageInstaller khi cài đặt APK -->
+        <receiver
+            android:name=".service.installer.SystemInstallerReceiver"
+            android:exported="false" />
+
+        <!-- 2. Nhận mã PIN ghép nối nhập từ thanh thông báo (Notification Direct Reply) -->
+        <receiver
+            android:name=".service.adb.AdbReplyReceiver"
+            android:exported="false" />
+
+        <!-- 2 Content Providers (Mục 1.3) -->
+        <!-- 1. Điểm neo IPC với Shizuku Manager -->
         <provider
             android:name="rikka.shizuku.ShizukuProvider"
             android:authorities="${applicationId}.shizuku"
@@ -40,6 +85,17 @@
             android:enabled="true"
             android:exported="true"
             android:permission="android.permission.INTERNET" />
+
+        <!-- 2. Chia sẻ file APK an toàn qua FileProvider để hệ thống cài đặt -->
+        <provider
+            android:name=".service.installer.ApkProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
     </application>
 
