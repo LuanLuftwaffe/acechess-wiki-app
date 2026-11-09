@@ -1,0 +1,17 @@
+{
+ "format": "hokvi-music-index",
+ "schema": 1,
+ "version": 20261020161940,
+ "updated": "2026-10-20T16:19:40Z",
+ "content_sha256": "d218a4d6c8cde32f8053bbc97bd99bf3449d6991fbb954b1dcfc987826413867",
+ "tracks": [
+  {
+   "file": "ngth.mp3",
+   "url": "https://s3.cloudfly.vn/wxq/music/tracks/ngth-bd8b5cd4fade.mp3",
+   "sha256": "bd8b5cd4fade5f88c760448bda1c57f41ba76dba58e757a1e72c0425e13b1580",
+   "size": 5226201,
+   "title": "ngth",
+   "artist": "HOKVI"
+  }
+ ]
+}

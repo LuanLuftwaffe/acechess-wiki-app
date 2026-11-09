@@ -10,26 +10,26 @@
 - [ ] **Hàng 1: Dịch màn hình Loading (APK Delta)**
   - Cơ chế cũ: Dùng `ApkDelta.apply` ghép `font.apkdelta2` vào `base.apk` thành `font.apk`.
   - Trạng thái: **[ ] blocked: thiếu spec** (Tạm hoãn Tầng 1 theo quyết định Phase 0; Phase 4 chỉ dựng interface `ApkPatchProvider` + luồng cài APK vá sẵn qua PackageInstaller).
-- [ ] **Hàng 2: Ghi đè QtsVFSCache (Gói 1 & Gói 4)**
+- [x] **Hàng 2: Ghi đè QtsVFSCache (Gói 1 & Gói 4)**
   - Gói 1: `1.db` (180,224 bytes) & `1_0.db` (33,587,200 bytes) — dịch tướng, kỹ năng, trang bị, tộc hệ.
   - Gói 4: `4.db` (229,376 bytes) & `4_0.db` (34,897,920 bytes) — dịch sprite UI atlas, khung giao diện.
-  - Trạng thái: [ ] Chưa thực hiện (sẽ thi công ở Phase 3).
-- [ ] **Hàng 3: Sao lưu `.orig` & Rollback Ngoại Tuyến 1-Click**
+  - Trạng thái: [x] Đã hoàn thành tại Phase 3 (kiểm chứng ghi đè thành công trên MEmu).
+- [x] **Hàng 3: Sao lưu `.orig` & Rollback Ngoại Tuyến 1-Click**
   - Tự động kiểm tra dung lượng + SHA-256 tệp gốc trước khi sao lưu sang `1.db.orig`, `4.db.orig`.
   - Hỗ trợ hoàn tác (Rollback) sạch 100% không cần mạng.
-  - Trạng thái: [ ] Chưa thực hiện (Phase 3).
-- [ ] **Hàng 4: Khoá Watchdog Tencent (`vi_bak/`)**
+  - Trạng thái: [x] Đã hoàn thành tại Phase 3 (kiểm chứng rollback phục hồi nguyên bản 100% trên MEmu).
+- [x] **Hàng 4: Khoá Watchdog Tencent (`vi_bak/`)**
   - Tạo thư mục `/data/data/.../files/vi_bak/` và ghi các file chốt phiên bản: `txt_1.ver`, `txt_4.ver`.
   - Ngăn chặn triệt để cơ chế Watchdog của Tencent tự động tải đè tệp gốc tiếng Trung từ CDN.
-  - Trạng thái: [ ] Chưa thực hiện (Phase 3).
-- [ ] **Hàng 5: Dọn kẹt gói 2 (`unstickPackage2`)**
+  - Trạng thái: [x] Đã hoàn thành tại Phase 3 (`txt_1.ver`, `txt_4.ver`, `img_1.ver`, `img_4.ver`).
+- [x] **Hàng 5: Dọn kẹt gói 2 (`unstickPackage2`)**
   - Phát hiện xung đột khi `pkgVersion("2") < pkgVersion("0")`.
   - Di chuyển gói 2 cũ: `mkdir -p files/vi_bak && mv files/QtsVFSCache/packages/2 files/vi_bak/pkg2_<timestamp>`.
-  - Trạng thái: [ ] Chưa thực hiện (Phase 3).
-- [ ] **Hàng 6: Mount Hệ Thống File Động (`/HOKVI/`)**
+  - Trạng thái: [x] Đã hoàn thành tại Phase 3 (`VfsCommander.unstickPackage2`).
+- [x] **Hàng 6: Mount Hệ Thống File Động (`/HOKVI/`)**
   - Tạo cấu trúc `/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/`.
   - Nạp động `manifest.json`, font tiếng Việt `Oswald-Bold-HOKVI.ttf`, `lineup-vi.json`, `ai-vi.json`.
-  - Trạng thái: [ ] Chưa thực hiện (Phase 3).
+  - Trạng thái: [x] Đã hoàn thành tại Phase 3 (tạo thư mục, chép font.ttf và manifest.json).
 - [ ] **Hàng 7: Tuỳ biến Nhạc Nền (`MusicScreen`)**
   - Quản lý thư viện 50 bài hát `.mp3`/`.wav` ($\le 64$ MB).
   - Xuất `titles.txt` kèm cờ `enabled` theo đúng Smali gốc (không dùng `playlist.json`).
@@ -64,9 +64,9 @@
 ### Nhóm 1: Trình Quản Lý & Thi Công Bản Vá (Core Engine)
 - [x] Kiểm tra trạng thái trò chơi (`checkInfo`): nhận diện cài đặt, phiên bản, phân loại 5 dạng APK (`goc`, `base`, `key`, `font`, `font_img`) bằng `FLAG_DEBUGGABLE` + kích thước + cache `(size, lastModified)`.
 - [x] Tính toán dung lượng bộ nhớ khả dụng (`SpacePlan` / `SpaceNeed` yêu cầu 2–4 GB trống).
-- [ ] Thi công bản vá đa tuỳ chọn (`wantImages`, `wantRules`, `wantVfx`, `keepGocPref`).
-- [ ] Khôi phục bản gốc 1-Click (Offline Rollback từ `.orig`).
-- [ ] Tự động khởi chạy trò chơi sau khi vá (`launchGame`).
+- [x] Thi công bản vá đa tuỳ chọn (`wantImages`, `wantRules`, `wantVfx`, `keepGocPref`).
+- [x] Khôi phục bản gốc 1-Click (Offline Rollback từ `.orig`).
+- [x] Tự động khởi chạy trò chơi sau khi vá (`launchGame`).
 
 ### Nhóm 2: Quản Lý & Thay Thế Nhạc Nền Game (`MusicScreen`)
 - [ ] Quản lý danh sách tối đa 50 bài hát `.mp3` hoặc `.wav` dung lượng $\le 64$ MB mỗi bài.
@@ -136,12 +136,13 @@
   - [x] Unit test: `ApkClassifierTest` đạt 11/11 tests pass (khớp kích thước, debuggable, sha256, cache, space thresholds, manifest deserialization).
   - [x] Kiểm chứng thực tế trên MEmu: Phát hiện game `1.1.1` (versionCode 774472), cảnh báo lệch phiên bản manifest `1.8.0.1`, đo bộ nhớ trống `45.0 GB / 55.3 GB` đạt chuẩn.
 
-- [ ] **Phase 3: Động Cơ Vá Game QtsVFS (Tầng 2, 3, 4 + Rollback)**
-  - [ ] `PatchSource`: Nạp 4 file CSDL sạch từ `docs/upstream_data/patch_1.8.0.1/` (`1.db`=180224, `1_0.db`=33587200, `4.db`=229376, `4_0.db`=34897920 bytes).
-  - [ ] Tầng 2: Kiểm tra hash, tạo `.orig` an toàn trước khi ghi đè `QtsVFSCache`.
-  - [ ] Tầng 3: Cắm chốt `txt_1.ver`, `txt_4.ver` vào `files/vi_bak/` và chạy `unstickPackage2`.
-  - [ ] Tầng 4: Mount `/sdcard/.../HOKVI/`.
-  - [ ] Tính năng Khôi phục gốc (Offline Rollback 1-click từ `.orig`).
+- [x] **Phase 3: Động Cơ Vá Game QtsVFS (Tầng 2, 3, 4 + Rollback)**
+  - [x] `PatchSource`: Nạp 4 file CSDL sạch từ `docs/upstream_data/patch_1.8.0.1/` (`1.db`=180224, `1_0.db`=33587200, `4.db`=229376, `4_0.db`=34897920 bytes).
+  - [x] Tầng 2: Kiểm tra hash, tạo `.orig` an toàn trước khi ghi đè `QtsVFSCache`.
+  - [x] Tầng 3: Cắm chốt `txt_1.ver`, `txt_4.ver` vào `files/vi_bak/` và chạy `unstickPackage2`.
+  - [x] Tầng 4: Mount `/sdcard/.../HOKVI/`.
+  - [x] Tính năng Khôi phục gốc (Offline Rollback 1-click từ `.orig`).
+  - [x] Unit test `PatchEngineTest` pass; Kiểm chứng thực tế trên MEmu: ghi đè thành công, rollback phục hồi sạch 100%, log lệnh đầy đủ ra `nhat-ky.txt`.
 
 - [ ] **Phase 4: Luồng Quản Lý APK Game**
   - [ ] Dựng interface `ApkPatchProvider` (ghi chú: `ApkDelta` tạm hoãn vì thiếu spec).

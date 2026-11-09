@@ -31,10 +31,12 @@ import vn.hokvi.viethoa.v2.ui.theme.GoldPrimary
 import vn.hokvi.viethoa.v2.ui.theme.TextPrimary
 import vn.hokvi.viethoa.v2.ui.theme.TextSecondary
 import vn.hokvi.viethoa.v2.ui.viewmodel.DashboardViewModel
+import vn.hokvi.viethoa.v2.ui.viewmodel.PatchViewModel
 
 @Composable
 fun AppNavHost(
-    dashboardViewModel: DashboardViewModel = viewModel()
+    dashboardViewModel: DashboardViewModel = viewModel(),
+    patchViewModel: PatchViewModel = viewModel()
 ) {
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
@@ -97,7 +99,17 @@ fun AppNavHost(
                 )
             }
             composable(Screen.Patch.route) {
-                PatchScreen()
+                val patchUiState by patchViewModel.uiState.collectAsState()
+                PatchScreen(
+                    uiState = patchUiState,
+                    onToggleImages = { patchViewModel.updateOptions { o -> o.copy(wantImages = it) } },
+                    onToggleRules = { patchViewModel.updateOptions { o -> o.copy(wantRules = it) } },
+                    onToggleVfx = { patchViewModel.updateOptions { o -> o.copy(wantVfx = it) } },
+                    onToggleKeepGoc = { patchViewModel.updateOptions { o -> o.copy(keepGocPref = it) } },
+                    onApplyPatch = { patchViewModel.applyPatch() },
+                    onRollback = { patchViewModel.rollback() },
+                    onLaunchGame = { patchViewModel.launchGame() }
+                )
             }
             composable(Screen.Music.route) {
                 MusicScreen()

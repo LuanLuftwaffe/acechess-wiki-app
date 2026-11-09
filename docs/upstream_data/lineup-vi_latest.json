@@ -1,0 +1,16 @@
+{
+ "format": "hokvi-lineup-vi-index",
+ "schema": 1,
+ "updated": "2026-10-31T18:17:38Z",
+ "pack": {
+  "version": 20261031181738,
+  "url": "https://s3.cloudfly.vn/wxq/lineup-vi/packs/lineup-vi-v20261031181738.json.gz",
+  "sha256": "1edbf64ba03e76c22bc36dcf4a90a91d38da215923dc39162fd0722df4eb647f",
+  "size": 6941496,
+  "json_sha256": "26c1d54d1481bd761e3c8b4efc90483fb925d1741826b3323d2db316d41db012",
+  "json_size": 20690643,
+  "content_sha256": "3de54b1a493978d5d308e955804eaf7c895d9843f3bf27868e020ca6db211607",
+  "posts": 10134,
+  "entries": 74243
+ }
+}

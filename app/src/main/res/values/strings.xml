@@ -71,9 +71,25 @@
 
     <!-- Action Buttons -->
     <string name="btn_apply_patch">Bắt đầu Việt hoá</string>
+    <string name="btn_update_patch">Cập nhật bản vá</string>
     <string name="btn_deep_verify">Kiểm tra SHA-256</string>
     <string name="btn_rollback">Khôi phục gốc</string>
+    <string name="btn_launch_game">Mở Game</string>
     <string name="btn_check_update">Kiểm tra bản cập nhật</string>
+
+    <!-- Patch Options -->
+    <string name="patch_options_title">Tuỳ chọn cài đặt bản vá</string>
+    <string name="opt_want_images">Việt hoá hình ảnh</string>
+    <string name="opt_want_images_desc">Cập nhật banner, biểu ngữ và đồ hoạ sự kiện tiếng Việt</string>
+    <string name="opt_want_rules">Việt hoá luật chơi &amp; cẩm nang</string>
+    <string name="opt_want_rules_desc">Dịch hướng dẫn tân thủ, mô tả cơ chế tộc hệ</string>
+    <string name="opt_want_vfx">Hiệu ứng đồ hoạ mở rộng</string>
+    <string name="opt_want_vfx_desc">Tuỳ biến các hiệu ứng khung viền và hoạt hoạ giao diện</string>
+    <string name="opt_keep_goc">Giữ bản sao lưu gốc (.orig) trên máy</string>
+    <string name="opt_keep_goc_desc">Cho phép hoàn tác về nguyên bản 1-chạm ngoại tuyến không cần mạng</string>
+    <string name="patch_progress_title">Tiến trình thực thi</string>
+    <string name="patch_running">Đang áp dụng bản vá...</string>
+    <string name="patch_rollback_running">Đang khôi phục bản gốc...</string>
     <string name="btn_sync_meta">Đồng bộ Meta &amp; AI</string>
     <string name="btn_connect_adb">Ghép mã ADB không dây</string>
     <string name="btn_request_shizuku">Cấp quyền Shizuku</string>

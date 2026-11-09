@@ -53,6 +53,14 @@ class ShizukuShell : ShellExecutor {
         }
     }
 
+    fun isRootUid(): Boolean {
+        return try {
+            Shizuku.pingBinder() && Shizuku.getUid() == 0
+        } catch (_: Exception) {
+            false
+        }
+    }
+
     override suspend fun execute(command: String): ExecutionResult = withContext(Dispatchers.IO) {
         var stdout = ""
         var stderr = ""
