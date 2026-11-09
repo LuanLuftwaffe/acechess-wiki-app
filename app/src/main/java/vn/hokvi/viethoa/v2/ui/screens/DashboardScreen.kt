@@ -1,5 +1,6 @@
 package vn.hokvi.viethoa.v2.ui.screens
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -10,7 +11,9 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -55,6 +58,14 @@ import vn.hokvi.viethoa.v2.ui.theme.TextPrimary
 import vn.hokvi.viethoa.v2.ui.theme.TextSecondary
 import vn.hokvi.viethoa.v2.ui.viewmodel.DashboardUiState
 
+private fun formatStamp(raw: String?): String {
+    if (raw.isNullOrBlank()) return "Chưa có"
+    val parts = raw.trim().split(" ")
+    return parts.firstOrNull { it.length == 14 && it.all { c -> c.isDigit() } }
+        ?: parts.firstOrNull { it.all { c -> c.isDigit() } }
+        ?: parts.first()
+}
+
 @Composable
 fun DashboardScreen(
     uiState: DashboardUiState,
@@ -64,6 +75,10 @@ fun DashboardScreen(
     onStartAdbPairing: () -> Unit = {},
     onManualPairAdb: (port: Int, code: String) -> Unit = { _, _ -> },
     onManualConnectAdb: (port: Int) -> Unit = {},
+    onSyncMeta: () -> Unit = {},
+    onCheckUpdates: () -> Unit = {},
+    onDismissChangelog: () -> Unit = {},
+    onDownloadAndInstallUpdate: () -> Unit = {},
     onNavigateToPatch: () -> Unit,
     onNavigateToGuide: () -> Unit
 ) {
@@ -616,8 +631,10 @@ fun DashboardScreen(
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
+                        .heightIn(max = 160.dp)
                         .clip(RoundedCornerShape(6.dp))
                         .background(DarkSurfaceVariant)
+                        .verticalScroll(rememberScrollState())
                         .padding(10.dp)
                 ) {
                     Text(
@@ -625,6 +642,160 @@ fun DashboardScreen(
                         style = MaterialTheme.typography.bodyMedium,
                         color = TextSecondary
                     )
+                }
+            }
+        }
+
+        // 5.5. Meta Sync Card (LineupSync & AiViSync - Phase 7)
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .border(1.dp, DarkBorder, RoundedCornerShape(12.dp)),
+            colors = CardDefaults.cardColors(containerColor = DarkSurface),
+            shape = RoundedCornerShape(12.dp)
+        ) {
+            Column(
+                modifier = Modifier.padding(16.dp),
+                verticalArrangement = Arrangement.spacedBy(10.dp)
+            ) {
+                Text(
+                    text = stringResource(R.string.meta_sync_card_title),
+                    style = MaterialTheme.typography.titleMedium,
+                    color = GoldPrimary
+                )
+
+                Text(
+                    text = stringResource(R.string.meta_sync_desc),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = TextSecondary
+                )
+
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    val lineupText = formatStamp(uiState.lineupStamp)
+                    val aiviText = formatStamp(uiState.aiviStamp)
+
+                    Text(
+                        text = stringResource(R.string.meta_sync_stamp_lineup, lineupText),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = TextPrimary
+                    )
+
+                    Text(
+                        text = stringResource(R.string.meta_sync_stamp_aivi, aiviText),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = TextPrimary
+                    )
+                }
+
+                Button(
+                    onClick = onSyncMeta,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(44.dp),
+                    shape = RoundedCornerShape(8.dp),
+                    colors = ButtonDefaults.buttonColors(containerColor = DarkSurfaceVariant),
+                    border = BorderStroke(1.dp, GoldPrimary),
+                    enabled = !uiState.isSyncingMeta
+                ) {
+                    if (uiState.isSyncingMeta) {
+                        CircularProgressIndicator(
+                            modifier = Modifier.size(18.dp),
+                            color = GoldPrimary,
+                            strokeWidth = 2.dp
+                        )
+                        Spacer(modifier = Modifier.padding(horizontal = 4.dp))
+                        Text(
+                            text = stringResource(R.string.meta_sync_running),
+                            color = GoldPrimary
+                        )
+                    } else {
+                        Text(
+                            text = stringResource(R.string.meta_sync_btn),
+                            color = GoldPrimary
+                        )
+                    }
+                }
+            }
+        }
+
+        // 5.6. Update Check Card (Self-Update & Patch Check - Phase 7)
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .border(1.dp, DarkBorder, RoundedCornerShape(12.dp)),
+            colors = CardDefaults.cardColors(containerColor = DarkSurface),
+            shape = RoundedCornerShape(12.dp)
+        ) {
+            Column(
+                modifier = Modifier.padding(16.dp),
+                verticalArrangement = Arrangement.spacedBy(10.dp)
+            ) {
+                Text(
+                    text = stringResource(R.string.update_check_card_title),
+                    style = MaterialTheme.typography.titleMedium,
+                    color = GoldPrimary
+                )
+
+                Text(
+                    text = stringResource(R.string.update_check_desc),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = TextSecondary
+                )
+
+                uiState.updateResult?.let { update ->
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clip(RoundedCornerShape(6.dp))
+                            .background(DarkSurfaceVariant)
+                            .padding(10.dp)
+                    ) {
+                        Text(
+                            text = update.message ?: "",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = if (update.hasAppUpdate || update.hasPatchUpdate) GoldPrimary else EmeraldSuccess
+                        )
+                    }
+                }
+
+                uiState.metaSyncMessage?.let { msg ->
+                    Text(
+                        text = msg,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = GoldPrimary
+                    )
+                }
+
+                Button(
+                    onClick = onCheckUpdates,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(44.dp),
+                    shape = RoundedCornerShape(8.dp),
+                    colors = ButtonDefaults.buttonColors(containerColor = DarkSurfaceVariant),
+                    border = BorderStroke(1.dp, DarkBorder),
+                    enabled = !uiState.isCheckingUpdate
+                ) {
+                    if (uiState.isCheckingUpdate) {
+                        CircularProgressIndicator(
+                            modifier = Modifier.size(18.dp),
+                            color = TextPrimary,
+                            strokeWidth = 2.dp
+                        )
+                        Spacer(modifier = Modifier.padding(horizontal = 4.dp))
+                        Text(
+                            text = stringResource(R.string.update_btn_checking),
+                            color = TextPrimary
+                        )
+                    } else {
+                        Text(
+                            text = stringResource(R.string.update_btn_check),
+                            color = TextPrimary
+                        )
+                    }
                 }
             }
         }
@@ -759,6 +930,89 @@ fun DashboardScreen(
             dismissButton = {
                 TextButton(onClick = { showManualDialog = false }) {
                     Text(stringResource(R.string.btn_close), color = TextSecondary)
+                }
+            },
+            containerColor = DarkSurface
+        )
+    }
+
+    // Changelog Dialog khi có phiên bản mới
+    if (uiState.showChangelogDialog && uiState.updateResult?.changelogEntry != null) {
+        val entry = uiState.updateResult.changelogEntry
+        AlertDialog(
+            onDismissRequest = onDismissChangelog,
+            title = {
+                Text(
+                    text = stringResource(R.string.changelog_dialog_title, entry.release),
+                    style = MaterialTheme.typography.titleMedium,
+                    color = GoldPrimary
+                )
+            },
+            text = {
+                Column(
+                    modifier = Modifier.verticalScroll(rememberScrollState()),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    Text(
+                        text = stringResource(R.string.changelog_release_date, entry.date),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = TextSecondary
+                    )
+
+                    if (entry.chung.isNotEmpty()) {
+                        Text(
+                            text = stringResource(R.string.changelog_section_general),
+                            style = MaterialTheme.typography.labelMedium,
+                            color = GoldPrimary
+                        )
+                        entry.chung.forEach { bullet ->
+                            Text(
+                                text = "• $bullet",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = TextPrimary
+                            )
+                        }
+                    }
+
+                    if (entry.android.isNotEmpty()) {
+                        Text(
+                            text = stringResource(R.string.changelog_section_android),
+                            style = MaterialTheme.typography.labelMedium,
+                            color = CyanAccent
+                        )
+                        entry.android.forEach { bullet ->
+                            Text(
+                                text = "• $bullet",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = TextPrimary
+                            )
+                        }
+                    }
+                }
+            },
+            confirmButton = {
+                Button(
+                    onClick = onDownloadAndInstallUpdate,
+                    colors = ButtonDefaults.buttonColors(containerColor = GoldPrimary),
+                    enabled = !uiState.isDownloadingApk
+                ) {
+                    if (uiState.isDownloadingApk) {
+                        CircularProgressIndicator(
+                            modifier = Modifier.size(18.dp),
+                            color = MaterialTheme.colorScheme.onPrimary,
+                            strokeWidth = 2.dp
+                        )
+                        Spacer(modifier = Modifier.padding(horizontal = 4.dp))
+                    }
+                    Text(
+                        text = stringResource(R.string.changelog_btn_update),
+                        color = MaterialTheme.colorScheme.onPrimary
+                    )
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = onDismissChangelog) {
+                    Text(stringResource(R.string.changelog_btn_close), color = TextSecondary)
                 }
             },
             containerColor = DarkSurface

@@ -181,4 +181,25 @@
     <string name="adb_btn_submit_pair">Thực hiện ghép nối</string>
     <string name="adb_btn_submit_connect">Kết nối cổng chính</string>
     <string name="adb_topic_no_device_hint">Không tìm thấy thiết bị qua mDNS? Hãy xem chủ đề hướng dẫn no_device để khắc phục.</string>
+
+    <!-- Phase 7: Meta Sync & Self Update -->
+    <string name="meta_sync_card_title">Đồng bộ Đội hình Meta &amp; Gợi ý AI</string>
+    <string name="meta_sync_desc">Tải dữ liệu phân tích chiến thuật, trang bị tướng (BiS) và bài hot mới nhất từ máy chủ S3 Cloudfly.</string>
+    <string name="meta_sync_btn">Đồng bộ dữ liệu ngay</string>
+    <string name="meta_sync_running">Đang tải và giải nén dữ liệu...</string>
+    <string name="meta_sync_stamp_lineup">Phiên bản Đội hình: %1$s</string>
+    <string name="meta_sync_stamp_aivi">Phiên bản Gợi ý AI: %1$s</string>
+    <string name="meta_sync_stamp_none">Chưa nạp</string>
+    <string name="update_check_card_title">Cập nhật ứng dụng &amp; Bản vá game</string>
+    <string name="update_check_desc">Kiểm tra phiên bản mới nhất từ máy chủ và xem nhật ký thay đổi (Changelog).</string>
+    <string name="update_btn_check">Kiểm tra cập nhật</string>
+    <string name="update_btn_checking">Đang kiểm tra...</string>
+    <string name="changelog_dialog_title">Chi tiết cập nhật: Bản %1$s</string>
+    <string name="changelog_release_date">Ngày phát hành: %1$s</string>
+    <string name="changelog_section_general">Điểm mới nổi bật:</string>
+    <string name="changelog_section_android">Dành cho Android:</string>
+    <string name="changelog_btn_update">Cập nhật ngay</string>
+    <string name="changelog_btn_close">Để sau</string>
+    <string name="update_downloading">Đang tải tệp cập nhật APK...</string>
+    <string name="update_download_success">Đã tải xong APK. Đang mở trình cài đặt...</string>
 </resources>

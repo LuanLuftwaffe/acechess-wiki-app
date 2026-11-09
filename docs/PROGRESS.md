@@ -38,10 +38,10 @@
   - Tự nhập khẩu hiệu 1–5 ký tự cho bên trái và bên phải.
   - Render Canvas xem trước thời gian thực và xuất dữ liệu ảnh raw `.rgba` + `config.json` theo đúng Smali gốc.
   - Trạng thái: [x] Đã hoàn thành tại Phase 6.
-- [ ] **Hàng 9: Đồng bộ Đội hình Meta & Gợi ý AI Tự Động**
+- [x] **Hàng 9: Đồng bộ Đội hình Meta & Gợi ý AI Tự Động**
   - Kéo từ S3 Cloudfly (`https://s3.cloudfly.vn/wxq/...`) theo đúng `manifest.json`.
   - Tải gói `.json.gz`, kiểm tra SHA-256, giải nén và ghi đè vào VFS game; giữ fallback offline từ assets.
-  - Trạng thái: [ ] Chưa thực hiện (Phase 7).
+  - Trạng thái: [x] Đã hoàn thành tại Phase 7 (`MetaSyncManager`, `SyncMetaWorker`).
 - [x] **Hàng 10: Động Cơ ADB Không Dây Độc Lập (In-App ADB)**
   - Tự quét cổng qua giao thức mDNS/Zeroconf NSD (`AdbNsd`).
   - Ghép nối mã PIN qua thanh thông báo (Notification Direct Reply với `RemoteInput`).
@@ -83,10 +83,10 @@
 - [x] Nạp dữ liệu ảnh raw `.rgba` và `config.json` vào `/sdcard/.../HOKVI/showtime/`.
 
 ### Nhóm 4: Tự Động Đồng Bộ Đội Hình Meta & AI (`LineupSync` & `AiViSync`)
-- [ ] Kết nối API Cloudfly S3 theo URL trong `manifest.json`.
-- [ ] Tải gói nén `.json.gz`, kiểm tra mã băm SHA-256 toàn vẹn.
-- [ ] Giải nén và ghi đè vào `/HOKVI/lineup-vi.json` và `/HOKVI/ai-vi.json`.
-- [ ] Ghi tệp đánh dấu phiên bản `lineup-vi.stamp` và `ai-vi.stamp`.
+- [x] Kết nối API Cloudfly S3 theo URL trong `manifest.json`.
+- [x] Tải gói nén `.json.gz`, kiểm tra mã băm SHA-256 toàn vẹn.
+- [x] Giải nén và ghi đè vào `/HOKVI/lineup-vi.json` và `/HOKVI/ai-vi.json`.
+- [x] Ghi tệp đánh dấu phiên bản `lineup-vi.stamp` và `ai-vi.stamp`.
 
 ### Nhóm 5: Động Cơ ADB Không Dây Độc Lập (In-App ADB)
 - [x] Module `AdbNsd` tự động quét mạng LAN tìm cổng gỡ lỗi không dây ngẫu nhiên qua mDNS (`_adb-tls-connect._tcp`, `_adb-tls-pairing._tcp`).
@@ -109,11 +109,11 @@
 - [ ] Tạo file báo cáo hoàn chỉnh `bao-cao-chan-doan-*.txt`.
 
 ### Nhóm 8: Tự Động Cập Nhật Bản Thân & Thông Báo Cập Nhật Game
-- [ ] `UpdateCheckWorker` (WorkManager) định kỳ kiểm tra bản cập nhật thay thế `UpdateCheckJob`.
-- [ ] Kiểm tra `latest.json` trên máy chủ S3 Cloudfly theo URL khai báo trong `manifest.json`.
-- [ ] Hiển thị hộp thoại Changelog tóm tắt các điểm mới của bản cập nhật.
-- [ ] Tải APK cập nhật và kích hoạt cài đặt tự động qua `PackageInstaller` / `ApkProvider`.
-- [ ] Gửi thông báo đẩy khi Tencent cập nhật phiên bản game mới.
+- [x] `UpdateCheckWorker` (WorkManager) định kỳ kiểm tra bản cập nhật thay thế `UpdateCheckJob`.
+- [x] Kiểm tra `latest.json` trên máy chủ S3 Cloudfly theo URL khai báo trong `manifest.json`.
+- [x] Hiển thị hộp thoại Changelog tóm tắt các điểm mới của bản cập nhật.
+- [x] Tải APK cập nhật và kích hoạt cài đặt tự động qua `PackageInstaller` / `ApkProvider`.
+- [x] Gửi thông báo đẩy khi Tencent cập nhật phiên bản game mới.
 
 ---
 
@@ -168,9 +168,13 @@
   - [x] `ShowtimeManager`: Tuỳ biến chữ 1–5 ký tự, Live Preview Canvas, xuất ảnh raw `.rgba` và `config.json` vào `/HOKVI/showtime/`.
   - [x] Unit test `MusicAndShowtimeTest` (5/5 tests pass); Build `./gradlew assembleDebug` thành công; Kiểm chứng thực tế nạp nhạc và xuất 13 ảnh raw RGBA trên MEmu (`127.0.0.1:21503`).
 
-- [ ] **Phase 7: Tự Động Đồng Bộ Đội Hình, Gợi Ý AI & Cập Nhật Ứng Dụng**
-  - [ ] `MetaSyncManager`: Tải `.json.gz` từ Cloudfly S3 theo `manifest.json`, giải nén và ghi đè `/HOKVI/lineup-vi.json`, `ai-vi.json`.
-  - [ ] `UpdateCheckWorker` (WorkManager) định kỳ kiểm tra bản vá và cập nhật app qua `latest.json`.
+- [x] **Phase 7: Tự Động Đồng Bộ Đội Hình, Gợi Ý AI & Cập Nhật Ứng Dụng**
+  - [x] `MetaSyncManager`: Tải `.json.gz` từ Cloudfly S3 theo `manifest.json`, giải nén và ghi đè `/HOKVI/lineup-vi.json`, `ai-vi.json`, ghi `lineup-vi.stamp`, `ai-vi.stamp`.
+  - [x] `UpdateCheckWorker` (WorkManager) định kỳ 6h kiểm tra bản vá và cập nhật app qua `latest.json`, `SyncMetaWorker` chạy ngầm định kỳ 12h.
+  - [x] `BootReceiver`: Khởi tạo và lập lịch định kỳ lại cho WorkManager khi khởi động thiết bị (`RECEIVE_BOOT_COMPLETED`).
+  - [x] Kênh thông báo `cap_nhat_viet_hoa` thông báo khi có bản vá game Tencent mới hoặc phiên bản app mới.
+  - [x] Hộp thoại ChangelogDialog trên UI Compose với thông tin chi tiết các bản phát hành, hỗ trợ tải & cài APK tự động.
+  - [x] Unit test `SyncAndUpdateTest` (4/4 tests pass); Build `./gradlew assembleDebug` thành công; Kiểm chứng thực tế `syncAll()` và `checkForUpdates()` trên MEmu (`127.0.0.1:21503`).
 
 - [ ] **Phase 8: Hướng Dẫn Thiết Bị Động, Chẩn Đoán & Kiểm Chứng MEmu**
   - [ ] `DeviceGuideRepository`: Đọc `huong-dan-thiet-bi.json`, bộ lọc 9 profiles & 15 topics.

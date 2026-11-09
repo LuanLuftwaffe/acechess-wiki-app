@@ -19,6 +19,9 @@ import vn.hokvi.viethoa.v2.core.detector.SpaceStatusLevel
 import vn.hokvi.viethoa.v2.core.shell.ShellLogger
 import vn.hokvi.viethoa.v2.core.shell.ShellResolver
 import vn.hokvi.viethoa.v2.core.shell.ShellType
+import vn.hokvi.viethoa.v2.core.sync.MetaSyncManager
+import vn.hokvi.viethoa.v2.core.sync.UpdateCheckResult
+import vn.hokvi.viethoa.v2.core.update.UpdateManager
 import vn.hokvi.viethoa.v2.service.adb.AdbKeepService
 import vn.hokvi.viethoa.v2.service.adb.AdbPairService
 
@@ -38,7 +41,16 @@ data class DashboardUiState(
     val isAdbWirelessConnected: Boolean = false,
     val isAdbPairingActive: Boolean = false,
     val isAndroid10OrLower: Boolean = Build.VERSION.SDK_INT <= Build.VERSION_CODES.Q,
-    val adbPairMessage: String? = null
+    val adbPairMessage: String? = null,
+    // Phase 7: Meta Sync & Self Update
+    val isSyncingMeta: Boolean = false,
+    val metaSyncMessage: String? = null,
+    val lineupStamp: String? = null,
+    val aiviStamp: String? = null,
+    val isCheckingUpdate: Boolean = false,
+    val updateResult: UpdateCheckResult? = null,
+    val showChangelogDialog: Boolean = false,
+    val isDownloadingApk: Boolean = false
 )
 
 class DashboardViewModel @JvmOverloads constructor(
@@ -48,6 +60,8 @@ class DashboardViewModel @JvmOverloads constructor(
 
     private val gameStateDetector = GameStateDetector(application.applicationContext)
     private val adbManager = AdbConnectionManager.getInstance(application.applicationContext)
+    private val metaSyncManager = MetaSyncManager(application.applicationContext)
+    private val updateManager = UpdateManager(application.applicationContext)
 
     private val _uiState = MutableStateFlow(DashboardUiState())
     val uiState: StateFlow<DashboardUiState> = _uiState.asStateFlow()
@@ -79,6 +93,8 @@ class DashboardViewModel @JvmOverloads constructor(
             // Phase 2: Kiểm tra game com.tencent.tmgp.osgame & dung lượng bộ nhớ
             val gameInfo = gameStateDetector.checkInfo()
             val spaceInfo = SpacePlanner.checkDeviceStorage()
+            val lineupStamp = metaSyncManager.getCurrentLineupStamp()
+            val aiviStamp = metaSyncManager.getCurrentAiViStamp()
 
             _uiState.update {
                 it.copy(
@@ -91,6 +107,8 @@ class DashboardViewModel @JvmOverloads constructor(
                     isAdbWirelessConnected = adbConnected,
                     gameState = gameInfo,
                     spaceStatus = spaceInfo,
+                    lineupStamp = lineupStamp,
+                    aiviStamp = aiviStamp,
                     isLoading = false
                 )
             }
@@ -184,6 +202,77 @@ class DashboardViewModel @JvmOverloads constructor(
         viewModelScope.launch {
             ShellLogger.clearLogs()
             _uiState.update { it.copy(recentLogs = "") }
+        }
+    }
+
+    // Phase 7: Meta Sync & Self Update
+    fun syncMeta() {
+        viewModelScope.launch {
+            _uiState.update { it.copy(isSyncingMeta = true, metaSyncMessage = "Đang đồng bộ Đội hình & Gợi ý AI...") }
+            val res = metaSyncManager.syncAll(force = true)
+            val lineupStamp = metaSyncManager.getCurrentLineupStamp()
+            val aiviStamp = metaSyncManager.getCurrentAiViStamp()
+            _uiState.update {
+                it.copy(
+                    isSyncingMeta = false,
+                    metaSyncMessage = if (res.isSuccess) res.getOrDefault("") else "Lỗi đồng bộ: ${res.exceptionOrNull()?.message}",
+                    lineupStamp = lineupStamp,
+                    aiviStamp = aiviStamp
+                )
+            }
+        }
+    }
+
+    fun checkUpdates() {
+        viewModelScope.launch {
+            _uiState.update { it.copy(isCheckingUpdate = true) }
+            val res = updateManager.checkForUpdates()
+            if (res.isSuccess) {
+                val data = res.getOrNull()
+                _uiState.update {
+                    it.copy(
+                        isCheckingUpdate = false,
+                        updateResult = data,
+                        showChangelogDialog = data?.hasAppUpdate == true
+                    )
+                }
+            } else {
+                _uiState.update {
+                    it.copy(
+                        isCheckingUpdate = false,
+                        metaSyncMessage = "Lỗi kiểm tra cập nhật: ${res.exceptionOrNull()?.message}"
+                    )
+                }
+            }
+        }
+    }
+
+    fun dismissChangelogDialog() {
+        _uiState.update { it.copy(showChangelogDialog = false) }
+    }
+
+    fun downloadAndInstallUpdate() {
+        val appInfo = _uiState.value.updateResult?.appUpdateInfo ?: return
+        viewModelScope.launch {
+            _uiState.update { it.copy(isDownloadingApk = true, metaSyncMessage = "Đang tải APK cập nhật...") }
+            val res = updateManager.downloadAppApk(appInfo)
+            if (res.isSuccess) {
+                _uiState.update {
+                    it.copy(
+                        isDownloadingApk = false,
+                        showChangelogDialog = false,
+                        metaSyncMessage = "Đã tải xong APK. Đang mở trình cài đặt..."
+                    )
+                }
+                updateManager.installDownloadedApk(res.getOrThrow())
+            } else {
+                _uiState.update {
+                    it.copy(
+                        isDownloadingApk = false,
+                        metaSyncMessage = "Lỗi tải APK: ${res.exceptionOrNull()?.message}"
+                    )
+                }
+            }
         }
     }
 

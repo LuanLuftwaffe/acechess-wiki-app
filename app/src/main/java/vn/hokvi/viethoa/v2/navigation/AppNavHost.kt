@@ -97,6 +97,10 @@ fun AppNavHost(
                     onStartAdbPairing = { dashboardViewModel.startAdbPairing() },
                     onManualPairAdb = { port, code -> dashboardViewModel.pairAdbManual(port, code) },
                     onManualConnectAdb = { port -> dashboardViewModel.connectAdbManual(port) },
+                    onSyncMeta = { dashboardViewModel.syncMeta() },
+                    onCheckUpdates = { dashboardViewModel.checkUpdates() },
+                    onDismissChangelog = { dashboardViewModel.dismissChangelogDialog() },
+                    onDownloadAndInstallUpdate = { dashboardViewModel.downloadAndInstallUpdate() },
                     onNavigateToPatch = {
                         navController.navigate(Screen.Patch.route)
                     },

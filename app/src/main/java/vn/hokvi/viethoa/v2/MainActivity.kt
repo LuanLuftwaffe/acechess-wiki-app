@@ -8,6 +8,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import rikka.shizuku.Shizuku
 import vn.hokvi.viethoa.v2.core.shell.ShellLogger
 import vn.hokvi.viethoa.v2.navigation.AppNavHost
+import vn.hokvi.viethoa.v2.service.worker.SyncMetaWorker
+import vn.hokvi.viethoa.v2.service.worker.UpdateCheckWorker
 import vn.hokvi.viethoa.v2.ui.theme.HokviVietHoaTheme
 import vn.hokvi.viethoa.v2.ui.viewmodel.DashboardViewModel
 
@@ -20,6 +22,12 @@ class MainActivity : ComponentActivity(), Shizuku.OnRequestPermissionResultListe
 
         // Khởi tạo bộ ghi log nhat-ky.txt
         ShellLogger.initialize(this)
+
+        // Lập lịch định kỳ kiểm tra cập nhật & đồng bộ meta qua WorkManager
+        try {
+            UpdateCheckWorker.enqueuePeriodic(this)
+            SyncMetaWorker.enqueuePeriodic(this)
+        } catch (_: Exception) {}
 
         // Đăng ký lắng nghe phản hồi quyền Shizuku
         try {
