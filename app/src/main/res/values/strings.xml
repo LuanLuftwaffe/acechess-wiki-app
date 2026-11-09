@@ -119,6 +119,22 @@
     <string name="music_add_btn">Thêm nhạc (.mp3 / .wav)</string>
     <string name="music_apply_btn">Áp dụng danh sách nhạc</string>
     <string name="music_reset_btn">Xoá toàn bộ nhạc tuỳ biến</string>
+    <string name="music_import_game_btn">Nhập từ thư mục game</string>
+    <string name="music_apply_to_game_btn">NẠP VÀO GAME</string>
+    <string name="music_total_size">Tổng dung lượng: %1$s</string>
+    <string name="music_empty_title">Thư viện nhạc trống</string>
+    <string name="music_empty_desc">Nhấn \"Thêm nhạc\" để chọn tệp .mp3 hoặc .wav từ máy, hoặc \"Nhập từ thư mục game\" để lấy các bài hát có sẵn.</string>
+    <string name="music_track_edit_dialog_title">Chỉnh sửa thông tin bài hát</string>
+    <string name="music_track_title_label">Tiêu đề (Title)</string>
+    <string name="music_track_artist_label">Nghệ sĩ (Artist)</string>
+    <string name="music_track_delete_confirm">Xác nhận xoá bài hát</string>
+    <string name="music_track_delete_msg">Bạn có muốn xoá bài hát \"%1$s\" khỏi thư viện không?</string>
+    <string name="music_btn_save">Lưu thay đổi</string>
+    <string name="music_btn_delete">Xoá</string>
+    <string name="music_btn_move_up">Lên</string>
+    <string name="music_btn_move_down">Xuống</string>
+    <string name="music_origin_user">Cá nhân</string>
+    <string name="music_origin_game">Trích từ game</string>
 
     <!-- Showtime Screen -->
     <string name="showtime_title">Tuỳ biến Biểu Ngữ Sân Khấu</string>
@@ -127,6 +143,14 @@
     <string name="showtime_right_label">Chữ bên phải (1–5 ký tự)</string>
     <string name="showtime_preview">Xem trước biểu ngữ</string>
     <string name="showtime_apply">Áp dụng biểu ngữ</string>
+    <string name="showtime_instruction">Thay chữ SHOW TIME trên sân khấu ở màn chọn Kỳ thủ. Mỗi bên từ 1 đến 5 ký tự (chữ có dấu tiếng Việt, số, khoảng trắng hoặc !?.,:-+&amp;\'). Chữ thường tự đổi thành HOA.</string>
+    <string name="showtime_char_counter">%1$d / 5</string>
+    <string name="showtime_preview_title">Xem trước thời gian thực (Live Preview)</string>
+    <string name="showtime_preview_subtitle">Khuôn hình sân khấu chính (1024x512) kết hợp hai bên trái / phải</string>
+    <string name="showtime_apply_to_game_btn">NẠP VÀO GAME</string>
+    <string name="showtime_applying_progress">Đang xuất 13 ảnh raw RGBA và nạp vào game...</string>
+    <string name="showtime_left_hint">Ví dụ: KHẢI</string>
+    <string name="showtime_right_hint">Ví dụ: HOÀN</string>
 
     <!-- Guide Screen -->
     <string name="guide_title">Hướng Dẫn Kích Hoạt &amp; Khắc Phục Lỗi</string>

@@ -30,14 +30,14 @@
   - Tạo cấu trúc `/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/`.
   - Nạp động `manifest.json`, font tiếng Việt `Oswald-Bold-HOKVI.ttf`, `lineup-vi.json`, `ai-vi.json`.
   - Trạng thái: [x] Đã hoàn thành tại Phase 3 (tạo thư mục, chép font.ttf và manifest.json).
-- [ ] **Hàng 7: Tuỳ biến Nhạc Nền (`MusicScreen`)**
+- [x] **Hàng 7: Tuỳ biến Nhạc Nền (`MusicScreen`)**
   - Quản lý thư viện 50 bài hát `.mp3`/`.wav` ($\le 64$ MB).
   - Xuất `titles.txt` kèm cờ `enabled` theo đúng Smali gốc (không dùng `playlist.json`).
-  - Trạng thái: [ ] Chưa thực hiện (Phase 6).
-- [ ] **Hàng 8: Tuỳ biến Sân Khấu Xuất Trận (`ShowTimeScreen`)**
+  - Trạng thái: [x] Đã hoàn thành tại Phase 6.
+- [x] **Hàng 8: Tuỳ biến Sân Khấu Xuất Trận (`ShowTimeScreen`)**
   - Tự nhập khẩu hiệu 1–5 ký tự cho bên trái và bên phải.
   - Render Canvas xem trước thời gian thực và xuất dữ liệu ảnh raw `.rgba` + `config.json` theo đúng Smali gốc.
-  - Trạng thái: [ ] Chưa thực hiện (Phase 6).
+  - Trạng thái: [x] Đã hoàn thành tại Phase 6.
 - [ ] **Hàng 9: Đồng bộ Đội hình Meta & Gợi ý AI Tự Động**
   - Kéo từ S3 Cloudfly (`https://s3.cloudfly.vn/wxq/...`) theo đúng `manifest.json`.
   - Tải gói `.json.gz`, kiểm tra SHA-256, giải nén và ghi đè vào VFS game; giữ fallback offline từ assets.
@@ -71,16 +71,16 @@
 - [x] Tự động khởi chạy trò chơi sau khi vá (`launchGame`).
 
 ### Nhóm 2: Quản Lý & Thay Thế Nhạc Nền Game (`MusicScreen`)
-- [ ] Quản lý danh sách tối đa 50 bài hát `.mp3` hoặc `.wav` dung lượng $\le 64$ MB mỗi bài.
-- [ ] Chọn tệp âm thanh từ bộ nhớ thiết bị qua `ActivityResultContracts.OpenDocument()`.
-- [ ] Sắp xếp thứ tự phát nhạc ($\uparrow / \downarrow$).
-- [ ] Chỉnh sửa trực tiếp Tiêu đề (Title) và Tên nghệ sĩ (Artist).
-- [ ] Nạp danh sách nhạc kèm `titles.txt` và file `enabled` vào `/sdcard/.../HOKVI/music/`.
+- [x] Quản lý danh sách tối đa 50 bài hát `.mp3` hoặc `.wav` dung lượng $\le 64$ MB mỗi bài.
+- [x] Chọn tệp âm thanh từ bộ nhớ thiết bị qua `ActivityResultContracts.OpenDocument()`.
+- [x] Sắp xếp thứ tự phát nhạc ($\uparrow / \downarrow$).
+- [x] Chỉnh sửa trực tiếp Tiêu đề (Title) và Tên nghệ sĩ (Artist).
+- [x] Nạp danh sách nhạc kèm `titles.txt` và file `enabled` vào `/sdcard/.../HOKVI/music/`.
 
 ### Nhóm 3: Tuỳ Biến Sân Khấu Xuất Trận (`ShowTimeScreen`)
-- [ ] Nhập văn bản cá nhân hoá 1–5 ký tự cho bên trái và bên phải.
-- [ ] Live Preview Canvas: render font chữ `Oswald-Bold-HOKVI.ttf`, màu sắc, bóng đổ thời gian thực.
-- [ ] Nạp dữ liệu ảnh raw `.rgba` và `config.json` vào `/sdcard/.../HOKVI/showtime/`.
+- [x] Nhập văn bản cá nhân hoá 1–5 ký tự cho bên trái và bên phải.
+- [x] Live Preview Canvas: render font chữ `Oswald-Bold-HOKVI.ttf`, màu sắc, bóng đổ thời gian thực.
+- [x] Nạp dữ liệu ảnh raw `.rgba` và `config.json` vào `/sdcard/.../HOKVI/showtime/`.
 
 ### Nhóm 4: Tự Động Đồng Bộ Đội Hình Meta & AI (`LineupSync` & `AiViSync`)
 - [ ] Kết nối API Cloudfly S3 theo URL trong `manifest.json`.
@@ -163,9 +163,10 @@
   - [x] Xử lý degrade trên Android $\le 10$ (ẩn ADB không dây, hiển thị hướng dẫn `android_old`).
   - [x] Unit test `AdbModelsTest` pass 100%; Build `./gradlew assembleDebug` thành công; Kiểm chứng thực tế tính năng degrade trên máy giả lập MEmu Android 9 (SDK 28).
 
-- [ ] **Phase 6: Nhạc Nền Game & Sân Khấu ShowTime**
-  - [ ] `MusicManager`: Thư viện 50 bài hát, nạp `titles.txt` và cờ `enabled` vào `/HOKVI/music/`.
-  - [ ] `ShowtimeManager`: Tuỳ biến chữ 1–5 ký tự, Live Preview Canvas, xuất ảnh raw `.rgba` và `config.json` vào `/HOKVI/showtime/`.
+- [x] **Phase 6: Nhạc Nền Game & Sân Khấu ShowTime**
+  - [x] `MusicManager`: Thư viện 50 bài hát, nạp `titles.txt` và cờ `enabled` vào `/HOKVI/music/`.
+  - [x] `ShowtimeManager`: Tuỳ biến chữ 1–5 ký tự, Live Preview Canvas, xuất ảnh raw `.rgba` và `config.json` vào `/HOKVI/showtime/`.
+  - [x] Unit test `MusicAndShowtimeTest` (5/5 tests pass); Build `./gradlew assembleDebug` thành công; Kiểm chứng thực tế nạp nhạc và xuất 13 ảnh raw RGBA trên MEmu (`127.0.0.1:21503`).
 
 - [ ] **Phase 7: Tự Động Đồng Bộ Đội Hình, Gợi Ý AI & Cập Nhật Ứng Dụng**
   - [ ] `MetaSyncManager`: Tải `.json.gz` từ Cloudfly S3 theo `manifest.json`, giải nén và ghi đè `/HOKVI/lineup-vi.json`, `ai-vi.json`.

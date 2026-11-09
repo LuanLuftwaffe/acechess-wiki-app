@@ -31,12 +31,16 @@ import vn.hokvi.viethoa.v2.ui.theme.GoldPrimary
 import vn.hokvi.viethoa.v2.ui.theme.TextPrimary
 import vn.hokvi.viethoa.v2.ui.theme.TextSecondary
 import vn.hokvi.viethoa.v2.ui.viewmodel.DashboardViewModel
+import vn.hokvi.viethoa.v2.ui.viewmodel.MusicViewModel
 import vn.hokvi.viethoa.v2.ui.viewmodel.PatchViewModel
+import vn.hokvi.viethoa.v2.ui.viewmodel.ShowtimeViewModel
 
 @Composable
 fun AppNavHost(
     dashboardViewModel: DashboardViewModel = viewModel(),
-    patchViewModel: PatchViewModel = viewModel()
+    patchViewModel: PatchViewModel = viewModel(),
+    musicViewModel: MusicViewModel = viewModel(),
+    showtimeViewModel: ShowtimeViewModel = viewModel()
 ) {
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
@@ -115,10 +119,31 @@ fun AppNavHost(
                 )
             }
             composable(Screen.Music.route) {
-                MusicScreen()
+                val musicUiState by musicViewModel.uiState.collectAsState()
+                MusicScreen(
+                    uiState = musicUiState,
+                    onImportTrack = { musicViewModel.importTrack(it) },
+                    onMoveUp = { musicViewModel.moveTrackUp(it) },
+                    onMoveDown = { musicViewModel.moveTrackDown(it) },
+                    onUpdateTrack = { id, title, artist -> musicViewModel.updateTrack(id, title, artist) },
+                    onToggleTrack = { musicViewModel.toggleTrack(it) },
+                    onDeleteTrack = { musicViewModel.deleteTrack(it) },
+                    onImportFromGame = { musicViewModel.importFromGame() },
+                    onApplyToGame = { musicViewModel.applyToGame() },
+                    onDismissMessage = { musicViewModel.clearMessage() }
+                )
             }
             composable(Screen.Showtime.route) {
-                ShowtimeScreen()
+                val showtimeUiState by showtimeViewModel.uiState.collectAsState()
+                val previewBitmap by showtimeViewModel.previewBitmap.collectAsState()
+                ShowtimeScreen(
+                    uiState = showtimeUiState,
+                    previewBitmap = previewBitmap,
+                    onLeftTextChange = { showtimeViewModel.updateLeftText(it) },
+                    onRightTextChange = { showtimeViewModel.updateRightText(it) },
+                    onApplyToGame = { showtimeViewModel.applyToGame() },
+                    onDismissMessage = { showtimeViewModel.clearMessage() }
+                )
             }
             composable(Screen.Guide.route) {
                 GuideScreen()
