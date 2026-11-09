@@ -8,6 +8,11 @@ dist/*
 !dist/README.md
 
 # Build caches
+.gradle/
+build/
+app/build/
+local.properties
+android_companion/build/
 decompiled_base/build/
 scripts/desktop_app/build/
 *.spec

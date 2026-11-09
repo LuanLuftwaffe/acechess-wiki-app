@@ -1,0 +1,88 @@
+{
+ "format": 4,
+ "release": "android-1.8.0.1-r71",
+ "game_version": "1.8.0.1",
+ "package": "com.tencent.tmgp.osgame",
+ "remote_index": "https://s3.cloudfly.vn/wxq/android/vi-patch/index.json",
+ "latest_url": "https://s3.cloudfly.vn/wxq/downloads/latest.json",
+ "lite": true,
+ "apk": {
+  "goc": {
+   "sha256": "2437e9040847fa47317e40f66febccedc4dd38c799f5ddc6c16b1656ea58ec58",
+   "size": 2026265394,
+   "content_sha256": "7ea5fd067ccdf22e86a5823cfa2c4c3a4a59e8c0922d05beb0b538c0eea358bc",
+   "sig_start": 2026132332,
+   "cd_off": 2026133369,
+   "version_code": 774472,
+   "title": "APK gốc (Original)"
+  },
+  "base": {
+   "sha256": "2b8708f6e1ccae22c4e39af4befec459c6e89af3b5c019b4583aa3338b2d1f54",
+   "size": 2026128099,
+   "title": "APK nền (Base)",
+   "remote": {
+    "from_goc": {
+     "url": "https://s3.cloudfly.vn/wxq/android/vi-patch/1.8.0.1/r71/apk/base.apkdelta2",
+     "sha256": "39f84f44338ead6b614f37195e90f458a0b3f6494f1da59d67724f7c8dc86036",
+     "size": 157542
+    },
+    "to_goc": {
+     "url": "https://s3.cloudfly.vn/wxq/android/vi-patch/1.8.0.1/r71/apk/base-goc.apkdelta2",
+     "sha256": "e925c3636ce1edb4813bfca01ec9a9a3259539e45c987111b730d75fbea73b13",
+     "size": 298072
+    }
+   }
+  },
+  "font": {
+   "sha256": "3b20f0469bdddc24136f553f67ba12ef79b66db68b034b1049e0c9b242ca3b84",
+   "size": 2026128099,
+   "title": "APK Việt hoá (Localized)",
+   "remote": {
+    "from_goc": {
+     "url": "https://s3.cloudfly.vn/wxq/android/vi-patch/1.8.0.1/r71/apk/font.apkdelta2",
+     "sha256": "da21cec184c250596eb2d2b09ebdb5c86a32efd00837f4b35f5265dd7832cde9",
+     "size": 28638016
+    },
+    "to_goc": {
+     "url": "https://s3.cloudfly.vn/wxq/android/vi-patch/1.8.0.1/r71/apk/font-goc.apkdelta2",
+     "sha256": "b36e45002a404cf67804cbe5a298066c2ec4752b57d478895c38fde278538cdc",
+     "size": 29153930
+    }
+   }
+  },
+  "key": {
+   "sha256": "310523d06fde0764f05c6f1f2210fa93890db78424cf933b4def868c17ed5d59",
+   "size": 2026148579,
+   "title": "APK chìa khoá (Debuggable)",
+   "remote": {
+    "from_goc": {
+     "url": "https://s3.cloudfly.vn/wxq/android/vi-patch/1.8.0.1/r71/apk/key.apkdelta2",
+     "sha256": "05d1fbb7591ffd1c644cf53a00d82b697f5fdcaef132534f0c5a474421905c8a",
+     "size": 192010
+    },
+    "to_goc": {
+     "url": "https://s3.cloudfly.vn/wxq/android/vi-patch/1.8.0.1/r71/apk/key-goc.apkdelta2",
+     "sha256": "b0649e405c7873e988b5bb3def890cfda781647cbbe5f9248249cb6dcb9ae885",
+     "size": 315056
+    }
+   }
+  },
+  "font_img": {
+   "sha256": "d375e748649daecadfae982030681bc1744a8ce652d54e46a460becbdf8328c8",
+   "size": 2026128099,
+   "title": "APK Việt hoá (Localized) có hình ảnh",
+   "remote": {
+    "from_goc": {
+     "url": "https://s3.cloudfly.vn/wxq/android/vi-patch/1.8.0.1/r71/apk/font_img.apkdelta2",
+     "sha256": "a5eeea0c45067c1dc6c2671b5904ab07237dc733be7d7779d359ff56973d2f1a",
+     "size": 28638045
+    },
+    "to_goc": {
+     "url": "https://s3.cloudfly.vn/wxq/android/vi-patch/1.8.0.1/r71/apk/font_img-goc.apkdelta2",
+     "sha256": "fe1e92d2f7079dfa6a968bece6df5d67a9715ed142718870a3654fa4ec42cd6b",
+     "size": 29153930
+    }
+   }
+  }
+ }
+}

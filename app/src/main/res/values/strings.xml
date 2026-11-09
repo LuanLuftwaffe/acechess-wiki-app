@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Việt Hoá Game</string>
+    <string name="app_subtitle">HOK VI — Công cụ hỗ trợ Việt hoá Vương Giả Vinh Diệu</string>
+    <string name="app_version_label">Phiên bản: %1$s</string>
+
+    <!-- Navigation -->
+    <string name="nav_dashboard">Tổng quan</string>
+    <string name="nav_patch">Vá Game</string>
+    <string name="nav_music">Nhạc Nền</string>
+    <string name="nav_showtime">Sân Khấu</string>
+    <string name="nav_guide">Hướng Dẫn</string>
+    <string name="nav_logs">Nhật Ký</string>
+
+    <!-- Shell Status -->
+    <string name="shell_status_title">Trạng thái quyền hệ thống</string>
+    <string name="shell_root_active">Quyền Root (su): Hoạt động</string>
+    <string name="shell_shizuku_active">Shizuku: Đã cấp quyền</string>
+    <string name="shell_adb_active">ADB Không Dây: Đã kết nối</string>
+    <string name="shell_none_active">Chưa có quyền Shell khả dụng</string>
+    <string name="shell_checking">Đang kiểm tra quyền...</string>
+    <string name="shell_recommendation">Khuyến nghị kích hoạt Shizuku hoặc kết nối ADB không dây để áp dụng bản vá.</string>
+
+    <!-- Game Status -->
+    <string name="game_status_title">Trạng thái Game Vương Giả</string>
+    <string name="game_package">com.tencent.tmgp.osgame</string>
+    <string name="game_installed">Đã phát hiện game</string>
+    <string name="game_not_installed">Chưa cài đặt game</string>
+    <string name="game_version">Phiên bản game: %1$s</string>
+    <string name="game_patch_status_original">Bản gốc (Chưa Việt hoá)</string>
+    <string name="game_patch_status_patched">Đã Việt hoá (v%1$s)</string>
+    <string name="game_patch_status_modified">Đã chỉnh sửa / Cần kiểm tra</string>
+
+    <!-- Action Buttons -->
+    <string name="btn_apply_patch">Bắt đầu Việt hoá</string>
+    <string name="btn_rollback">Khôi phục gốc</string>
+    <string name="btn_check_update">Kiểm tra bản cập nhật</string>
+    <string name="btn_sync_meta">Đồng bộ Meta &amp; AI</string>
+    <string name="btn_connect_adb">Ghép mã ADB không dây</string>
+    <string name="btn_request_shizuku">Cấp quyền Shizuku</string>
+    <string name="btn_copy_logs">Sao chép nhật ký</string>
+    <string name="btn_clear_logs">Xoá nhật ký</string>
+    <string name="btn_refresh">Làm mới</string>
+    <string name="btn_retry">Thử lại</string>
+    <string name="btn_close">Đóng</string>
+    <string name="btn_confirm">Xác nhận</string>
+    <string name="btn_cancel">Huỷ bỏ</string>
+
+    <!-- Patch Engine Steps -->
+    <string name="patch_step_check_space">Kiểm tra dung lượng bộ nhớ khả dụng</string>
+    <string name="patch_step_backup">Tạo bản sao lưu an toàn (.orig)</string>
+    <string name="patch_step_verify_hash">Kiểm tra tính toàn vẹn (SHA-256)</string>
+    <string name="patch_step_write_vfs">Ghi đè gói ngôn ngữ QtsVFSCache</string>
+    <string name="patch_step_lock_watchdog">Ghi cờ hiệu khoá Tencent Watchdog</string>
+    <string name="patch_step_clean_pkg2">Dọn dẹp gói tài nguyên cũ</string>
+    <string name="patch_step_completed">Việt hoá hoàn tất thành công!</string>
+    <string name="patch_step_failed">Xảy ra lỗi trong quá trình Việt hoá</string>
+
+    <!-- Music Screen -->
+    <string name="music_title">Tuỳ biến Nhạc Nền Sảnh</string>
+    <string name="music_desc">Thêm và sắp xếp tối đa 50 bài hát tuỳ chọn vào sảnh game.</string>
+    <string name="music_count">%1$d / 50 bài hát</string>
+    <string name="music_add_btn">Thêm nhạc (.mp3 / .wav)</string>
+    <string name="music_apply_btn">Áp dụng danh sách nhạc</string>
+    <string name="music_reset_btn">Xoá toàn bộ nhạc tuỳ biến</string>
+
+    <!-- Showtime Screen -->
+    <string name="showtime_title">Tuỳ biến Biểu Ngữ Sân Khấu</string>
+    <string name="showtime_desc">Tuỳ biến câu khẩu hiệu hiển thị khi bước vào trận đấu.</string>
+    <string name="showtime_left_label">Chữ bên trái (1–5 ký tự)</string>
+    <string name="showtime_right_label">Chữ bên phải (1–5 ký tự)</string>
+    <string name="showtime_preview">Xem trước biểu ngữ</string>
+    <string name="showtime_apply">Áp dụng biểu ngữ</string>
+
+    <!-- Guide Screen -->
+    <string name="guide_title">Hướng Dẫn Kích Hoạt &amp; Khắc Phục Lỗi</string>
+    <string name="guide_select_brand">Chọn hãng thiết bị của bạn:</string>
+    <string name="guide_topic_troubleshooting">Các lỗi thường gặp</string>
+
+    <!-- Log Viewer -->
+    <string name="logs_title">Nhật Ký Hoạt Động (nhat-ky.txt)</string>
+    <string name="logs_empty">Chưa có nhật ký hoạt động nào được ghi nhận.</string>
+
+    <!-- Common Dialogs -->
+    <string name="dialog_confirm_rollback_title">Xác nhận khôi phục bản gốc</string>
+    <string name="dialog_confirm_rollback_msg">Bạn có chắc chắn muốn khôi phục game về nguyên bản gốc không? Các tệp ngôn ngữ Việt hoá sẽ được hoàn tác.</string>
+    <string name="dialog_permission_needed_title">Yêu cầu quyền truy cập</string>
+    <string name="dialog_permission_needed_msg">Ứng dụng cần quyền quản lý tệp hoặc quyền Shell (Shizuku/Root/ADB) để có thể ghi tệp Việt hoá vào thư mục game.</string>
+</resources>
