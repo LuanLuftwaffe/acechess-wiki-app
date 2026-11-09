@@ -19,6 +19,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.compose.ui.platform.LocalContext
+import vn.hokvi.viethoa.v2.core.shell.ShellResolver
+import vn.hokvi.viethoa.v2.ui.screens.ChangelogScreen
 import vn.hokvi.viethoa.v2.ui.screens.DashboardScreen
 import vn.hokvi.viethoa.v2.ui.screens.GuideScreen
 import vn.hokvi.viethoa.v2.ui.screens.LogsScreen
@@ -30,7 +33,10 @@ import vn.hokvi.viethoa.v2.ui.theme.DarkSurface
 import vn.hokvi.viethoa.v2.ui.theme.GoldPrimary
 import vn.hokvi.viethoa.v2.ui.theme.TextPrimary
 import vn.hokvi.viethoa.v2.ui.theme.TextSecondary
+import vn.hokvi.viethoa.v2.ui.viewmodel.ChangelogViewModel
 import vn.hokvi.viethoa.v2.ui.viewmodel.DashboardViewModel
+import vn.hokvi.viethoa.v2.ui.viewmodel.GuideViewModel
+import vn.hokvi.viethoa.v2.ui.viewmodel.LogsViewModel
 import vn.hokvi.viethoa.v2.ui.viewmodel.MusicViewModel
 import vn.hokvi.viethoa.v2.ui.viewmodel.PatchViewModel
 import vn.hokvi.viethoa.v2.ui.viewmodel.ShowtimeViewModel
@@ -40,7 +46,10 @@ fun AppNavHost(
     dashboardViewModel: DashboardViewModel = viewModel(),
     patchViewModel: PatchViewModel = viewModel(),
     musicViewModel: MusicViewModel = viewModel(),
-    showtimeViewModel: ShowtimeViewModel = viewModel()
+    showtimeViewModel: ShowtimeViewModel = viewModel(),
+    guideViewModel: GuideViewModel = viewModel(factory = GuideViewModel.provideFactory(LocalContext.current)),
+    logsViewModel: LogsViewModel = viewModel(factory = LogsViewModel.provideFactory(LocalContext.current, ShellResolver(LocalContext.current))),
+    changelogViewModel: ChangelogViewModel = viewModel(factory = ChangelogViewModel.provideFactory(LocalContext.current))
 ) {
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
@@ -106,6 +115,9 @@ fun AppNavHost(
                     },
                     onNavigateToGuide = {
                         navController.navigate(Screen.Guide.route)
+                    },
+                    onNavigateToChangelog = {
+                        navController.navigate(Screen.Changelog.route)
                     }
                 )
             }
@@ -150,10 +162,38 @@ fun AppNavHost(
                 )
             }
             composable(Screen.Guide.route) {
-                GuideScreen()
+                val guideUiState by guideViewModel.uiState.collectAsState()
+                GuideScreen(
+                    uiState = guideUiState,
+                    onSelectProfile = { guideViewModel.selectProfile(it) },
+                    onSearchQueryChange = { guideViewModel.updateSearchQuery(it) },
+                    onToggleTopic = { guideViewModel.toggleTopicExpand(it) }
+                )
             }
             composable(Screen.Logs.route) {
-                LogsScreen()
+                val logsUiState by logsViewModel.uiState.collectAsState()
+                val context = LocalContext.current
+                LogsScreen(
+                    uiState = logsUiState,
+                    onSelectTab = { logsViewModel.selectTab(it) },
+                    onRefreshLogs = { logsViewModel.loadCommandLogs() },
+                    onClearLogs = { logsViewModel.clearCommandLogs() },
+                    onGenerateReport = { logsViewModel.generateDiagnosticsReport() },
+                    onShareLogs = { logsViewModel.shareCommandLogs(context) },
+                    onShareReport = { logsViewModel.shareDiagnosticsReport(context) }
+                )
+            }
+            composable(Screen.Changelog.route) {
+                val changelogUiState by changelogViewModel.uiState.collectAsState()
+                val context = LocalContext.current
+                ChangelogScreen(
+                    uiState = changelogUiState,
+                    onSelectCategory = { changelogViewModel.selectCategory(it) },
+                    onOpenFeedback = { changelogViewModel.openFeedbackDialog() },
+                    onDismissFeedback = { changelogViewModel.dismissFeedbackDialog() },
+                    onFeedbackTextChange = { changelogViewModel.updateFeedbackText(it) },
+                    onSendFeedback = { changelogViewModel.sendFeedback(context) }
+                )
             }
         }
     }

@@ -22,6 +22,7 @@ sealed class Screen(
     data object Showtime : Screen("showtime", R.string.nav_showtime, Icons.Default.Star)
     data object Guide : Screen("guide", R.string.nav_guide, Icons.AutoMirrored.Filled.HelpOutline)
     data object Logs : Screen("logs", R.string.nav_logs, Icons.AutoMirrored.Filled.List)
+    data object Changelog : Screen("changelog", R.string.nav_changelog, Icons.AutoMirrored.Filled.List)
 
     companion object {
         val bottomNavItems = listOf(Dashboard, Patch, Music, Showtime, Guide, Logs)

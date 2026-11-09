@@ -1,4 +1,4 @@
-# TIẾN ĐỘ THỰC HIỆN DỰ ÁN VIỆT HOÁ GAME V2 (`vn.hokvi.viethoa.v2`)
+﻿# TIẾN ĐỘ THỰC HIỆN DỰ ÁN VIỆT HOÁ GAME V2 (`vn.hokvi.viethoa.v2`)
 
 > Nguồn sự thật duy nhất: [`docs/OLD_TOOL_COMPREHENSIVE_AUDIT.md`](file:///c:/Users/ThienDuong/Downloads/Rebuild-APK/docs/OLD_TOOL_COMPREHENSIVE_AUDIT.md)  
 > Stack: Kotlin, Jetpack Compose (Material 3), 1 Activity (MainActivity) + Navigation Compose, Shizuku API, libadb-android, WorkManager, OkHttp, DataStore, kotlinx.serialization.
@@ -49,11 +49,11 @@
   - Hỗ trợ nhập thủ công cổng / mã khi mDNS thất bại (topic `no_device`).
   - Xử lý degrade trên Android $\le 10$ (ẩn ADB không dây, hiển thị topic `android_old`).
   - Trạng thái: [x] Đã hoàn thành tại Phase 5 (ghép vào `ShellResolver` như backend thứ 3).
-- [ ] **Hàng 11: Cơ sở Tri Thức Hướng Dẫn Thiết Bị Động**
+- [x] **Hàng 11: Cơ sở Tri Thức Hướng Dẫn Thiết Bị Động**
   - Đọc từ tệp `huong-dan-thiet-bi.json` đóng gói sẵn.
   - Nhận diện 9 hồ sơ nhà sản xuất (OEM Profiles) và 15 chủ đề chuyên sâu (Topics).
   - Degrade trên Android $\le 10$ (ẩn ADB không dây, hiện topic `android_old`).
-  - Trạng thái: [ ] Chưa thực hiện (Phase 8).
+  - Trạng thái: [x] Đã hoàn thành (Phase 8: nhận diện OEM theo brand, props, sdk_max, priority, hiển thị 15 topic và thanh tìm kiếm).
 - [x] **Hàng 12: Chẩn Đoán Hệ Thống & Ghi Nhật Ký Toàn Diện**
   - Ghi nhật ký thực thi mọi lệnh shell vào `nhat-ky.txt` (timestamp, command, exit code, stderr, duration).
   - Thu thập thông số thiết bị và 200 dòng Logcat xuất ra `bao-cao-chan-doan-*.txt`.
@@ -104,9 +104,10 @@
 
 ### Nhóm 7: Chẩn Đoán Hệ Thống & Báo Cáo Lỗi (`Diag` & `Feedback`)
 - [x] Hàm duy nhất chạy lệnh shell có ghi log tập trung vào `nhat-ky.txt` (timestamp, command, exit code, stderr, duration).
-- [ ] Trình thu thập thông số chẩn đoán: Dòng máy, Android OS, phiên bản ROM, SELinux status, game ver, storage.
-- [ ] Trích xuất 200 dòng Logcat gần nhất.
-- [ ] Tạo file báo cáo hoàn chỉnh `bao-cao-chan-doan-*.txt`.
+- [x] Trình thu thập thông số chẩn đoán: Dòng máy, Android OS, phiên bản ROM, SELinux status, game ver, storage.
+- [x] Trích xuất 200 dòng Logcat gần nhất.
+- [x] Tạo file báo cáo hoàn chỉnh `bao-cao-chan-doan-*.txt`.
+- [x] Màn hình Changelog (62 releases tách chung/pc/android) và hộp thoại gửi phản hồi.
 
 ### Nhóm 8: Tự Động Cập Nhật Bản Thân & Thông Báo Cập Nhật Game
 - [x] `UpdateCheckWorker` (WorkManager) định kỳ kiểm tra bản cập nhật thay thế `UpdateCheckJob`.
@@ -176,8 +177,9 @@
   - [x] Hộp thoại ChangelogDialog trên UI Compose với thông tin chi tiết các bản phát hành, hỗ trợ tải & cài APK tự động.
   - [x] Unit test `SyncAndUpdateTest` (4/4 tests pass); Build `./gradlew assembleDebug` thành công; Kiểm chứng thực tế `syncAll()` và `checkForUpdates()` trên MEmu (`127.0.0.1:21503`).
 
-- [ ] **Phase 8: Hướng Dẫn Thiết Bị Động, Chẩn Đoán & Kiểm Chứng MEmu**
-  - [ ] `DeviceGuideRepository`: Đọc `huong-dan-thiet-bi.json`, bộ lọc 9 profiles & 15 topics.
-  - [ ] `DiagnosticsManager`: Tạo `bao-cao-chan-doan-*.txt`, dump 200 dòng logcat.
-  - [ ] Hoàn thiện 100% UI Compose và toàn bộ chuỗi trong `strings.xml`.
-  - [ ] Cài đặt lên thiết bị giả lập MEmu (`127.0.0.1:21503`), chạy kiểm thử toàn trình, chụp màn hình nghiệm thu.
+- [x] **Phase 8: Hướng Dẫn Thiết Bị Động, Chẩn Đoán, Changelog & Hoàn Thiện**
+  - [x] `DeviceGuideRepository`: Đọc `huong-dan-thiet-bi.json`, bộ lọc 9 profiles & 15 topics, fallback `chung`.
+  - [x] `DiagnosticsManager`: Thu thập 8 thông số hệ thống, dump 200 dòng Logcat, lưu file `bao-cao-chan-doan-*.txt`.
+  - [x] `ChangelogRepository` & `ChangelogScreen`: Phân loại 62 releases theo All / Chung / PC / Android và hộp thoại gửi phản hồi.
+  - [x] Hoàn thiện 100% UI Compose, theme gaming tối màu, toàn bộ chuỗi nằm trong `res/values/strings.xml`.
+  - [x] Cài đặt lên thiết bị giả lập MEmu (`127.0.0.1:21503`), 38/38 unit tests pass, kiểm chứng thực tế và đối chiếu 12 hàng ma trận Mục 7.

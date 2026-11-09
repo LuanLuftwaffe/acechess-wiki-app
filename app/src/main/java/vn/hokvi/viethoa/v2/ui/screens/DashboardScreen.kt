@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -80,7 +81,8 @@ fun DashboardScreen(
     onDismissChangelog: () -> Unit = {},
     onDownloadAndInstallUpdate: () -> Unit = {},
     onNavigateToPatch: () -> Unit,
-    onNavigateToGuide: () -> Unit
+    onNavigateToGuide: () -> Unit,
+    onNavigateToChangelog: () -> Unit = {}
 ) {
     val scrollState = rememberScrollState()
     var showManualDialog by remember { mutableStateOf(false) }
@@ -97,18 +99,36 @@ fun DashboardScreen(
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         // App Header
-        Column {
-            Text(
-                text = stringResource(R.string.app_name),
-                style = MaterialTheme.typography.headlineLarge,
-                color = GoldPrimary
-            )
-            Spacer(modifier = Modifier.height(4.dp))
-            Text(
-                text = stringResource(R.string.app_subtitle),
-                style = MaterialTheme.typography.bodyLarge,
-                color = TextSecondary
-            )
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = stringResource(R.string.app_name),
+                    style = MaterialTheme.typography.headlineLarge,
+                    color = GoldPrimary
+                )
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(
+                    text = stringResource(R.string.app_subtitle),
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = TextSecondary
+                )
+            }
+            Spacer(modifier = Modifier.width(8.dp))
+            OutlinedButton(
+                onClick = onNavigateToChangelog,
+                shape = RoundedCornerShape(8.dp),
+                border = BorderStroke(1.dp, GoldPrimary.copy(alpha = 0.6f)),
+                colors = ButtonDefaults.outlinedButtonColors(contentColor = GoldPrimary)
+            ) {
+                Text(
+                    text = stringResource(R.string.nav_changelog),
+                    style = MaterialTheme.typography.labelMedium
+                )
+            }
         }
 
         // 1. Shell Status Card
@@ -631,10 +651,9 @@ fun DashboardScreen(
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .heightIn(max = 160.dp)
+                        .heightIn(max = 140.dp)
                         .clip(RoundedCornerShape(6.dp))
                         .background(DarkSurfaceVariant)
-                        .verticalScroll(rememberScrollState())
                         .padding(10.dp)
                 ) {
                     Text(
@@ -796,6 +815,20 @@ fun DashboardScreen(
                             color = TextPrimary
                         )
                     }
+                }
+
+                OutlinedButton(
+                    onClick = onNavigateToChangelog,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(44.dp),
+                    shape = RoundedCornerShape(8.dp),
+                    border = BorderStroke(1.dp, GoldPrimary.copy(alpha = 0.5f))
+                ) {
+                    Text(
+                        text = stringResource(R.string.nav_changelog),
+                        color = GoldPrimary
+                    )
                 }
             }
         }
