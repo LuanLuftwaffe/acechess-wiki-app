@@ -144,9 +144,12 @@
   - [x] Tính năng Khôi phục gốc (Offline Rollback 1-click từ `.orig`).
   - [x] Unit test `PatchEngineTest` pass; Kiểm chứng thực tế trên MEmu: ghi đè thành công, rollback phục hồi sạch 100%, log lệnh đầy đủ ra `nhat-ky.txt`.
 
-- [ ] **Phase 4: Luồng Quản Lý APK Game**
-  - [ ] Dựng interface `ApkPatchProvider` (ghi chú: `ApkDelta` tạm hoãn vì thiếu spec).
-  - [ ] Luồng kiểm tra APK và cài đặt APK vá sẵn qua Android `PackageInstaller` / `ApkProvider`.
+- [x] **Phase 4: Luồng Quản Lý APK Game**
+  - [x] Dựng interface `ApkPatchProvider` & `StubApkPatchProvider` (ghi chú: `ApkDelta` tạm hoãn vì thiếu đặc tả `HOKVI-APKDELTA2`, xem `docs/OPEN_QUESTIONS.md` Q1).
+  - [x] Luồng kiểm tra khả năng cài ngầm qua `SilentInstallProbe` (`kit/probe.apk` -> `vn.hokvi.probe`).
+  - [x] Luồng cài đặt chuỗi 3 bước `base -> key -> font` qua `PackageInstaller` Session (`GamePackageInstaller`) & `SystemInstallerReceiver`.
+  - [x] Xử lý đầy đủ các lỗi cài đặt và ánh xạ chủ đề hướng dẫn: `USER_RESTRICTED` (topic `xiaomi`), `INSTALL_BLOCKED` (topic `install_blocked`), `SCREEN_LOCK_TIMEOUT` (topic `screen_lock`).
+  - [x] Unit test `PackageInstallerTest` đạt 8/8 tests pass; Build `./gradlew assembleDebug` thành công; Kiểm chứng thực tế cài đặt và gỡ `probe.apk` trên MEmu thành công 100%.
 
 - [ ] **Phase 5: Động Cơ ADB Không Dây Trong App (In-App ADB)**
   - [ ] Tích hợp `libadb-android` + Conscrypt.
