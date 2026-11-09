@@ -1,98 +1,63 @@
-# DANH SÁCH CÂU HỎI MỞ & ĐIỂM CẦN LÀM RÕ (OPEN QUESTIONS)
+# DANH SÁCH CÂU HỎI MỞ & QUYẾT ĐỊNH CỦA NGƯỜI DÙNG (OPEN QUESTIONS & DECISIONS)
 
-> **Căn cứ:** Đối chiếu từ [`docs/OLD_TOOL_COMPREHENSIVE_AUDIT.md`](file:///c:/Users/ThienDuong/Downloads/Rebuild-APK/docs/OLD_TOOL_COMPREHENSIVE_AUDIT.md) và các tệp dữ liệu thực tế tại `docs/upstream_data/`.  
-> **Nguyên tắc:** Tuyệt đối không tự suy đoán. Ghi nhận chi tiết mọi điểm kỹ thuật audit còn thiếu để người dùng phê duyệt trước khi lập trình từng phase tương ứng.
+> **Căn cứ:** Quyết định phê duyệt chính thức từ Người dùng tại Phase 0.  
+> **Nguyên tắc:** Mọi điểm kỹ thuật đều tuân theo quyết định đã chốt dưới đây.
 
 ---
 
 ### 1. Định dạng `ApkDelta` / `HOKVI-APKDELTA2` & Giải pháp cho Tầng 1 (Vá Loading)
-- **Vấn đề:**
-  - Audit chỉ ra tool cũ dùng thuật toán nhị phân độc quyền bắt đầu bằng header `HOKVI-APKDELTA2\n` để vá APK gốc 2.02 GB thành `font.apk`.
-  - Quy tắc chỉ đạo của người dùng quy định rõ: *"KHÔNG tự đoán định dạng HOKVI-APKDELTA2"*.
-- **Câu hỏi cần người dùng phê duyệt:**
-  - **Phương án A:** Người dùng sẽ cung cấp tệp `font.apk` đã vá sẵn ngoài đời thực (hoặc một tool riêng biên dịch APK), và app `v2` chỉ cần kiểm tra rồi gọi `pm install -r font.apk` hoặc PackageInstaller?
-  - **Phương án B:** Bỏ qua Tầng 1 (không can thiệp vá APK khởi động, chấp nhận màn hình Splash/Loading là tiếng Trung ban đầu) và tập trung toàn lực vào Tầng 2 (QtsVFSCache gói 1 & 4), Tầng 3 (Watchdog vi_bak/) và Tầng 4 (Dynamic VFS HOKVI/)?
-  - **Phương án C:** Người dùng sẽ cung cấp mã C++/Java thuần của thuật toán `ApkDelta` ở phase sau?
-- **Đề xuất xử lý:** Xây dựng interface `ApkPatchProvider` với stub mô phỏng có TODO rõ ràng, mặc định coi APK đã sẵn sàng để không làm nghẽn tiến độ.
+- **Quyết định chính thức:**
+  - **Tạm hoãn Tầng 1.** Không tự viết ApkDelta khi chưa có đặc tả kỹ thuật.
+  - Tại Phase 4, chỉ dựng interface `ApkPatchProvider` + luồng cài APK vá sẵn qua PackageInstaller.
+  - Ghi nhận trạng thái trong `docs/PROGRESS.md` là: **`blocked: thiếu spec`**.
 
 ---
 
-### 2. Schema JSON của `lineup-vi.json` và `ai-vi.json` (Phase 4 & 5)
-- **Vấn đề:**
-  - Audit và tệp khảo sát `ai-vi_latest.json`, `lineup-vi_latest.json` cho thấy API máy chủ trả về các gói `.json.gz` rất lớn (file `lineup-vi` nén 6.9 MB, giải nén ra 20.6 MB với hơn 10.000 bài viết và 74.000 entry).
-  - Game Unity Engine sẽ tự động đọc các file này từ `/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/`.
-- **Câu hỏi cần người dùng phê duyệt:**
-  - Ứng dụng mới có cần parse (deserialize) cấu trúc bên trong của 2 file JSON này hay không? Hay chỉ cần hoạt động như một bộ tải và xác thực toàn vẹn: tải `.json.gz`, kiểm tra mã băm SHA-256 (`json_sha256`), giải nén GZIP và ghi trực tiếp mảng byte vào thư mục `/HOKVI/`?
-- **Đề xuất xử lý:** `MetaSyncManager` xử lý ở tầng nhị phân/stream: Tải $\rightarrow$ Verify SHA-256 $\rightarrow$ Gzip decompress $\rightarrow$ Write to `/HOKVI/lineup-vi.json` & `/HOKVI/ai-vi.json`. Cách này vừa tiết kiệm RAM, vừa chạy nhanh và không bị vỡ model khi Tencent thay đổi cấu trúc dữ liệu bên trong.
+### 2. Schema `lineup-vi.json`, `ai-vi.json`, `music`, `showtime`
+- **Quyết định chính thức:**
+  - **KHÔNG dùng đề xuất gzip/playlist.json/PNG RGBA nếu chưa có bằng chứng.**
+  - Đã đối chiếu các file mẫu và dịch ngược mã nguồn Smali vào [`docs/DATA_SCHEMAS.md`](file:///c:/Users/ThienDuong/Downloads/Rebuild-APK/docs/DATA_SCHEMAS.md):
+    - `set.json`: Schema CSDL QtsVFSCache (gói 1 & 4) khớp 100% tệp mẫu.
+    - `ai-vi` & `lineup-vi`: Chỉ mục index tải gói `.json.gz` từ S3 Cloudfly, nạp trực tiếp JSON thô vào VFS `/HOKVI/`.
+    - `music`: Game dùng tệp danh sách `titles.txt` và cờ file rỗng `enabled` theo đúng Smali `MusicLibrary.smali` (KHÔNG dùng `playlist.json`).
+    - `showtime`: Game dùng ảnh **RAW RGBA (`.rgba`)** và `config.json` theo đúng Smali `ShowTimeRender.smali` (KHÔNG dùng PNG).
 
 ---
 
-### 3. URL/Endpoint chính xác & Tính sẵn sàng của Cloudfly S3
-- **Vấn đề:**
-  - Các endpoint khai báo trong tool cũ:
-    - `https://s3.cloudfly.vn/wxq/android/vi-patch/index.json`
-    - `https://s3.cloudfly.vn/wxq/downloads/latest.json`
-    - `https://s3.cloudfly.vn/wxq/ai-vi/packs/`
-    - `https://s3.cloudfly.vn/wxq/lineup-vi/packs/`
-    - `https://s3.cloudfly.vn/wxq/music/tracks/`
-- **Câu hỏi cần người dùng phê duyệt:**
-  - Các endpoint này hiện tại có được duy trì vĩnh viễn không? Có endpoint nào yêu cầu API Key/Header đặc biệt không?
-  - Khi không có mạng hoặc server bảo trì, app có cơ chế Fallback nạp dữ liệu offline từ assets không?
-- **Đề xuất xử lý:** Xây dựng cơ chế `NetworkFirstWithLocalFallback`: Luôn kiểm tra kết nối tới S3 Cloudfly trước; nếu timeout hoặc lỗi mạng, tự động sử dụng bộ dữ liệu mẫu đóng gói sẵn trong `assets/` để đảm bảo app luôn chạy được ngoại tuyến 100%.
+### 3. URL/Endpoint máy chủ Cloudfly S3
+- **Quyết định chính thức:**
+  - Lấy `remote_index` (`https://s3.cloudfly.vn/wxq/android/vi-patch/index.json`) và `latest_url` (`https://s3.cloudfly.vn/wxq/downloads/latest.json`) từ `manifest.json` thực tế.
+  - Không sử dụng bất kỳ URL nào khác ngoài `manifest.json`.
+  - Luôn duy trì cơ chế Fallback ngoại tuyến từ `app/src/main/assets/`.
 
 ---
 
 ### 4. Cấu trúc `manifest.json` và quy tắc nạp động
-- **Vấn đề:**
-  - Tệp `assets/kit/manifest.json` có `format: 4`, chứa hash của 5 loại APK và danh mục delta.
-- **Câu hỏi cần người dùng phê duyệt:**
-  - Khi chép vào `/sdcard/.../HOKVI/manifest.json`, tệp này được game sử dụng cho mục đích gì? Có cần phải giữ nguyên định dạng `format: 4` không?
-- **Đề xuất xử lý:** Giữ nguyên 100% cấu trúc của `manifest.json` đã khảo sát từ bản `1.8.0.1-r71`.
+- **Quyết định chính thức:**
+  - Giữ nguyên cấu trúc `format: 4` của `assets/kit/manifest.json`.
 
 ---
 
-### 5. Tiêu chí phát hiện 5 loại APK (`goc`, `base`, `key`, `font`, `font_img`) của `GameStateDetector`
-- **Vấn đề:**
-  - APK của game có dung lượng trên 2 GB (`2,026,265,394 bytes`).
-  - Nếu mỗi lần mở app đều đọc toàn bộ 2 GB để tính SHA-256 thì app sẽ bị đơ (treo I/O) từ 5–15 giây trên điện thoại.
-- **Câu hỏi cần người dùng phê duyệt:**
-  - Phương pháp phát hiện trạng thái APK tối ưu nên là gì?
-- **Đề xuất xử lý:**
-  1. Kiểm tra cờ `ApplicationInfo.flags & ApplicationInfo.FLAG_DEBUGGABLE`: Nếu là `true` $\rightarrow$ Chắc chắn là `key.apk`.
-  2. Kiểm tra kích thước chính xác (Length in bytes) của `/data/app/.../base.apk`:
-     - Nếu `size == 2,026,265,394` $\rightarrow$ Nhận diện là `goc` (bản gốc).
-     - Nếu `size == 2,026,148,579` $\rightarrow$ Nhận diện là `key`.
-     - Nếu `size == 2,026,128,099` $\rightarrow$ Có thể là `base`, `font` hoặc `font_img`. Đối chiếu chữ ký số hoặc đọc trạng thái lưu trữ trong DataStore của app từ lần vá trước.
-  3. Chỉ tính SHA-256 khi người dùng bấm nút kiểm tra chi tiết hoặc khi chuẩn bị thi công bản vá.
+### 5. Tiêu chí phát hiện 5 loại APK (`goc`, `base`, `key`, `font`, `font_img`)
+- **Quyết định chính thức:**
+  - Đồng ý phương pháp kiểm tra cờ `ApplicationInfo.FLAG_DEBUGGABLE` + kích thước file byte.
+  - Bổ sung cơ chế **Cache kết quả theo `(size, lastModified)`** để tối ưu tốc độ mở app.
+  - Chỉ tính mã băm SHA-256 ở luồng nền (background coroutine) khi thực sự cần xác minh trước lúc vá.
 
 ---
 
-### 6. Nguồn dữ liệu bản vá trong `PatchSource` (Phase 4)
-- **Vấn đề:**
-  - Yêu cầu đặt ra: *"KHÔNG cố tái tạo/bẻ khoá mã HVX1 (HvxCrypt, HvxKitShares) hay khoá gắn với chữ ký APK cũ. App mới dùng cơ chế riêng ở PatchSource"*.
-- **Câu hỏi cần người dùng phê duyệt:**
-  - Dữ liệu 4 file CSDL giải mã sạch (`1.db`, `1_0.db`, `4.db`, `4_0.db`) hiện đã có sẵn tại `docs/upstream_data/patch_1.8.0.1/` (tổng dung lượng ~68 MB).
-  - Chúng ta sẽ đưa nguồn này vào app theo cách nào?
-    - **Lựa chọn 1:** Đóng gói thẳng vào thư mục `app/src/main/assets/patch/` (tiện lợi, chạy offline ngay lập tức, không phụ thuộc server).
-    - **Lựa chọn 2:** Tải qua một đường link trực tiếp (Direct Link HTTP/S3) không mã hóa HVX.
-    - **Lựa chọn 3:** Người dùng tự đưa file ZIP bản vá vào bộ nhớ máy và app giải nén.
-- **Đề xuất xử lý:** Thiết kế interface `PatchSource` linh hoạt, mặc định sử dụng `LocalAssetPatchSource` đọc từ assets, đồng thời hỗ trợ `DownloadablePatchSource` qua URL nếu người dùng cấu hình.
+### 6. Nguồn dữ liệu bản vá trong `PatchSource` (Phase 3)
+- **Quyết định chính thức:**
+  - Sử dụng trực tiếp dữ liệu tại `docs/upstream_data/patch_1.8.0.1/`.
+  - Đã kiểm tra thực tế và xác nhận 100% khớp kích thước:
+    - `1/1.db`: 180,224 bytes $\rightarrow$ **MATCH**
+    - `1/1_0.db`: 33,587,200 bytes $\rightarrow$ **MATCH**
+    - `4/4.db`: 229,376 bytes $\rightarrow$ **MATCH**
+    - `4/4_0.db`: 34,897,920 bytes $\rightarrow$ **MATCH**
 
 ---
 
-### 7. Quy cách lưu trữ Nhạc nền (`/HOKVI/music/`) và ShowTime (`/HOKVI/showtime/`)
-- **Vấn đề:**
-  - Nhạc nền: File `music_latest.json` cho thấy các track được đặt tên như `ngth.mp3` và có metadata `{file, url, sha256, size, title, artist}`. Khi nạp vào game, Unity Engine đọc ngẫu nhiên các file `.mp3`/`.wav` có trong thư mục, hay cần 1 file danh sách như `playlist.json`?
-  - ShowTime: Khi người dùng tuỳ biến chữ 1–5 ký tự cho 2 bên, kết quả nạp vào `/HOKVI/showtime/` là ảnh PNG render từ Canvas (ví dụ: `left.png`, `right.png`) hay là chuỗi text trong một file JSON cấu hình?
-- **Đề xuất xử lý:**
-  - Với Nhạc nền: Xuất cả file `.mp3`/`.wav` lẫn file `playlist.json` đồng bộ trong `/HOKVI/music/`.
-  - Với ShowTime: Render Canvas xuất ra file ảnh `showtime_left.png` và `showtime_right.png` (định dạng RGBA_8888 trong suốt) kèm file `showtime.json`.
-
----
-
-### 8. Cơ chế Định tuyến Shell (`ShellResolver`)
-- **Vấn đề:**
-  - Ưu tiên: Root (`su`) $\rightarrow$ Shizuku $\rightarrow$ ADB không dây.
-  - Khi thiết bị Android $\le 10$, Gỡ lỗi không dây không tồn tại ở cấp hệ điều hành.
-- **Đề xuất xử lý:**
-  - Tự động kiểm tra `Build.VERSION.SDK_INT`: Nếu $< 30$ (Android 10 trở xuống), ẩn hoàn toàn mục ADB không dây trên UI và tự động ghim hiển thị topic hướng dẫn `android_old` (kết nối máy tính hoặc Shizuku qua cáp).
+### 7. Cơ chế Định tuyến Shell (`ShellResolver`)
+- **Quyết định chính thức:**
+  - Ưu tiên tuần tự: Root (`su`) $\rightarrow$ Shizuku $\rightarrow$ ADB không dây.
+  - Trên Android $\le 10$ (`Build.VERSION.SDK_INT < 30`): Tự động ẩn tính năng ADB không dây trên giao diện và hiển thị chủ đề hướng dẫn `android_old`.
