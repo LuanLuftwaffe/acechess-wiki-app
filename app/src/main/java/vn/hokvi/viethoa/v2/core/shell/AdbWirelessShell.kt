@@ -1,22 +1,30 @@
 package vn.hokvi.viethoa.v2.core.shell
 
+import android.content.Context
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import vn.hokvi.viethoa.v2.core.adb.AdbConnectionManager
 
-class AdbWirelessShell : ShellExecutor {
+class AdbWirelessShell(private val context: Context? = null) : ShellExecutor {
     override val type: ShellType = ShellType.ADB_WIRELESS
 
+    private val adbManager: AdbConnectionManager? by lazy {
+        context?.let { AdbConnectionManager.getInstance(it) }
+    }
+
     override suspend fun isAvailable(): Boolean = withContext(Dispatchers.IO) {
-        // Full in-app ADB wireless implementation will be integrated in Phase 5
-        false
+        adbManager?.isConnected() == true
     }
 
     override suspend fun execute(command: String): ExecutionResult = withContext(Dispatchers.IO) {
-        ExecutionResult(
-            exitCode = -1,
-            stdout = "",
-            stderr = "ADB Không Dây chưa kết nối (sẽ hoàn thiện ở Phase 5)",
-            durationMs = 0
-        )
+        val mgr = adbManager
+            ?: return@withContext ExecutionResult(
+                exitCode = -1,
+                stdout = "",
+                stderr = "Không thể khởi tạo AdbConnectionManager (thiếu Context)",
+                durationMs = 0
+            )
+
+        mgr.execute(command)
     }
 }

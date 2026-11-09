@@ -42,11 +42,13 @@
   - Kéo từ S3 Cloudfly (`https://s3.cloudfly.vn/wxq/...`) theo đúng `manifest.json`.
   - Tải gói `.json.gz`, kiểm tra SHA-256, giải nén và ghi đè vào VFS game; giữ fallback offline từ assets.
   - Trạng thái: [ ] Chưa thực hiện (Phase 7).
-- [ ] **Hàng 10: Động Cơ ADB Không Dây Độc Lập (In-App ADB)**
+- [x] **Hàng 10: Động Cơ ADB Không Dây Độc Lập (In-App ADB)**
   - Tự quét cổng qua giao thức mDNS/Zeroconf NSD (`AdbNsd`).
-  - Ghép nối mã PIN qua thanh thông báo (Notification Direct Reply).
-  - Dịch vụ tiền tuyến giữ socket kết nối (`AdbKeepService`) kết hợp `libadb-android` + Conscrypt.
-  - Trạng thái: [ ] Chưa thực hiện (Phase 5).
+  - Ghép nối mã PIN qua thanh thông báo (Notification Direct Reply với `RemoteInput`).
+  - Dịch vụ tiền tuyến giữ socket kết nối (`AdbKeepService` foreground `connectedDevice`) kết hợp `libadb-android` + Conscrypt.
+  - Hỗ trợ nhập thủ công cổng / mã khi mDNS thất bại (topic `no_device`).
+  - Xử lý degrade trên Android $\le 10$ (ẩn ADB không dây, hiển thị topic `android_old`).
+  - Trạng thái: [x] Đã hoàn thành tại Phase 5 (ghép vào `ShellResolver` như backend thứ 3).
 - [ ] **Hàng 11: Cơ sở Tri Thức Hướng Dẫn Thiết Bị Động**
   - Đọc từ tệp `huong-dan-thiet-bi.json` đóng gói sẵn.
   - Nhận diện 9 hồ sơ nhà sản xuất (OEM Profiles) và 15 chủ đề chuyên sâu (Topics).
@@ -87,10 +89,12 @@
 - [ ] Ghi tệp đánh dấu phiên bản `lineup-vi.stamp` và `ai-vi.stamp`.
 
 ### Nhóm 5: Động Cơ ADB Không Dây Độc Lập (In-App ADB)
-- [ ] Module `AdbNsdScanner` tự động quét mạng LAN tìm cổng gỡ lỗi không dây ngẫu nhiên qua mDNS.
-- [ ] Dịch vụ `AdbPairService` gửi thông báo kèm hành động Direct Reply để nhập PIN 6 số.
-- [ ] Receiver `AdbReplyReceiver` nhận chuỗi PIN và gọi thư viện `libadb-android` xác thực TLS.
-- [ ] Dịch vụ tiền tuyến `AdbKeepService` duy trì socket kết nối liên tục với `localhost`.
+- [x] Module `AdbNsd` tự động quét mạng LAN tìm cổng gỡ lỗi không dây ngẫu nhiên qua mDNS (`_adb-tls-connect._tcp`, `_adb-tls-pairing._tcp`).
+- [x] Dịch vụ `AdbPairService` gửi thông báo kèm hành động Direct Reply (`RemoteInput`) để nhập PIN 6 số.
+- [x] Receiver `AdbReplyReceiver` nhận chuỗi PIN và gọi thư viện `libadb-android` xác thực TLS qua `PairingConnectionCtx`.
+- [x] Dịch vụ tiền tuyến `AdbKeepService` duy trì socket kết nối liên tục với `127.0.0.1` (`connectedDevice`).
+- [x] Hỗ trợ nhập thủ công cổng / mã PIN khi quét mDNS thất bại (topic `no_device`).
+- [x] Xử lý degrade trên Android $\le 10$ (ẩn ADB không dây, hiển thị topic `android_old`).
 
 ### Nhóm 6: Cầu Nối Shizuku & Root Tự Động
 - [x] Thăm dò binary `su` và quyền Root của thiết bị (`RootShell`).
@@ -151,10 +155,13 @@
   - [x] Xử lý đầy đủ các lỗi cài đặt và ánh xạ chủ đề hướng dẫn: `USER_RESTRICTED` (topic `xiaomi`), `INSTALL_BLOCKED` (topic `install_blocked`), `SCREEN_LOCK_TIMEOUT` (topic `screen_lock`).
   - [x] Unit test `PackageInstallerTest` đạt 8/8 tests pass; Build `./gradlew assembleDebug` thành công; Kiểm chứng thực tế cài đặt và gỡ `probe.apk` trên MEmu thành công 100%.
 
-- [ ] **Phase 5: Động Cơ ADB Không Dây Trong App (In-App ADB)**
-  - [ ] Tích hợp `libadb-android` + Conscrypt.
-  - [ ] Triển khai `AdbNsdScanner` (mDNS), `AdbPairService` (Notification Direct Reply PIN), `AdbKeepService`.
-  - [ ] Xử lý degrade trên Android $\le 10$ (ẩn ADB không dây, hiển thị hướng dẫn `android_old`).
+- [x] **Phase 5: Động Cơ ADB Không Dây Trong App (In-App ADB)**
+  - [x] Tích hợp `libadb-android` + Conscrypt và sinh chứng chỉ tự ký X.509 (`SelfCert` ASN.1 DER).
+  - [x] Triển khai `AdbNsd` (mDNS scanner cho `_adb-tls-connect._tcp`, `_adb-tls-pairing._tcp`), `AdbPairService` (Notification Direct Reply PIN 6 số với `AdbReplyReceiver`), `AdbKeepService` (Foreground Service type `connectedDevice`).
+  - [x] Hỗ trợ hộp thoại nhập thủ công Cổng / Mã PIN khi mDNS không quét được (ánh xạ topic `no_device`).
+  - [x] Ghép nối vào `ShellResolver` như backend thứ 3 (`AdbWirelessShell`).
+  - [x] Xử lý degrade trên Android $\le 10$ (ẩn ADB không dây, hiển thị hướng dẫn `android_old`).
+  - [x] Unit test `AdbModelsTest` pass 100%; Build `./gradlew assembleDebug` thành công; Kiểm chứng thực tế tính năng degrade trên máy giả lập MEmu Android 9 (SDK 28).
 
 - [ ] **Phase 6: Nhạc Nền Game & Sân Khấu ShowTime**
   - [ ] `MusicManager`: Thư viện 50 bài hát, nạp `titles.txt` và cờ `enabled` vào `/HOKVI/music/`.

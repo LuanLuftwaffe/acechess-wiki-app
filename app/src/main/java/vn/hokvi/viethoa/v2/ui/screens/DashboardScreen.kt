@@ -14,6 +14,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -22,12 +24,19 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import vn.hokvi.viethoa.v2.R
 import vn.hokvi.viethoa.v2.core.detector.ClassificationSource
@@ -52,10 +61,17 @@ fun DashboardScreen(
     onRefresh: () -> Unit,
     onRequestShizuku: () -> Unit,
     onDeepVerify: () -> Unit = {},
+    onStartAdbPairing: () -> Unit = {},
+    onManualPairAdb: (port: Int, code: String) -> Unit = { _, _ -> },
+    onManualConnectAdb: (port: Int) -> Unit = {},
     onNavigateToPatch: () -> Unit,
     onNavigateToGuide: () -> Unit
 ) {
     val scrollState = rememberScrollState()
+    var showManualDialog by remember { mutableStateOf(false) }
+    var manualPairPort by remember { mutableStateOf("") }
+    var manualPairCode by remember { mutableStateOf("") }
+    var manualConnectPort by remember { mutableStateOf("") }
 
     Column(
         modifier = Modifier
@@ -170,6 +186,111 @@ fun DashboardScreen(
                             style = MaterialTheme.typography.labelLarge,
                             color = GoldPrimary
                         )
+                    }
+                }
+            }
+        }
+
+        // 1.5. Wireless ADB Card (Phase 5)
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .border(1.dp, DarkBorder, RoundedCornerShape(12.dp)),
+            colors = CardDefaults.cardColors(containerColor = DarkSurface),
+            shape = RoundedCornerShape(12.dp)
+        ) {
+            Column(
+                modifier = Modifier.padding(16.dp),
+                verticalArrangement = Arrangement.spacedBy(10.dp)
+            ) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = stringResource(R.string.adb_wireless_card_title),
+                        style = MaterialTheme.typography.titleMedium,
+                        color = TextPrimary
+                    )
+                    val statusText = if (uiState.isAdbWirelessConnected) "Đã kết nối" else "Chưa kết nối"
+                    val statusColor = if (uiState.isAdbWirelessConnected) EmeraldSuccess else TextSecondary
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(6.dp))
+                            .background(DarkSurfaceVariant)
+                            .padding(horizontal = 8.dp, vertical = 4.dp)
+                    ) {
+                        Text(
+                            text = statusText,
+                            style = MaterialTheme.typography.bodySmall,
+                            color = statusColor
+                        )
+                    }
+                }
+
+                if (uiState.isAndroid10OrLower) {
+                    // Degrade on Android <= 10
+                    Text(
+                        text = stringResource(R.string.adb_wireless_android_old),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = CrimsonError
+                    )
+                    OutlinedButton(
+                        onClick = onNavigateToGuide,
+                        modifier = Modifier.fillMaxWidth(),
+                        shape = RoundedCornerShape(8.dp)
+                    ) {
+                        Text(
+                            text = "Xem hướng dẫn Android cũ (topic android_old)",
+                            style = MaterialTheme.typography.labelLarge,
+                            color = GoldPrimary
+                        )
+                    }
+                } else {
+                    // Android 11+
+                    Text(
+                        text = stringResource(R.string.adb_wireless_desc),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = TextSecondary
+                    )
+
+                    if (!uiState.adbPairMessage.isNullOrBlank()) {
+                        Text(
+                            text = uiState.adbPairMessage,
+                            style = MaterialTheme.typography.bodySmall,
+                            color = CyanAccent
+                        )
+                    }
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Button(
+                            onClick = onStartAdbPairing,
+                            modifier = Modifier.weight(1f),
+                            shape = RoundedCornerShape(8.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = CyanAccent)
+                        ) {
+                            Text(
+                                text = stringResource(R.string.adb_wireless_btn_pair),
+                                style = MaterialTheme.typography.labelLarge,
+                                color = MaterialTheme.colorScheme.onPrimary
+                            )
+                        }
+
+                        OutlinedButton(
+                            onClick = { showManualDialog = true },
+                            modifier = Modifier.weight(1f),
+                            shape = RoundedCornerShape(8.dp)
+                        ) {
+                            Text(
+                                text = stringResource(R.string.adb_wireless_btn_manual),
+                                style = MaterialTheme.typography.labelLarge,
+                                color = GoldPrimary
+                            )
+                        }
                     }
                 }
             }
@@ -542,5 +663,105 @@ fun DashboardScreen(
                 )
             }
         }
+    }
+
+    if (showManualDialog) {
+        AlertDialog(
+            onDismissRequest = { showManualDialog = false },
+            title = {
+                Text(
+                    text = stringResource(R.string.adb_manual_dialog_title),
+                    style = MaterialTheme.typography.titleMedium,
+                    color = GoldPrimary
+                )
+            },
+            text = {
+                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                    Text(
+                        text = stringResource(R.string.adb_manual_pairing_desc),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = TextSecondary
+                    )
+                    OutlinedTextField(
+                        value = manualPairPort,
+                        onValueChange = { manualPairPort = it },
+                        label = { Text(stringResource(R.string.adb_manual_port_label)) },
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                        singleLine = true,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    OutlinedTextField(
+                        value = manualPairCode,
+                        onValueChange = { manualPairCode = it },
+                        label = { Text(stringResource(R.string.adb_manual_code_label)) },
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                        singleLine = true,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    Button(
+                        onClick = {
+                            val port = manualPairPort.toIntOrNull()
+                            if (port != null && manualPairCode.isNotBlank()) {
+                                onManualPairAdb(port, manualPairCode)
+                            }
+                        },
+                        modifier = Modifier.fillMaxWidth(),
+                        shape = RoundedCornerShape(8.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = CyanAccent)
+                    ) {
+                        Text(stringResource(R.string.adb_btn_submit_pair))
+                    }
+
+                    Spacer(modifier = Modifier.height(6.dp))
+
+                    OutlinedTextField(
+                        value = manualConnectPort,
+                        onValueChange = { manualConnectPort = it },
+                        label = { Text(stringResource(R.string.adb_manual_connect_port_label)) },
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                        singleLine = true,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    Button(
+                        onClick = {
+                            val port = manualConnectPort.toIntOrNull()
+                            if (port != null) {
+                                onManualConnectAdb(port)
+                                showManualDialog = false
+                            }
+                        },
+                        modifier = Modifier.fillMaxWidth(),
+                        shape = RoundedCornerShape(8.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = GoldPrimary)
+                    ) {
+                        Text(
+                            text = stringResource(R.string.adb_btn_submit_connect),
+                            color = MaterialTheme.colorScheme.onPrimary
+                        )
+                    }
+
+                    TextButton(
+                        onClick = {
+                            showManualDialog = false
+                            onNavigateToGuide()
+                        },
+                        modifier = Modifier.align(Alignment.CenterHorizontally)
+                    ) {
+                        Text(
+                            text = stringResource(R.string.adb_topic_no_device_hint),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = CyanAccent
+                        )
+                    }
+                }
+            },
+            confirmButton = {},
+            dismissButton = {
+                TextButton(onClick = { showManualDialog = false }) {
+                    Text(stringResource(R.string.btn_close), color = TextSecondary)
+                }
+            },
+            containerColor = DarkSurface
+        )
     }
 }

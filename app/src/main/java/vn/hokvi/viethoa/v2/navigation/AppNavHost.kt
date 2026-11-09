@@ -90,6 +90,9 @@ fun AppNavHost(
                     onRefresh = { dashboardViewModel.refreshStatus() },
                     onRequestShizuku = { dashboardViewModel.requestShizukuPermission() },
                     onDeepVerify = { dashboardViewModel.deepVerifyApk() },
+                    onStartAdbPairing = { dashboardViewModel.startAdbPairing() },
+                    onManualPairAdb = { port, code -> dashboardViewModel.pairAdbManual(port, code) },
+                    onManualConnectAdb = { port -> dashboardViewModel.connectAdbManual(port) },
                     onNavigateToPatch = {
                         navController.navigate(Screen.Patch.route)
                     },

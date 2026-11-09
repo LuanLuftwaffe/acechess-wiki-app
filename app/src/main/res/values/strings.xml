@@ -142,4 +142,19 @@
     <string name="dialog_confirm_rollback_msg">Bạn có chắc chắn muốn khôi phục game về nguyên bản gốc không? Các tệp ngôn ngữ Việt hoá sẽ được hoàn tác.</string>
     <string name="dialog_permission_needed_title">Yêu cầu quyền truy cập</string>
     <string name="dialog_permission_needed_msg">Ứng dụng cần quyền quản lý tệp hoặc quyền Shell (Shizuku/Root/ADB) để có thể ghi tệp Việt hoá vào thư mục game.</string>
+
+    <!-- Phase 5: Wireless ADB -->
+    <string name="adb_wireless_card_title">Gỡ lỗi không dây trong app (In-App ADB)</string>
+    <string name="adb_wireless_desc">Kết nối quyền Shell trực tiếp trên Android 11+ mà không cần Shizuku hay máy tính qua ghép nối mã PIN.</string>
+    <string name="adb_wireless_btn_pair">Bật quét mDNS &amp; Ghép nối</string>
+    <string name="adb_wireless_btn_manual">Nhập thủ công cổng / mã PIN</string>
+    <string name="adb_wireless_android_old">Thiết bị đang chạy Android 10 trở xuống. Tính năng Gỡ lỗi không dây trong app không hỗ trợ (yêu cầu Android 11+). Vui lòng sử dụng quyền Root, Shizuku hoặc cáp máy tính (chủ đề android_old).</string>
+    <string name="adb_manual_dialog_title">Nhập thủ công cổng &amp; mã ghép nối</string>
+    <string name="adb_manual_pairing_desc">Nhập số cổng ghép nối và mã PIN 6 số từ màn hình Cài đặt nhà phát triển > Ghép nối bằng mã.</string>
+    <string name="adb_manual_port_label">Cổng ghép nối (Pairing Port)</string>
+    <string name="adb_manual_code_label">Mã PIN 6 số (Pairing Code)</string>
+    <string name="adb_manual_connect_port_label">Cổng kết nối chính (Connect Port)</string>
+    <string name="adb_btn_submit_pair">Thực hiện ghép nối</string>
+    <string name="adb_btn_submit_connect">Kết nối cổng chính</string>
+    <string name="adb_topic_no_device_hint">Không tìm thấy thiết bị qua mDNS? Hãy xem chủ đề hướng dẫn no_device để khắc phục.</string>
 </resources>

@@ -56,7 +56,8 @@
         <!-- 1. Dịch vụ ghép nối ADB không dây bằng mã PIN -->
         <service
             android:name=".service.adb.AdbPairService"
-            android:exported="false" />
+            android:exported="false"
+            android:foregroundServiceType="connectedDevice" />
 
         <!-- 2. Dịch vụ tiền tuyến giữ kết nối socket ADB luôn mở -->
         <service

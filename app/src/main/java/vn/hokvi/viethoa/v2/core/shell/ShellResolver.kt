@@ -1,5 +1,6 @@
 package vn.hokvi.viethoa.v2.core.shell
 
+import android.content.Context
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -10,9 +11,10 @@ data class ShellResolution(
 )
 
 class ShellResolver(
+    context: Context? = null,
     val rootShell: RootShell = RootShell(),
     val shizukuShell: ShizukuShell = ShizukuShell(),
-    val adbWirelessShell: AdbWirelessShell = AdbWirelessShell()
+    val adbWirelessShell: AdbWirelessShell = AdbWirelessShell(context)
 ) {
     suspend fun resolve(): ShellResolution = withContext(Dispatchers.IO) {
         // 1. Thử Root (su)
