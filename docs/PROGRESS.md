@@ -62,8 +62,8 @@
 ## II. CHECKLIST 8 NHÓM TÍNH NĂNG CHI TIẾT (MỤC 4)
 
 ### Nhóm 1: Trình Quản Lý & Thi Công Bản Vá (Core Engine)
-- [ ] Kiểm tra trạng thái trò chơi (`checkInfo`): nhận diện cài đặt, phiên bản, phân loại 5 dạng APK (`goc`, `base`, `key`, `font`, `font_img`) bằng `FLAG_DEBUGGABLE` + kích thước + cache `(size, lastModified)`.
-- [ ] Tính toán dung lượng bộ nhớ khả dụng (`SpacePlan` / `SpaceNeed` yêu cầu 2–4 GB trống).
+- [x] Kiểm tra trạng thái trò chơi (`checkInfo`): nhận diện cài đặt, phiên bản, phân loại 5 dạng APK (`goc`, `base`, `key`, `font`, `font_img`) bằng `FLAG_DEBUGGABLE` + kích thước + cache `(size, lastModified)`.
+- [x] Tính toán dung lượng bộ nhớ khả dụng (`SpacePlan` / `SpaceNeed` yêu cầu 2–4 GB trống).
 - [ ] Thi công bản vá đa tuỳ chọn (`wantImages`, `wantRules`, `wantVfx`, `keepGocPref`).
 - [ ] Khôi phục bản gốc 1-Click (Offline Rollback từ `.orig`).
 - [ ] Tự động khởi chạy trò chơi sau khi vá (`launchGame`).
@@ -130,9 +130,11 @@
   - [x] UI Compose: Màn hình Trạng thái hiển thị backend khả dụng (Root/Shizuku/ADB), nút xin quyền Shizuku.
   - [x] Tiêu chí nghiệm thu Phase 1: Mở app, hiển thị đúng backend, ghi lệnh kiểm tra `id` ra `nhat-ky.txt`. Đã kiểm chứng thực tế trên MEmu (`uid=0(root)` qua Shizuku, exit code 0).
 
-- [ ] **Phase 2: Nhận Diện Trạng Thái Game & Thiết Bị**
-  - [ ] Module `GameStateDetector`: Kiểm tra game `com.tencent.tmgp.osgame`, phiên bản game, phân loại 5 dạng APK (`goc`, `base`, `key`, `font`, `font_img`) bằng `FLAG_DEBUGGABLE` + kích thước + cache `(size, lastModified)`.
-  - [ ] Module `SpacePlanner`: Tính toán dung lượng trống 2–4 GB.
+- [x] **Phase 2: Nhận Diện Trạng Thái Game & Thiết Bị**
+  - [x] Module `GameStateDetector`: Kiểm tra game `com.tencent.tmgp.osgame`, phiên bản game, phân loại 5 dạng APK (`goc`, `base`, `key`, `font`, `font_img`) bằng `FLAG_DEBUGGABLE` + kích thước + cache `(size, lastModified)`.
+  - [x] Module `SpacePlanner`: Tính toán dung lượng trống 2–4 GB.
+  - [x] Unit test: `ApkClassifierTest` đạt 11/11 tests pass (khớp kích thước, debuggable, sha256, cache, space thresholds, manifest deserialization).
+  - [x] Kiểm chứng thực tế trên MEmu: Phát hiện game `1.1.1` (versionCode 774472), cảnh báo lệch phiên bản manifest `1.8.0.1`, đo bộ nhớ trống `45.0 GB / 55.3 GB` đạt chuẩn.
 
 - [ ] **Phase 3: Động Cơ Vá Game QtsVFS (Tầng 2, 3, 4 + Rollback)**
   - [ ] `PatchSource`: Nạp 4 file CSDL sạch từ `docs/upstream_data/patch_1.8.0.1/` (`1.db`=180224, `1_0.db`=33587200, `4.db`=229376, `4_0.db`=34897920 bytes).

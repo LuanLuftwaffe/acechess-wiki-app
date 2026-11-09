@@ -87,6 +87,7 @@ fun AppNavHost(
                     uiState = uiState,
                     onRefresh = { dashboardViewModel.refreshStatus() },
                     onRequestShizuku = { dashboardViewModel.requestShizukuPermission() },
+                    onDeepVerify = { dashboardViewModel.deepVerifyApk() },
                     onNavigateToPatch = {
                         navController.navigate(Screen.Patch.route)
                     },

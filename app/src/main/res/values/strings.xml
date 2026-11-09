@@ -31,13 +31,47 @@
     <string name="game_package">com.tencent.tmgp.osgame</string>
     <string name="game_installed">Đã phát hiện game</string>
     <string name="game_not_installed">Chưa cài đặt game</string>
-    <string name="game_version">Phiên bản game: %1$s</string>
+    <string name="game_version">Phiên bản: %1$s</string>
+    <string name="game_version_code">VersionCode: %1$d</string>
+    <string name="game_version_match">Khớp phiên bản hỗ trợ (%1$s)</string>
+    <string name="game_version_mismatch">Lệch phiên bản! Bản vá yêu cầu %1$s, máy hiện tại %2$s</string>
+    <string name="game_apk_path">Vị trí: %1$s</string>
+    <string name="game_apk_size">Kích thước APK: %1$s</string>
+    <string name="game_apk_type">Phân loại APK: %1$s</string>
+    <string name="game_debuggable_badge">Bản Debuggable (key)</string>
+    <string name="game_deep_verifying">Đang kiểm tra băm SHA-256...</string>
+    <string name="game_deep_verified">SHA-256: %1$s</string>
+    <string name="game_apk_source">Nguồn nhận diện: %1$s</string>
+    <string name="source_debuggable">Cờ Debuggable (key)</string>
+    <string name="source_cache">Bộ nhớ đệm (Cache)</string>
+    <string name="source_size">Khớp kích thước byte</string>
+    <string name="source_hash">Khớp mã băm SHA-256</string>
+    <string name="source_ambiguous">Kích thước bản vá (Cần xác minh hash)</string>
+    <string name="source_unknown">Không khớp dữ liệu</string>
+
+    <!-- APK Types -->
+    <string name="apk_type_goc">Bản gốc Store (Original)</string>
+    <string name="apk_type_base">Bản nền (Base)</string>
+    <string name="apk_type_key">Bản chìa khoá (Debuggable)</string>
+    <string name="apk_type_font">Bản Việt hoá (Font Localized)</string>
+    <string name="apk_type_font_img">Bản Việt hoá có hình ảnh</string>
+    <string name="apk_type_unknown">Không xác định / Bản tuỳ biến</string>
+
+    <!-- Storage Space -->
+    <string name="storage_status_title">Dung lượng bộ nhớ khả dụng</string>
+    <string name="storage_free_space">Trống: %1$s / %2$s</string>
+    <string name="storage_optimal">Dung lượng bộ nhớ đủ điều kiện</string>
+    <string name="storage_warning">Bộ nhớ khả dụng thấp (&lt; 4 GB). Khuyến nghị dọn thêm chỗ để chạy ổn định.</string>
+    <string name="storage_critical">Bộ nhớ không đủ (&lt; 2 GB)! Cần tối thiểu 2 GB trống để sao lưu và thi công bản vá.</string>
+    <string name="storage_detail_need">Ước tính cần khoảng: %1$s</string>
+
     <string name="game_patch_status_original">Bản gốc (Chưa Việt hoá)</string>
     <string name="game_patch_status_patched">Đã Việt hoá (v%1$s)</string>
     <string name="game_patch_status_modified">Đã chỉnh sửa / Cần kiểm tra</string>
 
     <!-- Action Buttons -->
     <string name="btn_apply_patch">Bắt đầu Việt hoá</string>
+    <string name="btn_deep_verify">Kiểm tra SHA-256</string>
     <string name="btn_rollback">Khôi phục gốc</string>
     <string name="btn_check_update">Kiểm tra bản cập nhật</string>
     <string name="btn_sync_meta">Đồng bộ Meta &amp; AI</string>

@@ -28,6 +28,11 @@
     <!-- 12. Tự kích hoạt tác vụ kiểm tra bản vá sau khi máy khởi động lại -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
+    <!-- Truy vấn gói game đích (Package Visibility trên Android 11+) -->
+    <queries>
+        <package android:name="com.tencent.tmgp.osgame" />
+    </queries>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"

@@ -1,6 +1,7 @@
 package vn.hokvi.viethoa.v2.ui.viewmodel
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -8,6 +9,11 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import rikka.shizuku.Shizuku
+import vn.hokvi.viethoa.v2.core.detector.GameStateDetector
+import vn.hokvi.viethoa.v2.core.detector.GameStateInfo
+import vn.hokvi.viethoa.v2.core.detector.SpacePlanner
+import vn.hokvi.viethoa.v2.core.detector.SpaceStatus
+import vn.hokvi.viethoa.v2.core.detector.SpaceStatusLevel
 import vn.hokvi.viethoa.v2.core.shell.ShellLogger
 import vn.hokvi.viethoa.v2.core.shell.ShellResolver
 import vn.hokvi.viethoa.v2.core.shell.ShellType
@@ -19,12 +25,19 @@ data class DashboardUiState(
     val recentLogs: String = "",
     val isShizukuRunning: Boolean = false,
     val hasShizukuPermission: Boolean = false,
-    val isLoading: Boolean = false
+    val isLoading: Boolean = false,
+    // Phase 2: Game State & Storage Space
+    val gameState: GameStateInfo = GameStateInfo(isInstalled = false),
+    val spaceStatus: SpaceStatus = SpaceStatus(0L, 0L, SpaceStatusLevel.CRITICAL),
+    val isDeepVerifying: Boolean = false
 )
 
-class DashboardViewModel(
+class DashboardViewModel @JvmOverloads constructor(
+    application: Application,
     private val shellResolver: ShellResolver = ShellResolver()
-) : ViewModel() {
+) : AndroidViewModel(application) {
+
+    private val gameStateDetector = GameStateDetector(application.applicationContext)
 
     private val _uiState = MutableStateFlow(DashboardUiState())
     val uiState: StateFlow<DashboardUiState> = _uiState.asStateFlow()
@@ -51,6 +64,10 @@ class DashboardViewModel(
 
             val logs = ShellLogger.readLogs()
 
+            // Phase 2: Kiểm tra trạng thái game (checkInfo) và dung lượng bộ nhớ (SpacePlanner)
+            val gameInfo = gameStateDetector.checkInfo()
+            val spaceInfo = SpacePlanner.checkDeviceStorage()
+
             _uiState.update {
                 it.copy(
                     activeBackend = resolution.activeType,
@@ -59,7 +76,22 @@ class DashboardViewModel(
                     recentLogs = logs,
                     isShizukuRunning = shizukuRunning,
                     hasShizukuPermission = shizukuPerm,
+                    gameState = gameInfo,
+                    spaceStatus = spaceInfo,
                     isLoading = false
+                )
+            }
+        }
+    }
+
+    fun deepVerifyApk() {
+        viewModelScope.launch {
+            _uiState.update { it.copy(isDeepVerifying = true) }
+            val updated = gameStateDetector.deepVerifyApk(_uiState.value.gameState)
+            _uiState.update {
+                it.copy(
+                    gameState = updated,
+                    isDeepVerifying = false
                 )
             }
         }

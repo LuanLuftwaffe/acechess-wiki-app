@@ -94,4 +94,7 @@ dependencies {
 
     // Core AndroidX
     implementation("androidx.core:core-ktx:1.13.1")
+
+    // Unit Testing
+    testImplementation("junit:junit:4.13.2")
 }
