@@ -57,7 +57,7 @@ class VfsCommander(
     }
 
     /**
-     * So sánh 2 chuỗi phiên bản dạng semver (ví dụ "1.8.0.1" vs "1.7.0.1").
+     * So sánh 2 chuỗi phiên bản dạng semver (ví dụ "1.9.2.4" vs "1.9.2.3").
      * Trả về: > 0 nếu v1 > v2, < 0 nếu v1 < v2, 0 nếu bằng nhau.
      */
     fun vcmp(v1: String, v2: String): Int {
@@ -159,7 +159,10 @@ class VfsCommander(
     /**
      * Nạp hệ thống file động tại /sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/
      */
-    fun mountDynamicVfs(context: Context): Boolean {
+    fun mountDynamicVfs(
+        context: Context,
+        gameVersion: String = vn.hokvi.viethoa.v2.core.detector.ManifestRepository.getManifest(context).gameVersion
+    ): Boolean {
         val baseDir = File(DYNAMIC_HOKVI_PATH)
         if (!baseDir.exists()) baseDir.mkdirs()
 
@@ -187,9 +190,9 @@ class VfsCommander(
         // 3. Khởi tạo tem đánh dấu phiên bản meta
         try {
             val lineupStamp = File(baseDir, "lineup-vi.stamp")
-            if (!lineupStamp.exists()) lineupStamp.writeText("1.8.0.1")
+            if (!lineupStamp.exists()) lineupStamp.writeText(gameVersion)
             val aiStamp = File(baseDir, "ai-vi.stamp")
-            if (!aiStamp.exists()) aiStamp.writeText("1.8.0.1")
+            if (!aiStamp.exists()) aiStamp.writeText(gameVersion)
         } catch (_: Exception) {}
 
         return true

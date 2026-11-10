@@ -6,16 +6,18 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import vn.hokvi.viethoa.v2.core.detector.GameStateDetector
 import vn.hokvi.viethoa.v2.core.detector.SpacePlanner
+import vn.hokvi.viethoa.v2.core.detector.SpaceStatus
 import vn.hokvi.viethoa.v2.core.detector.SpaceStatusLevel
 import vn.hokvi.viethoa.v2.core.shell.ShellResolver
 import vn.hokvi.viethoa.v2.core.shell.ShellType
 
 class PatchEngine(
-    private val context: Context,
+    private val context: Context? = null,
     val shellResolver: ShellResolver = ShellResolver(),
     val vfsCommander: VfsCommander = VfsCommander(shellResolver),
-    val patchSource: PatchSource = CompositePatchSource.default(context),
-    val gameStateDetector: GameStateDetector = GameStateDetector(context)
+    val patchSource: PatchSource = context?.let { CompositePatchSource.default(it) } ?: MockPatchSource(),
+    val gameStateDetector: GameStateDetector = GameStateDetector(context),
+    val spaceChecker: () -> SpaceStatus = { SpacePlanner.checkDeviceStorage() }
 ) {
 
     /**
@@ -29,26 +31,45 @@ class PatchEngine(
             // Bước 1: Kiểm tra điều kiện tiên quyết (Preflight)
             onProgress(PatchProgress(PatchStep.PREFLIGHT_CHECK, "Đang kiểm tra điều kiện thiết bị và game...", 0.1f))
 
+            // 1.1. Kiểm tra trạng thái game đã cài đặt
             val gameInfo = gameStateDetector.checkInfo()
             if (!gameInfo.isInstalled) {
                 onProgress(PatchProgress(PatchStep.FAILED, "Chưa phát hiện game Vương Giả Vinh Diệu trên máy!", 0f, true, "Chưa cài game"))
                 return@withContext false
             }
 
-            val space = SpacePlanner.checkDeviceStorage()
+            // 1.2. Kiểm tra bộ dữ liệu vá và tính tương thích phiên bản
+            val setInfo = patchSource.getSetInfo()
+            if (!patchSource.isAvailable() || setInfo == null) {
+                val errorMsg = "Chưa tìm thấy bộ dữ liệu vá trên máy (đang chờ dữ liệu vá)!"
+                onProgress(PatchProgress(PatchStep.FAILED, errorMsg, 0f, true, errorMsg))
+                return@withContext false
+            }
+
+            val patchGameVersion = (patchSource.gameVersion ?: setInfo.gameVersion).trim()
+            val installedGameVersion = (gameInfo.versionName ?: "").trim()
+
+            if (patchGameVersion.isEmpty() || patchGameVersion != installedGameVersion) {
+                val errorMsg = "Dữ liệu vá $patchGameVersion không khớp game $installedGameVersion, chưa có bản vá phù hợp"
+                onProgress(PatchProgress(PatchStep.FAILED, errorMsg, 0f, true, errorMsg))
+                return@withContext false
+            }
+
+            val targetGameVersion = patchGameVersion
+
+            // 1.3. Kiểm tra dung lượng bộ nhớ
+            val space = spaceChecker()
             if (space.level == SpaceStatusLevel.CRITICAL) {
                 onProgress(PatchProgress(PatchStep.FAILED, "Bộ nhớ thiết bị không đủ (dưới 2 GB trống)! Cần giải phóng thêm dung lượng.", 0f, true, "Thiếu bộ nhớ"))
                 return@withContext false
             }
 
+            // 1.4. Kiểm tra quyền Shell
             val shellRes = shellResolver.resolve()
             if (shellRes.activeType == ShellType.NONE) {
                 onProgress(PatchProgress(PatchStep.FAILED, "Chưa có quyền Shell khả dụng (Root/Shizuku/ADB) để thao tác!", 0f, true, "Thiếu quyền shell"))
                 return@withContext false
             }
-
-            val setInfo = patchSource.getSetInfo()
-            val targetGameVersion = setInfo?.gameVersion ?: "1.8.0.1"
 
             // Bước 2: Dọn dẹp kẹt gói 2 (unstickPackage2)
             onProgress(PatchProgress(PatchStep.UNSTICK_PKG2, "Đang kiểm tra và xử lý kẹt gói ngôn ngữ 2...", 0.25f))
@@ -88,7 +109,9 @@ class PatchEngine(
 
             // Bước 6: Nạp hệ thống VFS động (/sdcard/.../HOKVI/)
             onProgress(PatchProgress(PatchStep.DYNAMIC_VFS_MOUNT, "Đang nạp hệ thống VFS động (Font chữ, Meta AI, thư viện nhạc)...", 0.95f))
-            vfsCommander.mountDynamicVfs(context)
+            if (context != null) {
+                vfsCommander.mountDynamicVfs(context, targetGameVersion)
+            }
 
             // Hoàn tất
             onProgress(PatchProgress(PatchStep.COMPLETED, "Việt hoá game hoàn tất thành công 100%!", 1.0f, true))
@@ -119,11 +142,12 @@ class PatchEngine(
      * Khởi chạy trực tiếp trò chơi com.tencent.tmgp.osgame sau khi thi công xong.
      */
     fun launchGame(): Boolean {
+        val ctx = context ?: return false
         return try {
-            val intent = context.packageManager.getLaunchIntentForPackage(GameStateDetector.GAME_PACKAGE)
+            val intent = ctx.packageManager.getLaunchIntentForPackage(GameStateDetector.GAME_PACKAGE)
             if (intent != null) {
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                context.startActivity(intent)
+                ctx.startActivity(intent)
                 true
             } else {
                 false

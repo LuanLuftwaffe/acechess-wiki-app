@@ -23,11 +23,11 @@ class ApkClassifierTest {
     @Before
     fun setUp() {
         classifier = ApkClassifier()
-        // Dữ liệu mô phỏng đúng 100% manifest.json chuẩn của bản vá 1.8.0.1
+        // Dữ liệu mô phỏng đúng 100% manifest.json chuẩn của bản vá 1.9.2.4
         manifest = ManifestData(
             format = 4,
-            release = "android-1.8.0.1-r71",
-            gameVersion = "1.8.0.1",
+            release = "android-1.9.2.4-r73",
+            gameVersion = "1.9.2.4",
             packageName = "com.tencent.tmgp.osgame",
             remoteIndex = "https://s3.cloudfly.vn/wxq/android/vi-patch/index.json",
             latestUrl = "https://s3.cloudfly.vn/wxq/downloads/latest.json",
@@ -234,8 +234,8 @@ class ApkClassifierTest {
         val json = """
             {
               "format": 4,
-              "release": "android-1.8.0.1-r71",
-              "game_version": "1.8.0.1",
+              "release": "android-1.9.2.4-r73",
+              "game_version": "1.9.2.4",
               "package": "com.tencent.tmgp.osgame",
               "remote_index": "https://s3.cloudfly.vn/wxq/android/vi-patch/index.json",
               "latest_url": "https://s3.cloudfly.vn/wxq/downloads/latest.json",
@@ -252,7 +252,7 @@ class ApkClassifierTest {
 
         val parsed = ManifestRepository.parse(json)
         assertEquals(4, parsed.format)
-        assertEquals("1.8.0.1", parsed.gameVersion)
+        assertEquals("1.9.2.4", parsed.gameVersion)
         assertEquals("com.tencent.tmgp.osgame", parsed.packageName)
         assertNotNull(parsed.apk["goc"])
         assertEquals(2026265394L, parsed.apk["goc"]?.size)

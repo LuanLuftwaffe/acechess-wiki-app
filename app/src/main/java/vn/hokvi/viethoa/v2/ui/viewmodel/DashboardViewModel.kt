@@ -1,4 +1,4 @@
-package vn.hokvi.viethoa.v2.ui.viewmodel
+﻿package vn.hokvi.viethoa.v2.ui.viewmodel
 
 import android.app.Application
 import android.os.Build
@@ -35,6 +35,7 @@ data class DashboardUiState(
     val isLoading: Boolean = false,
     // Phase 2: Game State & Storage Space
     val gameState: GameStateInfo = GameStateInfo(isInstalled = false),
+    val manifestGameVersion: String = "",
     val spaceStatus: SpaceStatus = SpaceStatus(0L, 0L, SpaceStatusLevel.CRITICAL),
     val isDeepVerifying: Boolean = false,
     // Phase 5: Wireless ADB
@@ -91,7 +92,8 @@ class DashboardViewModel @JvmOverloads constructor(
             val logs = ShellLogger.readLogs()
 
             // Phase 2: Kiểm tra game com.tencent.tmgp.osgame & dung lượng bộ nhớ
-            val gameInfo = gameStateDetector.checkInfo()
+            val manifest = vn.hokvi.viethoa.v2.core.detector.ManifestRepository.getManifest(getApplication<Application>().applicationContext)
+            val gameInfo = gameStateDetector.checkInfo(manifest)
             val spaceInfo = SpacePlanner.checkDeviceStorage()
             val lineupStamp = metaSyncManager.getCurrentLineupStamp()
             val aiviStamp = metaSyncManager.getCurrentAiViStamp()
@@ -106,6 +108,7 @@ class DashboardViewModel @JvmOverloads constructor(
                     hasShizukuPermission = shizukuPerm,
                     isAdbWirelessConnected = adbConnected,
                     gameState = gameInfo,
+                    manifestGameVersion = manifest.gameVersion,
                     spaceStatus = spaceInfo,
                     lineupStamp = lineupStamp,
                     aiviStamp = aiviStamp,

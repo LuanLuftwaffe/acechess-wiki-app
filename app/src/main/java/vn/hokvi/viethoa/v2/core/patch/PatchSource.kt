@@ -8,6 +8,8 @@ import java.io.InputStream
 import java.io.InputStreamReader
 
 interface PatchSource {
+    val gameVersion: String?
+        get() = getSetInfo()?.gameVersion
     fun isAvailable(): Boolean
     fun getSetInfo(): PatchSetInfo?
     fun getPatchFile(pid: String, fileName: String): File?
@@ -61,16 +63,21 @@ class DirectoryPatchSource(
 }
 
 class MockPatchSource(
-    private val cacheDir: File? = null
+    private val cacheDir: File? = null,
+    val mockGameVersion: String = "1.9.2.4",
+    val mockRelease: String = "android-1.9.2.4-r73"
 ) : PatchSource {
 
+    override val gameVersion: String
+        get() = mockGameVersion
+
     val mockSetInfo = PatchSetInfo(
-        gameVersion = "1.8.0.1",
-        release = "android-1.8.0.1-r71",
+        gameVersion = mockGameVersion,
+        release = mockRelease,
         packages = listOf(
             PatchPackageInfo(
                 pid = "1",
-                version = "1.8.0.1",
+                version = mockGameVersion,
                 pkgHash = "6973223835957040453",
                 files = listOf(
                     PatchFileInfo("1.db", 180224L, "9dcb00c43119b9baa5b0a98dccf758c784cd084542173820e139f2b4630b5f0a", 163840L, "ef731103994379468919a7365d8eaaa1fa46b5ad53ce51e3b0c6c8d1ce349689"),
@@ -79,7 +86,7 @@ class MockPatchSource(
             ),
             PatchPackageInfo(
                 pid = "4",
-                version = "1.8.0.1",
+                version = mockGameVersion,
                 pkgHash = "11040464179458596520",
                 files = listOf(
                     PatchFileInfo("4.db", 229376L, "70c4502cfc78e941bc95587f5250885eb282f991eb68a0e343fc80f1f743a369", 212992L, "5c517b829373e181a335212ae3179af287d7979b6803e35dddd7c7151a512018"),
@@ -157,15 +164,26 @@ class CompositePatchSource(
         fun default(context: Context): CompositePatchSource {
             val candidates = mutableListOf<PatchSource>()
 
-            // 1. Kiểm tra thư mục ngoài (External storage)
-            context.getExternalFilesDir("patch_1.8.0.1")?.let {
-                candidates.add(DirectoryPatchSource(it))
+            fun scanDir(dir: File?) {
+                if (dir == null || !dir.exists() || !dir.isDirectory) return
+                if (File(dir, "set.json").exists()) {
+                    candidates.add(DirectoryPatchSource(dir))
+                    return
+                }
+                dir.listFiles { f -> f.isDirectory }?.sortedByDescending { it.name }?.forEach { sub ->
+                    if (File(sub, "set.json").exists()) {
+                        candidates.add(DirectoryPatchSource(sub))
+                    }
+                }
             }
-            candidates.add(DirectoryPatchSource(File("/sdcard/Download/patch_1.8.0.1")))
-            candidates.add(DirectoryPatchSource(File("/sdcard/HOKVI/patch_1.8.0.1")))
 
-            // 2. Mock / fallback offline
-            candidates.add(MockPatchSource(context.cacheDir))
+            // 1. Quét thư mục ngoài và trong của ứng dụng
+            scanDir(context.getExternalFilesDir(null))
+            scanDir(context.filesDir)
+
+            // 2. Quét thư mục ngoài trên bộ nhớ chung
+            scanDir(File("/sdcard/Download"))
+            scanDir(File("/sdcard/HOKVI"))
 
             return CompositePatchSource(candidates)
         }

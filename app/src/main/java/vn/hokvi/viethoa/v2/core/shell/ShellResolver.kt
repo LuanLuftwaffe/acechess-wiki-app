@@ -10,13 +10,13 @@ data class ShellResolution(
     val reason: String
 )
 
-class ShellResolver(
+open class ShellResolver(
     context: Context? = null,
     val rootShell: RootShell = RootShell(),
     val shizukuShell: ShizukuShell = ShizukuShell(),
     val adbWirelessShell: AdbWirelessShell = AdbWirelessShell(context)
 ) {
-    suspend fun resolve(): ShellResolution = withContext(Dispatchers.IO) {
+    open suspend fun resolve(): ShellResolution = withContext(Dispatchers.IO) {
         // 1. Thử Root (su)
         if (rootShell.isAvailable()) {
             return@withContext ShellResolution(
@@ -61,7 +61,7 @@ class ShellResolver(
     /**
      * Hàm duy nhất thực thi lệnh shell có ghi log tập trung vào nhat-ky.txt
      */
-    suspend fun runLoggedCommand(command: String): ExecutionResult = withContext(Dispatchers.IO) {
+    open suspend fun runLoggedCommand(command: String): ExecutionResult = withContext(Dispatchers.IO) {
         val resolution = resolve()
         val executor = resolution.executor
 

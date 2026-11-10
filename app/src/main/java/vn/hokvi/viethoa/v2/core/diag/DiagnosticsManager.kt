@@ -1,4 +1,4 @@
-package vn.hokvi.viethoa.v2.core.diag
+﻿package vn.hokvi.viethoa.v2.core.diag
 
 import android.content.Context
 import android.os.Build
@@ -110,7 +110,8 @@ class DiagnosticsManager(
             sb.appendLine("  - Dung lượng tệp APK: ${gameInfo.apkSize} bytes (~${"%.2f".format(gameInfo.apkSize / (1024.0 * 1024.0 * 1024.0))} GB)")
             sb.appendLine("  - Phân loại APK: ${context.getString(gameInfo.classification.type.labelRes)} (${gameInfo.classification.type.key})")
             sb.appendLine("  - Nguồn nhận diện: ${gameInfo.classification.source}")
-            sb.appendLine("  - Khớp bản vá yêu cầu: ${if (gameInfo.isCompatible) "HỢP LỆ" else "LỆCH PHIÊN BẢN (Cần 1.8.0.1)"}")
+            val manifest = vn.hokvi.viethoa.v2.core.detector.ManifestRepository.getManifest(context)
+            sb.appendLine("  - Khớp bản vá yêu cầu: ${if (gameInfo.isCompatible) "HỢP LỆ" else "LỆCH PHIÊN BẢN (Cần ${manifest.gameVersion})"}")
         }
         sb.appendLine()
 

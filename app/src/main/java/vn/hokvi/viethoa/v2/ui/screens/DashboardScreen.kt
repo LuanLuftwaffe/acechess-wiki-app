@@ -1,4 +1,4 @@
-package vn.hokvi.viethoa.v2.ui.screens
+﻿package vn.hokvi.viethoa.v2.ui.screens
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -397,7 +397,7 @@ fun DashboardScreen(
                     val (compText, compColor) = if (uiState.gameState.isCompatible) {
                         stringResource(R.string.game_version_match, uiState.gameState.versionName ?: "") to EmeraldSuccess
                     } else {
-                        stringResource(R.string.game_version_mismatch, "1.8.0.1", uiState.gameState.versionName ?: "") to CrimsonError
+                        stringResource(R.string.game_version_mismatch, uiState.manifestGameVersion.ifBlank { "..." }, uiState.gameState.versionName ?: "") to CrimsonError
                     }
                     Text(
                         text = compText,

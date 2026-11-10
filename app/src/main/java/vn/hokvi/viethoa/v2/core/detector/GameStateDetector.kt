@@ -28,8 +28,8 @@ data class GameStateInfo(
     val sha256: String? = null
 )
 
-class GameStateDetector(
-    private val context: Context,
+open class GameStateDetector(
+    private val context: Context? = null,
     val classifier: ApkClassifier = ApkClassifier()
 ) {
     companion object {
@@ -40,9 +40,11 @@ class GameStateDetector(
      * Thăm dò nhanh trạng thái game (checkInfo).
      * Đọc PackageManager, kiểm tra kích thước APK và phân loại sơ bộ.
      */
-    fun checkInfo(manifest: ManifestData = ManifestRepository.getManifest(context)): GameStateInfo {
+    open fun checkInfo(manifest: ManifestData? = null): GameStateInfo {
+        val ctx = context ?: return GameStateInfo(isInstalled = false)
+        val targetManifest = manifest ?: ManifestRepository.getManifest(ctx)
         return try {
-            val pm = context.packageManager
+            val pm = ctx.packageManager
             val pInfo = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 pm.getPackageInfo(GAME_PACKAGE, PackageManager.PackageInfoFlags.of(0))
             } else {
@@ -68,14 +70,14 @@ class GameStateDetector(
             val apkSize = if (apkFile != null && apkFile.exists()) apkFile.length() else 0L
             val lastModified = if (apkFile != null && apkFile.exists()) apkFile.lastModified() else 0L
 
-            val isCompatible = vName.trim() == manifest.gameVersion.trim()
+            val isCompatible = vName.trim() == targetManifest.gameVersion.trim()
 
             val classification = classifier.classify(
                 size = apkSize,
                 lastModified = lastModified,
                 isDebuggable = isDebuggable,
                 sha256 = null,
-                manifest = manifest
+                manifest = targetManifest
             )
 
             GameStateInfo(
@@ -108,9 +110,9 @@ class GameStateDetector(
      * Tính toán SHA-256 thực tế của tệp APK ở luồng nền (IO Dispatcher)
      * và đối chiếu lại với manifest để đưa ra kết luận phân loại chắc chắn 100%.
      */
-    suspend fun deepVerifyApk(
+    open suspend fun deepVerifyApk(
         currentInfo: GameStateInfo,
-        manifest: ManifestData = ManifestRepository.getManifest(context)
+        manifest: ManifestData? = null
     ): GameStateInfo = withContext(Dispatchers.IO) {
         val apkPath = currentInfo.apkPath ?: return@withContext currentInfo
         val file = File(apkPath)
@@ -129,12 +131,13 @@ class GameStateDetector(
             }
             val calculatedSha = digest.digest().joinToString("") { "%02x".format(it) }
 
+            val targetManifest = manifest ?: context?.let { ManifestRepository.getManifest(it) } ?: ManifestData()
             val definitiveClassification = classifier.classify(
                 size = currentInfo.apkSize,
                 lastModified = currentInfo.lastModified,
                 isDebuggable = currentInfo.isDebuggable,
                 sha256 = calculatedSha,
-                manifest = manifest
+                manifest = targetManifest
             )
 
             currentInfo.copy(

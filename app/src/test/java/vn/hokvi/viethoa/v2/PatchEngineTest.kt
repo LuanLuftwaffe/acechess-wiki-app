@@ -113,10 +113,110 @@ class PatchEngineTest {
         val mock = MockPatchSource()
         assertTrue(mock.isAvailable())
         assertNotNull(mock.getSetInfo())
-        assertEquals("1.8.0.1", mock.getSetInfo()?.gameVersion)
+        assertEquals("1.9.2.4", mock.getSetInfo()?.gameVersion)
 
         val file1 = mock.getPatchFile("1", "1.db")
         assertNotNull(file1)
         assertTrue(file1!!.exists())
+    }
+
+    @Test
+    fun testPatchEngineBlocksWhenVersionMismatch() = kotlinx.coroutines.runBlocking {
+        // Game đang cài 1.9.2.4, nhưng bộ vá chỉ có 1.8.0.1
+        val mockDetector = object : vn.hokvi.viethoa.v2.core.detector.GameStateDetector() {
+            override fun checkInfo(manifest: vn.hokvi.viethoa.v2.core.detector.ManifestData?): vn.hokvi.viethoa.v2.core.detector.GameStateInfo {
+                return vn.hokvi.viethoa.v2.core.detector.GameStateInfo(
+                    isInstalled = true,
+                    versionName = "1.9.2.4"
+                )
+            }
+        }
+
+        val mismatchPatchSource = MockPatchSource(
+            mockGameVersion = "1.8.0.1",
+            mockRelease = "android-1.8.0.1-r71"
+        )
+
+        var lastProgress: vn.hokvi.viethoa.v2.core.patch.PatchProgress? = null
+        val engine = vn.hokvi.viethoa.v2.core.patch.PatchEngine(
+            context = null,
+            gameStateDetector = mockDetector,
+            patchSource = mismatchPatchSource,
+            spaceChecker = {
+                vn.hokvi.viethoa.v2.core.detector.SpaceStatus(
+                    freeBytes = 10L * 1024 * 1024 * 1024,
+                    totalBytes = 64L * 1024 * 1024 * 1024,
+                    level = vn.hokvi.viethoa.v2.core.detector.SpaceStatusLevel.OPTIMAL
+                )
+            }
+        )
+
+        val ok = engine.applyPatch(vn.hokvi.viethoa.v2.core.patch.PatchOptions()) { p ->
+            lastProgress = p
+        }
+
+        // BẮT BUỘC: Thất bại, dừng lại ngay và trả về false
+        assertFalse("PatchEngine phải chặn khi lệch phiên bản!", ok)
+        assertNotNull(lastProgress)
+        assertEquals(vn.hokvi.viethoa.v2.core.patch.PatchStep.FAILED, lastProgress?.currentStep)
+        val expectedMsg = "Dữ liệu vá 1.8.0.1 không khớp game 1.9.2.4, chưa có bản vá phù hợp"
+        assertEquals(expectedMsg, lastProgress?.message)
+    }
+
+    @Test
+    fun testPatchEngineAllowsWhenVersionMatches() = kotlinx.coroutines.runBlocking {
+        // Game đang cài 1.9.2.4 và bộ vá cũng là 1.9.2.4
+        val mockDetector = object : vn.hokvi.viethoa.v2.core.detector.GameStateDetector() {
+            override fun checkInfo(manifest: vn.hokvi.viethoa.v2.core.detector.ManifestData?): vn.hokvi.viethoa.v2.core.detector.GameStateInfo {
+                return vn.hokvi.viethoa.v2.core.detector.GameStateInfo(
+                    isInstalled = true,
+                    versionName = "1.9.2.4"
+                )
+            }
+        }
+
+        val matchingPatchSource = MockPatchSource(
+            mockGameVersion = "1.9.2.4",
+            mockRelease = "android-1.9.2.4-r73"
+        )
+
+        val mockShell = object : vn.hokvi.viethoa.v2.core.shell.ShellResolver() {
+            override suspend fun resolve() = vn.hokvi.viethoa.v2.core.shell.ShellResolution(
+                executor = object : vn.hokvi.viethoa.v2.core.shell.ShellExecutor {
+                    override val type = vn.hokvi.viethoa.v2.core.shell.ShellType.ROOT
+                    override suspend fun isAvailable() = true
+                    override suspend fun execute(command: String) = vn.hokvi.viethoa.v2.core.shell.ExecutionResult(0, "OK", "", 10)
+                },
+                activeType = vn.hokvi.viethoa.v2.core.shell.ShellType.ROOT,
+                reason = "Mock Root"
+            )
+            override suspend fun runLoggedCommand(command: String) =
+                vn.hokvi.viethoa.v2.core.shell.ExecutionResult(0, "OK", "", 10)
+        }
+
+        var lastProgress: vn.hokvi.viethoa.v2.core.patch.PatchProgress? = null
+        val engine = vn.hokvi.viethoa.v2.core.patch.PatchEngine(
+            context = null,
+            shellResolver = mockShell,
+            vfsCommander = vn.hokvi.viethoa.v2.core.patch.VfsCommander(mockShell),
+            gameStateDetector = mockDetector,
+            patchSource = matchingPatchSource,
+            spaceChecker = {
+                vn.hokvi.viethoa.v2.core.detector.SpaceStatus(
+                    freeBytes = 10L * 1024 * 1024 * 1024,
+                    totalBytes = 64L * 1024 * 1024 * 1024,
+                    level = vn.hokvi.viethoa.v2.core.detector.SpaceStatusLevel.OPTIMAL
+                )
+            }
+        )
+
+        val ok = engine.applyPatch(vn.hokvi.viethoa.v2.core.patch.PatchOptions()) { p ->
+            lastProgress = p
+        }
+
+        // BẮT BUỘC: Khớp phiên bản phải được phép thi công và thành công
+        assertTrue("PatchEngine phải cho phép khi khớp phiên bản!", ok)
+        assertNotNull(lastProgress)
+        assertEquals(vn.hokvi.viethoa.v2.core.patch.PatchStep.COMPLETED, lastProgress?.currentStep)
     }
 }

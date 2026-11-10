@@ -61,3 +61,13 @@
 - **Quyết định chính thức:**
   - Ưu tiên tuần tự: Root (`su`) $\rightarrow$ Shizuku $\rightarrow$ ADB không dây.
   - Trên Android $\le 10$ (`Build.VERSION.SDK_INT < 30`): Tự động ẩn tính năng ADB không dây trên giao diện và hiển thị chủ đề hướng dẫn `android_old`.
+
+---
+
+### 8. Cần bộ dữ liệu vá đã giải mã cho 1.9.2.4-r75 (Người dùng cung cấp)
+- **Quyết định chính thức:**
+  - Game hiện đã cập nhật lên phiên bản `1.9.2.4` (bản vá mới nhất upstream là `1.9.2.4-r75`). Dữ liệu giải mã local có sẵn trước đó là `1.8.0.1`.
+  - Cần bộ dữ liệu vá đã giải mã cho 1.9.2.4-r75 (Người dùng sẽ cung cấp).
+  - Khi chưa có bộ dữ liệu giải mã khớp `1.9.2.4`, app chạy ở trạng thái **"chờ dữ liệu vá"**, tuyệt đối không giả lập.
+  - `PatchEngine` bắt buộc đối chiếu `patchSource.gameVersion` với `gameInfo.versionName`. Nếu lệch phiên bản, hệ thống lập tức dừng lại, không ghi đè bất kỳ tệp CSDL hay cắm chốt nào vào thư mục game, và báo cảnh báo tiếng Việt rõ ràng:
+    `"Dữ liệu vá $patchGameVersion không khớp game $installedGameVersion, chưa có bản vá phù hợp"`.
