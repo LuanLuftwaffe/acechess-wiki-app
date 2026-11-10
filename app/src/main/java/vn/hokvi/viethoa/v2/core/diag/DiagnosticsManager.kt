@@ -1,4 +1,4 @@
-﻿package vn.hokvi.viethoa.v2.core.diag
+package vn.hokvi.viethoa.v2.core.diag
 
 import android.content.Context
 import android.os.Build
@@ -24,7 +24,7 @@ data class DiagnosticsReport(
 class DiagnosticsManager(
     private val context: Context,
     private val shellResolver: ShellResolver,
-    private val gameStateDetector: GameStateDetector = GameStateDetector(context),
+    private val gameStateDetector: GameStateDetector = GameStateDetector(context, shellResolver = shellResolver),
     private val adbManager: AdbConnectionManager? = null
 ) {
 

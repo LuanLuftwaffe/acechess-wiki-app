@@ -16,7 +16,7 @@ class PatchEngine(
     val shellResolver: ShellResolver = ShellResolver(),
     val vfsCommander: VfsCommander = VfsCommander(shellResolver),
     val patchSource: PatchSource = context?.let { CompositePatchSource.default(it) } ?: MockPatchSource(),
-    val gameStateDetector: GameStateDetector = GameStateDetector(context),
+    val gameStateDetector: GameStateDetector = GameStateDetector(context, shellResolver = shellResolver),
     val spaceChecker: () -> SpaceStatus = { SpacePlanner.checkDeviceStorage() }
 ) {
 

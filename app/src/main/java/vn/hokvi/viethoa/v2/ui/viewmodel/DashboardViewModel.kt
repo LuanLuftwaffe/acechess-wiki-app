@@ -59,7 +59,7 @@ class DashboardViewModel @JvmOverloads constructor(
     private val shellResolver: ShellResolver = ShellResolver(application.applicationContext)
 ) : AndroidViewModel(application) {
 
-    private val gameStateDetector = GameStateDetector(application.applicationContext)
+    private val gameStateDetector = GameStateDetector(application.applicationContext, shellResolver = shellResolver)
     private val adbManager = AdbConnectionManager.getInstance(application.applicationContext)
     private val metaSyncManager = MetaSyncManager(application.applicationContext)
     private val updateManager = UpdateManager(application.applicationContext)
@@ -90,6 +90,11 @@ class DashboardViewModel @JvmOverloads constructor(
 
             // Đọc log gần đây từ file nhat-ky.txt
             val logs = ShellLogger.readLogs()
+
+            // Cập nhật phiên bản nội dung game qua VFS nếu có quyền shell
+            if (resolution.executor != null) {
+                gameStateDetector.detectContentVersionViaShell(shellResolver)
+            }
 
             // Phase 2: Kiểm tra game com.tencent.tmgp.osgame & dung lượng bộ nhớ
             val manifest = vn.hokvi.viethoa.v2.core.detector.ManifestRepository.getManifest(getApplication<Application>().applicationContext)
