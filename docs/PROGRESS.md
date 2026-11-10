@@ -39,10 +39,13 @@
   - Tự nhập khẩu hiệu 1–5 ký tự cho bên trái và bên phải.
   - Render Canvas xem trước thời gian thực và xuất dữ liệu ảnh raw `.rgba` + `config.json` theo đúng Smali gốc.
   - Trạng thái: [x] Đã hoàn thành tại Phase 6.
-- [x] **Hàng 9: Đồng bộ Đội hình Meta & Gợi ý AI Tự Động**
+- [x] **Hàng 9: Đồng bộ Đội hình Meta, Gợi ý AI & Cập Nhật Tách Biệt 2 Kênh**
   - Kéo từ S3 Cloudfly (`https://s3.cloudfly.vn/wxq/...`) theo đúng `manifest.json`.
   - Tải gói `.json.gz`, kiểm tra SHA-256, giải nén và ghi đè vào VFS game; giữ fallback offline từ assets.
-  - Trạng thái: [x] Đã hoàn thành tại Phase 7 (`MetaSyncManager`, `SyncMetaWorker`).
+  - Phân tách rõ ràng 2 kênh cập nhật:
+    + Kênh 1 (Vá game): Đọc upstream `index.json`, tra cứu `hvx_sets` theo phiên bản game cài đặt, kiểm tra chênh lệch phiên bản game và bản vá.
+    + Kênh 2 (Tự cập nhật app v2): Độc lập, cấu hình qua `BuildConfig.APP_UPDATE_URL` (mặc định rỗng ""), ngắt hoàn toàn APK app cũ `vn.hokvi.viethoa` từ `latest.json`, chặn tải APK cũ trong `downloadAppApk`.
+  - Trạng thái: [x] Đã hoàn thành tại Phase 7 & tinh chỉnh Bước 3 (`MetaSyncManager`, `UpdateManager`, `SyncMetaWorker`). 8 unit tests chuyên biệt trong `SyncAndUpdateTest`.
 - [x] **Hàng 10: Động Cơ ADB Không Dây Độc Lập (In-App ADB)**
   - Tự quét cổng qua giao thức mDNS/Zeroconf NSD (`AdbNsd`).
   - Ghép nối mã PIN qua thanh thông báo (Notification Direct Reply với `RemoteInput`).
@@ -183,4 +186,4 @@
   - [x] `DiagnosticsManager`: Thu thập 8 thông số hệ thống, dump 200 dòng Logcat, lưu file `bao-cao-chan-doan-*.txt`.
   - [x] `ChangelogRepository` & `ChangelogScreen`: Phân loại 62 releases theo All / Chung / PC / Android và hộp thoại gửi phản hồi.
   - [x] Hoàn thiện 100% UI Compose, theme gaming tối màu, toàn bộ chuỗi nằm trong `res/values/strings.xml`.
-  - [x] Cài đặt lên thiết bị giả lập MEmu (`127.0.0.1:21503`), 38/38 unit tests pass, kiểm chứng thực tế và đối chiếu 12 hàng ma trận Mục 7.
+  - [x] Cài đặt lên thiết bị giả lập MEmu (`127.0.0.1:21503`), 52/52 unit tests pass, kiểm chứng thực tế và đối chiếu 12 hàng ma trận Mục 7 sau reboot thiết bị.
