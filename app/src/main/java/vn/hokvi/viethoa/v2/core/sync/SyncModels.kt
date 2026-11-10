@@ -1,5 +1,6 @@
 package vn.hokvi.viethoa.v2.core.sync
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -39,10 +40,28 @@ data class PatchInfo(
 
 @Serializable
 data class LatestResponse(
+    @SerialName("android_app")
+    val android_app: LatestAppInfo? = null,
+    @SerialName("android_app_lite")
+    val android_app_lite: LatestAppInfo? = null,
     val android: LatestAppInfo? = null,
     val changelog_url: String? = null,
+    @SerialName("android_pc_kit")
+    val android_pc_kit: LatestAppInfo? = null,
     val patch: PatchInfo? = null
-)
+) {
+    val effectiveApp: LatestAppInfo?
+        get() = android ?: android_app ?: android_app_lite
+
+    val effectivePatch: PatchInfo?
+        get() = patch ?: android_pc_kit?.let {
+            PatchInfo(
+                version = it.version,
+                game_version = it.version.substringBefore("-"),
+                release = it.version
+            )
+        }
+}
 
 @Serializable
 data class ReleaseEntry(

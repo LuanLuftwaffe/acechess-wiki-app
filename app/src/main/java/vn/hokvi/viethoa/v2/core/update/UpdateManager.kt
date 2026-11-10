@@ -147,7 +147,7 @@ class UpdateManager(private val context: Context) {
         var appInfo: LatestAppInfo? = null
         var changelogEntry: ReleaseEntry? = null
 
-        latest.android?.let { remoteApp ->
+        latest.effectiveApp?.let { remoteApp ->
             if (remoteApp.version_code > currentCode) {
                 hasAppUpdate = true
                 appInfo = remoteApp
@@ -164,7 +164,7 @@ class UpdateManager(private val context: Context) {
 
         var hasPatchUpdate = false
         var patchInfo: PatchInfo? = null
-        latest.patch?.let { remotePatch ->
+        latest.effectivePatch?.let { remotePatch ->
             val applied = getAppliedPatchVersion()
             if (applied == null || applied != remotePatch.version) {
                 hasPatchUpdate = true

@@ -116,11 +116,43 @@ class SyncAndUpdateTest {
         """.trimIndent()
 
         val latest = json.decodeFromString<LatestResponse>(sampleLatest)
-        assertNotNull(latest.android)
-        assertEquals(180171L, latest.android?.version_code)
-        assertEquals("1.8.0.1-r71", latest.android?.version)
-        assertNotNull(latest.patch)
-        assertEquals("1.8.0.1", latest.patch?.game_version)
+        assertNotNull(latest.effectiveApp)
+        assertEquals(180171L, latest.effectiveApp?.version_code)
+        assertEquals("1.8.0.1-r71", latest.effectiveApp?.version)
+        assertNotNull(latest.effectivePatch)
+        assertEquals("1.8.0.1", latest.effectivePatch?.game_version)
+
+        // Test upstream latest.json format (1.9.2.4-r73 with android_app and android_pc_kit)
+        val upstreamLatest = """
+            {
+              "format": 1,
+              "updated": "2026-11-10",
+              "android_pc_kit": {
+                "file": "HOKVI-Android-VietHoa-1.9.2.4-r73.zip",
+                "url": "https://s3.cloudfly.vn/wxq/downloads/android/1.9.2.4/r73/HOKVI-Android-VietHoa-1.9.2.4-r73.zip",
+                "sha256": "477a40a5a7288a773ee3d9189cc823eabdf1c7608dbe61abc1d89ffc09064a1c",
+                "size": 17549996,
+                "version": "1.9.2.4-r73"
+              },
+              "android_app": {
+                "file": "HOKVI-VietHoa-App-1.9.2.4-r73-lite.apk",
+                "url": "https://s3.cloudfly.vn/wxq/downloads/android/1.9.2.4/r73/HOKVI-VietHoa-App-1.9.2.4-r73-lite.apk",
+                "sha256": "b150320756aa96aecbb3ee4bd58f6043f7f7d40de1d6882ba037298dc5da08d0",
+                "size": 4130378,
+                "version": "1.9.2.4-r73",
+                "version_code": 192473
+              },
+              "changelog_url": "https://s3.cloudfly.vn/wxq/downloads/changelog.json"
+            }
+        """.trimIndent()
+
+        val upLatest = json.decodeFromString<LatestResponse>(upstreamLatest)
+        assertNotNull(upLatest.effectiveApp)
+        assertEquals(192473L, upLatest.effectiveApp?.version_code)
+        assertEquals("1.9.2.4-r73", upLatest.effectiveApp?.version)
+        assertNotNull(upLatest.effectivePatch)
+        assertEquals("1.9.2.4", upLatest.effectivePatch?.game_version)
+        assertEquals("1.9.2.4-r73", upLatest.effectivePatch?.version)
 
         val sampleChangelog = """
             {

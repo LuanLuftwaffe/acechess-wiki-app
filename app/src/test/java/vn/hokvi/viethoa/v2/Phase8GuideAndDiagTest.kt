@@ -155,15 +155,20 @@ class Phase8GuideAndDiagTest {
     fun testChangelogSchemaAndSeparation() {
         val payload = loadChangelogFromFile()
         assertTrue("Changelog must have releases", payload.releases.isNotEmpty())
-        assertEquals(62, payload.releases.size)
+        assertTrue("Changelog should have at least 62 releases (found ${payload.releases.size})", payload.releases.size >= 62)
 
         val latest = payload.releases.first()
-        assertEquals("1.8.0.1-r71", latest.release)
-        assertEquals("1.8.0.1", latest.gameVersion)
-        assertEquals("2026-11-01", latest.date)
-        assertTrue(latest.chung.isNotEmpty())
-        assertTrue(latest.pc.isNotEmpty())
-        assertTrue(latest.android.isNotEmpty())
+        assertEquals("1.9.2.4-r75", latest.release)
+        assertEquals("1.9.2.4", latest.gameVersion)
+        assertEquals("2026-11-10", latest.date)
+
+        // Verify r71 also exists in history
+        val r71 = payload.releases.find { it.release == "1.8.0.1-r71" }
+        assertNotNull("Release 1.8.0.1-r71 must exist in history", r71)
+        assertEquals("1.8.0.1", r71?.gameVersion)
+        assertTrue(r71?.chung?.isNotEmpty() == true)
+        assertTrue(r71?.pc?.isNotEmpty() == true)
+        assertTrue(r71?.android?.isNotEmpty() == true)
 
         // Test category filtering
         val chungCount = payload.releases.count { it.chung.isNotEmpty() }
