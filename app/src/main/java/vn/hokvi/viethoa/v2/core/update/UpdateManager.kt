@@ -13,22 +13,30 @@ import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import vn.hokvi.viethoa.v2.BuildConfig
 import vn.hokvi.viethoa.v2.MainActivity
 import vn.hokvi.viethoa.v2.R
 import vn.hokvi.viethoa.v2.core.sync.ChangelogData
+import vn.hokvi.viethoa.v2.core.sync.GameAnnounce
 import vn.hokvi.viethoa.v2.core.sync.LatestAppInfo
 import vn.hokvi.viethoa.v2.core.sync.LatestResponse
 import vn.hokvi.viethoa.v2.core.sync.MetaSyncManager
 import vn.hokvi.viethoa.v2.core.sync.PatchInfo
 import vn.hokvi.viethoa.v2.core.sync.ReleaseEntry
+import vn.hokvi.viethoa.v2.core.sync.UpstreamIndex
 import vn.hokvi.viethoa.v2.core.sync.UpdateCheckResult
 import java.io.File
 import java.io.FileOutputStream
 import java.util.concurrent.TimeUnit
 
-class UpdateManager(private val context: Context) {
+class UpdateManager(
+    private val context: Context,
+    var appUpdateEndpoint: String = BuildConfig.APP_UPDATE_URL,
+    var upstreamIndexUrl: String = INDEX_URL
+) {
 
     companion object {
+        const val INDEX_URL = "https://s3.cloudfly.vn/wxq/android/vi-patch/index.json"
         const val LATEST_URL = "https://s3.cloudfly.vn/wxq/downloads/latest.json"
         const val CHANGELOG_URL = "https://s3.cloudfly.vn/wxq/downloads/changelog.json"
         const val CHANNEL_ID = "cap_nhat_viet_hoa"
@@ -52,16 +60,20 @@ class UpdateManager(private val context: Context) {
     }
 
     private fun createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel(
-                CHANNEL_ID,
-                CHANNEL_NAME,
-                NotificationManager.IMPORTANCE_DEFAULT
-            ).apply {
-                description = "Thông báo khi có bản vá game mới hoặc phiên bản app mới"
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                val channel = NotificationChannel(
+                    CHANNEL_ID,
+                    CHANNEL_NAME,
+                    NotificationManager.IMPORTANCE_DEFAULT
+                ).apply {
+                    description = "Thông báo khi có bản vá game mới hoặc phiên bản app mới"
+                }
+                val manager = context.getSystemService(Context.NOTIFICATION_SERVICE) as? NotificationManager
+                manager?.createNotificationChannel(channel)
             }
-            val manager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-            manager.createNotificationChannel(channel)
+        } catch (_: Exception) {
+            // An toàn trong môi trường Unit Test
         }
     }
 
@@ -88,6 +100,15 @@ class UpdateManager(private val context: Context) {
         }
     }
 
+    fun getInstalledGameVersion(): String? {
+        return try {
+            val pInfo = context.packageManager.getPackageInfo("com.tencent.tmgp.osgame", 0)
+            pInfo.versionName
+        } catch (_: Exception) {
+            null
+        }
+    }
+
     /**
      * Lấy phiên bản bản vá game đang cài đặt trong files/vi_bak/txt_1.ver
      */
@@ -98,6 +119,20 @@ class UpdateManager(private val context: Context) {
         } else null
     }
 
+    suspend fun fetchUpstreamIndex(url: String? = null): Result<UpstreamIndex> = withContext(Dispatchers.IO) {
+        try {
+            val targetUrl = url ?: upstreamIndexUrl
+            val request = Request.Builder().url(targetUrl).build()
+            val content = client.newCall(request).execute().use { response ->
+                if (!response.isSuccessful) throw IllegalStateException("Không thể tải index.json (HTTP ${response.code})")
+                response.body?.string() ?: throw IllegalStateException("index.json rỗng")
+            }
+            Result.success(json.decodeFromString<UpstreamIndex>(content))
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
     suspend fun fetchLatest(): Result<LatestResponse> = withContext(Dispatchers.IO) {
         try {
             val request = Request.Builder().url(LATEST_URL).build()
@@ -106,6 +141,19 @@ class UpdateManager(private val context: Context) {
                 response.body?.string() ?: throw IllegalStateException("latest.json rỗng")
             }
             Result.success(json.decodeFromString<LatestResponse>(content))
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
+    suspend fun fetchV2AppLatest(url: String): Result<LatestAppInfo> = withContext(Dispatchers.IO) {
+        try {
+            val request = Request.Builder().url(url).build()
+            val content = client.newCall(request).execute().use { response ->
+                if (!response.isSuccessful) throw IllegalStateException("Không thể tải thông tin cập nhật app v2 (HTTP ${response.code})")
+                response.body?.string() ?: throw IllegalStateException("Phản hồi cập nhật app rỗng")
+            }
+            Result.success(json.decodeFromString<LatestAppInfo>(content))
         } catch (e: Exception) {
             Result.failure(e)
         }
@@ -132,125 +180,207 @@ class UpdateManager(private val context: Context) {
     }
 
     /**
-     * Kiểm tra cập nhật toàn diện: cả app và bản vá game
+     * Kiểm tra cập nhật độc lập 2 kênh:
+     * 1. Kênh dữ liệu vá / game: Đọc index.json từ upstream (S3 Cloudfly).
+     *    Biết game mới nhất được công bố và bản vá cho phiên bản game đang cài đặt.
+     * 2. Kênh tự cập nhật ứng dụng v2: Độc lập với APK cũ trong latest.json.
+     *    Chỉ kích hoạt khi [appUpdateEndpoint] được cấu hình trong BuildConfig (mặc định rỗng).
      */
-    suspend fun checkForUpdates(): Result<UpdateCheckResult> = withContext(Dispatchers.IO) {
-        val latestRes = fetchLatest()
-        if (latestRes.isFailure) {
-            return@withContext Result.failure(latestRes.exceptionOrNull() ?: Exception("Lỗi kết nối"))
-        }
+    suspend fun checkForUpdates(
+        targetGameVersion: String? = null,
+        overrideAppliedPatch: String? = null
+    ): Result<UpdateCheckResult> = withContext(Dispatchers.IO) {
+        try {
+            // --- KÊNH 1: Dữ liệu vá & Game (index.json) ---
+            var hasPatchUpdate = false
+            var patchInfo: PatchInfo? = null
+            var gameAnnounce: GameAnnounce? = null
+            var isGameUpdateAvailable = false
 
-        val latest = latestRes.getOrThrow()
-        val currentCode = getAppVersionCode()
+            val indexRes = fetchUpstreamIndex(upstreamIndexUrl)
+            if (indexRes.isSuccess) {
+                val index = indexRes.getOrThrow()
+                gameAnnounce = index.game
 
-        var hasAppUpdate = false
-        var appInfo: LatestAppInfo? = null
-        var changelogEntry: ReleaseEntry? = null
+                val installedGameVer = targetGameVersion ?: getInstalledGameVersion()
+                val latestKnownGameVer = gameAnnounce?.latest_known
 
-        latest.effectiveApp?.let { remoteApp ->
-            if (remoteApp.version_code > currentCode) {
-                hasAppUpdate = true
-                appInfo = remoteApp
+                // Kiểm tra xem game Tencent trên máy có cần cập nhật bản mới không
+                if (!installedGameVer.isNullOrBlank() && !latestKnownGameVer.isNullOrBlank()) {
+                    if (installedGameVer != latestKnownGameVer) {
+                        isGameUpdateAvailable = true
+                    }
+                }
 
-                // Lấy thông tin changelog tương ứng
-                val changelogRes = fetchChangelog(latest.changelog_url)
-                if (changelogRes.isSuccess) {
-                    val releases = changelogRes.getOrNull()?.releases ?: emptyList()
-                    changelogEntry = releases.find { it.android_version_code == remoteApp.version_code }
-                        ?: releases.firstOrNull()
+                // Tìm bản vá cho phiên bản game tương ứng:
+                // Ưu tiên phiên bản game đang cài đặt; nếu chưa rõ thì dùng phiên bản game mới nhất công bố
+                val gameVerToCheck = installedGameVer ?: latestKnownGameVer ?: "1.9.2.4"
+                val upstreamPatchEntry = index.findPatchForGame(gameVerToCheck)
+
+                if (upstreamPatchEntry != null) {
+                    val appliedPatch = overrideAppliedPatch ?: getAppliedPatchVersion()
+                    if (appliedPatch == null || (appliedPatch != upstreamPatchEntry.release && !upstreamPatchEntry.release.contains(appliedPatch))) {
+                        hasPatchUpdate = true
+                        patchInfo = PatchInfo(
+                            version = upstreamPatchEntry.release,
+                            game_version = gameVerToCheck,
+                            release = upstreamPatchEntry.release
+                        )
+                    }
+                }
+            } else {
+                // Fallback: nếu không tải được index.json thì tham khảo latest.json cho kênh bản vá
+                val latestRes = fetchLatest()
+                if (latestRes.isSuccess) {
+                    val latest = latestRes.getOrThrow()
+                    latest.effectivePatch?.let { remotePatch ->
+                        val applied = overrideAppliedPatch ?: getAppliedPatchVersion()
+                        if (applied == null || applied != remotePatch.version) {
+                            hasPatchUpdate = true
+                            patchInfo = remotePatch
+                        }
+                    }
                 }
             }
-        }
 
-        var hasPatchUpdate = false
-        var patchInfo: PatchInfo? = null
-        latest.effectivePatch?.let { remotePatch ->
-            val applied = getAppliedPatchVersion()
-            if (applied == null || applied != remotePatch.version) {
-                hasPatchUpdate = true
-                patchInfo = remotePatch
+            // --- KÊNH 2: Tự cập nhật App v2 (Bảo vệ độc lập) ---
+            var hasAppUpdate = false
+            var appInfo: LatestAppInfo? = null
+            var changelogEntry: ReleaseEntry? = null
+            val appMsg: String
+
+            if (appUpdateEndpoint.isNotBlank()) {
+                val v2AppRes = fetchV2AppLatest(appUpdateEndpoint)
+                if (v2AppRes.isSuccess) {
+                    val remoteApp = v2AppRes.getOrThrow()
+                    val currentCode = getAppVersionCode()
+                    if (remoteApp.version_code > currentCode) {
+                        hasAppUpdate = true
+                        appInfo = remoteApp
+                        val changelogRes = fetchChangelog()
+                        if (changelogRes.isSuccess) {
+                            val releases = changelogRes.getOrNull()?.releases ?: emptyList()
+                            changelogEntry = releases.find { it.android_version_code == remoteApp.version_code }
+                                ?: releases.firstOrNull()
+                        }
+                    }
+                }
+                appMsg = if (hasAppUpdate) {
+                    "Có phiên bản app v2 mới (${appInfo?.version})"
+                } else {
+                    "Ứng dụng v2 đang ở bản mới nhất"
+                }
+            } else {
+                // Mặc định rỗng: Vô hiệu hoá tự cập nhật app v2 để tuyệt đối không kéo APK app cũ
+                hasAppUpdate = false
+                appInfo = null
+                appMsg = "Ứng dụng v2 độc lập (kênh APK app cũ đã ngắt)."
             }
-        }
 
-        val result = UpdateCheckResult(
-            hasAppUpdate = hasAppUpdate,
-            appUpdateInfo = appInfo,
-            changelogEntry = changelogEntry,
-            hasPatchUpdate = hasPatchUpdate,
-            patchInfo = patchInfo,
-            message = when {
-                hasAppUpdate && hasPatchUpdate -> "Có phiên bản app mới (${appInfo?.version}) và bản vá game mới (${patchInfo?.version})!"
-                hasAppUpdate -> "Có phiên bản app mới (${appInfo?.version})"
-                hasPatchUpdate -> "Có bản vá game mới (${patchInfo?.version})"
-                else -> "Bạn đang sử dụng phiên bản mới nhất!"
+            val combinedMsg = when {
+                hasPatchUpdate && isGameUpdateAvailable ->
+                    "Game có bản mới (${gameAnnounce?.latest_known}) và có bản vá mới (${patchInfo?.version})!"
+                hasPatchUpdate ->
+                    "Có bản vá game mới (${patchInfo?.version})!"
+                isGameUpdateAvailable ->
+                    "Game Tencent đã có bản ${gameAnnounce?.latest_known} (máy đang cài: ${targetGameVersion ?: getInstalledGameVersion() ?: "chưa rõ"})"
+                hasAppUpdate ->
+                    "Có phiên bản app v2 mới (${appInfo?.version})"
+                else ->
+                    "Dữ liệu Việt hoá đang ở bản mới nhất!"
             }
-        )
 
-        // Phát thông báo nếu có cập nhật mới
-        if (hasPatchUpdate) {
-            postGamePatchNotification(patchInfo?.version ?: "")
-        }
-        if (hasAppUpdate) {
-            postAppUpdateNotification(appInfo?.version ?: "")
-        }
+            if (hasPatchUpdate) {
+                postGamePatchNotification(patchInfo?.version ?: "")
+            }
+            if (hasAppUpdate) {
+                postAppUpdateNotification(appInfo?.version ?: "")
+            }
 
-        Result.success(result)
+            Result.success(
+                UpdateCheckResult(
+                    hasAppUpdate = hasAppUpdate,
+                    appUpdateInfo = appInfo,
+                    changelogEntry = changelogEntry,
+                    appChannelMessage = appMsg,
+                    hasPatchUpdate = hasPatchUpdate,
+                    patchInfo = patchInfo,
+                    gameAnnounce = gameAnnounce,
+                    isGameUpdateAvailable = isGameUpdateAvailable,
+                    message = combinedMsg
+                )
+            )
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
     }
 
     fun postGamePatchNotification(patchVersion: String) {
-        val intent = Intent(context, MainActivity::class.java).apply {
-            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
-        }
-        val pendingIntent = PendingIntent.getActivity(
-            context,
-            NOTIFICATION_ID_GAME_PATCH,
-            intent,
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-        )
+        try {
+            val intent = Intent(context, MainActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+            }
+            val pendingIntent = PendingIntent.getActivity(
+                context,
+                NOTIFICATION_ID_GAME_PATCH,
+                intent,
+                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+            )
 
-        val notification = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_launcher)
-            .setContentTitle("Có bản vá Việt hoá mới cho game!")
-            .setContentText("Bản vá $patchVersion đã sẵn sàng. Mở app để áp dụng ngay.")
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-            .setContentIntent(pendingIntent)
-            .setAutoCancel(true)
-            .build()
+            val notification = NotificationCompat.Builder(context, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_launcher)
+                .setContentTitle("Có bản vá Việt hoá mới cho game!")
+                .setContentText("Bản vá $patchVersion đã sẵn sàng. Mở app để áp dụng ngay.")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true)
+                .build()
 
-        val manager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        manager.notify(NOTIFICATION_ID_GAME_PATCH, notification)
+            val manager = context.getSystemService(Context.NOTIFICATION_SERVICE) as? NotificationManager
+            manager?.notify(NOTIFICATION_ID_GAME_PATCH, notification)
+        } catch (_: Exception) {}
     }
 
     fun postAppUpdateNotification(newVersion: String) {
-        val intent = Intent(context, MainActivity::class.java).apply {
-            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
-        }
-        val pendingIntent = PendingIntent.getActivity(
-            context,
-            NOTIFICATION_ID_APP_UPDATE,
-            intent,
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-        )
+        try {
+            val intent = Intent(context, MainActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+            }
+            val pendingIntent = PendingIntent.getActivity(
+                context,
+                NOTIFICATION_ID_APP_UPDATE,
+                intent,
+                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+            )
 
-        val notification = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_launcher)
-            .setContentTitle("Cập nhật ứng dụng Việt hoá")
-            .setContentText("Đã có phiên bản $newVersion. Bấm vào đây để xem changelog.")
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-            .setContentIntent(pendingIntent)
-            .setAutoCancel(true)
-            .build()
+            val notification = NotificationCompat.Builder(context, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_launcher)
+                .setContentTitle("Cập nhật ứng dụng Việt hoá v2")
+                .setContentText("Đã có phiên bản $newVersion. Bấm vào đây để xem changelog.")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true)
+                .build()
 
-        val manager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        manager.notify(NOTIFICATION_ID_APP_UPDATE, notification)
+            val manager = context.getSystemService(Context.NOTIFICATION_SERVICE) as? NotificationManager
+            manager?.notify(NOTIFICATION_ID_APP_UPDATE, notification)
+        } catch (_: Exception) {}
     }
 
     /**
-     * Tải APK cập nhật của app về thư mục cache, kiểm tra SHA-256
+     * Tải APK cập nhật của app v2 về thư mục cache, kiểm tra SHA-256.
+     * TUYỆT ĐỐI CHẶN tải APK app cũ từ upstream.
      */
     suspend fun downloadAppApk(info: LatestAppInfo): Result<File> = withContext(Dispatchers.IO) {
         try {
-            val apkFile = File(context.cacheDir, "app_update_${info.version_code}.apk")
+            if (appUpdateEndpoint.isBlank()) {
+                throw IllegalStateException("Kênh tự cập nhật ứng dụng v2 chưa kích hoạt (mặc định rỗng). Không thể tải APK.")
+            }
+            if (info.url.contains("HOKVI-VietHoa-App-") || !info.url.startsWith("http")) {
+                throw IllegalStateException("Bị chặn: Không được phép tải APK của ứng dụng cũ vn.hokvi.viethoa cho app v2.")
+            }
+
+            val apkFile = File(context.cacheDir, "app_v2_update_${info.version_code}.apk")
             val request = Request.Builder().url(info.url).build()
 
             client.newCall(request).execute().use { response ->

@@ -38,6 +38,46 @@ data class PatchInfo(
     val release: String = ""
 )
 
+/**
+ * Thông báo phiên bản game mới nhất được công bố trong index.json
+ */
+@Serializable
+data class GameAnnounce(
+    @SerialName("latest_known") val latest_known: String = "",
+    @SerialName("announced_at") val announced_at: String = "",
+    val message: String = ""
+)
+
+/**
+ * Mục bản vá trong hvx_sets hoặc sets của upstream index.json
+ */
+@Serializable
+data class UpstreamPatchEntry(
+    val release: String = "",
+    val url: String = "",
+    val sha256: String = "",
+    val size: Long = 0L,
+    @SerialName("text_sha") val textSha: String? = null
+)
+
+/**
+ * Cấu trúc tập tin index.json từ upstream (remote_index)
+ */
+@Serializable
+data class UpstreamIndex(
+    val format: Int = 1,
+    val game: GameAnnounce? = null,
+    val hvx_sets: Map<String, UpstreamPatchEntry> = emptyMap(),
+    val sets: Map<String, UpstreamPatchEntry> = emptyMap()
+) {
+    /**
+     * Tìm bản vá tương ứng cho một phiên bản game
+     */
+    fun findPatchForGame(gameVersion: String): UpstreamPatchEntry? {
+        return hvx_sets[gameVersion] ?: sets[gameVersion]
+    }
+}
+
 @Serializable
 data class LatestResponse(
     @SerialName("android_app")
@@ -50,9 +90,16 @@ data class LatestResponse(
     val android_pc_kit: LatestAppInfo? = null,
     val patch: PatchInfo? = null
 ) {
+    /**
+     * Thông tin app upstream (LƯU Ý: Đây là APK của app cũ vn.hokvi.viethoa,
+     * KHÔNG dùng để tự cập nhật cho app v2 vn.hokvi.viethoa.v2).
+     */
     val effectiveApp: LatestAppInfo?
         get() = android ?: android_app ?: android_app_lite
 
+    /**
+     * Thông tin bản vá game tham khảo từ upstream latest.json.
+     */
     val effectivePatch: PatchInfo?
         get() = patch ?: android_pc_kit?.let {
             PatchInfo(
@@ -81,10 +128,18 @@ data class ChangelogData(
 )
 
 data class UpdateCheckResult(
+    // Kênh 1: Tự cập nhật App v2 (độc lập, cấu hình qua BuildConfig.APP_UPDATE_URL)
     val hasAppUpdate: Boolean = false,
     val appUpdateInfo: LatestAppInfo? = null,
     val changelogEntry: ReleaseEntry? = null,
+    val appChannelMessage: String? = null,
+
+    // Kênh 2: Bản vá Việt hoá game & phiên bản game (đọc từ index.json)
     val hasPatchUpdate: Boolean = false,
     val patchInfo: PatchInfo? = null,
+    val gameAnnounce: GameAnnounce? = null,
+    val isGameUpdateAvailable: Boolean = false,
+
+    // Thông báo trạng thái tổng hợp
     val message: String? = null
 )

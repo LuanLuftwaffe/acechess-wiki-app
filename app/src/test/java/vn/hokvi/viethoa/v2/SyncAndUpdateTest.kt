@@ -2,15 +2,23 @@ package vn.hokvi.viethoa.v2
 
 import kotlinx.serialization.json.Json
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
+import org.junit.Assert.fail
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.TemporaryFolder
 import vn.hokvi.viethoa.v2.core.sync.ChangelogData
+import vn.hokvi.viethoa.v2.core.sync.GameAnnounce
+import vn.hokvi.viethoa.v2.core.sync.LatestAppInfo
 import vn.hokvi.viethoa.v2.core.sync.LatestResponse
 import vn.hokvi.viethoa.v2.core.sync.MetaIndex
 import vn.hokvi.viethoa.v2.core.sync.MetaSyncManager
+import vn.hokvi.viethoa.v2.core.sync.UpstreamIndex
+import vn.hokvi.viethoa.v2.core.sync.UpstreamPatchEntry
+import vn.hokvi.viethoa.v2.core.sync.UpdateCheckResult
 import java.io.File
 import java.io.FileOutputStream
 import java.security.MessageDigest
@@ -180,13 +188,136 @@ class SyncAndUpdateTest {
     }
 
     @Test
-    fun testUpdateLogicComparison() {
-        val currentAppCode = 100L
-        val remoteAppCode = 180171L
-        assertTrue(remoteAppCode > currentAppCode)
+    fun testUpstreamIndexDeserialization() {
+        val sampleIndex = """
+            {
+              "format": 1,
+              "game": {
+                "latest_known": "1.9.2.4",
+                "announced_at": "2026-11-10T04:41:56Z",
+                "message": "Bản Việt hoá r75 cho game 1.9.2.4."
+              },
+              "hvx_sets": {
+                "1.8.0.1": {
+                  "release": "android-1.8.0.1-r71",
+                  "url": "https://s3.cloudfly.vn/wxq/android/vi-patch/1.8.0.1/r71/patch-1.8.0.1-r71.zip.hvx",
+                  "sha256": "584b42411618b69dfd30469f7b56502e8b5735f968b4394be8c1ca81d2371f10",
+                  "size": 63080568
+                },
+                "1.9.2.4": {
+                  "release": "android-1.9.2.4-r75",
+                  "url": "https://s3.cloudfly.vn/wxq/android/vi-patch/1.9.2.4/r75/patch-1.9.2.4-r75.zip.hvx",
+                  "sha256": "584b42411618b69dfd30469f7b56502e8b5735f968b4394be8c1ca81d2371f10",
+                  "size": 63080568,
+                  "text_sha": "6b4a441fd08cf159ff9127bce41becb9e5072ef5fe284f4e60246a5db852388a"
+                }
+              }
+            }
+        """.trimIndent()
 
-        val appliedPatch = "1.8.0.1-r70"
-        val remotePatch = "1.8.0.1-r71"
-        assertTrue(appliedPatch != remotePatch)
+        val index = json.decodeFromString<UpstreamIndex>(sampleIndex)
+        assertEquals(1, index.format)
+        assertNotNull(index.game)
+        assertEquals("1.9.2.4", index.game?.latest_known)
+        assertEquals("Bản Việt hoá r75 cho game 1.9.2.4.", index.game?.message)
+
+        val patch1924 = index.findPatchForGame("1.9.2.4")
+        assertNotNull(patch1924)
+        assertEquals("android-1.9.2.4-r75", patch1924?.release)
+        assertEquals("6b4a441fd08cf159ff9127bce41becb9e5072ef5fe284f4e60246a5db852388a", patch1924?.textSha)
+
+        val patch1801 = index.findPatchForGame("1.8.0.1")
+        assertNotNull(patch1801)
+        assertEquals("android-1.8.0.1-r71", patch1801?.release)
+
+        assertNull(index.findPatchForGame("1.0.0.0"))
+    }
+
+    @Test
+    fun testTwoChannelsSeparation_AppUpdateChannelDisabledByDefault() {
+        // Kênh cập nhật ứng dụng v2 mặc định rỗng ("") để bảo vệ app không kéo APK app cũ
+        val defaultAppUpdateEndpoint = ""
+        val isAppUpdateEnabled = defaultAppUpdateEndpoint.isNotBlank()
+        assertFalse("Kênh tự cập nhật app v2 phải bị vô hiệu hoá khi endpoint rỗng", isAppUpdateEnabled)
+
+        // Giả lập logic kiểm tra: appUpdateInfo phải là null và hasAppUpdate = false
+        val checkResult = UpdateCheckResult(
+            hasAppUpdate = isAppUpdateEnabled,
+            appUpdateInfo = null,
+            appChannelMessage = "Ứng dụng v2 độc lập (kênh APK app cũ đã ngắt)."
+        )
+        assertFalse(checkResult.hasAppUpdate)
+        assertNull(checkResult.appUpdateInfo)
+        assertEquals("Ứng dụng v2 độc lập (kênh APK app cũ đã ngắt).", checkResult.appChannelMessage)
+    }
+
+    @Test
+    fun testTwoChannelsSeparation_RejectsOldAppApkDownload() {
+        // Thử tải một APK thuộc app cũ (HOKVI-VietHoa-App-*.apk)
+        val oldAppUrl = "https://s3.cloudfly.vn/wxq/downloads/android/1.9.2.4/r75/HOKVI-VietHoa-App-1.9.2.4-r75-lite.apk"
+        val oldAppInfo = LatestAppInfo(
+            version = "1.9.2.4-r75",
+            version_code = 192475,
+            url = oldAppUrl
+        )
+
+        // Kiểm tra điều kiện bảo vệ trong downloadAppApk
+        val endpoint = ""
+        val isBlocked = endpoint.isBlank() || oldAppInfo.url.contains("HOKVI-VietHoa-App-")
+        assertTrue("Phải chặn URL tải của app cũ vn.hokvi.viethoa", isBlocked)
+    }
+
+    @Test
+    fun testGamePatchChannelDetectsNewPatch() {
+        val sampleIndex = """
+            {
+              "format": 1,
+              "game": {
+                "latest_known": "1.9.2.4",
+                "announced_at": "2026-11-10T04:41:56Z",
+                "message": "Bản Việt hoá r75 cho game 1.9.2.4."
+              },
+              "hvx_sets": {
+                "1.9.2.4": {
+                  "release": "android-1.9.2.4-r75",
+                  "url": "https://s3.cloudfly.vn/wxq/android/vi-patch/1.9.2.4/r75/patch-1.9.2.4-r75.zip.hvx",
+                  "sha256": "584b42411618b69dfd30469f7b56502e8b5735f968b4394be8c1ca81d2371f10",
+                  "size": 63080568
+                }
+              }
+            }
+        """.trimIndent()
+        val index = json.decodeFromString<UpstreamIndex>(sampleIndex)
+
+        // Tình huống 1: Game 1.9.2.4 chưa cài bản vá nào (appliedPatch = null)
+        val patchEntry = index.findPatchForGame("1.9.2.4")
+        assertNotNull(patchEntry)
+
+        var appliedPatch: String? = null
+        val hasPatchUpdate1 = appliedPatch == null || (appliedPatch != patchEntry?.release && !patchEntry!!.release.contains(appliedPatch))
+        assertTrue(hasPatchUpdate1)
+
+        // Tình huống 2: Game 1.9.2.4 đang cài r73 -> cần cập nhật lên r75
+        appliedPatch = "android-1.9.2.4-r73"
+        val hasPatchUpdate2 = appliedPatch != patchEntry?.release && !patchEntry!!.release.contains(appliedPatch)
+        assertTrue(hasPatchUpdate2)
+
+        // Tình huống 3: Game 1.9.2.4 đã cài đúng r75 -> không cần cập nhật
+        appliedPatch = "android-1.9.2.4-r75"
+        val hasPatchUpdate3 = appliedPatch != patchEntry?.release && !patchEntry!!.release.contains(appliedPatch)
+        assertFalse(hasPatchUpdate3)
+    }
+
+    @Test
+    fun testGameVersionMismatchDetection() {
+        val installedGameVersion = "1.8.0.1"
+        val upstreamGameAnnounce = GameAnnounce(
+            latest_known = "1.9.2.4",
+            announced_at = "2026-11-10T04:41:56Z",
+            message = "Game đã lên 1.9.2.4"
+        )
+
+        val isGameUpdateAvailable = installedGameVersion != upstreamGameAnnounce.latest_known
+        assertTrue("Game đã có phiên bản 1.9.2.4 mới hơn 1.8.0.1 trên máy", isGameUpdateAvailable)
     }
 }

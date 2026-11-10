@@ -1,4 +1,4 @@
-﻿package vn.hokvi.viethoa.v2.ui.screens
+package vn.hokvi.viethoa.v2.ui.screens
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -772,11 +772,21 @@ fun DashboardScreen(
                             .background(DarkSurfaceVariant)
                             .padding(10.dp)
                     ) {
-                        Text(
-                            text = update.message ?: "",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = if (update.hasAppUpdate || update.hasPatchUpdate) GoldPrimary else EmeraldSuccess
-                        )
+                        Column {
+                            Text(
+                                text = update.message ?: "",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = if (update.hasAppUpdate || update.hasPatchUpdate) GoldPrimary else EmeraldSuccess
+                            )
+                            update.appChannelMessage?.let { appMsg ->
+                                Spacer(modifier = Modifier.height(4.dp))
+                                Text(
+                                    text = appMsg,
+                                    style = MaterialTheme.typography.labelSmall,
+                                    color = TextSecondary
+                                )
+                            }
+                        }
                     }
                 }
 
@@ -1024,23 +1034,25 @@ fun DashboardScreen(
                 }
             },
             confirmButton = {
-                Button(
-                    onClick = onDownloadAndInstallUpdate,
-                    colors = ButtonDefaults.buttonColors(containerColor = GoldPrimary),
-                    enabled = !uiState.isDownloadingApk
-                ) {
-                    if (uiState.isDownloadingApk) {
-                        CircularProgressIndicator(
-                            modifier = Modifier.size(18.dp),
-                            color = MaterialTheme.colorScheme.onPrimary,
-                            strokeWidth = 2.dp
+                if (uiState.updateResult?.hasAppUpdate == true) {
+                    Button(
+                        onClick = onDownloadAndInstallUpdate,
+                        colors = ButtonDefaults.buttonColors(containerColor = GoldPrimary),
+                        enabled = !uiState.isDownloadingApk
+                    ) {
+                        if (uiState.isDownloadingApk) {
+                            CircularProgressIndicator(
+                                modifier = Modifier.size(18.dp),
+                                color = MaterialTheme.colorScheme.onPrimary,
+                                strokeWidth = 2.dp
+                            )
+                            Spacer(modifier = Modifier.padding(horizontal = 4.dp))
+                        }
+                        Text(
+                            text = stringResource(R.string.changelog_btn_update),
+                            color = MaterialTheme.colorScheme.onPrimary
                         )
-                        Spacer(modifier = Modifier.padding(horizontal = 4.dp))
                     }
-                    Text(
-                        text = stringResource(R.string.changelog_btn_update),
-                        color = MaterialTheme.colorScheme.onPrimary
-                    )
                 }
             },
             dismissButton = {

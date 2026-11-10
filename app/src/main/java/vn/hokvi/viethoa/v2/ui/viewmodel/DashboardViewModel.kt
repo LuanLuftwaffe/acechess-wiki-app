@@ -1,4 +1,4 @@
-﻿package vn.hokvi.viethoa.v2.ui.viewmodel
+package vn.hokvi.viethoa.v2.ui.viewmodel
 
 import android.app.Application
 import android.os.Build
@@ -229,7 +229,9 @@ class DashboardViewModel @JvmOverloads constructor(
     fun checkUpdates() {
         viewModelScope.launch {
             _uiState.update { it.copy(isCheckingUpdate = true) }
-            val res = updateManager.checkForUpdates()
+            val res = updateManager.checkForUpdates(
+                targetGameVersion = _uiState.value.gameState.versionName
+            )
             if (res.isSuccess) {
                 val data = res.getOrNull()
                 _uiState.update {

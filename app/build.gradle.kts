@@ -15,6 +15,8 @@ android {
         versionCode = 200
         versionName = "2.0.0"
 
+        buildConfigField("String", "APP_UPDATE_URL", "\"\"")
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -41,6 +43,7 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 
     packaging {
