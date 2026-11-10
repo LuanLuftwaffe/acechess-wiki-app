@@ -18,6 +18,17 @@ interface ApkPatchProvider {
 }
 
 /**
+ * Triển khai chính thức áp dụng bản vá APK Delta theo định dạng chuẩn HOKVI-APKDELTA2.
+ */
+class RealApkPatchProvider(
+    private val applier: vn.hokvi.viethoa.v2.core.patch.ApkDeltaApplier = vn.hokvi.viethoa.v2.core.patch.ApkDeltaApplier()
+) : ApkPatchProvider {
+    override suspend fun applyDelta(baseApk: File, deltaFile: File, outputApk: File): Boolean {
+        return applier.apply(baseApk, deltaFile, outputApk)
+    }
+}
+
+/**
  * Bản triển khai giữ chỗ (Stub) cho ApkPatchProvider.
  * Luôn thông báo trạng thái tạm hoãn và hướng dẫn sử dụng APK vá sẵn.
  */

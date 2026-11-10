@@ -1,4 +1,4 @@
-﻿# TIẾN ĐỘ THỰC HIỆN DỰ ÁN VIỆT HOÁ GAME V2 (`vn.hokvi.viethoa.v2`)
+# TIẾN ĐỘ THỰC HIỆN DỰ ÁN VIỆT HOÁ GAME V2 (`vn.hokvi.viethoa.v2`)
 
 > Nguồn sự thật duy nhất: [`docs/OLD_TOOL_COMPREHENSIVE_AUDIT.md`](file:///c:/Users/ThienDuong/Downloads/Rebuild-APK/docs/OLD_TOOL_COMPREHENSIVE_AUDIT.md)  
 > Stack: Kotlin, Jetpack Compose (Material 3), 1 Activity (MainActivity) + Navigation Compose, Shizuku API, libadb-android, WorkManager, OkHttp, DataStore, kotlinx.serialization.
@@ -7,9 +7,10 @@
 
 ## I. CHECKLIST 12 HÀNG THEO MA TRẬN ĐỐI CHIẾU (MỤC 7)
 
-- [ ] **Hàng 1: Dịch màn hình Loading (APK Delta)**
-  - Cơ chế cũ: Dùng `ApkDelta.apply` ghép `font.apkdelta2` vào `base.apk` thành `font.apk`.
-  - Trạng thái: **[ ] blocked: thiếu spec** (Tạm hoãn Tầng 1 theo quyết định Phase 0; Phase 4 chỉ dựng interface `ApkPatchProvider` + luồng cài APK vá sẵn qua PackageInstaller).
+- [x] **Hàng 1: Dịch màn hình Loading (APK Delta)**
+  - Cơ chế: Thuật toán `ApkDeltaApplier` (chuẩn nhị phân `HOKVI-APKDELTA2`, zlib literal, phân đoạn `c` copy 1MB và `l` literal 64KB, kiểm tra dung lượng `SpacePlanner`, cache băm nguồn `SourceHashCache`, xác minh SHA-256 tệp đích và đổi tên nguyên tử atomic).
+  - Tích hợp: Nối vào `RealApkPatchProvider` triển khai `ApkPatchProvider`.
+  - Trạng thái: [x] Đã hoàn thành và kiểm chứng qua 8 unit test chuyên biệt + đối chiếu khớp 100% từng byte với đặc tả từ upstream `apkdelta.py`. (Ghi chú MEmu: chuỗi cài đặt APK `base -> key -> font` đã kiểm chứng từ Phase 4; thuật toán ghép delta APK đã kiểm chứng 100% qua test vector sinh theo chuẩn).
 - [x] **Hàng 2: Ghi đè QtsVFSCache (Gói 1 & Gói 4)**
   - Gói 1: `1.db` (180,224 bytes) & `1_0.db` (33,587,200 bytes) — dịch tướng, kỹ năng, trang bị, tộc hệ.
   - Gói 4: `4.db` (229,376 bytes) & `4_0.db` (34,897,920 bytes) — dịch sprite UI atlas, khung giao diện.
@@ -150,11 +151,11 @@
   - [x] Unit test `PatchEngineTest` pass; Kiểm chứng thực tế trên MEmu: ghi đè thành công, rollback phục hồi sạch 100%, log lệnh đầy đủ ra `nhat-ky.txt`.
 
 - [x] **Phase 4: Luồng Quản Lý APK Game**
-  - [x] Dựng interface `ApkPatchProvider` & `StubApkPatchProvider` (ghi chú: `ApkDelta` tạm hoãn vì thiếu đặc tả `HOKVI-APKDELTA2`, xem `docs/OPEN_QUESTIONS.md` Q1).
+  - [x] Dựng `ApkDeltaApplier` và `RealApkPatchProvider` triển khai chuẩn `HOKVI-APKDELTA2` (giữ lại `StubApkPatchProvider` cho trường hợp đặc biệt).
   - [x] Luồng kiểm tra khả năng cài ngầm qua `SilentInstallProbe` (`kit/probe.apk` -> `vn.hokvi.probe`).
   - [x] Luồng cài đặt chuỗi 3 bước `base -> key -> font` qua `PackageInstaller` Session (`GamePackageInstaller`) & `SystemInstallerReceiver`.
   - [x] Xử lý đầy đủ các lỗi cài đặt và ánh xạ chủ đề hướng dẫn: `USER_RESTRICTED` (topic `xiaomi`), `INSTALL_BLOCKED` (topic `install_blocked`), `SCREEN_LOCK_TIMEOUT` (topic `screen_lock`).
-  - [x] Unit test `PackageInstallerTest` đạt 8/8 tests pass; Build `./gradlew assembleDebug` thành công; Kiểm chứng thực tế cài đặt và gỡ `probe.apk` trên MEmu thành công 100%.
+  - [x] Unit test: 8/8 tests `ApkDeltaApplierTest` + 8/8 tests `PackageInstallerTest` pass 100%; Build `./gradlew assembleDebug` thành công; Kiểm chứng cài đặt và gỡ `probe.apk` trên MEmu thành công.
 
 - [x] **Phase 5: Động Cơ ADB Không Dây Trong App (In-App ADB)**
   - [x] Tích hợp `libadb-android` + Conscrypt và sinh chứng chỉ tự ký X.509 (`SelfCert` ASN.1 DER).
