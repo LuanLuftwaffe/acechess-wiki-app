@@ -9,13 +9,15 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import vn.hokvi.viethoa.v2.core.shell.ShellResolver
 import vn.hokvi.viethoa.v2.core.showtime.ShowTimeConfig
 import vn.hokvi.viethoa.v2.core.showtime.ShowTimeRenderer
 import vn.hokvi.viethoa.v2.core.showtime.ShowTimeUiState
 
 class ShowtimeViewModel @JvmOverloads constructor(
     application: Application,
-    private val renderer: ShowTimeRenderer = ShowTimeRenderer(application.applicationContext)
+    private val shellResolver: ShellResolver = ShellResolver(application.applicationContext),
+    private val renderer: ShowTimeRenderer = ShowTimeRenderer(application.applicationContext, shellResolver)
 ) : AndroidViewModel(application) {
 
     private val _uiState = MutableStateFlow(ShowTimeUiState())

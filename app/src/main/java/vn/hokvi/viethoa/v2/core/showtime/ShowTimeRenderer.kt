@@ -11,10 +11,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import vn.hokvi.viethoa.v2.core.shell.ShellResolver
 import java.io.File
 import java.io.FileOutputStream
 
-class ShowTimeRenderer(private val context: Context) {
+class ShowTimeRenderer @JvmOverloads constructor(
+    private val context: Context,
+    private val shellResolver: ShellResolver? = null
+) {
 
     companion object {
         const val HOKVI_SHOWTIME_DIR = "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/showtime"
@@ -187,6 +191,7 @@ class ShowTimeRenderer(private val context: Context) {
 
     /**
      * Xuất toàn bộ 13 tệp ảnh raw RGBA (.rgba) và config.json vào thư mục /sdcard/.../HOKVI/showtime/
+     * Sử dụng staging trong cache riêng và chuyển giao qua ShellResolver / Shizuku nếu cần.
      */
     suspend fun exportAndApply(config: ShowTimeConfig): Result<Int> = withContext(Dispatchers.IO) {
         val validationError = config.validate()
@@ -194,9 +199,9 @@ class ShowTimeRenderer(private val context: Context) {
             return@withContext Result.failure(IllegalArgumentException(validationError))
         }
 
-        val showtimeDir = File(HOKVI_SHOWTIME_DIR)
-        if (!showtimeDir.exists() && !showtimeDir.mkdirs()) {
-            return@withContext Result.failure(IllegalStateException("Không thể tạo thư mục ShowTime: $HOKVI_SHOWTIME_DIR"))
+        val stagingDir = File(context.cacheDir, "showtime_staging")
+        if (!stagingDir.exists() && !stagingDir.mkdirs()) {
+            return@withContext Result.failure(IllegalStateException("Không thể tạo thư mục staging: ${stagingDir.absolutePath}"))
         }
 
         var exportedCount = 0
@@ -207,7 +212,7 @@ class ShowTimeRenderer(private val context: Context) {
             val rgbaBytes = bitmapToRgba(bmp)
             bmp.recycle()
 
-            val rgbaFile = File(showtimeDir, "${spec.name}.rgba")
+            val rgbaFile = File(stagingDir, "${spec.name}.rgba")
             FileOutputStream(rgbaFile).use { fos ->
                 fos.write(rgbaBytes)
             }
@@ -215,16 +220,47 @@ class ShowTimeRenderer(private val context: Context) {
         }
 
         // Ghi config.json
-        val configFile = File(showtimeDir, "config.json")
+        val configFile = File(stagingDir, "config.json")
         configFile.writeText(json.encodeToString(config))
 
-        // Ghi cờ showtime_on
-        val onFile = File(showtimeDir, "showtime_on")
-        if (!onFile.exists()) onFile.createNewFile()
+        // Ghi cờ enabled (khớp 100% định dạng tool gốc)
+        val enabledFile = File(stagingDir, "enabled")
+        if (!enabledFile.exists()) enabledFile.createNewFile()
 
-        // Ghi cờ showtime_config
-        val cfgFlagFile = File(showtimeDir, "showtime_config")
-        if (!cfgFlagFile.exists()) cfgFlagFile.createNewFile()
+        // Chuyển giao vào thư mục game đích
+        val targetDir = File(HOKVI_SHOWTIME_DIR)
+        var copySuccess = false
+
+        // 1. Thử ghi trực tiếp nếu có quyền truy cập
+        try {
+            if (targetDir.exists() || targetDir.mkdirs()) {
+                stagingDir.listFiles()?.forEach { f ->
+                    val dest = File(targetDir, f.name)
+                    f.copyTo(dest, overwrite = true)
+                }
+                copySuccess = true
+            }
+        } catch (_: Exception) {
+            copySuccess = false
+        }
+
+        // 2. Nếu ghi trực tiếp thất bại, sử dụng ShellResolver / Shizuku
+        if (!copySuccess && shellResolver != null) {
+            try {
+                val stagingPath = stagingDir.absolutePath
+                val cmd = "mkdir -p $HOKVI_SHOWTIME_DIR && cp -r $stagingPath/* $HOKVI_SHOWTIME_DIR/ && chmod 666 $HOKVI_SHOWTIME_DIR/*"
+                val res = shellResolver.runLoggedCommand(cmd)
+                if (res.isSuccess) {
+                    copySuccess = true
+                }
+            } catch (_: Exception) {
+                copySuccess = false
+            }
+        }
+
+        if (!copySuccess) {
+            return@withContext Result.failure(IllegalStateException("Không thể ghi tệp ShowTime vào $HOKVI_SHOWTIME_DIR (Lỗi phân quyền hệ thống)"))
+        }
 
         Result.success(exportedCount)
     }

@@ -7,12 +7,16 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import vn.hokvi.viethoa.v2.core.shell.ShellResolver
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.security.MessageDigest
 
-class MusicRepository(private val context: Context) {
+class MusicRepository @JvmOverloads constructor(
+    private val context: Context,
+    private val shellResolver: ShellResolver? = null
+) {
     companion object {
         const val MAX_ON = 50
         const val MAX_FILE_SIZE = 64L * 1024L * 1024L // 64 MB
@@ -30,7 +34,69 @@ class MusicRepository(private val context: Context) {
     private val tracksDir = File(musicDir, "tracks").apply { if (!exists()) mkdirs() }
     private val libraryFile = File(musicDir, "library.json")
 
+    suspend fun initDefaultTrackIfAvailable(): Boolean = withContext(Dispatchers.IO) {
+        val currentTracks = if (libraryFile.exists()) {
+            try {
+                json.decodeFromString<MusicLibraryData>(libraryFile.readText()).tracks
+            } catch (_: Exception) {
+                emptyList()
+            }
+        } else {
+            emptyList()
+        }
+        if (currentTracks.isNotEmpty()) return@withContext false
+
+        try {
+            val assetManager = context.assets
+            val assetPath = "music/ngth.mp3"
+            val hasAsset = try {
+                assetManager.open(assetPath).use { true }
+            } catch (_: Exception) {
+                false
+            }
+            if (!hasAsset) return@withContext false
+
+            val defaultFileName = "ngth.mp3"
+            val destFile = File(tracksDir, defaultFileName)
+            val digest = MessageDigest.getInstance("SHA-256")
+            var copiedBytes = 0L
+
+            assetManager.open(assetPath).use { input ->
+                FileOutputStream(destFile).use { output ->
+                    val buffer = ByteArray(65536)
+                    var read: Int
+                    while (input.read(buffer).also { read = it } != -1) {
+                        copiedBytes += read
+                        output.write(buffer, 0, read)
+                        digest.update(buffer, 0, read)
+                    }
+                }
+            }
+
+            val sha256 = digest.digest().joinToString("") { "%02x".format(it) }
+            val track = MusicTrack(
+                id = 1L,
+                fileName = defaultFileName,
+                title = "ngth",
+                artist = "HOKVI",
+                sizeBytes = copiedBytes,
+                sha256 = sha256,
+                isEnabled = true,
+                order = 0,
+                origin = "bundled",
+                gameName = "ngth.mp3"
+            )
+            saveLibrary(listOf(track))
+            true
+        } catch (_: Exception) {
+            false
+        }
+    }
+
     suspend fun loadLibrary(): List<MusicTrack> = withContext(Dispatchers.IO) {
+        if (!libraryFile.exists()) {
+            initDefaultTrackIfAvailable()
+        }
         if (!libraryFile.exists()) return@withContext emptyList()
         try {
             val content = libraryFile.readText()
@@ -217,45 +283,71 @@ class MusicRepository(private val context: Context) {
      * Nạp toàn bộ danh sách nhạc đang bật (tối đa 50 bài) vào game:
      * - Chép các file audio vào /sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/music/
      * - Tạo cờ 'enabled'
-     * - Tạo 'titles.txt' với header chuẩn
+     * - Tạo 'titles.txt' với header chuẩn và phân tách bằng tab (\t)
+     * - Đồng bộ qua ShellResolver với quyền 666
      */
     suspend fun applyToGame(): Result<Int> = withContext(Dispatchers.IO) {
         val tracks = loadLibrary().filter { it.isEnabled }.take(MAX_ON)
-        val gameDir = File(HOKVI_MUSIC_DIR)
-        if (!gameDir.exists()) {
-            if (!gameDir.mkdirs()) {
-                return@withContext Result.failure(IllegalStateException("Không thể tạo thư mục nhạc game: $HOKVI_MUSIC_DIR"))
-            }
+        val stagingDir = File(context.cacheDir, "music_staging").apply {
+            if (exists()) deleteRecursively()
+            mkdirs()
         }
 
-        // 1. Chép các tệp nhạc
         var copiedCount = 0
-        val titleLines = mutableListOf<String>()
+        val sb = StringBuilder(TITLES_HEADER)
 
         for (track in tracks) {
             val src = File(tracksDir, track.fileName)
+            val gameFile = track.gameName.ifBlank { track.fileName }
             if (src.exists()) {
-                val dst = File(gameDir, track.gameName.ifBlank { track.fileName })
+                val dst = File(stagingDir, gameFile)
                 src.copyTo(dst, overwrite = true)
                 copiedCount++
-                titleLines.add("${track.title} - ${track.artist}")
+                sb.append(gameFile).append("\t").append(track.title).append("\t").append(track.artist).append("\n")
             }
         }
 
         // 2. Tạo tệp cờ 'enabled'
-        val enabledFile = File(gameDir, "enabled")
-        if (!enabledFile.exists()) {
-            enabledFile.createNewFile()
-        }
+        val enabledFile = File(stagingDir, "enabled")
+        enabledFile.createNewFile()
 
         // 3. Tạo 'titles.txt'
-        val titlesFile = File(gameDir, "titles.txt")
-        val sb = StringBuilder(TITLES_HEADER)
-        for (line in titleLines) {
-            sb.append(line).append("\n")
-        }
+        val titlesFile = File(stagingDir, "titles.txt")
         titlesFile.writeText(sb.toString())
 
+        // 4. Chuyển vào thư mục game qua ShellResolver (tránh hạn chế Scoped Storage Android)
+        val targetPath = HOKVI_MUSIC_DIR
+        var copySuccess = false
+
+        try {
+            val gameDir = File(targetPath)
+            if (gameDir.exists() || gameDir.mkdirs()) {
+                stagingDir.listFiles()?.forEach { f ->
+                    f.copyTo(File(gameDir, f.name), overwrite = true)
+                }
+                copySuccess = true
+            }
+        } catch (_: Exception) {
+            copySuccess = false
+        }
+
+        if (!copySuccess && shellResolver != null) {
+            try {
+                val stagingPath = stagingDir.absolutePath
+                val cmd = "mkdir -p '$targetPath' && chmod 777 '$targetPath' && cp -rf '$stagingPath'/* '$targetPath'/ && chmod 666 '$targetPath'/*"
+                val res = shellResolver.runLoggedCommand(cmd)
+                if (res.isSuccess) {
+                    copySuccess = true
+                }
+            } catch (_: Exception) {
+                copySuccess = false
+            }
+        }
+
+        stagingDir.deleteRecursively()
+        if (!copySuccess) {
+            return@withContext Result.failure(IllegalStateException("Không thể ghi tệp nhạc vào $targetPath (Lỗi phân quyền hệ thống)"))
+        }
         Result.success(copiedCount)
     }
 }

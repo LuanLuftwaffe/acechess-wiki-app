@@ -11,10 +11,11 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import vn.hokvi.viethoa.v2.core.music.MusicLibraryUiState
 import vn.hokvi.viethoa.v2.core.music.MusicRepository
+import vn.hokvi.viethoa.v2.core.shell.ShellResolver
 
 class MusicViewModel @JvmOverloads constructor(
     application: Application,
-    private val repository: MusicRepository = MusicRepository(application.applicationContext)
+    private val repository: MusicRepository = MusicRepository(application.applicationContext, ShellResolver(application.applicationContext))
 ) : AndroidViewModel(application) {
 
     private val _uiState = MutableStateFlow(MusicLibraryUiState(isLoading = true))
