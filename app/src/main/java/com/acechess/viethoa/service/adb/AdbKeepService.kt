@@ -121,7 +121,7 @@ class AdbKeepService : Service() {
         )
 
         return NotificationCompat.Builder(this, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_launcher)
+            .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle("ADB Không Dây Đang Hoạt Động")
             .setContentText("Duy trì socket gỡ lỗi không dây ngầm.")
             .setContentIntent(pendingIntent)

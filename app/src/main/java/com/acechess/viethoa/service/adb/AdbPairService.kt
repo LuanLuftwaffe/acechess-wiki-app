@@ -140,7 +140,7 @@ class AdbPairService : Service() {
         val stopPendingIntent = PendingIntent.getService(this, 1, stopIntent, flags)
 
         return NotificationCompat.Builder(this, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_launcher)
+            .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle("Ghép nối Gỡ lỗi không dây")
             .setContentText("Mở Cài đặt > Gỡ lỗi không dây > Ghép nối bằng mã, sau đó bấm Nhập mã PIN ở đây.")
             .setPriority(NotificationCompat.PRIORITY_HIGH)

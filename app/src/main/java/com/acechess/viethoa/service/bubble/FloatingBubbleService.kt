@@ -10,6 +10,7 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ServiceInfo
+import android.graphics.BitmapFactory
 import android.graphics.PixelFormat
 import android.os.Build
 import android.os.IBinder
@@ -167,14 +168,24 @@ class FloatingBubbleService : Service() {
         }
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, flags)
 
-        return NotificationCompat.Builder(this, CHANNEL_ID)
+        val largeIcon = try {
+            BitmapFactory.decodeResource(resources, R.drawable.ic_notification_large)
+        } catch (_: Exception) {
+            null
+        }
+
+        val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle("Bong bóng trợ lý Ace Chess đang chạy")
             .setContentText("Chạm vào bong bóng trên màn hình để mở nhanh cẩm nang tra cứu")
-            .setSmallIcon(R.drawable.ic_launcher)
+            .setSmallIcon(R.drawable.ic_notification)
             .setContentIntent(pendingIntent)
             .setOngoing(true)
             .setPriority(NotificationCompat.PRIORITY_LOW)
-            .build()
+
+        if (largeIcon != null) {
+            builder.setLargeIcon(largeIcon)
+        }
+        return builder.build()
     }
 
     @SuppressLint("InflateParams", "ClickableViewAccessibility")
