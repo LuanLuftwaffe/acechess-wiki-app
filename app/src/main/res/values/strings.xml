@@ -6,11 +6,19 @@
 
     <!-- Navigation -->
     <string name="nav_dashboard">Tổng quan</string>
+    <string name="nav_handbook">Cẩm Nang</string>
     <string name="nav_patch">Vá Game</string>
     <string name="nav_music">Nhạc Nền</string>
     <string name="nav_showtime">Sân Khấu</string>
     <string name="nav_guide">Hướng Dẫn</string>
     <string name="nav_logs">Nhật Ký</string>
+
+    <!-- Handbook WebView -->
+    <string name="handbook_title">Cẩm Nang Ace Chess</string>
+    <string name="handbook_reload">Tải lại</string>
+    <string name="handbook_open_external">Mở bằng trình duyệt ngoài</string>
+    <string name="handbook_loading">Đang nạp cẩm nang...</string>
+    <string name="handbook_error">Không thể tải trang web. Vui lòng kiểm tra kết nối mạng.</string>
 
     <!-- Shell Status -->
     <string name="shell_status_title">Trạng thái quyền hệ thống</string>

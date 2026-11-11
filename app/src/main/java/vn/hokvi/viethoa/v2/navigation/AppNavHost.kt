@@ -24,6 +24,7 @@ import vn.hokvi.viethoa.v2.core.shell.ShellResolver
 import vn.hokvi.viethoa.v2.ui.screens.ChangelogScreen
 import vn.hokvi.viethoa.v2.ui.screens.DashboardScreen
 import vn.hokvi.viethoa.v2.ui.screens.GuideScreen
+import vn.hokvi.viethoa.v2.ui.screens.HandbookScreen
 import vn.hokvi.viethoa.v2.ui.screens.LogsScreen
 import vn.hokvi.viethoa.v2.ui.screens.MusicScreen
 import vn.hokvi.viethoa.v2.ui.screens.PatchScreen
@@ -120,6 +121,9 @@ fun AppNavHost(
                         navController.navigate(Screen.Changelog.route)
                     }
                 )
+            }
+            composable(Screen.Handbook.route) {
+                HandbookScreen()
             }
             composable(Screen.Patch.route) {
                 val patchUiState by patchViewModel.uiState.collectAsState()
