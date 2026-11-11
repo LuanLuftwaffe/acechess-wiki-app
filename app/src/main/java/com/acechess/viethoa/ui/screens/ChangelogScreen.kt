@@ -90,23 +90,27 @@ fun ChangelogScreen(
                 )
             }
 
-            Button(
-                onClick = onOpenFeedback,
-                shape = RoundedCornerShape(8.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = DarkSurfaceVariant),
-                border = BorderStroke(1.dp, GoldPrimary)
-            ) {
-                Icon(
-                    imageVector = Icons.Default.Feedback,
-                    contentDescription = null,
-                    tint = GoldPrimary,
-                    modifier = Modifier.size(16.dp)
-                )
-                Spacer(modifier = Modifier.padding(horizontal = 2.dp))
-                Text(
-                    text = stringResource(R.string.changelog_feedback_btn),
-                    color = GoldPrimary
-                )
+            // Ẩn nút phản hồi cho tới khi người dùng cung cấp kênh liên hệ chính thức (RENAME_QUESTIONS.md Q4)
+            val isFeedbackEnabled = false
+            if (isFeedbackEnabled) {
+                Button(
+                    onClick = onOpenFeedback,
+                    shape = RoundedCornerShape(8.dp),
+                    colors = ButtonDefaults.buttonColors(containerColor = DarkSurfaceVariant),
+                    border = BorderStroke(1.dp, GoldPrimary)
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Feedback,
+                        contentDescription = null,
+                        tint = GoldPrimary,
+                        modifier = Modifier.size(16.dp)
+                    )
+                    Spacer(modifier = Modifier.padding(horizontal = 2.dp))
+                    Text(
+                        text = stringResource(R.string.changelog_feedback_btn),
+                        color = GoldPrimary
+                    )
+                }
             }
         }
 

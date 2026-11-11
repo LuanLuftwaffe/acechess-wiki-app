@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Việt Hoá Game</string>
-    <string name="app_subtitle">HOK VI — Công cụ hỗ trợ Việt hoá Vương Giả Vinh Diệu</string>
+    <string name="app_name">AceChess Tool Việt Hóa</string>
+    <string name="app_subtitle">AceChess — Công cụ hỗ trợ Việt hoá &amp; Cẩm nang tra cứu</string>
     <string name="app_version_label">Phiên bản: %1$s</string>
 
     <!-- Navigation -->
@@ -38,7 +38,7 @@
     <string name="shell_cmd_test_title">Lệnh kiểm tra: id</string>
     <string name="shell_cmd_test_output">Kết quả: %1$s</string>
     <string name="shell_log_path">Tệp nhật ký: %1$s</string>
-    <string name="shell_recent_logs_title">Nhật ký thực thi mới nhất (nhat-ky.txt)</string>
+    <string name="shell_recent_logs_title">Nhật ký thực thi mới nhất (acechess-nhat-ky.txt)</string>
 
     <!-- Game Status -->
     <string name="game_status_title">Trạng thái Game Vương Giả</string>
@@ -172,7 +172,7 @@
     <string name="guide_topic_troubleshooting">Các lỗi thường gặp</string>
 
     <!-- Log Viewer -->
-    <string name="logs_title">Nhật Ký Hoạt Động (nhat-ky.txt)</string>
+    <string name="logs_title">Nhật Ký Hoạt Động (acechess-nhat-ky.txt)</string>
     <string name="logs_empty">Chưa có nhật ký hoạt động nào được ghi nhận.</string>
 
     <!-- Common Dialogs -->
@@ -231,7 +231,7 @@
 
     <!-- Phase 8: Diagnostics & Logs -->
     <string name="shell_logger_desc">Nhật ký ghi lại toàn bộ lệnh shell, mã thoát, thời gian thực thi và chi tiết kết quả.</string>
-    <string name="diag_tab_logs">Nhật ký lệnh (nhat-ky.txt)</string>
+    <string name="diag_tab_logs">Nhật ký lệnh (acechess-nhat-ky.txt)</string>
     <string name="diag_tab_report">Báo cáo chẩn đoán hệ thống</string>
     <string name="diag_btn_generate">Tạo báo cáo chẩn đoán ngay</string>
     <string name="diag_btn_generating">Đang trích xuất thông số &amp; 200 dòng Logcat...</string>
@@ -241,7 +241,7 @@
     <string name="diag_copied_toast">Đã sao chép nội dung vào bộ nhớ tạm.</string>
     <string name="diag_empty_desc">Nhấn \"Tạo báo cáo chẩn đoán ngay\" để thu thập thông số chi tiết gồm cấu hình máy, ROM, SELinux, loại APK, quyền Shizuku, kết nối ADB, dung lượng bộ nhớ và 200 dòng Logcat.</string>
     <string name="diag_file_saved">Đã lưu tệp báo cáo: %1$s</string>
-    <string name="logs_btn_export">Chia sẻ nhat-ky.txt</string>
+    <string name="logs_btn_export">Chia sẻ acechess-nhat-ky.txt</string>
     <string name="logs_btn_clear">Xoá nhật ký</string>
 
     <!-- Phase 8: Changelog Screen & Feedback -->
@@ -255,8 +255,12 @@
     <string name="changelog_game_ver_tag">Game: %1$s</string>
     <string name="changelog_feedback_btn">Gửi phản hồi</string>
     <string name="changelog_feedback_dialog_title">Gửi phản hồi cho nhóm phát triển</string>
-    <string name="changelog_feedback_desc">Mô tả sự cố gặp phải, góp ý tính năng hoặc báo lỗi để đội ngũ HOK VI hỗ trợ bạn sớm nhất.</string>
+    <string name="changelog_feedback_desc">Mô tả sự cố gặp phải hoặc góp ý tính năng để hoàn thiện ứng dụng.</string>
     <string name="changelog_feedback_hint">Nhập nội dung phản hồi của bạn tại đây...</string>
     <string name="changelog_feedback_send">Gửi phản hồi</string>
     <string name="changelog_feedback_sent">Cảm ơn bạn đã đóng góp phản hồi!</string>
+
+    <!-- Giới thiệu & Ghi nhận nguồn (Attribution) -->
+    <string name="about_attribution_title">Giới thiệu &amp; Ghi nhận nguồn</string>
+    <string name="about_attribution_content">AceChess Tool Việt Hóa là ứng dụng độc lập được tái cấu trúc cho hệ sinh thái AceChess, tích hợp cẩm nang tra cứu trực tuyến và hỗ trợ nạp bản dịch tiếng Việt tương thích với dữ liệu cộng đồng.</string>
 </resources>

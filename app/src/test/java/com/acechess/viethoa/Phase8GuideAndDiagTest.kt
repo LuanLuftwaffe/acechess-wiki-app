@@ -29,8 +29,8 @@ class Phase8GuideAndDiagTest {
     }
 
     private fun loadChangelogFromFile(): ChangelogPayload {
-        val file = File("src/main/assets/kit/changelog.json")
-        assertTrue("changelog.json must exist in assets", file.exists())
+        val file = File("src/main/assets/kit/acechess_changelog.json")
+        assertTrue("acechess_changelog.json must exist in assets", file.exists())
         val text = InputStreamReader(FileInputStream(file), Charsets.UTF_8).use { it.readText() }
         return json.decodeFromString<ChangelogPayload>(text)
     }
@@ -155,28 +155,19 @@ class Phase8GuideAndDiagTest {
     fun testChangelogSchemaAndSeparation() {
         val payload = loadChangelogFromFile()
         assertTrue("Changelog must have releases", payload.releases.isNotEmpty())
-        assertTrue("Changelog should have at least 62 releases (found ${payload.releases.size})", payload.releases.size >= 62)
 
         val latest = payload.releases.first()
-        assertEquals("1.9.2.4-r75", latest.release)
+        assertEquals("1.0", latest.release)
         assertEquals("1.9.2.4", latest.gameVersion)
-        assertEquals("2026-11-10", latest.date)
-
-        // Verify r71 also exists in history
-        val r71 = payload.releases.find { it.release == "1.8.0.1-r71" }
-        assertNotNull("Release 1.8.0.1-r71 must exist in history", r71)
-        assertEquals("1.8.0.1", r71?.gameVersion)
-        assertTrue(r71?.chung?.isNotEmpty() == true)
-        assertTrue(r71?.pc?.isNotEmpty() == true)
-        assertTrue(r71?.android?.isNotEmpty() == true)
+        assertEquals("2026-11-11", latest.date)
+        assertTrue(latest.chung.isNotEmpty())
+        assertTrue(latest.android.isNotEmpty())
 
         // Test category filtering
         val chungCount = payload.releases.count { it.chung.isNotEmpty() }
-        val pcCount = payload.releases.count { it.pc.isNotEmpty() }
         val androidCount = payload.releases.count { it.android.isNotEmpty() }
 
         assertTrue(chungCount > 0)
-        assertTrue(pcCount > 0)
         assertTrue(androidCount > 0)
     }
 }

@@ -171,9 +171,9 @@ class UpdateManager(
             }
             Result.success(json.decodeFromString<ChangelogData>(content))
         } catch (_: Exception) {
-            // Fallback đọc từ assets/kit/changelog.json
+            // Fallback đọc từ assets/kit/acechess_changelog.json
             try {
-                val assetContent = context.assets.open("kit/changelog.json").bufferedReader().use { it.readText() }
+                val assetContent = context.assets.open("kit/acechess_changelog.json").bufferedReader().use { it.readText() }
                 Result.success(json.decodeFromString<ChangelogData>(assetContent))
             } catch (fallbackError: Exception) {
                 Result.failure(fallbackError)

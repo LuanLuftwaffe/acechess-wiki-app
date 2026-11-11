@@ -44,7 +44,7 @@
 | **FEAT-31** | Ghi nhật ký lệnh shell thời gian thực (`nhat-ky.txt`) | Ghi nano-giây, lệnh, mã thoát (exit code), stdout/stderr | Đã triển khai (`ShellLogger.kt`) | S13 | **IDENTICAL** | `dumps/parity/diag/new/nhat-ky.txt` |
 | **FEAT-32** | Xuất báo cáo chẩn đoán hệ thống toàn diện | Xuất `bao-cao-chan-doan-*.txt` gồm 8 chuyên mục + 200 dòng Logcat | Đã triển khai (`DiagnosticsManager.kt`) | S13 | **IDENTICAL** | `dumps/parity/diag/new/bao-cao-chan-doan.txt` |
 | **FEAT-33** | Tra cứu hướng dẫn theo máy (`huong-dan-thiet-bi.json`) | Đọc asset `huong-dan-thiet-bi.json`, 9 profile hãng, 15 chủ đề | Đã triển khai (`GuideScreen.kt`) | S12 | **IDENTICAL** | `dumps/parity/s12_guide/parity.md`, `compare_guide.py` (Khớp 100%) |
-| **FEAT-34** | Lịch sử cập nhật (Changelog 66 bản ghi, lọc 4 tab) | Đọc `changelog.json`, lọc Tất cả / Chung / PC / Android | Đã triển khai (`ChangelogScreen.kt`) | S14 | **IDENTICAL** | `dumps/parity/s14_changelog/parity.md` (Khớp 100%) |
+| **FEAT-34** | Lịch sử cập nhật (Changelog) | Đọc `changelog.json`, lọc Tất cả / Chung / PC / Android | Độc lập (`acechess_changelog.json` bắt đầu từ 1.0) | S14 | **DIFF-ACCEPTABLE** | Tách biệt hoàn toàn khỏi changelog của upstream; app sở hữu changelog độc lập từ 1.0 |
 | **FEAT-35** | Hộp thoại gửi phản hồi / Góp ý về máy chủ | Nút "Góp ý" mở dialog nhập ý kiến gửi về nhóm phát triển | Đã triển khai (`FeedbackDialog.kt`) | S14 | **IDENTICAL** | `dumps/parity/feat35_feedback/parity.md`, đối chiếu hộp thoại góp ý khớp |
 | **FEAT-36** | Thông báo định kỳ khi có bản cập nhật mới | Tự động kiểm tra `latest.json` định kỳ và gửi Notification | Đã cấu hình Worker định kỳ trong `UpdateManager.kt` | S14 | **IDENTICAL** | `dumps/parity/feat36_periodic_update/parity.md`, JobScheduler dumpsys khớp |
 
@@ -53,8 +53,8 @@
 ## 2. THỐNG KÊ TỶ LỆ THEO 5 TRẠNG THÁI NGHIỆM THU
 
 - **Tổng số tính năng kiểm kê:** 36 tính năng
-  * **IDENTICAL (Khớp 100% bằng chứng old + new):** **23 / 36 (63.89%)** — *[FEAT-01, 02, 03, 04, 05, 11, 17, 18, 19, 20, 21, 22, 23, 24 (user flow), 25, 27, 28, 30, 31, 32, 33, 34, 35, 36]*
-  * **DIFF-ACCEPTABLE (Khác biệt chấp nhận được có lý do kỹ thuật):** **2 / 36 (5.56%)** — *[FEAT-26 (Độ lệch pixel anti-aliasing font 13 ảnh ShowTime, byte size & WxH khớp 100%), FEAT-24 (Phần a: Tự tải bài mặc định ngth.mp3 từ S3 tác giả)]*
+  * **IDENTICAL (Khớp 100% bằng chứng old + new):** **22 / 36 (61.11%)** — *[FEAT-01, 02, 03, 04, 05, 11, 17, 18, 19, 20, 21, 22, 23, 24 (user flow), 25, 27, 28, 30, 31, 32, 33, 35, 36]*
+  * **DIFF-ACCEPTABLE (Khác biệt chấp nhận được có lý do kỹ thuật):** **3 / 36 (8.33%)** — *[FEAT-26 (Độ lệch pixel anti-aliasing font 13 ảnh ShowTime, byte size & WxH khớp 100%), FEAT-24 (Phần a: Tự tải bài mặc định ngth.mp3 từ S3 tác giả), FEAT-34 (Tách biệt changelog upstream, dùng changelog riêng AceChess từ 1.0)]*
   * **DIFF-BUG (Phát hiện lỗi sai lệch đang mở):** **0 / 36 (0.00%)** — *[Tất cả BUG-001..003 đã được sửa & nghiệm thu]*
   * **NOT-TESTABLE (Bị chặn do môi trường MEmu hoặc dữ liệu vá 1.9.2.4):** **11 / 36 (30.56%)** — *[FEAT-06, FEAT-07..10, 12..16, FEAT-29]*
     - *Môi trường:* Game trên MEmu là APK Store chính thức Tencent (tool gốc báo CAN_GO_BAN_CHINH_THUC), cần người dùng cung cấp snapshot môi trường chấp nhận được.

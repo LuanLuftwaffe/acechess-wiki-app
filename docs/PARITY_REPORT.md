@@ -104,7 +104,7 @@
 | **FEAT-31** | Ghi nhật ký shell `nhat-ky.txt` | `diag/old/nhat-ky.txt` | `diag/new/nhat-ky.txt` | `s13_diag/parity.md` | **IDENTICAL** |
 | **FEAT-32** | Báo cáo chẩn đoán hệ thống | `diag/old/bao-cao-*.txt` | `diag/new/bao-cao-*.txt` | `s13_diag/parity.md` | **IDENTICAL** |
 | **FEAT-33** | Tra cứu hướng dẫn theo máy | `s12_guide/old.json` | `s12_guide/new.json` | `s12_guide/parity.md` | **IDENTICAL** |
-| **FEAT-34** | Lịch sử cập nhật Changelog | `s14_changelog/old.json`| `s14_changelog/new.json`| `s14_changelog/parity.md` | **IDENTICAL** |
+| **FEAT-34** | Lịch sử cập nhật Changelog | `s14_changelog/old.json`| `s14_changelog/new.json`| `s14_changelog/parity.md` | **DIFF-ACCEPTABLE** (Dùng changelog độc lập AceChess từ 1.0) |
 | **FEAT-35** | Hộp thoại gửi phản hồi / Góp ý | `feat35_feedback/old/` | `feat35_feedback/new/` | `feat35_feedback/parity.md` | **IDENTICAL** |
 | **FEAT-36** | Thông báo kiểm tra định kỳ | `feat36_periodic_update/old_scheduler.txt` | `feat36_periodic_update/new_scheduler.txt` | `feat36_periodic_update/parity.md` | **IDENTICAL** |
 

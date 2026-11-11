@@ -14,7 +14,7 @@ class ChangelogRepository(private val context: Context) {
     fun loadChangelog(): ChangelogPayload {
         cachedPayload?.let { return it }
         return try {
-            val text = context.assets.open("kit/changelog.json").bufferedReader().use { it.readText() }
+            val text = context.assets.open("kit/acechess_changelog.json").bufferedReader().use { it.readText() }
             val data = json.decodeFromString<ChangelogPayload>(text)
             cachedPayload = data
             data

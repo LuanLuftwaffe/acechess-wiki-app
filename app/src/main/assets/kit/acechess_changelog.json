@@ -1,0 +1,25 @@
+{
+  "format": 1,
+  "app": "AceChess Tool Việt Hóa",
+  "releases": [
+    {
+      "release": "1.0",
+      "game_version": "1.9.2.4",
+      "date": "2026-11-11",
+      "android_version_code": 200,
+      "chung": [
+        "Phiên bản đầu tiên của AceChess Tool Việt Hóa — Ứng dụng độc lập hoàn toàn mới trong hệ sinh thái AceChess.",
+        "Tích hợp cẩm nang tra cứu trực tuyến Ace Chess Wiki và bong bóng nổi trợ lý trong game.",
+        "Hỗ trợ nạp bản dịch tiếng Việt qua hệ thống VFS động (không can thiệp sửa đổi APK gốc của game).",
+        "Hỗ trợ nạp nhạc nền sảnh tuỳ chọn và sân khấu động ShowTime."
+      ],
+      "android": [
+        "Giao diện hiện đại Jetpack Compose kết hợp Material 3 tông màu hoàng gia Dark & Gold.",
+        "Bong bóng nổi (Floating Bubble) hỗ trợ thu phóng độ mờ (alpha), kéo thả và thu nhỏ cẩm nang linh hoạt.",
+        "Tự động phát hiện và kết nối quyền Root, Shizuku hoặc ADB không dây.",
+        "Bộ nhận diện thương hiệu Kỳ Thủ Thường Tiểu Nga (Chibi 3D cao cấp)."
+      ],
+      "pc": []
+    }
+  ]
+}
