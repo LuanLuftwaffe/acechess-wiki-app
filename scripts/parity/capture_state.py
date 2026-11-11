@@ -11,6 +11,14 @@ import subprocess
 import argparse
 from typing import Dict, Any, List
 
+try:
+    from scripts.parity.config import TARGET_PACKAGE
+except ImportError:
+    try:
+        from config import TARGET_PACKAGE
+    except ImportError:
+        TARGET_PACKAGE = "com.acechess.viethoa"
+
 ADB_PATH = r"C:\Program Files\Microvirt\MEmu\adb.exe"
 if not os.path.exists(ADB_PATH):
     ADB_PATH = "adb"
@@ -30,7 +38,7 @@ def get_installed_packages() -> Dict[str, Any]:
     for line in lines:
         if line.startswith("package:"):
             pkg = line.replace("package:", "").strip()
-            if pkg in ("com.tencent.tmgp.osgame", "vn.hokvi.viethoa", "vn.hokvi.viethoa.v2", "moe.shizuku.privileged.api"):
+            if pkg in ("com.tencent.tmgp.osgame", "vn.hokvi.viethoa", "vn.hokvi.viethoa.v2", "com.acechess.viethoa", TARGET_PACKAGE, "moe.shizuku.privileged.api"):
                 dumpsys = run_adb(["shell", f"dumpsys package {pkg}"])
                 ver_name = ""
                 ver_code = ""
@@ -108,7 +116,9 @@ def get_app_logs(pkg_name: str) -> str:
             return content
     return ""
 
-def capture_state(output_json: str, app_pkg: str = "vn.hokvi.viethoa.v2") -> Dict[str, Any]:
+def capture_state(output_json: str, app_pkg: str = None) -> Dict[str, Any]:
+    if not app_pkg:
+        app_pkg = TARGET_PACKAGE
     print(f"[*] Thu thập trạng thái thiết bị ({DEVICE_ID})...")
     packages = get_installed_packages()
     
@@ -143,7 +153,7 @@ def capture_state(output_json: str, app_pkg: str = "vn.hokvi.viethoa.v2") -> Dic
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Capture device filesystem state for differential testing")
     parser.add_argument("--out", "-o", required=True, help="Output JSON path")
-    parser.add_argument("--pkg", "-p", default="vn.hokvi.viethoa.v2", help="App package to collect logs")
+    parser.add_argument("--pkg", "-p", default=TARGET_PACKAGE, help="App package to collect logs")
     args = parser.parse_args()
 
     capture_state(args.out, args.pkg)

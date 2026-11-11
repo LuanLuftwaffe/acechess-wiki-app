@@ -22,6 +22,15 @@ import shutil
 import xml.etree.ElementTree as ET
 import re
 
+try:
+    from scripts.parity.config import TARGET_PACKAGE, TARGET_ACTIVITY
+except ImportError:
+    try:
+        from config import TARGET_PACKAGE, TARGET_ACTIVITY
+    except ImportError:
+        TARGET_PACKAGE = "com.acechess.viethoa"
+        TARGET_ACTIVITY = "com.acechess.viethoa/vn.hokvi.viethoa.v2.MainActivity"
+
 ADB_PATH = r"C:\Program Files\Microvirt\MEmu\adb.exe"
 if not os.path.exists(ADB_PATH):
     ADB_PATH = "adb"
@@ -95,7 +104,7 @@ def clean_all_music():
     run_adb(["shell", "mkdir -p /sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/music"])
     # Xoá library của cả 2 app
     run_adb(["shell", "rm -rf /data/data/vn.hokvi.viethoa/files/music-lib"])
-    run_adb(["shell", "rm -rf /data/data/vn.hokvi.viethoa.v2/files/music"])
+    run_adb(["shell", f"rm -rf /data/data/{TARGET_PACKAGE}/files/music"])
 
 def open_old_music_dialog():
     ensure_shizuku()
@@ -149,15 +158,15 @@ def remove_old_default_track_if_present():
 
 def open_new_music_screen():
     ensure_shizuku()
-    run_adb(["shell", "am force-stop vn.hokvi.viethoa.v2"])
-    run_adb(["shell", "am start -n vn.hokvi.viethoa.v2/.MainActivity"])
+    run_adb(["shell", f"am force-stop {TARGET_PACKAGE}"])
+    run_adb(["shell", f"am start -n {TARGET_ACTIVITY}"])
     time.sleep(2.5)
-    # Bấm Tab Nhạc Nền
+    # Bấm Tab Nhạc Nền (vị trí tab index 3 trên thanh điều hướng dưới)
     pos = find_button_center("Nhạc Nền")
     if pos:
         run_adb(["shell", f"input tap {pos[0]} {pos[1]}"])
     else:
-        run_adb(["shell", "input tap 533 684"])
+        run_adb(["shell", "input tap 638 660"])
     time.sleep(1.5)
 
 def run_test_case(track_count, out_dir):
@@ -225,7 +234,7 @@ def run_test_case(track_count, out_dir):
         f.write(old_titles)
 
     # === PHẦN 2: APP MỚI ===
-    print("\n--- [2] KIỂM THỬ TRÊN APP MỚI (vn.hokvi.viethoa.v2) ---")
+    print(f"\n--- [2] KIỂM THỬ TRÊN APP MỚI ({TARGET_PACKAGE}) ---")
     clean_all_music()
     for fn in file_names:
         fp = os.path.join(temp_dir, fn)
@@ -263,7 +272,7 @@ def run_test_case(track_count, out_dir):
     time.sleep(1)
 
     new_state_json = os.path.join(out_dir, "new.json")
-    subprocess.run([sys.executable, "scripts/parity/capture_state.py", "-o", new_state_json, "-p", "vn.hokvi.viethoa.v2"])
+    subprocess.run([sys.executable, "scripts/parity/capture_state.py", "-o", new_state_json, "-p", TARGET_PACKAGE])
 
     new_titles = run_adb(["shell", "cat /sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/music/titles.txt 2>/dev/null"])
     with open(os.path.join(out_dir, "new_titles.txt"), "w", encoding="utf-8") as f:

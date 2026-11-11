@@ -19,6 +19,15 @@ import json
 import xml.etree.ElementTree as ET
 import re
 
+try:
+    from scripts.parity.config import TARGET_PACKAGE, TARGET_ACTIVITY
+except ImportError:
+    try:
+        from config import TARGET_PACKAGE, TARGET_ACTIVITY
+    except ImportError:
+        TARGET_PACKAGE = "com.acechess.viethoa"
+        TARGET_ACTIVITY = "com.acechess.viethoa/vn.hokvi.viethoa.v2.MainActivity"
+
 ADB_PATH = r"C:\Program Files\Microvirt\MEmu\adb.exe"
 if not os.path.exists(ADB_PATH):
     ADB_PATH = "adb"
@@ -42,8 +51,8 @@ def test_feat04():
     dump_ui("dumps/parity/feat04_mismatch/old", "old_warning")
 
     # App mới: mở màn hình chính (hiển thị phiên bản game 1.1.1 vs bản vá 1.9.2.4)
-    run_adb(["shell", "am force-stop vn.hokvi.viethoa.v2"])
-    run_adb(["shell", "am start -n vn.hokvi.viethoa.v2/.MainActivity"])
+    run_adb(["shell", f"am force-stop {TARGET_PACKAGE}"])
+    run_adb(["shell", f"am start -n {TARGET_ACTIVITY}"])
     time.sleep(2.5)
     dump_ui("dumps/parity/feat04_mismatch/new", "new_warning")
 
@@ -61,8 +70,8 @@ def test_feat17():
     # App cũ
     dump_ui("dumps/parity/feat17_launch_game/old", "old_screen")
     # App mới
-    run_adb(["shell", "am force-stop vn.hokvi.viethoa.v2"])
-    run_adb(["shell", "am start -n vn.hokvi.viethoa.v2/.MainActivity"])
+    run_adb(["shell", f"am force-stop {TARGET_PACKAGE}"])
+    run_adb(["shell", f"am start -n {TARGET_ACTIVITY}"])
     time.sleep(2)
     dump_ui("dumps/parity/feat17_launch_game/new", "new_screen")
 
@@ -132,8 +141,8 @@ def test_feat28():
     dump_ui("dumps/parity/feat28_shell_backend/old", "old_backend")
 
     # App mới: mở màn hình chính
-    run_adb(["shell", "am force-stop vn.hokvi.viethoa.v2"])
-    run_adb(["shell", "am start -n vn.hokvi.viethoa.v2/.MainActivity"])
+    run_adb(["shell", f"am force-stop {TARGET_PACKAGE}"])
+    run_adb(["shell", f"am start -n {TARGET_ACTIVITY}"])
     time.sleep(2)
     dump_ui("dumps/parity/feat28_shell_backend/new", "new_backend")
 
@@ -160,8 +169,8 @@ def test_feat35():
     time.sleep(1)
 
     # App mới: mở tab Cài đặt / Trợ giúp & Góp ý
-    run_adb(["shell", "am force-stop vn.hokvi.viethoa.v2"])
-    run_adb(["shell", "am start -n vn.hokvi.viethoa.v2/.MainActivity"])
+    run_adb(["shell", f"am force-stop {TARGET_PACKAGE}"])
+    run_adb(["shell", f"am start -n {TARGET_ACTIVITY}"])
     time.sleep(2)
     # Bấm nút Trợ giúp / Góp ý
     dump_ui("dumps/parity/feat35_feedback/new", "new_feedback")
@@ -177,9 +186,9 @@ def test_feat35():
 def test_feat36():
     print("\n[+] ĐỐI CHIẾU FEAT-36: Kiểm tra cập nhật định kỳ...")
     js_old = run_adb(["shell", "dumpsys jobscheduler | grep -A 5 -B 2 'vn.hokvi.viethoa'"])
-    js_new = run_adb(["shell", "dumpsys jobscheduler | grep -A 5 -B 2 'vn.hokvi.viethoa.v2'"])
+    js_new = run_adb(["shell", f"dumpsys jobscheduler | grep -A 5 -B 2 '{TARGET_PACKAGE}'"])
     alarm_old = run_adb(["shell", "dumpsys alarm | grep -A 5 -B 2 'vn.hokvi.viethoa'"])
-    alarm_new = run_adb(["shell", "dumpsys alarm | grep -A 5 -B 2 'vn.hokvi.viethoa.v2'"])
+    alarm_new = run_adb(["shell", f"dumpsys alarm | grep -A 5 -B 2 '{TARGET_PACKAGE}'"])
 
     with open("dumps/parity/feat36_periodic_update/parity.md", "w", encoding="utf-8") as f:
         f.write(f"""# ĐỐI CHIẾU FEAT-36: KIỂM TRA CẬP NHẬT ĐỊNH KỲ

@@ -13,7 +13,7 @@ Sau đó lưu trạng thái sạch vào dumps/parity/clean/clean_state.json.
 import sys
 import os
 import subprocess
-from capture_state import capture_state, run_adb, DEVICE_ID
+from capture_state import capture_state, run_adb, DEVICE_ID, TARGET_PACKAGE
 
 def clean_environment():
     print(f"[*] Khôi phục môi trường sạch cho game trên {DEVICE_ID}...")
@@ -31,7 +31,7 @@ def clean_environment():
 
     print("[+] Đã dọn sạch các tệp vá và cấu hình. Chụp lại trạng thái sạch...")
     out_json = "dumps/parity/clean/clean_state.json"
-    capture_state(out_json, "vn.hokvi.viethoa.v2")
+    capture_state(out_json, TARGET_PACKAGE)
     print(f"[+] Trạng thái sạch đã lưu tại: {out_json}")
 
 if __name__ == "__main__":

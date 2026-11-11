@@ -11,6 +11,15 @@ import sys
 import time
 import subprocess
 
+try:
+    from scripts.parity.config import TARGET_PACKAGE, TARGET_ACTIVITY
+except ImportError:
+    try:
+        from config import TARGET_PACKAGE, TARGET_ACTIVITY
+    except ImportError:
+        TARGET_PACKAGE = "com.acechess.viethoa"
+        TARGET_ACTIVITY = "com.acechess.viethoa/vn.hokvi.viethoa.v2.MainActivity"
+
 ADB_PATH = r"C:\Program Files\Microvirt\MEmu\adb.exe"
 if not os.path.exists(ADB_PATH):
     ADB_PATH = "adb"
@@ -47,18 +56,18 @@ def main():
     run_py(["scripts/parity/capture_state.py", "--pkg", "vn.hokvi.viethoa", "--out", old_json])
     print(f"  -> Đã ghi: {old_json}")
     
-    print("[2/4] Chạy kịch bản S16 với App MỚI (vn.hokvi.viethoa.v2)...")
+    print(f"[2/4] Chạy kịch bản S16 với App MỚI ({TARGET_PACKAGE})...")
     run_py(["scripts/parity/clean_state.py"])
-    run_adb(["shell", "am", "start", "-n", "vn.hokvi.viethoa.v2/.MainActivity"])
+    run_adb(["shell", "am", "start", "-n", TARGET_ACTIVITY])
     time.sleep(4)
     print("  -> Tắt đột ngột (force-stop)...")
-    run_adb(["shell", "am", "force-stop", "vn.hokvi.viethoa.v2"])
+    run_adb(["shell", "am", "force-stop", TARGET_PACKAGE])
     time.sleep(1)
     print("  -> Khởi động lại...")
-    run_adb(["shell", "am", "start", "-n", "vn.hokvi.viethoa.v2/.MainActivity"])
+    run_adb(["shell", "am", "start", "-n", TARGET_ACTIVITY])
     time.sleep(3)
     new_json = os.path.join(out_dir, "new.json")
-    run_py(["scripts/parity/capture_state.py", "--pkg", "vn.hokvi.viethoa.v2", "--out", new_json])
+    run_py(["scripts/parity/capture_state.py", "--pkg", TARGET_PACKAGE, "--out", new_json])
     print(f"  -> Đã ghi: {new_json}")
     
     print("[3/4] So sánh đối chiếu trạng thái S16...")
