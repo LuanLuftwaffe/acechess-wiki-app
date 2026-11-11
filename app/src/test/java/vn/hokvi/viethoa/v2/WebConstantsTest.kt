@@ -15,6 +15,7 @@ class WebConstantsTest {
         assertTrue(WebConstants.isAllowedHost("localhost"))
         assertTrue(WebConstants.isAllowedHost("127.0.0.1"))
 
+        assertFalse(WebConstants.isAllowedHost("acechess-wiki.vercel.app"))
         assertFalse(WebConstants.isAllowedHost("google.com"))
         assertFalse(WebConstants.isAllowedHost("malicious-site.com"))
         assertFalse(WebConstants.isAllowedHost("covuonggia.vercel.app.attacker.com"))

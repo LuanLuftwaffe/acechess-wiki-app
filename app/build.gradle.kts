@@ -1,3 +1,6 @@
+import java.util.Properties
+import java.io.FileInputStream
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.plugin.compose")
@@ -9,7 +12,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "vn.hokvi.viethoa.v2"
+        applicationId = providers.gradleProperty("app.applicationId").getOrElse("com.acechess.viethoa")
         minSdk = 26
         targetSdk = 34
         versionCode = 200
@@ -27,9 +30,40 @@ android {
         unitTests.isReturnDefaultValues = true
     }
 
+    val localProperties = Properties().apply {
+        val localPropertiesFile = rootProject.file("local.properties")
+        if (localPropertiesFile.exists()) {
+            FileInputStream(localPropertiesFile).use { fis ->
+                load(fis)
+            }
+        }
+    }
+
+    signingConfigs {
+        create("release") {
+            val ksPath = System.getenv("RELEASE_KEYSTORE_PATH")
+                ?: localProperties.getProperty("RELEASE_KEYSTORE_PATH")
+                ?: "${System.getProperty("user.home")}/.android/debug.keystore"
+            val ksFile = file(ksPath)
+            if (ksFile.exists()) {
+                storeFile = ksFile
+                storePassword = System.getenv("RELEASE_KEYSTORE_PASSWORD")
+                    ?: localProperties.getProperty("RELEASE_KEYSTORE_PASSWORD")
+                    ?: "android"
+                keyAlias = System.getenv("RELEASE_KEY_ALIAS")
+                    ?: localProperties.getProperty("RELEASE_KEY_ALIAS")
+                    ?: "androiddebugkey"
+                keyPassword = System.getenv("RELEASE_KEY_PASSWORD")
+                    ?: localProperties.getProperty("RELEASE_KEY_PASSWORD")
+                    ?: "android"
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
+            signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
