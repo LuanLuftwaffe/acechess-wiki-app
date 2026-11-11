@@ -1,74 +1,40 @@
-# CÁC CÂU HỎI QUYẾT ĐỊNH CHO QUÁ TRÌNH GỘP APP (MERGE QUESTIONS)
+# QUYẾT ĐỊNH M0 VÀ ĐỐI CHIẾU CẦU NỐI WEB - NATIVE (WEB & BRIDGE AUDIT)
 
 > **Mã tài liệu:** MERGE-QUESTIONS-01  
-> **Giai đoạn:** Phase M0 (Kiểm kê & Kế hoạch)  
-> **Trạng thái:** Chờ người dùng phản hồi và phê duyệt trước khi bước vào Phase M1.
+> **Giai đoạn:** Phase M0 (Quyết định nền tảng) & Phase M3–M5 (Cầu nối WebAppInterface)  
+> **Cập nhật:** 2026-11-11  
 
 ---
 
-## 1. CÁC CÂU HỎI BẮT BUỘC
+## 1. NGHỊ QUYẾT 6 CÂU HỎI M0 (CHÍNH THỨC TỪ NGƯỜI DÙNG)
 
-### Câu hỏi 1: `applicationId` cuối cùng của ứng dụng sau khi gộp là gì?
-- **Hiện trạng:**
-  - App Rebuild v2 hiện dùng: `vn.hokvi.viethoa.v2`
-  - App Companion hiện dùng: `com.acechess.viethoa`
-  - App gốc r71-lite trên MEmu đang dùng: `vn.hokvi.viethoa`
-- **Các lựa chọn:**
-  - **Lựa chọn A (Khuyến nghị cho M1–M5):** Giữ nguyên `vn.hokvi.viethoa.v2` trong suốt quá trình code và kiểm thử M1–M5 để không làm ảnh hưởng đến các script parity (`scripts/parity/`) và kịch bản test đã đối chiếu trên MEmu. Đến Phase M6 sẽ đổi sang ID chính thức theo quyết định của bạn.
-  - **Lựa chọn B:** Đổi ngay sang `com.acechess.viethoa` (nhận diện thương hiệu AceChess).
-  - **Lựa chọn C:** Đặt một ID mới hoàn toàn, ví dụ `vn.hokvi.acechess` hoặc `com.hokvi.acechess`.
-- 👉 **Xin ý kiến bạn:** Bạn muốn chọn phương án nào cho `applicationId` cuối cùng?
+| STT | Vấn đề | Quyết định chính thức | Vị trí triển khai / Bằng chứng kỹ thuật |
+|---|---|---|---|
+| **M0-1** | `applicationId` | **`com.acechess.viethoa`** | Khai báo tập trung duy nhất tại `gradle.properties`: `app.applicationId=com.acechess.viethoa`. Giữ nguyên namespace/package Kotlin `vn.hokvi.viethoa.v2`. |
+| **M0-2** | Keystore ký số | **Khớp 100% Keystore Companion cũ** | Keystore `C:\Users\ThienDuong\.android\debug.keystore`. SHA-256 chứng chỉ: `06:d7:03:e8:ee:3e:8e:55:42:2d:2e:21:b8:30:53:88:7c:d7:59:23:88:5d:cc:42:ab:a2:df:85:44:d7:b0:62` (Khớp tuyệt đối giữa APK companion cũ và APK hợp nhất mới). |
+| **M0-3** | URL trang chủ chính | **`https://covuonggia.vercel.app`** | Cấu hình mặc định trong `WebConstants.OFFICIAL_DOMAINS` và `HandbookScreen.kt`. |
+| **M0-4** | Allowlist tên miền | **Chỉ `covuonggia.vercel.app` & `covuonggia-wiki.vercel.app`** | Gỡ bỏ `acechess-wiki.vercel.app`. Chỉ giữ `localhost` và `127.0.0.1` trong debug (`BuildConfig.DEBUG`). Chặn 100% tên miền khác. |
+| **M0-5** | Vị trí Tab Cẩm nang | **Tab thứ 2 trên thanh điều hướng dưới** | Thứ tự: `Tổng quan` (0) → `Cẩm nang` (1) → `Bản vá` (2) → `Nhạc nền` (3) → `ShowTime` (4). |
+| **M0-6** | Nút Bong bóng nổi | **Top Bar (Thanh tiêu đề)** | Icon bong bóng nổi trên `TopAppBar` cạnh icon `Settings`/`Info`, bấm vào bật/tắt hoặc dẫn vào cài đặt quyền vẽ đè. |
 
 ---
 
-### Câu hỏi 2: Cấu hình Keystore ký số (Signing Config) cho bản phát hành?
-- **Hiện trạng:**
-  - Dự án hiện ký tự động bằng `debug.keystore` mặc định của Android SDK (`C:\Users\ThienDuong\.android\debug.keystore`, alias `androiddebugkey`).
-- **Các lựa chọn:**
-  - **Lựa chọn A (Khuyến nghị):** Dùng `debug.keystore` cho các Phase M1–M5 để việc build tự động qua Gradle nhanh chóng, tiện kiểm thử trên máy ảo MEmu. Đến Phase M6 (Đóng gói) sẽ cấu hình keystore phát hành (release) riêng nếu bạn cung cấp.
-  - **Lựa chọn B:** Cấu hình ngay keystore ký phát hành riêng nếu bạn đã có sẵn file `.jks` / `.keystore`.
-- 👉 **Xin ý kiến bạn:** Bạn muốn dùng `debug.keystore` trong giai đoạn gộp này hay cung cấp keystore riêng ngay từ đầu?
+## 2. BẢNG ĐỐI CHIẾU CẦU NỐI WEB & NATIVE (CROSS-AUDIT TABLE)
+
+Dưới đây là kết quả rà soát chéo giữa mã nguồn trang web (`covuonggia.vercel.app`), cầu nối Companion cũ (`com.acechess.viethoa.WebAppInterface`), và cầu nối Rebuild v2 mới (`vn.hokvi.viethoa.v2.core.bridge.WebAppInterface`):
+
+| Tên hàm JavaScript | Có trong Companion cũ? | Có trong v2 Mới? | Kiểu dữ liệu / Chữ ký | Tác động nếu thiếu / Đánh giá rủi ro | Trạng thái xử lý |
+|---|:---:|:---:|---|---|:---:|
+| `getShizukuStatus()` | Có | **Có** | `String` (JSON: `running`, `authorized`, `gameInstalled`, `backend`) | Trang web không hiển thị được trạng thái Shizuku/Game. Đã bổ sung `gameInstalled` để tương thích 100%. | **ĐÃ HOÀN TẤT** |
+| `requestShizukuPermission()` | Có | **Có** | `void` (Gửi request permission Shizuku code 1001) | Người dùng bấm nút trên web không kích hoạt được hộp thoại cấp quyền Shizuku. Đã bổ sung vào v2. | **ĐÃ HOÀN TẤT** |
+| `isOverlayPermissionGranted()` | Có | **Có** | `boolean` (Kiểm tra quyền `Settings.canDrawOverlays`) | Web không biết người dùng đã bật quyền bong bóng chưa để đổi trạng thái nút. Đã có trong v2. | **ĐÃ HOÀN TẤT** |
+| `openOverlaySettings()` | Có | **Có** | `void` (Mở `Settings.ACTION_MANAGE_OVERLAY_PERMISSION`) | Bấm bật bong bóng trên web nhưng không dẫn người dùng đi bật quyền được. Đã có trong v2. | **ĐÃ HOÀN TẤT** |
+| `toggleFloatingBubble(enable)` | Có | **Có** | `void (boolean)` (Khởi chạy/dừng `FloatingBubbleService`) | Web không thể bật/tắt bong bóng nổi. Đã có trong v2. | **ĐÃ HOÀN TẤT** |
+| `isFloatingBubbleRunning()` | Có | **Có** | `boolean` (Kiểm tra service bong bóng đang chạy) | Web hiển thị sai trạng thái toggle switch của bong bóng. Đã có trong v2. | **ĐÃ HOÀN TẤT** |
+| `openViethoaTab()` | Không (Mới) | **Có** | `void` (Chuyển sang tab Bản vá trong ứng dụng v2) | Nâng cao trải nghiệm: cho phép web có nút "Đi tới màn hình Việt Hoá" mà không cần sửa code cũ. | **ĐÃ HOÀN TẤT** |
 
 ---
 
-### Câu hỏi 3: URL trang web chính thức nạp vào WebView là gì?
-- **Hiện trạng:**
-  - Companion đang nạp URL: `https://covuonggia.vercel.app` (domain alias chính).
-  - Tên miền gốc của Vercel: `https://covuonggia-wiki.vercel.app`.
-- **Các lựa chọn:**
-  - **Lựa chọn A (Khuyến nghị):** `https://covuonggia.vercel.app` (ngắn gọn, chính thức).
-  - **Lựa chọn B:** `https://covuonggia-wiki.vercel.app`.
-  - **Lựa chọn C:** URL khác do bạn chỉ định.
-- 👉 **Xin ý kiến bạn:** Bạn chọn URL nào làm trang chủ mặc định khi mở Tab "Cẩm nang"?
-
----
-
-### Câu hỏi 4: Danh sách tên miền được phép (Domain Allowlist) cho WebView?
-- **Hiện trạng:**
-  - Để ngăn chặn việc WebView bị chuyển hướng sang các trang độc hại hoặc mở ngoài phạm vi cẩm nang, WebView cần một allowlist tên miền nghiêm ngặt.
-- **Đề xuất Allowlist:**
-  1. `covuonggia.vercel.app`
-  2. `covuonggia-wiki.vercel.app`
-  3. `acechess-wiki.vercel.app` (dự phòng)
-  4. `localhost` / `127.0.0.1` (phục vụ test local nếu cần)
-  - *Hành vi:* Mọi liên kết trỏ tới domain nằm ngoài danh sách trên sẽ được chặn không nạp trong WebView mà tự động kích hoạt trình duyệt ngoài hệ thống (`Intent.ACTION_VIEW`).
-- 👉 **Xin ý kiến bạn:** Bạn có muốn thêm hoặc bớt tên miền nào trong allowlist trên không?
-
----
-
-## 2. CÂU HỎI MỞ RỘNG (VỀ TRẢI NGHIỆM GIAO DIỆN)
-
-### Câu hỏi 5: Vị trí của Tab "Cẩm nang" trên thanh điều hướng Bottom Navigation của v2?
-- **Hiện trạng v2:** Đang có 4 tab chính: `Tổng quan` (Dashboard), `Bản vá` (Patch), `Nhạc nền` (Music), `ShowTime` (ShowTime), cùng các mục trong Drawer (`Hướng dẫn`, `Nhật ký`, `Changelog`).
-- **Đề xuất:**
-  - Đưa `Cẩm nang` thành 1 Tab chính trên Bottom Navigation Bar (ví dụ: `Tổng quan` → `Cẩm nang` → `Bản vá` → `Nhạc nền` → `ShowTime`), có icon cuốn sách/bách khoa toàn thư.
-- 👉 **Xin ý kiến bạn:** Bạn muốn đặt Tab "Cẩm nang" ở vị trí nào?
-
----
-
-### Câu hỏi 6: Nút bật/tắt Bong bóng nổi nên đặt ở đâu trong giao diện chính?
-- **Đề xuất:**
-  - Đặt một nút biểu tượng Bong bóng nổi với công tắc Toggle Switch trực quan trên Top Bar của ứng dụng (hoặc ngay tại trang `Tổng quan`), bấm vào sẽ kiểm tra quyền `SYSTEM_ALERT_WINDOW`:
-    - Nếu chưa có quyền: Mở hộp thoại dẫn người dùng vào Cài đặt để bật quyền vẽ đè.
-    - Nếu đã có quyền: Bật/Tắt dịch vụ `FloatingBubbleService` ngay lập tức.
-- 👉 **Xin ý kiến bạn:** Bạn đồng ý với vị trí nút Toggle ở Top Bar chứ?
+## 3. CÁC ĐỀ XUẤT CẢI TIẾN TRONG TƯƠNG LAI (FUTURE PROPOSALS)
+1. **Sự kiện hai chiều (Event Dispatcher):** Hiện tại web polling để kiểm tra `isFloatingBubbleRunning()`. Đề xuất trong các phiên bản sau hỗ trợ inject CustomEvent `acechess:bubble_state_changed` để web cập nhật tức thời không tốn tài nguyên.
+2. **Cơ chế Fallback khi mở trên trình duyệt thường:** Web đã có sẵn khối `if (window.AceChess) { ... } else { ... }` nên người dùng mở bằng Chrome/Safari trên PC vẫn duyệt wiki bình thường mà không bị crash JS.
