@@ -94,7 +94,7 @@ fun AppNavHost(
     ) { innerPadding ->
         NavHost(
             navController = navController,
-            startDestination = Screen.Dashboard.route,
+            startDestination = Screen.Handbook.route,
             modifier = Modifier.padding(innerPadding)
         ) {
             composable(Screen.Dashboard.route) {

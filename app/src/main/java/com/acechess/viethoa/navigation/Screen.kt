@@ -27,6 +27,6 @@ sealed class Screen(
     data object Changelog : Screen("changelog", R.string.nav_changelog, Icons.AutoMirrored.Filled.List)
 
     companion object {
-        val bottomNavItems = listOf(Dashboard, Handbook, Patch, Music, Showtime, Guide, Logs)
+        val bottomNavItems = listOf(Handbook, Dashboard, Patch, Music, Showtime, Guide, Logs)
     }
 }
