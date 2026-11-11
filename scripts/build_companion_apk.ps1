@@ -1,4 +1,10 @@
-# Script build AceChess Companion APK
+﻿# ==============================================================================
+# [DEPRECATED] Script build AceChess Companion APK (LEGACY STANDALONE)
+# TẤT CẢ TÍNH NĂNG ĐÃ ĐƯỢC GỘP VÀO APP GRADLE REBUILD V2 (vn.hokvi.viethoa.v2).
+# Vui lòng dùng: .\gradlew assembleDebug hoặc .\gradlew assembleRelease
+# Script này được lưu trữ để tham chiếu lịch sử; KHÔNG dùng để build sản phẩm.
+# ==============================================================================
+Write-Warning "[DEPRECATED] AceChess standalone companion script is obsolete. Use modern Gradle build: .\gradlew assembleDebug"
 $ErrorActionPreference = "Stop"
 
 $BUILD_TOOLS = "C:\Users\ThienDuong\AppData\Local\Android\Sdk\build-tools\36.0.0"
