@@ -10,6 +10,7 @@ import android.webkit.JavascriptInterface
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import org.json.JSONObject
+import rikka.shizuku.Shizuku
 import vn.hokvi.viethoa.v2.core.bubble.OverlayPermissionHelper
 import vn.hokvi.viethoa.v2.core.shell.ShellResolver
 import vn.hokvi.viethoa.v2.core.shell.ShellType
@@ -50,6 +51,15 @@ class WebAppInterface(
         }
     }
 
+    private fun isGameInstalled(ctx: Context): Boolean {
+        return try {
+            ctx.packageManager.getPackageInfo("com.tencent.tmgp.playhok", 0)
+            true
+        } catch (_: Throwable) {
+            false
+        }
+    }
+
     fun isOriginAllowed(): Boolean {
         val url = getCurrentUrl()
         return WebConstants.isAllowedUrl(url)
@@ -65,6 +75,7 @@ class WebAppInterface(
         val ctx = context ?: return JSONObject().apply {
             put("running", false)
             put("authorized", false)
+            put("gameInstalled", false)
             put("backend", "NONE")
         }.toString()
 
@@ -74,10 +85,12 @@ class WebAppInterface(
             val shellType = resolution.activeType
             val isAuthorized = shellType != ShellType.NONE
             val isShizuku = shellType == ShellType.SHIZUKU || shellType == ShellType.ROOT
+            val gameInstalled = isGameInstalled(ctx)
 
             JSONObject().apply {
                 put("running", isShizuku)
                 put("authorized", isAuthorized)
+                put("gameInstalled", gameInstalled)
                 put("backend", shellType.name)
             }.toString()
         } catch (e: Exception) {
@@ -85,8 +98,26 @@ class WebAppInterface(
             JSONObject().apply {
                 put("running", false)
                 put("authorized", false)
+                put("gameInstalled", false)
                 put("backend", "NONE")
             }.toString()
+        }
+    }
+
+    @JavascriptInterface
+    fun requestShizukuPermission() {
+        if (!isOriginAllowed()) {
+            logW(TAG, "Blocked requestShizukuPermission from unauthorized origin: ${getCurrentUrl()}")
+            return
+        }
+        mainHandler?.post {
+            try {
+                if (Shizuku.pingBinder()) {
+                    Shizuku.requestPermission(1001)
+                }
+            } catch (e: Throwable) {
+                logW(TAG, "Failed to request Shizuku permission: ${e.message}")
+            }
         }
     }
 

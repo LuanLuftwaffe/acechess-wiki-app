@@ -37,6 +37,10 @@ class WebAppInterfaceOriginTest {
         assertEquals(WebAppInterface.ERROR_UNAUTHORIZED_ORIGIN, bridge.getShizukuStatus())
         assertFalse(bridge.isOverlayPermissionGranted())
         assertFalse(bridge.isFloatingBubbleRunning())
+        bridge.requestShizukuPermission() // Should safely return without exception
+        bridge.openOverlaySettings()      // Should safely return without exception
+        bridge.toggleFloatingBubble(true) // Should safely return without exception
+        bridge.openViethoaTab()           // Should safely return without exception
 
         currentUrl = "https://covuonggia.vercel.app.attacker.com"
         assertFalse(bridge.isOriginAllowed())

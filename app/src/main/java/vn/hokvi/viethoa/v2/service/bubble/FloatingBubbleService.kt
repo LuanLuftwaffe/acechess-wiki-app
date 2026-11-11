@@ -456,6 +456,8 @@ class FloatingBubbleService : Service() {
                 databaseEnabled = true
                 allowFileAccess = false
                 allowContentAccess = false
+                allowFileAccessFromFileURLs = false
+                allowUniversalAccessFromFileURLs = false
                 loadWithOverviewMode = true
                 useWideViewPort = true
                 setSupportZoom(true)
