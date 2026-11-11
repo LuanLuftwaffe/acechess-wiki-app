@@ -11,6 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import com.acechess.viethoa.core.contract.GameContract
 import com.acechess.viethoa.core.shell.ShellResolver
 import java.io.File
 import java.io.FileOutputStream
@@ -21,7 +22,7 @@ class ShowTimeRenderer @JvmOverloads constructor(
 ) {
 
     companion object {
-        const val HOKVI_SHOWTIME_DIR = "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/showtime"
+        val HOKVI_SHOWTIME_DIR = "${GameContract.DIR_HOKVI_SDCARD}/${GameContract.DIR_SHOWTIME}"
         const val FONT_ASSET_NAME = "Oswald-Bold-HOKVI.ttf"
 
         data class TexSpec(

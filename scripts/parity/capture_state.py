@@ -105,8 +105,10 @@ def get_file_tree(base_dir: str) -> Dict[str, Any]:
     return {"exists": True, "files": files_info}
 
 def get_app_logs(pkg_name: str) -> str:
-    # Thử đọc nhat-ky.txt từ data hoặc sdcard
+    # Thử đọc nhat-ky.txt (app cũ) hoặc acechess-nhat-ky.txt (app mới) từ data hoặc sdcard
     candidates = [
+        f"/data/data/{pkg_name}/files/acechess-nhat-ky.txt",
+        f"/sdcard/Android/data/{pkg_name}/files/acechess-nhat-ky.txt",
         f"/data/data/{pkg_name}/files/nhat-ky.txt",
         f"/sdcard/Android/data/{pkg_name}/files/nhat-ky.txt"
     ]

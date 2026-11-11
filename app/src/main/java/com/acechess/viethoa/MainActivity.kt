@@ -10,7 +10,7 @@ import com.acechess.viethoa.core.shell.ShellLogger
 import com.acechess.viethoa.navigation.AppNavHost
 import com.acechess.viethoa.service.worker.SyncMetaWorker
 import com.acechess.viethoa.service.worker.UpdateCheckWorker
-import com.acechess.viethoa.ui.theme.HokviVietHoaTheme
+import com.acechess.viethoa.ui.theme.AceTheme
 import com.acechess.viethoa.ui.viewmodel.DashboardViewModel
 
 class MainActivity : ComponentActivity(), Shizuku.OnRequestPermissionResultListener {
@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity(), Shizuku.OnRequestPermissionResultListe
         } catch (_: Exception) {}
 
         setContent {
-            HokviVietHoaTheme {
+            AceTheme {
                 val vm: DashboardViewModel = viewModel()
                 dashboardViewModel = vm
                 AppNavHost(dashboardViewModel = vm)

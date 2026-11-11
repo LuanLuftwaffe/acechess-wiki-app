@@ -23,12 +23,12 @@ import com.acechess.viethoa.core.adb.AdbNsd
 
 class AdbPairService : Service() {
     companion object {
-        const val TAG = "HOKVI-AdbPair"
+        const val TAG = "Ace-AdbPair"
         const val CHANNEL_ID = "adb_pair"
         const val NOTIFICATION_ID = 0x1267
 
-        const val ACT_START = "vn.hokvi.viethoa.adb.START"
-        const val ACT_STOP = "vn.hokvi.viethoa.adb.STOP"
+        const val ACT_START = "com.acechess.viethoa.adb.START"
+        const val ACT_STOP = "com.acechess.viethoa.adb.STOP"
         const val KEY_CODE = "code"
 
         @Volatile

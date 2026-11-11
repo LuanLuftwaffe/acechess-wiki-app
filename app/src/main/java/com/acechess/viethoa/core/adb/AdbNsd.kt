@@ -23,7 +23,7 @@ class AdbNsd(
     private val onResolved: (host: String, port: Int) -> Unit
 ) {
     companion object {
-        const val TAG = "HOKVI-AdbNsd"
+        const val TAG = "Ace-AdbNsd"
         const val SERVICE_CONNECT = "_adb-tls-connect._tcp"
         const val SERVICE_PAIRING = "_adb-tls-pairing._tcp"
 
@@ -61,7 +61,7 @@ class AdbNsd(
 
         // 1. Giữ MulticastLock để nhận gói mDNS
         try {
-            multicastLock = wifiManager?.createMulticastLock("hokvi_nsd_lock")?.apply {
+            multicastLock = wifiManager?.createMulticastLock("acechess_nsd_lock")?.apply {
                 setReferenceCounted(true)
                 acquire()
             }

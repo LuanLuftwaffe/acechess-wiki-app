@@ -101,7 +101,7 @@ class MockPatchSource(
     override fun getSetInfo(): PatchSetInfo = mockSetInfo
 
     override fun getPatchFile(pid: String, fileName: String): File? {
-        val base = cacheDir ?: File(System.getProperty("java.io.tmpdir"), "hokvi_mock_patch")
+        val base = cacheDir ?: File(System.getProperty("java.io.tmpdir"), "ace_mock_patch")
         val pkgDir = File(base, pid)
         if (!pkgDir.exists()) pkgDir.mkdirs()
         val file = File(pkgDir, fileName)

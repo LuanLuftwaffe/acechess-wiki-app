@@ -7,6 +7,7 @@ import android.os.Build
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
+import com.acechess.viethoa.core.contract.GameContract
 import com.acechess.viethoa.core.shell.ShellExecutor
 import com.acechess.viethoa.core.shell.ShellResolver
 import java.io.File
@@ -37,8 +38,8 @@ open class GameStateDetector @JvmOverloads constructor(
     val shellResolver: ShellResolver? = null
 ) {
     companion object {
-        const val GAME_PACKAGE = "com.tencent.tmgp.osgame"
-        const val PREFS_NAME = "hokvi_prefs"
+        const val GAME_PACKAGE = GameContract.GAME_PKG_STORE
+        const val PREFS_NAME = "ace_prefs"
         const val PREF_KEY_DEVICE_VER = "device_ver"
     }
 
@@ -185,7 +186,7 @@ open class GameStateDetector @JvmOverloads constructor(
         }
 
         // Ưu tiên 3: Đọc marker hokvi_applied.json qua shell
-        val cmdMarker = "cat /data/local/tmp/hokvi_applied.json 2>/dev/null"
+        val cmdMarker = "cat ${GameContract.PATH_TMP_MARKER} 2>/dev/null"
         val rMarker = executor.execute(cmdMarker)
         if (rMarker.isSuccess && rMarker.stdout.isNotBlank()) {
             val v = parseVfsVersion(rMarker.stdout)

@@ -30,7 +30,7 @@ class AdbModelsTest {
 
         val certBytes = SelfCert.build(
             keyPair = keyPair,
-            cn = "hokvi-viethoa",
+            cn = "acechess-client",
             notBefore = notBefore,
             notAfter = notAfter,
             serialNumber = serialNumber
@@ -43,8 +43,8 @@ class AdbModelsTest {
         val cf = CertificateFactory.getInstance("X.509")
         val cert = cf.generateCertificate(ByteArrayInputStream(certBytes)) as X509Certificate
 
-        assertEquals("CN=hokvi-viethoa", cert.subjectDN.name)
-        assertEquals("CN=hokvi-viethoa", cert.issuerDN.name)
+        assertEquals("CN=acechess-client", cert.subjectDN.name)
+        assertEquals("CN=acechess-client", cert.issuerDN.name)
         assertEquals(serialNumber, cert.serialNumber)
 
         // Kiểm tra tính hợp lệ của chữ ký điện tử tự ký bằng Public Key

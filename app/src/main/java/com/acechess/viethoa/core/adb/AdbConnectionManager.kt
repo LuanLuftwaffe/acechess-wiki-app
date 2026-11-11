@@ -16,8 +16,8 @@ import kotlin.system.measureTimeMillis
  */
 class AdbConnectionManager private constructor(private val context: Context) {
     companion object {
-        const val TAG = "HOKVI-AdbConn"
-        const val DEVICE_NAME = "HOKVI_V2_CLIENT"
+        const val TAG = "Ace-AdbConn"
+        const val DEVICE_NAME = "ACECHESS_CLIENT"
 
         @Volatile
         private var instance: AdbConnectionManager? = null

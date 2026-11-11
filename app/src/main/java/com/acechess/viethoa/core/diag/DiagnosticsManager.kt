@@ -7,6 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import rikka.shizuku.Shizuku
 import com.acechess.viethoa.core.adb.AdbConnectionManager
+import com.acechess.viethoa.core.contract.GameContract
 import com.acechess.viethoa.core.detector.GameStateDetector
 import com.acechess.viethoa.core.detector.SpacePlanner
 import com.acechess.viethoa.core.shell.ShellResolver
@@ -164,7 +165,7 @@ class DiagnosticsManager(
         sb.appendLine("  - Ước tính cần thiết: ~${spaceStatus.totalRequiredBytes / (1024 * 1024)} MB (Sao lưu APK + nạp VFS)")
         val gameDir = File("/sdcard/Android/data/com.tencent.tmgp.osgame/files")
         sb.appendLine("  - Thư mục Game files: ${if (gameDir.exists()) "TỒN TẠI" else "CHƯA TỒN TẠI"}")
-        val hokviDir = File("/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI")
+        val hokviDir = File(GameContract.DIR_HOKVI_SDCARD)
         sb.appendLine("  - Thư mục VFS /HOKVI: ${if (hokviDir.exists()) "TỒN TẠI (Tệp: ${hokviDir.list()?.joinToString(", ") ?: "trống"})" else "CHƯA TẠO"}")
         sb.appendLine()
 
@@ -189,9 +190,9 @@ class DiagnosticsManager(
 
         val reportContent = sb.toString()
 
-        // Write report to external files dir: bao-cao-chan-doan-YYYYMMDD_HHmmss.txt
+        // Write report to external files dir: acechess-chan-doan-YYYYMMDD_HHmmss.txt
         val targetDir = context.getExternalFilesDir(null) ?: context.filesDir
-        val reportFile = File(targetDir, "bao-cao-chan-doan-$fileTimestamp.txt")
+        val reportFile = File(targetDir, "acechess-chan-doan-$fileTimestamp.txt")
         try {
             reportFile.writeText(reportContent, Charsets.UTF_8)
         } catch (e: Exception) {
@@ -206,10 +207,10 @@ class DiagnosticsManager(
     }
 
     /**
-     * Returns the persistent nhat-ky.txt file managed by ShellLogger.
+     * Returns the persistent acechess-nhat-ky.txt file managed by ShellLogger.
      */
     fun getLogFile(): File {
         val targetDir = context.getExternalFilesDir(null) ?: context.filesDir
-        return File(targetDir, "nhat-ky.txt")
+        return File(targetDir, "acechess-nhat-ky.txt")
     }
 }

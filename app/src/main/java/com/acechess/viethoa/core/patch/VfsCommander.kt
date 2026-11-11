@@ -2,6 +2,7 @@ package com.acechess.viethoa.core.patch
 
 import android.content.Context
 import org.json.JSONObject
+import com.acechess.viethoa.core.contract.GameContract
 import com.acechess.viethoa.core.shell.ExecutionResult
 import com.acechess.viethoa.core.shell.ShellResolver
 import com.acechess.viethoa.core.shell.ShellType
@@ -13,10 +14,10 @@ class VfsCommander(
     val shellResolver: ShellResolver = ShellResolver()
 ) {
     companion object {
-        const val GAME_PKG = "com.tencent.tmgp.osgame"
+        const val GAME_PKG = GameContract.GAME_PKG_STORE
         const val VFS_PACKAGES_DIR = "files/QtsVFSCache/packages"
         const val VI_BAK_DIR = "files/vi_bak"
-        const val DYNAMIC_HOKVI_PATH = "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI"
+        val DYNAMIC_HOKVI_PATH = GameContract.DIR_HOKVI_SDCARD
     }
 
     /**
@@ -126,7 +127,7 @@ class VfsCommander(
         runInGameContext(checkOrigCmd)
 
         // 3. Đưa file vá vào qua vùng đệm /data/local/tmp
-        val tmpName = "hokvi_tmp_${pid}_$fileName"
+        val tmpName = "ace_tmp_${pid}_$fileName"
         val tmpFile = File("/data/local/tmp", tmpName)
 
         val cpToTmpCmd = "cp ${patchFile.absolutePath} /data/local/tmp/$tmpName 2>/dev/null || cat > /data/local/tmp/$tmpName"

@@ -17,6 +17,7 @@ import okhttp3.Request
 import com.acechess.viethoa.BuildConfig
 import com.acechess.viethoa.MainActivity
 import com.acechess.viethoa.R
+import com.acechess.viethoa.core.contract.GameContract
 import com.acechess.viethoa.core.sync.ChangelogData
 import com.acechess.viethoa.core.sync.GameAnnounce
 import com.acechess.viethoa.core.sync.LatestAppInfo
@@ -395,7 +396,7 @@ class UpdateManager(
             if (appUpdateEndpoint.isBlank()) {
                 throw IllegalStateException("Kênh tự cập nhật ứng dụng v2 chưa kích hoạt (mặc định rỗng). Không thể tải APK.")
             }
-            if (info.url.contains("HOKVI-VietHoa-App-") || !info.url.startsWith("http")) {
+            if (info.url.contains(GameContract.OLD_APP_UPDATE_PREFIX) || !info.url.startsWith("http")) {
                 throw IllegalStateException("Bị chặn: Không được phép tải APK của ứng dụng cũ vn.hokvi.viethoa cho app v2.")
             }
 

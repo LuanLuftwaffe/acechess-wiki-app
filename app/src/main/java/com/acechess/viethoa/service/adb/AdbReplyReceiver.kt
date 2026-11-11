@@ -11,7 +11,7 @@ import androidx.core.app.RemoteInput
  */
 class AdbReplyReceiver : BroadcastReceiver() {
     companion object {
-        const val ACT_REPLY = "vn.hokvi.viethoa.adb.REPLY_BC"
+        const val ACT_REPLY = "com.acechess.viethoa.adb.REPLY_BC"
     }
 
     override fun onReceive(context: Context?, intent: Intent?) {

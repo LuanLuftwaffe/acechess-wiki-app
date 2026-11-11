@@ -7,6 +7,7 @@ import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.long
+import com.acechess.viethoa.core.contract.GameContract
 import com.acechess.viethoa.core.detector.SpacePlanner
 import java.io.BufferedOutputStream
 import java.io.DataInputStream
@@ -82,7 +83,7 @@ class ApkDeltaApplier(
     private val spaceChecker: ((targetDir: File, requiredBytes: Long) -> Boolean)? = null
 ) {
     companion object {
-        const val MAGIC_STRING = "HOKVI-APKDELTA2\n"
+        const val MAGIC_STRING = GameContract.MAGIC_APKDELTA2
         val MAGIC_BYTES = MAGIC_STRING.toByteArray(Charsets.US_ASCII)
         const val COPY_BUFFER_SIZE = 1024 * 1024 // 1 MB cho sao chép khối lớn
         const val LITERAL_BUFFER_SIZE = 64 * 1024 // 64 KB cho luồng literal

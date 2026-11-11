@@ -22,7 +22,7 @@ import java.util.Date
  */
 class AdbKeyManager(private val context: Context) {
     companion object {
-        const val CERT_CN = "hokvi-viethoa"
+        const val CERT_CN = "acechess-client"
         const val KEY_SIZE = 2048
     }
 

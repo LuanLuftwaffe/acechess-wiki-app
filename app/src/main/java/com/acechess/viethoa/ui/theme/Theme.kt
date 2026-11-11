@@ -29,7 +29,7 @@ private val DarkColorScheme = darkColorScheme(
 )
 
 @Composable
-fun HokviVietHoaTheme(
+fun AceTheme(
     content: @Composable () -> Unit
 ) {
     val colorScheme = DarkColorScheme

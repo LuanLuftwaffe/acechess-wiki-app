@@ -79,8 +79,8 @@ class ChangelogViewModel(
         // Launch email or sharing intent to dev team
         try {
             val intent = Intent(Intent.ACTION_SENDTO).apply {
-                data = Uri.parse("mailto:support@hokvi.vn")
-                putExtra(Intent.EXTRA_SUBJECT, "[HOK VI] Phản hồi từ người dùng")
+                data = Uri.parse("mailto:")
+                putExtra(Intent.EXTRA_SUBJECT, "[AceChess] Phản hồi từ người dùng")
                 putExtra(Intent.EXTRA_TEXT, content)
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             }
@@ -89,7 +89,7 @@ class ChangelogViewModel(
             // Fallback to general share chooser
             val shareIntent = Intent(Intent.ACTION_SEND).apply {
                 type = "text/plain"
-                putExtra(Intent.EXTRA_SUBJECT, "[HOK VI] Phản hồi")
+                putExtra(Intent.EXTRA_SUBJECT, "[AceChess] Phản hồi")
                 putExtra(Intent.EXTRA_TEXT, content)
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             }

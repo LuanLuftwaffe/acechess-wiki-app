@@ -10,6 +10,7 @@ import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
+import com.acechess.viethoa.core.contract.GameContract
 import com.acechess.viethoa.core.shell.ShellResolver
 import com.acechess.viethoa.service.installer.SystemInstallerReceiver
 import java.io.File
@@ -21,7 +22,7 @@ class GamePackageInstaller(
 ) {
     companion object {
         const val DEFAULT_TIMEOUT_MS = 600_000L // 10 phút (khớp với topic screen_lock)
-        const val TARGET_PACKAGE = "com.tencent.tmgp.osgame"
+        const val TARGET_PACKAGE = GameContract.GAME_PKG_STORE
     }
 
     /**
@@ -142,7 +143,7 @@ class GamePackageInstaller(
             )
 
         // Đưa APK vào /data/local/tmp để đảm bảo quyền đọc
-        val tmpName = "hokvi_install_${System.currentTimeMillis()}.apk"
+        val tmpName = "ace_install_${System.currentTimeMillis()}.apk"
         val tmpPath = "/data/local/tmp/$tmpName"
 
         val cpCmd = "cp ${apkFile.absolutePath} $tmpPath && chmod 644 $tmpPath"

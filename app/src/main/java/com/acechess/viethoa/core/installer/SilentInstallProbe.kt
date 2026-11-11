@@ -17,6 +17,7 @@ class SilentInstallProbe(
     private val shellResolver: ShellResolver = ShellResolver()
 ) {
     companion object {
+        /** Package ID của tệp nhị phân probe.apk được đóng gói sẵn trong assets */
         const val PROBE_PACKAGE = "vn.hokvi.probe"
         const val PROBE_ASSET_PATH = "kit/probe.apk"
     }
@@ -26,7 +27,7 @@ class SilentInstallProbe(
      */
     suspend fun runProbe(): InstallResult = withContext(Dispatchers.IO) {
         // 1. Trích xuất probe.apk từ assets
-        val probeFile = File(context.cacheDir, "hokvi-probe.apk")
+        val probeFile = File(context.cacheDir, "ace-probe.apk")
         try {
             context.assets.open(PROBE_ASSET_PATH).use { input ->
                 FileOutputStream(probeFile).use { output ->

@@ -14,8 +14,10 @@ from typing import Dict, Any, List, Tuple
 def normalize_rel_path(p: str) -> str:
     # Chuẩn hoá pkg2_<timestamp> -> pkg2_<TIMESTAMP>
     p = re.sub(r"pkg2_\d+", "pkg2_<TIMESTAMP>", p)
-    # Chuẩn hoá bao-cao-chan-doan-*.txt -> bao-cao-chan-doan-<TIMESTAMP>.txt
-    p = re.sub(r"bao-cao-chan-doan-[\d\w-]+\.txt", "bao-cao-chan-doan-<TIMESTAMP>.txt", p)
+    # Chuẩn hoá bao-cao-chan-doan-*.txt và acechess-chan-doan-*.txt -> chan-doan-<TIMESTAMP>.txt
+    p = re.sub(r"(?:bao-cao|acechess)-chan-doan-[\d\w-]+\.txt", "chan-doan-<TIMESTAMP>.txt", p)
+    # Chuẩn hoá acechess-nhat-ky.txt -> nhat-ky.txt
+    p = re.sub(r"acechess-nhat-ky\.txt", "nhat-ky.txt", p)
     return p
 
 def compare_file_trees(old_files: Dict[str, Any], new_files: Dict[str, Any]) -> Tuple[List[Dict[str, Any]], bool, bool]:

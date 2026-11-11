@@ -10,7 +10,7 @@ import java.util.Date
 import java.util.Locale
 
 object ShellLogger {
-    private const val LOG_FILE_NAME = "nhat-ky.txt"
+    private const val LOG_FILE_NAME = "acechess-nhat-ky.txt"
     private var logFile: File? = null
     private val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.getDefault())
 

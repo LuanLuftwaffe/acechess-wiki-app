@@ -7,6 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import com.acechess.viethoa.core.contract.GameContract
 import com.acechess.viethoa.core.shell.ShellResolver
 import java.io.File
 import java.io.FileInputStream
@@ -20,8 +21,8 @@ class MusicRepository @JvmOverloads constructor(
     companion object {
         const val MAX_ON = 50
         const val MAX_FILE_SIZE = 64L * 1024L * 1024L // 64 MB
-        const val HOKVI_MUSIC_DIR = "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI/music"
-        const val TITLES_HEADER = "# hokvi-music-lib: app HOKVI quan ly thu muc nay (thu tu = thu tu trong app)\n"
+        val HOKVI_MUSIC_DIR = "${GameContract.DIR_HOKVI_SDCARD}/${GameContract.DIR_MUSIC}"
+        val TITLES_HEADER = "${GameContract.HEADER_MUSIC_TITLES}\n"
 
         private val json = Json {
             ignoreUnknownKeys = true
@@ -78,7 +79,7 @@ class MusicRepository @JvmOverloads constructor(
                 id = 1L,
                 fileName = defaultFileName,
                 title = "ngth",
-                artist = "HOKVI",
+                artist = "AceChess",
                 sizeBytes = copiedBytes,
                 sha256 = sha256,
                 isEnabled = true,

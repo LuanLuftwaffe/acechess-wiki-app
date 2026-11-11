@@ -1,6 +1,7 @@
 package com.acechess.viethoa.core.sync
 
 import android.content.Context
+import com.acechess.viethoa.core.contract.GameContract
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
@@ -16,9 +17,9 @@ import java.util.zip.GZIPInputStream
 class MetaSyncManager(private val context: Context) {
 
     companion object {
-        const val HOKVI_DIR = "/sdcard/Android/data/com.tencent.tmgp.osgame/files/HOKVI"
-        const val LINEUP_INDEX_URL = "https://s3.cloudfly.vn/wxq/lineup-vi/lineup-vi_latest.json"
-        const val AIVI_INDEX_URL = "https://s3.cloudfly.vn/wxq/ai-vi/ai-vi_latest.json"
+        val HOKVI_DIR = GameContract.DIR_HOKVI_SDCARD
+        val LINEUP_INDEX_URL = "https://${GameContract.HOST_UPSTREAM_S3}/wxq/lineup-vi/lineup-vi_latest.json"
+        val AIVI_INDEX_URL = "https://${GameContract.HOST_UPSTREAM_S3}/wxq/ai-vi/ai-vi_latest.json"
 
         private val json = Json {
             ignoreUnknownKeys = true

@@ -26,12 +26,12 @@ import com.acechess.viethoa.core.adb.AdbConnectionManager
 
 class AdbKeepService : Service() {
     companion object {
-        const val TAG = "HOKVI-AdbKeep"
+        const val TAG = "Ace-AdbKeep"
         const val CHANNEL_ID = "adb_keep"
         const val NOTIFICATION_ID = 0x1269
 
-        const val ACT_START = "vn.hokvi.viethoa.adb.KEEP_START"
-        const val ACT_STOP = "vn.hokvi.viethoa.adb.KEEP_STOP"
+        const val ACT_START = "com.acechess.viethoa.adb.KEEP_START"
+        const val ACT_STOP = "com.acechess.viethoa.adb.KEEP_STOP"
 
         fun start(context: Context) {
             val intent = Intent(context, AdbKeepService::class.java).apply {
@@ -132,12 +132,12 @@ class AdbKeepService : Service() {
     private fun acquireLocks() {
         try {
             val pm = getSystemService(Context.POWER_SERVICE) as? PowerManager
-            wakeLock = pm?.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "hokvi:adb_keep_wake")?.apply {
+            wakeLock = pm?.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "ace:adb_keep_wake")?.apply {
                 acquire(600_000L)
             }
 
             val wm = applicationContext.getSystemService(Context.WIFI_SERVICE) as? WifiManager
-            wifiLock = wm?.createWifiLock(WifiManager.WIFI_MODE_FULL_HIGH_PERF, "hokvi:adb_keep_wifi")?.apply {
+            wifiLock = wm?.createWifiLock(WifiManager.WIFI_MODE_FULL_HIGH_PERF, "ace:adb_keep_wifi")?.apply {
                 acquire()
             }
         } catch (_: Exception) {}
