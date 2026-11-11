@@ -20,6 +20,12 @@
     <string name="handbook_loading">Đang nạp cẩm nang...</string>
     <string name="handbook_error">Không thể tải trang web. Vui lòng kiểm tra kết nối mạng.</string>
 
+    <!-- Floating Bubble -->
+    <string name="btn_bubble_toggle">Bong Bóng</string>
+    <string name="bubble_running">Bật</string>
+    <string name="bubble_stopped">Tắt</string>
+    <string name="bubble_need_permission">Cần cấp quyền Hiển thị trên ứng dụng khác để mở bong bóng</string>
+
     <!-- Shell Status -->
     <string name="shell_status_title">Trạng thái quyền hệ thống</string>
     <string name="shell_backend_label">Backend đang dùng: %1$s</string>

@@ -19,6 +19,9 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.text.KeyboardOptions
+import android.content.Intent
+import android.os.Build
+import android.widget.Toast
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -39,17 +42,21 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import vn.hokvi.viethoa.v2.R
+import vn.hokvi.viethoa.v2.core.bubble.OverlayPermissionHelper
 import vn.hokvi.viethoa.v2.core.detector.ClassificationSource
 import vn.hokvi.viethoa.v2.core.detector.SpacePlanner
 import vn.hokvi.viethoa.v2.core.detector.SpaceStatusLevel
 import vn.hokvi.viethoa.v2.core.shell.ShellLogger
 import vn.hokvi.viethoa.v2.core.shell.ShellType
+import vn.hokvi.viethoa.v2.service.bubble.FloatingBubbleService
 import vn.hokvi.viethoa.v2.ui.theme.CrimsonError
 import vn.hokvi.viethoa.v2.ui.theme.CyanAccent
+import vn.hokvi.viethoa.v2.ui.theme.DarkBackground
 import vn.hokvi.viethoa.v2.ui.theme.DarkBorder
 import vn.hokvi.viethoa.v2.ui.theme.DarkSurface
 import vn.hokvi.viethoa.v2.ui.theme.DarkSurfaceVariant
@@ -89,6 +96,8 @@ fun DashboardScreen(
     var manualPairPort by remember { mutableStateOf("") }
     var manualPairCode by remember { mutableStateOf("") }
     var manualConnectPort by remember { mutableStateOf("") }
+    val context = LocalContext.current
+    var isBubbleRunning by remember { mutableStateOf(FloatingBubbleService.isServiceRunning()) }
 
     Column(
         modifier = Modifier
@@ -115,6 +124,39 @@ fun DashboardScreen(
                     text = stringResource(R.string.app_subtitle),
                     style = MaterialTheme.typography.bodyLarge,
                     color = TextSecondary
+                )
+            }
+            Spacer(modifier = Modifier.width(8.dp))
+            Button(
+                onClick = {
+                    if (!OverlayPermissionHelper.canDrawOverlays(context)) {
+                        Toast.makeText(context, R.string.bubble_need_permission, Toast.LENGTH_LONG).show()
+                        OverlayPermissionHelper.openOverlaySettings(context)
+                    } else {
+                        val serviceIntent = Intent(context, FloatingBubbleService::class.java)
+                        if (FloatingBubbleService.isServiceRunning()) {
+                            context.stopService(serviceIntent)
+                            isBubbleRunning = false
+                        } else {
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                context.startForegroundService(serviceIntent)
+                            } else {
+                                context.startService(serviceIntent)
+                            }
+                            isBubbleRunning = true
+                        }
+                    }
+                },
+                shape = RoundedCornerShape(8.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = if (isBubbleRunning) EmeraldSuccess else DarkSurfaceVariant,
+                    contentColor = if (isBubbleRunning) DarkBackground else GoldPrimary
+                ),
+                border = BorderStroke(1.dp, if (isBubbleRunning) EmeraldSuccess else GoldPrimary.copy(alpha = 0.6f))
+            ) {
+                Text(
+                    text = "${stringResource(R.string.btn_bubble_toggle)}: ${if (isBubbleRunning) stringResource(R.string.bubble_running) else stringResource(R.string.bubble_stopped)}",
+                    style = MaterialTheme.typography.labelMedium
                 )
             }
             Spacer(modifier = Modifier.width(8.dp))

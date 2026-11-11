@@ -28,6 +28,13 @@
     <!-- 12. Tự kích hoạt tác vụ kiểm tra bản vá sau khi máy khởi động lại -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
+    <!-- 13. Quyền hiển thị cửa sổ nổi đè màn hình game (Bong bóng trợ lý) -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- 14. Quyền Foreground Service cho cửa sổ nổi trên Android 14+ (API 34) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <!-- 15. Rung phản hồi xúc giác khi kéo bong bóng vào thùng rác -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <!-- Truy vấn gói game đích (Package Visibility trên Android 11+) -->
     <queries>
         <package android:name="com.tencent.tmgp.osgame" />
@@ -70,6 +77,17 @@
             android:name=".service.worker.UpdateCheckJobService"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <!-- 4. Dịch vụ Bong bóng nổi trợ lý In-Game (Floating Bubble) -->
+        <service
+            android:name=".service.bubble.FloatingBubbleService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Overlay window for in-game chess handbook and quick guide" />
+        </service>
 
         <!-- 2 Broadcast Receivers (Mục 1.3) -->
         <!-- 1. Nhận kết quả từ Android PackageInstaller khi cài đặt APK -->

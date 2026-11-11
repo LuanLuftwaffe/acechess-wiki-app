@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bubble_root"
+    android:layout_width="52dp"
+    android:layout_height="52dp"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <!-- Circular Avatar Logo (Thường Tiểu Nga - Mẫu 4 Ánh Kim) -->
+    <ImageView
+        android:id="@+id/img_bubble_avatar"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_logo_circle"
+        android:scaleType="fitCenter"
+        android:contentDescription="AceChess Bubble Avatar" />
+</FrameLayout>
