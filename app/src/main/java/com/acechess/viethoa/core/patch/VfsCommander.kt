@@ -183,9 +183,9 @@ class VfsCommander(
             }
         } catch (_: Exception) {}
 
-        // 2. Chép font tiếng Việt Oswald-Bold-HOKVI.ttf -> font.ttf
+        // 2. Chép font tiếng Việt Oswald-Bold.ttf -> font.ttf
         try {
-            context.assets.open("Oswald-Bold-HOKVI.ttf").use { input ->
+            context.assets.open("Oswald-Bold.ttf").use { input ->
                 File(baseDir, "font.ttf").outputStream().use { output ->
                     input.copyTo(output)
                 }

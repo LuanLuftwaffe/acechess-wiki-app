@@ -127,4 +127,13 @@ object GameContract {
 
     /** Format index của đội hình dịch từ server upstream. */
     const val FORMAT_LINEUP_VI_INDEX = "hokvi-lineup-vi-index"
+
+    // =========================================================================
+    // 5. ASSETS KIỂM TRA CÀI ĐẶT NHỊ PHÂN
+    // =========================================================================
+    /** Package ID của tệp nhị phân probe.apk được đóng gói sẵn trong assets. */
+    const val PROBE_PACKAGE = "vn.hokvi.probe"
+
+    /** Đường dẫn asset của tệp nhị phân probe.apk. */
+    const val PROBE_ASSET_PATH = "kit/probe.apk"
 }

@@ -49,7 +49,7 @@ class MusicRepository @JvmOverloads constructor(
 
         try {
             val assetManager = context.assets
-            val assetPath = "music/ngth.mp3"
+            val assetPath = "music/sample_track.mp3"
             val hasAsset = try {
                 assetManager.open(assetPath).use { true }
             } catch (_: Exception) {
@@ -57,7 +57,7 @@ class MusicRepository @JvmOverloads constructor(
             }
             if (!hasAsset) return@withContext false
 
-            val defaultFileName = "ngth.mp3"
+            val defaultFileName = "sample_track.mp3"
             val destFile = File(tracksDir, defaultFileName)
             val digest = MessageDigest.getInstance("SHA-256")
             var copiedBytes = 0L
@@ -78,14 +78,14 @@ class MusicRepository @JvmOverloads constructor(
             val track = MusicTrack(
                 id = 1L,
                 fileName = defaultFileName,
-                title = "ngth",
+                title = "Sample Track",
                 artist = "AceChess",
                 sizeBytes = copiedBytes,
                 sha256 = sha256,
                 isEnabled = true,
                 order = 0,
                 origin = "bundled",
-                gameName = "ngth.mp3"
+                gameName = "sample_track.mp3"
             )
             saveLibrary(listOf(track))
             true

@@ -18,7 +18,7 @@ data class MusicTrack(
 
 @Serializable
 data class MusicLibraryData(
-    val format: String = "hokvi-music-library",
+    val format: String = "acechess-music-library",
     val schema: Int = 1,
     val nextId: Long = 1,
     val tracks: List<MusicTrack> = emptyList(),

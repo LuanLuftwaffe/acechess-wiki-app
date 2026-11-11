@@ -62,4 +62,10 @@ class GameContractTest {
         assertEquals("hokvi-ai-vi-index", GameContract.FORMAT_AI_VI_INDEX)
         assertEquals("hokvi-lineup-vi-index", GameContract.FORMAT_LINEUP_VI_INDEX)
     }
+
+    @Test
+    fun testProbeAssets() {
+        assertEquals("vn.hokvi.probe", GameContract.PROBE_PACKAGE)
+        assertEquals("kit/probe.apk", GameContract.PROBE_ASSET_PATH)
+    }
 }

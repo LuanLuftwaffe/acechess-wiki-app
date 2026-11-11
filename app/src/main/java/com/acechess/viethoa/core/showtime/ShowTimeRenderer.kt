@@ -23,7 +23,7 @@ class ShowTimeRenderer @JvmOverloads constructor(
 
     companion object {
         val HOKVI_SHOWTIME_DIR = "${GameContract.DIR_HOKVI_SDCARD}/${GameContract.DIR_SHOWTIME}"
-        const val FONT_ASSET_NAME = "Oswald-Bold-HOKVI.ttf"
+        const val FONT_ASSET_NAME = "Oswald-Bold.ttf"
 
         data class TexSpec(
             val name: String,

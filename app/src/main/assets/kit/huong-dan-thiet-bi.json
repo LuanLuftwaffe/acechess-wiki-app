@@ -632,7 +632,7 @@
           "title": "Android 10 trở xuống",
           "steps": [
             "Android 10 trở xuống KHÔNG có \"Gỡ lỗi không dây\", nên app không tự kết nối được như Android 11+.",
-            "Cách dễ nhất: cài bằng MÁY TÍNH — tải bộ cài Android trên PC (HOKVI-Android-VietHoa), bật \"Gỡ lỗi USB\", cắm cáp USB, chạy VietHoa-Android.exe.",
+            "Cách dễ nhất: cài bằng MÁY TÍNH — bật \"Gỡ lỗi USB\", cắm cáp USB vào máy tính để kích hoạt Shizuku hoặc cài đặt trực tiếp.",
             "Hoặc: cài Shizuku và khởi động nó qua máy tính (một lần sau mỗi lần khởi động lại máy), rồi dùng app này như bình thường."
           ]
         },

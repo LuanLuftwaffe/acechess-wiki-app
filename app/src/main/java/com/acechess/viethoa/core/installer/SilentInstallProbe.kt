@@ -3,6 +3,7 @@ package com.acechess.viethoa.core.installer
 import android.content.Context
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import com.acechess.viethoa.core.contract.GameContract
 import com.acechess.viethoa.core.shell.ShellResolver
 import java.io.File
 import java.io.FileOutputStream
@@ -18,8 +19,8 @@ class SilentInstallProbe(
 ) {
     companion object {
         /** Package ID của tệp nhị phân probe.apk được đóng gói sẵn trong assets */
-        const val PROBE_PACKAGE = "vn.hokvi.probe"
-        const val PROBE_ASSET_PATH = "kit/probe.apk"
+        const val PROBE_PACKAGE = GameContract.PROBE_PACKAGE
+        const val PROBE_ASSET_PATH = GameContract.PROBE_ASSET_PATH
     }
 
     /**
