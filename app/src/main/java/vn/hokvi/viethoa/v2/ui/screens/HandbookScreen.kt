@@ -53,6 +53,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import vn.hokvi.viethoa.v2.R
+import vn.hokvi.viethoa.v2.core.bridge.WebAppInterface
 import vn.hokvi.viethoa.v2.core.web.WebConstants
 import vn.hokvi.viethoa.v2.ui.theme.DarkBackground
 import vn.hokvi.viethoa.v2.ui.theme.DarkSurface
@@ -65,6 +66,7 @@ private const val TAG = "HandbookScreen"
 @Composable
 fun HandbookScreen(
     initialUrl: String = WebConstants.DEFAULT_WEB_URL,
+    onNavigateToPatch: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
@@ -174,6 +176,7 @@ fun HandbookScreen(
                         context = ctx,
                         initialUrl = initialUrl,
                         savedState = webViewStateBundle,
+                        onNavigateToPatch = onNavigateToPatch,
                         onProgressChanged = { newProgress ->
                             progress = newProgress
                             isLoading = newProgress < 100
@@ -211,6 +214,7 @@ private fun createConfiguredWebView(
     context: Context,
     initialUrl: String,
     savedState: Bundle,
+    onNavigateToPatch: () -> Unit = {},
     onProgressChanged: (Int) -> Unit,
     onUrlChanged: (String) -> Unit,
     onNavigationStateChanged: (Boolean) -> Unit
@@ -249,6 +253,15 @@ private fun createConfiguredWebView(
             mixedContentMode = WebSettings.MIXED_CONTENT_NEVER_ALLOW
             userAgentString = "$userAgentString ${WebConstants.USER_AGENT_SUFFIX}"
         }
+
+        // Cầu nối Web-Native an toàn theo Nguyên tắc 5
+        val bridge = WebAppInterface(
+            context = context,
+            getCurrentUrl = { url },
+            onOpenViethoaTab = onNavigateToPatch
+        )
+        addJavascriptInterface(bridge, "AceChess")
+        addJavascriptInterface(bridge, "AndroidBridge")
 
         webChromeClient = object : WebChromeClient() {
             override fun onProgressChanged(view: WebView?, newProgress: Int) {

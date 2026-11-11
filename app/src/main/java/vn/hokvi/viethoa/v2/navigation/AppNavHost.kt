@@ -123,7 +123,11 @@ fun AppNavHost(
                 )
             }
             composable(Screen.Handbook.route) {
-                HandbookScreen()
+                HandbookScreen(
+                    onNavigateToPatch = {
+                        navController.navigate(Screen.Patch.route)
+                    }
+                )
             }
             composable(Screen.Patch.route) {
                 val patchUiState by patchViewModel.uiState.collectAsState()
