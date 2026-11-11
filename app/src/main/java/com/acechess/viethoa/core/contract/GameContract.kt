@@ -7,7 +7,7 @@ package com.acechess.viethoa.core.contract
  * 
  * CẢNH BÁO:
  * Mọi giá trị hằng số trong file này TUYỆT ĐỐI KHÔNG ĐƯỢC THAY ĐỔI hay tự ý đổi tên.
- * Đây là các đường dẫn, tên file, header, magic byte và định dạng mà Game Vương Giả Vinh Diệu
+ * Đây là các đường dẫn, tên file, header, magic byte và định dạng mà Game Vương Giả Vạn Tượng Kỳ
  * (com.tencent.tmgp.osgame), engine VFS của Tencent, và máy chủ phân phối bản dịch upstream đọc/ghi.
  * Mọi thay đổi ký tự sẽ gây lỗi văng game, mất bản dịch hoặc lỗi phân tích gói vá.
  */
@@ -16,7 +16,7 @@ object GameContract {
     // =========================================================================
     // 1. PACKAGE IDS & DOMAIN MÁY CHỦ UPSTREAM
     // =========================================================================
-    /** Package ID của game Vương Giả Vinh Diệu (Bản nội địa Trung Quốc). */
+    /** Package ID của game Vương Giả Vạn Tượng Kỳ (Bản nội địa Trung Quốc). */
     const val GAME_PKG_STORE = "com.tencent.tmgp.osgame"
 
     /** Package ID của game Honor of Kings (Bản quốc tế). */

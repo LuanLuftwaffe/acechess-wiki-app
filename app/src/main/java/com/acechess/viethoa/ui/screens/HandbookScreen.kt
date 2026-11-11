@@ -236,7 +236,11 @@ private fun createConfiguredWebView(
 
         if (isEmulator) {
             setLayerType(View.LAYER_TYPE_SOFTWARE, null)
+        } else {
+            setLayerType(View.LAYER_TYPE_HARDWARE, null)
         }
+        scrollBarStyle = View.SCROLLBARS_INSIDE_OVERLAY
+        isVerticalScrollBarEnabled = true
 
         settings.apply {
             javaScriptEnabled = true

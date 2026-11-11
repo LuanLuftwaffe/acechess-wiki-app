@@ -430,7 +430,9 @@ class FloatingBubbleService : Service() {
             WindowManager.LayoutParams.MATCH_PARENT,
             WindowManager.LayoutParams.MATCH_PARENT,
             layoutType,
-            WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL or WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
+            WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL or 
+                WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN or 
+                WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
             PixelFormat.TRANSLUCENT
         ).apply {
             gravity = Gravity.CENTER
@@ -459,8 +461,26 @@ class FloatingBubbleService : Service() {
         // Mini WebView
         val progressBar = overlayWindow?.findViewById<ProgressBar>(R.id.mini_web_progress)
         val miniWeb = overlayWindow?.findViewById<WebView>(R.id.mini_webview)
+
+        val isEmulator = Build.FINGERPRINT.startsWith("generic") ||
+                Build.FINGERPRINT.startsWith("unknown") ||
+                Build.MODEL.contains("google_sdk") ||
+                Build.MODEL.contains("Emulator") ||
+                Build.MODEL.contains("Android SDK built for x86") ||
+                Build.HARDWARE.contains("goldfish") ||
+                Build.HARDWARE.contains("ranchu")
+
         miniWeb?.apply {
-            setLayerType(View.LAYER_TYPE_SOFTWARE, null)
+            // Tối ưu hiệu năng: Trên thiết bị thật dùng Hardware Layer (GPU) để lướt siêu mượt, không giật lag
+            if (isEmulator) {
+                setLayerType(View.LAYER_TYPE_SOFTWARE, null)
+            } else {
+                setLayerType(View.LAYER_TYPE_HARDWARE, null)
+            }
+            scrollBarStyle = View.SCROLLBARS_INSIDE_OVERLAY
+            isVerticalScrollBarEnabled = true
+            isHorizontalScrollBarEnabled = false
+
             settings.apply {
                 javaScriptEnabled = true
                 domStorageEnabled = true
@@ -471,7 +491,7 @@ class FloatingBubbleService : Service() {
                 allowUniversalAccessFromFileURLs = false
                 loadWithOverviewMode = true
                 useWideViewPort = true
-                setSupportZoom(true)
+                setSupportZoom(false)
                 builtInZoomControls = false
                 displayZoomControls = false
                 cacheMode = WebSettings.LOAD_DEFAULT

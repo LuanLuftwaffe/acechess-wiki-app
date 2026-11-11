@@ -34,7 +34,7 @@ class PatchEngine(
             // 1.1. Kiểm tra trạng thái game đã cài đặt
             val gameInfo = gameStateDetector.checkInfo()
             if (!gameInfo.isInstalled) {
-                onProgress(PatchProgress(PatchStep.FAILED, "Chưa phát hiện game Vương Giả Vinh Diệu trên máy!", 0f, true, "Chưa cài game"))
+                onProgress(PatchProgress(PatchStep.FAILED, "Chưa phát hiện game Vương Giả Vạn Tượng Kỳ trên máy!", 0f, true, "Chưa cài game"))
                 return@withContext false
             }
 

@@ -108,68 +108,73 @@ fun DashboardScreen(
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         // App Header
-        Row(
+        Column(
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
+            verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    text = stringResource(R.string.app_name),
-                    style = MaterialTheme.typography.headlineLarge,
-                    color = GoldPrimary
-                )
-                Spacer(modifier = Modifier.height(4.dp))
-                Text(
-                    text = stringResource(R.string.app_subtitle),
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = TextSecondary
-                )
-            }
-            Spacer(modifier = Modifier.width(8.dp))
-            Button(
-                onClick = {
-                    if (!OverlayPermissionHelper.canDrawOverlays(context)) {
-                        Toast.makeText(context, R.string.bubble_need_permission, Toast.LENGTH_LONG).show()
-                        OverlayPermissionHelper.openOverlaySettings(context)
-                    } else {
-                        val serviceIntent = Intent(context, FloatingBubbleService::class.java)
-                        if (FloatingBubbleService.isServiceRunning()) {
-                            context.stopService(serviceIntent)
-                            isBubbleRunning = false
+            Text(
+                text = stringResource(R.string.app_name),
+                style = MaterialTheme.typography.headlineLarge,
+                color = GoldPrimary
+            )
+            Text(
+                text = stringResource(R.string.app_subtitle),
+                style = MaterialTheme.typography.bodyMedium,
+                color = TextSecondary
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Button(
+                    onClick = {
+                        if (!OverlayPermissionHelper.canDrawOverlays(context)) {
+                            Toast.makeText(context, R.string.bubble_need_permission, Toast.LENGTH_LONG).show()
+                            OverlayPermissionHelper.openOverlaySettings(context)
                         } else {
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                                context.startForegroundService(serviceIntent)
+                            val serviceIntent = Intent(context, FloatingBubbleService::class.java)
+                            if (FloatingBubbleService.isServiceRunning()) {
+                                context.stopService(serviceIntent)
+                                isBubbleRunning = false
                             } else {
-                                context.startService(serviceIntent)
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                    context.startForegroundService(serviceIntent)
+                                } else {
+                                    context.startService(serviceIntent)
+                                }
+                                isBubbleRunning = true
                             }
-                            isBubbleRunning = true
                         }
-                    }
-                },
-                shape = RoundedCornerShape(8.dp),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = if (isBubbleRunning) EmeraldSuccess else DarkSurfaceVariant,
-                    contentColor = if (isBubbleRunning) DarkBackground else GoldPrimary
-                ),
-                border = BorderStroke(1.dp, if (isBubbleRunning) EmeraldSuccess else GoldPrimary.copy(alpha = 0.6f))
-            ) {
-                Text(
-                    text = "${stringResource(R.string.btn_bubble_toggle)}: ${if (isBubbleRunning) stringResource(R.string.bubble_running) else stringResource(R.string.bubble_stopped)}",
-                    style = MaterialTheme.typography.labelMedium
-                )
-            }
-            Spacer(modifier = Modifier.width(8.dp))
-            OutlinedButton(
-                onClick = onNavigateToChangelog,
-                shape = RoundedCornerShape(8.dp),
-                border = BorderStroke(1.dp, GoldPrimary.copy(alpha = 0.6f)),
-                colors = ButtonDefaults.outlinedButtonColors(contentColor = GoldPrimary)
-            ) {
-                Text(
-                    text = stringResource(R.string.nav_changelog),
-                    style = MaterialTheme.typography.labelMedium
-                )
+                    },
+                    modifier = Modifier.weight(1f),
+                    shape = RoundedCornerShape(8.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = if (isBubbleRunning) EmeraldSuccess else DarkSurfaceVariant,
+                        contentColor = if (isBubbleRunning) DarkBackground else GoldPrimary
+                    ),
+                    border = BorderStroke(1.dp, if (isBubbleRunning) EmeraldSuccess else GoldPrimary.copy(alpha = 0.6f))
+                ) {
+                    Text(
+                        text = "${stringResource(R.string.btn_bubble_toggle)}: ${if (isBubbleRunning) stringResource(R.string.bubble_running) else stringResource(R.string.bubble_stopped)}",
+                        style = MaterialTheme.typography.labelMedium,
+                        maxLines = 1
+                    )
+                }
+                OutlinedButton(
+                    onClick = onNavigateToChangelog,
+                    modifier = Modifier.weight(1f),
+                    shape = RoundedCornerShape(8.dp),
+                    border = BorderStroke(1.dp, GoldPrimary.copy(alpha = 0.6f)),
+                    colors = ButtonDefaults.outlinedButtonColors(contentColor = GoldPrimary)
+                ) {
+                    Text(
+                        text = stringResource(R.string.nav_changelog),
+                        style = MaterialTheme.typography.labelMedium,
+                        maxLines = 1
+                    )
+                }
             }
         }
 
@@ -193,8 +198,10 @@ fun DashboardScreen(
                     Text(
                         text = stringResource(R.string.shell_status_title),
                         style = MaterialTheme.typography.titleMedium,
-                        color = TextPrimary
+                        color = TextPrimary,
+                        modifier = Modifier.weight(1f)
                     )
+                    Spacer(modifier = Modifier.width(8.dp))
 
                     if (uiState.isLoading) {
                         CircularProgressIndicator(
@@ -288,8 +295,10 @@ fun DashboardScreen(
                     Text(
                         text = stringResource(R.string.adb_wireless_card_title),
                         style = MaterialTheme.typography.titleMedium,
-                        color = TextPrimary
+                        color = TextPrimary,
+                        modifier = Modifier.weight(1f)
                     )
+                    Spacer(modifier = Modifier.width(8.dp))
                     val statusText = if (uiState.isAdbWirelessConnected) "Đã kết nối" else "Chưa kết nối"
                     val statusColor = if (uiState.isAdbWirelessConnected) EmeraldSuccess else TextSecondary
                     Box(
@@ -301,7 +310,8 @@ fun DashboardScreen(
                         Text(
                             text = statusText,
                             style = MaterialTheme.typography.bodySmall,
-                            color = statusColor
+                            color = statusColor,
+                            maxLines = 1
                         )
                     }
                 }
@@ -393,8 +403,10 @@ fun DashboardScreen(
                     Text(
                         text = stringResource(R.string.game_status_title),
                         style = MaterialTheme.typography.titleMedium,
-                        color = TextPrimary
+                        color = TextPrimary,
+                        modifier = Modifier.weight(1f)
                     )
+                    Spacer(modifier = Modifier.width(8.dp))
 
                     val isInstalled = uiState.gameState.isInstalled
                     val (statusLabel, statusColor) = if (isInstalled) {
@@ -412,7 +424,8 @@ fun DashboardScreen(
                         Text(
                             text = statusLabel,
                             style = MaterialTheme.typography.labelMedium,
-                            color = statusColor
+                            color = statusColor,
+                            maxLines = 1
                         )
                     }
                 }
