@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AceChess Tool Việt Hóa</string>
+    <string name="app_subtitle">Wiki &amp; Công Cụ Việt Hóa HoK Ace</string>
+    <string name="title_shizuku">Trung Tâm Dịch Vụ Việt Hóa</string>
+    <string name="title_floating_bubble">Bong Bóng Nổi Trợ Lý</string>
+    <string name="desc_shizuku">Tùy chọn dịch vụ: Font, Giao diện, Đội hình Meta, Nhạc trận đấu.</string>
+    <string name="btn_apply_patch">BẮT ĐẦU CÀI ĐẶT VIỆT HÓA</string>
+    <string name="btn_restore_game">KHÔI PHỤC GAME GỐC</string>
+    <string name="btn_toggle_bubble">BẬT BONG BÓNG NỔI</string>
+    <string name="btn_check_permission">Kiểm Tra Quyền</string>
+    <string name="status_shizuku_running">Quyền Cài Đặt: Shizuku Sẵn Sàng ✔</string>
+    <string name="status_shizuku_stopped">Chế độ: Trình Cài Hệ Thống</string>
+    <string name="status_game_found">Game: Đã Cài Đặt ✔</string>
+    <string name="status_game_missing">Game: Chưa Cài Đặt</string>
+    <string name="perm_granted">Đã Cấp Quyền</string>
+    <string name="perm_denied">Chưa Cấp Quyền</string>
+    <string name="notif_channel_name">AceChess Tool</string>
+    <string name="notif_channel_desc">Thông báo chạy ngầm dịch vụ bong bóng nổi</string>
+    <string name="notif_title">AceChess Tool đang chạy</string>
+    <string name="notif_text">Chạm vào bong bóng nổi để tra cứu tướng &amp; mở công cụ.</string>
+</resources>

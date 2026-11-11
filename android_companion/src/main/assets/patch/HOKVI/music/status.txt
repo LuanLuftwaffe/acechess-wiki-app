@@ -1,0 +1,13 @@
+# HOKVI music (r67) - written by the game
+battle=on
+battle_player=ok
+battle_tracks=1
+battle_choice=ngth.mp3
+battle_phase=lobby
+battle_round=-
+battle_state=idle
+battle_timer=on
+battle_mode=single
+battle_list=1
+battle_now=-
+battle_through_auction=no
