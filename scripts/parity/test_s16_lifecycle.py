@@ -18,7 +18,7 @@ except ImportError:
         from config import TARGET_PACKAGE, TARGET_ACTIVITY
     except ImportError:
         TARGET_PACKAGE = "com.acechess.viethoa"
-        TARGET_ACTIVITY = "com.acechess.viethoa/vn.hokvi.viethoa.v2.MainActivity"
+        TARGET_ACTIVITY = f"{TARGET_PACKAGE}/.MainActivity"
 
 ADB_PATH = r"C:\Program Files\Microvirt\MEmu\adb.exe"
 if not os.path.exists(ADB_PATH):

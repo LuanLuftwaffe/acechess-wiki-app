@@ -33,7 +33,7 @@ def get_target_package() -> str:
     return "com.acechess.viethoa"
 
 TARGET_PACKAGE = get_target_package()
-TARGET_ACTIVITY = f"{TARGET_PACKAGE}/vn.hokvi.viethoa.v2.MainActivity"
+TARGET_ACTIVITY = f"{TARGET_PACKAGE}/.MainActivity"
 OLD_TOOL_PACKAGE = "vn.hokvi.viethoa"
 OLD_TOOL_ACTIVITY = "vn.hokvi.viethoa/.MainActivity"
 GAME_PACKAGE = "com.tencent.tmgp.osgame"

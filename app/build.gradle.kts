@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "vn.hokvi.viethoa.v2"
+    namespace = "com.acechess.viethoa"
     compileSdk = 34
 
     defaultConfig {
