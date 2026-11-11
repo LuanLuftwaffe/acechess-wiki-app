@@ -21,7 +21,7 @@
 | **FEAT-08** | Ghi đè VFS gói 4 (`4.db`, `4_0.db`) | Ghi `4.db` (229KB) và `4_0.db` (34.8MB) qua Shizuku | Đã có code trong `VfsCommander.kt` | S1 | **BLOCKED-BY-SCOPE** | Phụ thuộc FEAT-07 |
 | **FEAT-09** | Tự động tạo bản sao lưu `.orig` trước khi ghi | Tạo `1.db.orig`, `4.db.orig` | Đã có code `backupAndWriteDb` | S1 | **BLOCKED-BY-SCOPE** | Phụ thuộc FEAT-07 |
 | **FEAT-10** | Khoá Watchdog (`txt_1.ver`, `txt_4.ver` trong `vi_bak/`) | Ghi chuỗi version vào `vi_bak/txt_*.ver` chặn game tải đè | Đã có code `writeWatchdogLocks` | S1 | **BLOCKED-BY-SCOPE** | Phụ thuộc FEAT-07 |
-| **FEAT-11** | Dọn kẹt gói 2 (`unstickPackage2`) | Di chuyển `packages/2` nếu `v2 < v0` sang `vi_bak/pkg2_<ts>` | Đã có code `unstickPackage2()` | S5 | **NOT-TESTABLE** | Cần dựng môi trường test giả lập `packages/2` trên MEmu |
+| **FEAT-11** | Dọn kẹt gói 2 (`unstickPackage2`) | Di chuyển `packages/2` nếu `v2 < v0` sang `vi_bak/pkg2_<ts>` | Đã có code `unstickPackage2()` | S5 | **IDENTICAL** | `dumps/parity/s5_unstick/parity.md` (Khớp 100%), unit test `testUnstickPackage2Logic` pass |
 | **FEAT-12** | Tuỳ chọn `wantImages` (Việt hoá hình ảnh) | Checkbox "Việt hoá hình ảnh (tải thêm ~50 MB)" | Đã có UI checkbox trong `PatchSettingsScreen` | S4 | **BLOCKED-BY-SCOPE** | Phụ thuộc FEAT-07 |
 | **FEAT-13** | Tuỳ chọn `wantRules` (Việt hoá quy tắc) | Checkbox "Việt hoá hình minh hoạ Quy tắc cơ bản (~16 MB)" | Đã có UI checkbox trong `PatchSettingsScreen` | S4 | **BLOCKED-BY-SCOPE** | Phụ thuộc FEAT-07 |
 | **FEAT-14** | Tuỳ chọn `wantVfx` (Hiệu ứng tướng Vô Song/Thịnh Thế) | Checkbox "Hiệu ứng tướng trong trận (~0,3 MB)" | Đã có UI checkbox trong `PatchSettingsScreen` | S4 | **BLOCKED-BY-SCOPE** | Phụ thuộc FEAT-07 |
@@ -34,9 +34,9 @@
 | **FEAT-21** | Bật/tắt tìm bài đội hình tiếng Việt | Checkbox tạo/xoá cờ `lineup-search-vi.enabled` (0 byte) | Đã triển khai trong `DashboardViewModel.kt` | S9 | **IDENTICAL** | `dumps/parity/s9_lineup_ai/new.json` |
 | **FEAT-22** | Thu thập câu AI Linh Bảo & Xoá dữ liệu | Ghi `/HOKVI/ai-collect/` và nút "Xoá dữ liệu đã thu thập" | Đã triển khai thư mục `ai-collect` | S6 | **IDENTICAL** | Cây thư mục `HOKVI/ai-collect` được tạo đồng nhất |
 | **FEAT-23** | Quản lý danh sách nhạc nền (tối đa 50 bài $\le 64$ MB) | UI danh sách nhạc: thêm, sửa tên/ca sĩ, sắp xếp $\uparrow\downarrow$ | Đã triển khai (`MusicScreen.kt`, `MusicViewModel.kt`) | S7 | **IDENTICAL** | UI quản lý nhạc hoạt động đầy đủ trên MEmu |
-| **FEAT-24** | Nạp nhạc vào game (`titles.txt` + cờ `enabled`) | Nút "NẠP VÀO GAME": ghi `titles.txt` header chuẩn + MP3 + cờ | Đã chạy so sánh trên MEmu: ghi đúng cờ `enabled`, nhưng lệch file nhạc mặc định | S7 | **DIFF-BUG**<br>*(BUG-002)* | `dumps/parity/s7_music/parity.md` (`ngth.mp3` vs `sample_theme.mp3`) |
+| **FEAT-24** | Nạp nhạc vào game (`titles.txt` + cờ `enabled`) | Nút "NẠP VÀO GAME": ghi `titles.txt` header chuẩn + MP3 + cờ | Đóng gói `ngth.mp3`, header chuẩn phân tách tab, ghi qua Shell | S7 | **IDENTICAL** | `dumps/parity/s7_music/parity.md` (Khớp 100% size và sha256 `ngth.mp3`, `titles.txt` 97B, `enabled` 0B) |
 | **FEAT-25** | Tuỳ biến chữ sân khấu ShowTime (nhập 1–5 ký tự) | Nhập chữ 1–5 ký tự mỗi bên, Live Preview trực quan | Đã triển khai (`ShowtimeScreen.kt`) | S8 | **IDENTICAL** | `dumps/parity/ui/new/tab_showtime.png` |
-| **FEAT-26** | Nạp 13 tệp RGBA sân khấu (`scene_Choose_T2_*.rgba`) | Nút "Áp dụng" / "Nạp vào game": sinh 13 file RGBA + `config.json` | Tool cũ ghi đủ 13 file; App mới lỗi quyền ghi Scoped Storage | S8 | **DIFF-BUG**<br>*(BUG-003)* | `dumps/parity/s8_showtime/parity.md` (Lỗi quyền ghi file) |
+| **FEAT-26** | Nạp 13 tệp RGBA sân khấu (`scene_Choose_T2_*.rgba`) | Nút "Áp dụng" / "Nạp vào game": sinh 13 file RGBA + `config.json` | Chuyển file qua staging và ShellResolver | S8 | **DIFF-ACCEPTABLE** | `dumps/parity/s8_showtime/parity.md` (13/13 file RGBA khớp 100% kích thước byte và WxH, cờ `enabled` khớp 100%; lệch pixel rasterization font đã có báo cáo) |
 | **FEAT-27** | Nhận diện Shizuku Binder IPC & cấp quyền tự động | Hiển thị "Shizuku: SẴN SÀNG ✔" / "Shizuku: Đã cấp quyền" | Đã triển khai (`ShizukuShell.kt`) | S11 | **IDENTICAL** | `dumps/parity/ui/old/tab_dashboard.png`, `dumps/parity/ui/new/tab_overview.png` |
 | **FEAT-28** | Nhận diện Root Shell (`su` binary / uid=0) fallback | Chạy lệnh trực tiếp qua Root nếu có `su` hoặc adbd root | Đã triển khai (`RootShell.kt`) | S13 | **IDENTICAL** | Cả hai app chạy lệnh shell với uid=0 thành công |
 | **FEAT-29** | In-App ADB không dây (mDNS quét cổng + ghép mã PIN) | Quét cổng ngầm, ghép mã qua Notification, giữ kết nối | Đã tích hợp client Java thuần trong `vn.hokvi.viethoa.v2.core.adb` | S11 | **NOT-TESTABLE** | Yêu cầu Android 11+ (MEmu hiện tại là Android 9) |
@@ -53,8 +53,8 @@
 ## 2. THỐNG KÊ TỶ LỆ THEO 5 TRẠNG THÁI NGHIỆM THU
 
 - **Tổng số tính năng kiểm kê:** 36 tính năng
-  * **IDENTICAL (Khớp 100% bằng chứng old + new):** **23 / 36 (63.89%)** — *[FEAT-01..05, 17..23, 25, 27, 28, 30..36]*
-  * **DIFF-ACCEPTABLE (Khác biệt chấp nhận được):** **1 / 36 (2.78%)** — *[FEAT-06]*
-  * **DIFF-BUG (Phát hiện lỗi sai lệch đang mở):** **2 / 36 (5.56%)** — *[FEAT-24, FEAT-26]*
-  * **NOT-TESTABLE (Thiếu điều kiện môi trường phần cứng):** **2 / 36 (5.56%)** — *[FEAT-11, FEAT-29]*
+  * **IDENTICAL (Khớp 100% bằng chứng old + new):** **25 / 36 (69.44%)** — *[FEAT-01..05, 11, 17..25, 27, 28, 30..36]*
+  * **DIFF-ACCEPTABLE (Khác biệt chấp nhận được):** **2 / 36 (5.56%)** — *[FEAT-06, FEAT-26]*
+  * **DIFF-BUG (Phát hiện lỗi sai lệch đang mở):** **0 / 36 (0.00%)** — *[Tất cả BUG-001..003 đã được sửa & nghiệm thu]*
+  * **NOT-TESTABLE (Thiếu điều kiện môi trường phần cứng):** **1 / 36 (2.78%)** — *[FEAT-29 (Yêu cầu Android 11+ mDNS)]*
   * **BLOCKED-BY-SCOPE (Chạm phạm vi cấm hoặc chờ dữ liệu vá thật 1.9.2.4):** **8 / 36 (22.22%)** — *[FEAT-07..10, 12..16]*
