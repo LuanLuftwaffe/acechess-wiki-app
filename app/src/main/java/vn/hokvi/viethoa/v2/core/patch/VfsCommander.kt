@@ -47,9 +47,13 @@ class VfsCommander(
         val cmd = "cat $VFS_PACKAGES_DIR/$pid/$pid.info 2>/dev/null"
         val res = runInGameContext(cmd)
         if (!res.isSuccess || res.stdout.isBlank()) return null
+        val clean = res.stdout.replace("\uFEFF", "").trim()
+        val regexMatch = Regex(""""version"\s*:\s*"([^"]+)"""").find(clean)
+        if (regexMatch != null) {
+            return regexMatch.groupValues[1]
+        }
         return try {
-            val cleanJson = res.stdout.replace("\uFEFF", "").trim()
-            val obj = JSONObject(cleanJson)
+            val obj = JSONObject(clean)
             if (obj.has("version")) obj.getString("version") else null
         } catch (_: Exception) {
             null

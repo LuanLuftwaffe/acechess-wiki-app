@@ -219,4 +219,35 @@ class PatchEngineTest {
         assertNotNull(lastProgress)
         assertEquals(vn.hokvi.viethoa.v2.core.patch.PatchStep.COMPLETED, lastProgress?.currentStep)
     }
+
+    @Test
+    fun testUnstickPackage2Logic() {
+        val executedCommands = mutableListOf<String>()
+        val mockShell = object : vn.hokvi.viethoa.v2.core.shell.ShellResolver() {
+            override suspend fun resolve() = vn.hokvi.viethoa.v2.core.shell.ShellResolution(
+                executor = object : vn.hokvi.viethoa.v2.core.shell.ShellExecutor {
+                    override val type = vn.hokvi.viethoa.v2.core.shell.ShellType.ROOT
+                    override suspend fun isAvailable() = true
+                    override suspend fun execute(command: String) = vn.hokvi.viethoa.v2.core.shell.ExecutionResult(0, "OK", "", 10)
+                },
+                activeType = vn.hokvi.viethoa.v2.core.shell.ShellType.ROOT,
+                reason = "Mock Root"
+            )
+
+            override suspend fun runLoggedCommand(command: String): vn.hokvi.viethoa.v2.core.shell.ExecutionResult {
+                executedCommands.add(command)
+                return when {
+                    command.contains("0/0.info") -> vn.hokvi.viethoa.v2.core.shell.ExecutionResult(0, "{\"version\":\"1.9.2.4\"}", "", 5)
+                    command.contains("2/2.info") -> vn.hokvi.viethoa.v2.core.shell.ExecutionResult(0, "{\"version\":\"1.9.2.3\"}", "", 5)
+                    else -> vn.hokvi.viethoa.v2.core.shell.ExecutionResult(0, "OK", "", 5)
+                }
+            }
+        }
+        val vfs = VfsCommander(mockShell)
+        kotlinx.coroutines.runBlocking {
+            val moved = vfs.unstickPackage2()
+            assertTrue("unstickPackage2 phải di chuyển khi version gói 2 cũ hơn gói 0", moved)
+            assertTrue("Phải thực thi lệnh mv sang vi_bak/pkg2_", executedCommands.any { it.contains("mv") && it.contains("pkg2_") })
+        }
+    }
 }
