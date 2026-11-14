@@ -12,4 +12,4 @@ Nơi lưu trữ các file cài đặt APK thành phẩm đã ký số và các b
 - `LoLChess_1.383_Mod_SideBySide.apk`: Bản mod cũ LoLChess TFT.
 
 > **Lưu ý:** Mọi file APK phát hành chính thức được đồng bộ lên GitHub Releases tại:
-> https://github.com/LuanLuftwaffe/lolchesswiki/releases
+> https://github.com/LuanLuftwaffe/acechess_wiki/releases

@@ -17,7 +17,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 REPO_OWNER = "LuanLuftwaffe"
-REPO_NAME = "lolchesswiki"
+REPO_NAME = "acechess_wiki"
 TAG_NAME = "v2.1.0"
 RELEASE_TITLE = "AceChess Companion v2.1.0 & Patcher Add-on v1.0.1"
 

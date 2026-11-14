@@ -11,7 +11,7 @@ def get_token():
 
 def check_releases():
     token = get_token()
-    req = urllib.request.Request('https://api.github.com/repos/LuanLuftwaffe/lolchesswiki/releases')
+    req = urllib.request.Request('https://api.github.com/repos/LuanLuftwaffe/acechess_wiki/releases')
     if token:
         req.add_header('Authorization', f'Bearer {token}')
     req.add_header('User-Agent', 'AceChess-Tool')

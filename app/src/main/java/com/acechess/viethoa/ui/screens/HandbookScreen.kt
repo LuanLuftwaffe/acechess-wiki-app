@@ -391,7 +391,7 @@ fun HandbookScreen(
                 text = {
                     Text(
                         text = "Tiện ích Tool Việt Hóa (hỗ trợ dịch thuật, vá game, nhạc nền, sân khấu) chưa được cài đặt trên thiết bị.\n\n" +
-                                "Trang phát hành chính thức:\nhttps://github.com/LuanLuftwaffe/lolchesswiki/releases\n\n" +
+                                "Trang phát hành chính thức:\nhttps://github.com/LuanLuftwaffe/acechess_wiki/releases\n\n" +
                                 "Bấm nút bên dưới để mở trang tải bản APK Add-on mới nhất.",
                         style = MaterialTheme.typography.bodyMedium,
                         color = TextPrimary
@@ -404,7 +404,7 @@ fun HandbookScreen(
                             try {
                                 val browserIntent = Intent(
                                     Intent.ACTION_VIEW,
-                                    Uri.parse("https://github.com/LuanLuftwaffe/lolchesswiki/releases")
+                                    Uri.parse("https://github.com/LuanLuftwaffe/acechess_wiki/releases")
                                 )
                                 context.startActivity(browserIntent)
                             } catch (e: Exception) {

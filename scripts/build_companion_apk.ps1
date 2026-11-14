@@ -169,7 +169,7 @@ if (Test-Path $patcherApkPath) {
         $jsonContent.addon.size = $fileSize
         $jsonContent.addon.versionCode = 101
         $jsonContent.addon.versionName = "1.0.1"
-        $jsonContent.addon.url = "https://github.com/LuanLuftwaffe/lolchesswiki/releases/download/v1.0.1/AceChess_Patcher_Addon_v1.0.1.apk"
+        $jsonContent.addon.url = "https://github.com/LuanLuftwaffe/acechess_wiki/releases/download/v1.0.1/AceChess_Patcher_Addon_v1.0.1.apk"
 
         $updatedJson = $jsonContent | ConvertTo-Json -Depth 10
         Set-Content -Path $manifestPath -Value $updatedJson -Encoding utf8
