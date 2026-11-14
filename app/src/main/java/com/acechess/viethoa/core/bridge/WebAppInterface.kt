@@ -7,13 +7,8 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.webkit.JavascriptInterface
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.runBlocking
 import org.json.JSONObject
-import rikka.shizuku.Shizuku
 import com.acechess.viethoa.core.bubble.OverlayPermissionHelper
-import com.acechess.viethoa.core.shell.ShellResolver
-import com.acechess.viethoa.core.shell.ShellType
 import com.acechess.viethoa.core.web.WebConstants
 import com.acechess.viethoa.service.bubble.FloatingBubbleService
 
@@ -79,29 +74,12 @@ class WebAppInterface(
             put("backend", "NONE")
         }.toString()
 
-        return try {
-            val resolver = ShellResolver(ctx)
-            val resolution = runBlocking(Dispatchers.IO) { resolver.resolve() }
-            val shellType = resolution.activeType
-            val isAuthorized = shellType != ShellType.NONE
-            val isShizuku = shellType == ShellType.SHIZUKU || shellType == ShellType.ROOT
-            val gameInstalled = isGameInstalled(ctx)
-
-            JSONObject().apply {
-                put("running", isShizuku)
-                put("authorized", isAuthorized)
-                put("gameInstalled", gameInstalled)
-                put("backend", shellType.name)
-            }.toString()
-        } catch (e: Exception) {
-            logE(TAG, "Error checking shell status", e)
-            JSONObject().apply {
-                put("running", false)
-                put("authorized", false)
-                put("gameInstalled", false)
-                put("backend", "NONE")
-            }.toString()
-        }
+        return JSONObject().apply {
+            put("running", false)
+            put("authorized", false)
+            put("gameInstalled", isGameInstalled(ctx))
+            put("backend", "NONE")
+        }.toString()
     }
 
     @JavascriptInterface
@@ -110,15 +88,7 @@ class WebAppInterface(
             logW(TAG, "Blocked requestShizukuPermission from unauthorized origin: ${getCurrentUrl()}")
             return
         }
-        mainHandler?.post {
-            try {
-                if (Shizuku.pingBinder()) {
-                    Shizuku.requestPermission(1001)
-                }
-            } catch (e: Throwable) {
-                logW(TAG, "Failed to request Shizuku permission: ${e.message}")
-            }
-        }
+        // App Cẩm Nang không can thiệp Shizuku trực tiếp; Shizuku được quản lý bởi Add-on Patcher
     }
 
     @JavascriptInterface

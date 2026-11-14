@@ -10,6 +10,7 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ServiceInfo
+import android.content.res.Configuration
 import android.graphics.BitmapFactory
 import android.graphics.PixelFormat
 import android.os.Build
@@ -394,22 +395,50 @@ class FloatingBubbleService : Service() {
         }
     }
 
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        updateLayoutForOrientation()
+        if (!isWindowVisible) {
+            animateBubbleToEdge()
+        }
+    }
+
+    private fun isLandscape(): Boolean {
+        return resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
+    }
+
     private fun getStatusBarHeight(): Int {
         var result = 0
         val resourceId = resources.getIdentifier("status_bar_height", "dimen", "android")
         if (resourceId > 0) {
             result = resources.getDimensionPixelSize(resourceId)
         }
-        val minSafe = (44 * resources.displayMetrics.density).toInt()
-        return max(result, minSafe)
+        if (result > 0) return result
+
+        val fallbackDp = if (isLandscape()) 24 else 28
+        return (fallbackDp * resources.displayMetrics.density).toInt()
     }
 
-    private fun updateStatusBarSpacer() {
+    private fun updateLayoutForOrientation() {
+        val isLand = isLandscape()
         overlayWindow?.findViewById<View>(R.id.view_status_bar_spacer)?.let { spacer ->
             val sbHeight = getStatusBarHeight()
             spacer.layoutParams?.let { lp ->
                 lp.height = sbHeight
                 spacer.layoutParams = lp
+            }
+            spacer.visibility = if (sbHeight > 0) View.VISIBLE else View.GONE
+        }
+
+        overlayWindow?.findViewById<View>(R.id.layout_window_header)?.let { header ->
+            val headerHeight = if (isLand) {
+                (32 * resources.displayMetrics.density).toInt()
+            } else {
+                (36 * resources.displayMetrics.density).toInt()
+            }
+            header.layoutParams?.let { lp ->
+                lp.height = headerHeight
+                header.layoutParams = lp
             }
         }
     }
@@ -417,7 +446,26 @@ class FloatingBubbleService : Service() {
     @SuppressLint("InflateParams", "SetJavaScriptEnabled")
     private fun initOverlayWindow() {
         overlayWindow = LayoutInflater.from(this).inflate(R.layout.floating_window_overlay, null)
-        updateStatusBarSpacer()
+        updateLayoutForOrientation()
+
+        overlayWindow?.setOnApplyWindowInsetsListener { _, insets ->
+            val topInset = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                insets.getInsets(android.view.WindowInsets.Type.statusBars()).top
+            } else {
+                @Suppress("DEPRECATION")
+                insets.systemWindowInsetTop
+            }
+            if (topInset > 0) {
+                overlayWindow?.findViewById<View>(R.id.view_status_bar_spacer)?.let { spacer ->
+                    if (spacer.layoutParams?.height != topInset) {
+                        spacer.layoutParams?.height = topInset
+                        spacer.requestLayout()
+                    }
+                    spacer.visibility = View.VISIBLE
+                }
+            }
+            insets
+        }
 
         val layoutType = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
@@ -559,7 +607,7 @@ class FloatingBubbleService : Service() {
     private fun showOverlayWindow() {
         if (!isWindowVisible && overlayWindow != null) {
             try {
-                updateStatusBarSpacer()
+                updateLayoutForOrientation()
                 windowManager?.addView(overlayWindow, windowParams)
                 isWindowVisible = true
                 bubbleView?.visibility = View.GONE

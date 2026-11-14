@@ -1,17 +1,17 @@
 {
  "format": "hokvi-ai-vi-index",
  "schema": 1,
- "updated": "2026-10-31T17:05:54Z",
+ "updated": "2026-11-09T17:48:39Z",
  "pack": {
-  "version": 20261031170554,
-  "url": "https://s3.cloudfly.vn/wxq/ai-vi/packs/ai-vi-v20261031170554.json.gz",
-  "sha256": "9bb34f1ac11a3c2932b2e6a4be939911d8f35826587f6ad1f0db3673c42905e0",
-  "size": 57482,
-  "json_sha256": "7d122763b7dc55d4fbc72cd697df1c735e08f5be8aefe95439e60a306dbba180",
-  "json_size": 173101,
-  "content_sha256": "01d0e1e16b3847af176f3b7621118a7f35c99041129a38557519f61d78ef4fb1",
-  "texts": 569,
-  "templates": 180,
+  "version": 20261109174839,
+  "url": "https://s3.cloudfly.vn/wxq/ai-vi/packs/ai-vi-v20261109174839.json.gz",
+  "sha256": "36d3cb491583f8d22caaa5a0a46f0a4396d1377a9d1884bc48d01ec320fe2850",
+  "size": 59036,
+  "json_sha256": "fc85cfa3d5f97fa056715c0cc658fef9389b7054f426a0469608db141a3d7ed8",
+  "json_size": 178692,
+  "content_sha256": "be7492b1c750e12ae15dcc8bf27d2b9f6784dfca1048e6a226eddd006d62c199",
+  "texts": 580,
+  "templates": 196,
   "rules_v": 1
  }
 }

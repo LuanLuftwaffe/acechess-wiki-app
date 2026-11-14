@@ -423,7 +423,7 @@
     <div class="brand">
       <img src="favicon.png" alt="Thường Tiểu Nga" style="width: 26px; height: 26px; border-radius: 6px; border: 1px solid rgba(203, 180, 108, 0.4); object-fit: cover;">
       <span>Ace Chess Wiki</span>
-      <span class="brand-tag">Bản vá 1.8.0.1</span>
+      <span class="brand-tag">v2.0 • Vương Giả Vạn Tượng Kỳ</span>
     </div>
 
     <!-- Navigation Tabs (Only 3 tabs, Clean SVG Icons) -->
@@ -613,7 +613,7 @@
 
           <div class="info-list">
             <div class="info-row">
-              <span class="info-label">Thiết bị hiện tại:</span>
+              <span class="info-label">Thiết bị ADB:</span>
               <span class="info-val" id="mobile-device-val">Chưa có kết nối</span>
             </div>
             <div class="info-row">
@@ -621,32 +621,84 @@
               <span class="info-val" id="mobile-type-val">Wi-Fi / USB / MEmu</span>
             </div>
             <div class="info-row">
-              <span class="info-label">Gói ứng dụng:</span>
+              <span class="info-label">Game Vương Giả:</span>
               <span class="info-val" id="mobile-game-val">com.tencent.tmgp.osgame</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">App Ace Chess:</span>
+              <span class="info-val" id="mobile-companion-val">Chưa kiểm tra</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Bản cài APK:</span>
+              <span class="info-val" id="mobile-apk-val" style="color: var(--gold-bright);">AceChess_VietHoa_v2.0.apk (22.9 MB)</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Máy chủ Upstream:</span>
+              <span class="info-val" id="mobile-server-val" style="color: #38bdf8;">1.9.2.4-r76 (10/11/2026)</span>
             </div>
           </div>
 
-          <button class="btn-action btn-gold" onclick="runInstallMobilePatch()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            <span>Cài đặt bản dịch Mobile</span>
-          </button>
-          <button class="btn-action btn-outline" onclick="runRestoreMobileOriginal()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
-              <polyline points="3 3 3 8 8 8"></polyline>
-            </svg>
-            <span>Khôi phục dữ liệu gốc</span>
-          </button>
-          <button class="btn-action btn-outline" onclick="launchMobileGame()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="5 3 19 12 5 21 5 3"></polygon>
-            </svg>
-            <span>Khởi chạy game trên thiết bị</span>
-          </button>
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 14px;">
+            <!-- Main action: Full install -->
+            <button class="btn-action btn-gold" onclick="runInstallMobileFull()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Cài đặt trọn gói v2.0 (Khuyên dùng)</span>
+            </button>
+
+            <!-- Secondary actions in 2-column grid -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+              <button class="btn-action btn-outline" style="margin: 0; padding: 10px 12px; font-size: 13px;" onclick="runInstallMobileApk()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+                <span>Chỉ cài APK v2.0</span>
+              </button>
+              <button class="btn-action btn-outline" style="margin: 0; padding: 10px 12px; font-size: 13px;" onclick="runInstallMobileGamePatch()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+                <span>Chỉ nạp Data Game</span>
+              </button>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+              <button class="btn-action btn-outline" style="margin: 0; padding: 10px 12px; font-size: 13px;" onclick="runRestoreMobileOriginal()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                  <polyline points="3 3 3 8 8 8"></polyline>
+                </svg>
+                <span>Khôi phục Game gốc</span>
+              </button>
+              <button class="btn-action btn-outline" style="margin: 0; padding: 10px 12px; font-size: 13px;" onclick="checkServerUpdates()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Check Máy chủ S3</span>
+              </button>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+              <button class="btn-action btn-outline" style="margin: 0; padding: 10px 12px; font-size: 13px;" onclick="launchMobileGame()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <span>Mở Game Vương Giả</span>
+              </button>
+              <button class="btn-action btn-outline" style="margin: 0; padding: 10px 12px; font-size: 13px;" onclick="launchMobileCompanion()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <span>Mở App Ace Chess</span>
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- Terminal Output Mobile -->
@@ -785,18 +837,29 @@
         const devEl = document.getElementById('mobile-device-val');
         const typeEl = document.getElementById('mobile-type-val');
         const gameEl = document.getElementById('mobile-game-val');
+        const compEl = document.getElementById('mobile-companion-val');
+        const apkEl = document.getElementById('mobile-apk-val');
+
+        if (res.apkInfo) {
+          apkEl.innerText = `${res.apkInfo.name} (${res.apkInfo.sizeMb} MB)`;
+        }
 
         if (res.connected) {
           dot.className = 'status-dot online';
           txt.innerText = `${res.deviceId}`;
           devEl.innerText = res.deviceId;
           typeEl.innerText = res.type;
-          gameEl.innerText = res.pkgInstalled ? 'Đã cài đặt (1.8.0.1)' : 'Chưa cài game';
+          gameEl.innerText = res.pkgInstalled ? 'Đã cài đặt' : 'Chưa cài game';
+          gameEl.style.color = res.pkgInstalled ? 'var(--accent-green)' : 'var(--gold-bright)';
+          compEl.innerText = res.companionInstalled ? 'Đã cài đặt (v2.0)' : 'Chưa cài đặt';
+          compEl.style.color = res.companionInstalled ? 'var(--accent-green)' : 'var(--text-muted)';
           appendLog('log-terminal-mobile', 'SUCCESS', `Đã kết nối thiết bị: ${res.deviceId} (${res.type})`);
         } else {
           dot.className = 'status-dot';
           txt.innerText = 'Chưa kết nối';
           devEl.innerText = 'Không có kết nối';
+          compEl.innerText = 'Chưa kiểm tra';
+          compEl.style.color = 'var(--text-muted)';
           appendLog('log-terminal-mobile', 'WARN', 'Không phát hiện thiết bị qua Wi-Fi hoặc USB.');
         }
       }
@@ -821,26 +884,77 @@
       }
     }
 
-    async function runInstallMobilePatch() {
-      appendLog('log-terminal-mobile', 'INFO', 'Nạp gói font và cấu hình bản dịch vào thiết bị...');
+    async function runInstallMobileFull() {
+      appendLog('log-terminal-mobile', 'INFO', 'Bắt đầu quy trình cài đặt trọn gói v2.0 (APK + Data Game)...');
       if (window.pywebview && window.pywebview.api) {
-        const res = await window.pywebview.api.install_mobile_patch();
+        const res = await window.pywebview.api.install_mobile_full_package();
+        appendLog('log-terminal-mobile', res.success ? 'SUCCESS' : 'ERROR', res.message);
+        refreshMobileStatus();
+      }
+    }
+
+    async function runInstallMobileApk() {
+      appendLog('log-terminal-mobile', 'INFO', 'Đang cài đặt APK Ace Chess v2.0 lên thiết bị qua ADB...');
+      if (window.pywebview && window.pywebview.api) {
+        const res = await window.pywebview.api.install_mobile_companion_apk();
+        appendLog('log-terminal-mobile', res.success ? 'SUCCESS' : 'ERROR', res.message);
+        refreshMobileStatus();
+      }
+    }
+
+    async function runInstallMobileGamePatch() {
+      appendLog('log-terminal-mobile', 'INFO', 'Đang nạp dữ liệu Việt hóa (font & VFS HOKVI) vào game Vương Giả...');
+      if (window.pywebview && window.pywebview.api) {
+        const res = await window.pywebview.api.install_mobile_game_patch();
         appendLog('log-terminal-mobile', res.success ? 'SUCCESS' : 'ERROR', res.message);
       }
     }
 
+    async function runInstallMobilePatch() {
+      await runInstallMobileFull();
+    }
+
     async function runRestoreMobileOriginal() {
-      appendLog('log-terminal-mobile', 'INFO', 'Khôi phục trạng thái APK nền trên thiết bị...');
+      appendLog('log-terminal-mobile', 'INFO', 'Đang dọn sạch dữ liệu mod trên thiết bị...');
       if (window.pywebview && window.pywebview.api) {
         const res = await window.pywebview.api.restore_mobile_original();
         appendLog('log-terminal-mobile', res.success ? 'SUCCESS' : 'ERROR', res.message);
+        refreshMobileStatus();
       }
     }
 
     async function launchMobileGame() {
-      appendLog('log-terminal-mobile', 'INFO', 'Khởi chạy game trên thiết bị...');
+      appendLog('log-terminal-mobile', 'INFO', 'Gửi lệnh mở game Vương Giả Vạn Tượng Kỳ...');
       if (window.pywebview && window.pywebview.api) {
-        await window.pywebview.api.launch_mobile_game();
+        const res = await window.pywebview.api.launch_mobile_game();
+        if (res && res.message) appendLog('log-terminal-mobile', res.success ? 'SUCCESS' : 'ERROR', res.message);
+      }
+    }
+
+    async function launchMobileCompanion() {
+      appendLog('log-terminal-mobile', 'INFO', 'Gửi lệnh mở ứng dụng Ace Chess Wiki v2.0...');
+      if (window.pywebview && window.pywebview.api) {
+        const res = await window.pywebview.api.launch_mobile_companion();
+        if (res && res.message) appendLog('log-terminal-mobile', res.success ? 'SUCCESS' : 'ERROR', res.message);
+      }
+    }
+
+    async function checkServerUpdates() {
+      appendLog('log-terminal-mobile', 'INFO', 'Đang kết nối máy chủ S3 CloudFly kiểm tra bản dịch mới...');
+      if (window.pywebview && window.pywebview.api) {
+        const res = await window.pywebview.api.check_server_updates();
+        if (res.success) {
+          appendLog('log-terminal-mobile', 'SUCCESS', `Máy chủ: Phiên bản ${res.serverVersion} (Cập nhật ${res.updatedDate})`);
+          if (res.highlights && res.highlights.length > 0) {
+            appendLog('log-terminal-mobile', 'INFO', `Điểm mới: ${res.highlights[0]}`);
+          }
+          const srvEl = document.getElementById('mobile-server-val');
+          if (srvEl) {
+            srvEl.innerText = `${res.serverVersion} (${res.updatedDate})`;
+          }
+        } else {
+          appendLog('log-terminal-mobile', 'WARN', res.message);
+        }
       }
     }
 

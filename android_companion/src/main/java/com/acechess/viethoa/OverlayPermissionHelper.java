@@ -60,6 +60,10 @@ public class OverlayPermissionHelper {
              + "3. Quay lại ứng dụng AceChess để bật bong bóng.";
     }
 
+    public static void requestOverlayPermission(Activity activity) {
+        openOverlaySettings(activity);
+    }
+
     public static void openOverlaySettings(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             String manu = Build.MANUFACTURER.toLowerCase();

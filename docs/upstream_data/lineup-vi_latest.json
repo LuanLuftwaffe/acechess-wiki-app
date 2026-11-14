@@ -1,16 +1,16 @@
 {
  "format": "hokvi-lineup-vi-index",
  "schema": 1,
- "updated": "2026-10-31T18:17:38Z",
+ "updated": "2026-11-10T08:18:01Z",
  "pack": {
-  "version": 20261031181738,
-  "url": "https://s3.cloudfly.vn/wxq/lineup-vi/packs/lineup-vi-v20261031181738.json.gz",
-  "sha256": "1edbf64ba03e76c22bc36dcf4a90a91d38da215923dc39162fd0722df4eb647f",
-  "size": 6941496,
-  "json_sha256": "26c1d54d1481bd761e3c8b4efc90483fb925d1741826b3323d2db316d41db012",
-  "json_size": 20690643,
-  "content_sha256": "3de54b1a493978d5d308e955804eaf7c895d9843f3bf27868e020ca6db211607",
-  "posts": 10134,
-  "entries": 74243
+  "version": 20261110081801,
+  "url": "https://s3.cloudfly.vn/wxq/lineup-vi/packs/lineup-vi-v20261110081801.json.gz",
+  "sha256": "9d60e62ed65853375349dde36f5dec5337cfca1338991d55c683b300f5bf31c8",
+  "size": 7150989,
+  "json_sha256": "a7cf59035bab6b13bdc4749e61ff51e629600ceb206a7cb96f9a5a8f65ea4a49",
+  "json_size": 21285669,
+  "content_sha256": "ea0a6aff7b3c856d3f7fb7fcdcff7446cec02f07d896ea522c8769d379f0caee",
+  "posts": 10354,
+  "entries": 76462
  }
 }

@@ -15,8 +15,8 @@ android {
         applicationId = providers.gradleProperty("app.applicationId").getOrElse("com.acechess.viethoa")
         minSdk = 26
         targetSdk = 34
-        versionCode = 200
-        versionName = "2.0.0"
+        versionCode = 210
+        versionName = "2.1.0"
 
         buildConfigField("String", "APP_UPDATE_URL", "\"\"")
 
@@ -125,13 +125,7 @@ dependencies {
     // WorkManager
     implementation("androidx.work:work-runtime-ktx:2.9.1")
 
-    // Shizuku API
-    implementation("dev.rikka.shizuku:api:13.1.5")
-    implementation("dev.rikka.shizuku:provider:13.1.5")
 
-    // In-App Wireless ADB & Conscrypt
-    implementation("com.github.MuntashirAkon:libadb-android:2.2.1")
-    implementation("org.conscrypt:conscrypt-android:2.5.2")
 
     // Core AndroidX
     implementation("androidx.core:core-ktx:1.13.1")

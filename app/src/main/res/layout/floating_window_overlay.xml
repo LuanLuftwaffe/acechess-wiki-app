@@ -10,39 +10,41 @@
     <View
         android:id="@+id/view_status_bar_spacer"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
+        android:layout_height="24dp"
+        android:visibility="visible"
         android:background="#E6131B2E" />
 
     <!-- Top Bar: LoLChess Style Header (Close + Title + Opacity Slider) -->
     <LinearLayout
         android:id="@+id/layout_window_header"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="36dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:background="#E6131B2E"
-        android:paddingHorizontal="12dp">
+        android:paddingHorizontal="10dp">
 
         <!-- Close / Collapse Button -->
         <ImageView
             android:id="@+id/img_window_close"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:padding="5dp"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:padding="3dp"
             android:src="@drawable/ic_close_white_24dp"
             android:background="?android:attr/selectableItemBackgroundBorderless"
             android:contentDescription="Đóng về bong bóng" />
 
         <!-- Title -->
         <TextView
+            android:id="@+id/tv_window_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="AceChess Tool"
             android:textColor="@color/gold_primary"
-            android:textSize="14sp"
+            android:textSize="13sp"
             android:textStyle="bold"
-            android:layout_marginStart="8dp" />
+            android:layout_marginStart="6dp" />
 
         <!-- Opacity Label & SeekBar -->
         <TextView
@@ -56,7 +58,7 @@
 
         <SeekBar
             android:id="@+id/seekBarOverlayAlpha"
-            android:layout_width="105dp"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:max="100"
             android:progress="95"

@@ -1,9 +1,12 @@
 import xml.etree.ElementTree as ET
+import sys
+import re
 
-tree = ET.parse('dumps/ui_tabs.xml')
+file_path = sys.argv[1] if len(sys.argv) > 1 else 'dumps/ui_step1.xml'
+tree = ET.parse(file_path)
 root = tree.getroot()
 
-print('=== NAVIGATION BAR ITEMS ===')
+print(f'=== NAVIGATION BAR ITEMS FOR {file_path} ===')
 nav_items = []
 target_names = ['Cẩm Nang', 'Tổng quan', 'Vá Game', 'Nhạc Nền', 'Sân Khấu', 'Hướng Dẫn', 'Nhật Ký']
 
@@ -16,13 +19,10 @@ for node in root.iter('node'):
             nav_items.append((name, text, desc, bounds))
             break
 
-# Sort by horizontal coordinate in bounds [x1,y1][x2,y2]
-import re
 def get_x1(b):
     m = re.match(r'\[(\d+),(\d+)\]\[(\d+),(\d+)\]', b)
     return int(m.group(1)) if m else 0
 
-# Remove duplicates while preserving position
 seen = set()
 unique_items = []
 for item in nav_items:
@@ -35,3 +35,4 @@ unique_items.sort(key=lambda x: get_x1(x[3]))
 
 for idx, (name, text, desc, bounds) in enumerate(unique_items):
     print(f'Position {idx}: {name} -> bounds={bounds}')
+

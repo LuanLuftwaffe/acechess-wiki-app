@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.acechess.viethoa"
-    android:versionCode="200"
-    android:versionName="2.0.0">
+    android:versionCode="210"
+    android:versionName="2.1.0">
 
     <uses-sdk
         android:minSdkVersion="26"
@@ -14,12 +14,12 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="moe.shizuku.manager.permission.API_V23" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+    <uses-permission android:name="com.acechess.viethoa.permission.ACCESS_PATCHER" />
 
     <queries>
-        <package android:name="com.tencent.tmgp.osgame" />
-        <package android:name="moe.shizuku.privileged.api" />
+        <package android:name="com.acechess.viethoa.patcher" />
     </queries>
 
     <application
@@ -51,15 +51,10 @@
             android:foregroundServiceType="specialUse" />
 
         <provider
-            android:name="rikka.shizuku.ShizukuProvider"
-            android:authorities="com.acechess.viethoa.shizuku"
+            android:name="com.acechess.viethoa.GenericFileProvider"
+            android:authorities="com.acechess.viethoa.fileprovider"
             android:enabled="true"
-            android:exported="true"
-            android:multiprocess="false"
-            android:permission="android.permission.INTERACT_ACROSS_USERS_FULL" />
-
-        <meta-data
-            android:name="moe.shizuku.client.V3_SUPPORT"
-            android:value="true" />
+            android:exported="false"
+            android:grantUriPermissions="true" />
     </application>
 </manifest>

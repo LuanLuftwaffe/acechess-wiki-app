@@ -29,6 +29,7 @@ decompiled_xxhdpi/
 patchers/
 docs/reverse-engineering/hok_vi_pack_pc/
 docs/reverse-engineering/hok_vi_pack_android/
+docs/upstream_data/*.zip
 
 # Python & System caches
 __pycache__/

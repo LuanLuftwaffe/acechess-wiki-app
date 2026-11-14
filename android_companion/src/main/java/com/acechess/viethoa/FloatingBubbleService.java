@@ -66,6 +66,23 @@ public class FloatingBubbleService extends Service {
         return sIsRunning;
     }
 
+    public static boolean isRunning() {
+        return sIsRunning;
+    }
+
+    public static void start(Context context) {
+        Intent intent = new Intent(context, FloatingBubbleService.class);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            context.startForegroundService(intent);
+        } else {
+            context.startService(intent);
+        }
+    }
+
+    public static void stop(Context context) {
+        context.stopService(new Intent(context, FloatingBubbleService.class));
+    }
+
     @Override
     public IBinder onBind(Intent intent) {
         return null;

@@ -3,6 +3,95 @@
   "note": "Nhật ký thay đổi dùng chung cho app PC (Windows) và app Android. Mỗi bản phát hành một mục, MỚI NHẤT Ở ĐẦU. Viết tiếng Việt, câu ngắn, người chơi đọc được. 'chung' hiện ở cả hai app.",
   "releases": [
     {
+      "release": "1.9.2.4-r76",
+      "game_version": "1.9.2.4",
+      "date": "2026-11-10",
+      "pc_version": "76.0",
+      "android_version_code": 192476,
+      "chung": [
+        "Trò chuyện với kỳ thủ (Tương tác nhân vật): dịch lại 1.232 tin nhắn cho xưng hô nhất quán theo từng cặp nhân vật (ai nói với ai, thân hay sơ, lớn hay nhỏ tuổi).",
+        "Tuỳ chọn mới «Bản dịch phá cách cho trò chuyện kỳ thủ» (mặc định BẬT): tải một gói nhỏ chứa bản dịch vui, thân mật hơn cho tin nhắn của kỳ thủ; tắt thì hiện bản dịch chuẩn. Gói này cập nhật riêng, không cần vá lại game.",
+        "Màn hình kết quả sau trận: các câu khi thả like (thích) đồng đội, danh sách lượt thích, thông báo «… đã thích bạn» và ô «Mau đi bấm thích nào» nay hiện tiếng Việt (trước đây còn tiếng Trung)."
+      ],
+      "pc": [
+        "Ứng dụng PC 76.0; dữ liệu Việt hoá PC lên bản 1.9.2.4-r76 (đổi gói 1 và gói 10). Hãy bấm cài lại Việt hoá (bản cài nhanh). Ô «Bản dịch phá cách cho trò chuyện kỳ thủ» nằm trong Tuỳ chọn, ngay dưới «Dịch thông báo cập nhật thẻ»."
+      ],
+      "android": [
+        "App Android 192476; dữ liệu Việt hoá Android lên bản 1.9.2.4-r76: mở app bấm «Cài / cập nhật Việt hoá» (app tải gói chữ mới và ảnh gói 10). Không cần cài lại APK game Việt hoá. Ô «Bản dịch phá cách cho trò chuyện kỳ thủ» nằm ngay dưới ô dịch thông báo cập nhật thẻ."
+      ]
+    },
+    {
+      "release": "1.9.2.4-r75",
+      "game_version": "1.9.2.4",
+      "date": "2026-11-10",
+      "pc_version": "75.0",
+      "android_version_code": 192475,
+      "chung": [
+        "Đội hình cộng đồng: mỗi khi danh sách bài (đề xuất, tìm kiếm, trang tác giả, đội hình đã lưu…) được tải, game ghi lại mục «Quan hệ khắc chế» còn tiếng Trung của TẤT CẢ các bài trong danh sách (trước đây chỉ bài đã mở), để các bản cập nhật gói dịch đội hình sau dịch được nhiều bài hơn. Chỉ ghi trên máy, không gửi đi đâu, không ghi tên tác giả.",
+        "Nhật ký câu chưa dịch không còn ngừng hẳn khi đầy 4 MB (chuyển sang tệp kế tiếp)."
+      ],
+      "pc": [
+        "Ứng dụng PC 75.0; dữ liệu Việt hoá PC lên bản 1.9.2.4-r75 (chỉ đổi gói 10). Hãy bấm cài lại Việt hoá (bản cài nhanh)."
+      ],
+      "android": [
+        "App Android 192475; dữ liệu Việt hoá Android lên bản 1.9.2.4-r75: mở app bấm «Cài / cập nhật Việt hoá» (app tải ảnh gói 10; gói chữ không đổi). Không cần cài lại APK game Việt hoá."
+      ]
+    },
+    {
+      "release": "1.9.2.4-r74",
+      "game_version": "1.9.2.4",
+      "date": "2026-11-10",
+      "pc_version": "74.0",
+      "android_version_code": 192474,
+      "chung": [
+        "Tương tác nhân vật: các tin nhắn có biểu cảm (ví dụ «……这也太硬核了» kèm hình) nay hiện tiếng Việt, biểu cảm giữ nguyên (bản PC trước để lại tiếng Trung 27 câu loại này).",
+        "Thông báo cập nhật thẻ: dòng thay đổi dưới thẻ được viết gọn và cho xuống tối đa 2 dòng nên chữ to, dễ đọc hơn. Câu mới máy chủ gửi về sau được dịch qua gói tải tự động RIÊNG «Dịch thông báo cập nhật thẻ» (mặc định bật, tắt được trong Tuỳ chọn).",
+        "Màn Đội hình: dịch thanh tiêu đề «Tất Cả Đội Hình», nhãn «【Tướng Cốt Lõi】» và lời nhắc kéo ô trống lên bàn cờ."
+      ],
+      "pc": [
+        "Ứng dụng PC 74.0; dữ liệu Việt hoá PC lên bản 1.9.2.4-r74. Hãy bấm cài lại Việt hoá (bản cài nhanh). Tuỳ chọn mới «Dịch thông báo cập nhật thẻ»."
+      ],
+      "android": [
+        "App Android 192474; dữ liệu Việt hoá Android lên bản 1.9.2.4-r74: mở app bấm «Cài / cập nhật Việt hoá» (app tải ảnh gói 10 và 19; gói chữ không đổi). Tuỳ chọn mới «Dịch thông báo cập nhật thẻ». Không cần cài lại APK game Việt hoá."
+      ]
+    },
+    {
+      "release": "1.9.2.4-r73",
+      "game_version": "1.9.2.4",
+      "date": "2026-11-09",
+      "pc_version": "73.0",
+      "android_version_code": 192473,
+      "chung": [
+        "Màn «Thông báo cập nhật thẻ»: dịch dòng thay đổi dưới mỗi thẻ (ví dụ «Tham gia hạ gục nhận 30→50 Máu tối đa»). Câu mới máy chủ gửi về sau sẽ được dịch qua gói dịch tải tự động (cùng gói chữ AI Linh Bảo), không cần cài lại Việt hoá.",
+        "Đổi tên «Máy Hộp Bí Ẩn» thành «Gacha Hộp Bí Ẩn» (sự kiện rút hộp Biểu cảm nổi bật)."
+      ],
+      "pc": [
+        "Ứng dụng PC 73.0; dữ liệu Việt hoá PC lên bản 1.9.2.4-r73. Hãy bấm cài lại Việt hoá (bản cài nhanh)."
+      ],
+      "android": [
+        "App Android 192473; dữ liệu Việt hoá Android lên bản 1.9.2.4-r73: mở app bấm «Cài / cập nhật Việt hoá» (app tải gói chữ mới và ảnh gói 10; các gói ảnh khác giữ nguyên). Không cần cài lại APK game Việt hoá."
+      ]
+    },
+    {
+      "release": "1.9.2.4-r72",
+      "game_version": "1.9.2.4",
+      "date": "2026-11-09",
+      "pc_version": "72.0",
+      "android_version_code": 192472,
+      "chung": [
+        "Việt hoá cho game 1.9.2.4 (bản cập nhật game tháng 11): giữ đủ mọi phần Việt hoá đã có tới r71 (chữ, ảnh, Lua, giao diện, font, Quy tắc, tuỳ chọn dịch nội dung động, hiệu ứng tướng, nhạc trận, chữ sân khấu, «Hạng Thứ N»).",
+        "Dịch thêm 197 câu mới của game: Máy Hộp Bí Ẩn Biểu cảm nổi bật Hắc Bạch Hà Lạc, Điểm nhấn phe, Tích Năng Gấp Đôi, quyết định của Doanh Luật, kỹ năng mới của Biển Thước, Trang Chu, Võ Tắc Thiên…",
+        "Ghép lại 6 tệp Lua, 3 giao diện, 2 ảnh ghép và 22 ảnh tên Kỳ thủ (đổi sang màu chữ mới của game) theo dữ liệu game mới."
+      ],
+      "pc": [
+        "Ứng dụng PC 72.0; dữ liệu Việt hoá PC lên bản 1.9.2.4-r72. Máy đã cập nhật game 1.9.2.4 hãy bấm cài lại Việt hoá (bản cài nhanh)."
+      ],
+      "android": [
+        "App Android 192472; dữ liệu Việt hoá Android lên bản 1.9.2.4-r72 cho game 1.9.2.4: cập nhật game tới sảnh trước, rồi mở app bấm «Cài / cập nhật Việt hoá» (app tải gói chữ mới và ảnh các gói 10, 15, 19, 1050000555; các gói ảnh khác giữ nguyên).",
+        "Không cần cài lại APK game Việt hoá (APK giữ như r71). Ghép lại 6 tệp Lua, 3 giao diện, 2 ảnh ghép và 22 ảnh tên Kỳ thủ theo dữ liệu Android 1.9.2.4; tuỳ chọn «Dịch nội dung động» và «Hiệu ứng tướng trong trận» giữ như trước."
+      ]
+    },
+    {
       "release": "1.8.0.1-r71",
       "game_version": "1.8.0.1",
       "date": "2026-11-01",

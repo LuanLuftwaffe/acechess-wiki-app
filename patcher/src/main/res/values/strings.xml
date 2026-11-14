@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AceChess Tool Việt Hóa</string>
+    <string name="app_subtitle">AceChess — Công cụ hỗ trợ Việt hoá &amp; Cẩm nang tra cứu</string>
+    <string name="app_version_label">Phiên bản: %1$s</string>
+
+    <!-- Navigation -->
+    <string name="nav_dashboard">Tổng quan</string>
+    <string name="nav_handbook">Cẩm Nang</string>
+    <string name="nav_patch">Vá Game</string>
+    <string name="nav_music">Nhạc Nền</string>
+    <string name="nav_showtime">Sân Khấu</string>
+    <string name="nav_guide">Hướng Dẫn</string>
+    <string name="nav_logs">Nhật Ký</string>
+
+    <!-- Handbook WebView -->
+    <string name="handbook_title">Cẩm Nang Ace Chess</string>
+    <string name="handbook_reload">Tải lại</string>
+    <string name="handbook_open_external">Mở bằng trình duyệt ngoài</string>
+    <string name="handbook_loading">Đang nạp cẩm nang...</string>
+    <string name="handbook_error">Không thể tải trang web. Vui lòng kiểm tra kết nối mạng.</string>
+
+    <!-- Floating Bubble -->
+    <string name="btn_bubble_toggle">Bong Bóng</string>
+    <string name="bubble_running">Bật</string>
+    <string name="bubble_stopped">Tắt</string>
+    <string name="bubble_need_permission">Cần cấp quyền Hiển thị trên ứng dụng khác để mở bong bóng</string>
+
+    <!-- Shell Status -->
+    <string name="shell_status_title">Trạng thái quyền hệ thống</string>
+    <string name="shell_backend_label">Backend đang dùng: %1$s</string>
+    <string name="shell_root_active">Quyền Root (su): Hoạt động</string>
+    <string name="shell_shizuku_active">Shizuku: Đã cấp quyền</string>
+    <string name="shell_adb_active">ADB Không Dây: Đã kết nối</string>
+    <string name="shell_none_active">Chưa có quyền Shell khả dụng</string>
+    <string name="shell_checking">Đang kiểm tra quyền...</string>
+    <string name="shell_recommendation">Khuyến nghị kích hoạt Shizuku hoặc kết nối ADB không dây để áp dụng bản vá.</string>
+    <string name="shell_cmd_test_title">Lệnh kiểm tra: id</string>
+    <string name="shell_cmd_test_output">Kết quả: %1$s</string>
+    <string name="shell_log_path">Tệp nhật ký: %1$s</string>
+    <string name="shell_recent_logs_title">Nhật ký thực thi mới nhất (acechess-nhat-ky.txt)</string>
+
+    <!-- Game Status -->
+    <string name="game_status_title">Trạng thái Game Vương Giả</string>
+    <string name="game_package">com.tencent.tmgp.osgame</string>
+    <string name="game_installed">Đã phát hiện game</string>
+    <string name="game_not_installed">Chưa cài đặt game</string>
+    <string name="game_version">Phiên bản: %1$s</string>
+    <string name="game_version_code">VersionCode: %1$d</string>
+    <string name="game_version_match">Khớp phiên bản hỗ trợ (%1$s)</string>
+    <string name="game_version_mismatch">Lệch phiên bản! Bản vá yêu cầu %1$s, máy hiện tại %2$s</string>
+    <string name="game_apk_path">Vị trí: %1$s</string>
+    <string name="game_apk_size">Kích thước APK: %1$s</string>
+    <string name="game_apk_type">Phân loại APK: %1$s</string>
+    <string name="game_debuggable_badge">Bản Debuggable (key)</string>
+    <string name="game_deep_verifying">Đang kiểm tra băm SHA-256...</string>
+    <string name="game_deep_verified">SHA-256: %1$s</string>
+    <string name="game_apk_source">Nguồn nhận diện: %1$s</string>
+    <string name="source_debuggable">Cờ Debuggable (key)</string>
+    <string name="source_cache">Bộ nhớ đệm (Cache)</string>
+    <string name="source_size">Khớp kích thước byte</string>
+    <string name="source_hash">Khớp mã băm SHA-256</string>
+    <string name="source_ambiguous">Kích thước bản vá (Cần xác minh hash)</string>
+    <string name="source_unknown">Không khớp dữ liệu</string>
+
+    <!-- APK Types -->
+    <string name="apk_type_goc">Bản gốc Store (Original)</string>
+    <string name="apk_type_base">Bản nền (Base)</string>
+    <string name="apk_type_key">Bản chìa khoá (Debuggable)</string>
+    <string name="apk_type_font">Bản Việt hoá (Font Localized)</string>
+    <string name="apk_type_font_img">Bản Việt hoá có hình ảnh</string>
+    <string name="apk_type_unknown">Không xác định / Bản tuỳ biến</string>
+
+    <!-- Storage Space -->
+    <string name="storage_status_title">Dung lượng bộ nhớ khả dụng</string>
+    <string name="storage_free_space">Trống: %1$s / %2$s</string>
+    <string name="storage_optimal">Dung lượng bộ nhớ đủ điều kiện</string>
+    <string name="storage_warning">Bộ nhớ khả dụng thấp (&lt; 4 GB). Khuyến nghị dọn thêm chỗ để chạy ổn định.</string>
+    <string name="storage_critical">Bộ nhớ không đủ (&lt; 2 GB)! Cần tối thiểu 2 GB trống để sao lưu và thi công bản vá.</string>
+    <string name="storage_detail_need">Ước tính cần khoảng: %1$s</string>
+
+    <string name="game_patch_status_original">Bản gốc (Chưa Việt hoá)</string>
+    <string name="game_patch_status_patched">Đã Việt hoá (v%1$s)</string>
+    <string name="game_patch_status_modified">Đã chỉnh sửa / Cần kiểm tra</string>
+
+    <!-- Action Buttons -->
+    <string name="btn_apply_patch">Bắt đầu Việt hoá</string>
+    <string name="btn_update_patch">Cập nhật bản vá</string>
+    <string name="btn_deep_verify">Kiểm tra SHA-256</string>
+    <string name="btn_rollback">Khôi phục gốc</string>
+    <string name="btn_launch_game">Mở Game</string>
+    <string name="btn_check_update">Kiểm tra bản cập nhật</string>
+
+    <!-- Patch Options -->
+    <string name="patch_options_title">Tuỳ chọn cài đặt bản vá</string>
+    <string name="opt_want_images">Việt hoá hình ảnh</string>
+    <string name="opt_want_images_desc">Cập nhật banner, biểu ngữ và đồ hoạ sự kiện tiếng Việt</string>
+    <string name="opt_want_rules">Việt hoá luật chơi &amp; cẩm nang</string>
+    <string name="opt_want_rules_desc">Dịch hướng dẫn tân thủ, mô tả cơ chế tộc hệ</string>
+    <string name="opt_want_vfx">Hiệu ứng đồ hoạ mở rộng</string>
+    <string name="opt_want_vfx_desc">Tuỳ biến các hiệu ứng khung viền và hoạt hoạ giao diện</string>
+    <string name="opt_keep_goc">Giữ bản sao lưu gốc (.orig) trên máy</string>
+    <string name="opt_keep_goc_desc">Cho phép hoàn tác về nguyên bản 1-chạm ngoại tuyến không cần mạng</string>
+    <string name="patch_progress_title">Tiến trình thực thi</string>
+    <string name="patch_running">Đang áp dụng bản vá...</string>
+    <string name="patch_rollback_running">Đang khôi phục bản gốc...</string>
+    <string name="btn_sync_meta">Đồng bộ Meta &amp; AI</string>
+    <string name="btn_connect_adb">Ghép mã ADB không dây</string>
+    <string name="btn_request_shizuku">Cấp quyền Shizuku</string>
+    <string name="btn_recheck_permission">Kiểm tra lại quyền</string>
+    <string name="btn_copy_logs">Sao chép nhật ký</string>
+    <string name="btn_clear_logs">Xoá nhật ký</string>
+    <string name="btn_refresh">Làm mới</string>
+    <string name="btn_retry">Thử lại</string>
+    <string name="btn_close">Đóng</string>
+    <string name="btn_confirm">Xác nhận</string>
+    <string name="btn_cancel">Huỷ bỏ</string>
+
+    <!-- Patch Engine Steps -->
+    <string name="patch_step_check_space">Kiểm tra dung lượng bộ nhớ khả dụng</string>
+    <string name="patch_step_backup">Tạo bản sao lưu an toàn (.orig)</string>
+    <string name="patch_step_verify_hash">Kiểm tra tính toàn vẹn (SHA-256)</string>
+    <string name="patch_step_write_vfs">Ghi đè gói ngôn ngữ QtsVFSCache</string>
+    <string name="patch_step_lock_watchdog">Ghi cờ hiệu khoá Tencent Watchdog</string>
+    <string name="patch_step_clean_pkg2">Dọn dẹp gói tài nguyên cũ</string>
+    <string name="patch_step_completed">Việt hoá hoàn tất thành công!</string>
+    <string name="patch_step_failed">Xảy ra lỗi trong quá trình Việt hoá</string>
+
+    <!-- Music Screen -->
+    <string name="music_title">Tuỳ biến Nhạc Nền Sảnh</string>
+    <string name="music_desc">Thêm và sắp xếp tối đa 50 bài hát tuỳ chọn vào sảnh game.</string>
+    <string name="music_count">%1$d / 50 bài hát</string>
+    <string name="music_add_btn">Thêm nhạc (.mp3 / .wav)</string>
+    <string name="music_apply_btn">Áp dụng danh sách nhạc</string>
+    <string name="music_reset_btn">Xoá toàn bộ nhạc tuỳ biến</string>
+    <string name="music_import_game_btn">Nhập từ thư mục game</string>
+    <string name="music_apply_to_game_btn">NẠP VÀO GAME</string>
+    <string name="music_total_size">Tổng dung lượng: %1$s</string>
+    <string name="music_empty_title">Thư viện nhạc trống</string>
+    <string name="music_empty_desc">Nhấn \"Thêm nhạc\" để chọn tệp .mp3 hoặc .wav từ máy, hoặc \"Nhập từ thư mục game\" để lấy các bài hát có sẵn.</string>
+    <string name="music_track_edit_dialog_title">Chỉnh sửa thông tin bài hát</string>
+    <string name="music_track_title_label">Tiêu đề (Title)</string>
+    <string name="music_track_artist_label">Nghệ sĩ (Artist)</string>
+    <string name="music_track_delete_confirm">Xác nhận xoá bài hát</string>
+    <string name="music_track_delete_msg">Bạn có muốn xoá bài hát \"%1$s\" khỏi thư viện không?</string>
+    <string name="music_btn_save">Lưu thay đổi</string>
+    <string name="music_btn_delete">Xoá</string>
+    <string name="music_btn_move_up">Lên</string>
+    <string name="music_btn_move_down">Xuống</string>
+    <string name="music_origin_user">Cá nhân</string>
+    <string name="music_origin_game">Trích từ game</string>
+
+    <!-- Showtime Screen -->
+    <string name="showtime_title">Tuỳ biến Biểu Ngữ Sân Khấu</string>
+    <string name="showtime_desc">Tuỳ biến câu khẩu hiệu hiển thị khi bước vào trận đấu.</string>
+    <string name="showtime_left_label">Chữ bên trái (1–5 ký tự)</string>
+    <string name="showtime_right_label">Chữ bên phải (1–5 ký tự)</string>
+    <string name="showtime_preview">Xem trước biểu ngữ</string>
+    <string name="showtime_apply">Áp dụng biểu ngữ</string>
+    <string name="showtime_instruction">Thay chữ SHOW TIME trên sân khấu ở màn chọn Kỳ thủ. Mỗi bên từ 1 đến 5 ký tự (chữ có dấu tiếng Việt, số, khoảng trắng hoặc !?.,:-+&amp;\'). Chữ thường tự đổi thành HOA.</string>
+    <string name="showtime_char_counter">%1$d / 5</string>
+    <string name="showtime_preview_title">Xem trước thời gian thực (Live Preview)</string>
+    <string name="showtime_preview_subtitle">Khuôn hình sân khấu chính (1024x512) kết hợp hai bên trái / phải</string>
+    <string name="showtime_apply_to_game_btn">NẠP VÀO GAME</string>
+    <string name="showtime_applying_progress">Đang xuất 13 ảnh raw RGBA và nạp vào game...</string>
+    <string name="showtime_left_hint">Ví dụ: KHẢI</string>
+    <string name="showtime_right_hint">Ví dụ: HOÀN</string>
+
+    <!-- Guide Screen -->
+    <string name="guide_title">Hướng Dẫn Kích Hoạt &amp; Khắc Phục Lỗi</string>
+    <string name="guide_select_brand">Chọn hãng thiết bị của bạn:</string>
+    <string name="guide_topic_troubleshooting">Các lỗi thường gặp</string>
+
+    <!-- Log Viewer -->
+    <string name="logs_title">Nhật Ký Hoạt Động (acechess-nhat-ky.txt)</string>
+    <string name="logs_empty">Chưa có nhật ký hoạt động nào được ghi nhận.</string>
+
+    <!-- Common Dialogs -->
+    <string name="dialog_confirm_rollback_title">Xác nhận khôi phục bản gốc</string>
+    <string name="dialog_confirm_rollback_msg">Bạn có chắc chắn muốn khôi phục game về nguyên bản gốc không? Các tệp ngôn ngữ Việt hoá sẽ được hoàn tác.</string>
+    <string name="dialog_permission_needed_title">Yêu cầu quyền truy cập</string>
+    <string name="dialog_permission_needed_msg">Ứng dụng cần quyền quản lý tệp hoặc quyền Shell (Shizuku/Root/ADB) để có thể ghi tệp Việt hoá vào thư mục game.</string>
+
+    <!-- Phase 5: Wireless ADB -->
+    <string name="adb_wireless_card_title">Gỡ lỗi không dây trong app (In-App ADB)</string>
+    <string name="adb_wireless_desc">Kết nối quyền Shell trực tiếp trên Android 11+ mà không cần Shizuku hay máy tính qua ghép nối mã PIN.</string>
+    <string name="adb_wireless_btn_pair">Bật quét mDNS &amp; Ghép nối</string>
+    <string name="adb_wireless_btn_manual">Nhập thủ công cổng / mã PIN</string>
+    <string name="adb_wireless_android_old">Thiết bị đang chạy Android 10 trở xuống. Tính năng Gỡ lỗi không dây trong app không hỗ trợ (yêu cầu Android 11+). Vui lòng sử dụng quyền Root, Shizuku hoặc cáp máy tính (chủ đề android_old).</string>
+    <string name="adb_manual_dialog_title">Nhập thủ công cổng &amp; mã ghép nối</string>
+    <string name="adb_manual_pairing_desc">Nhập số cổng ghép nối và mã PIN 6 số từ màn hình Cài đặt nhà phát triển > Ghép nối bằng mã.</string>
+    <string name="adb_manual_port_label">Cổng ghép nối (Pairing Port)</string>
+    <string name="adb_manual_code_label">Mã PIN 6 số (Pairing Code)</string>
+    <string name="adb_manual_connect_port_label">Cổng kết nối chính (Connect Port)</string>
+    <string name="adb_btn_submit_pair">Thực hiện ghép nối</string>
+    <string name="adb_btn_submit_connect">Kết nối cổng chính</string>
+    <string name="adb_topic_no_device_hint">Không tìm thấy thiết bị qua mDNS? Hãy xem chủ đề hướng dẫn no_device để khắc phục.</string>
+
+    <!-- Phase 7: Meta Sync & Self Update -->
+    <string name="meta_sync_card_title">Đồng bộ Đội hình Meta &amp; Gợi ý AI</string>
+    <string name="meta_sync_desc">Tải dữ liệu phân tích chiến thuật, trang bị tướng (BiS) và bài hot mới nhất từ máy chủ S3 Cloudfly.</string>
+    <string name="meta_sync_btn">Đồng bộ dữ liệu ngay</string>
+    <string name="meta_sync_running">Đang tải và giải nén dữ liệu...</string>
+    <string name="meta_sync_stamp_lineup">Phiên bản Đội hình: %1$s</string>
+    <string name="meta_sync_stamp_aivi">Phiên bản Gợi ý AI: %1$s</string>
+    <string name="meta_sync_stamp_none">Chưa nạp</string>
+    <string name="update_check_card_title">Cập nhật ứng dụng &amp; Bản vá game</string>
+    <string name="update_check_desc">Kiểm tra phiên bản mới nhất từ máy chủ và xem nhật ký thay đổi (Changelog).</string>
+    <string name="update_btn_check">Kiểm tra cập nhật</string>
+    <string name="update_btn_checking">Đang kiểm tra...</string>
+    <string name="changelog_dialog_title">Chi tiết cập nhật: Bản %1$s</string>
+    <string name="changelog_release_date">Ngày phát hành: %1$s</string>
+    <string name="changelog_section_general">Điểm mới nổi bật:</string>
+    <string name="changelog_section_android">Dành cho Android:</string>
+    <string name="changelog_btn_update">Cập nhật ngay</string>
+    <string name="changelog_btn_close">Để sau</string>
+    <string name="update_downloading">Đang tải tệp cập nhật APK...</string>
+    <string name="update_download_success">Đã tải xong APK. Đang mở trình cài đặt...</string>
+
+    <!-- Phase 8: Guide Screen -->
+    <string name="guide_search_hint">Tìm kiếm chủ đề, lỗi hoặc hướng dẫn...</string>
+    <string name="guide_auto_detected">Đã tự động nhận diện thiết bị của bạn:</string>
+    <string name="guide_switch_brand">Đổi hãng khác</string>
+    <string name="guide_all_topics">Danh sách đầy đủ 15 chủ đề</string>
+    <string name="guide_custom_brand_badge">Tối ưu riêng cho hãng</string>
+    <string name="guide_standard_badge">Hướng dẫn chuẩn</string>
+    <string name="guide_step_prefix">Bước %1$d: </string>
+    <string name="guide_note_prefix">Lưu ý quan trọng: </string>
+    <string name="guide_steps_count">%1$d bước thực hiện</string>
+    <string name="guide_empty_search">Không tìm thấy chủ đề nào khớp với từ khoá tìm kiếm.</string>
+
+    <!-- Phase 8: Diagnostics & Logs -->
+    <string name="shell_logger_desc">Nhật ký ghi lại toàn bộ lệnh shell, mã thoát, thời gian thực thi và chi tiết kết quả.</string>
+    <string name="diag_tab_logs">Nhật ký lệnh (acechess-nhat-ky.txt)</string>
+    <string name="diag_tab_report">Báo cáo chẩn đoán hệ thống</string>
+    <string name="diag_btn_generate">Tạo báo cáo chẩn đoán ngay</string>
+    <string name="diag_btn_generating">Đang trích xuất thông số &amp; 200 dòng Logcat...</string>
+    <string name="diag_btn_export">Xuất tệp báo cáo (*.txt)</string>
+    <string name="diag_btn_share">Chia sẻ báo cáo</string>
+    <string name="diag_btn_copy">Sao chép toàn bộ</string>
+    <string name="diag_copied_toast">Đã sao chép nội dung vào bộ nhớ tạm.</string>
+    <string name="diag_empty_desc">Nhấn \"Tạo báo cáo chẩn đoán ngay\" để thu thập thông số chi tiết gồm cấu hình máy, ROM, SELinux, loại APK, quyền Shizuku, kết nối ADB, dung lượng bộ nhớ và 200 dòng Logcat.</string>
+    <string name="diag_file_saved">Đã lưu tệp báo cáo: %1$s</string>
+    <string name="logs_btn_export">Chia sẻ acechess-nhat-ky.txt</string>
+    <string name="logs_btn_clear">Xoá nhật ký</string>
+
+    <!-- Phase 8: Changelog Screen & Feedback -->
+    <string name="nav_changelog">Nhật Ký Thay Đổi</string>
+    <string name="changelog_title">Lịch Sử Phiên Bản &amp; Thay Đổi</string>
+    <string name="changelog_tab_all">Tất cả (%1$d)</string>
+    <string name="changelog_tab_chung">Chung (%1$d)</string>
+    <string name="changelog_tab_pc">Bản PC (%1$d)</string>
+    <string name="changelog_tab_android">Bản Android (%1$d)</string>
+    <string name="changelog_release_tag">Bản vá %1$s</string>
+    <string name="changelog_game_ver_tag">Game: %1$s</string>
+    <string name="changelog_feedback_btn">Gửi phản hồi</string>
+    <string name="changelog_feedback_dialog_title">Gửi phản hồi cho nhóm phát triển</string>
+    <string name="changelog_feedback_desc">Mô tả sự cố gặp phải hoặc góp ý tính năng để hoàn thiện ứng dụng.</string>
+    <string name="changelog_feedback_hint">Nhập nội dung phản hồi của bạn tại đây...</string>
+    <string name="changelog_feedback_send">Gửi phản hồi</string>
+    <string name="changelog_feedback_sent">Cảm ơn bạn đã đóng góp phản hồi!</string>
+
+    <!-- Giới thiệu & Ghi nhận nguồn (Attribution) -->
+    <string name="about_attribution_title">Giới thiệu &amp; Ghi nhận nguồn</string>
+    <string name="about_attribution_content">AceChess Tool Việt Hóa là ứng dụng độc lập được tái cấu trúc cho hệ sinh thái AceChess, tích hợp cẩm nang tra cứu trực tuyến và hỗ trợ nạp bản dịch tiếng Việt tương thích với dữ liệu cộng đồng.</string>
+</resources>
