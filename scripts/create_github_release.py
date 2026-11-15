@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Script tự động tạo GitHub Release và tải lên bộ đôi APK:
-- AceChess_Companion_v2.1.0.apk
+Script tự động cập nhật GitHub Release và tải lên bộ đôi APK:
+- AceChess_VietHoa_v2.1.0.apk
 - AceChess_Patcher_Addon_v1.0.1.apk
-Lên repository: https://github.com/LuanLuftwaffe/lolchesswiki
+Lên repository: https://github.com/LuanLuftwaffe/acechess_wiki
 """
 
 import os
@@ -19,7 +19,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 REPO_OWNER = "LuanLuftwaffe"
 REPO_NAME = "acechess_wiki"
 TAG_NAME = "v2.1.0"
-RELEASE_TITLE = "AceChess Companion v2.1.0 & Patcher Add-on v1.0.1"
+RELEASE_TITLE = "AceChess Việt Hoá v2.1.0 & Add-on Patcher v1.0.1"
 
 def get_token():
     proc = subprocess.run(
@@ -33,37 +33,15 @@ def get_token():
             return line.split('=', 1)[1]
     return ''
 
-def get_or_create_release(token):
-    headers = {
-        'Authorization': f'Bearer {token}',
-        'Accept': 'application/vnd.github.v3+json',
-        'User-Agent': 'AceChess-Release-Deployer'
-    }
-    
-    # 1. Tìm release theo tag
-    req = urllib.request.Request(
-        f'https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/releases/tags/{TAG_NAME}',
-        headers=headers
-    )
-    try:
-        with urllib.request.urlopen(req) as resp:
-            data = json.loads(resp.read().decode())
-            print(f"[INFO] Release '{TAG_NAME}' đã tồn tại (ID: {data['id']})")
-            return data
-    except urllib.error.HTTPError as e:
-        if e.code != 404:
-            raise
-
-    # 2. Tạo release mới nếu chưa có
-    print(f"[INFO] Đang tạo Release mới: '{TAG_NAME}'...")
-    body_desc = """# AceChess Wiki — Bản Phát Hành v2.1.0 (Kiến Trúc Tách Rời)
+def get_body_description():
+    return """# AceChess Wiki — Bản Phát Hành v2.1.0 (Kiến Trúc Tách Rời)
 
 Hệ sinh thái hỗ trợ tra cứu cẩm nang và nạp bản dịch Việt hóa cho **Cờ Vương Giả (Vương Giả Vạn Tượng Kỳ - Honor of Kings Chess)**.
 
 ---
 
-## 📱 1. AceChess Companion v2.1.0 (App Chính)
-* **Tên file:** `AceChess_Companion_v2.1.0.apk`
+## 📱 1. AceChess Việt Hoá v2.1.0 (App Chính)
+* **Tên file:** `AceChess_VietHoa_v2.1.0.apk`
 * **Package:** `com.acechess.viethoa` | **Version:** 2.1.0
 * **Tính năng nổi bật:**
   - **Sạch 100% Shizuku & ADB:** Không chứa mã can thiệp hệ thống, hoàn toàn độc lập, an toàn tuyệt đối.
@@ -87,6 +65,47 @@ Hệ sinh thái hỗ trợ tra cứu cẩm nang và nạp bản dịch Việt h�
 1. Tải và cài đặt cả 2 file APK đính kèm bên dưới.
 2. Mở ứng dụng **AceChess**, bấm nút **[ Tool Việt Hoá Game ]** ở góc trên bên trái để sử dụng ngay.
 """
+
+def get_or_create_release(token):
+    headers = {
+        'Authorization': f'Bearer {token}',
+        'Accept': 'application/vnd.github.v3+json',
+        'User-Agent': 'AceChess-Release-Deployer'
+    }
+    
+    body_desc = get_body_description()
+    
+    # 1. Tìm release theo tag
+    req = urllib.request.Request(
+        f'https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/releases/tags/{TAG_NAME}',
+        headers=headers
+    )
+    try:
+        with urllib.request.urlopen(req) as resp:
+            data = json.loads(resp.read().decode())
+            print(f"[INFO] Release '{TAG_NAME}' đã tồn tại (ID: {data['id']})")
+            
+            # Cập nhật thông tin Release (tên và nội dung)
+            patch_payload = {
+                'name': RELEASE_TITLE,
+                'body': body_desc
+            }
+            req_patch = urllib.request.Request(
+                f'https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/releases/{data["id"]}',
+                data=json.dumps(patch_payload).encode('utf-8'),
+                headers=headers,
+                method='PATCH'
+            )
+            with urllib.request.urlopen(req_patch) as resp_patch:
+                updated_data = json.loads(resp_patch.read().decode())
+                print(f"[OK] Đã cập nhật tiêu đề Release ID {updated_data['id']} thành: '{RELEASE_TITLE}'")
+                return updated_data
+    except urllib.error.HTTPError as e:
+        if e.code != 404:
+            raise
+
+    # 2. Tạo release mới nếu chưa có
+    print(f"[INFO] Đang tạo Release mới: '{TAG_NAME}'...")
     create_payload = {
         'tag_name': TAG_NAME,
         'target_commitish': 'main',
@@ -107,7 +126,6 @@ Hệ sinh thái hỗ trợ tra cứu cẩm nang và nạp bản dịch Việt h�
         return data
 
 def upload_asset(token, upload_url_template, file_path):
-    # Template: "https://uploads.github.com/repos/owner/repo/releases/id/assets{?name,label}"
     base_upload_url = upload_url_template.split('{')[0]
     filename = file_path.name
     filesize = file_path.stat().st_size
@@ -162,8 +180,12 @@ def main():
     release = get_or_create_release(token)
     upload_url = release['upload_url']
     
+    # 1. Xóa asset cũ nếu còn tên Companion
+    delete_existing_asset_if_any(token, release, "AceChess_Companion_v2.1.0.apk")
+    
+    # 2. Danh sách asset chuẩn mới: AceChess_VietHoa_v2.1.0.apk
     apks_to_upload = [
-        PROJECT_ROOT / "dist" / "AceChess_Companion_v2.1.0.apk",
+        PROJECT_ROOT / "dist" / "AceChess_VietHoa_v2.1.0.apk",
         PROJECT_ROOT / "dist" / "AceChess_Patcher_Addon_v1.0.1.apk"
     ]
     

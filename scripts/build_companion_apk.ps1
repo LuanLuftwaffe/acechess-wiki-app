@@ -1,5 +1,5 @@
 ﻿# ==============================================================================
-# Script đóng gói bộ đôi ứng dụng AceChess Companion & Patcher Add-on
+# Script đóng gói bộ đôi ứng dụng AceChess Việt Hóa & Patcher Add-on
 # Kiến trúc v2.1: App Chính Sạch (0 Shizuku) + Add-on Patcher Độc Lập
 # ==============================================================================
 param (
@@ -137,14 +137,14 @@ print('Classes.dex injected successfully.')
 }
 
 # --- BẮT ĐẦU QUY TRÌNH BUILD ---
-$mainApkPath = Join-Path $DIST_DIR "AceChess_Companion_v2.1.0.apk"
+$mainApkPath = Join-Path $DIST_DIR "AceChess_VietHoa_v2.1.0.apk"
 $patcherApkPath = Join-Path $DIST_DIR "AceChess_Patcher_Addon_v1.0.1.apk"
 
 if ($Target -eq "all" -or $Target -eq "main") {
     Build-AndroidApp `
-        -AppTitle "App Chính AceChess Wiki (v2.1.0)" `
+        -AppTitle "App Chính AceChess Việt Hóa (v2.1.0)" `
         -SourceDir (Join-Path $PROJECT_ROOT "android_companion") `
-        -OutputApkName "AceChess_Companion_v2.1.0.apk" `
+        -OutputApkName "AceChess_VietHoa_v2.1.0.apk" `
         -IncludeShizukuDex $false | Out-Null
 }
 

@@ -44,7 +44,7 @@
             android:permission="com.acechess.viethoa.permission.ACCESS_PATCHER"
             android:theme="@style/Theme.AceChess" />
 
-        <!-- IPC Provider phục vụ giao tiếp 2 chiều trực tiếp với App Chính (AceChess Companion) -->
+        <!-- IPC Provider phục vụ giao tiếp 2 chiều trực tiếp với App Chính (AceChess Việt Hóa) -->
         <provider
             android:name="com.acechess.viethoa.patcher.PatcherIpcProvider"
             android:authorities="com.acechess.viethoa.patcher.ipc"

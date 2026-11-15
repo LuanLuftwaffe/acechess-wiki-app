@@ -4,7 +4,7 @@
 *.idsig
 dist/*
 !dist/LoLChess_1.383_Mod_SideBySide.apk.zip
-!dist/AceChess_Companion.exe
+!dist/AceChess_VietHoa_PC.exe
 !dist/README.md
 
 # Build caches

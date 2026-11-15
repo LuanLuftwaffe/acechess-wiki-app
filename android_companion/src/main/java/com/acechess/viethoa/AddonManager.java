@@ -165,7 +165,7 @@ public class AddonManager {
                     conn.setRequestMethod("GET");
                     conn.setConnectTimeout(6000);
                     conn.setReadTimeout(8000);
-                    conn.setRequestProperty("User-Agent", "AceChess-Companion/2.1");
+                    conn.setRequestProperty("User-Agent", "AceChess-VietHoa/2.1");
 
                     if (conn.getResponseCode() == 200) {
                         InputStream in = conn.getInputStream();
@@ -241,7 +241,7 @@ public class AddonManager {
                 conn.setRequestMethod("GET");
                 conn.setConnectTimeout(10000);
                 conn.setReadTimeout(15000);
-                conn.setRequestProperty("User-Agent", "AceChess-Companion/2.1");
+                conn.setRequestProperty("User-Agent", "AceChess-VietHoa/2.1");
 
                 if (existingLength > 0) {
                     conn.setRequestProperty("Range", "bytes=" + existingLength + "-");
@@ -257,7 +257,7 @@ public class AddonManager {
                     conn = (HttpURLConnection) url.openConnection();
                     conn.setConnectTimeout(10000);
                     conn.setReadTimeout(15000);
-                    conn.setRequestProperty("User-Agent", "AceChess-Companion/2.1");
+                    conn.setRequestProperty("User-Agent", "AceChess-VietHoa/2.1");
                     responseCode = conn.getResponseCode();
                 }
 

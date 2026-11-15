@@ -25,7 +25,7 @@ if sys.stderr is not None:
 # Configure WebView2 to run reliably under any security context (standard or elevated)
 os.environ['WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS'] = '--no-sandbox'
 try:
-    wv2_dir = Path(os.environ.get('LOCALAPPDATA', os.path.expanduser('~'))) / 'AceChessCompanion_WV2'
+    wv2_dir = Path(os.environ.get('LOCALAPPDATA', os.path.expanduser('~'))) / 'AceChessVietHoa_WV2'
     wv2_dir.mkdir(parents=True, exist_ok=True)
     os.environ['WEBVIEW2_USER_DATA_FOLDER'] = str(wv2_dir)
 except Exception:
@@ -34,7 +34,7 @@ except Exception:
 # Set Windows AppUserModelID for explicit Taskbar icon and grouping
 if os.name == 'nt':
     try:
-        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID('acechess.wiki.companion.patcher')
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID('acechess.wiki.viethoa.patcher')
     except Exception:
         pass
 
@@ -639,7 +639,7 @@ def main():
     html_file = str(BUNDLE_DIR / "index.html")
 
     window = webview.create_window(
-        title="AceChess Companion & Patcher (HoK Ace Wiki & Việt Hóa PC / Mobile)",
+        title="AceChess Việt Hóa & Patcher (HoK Ace Wiki & Việt Hóa PC / Mobile)",
         url=html_file,
         js_api=api,
         width=1380,

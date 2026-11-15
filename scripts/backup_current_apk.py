@@ -29,7 +29,7 @@ def do_backup():
     
     checksums = []
     
-    # 1. Sao lưu dist (APK & Companion exe)
+    # 1. Sao lưu dist (APK & PC exe)
     dist_backup = BACKUP_DIR / "dist"
     dist_backup.mkdir(parents=True, exist_ok=True)
     
@@ -90,7 +90,7 @@ def do_backup():
 
 ## 1. Danh sách tệp được sao lưu
 - `dist/AceChess_VietHoa_v2.0.apk`: APK thành phẩm đã ký số v2/v3, tích hợp Bong bóng nổi + Cẩm nang + PatchEngine.
-- `dist/AceChess_Companion.exe`: Công cụ máy tính hỗ trợ nạp Việt hóa qua USB & Wi-Fi ADB.
+- `dist/AceChess_VietHoa_PC.exe`: Công cụ máy tính hỗ trợ nạp Việt hóa qua USB & Wi-Fi ADB.
 - `dist/README.md`: Tài liệu ghi chú phiên bản phát hành.
 - `app/src/`: Toàn bộ mã nguồn Kotlin, giao diện Jetpack Compose, Layout XML, assets và unit tests.
 - `app/build.gradle.kts` & `proguard-rules.pro`: Cấu hình build Gradle độc lập.
