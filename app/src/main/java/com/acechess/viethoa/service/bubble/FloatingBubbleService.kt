@@ -324,6 +324,11 @@ class FloatingBubbleService : Service() {
             } catch (e: Exception) {
                 Log.e(TAG, "Cannot add remove target view", e)
             }
+        } else if (isRemoveTargetAdded && removeTargetView != null && isWindowVisible) {
+            try {
+                windowManager?.removeView(removeTargetView)
+                windowManager?.addView(removeTargetView, removeParams)
+            } catch (_: Exception) {}
         }
         removeTargetView?.visibility = View.VISIBLE
     }
@@ -486,11 +491,6 @@ class FloatingBubbleService : Service() {
             gravity = Gravity.CENTER
         }
 
-        // Nút đóng cửa sổ nổi
-        overlayWindow?.findViewById<ImageView>(R.id.img_window_close)?.setOnClickListener {
-            hideOverlayWindow()
-        }
-
         // Thanh trượt SeekBar chỉnh độ trong suốt từ 25% đến 100%
         val tvOpacity = overlayWindow?.findViewById<TextView>(R.id.tv_opacity_val)
         val seekBarAlpha = overlayWindow?.findViewById<SeekBar>(R.id.seekBarOverlayAlpha)
@@ -610,7 +610,18 @@ class FloatingBubbleService : Service() {
                 updateLayoutForOrientation()
                 windowManager?.addView(overlayWindow, windowParams)
                 isWindowVisible = true
-                bubbleView?.visibility = View.GONE
+                // Đảm bảo bong bóng luôn hiển thị trên cùng (Z-order topmost)
+                // để người dùng bấm lại vào bong bóng là thu nhỏ/đóng cẩm nang
+                bubbleView?.let { bv ->
+                    if (bv.isAttachedToWindow) {
+                        try {
+                            windowManager?.removeView(bv)
+                            windowManager?.addView(bv, bubbleParams)
+                        } catch (e: Exception) {
+                            Log.e(TAG, "Error bringing bubble to front", e)
+                        }
+                    }
+                }
             } catch (e: Exception) {
                 Log.e(TAG, "Cannot show overlay window", e)
             }
@@ -620,9 +631,10 @@ class FloatingBubbleService : Service() {
     private fun hideOverlayWindow() {
         if (isWindowVisible && overlayWindow != null) {
             try {
-                windowManager?.removeView(overlayWindow)
+                if (overlayWindow?.isAttachedToWindow == true) {
+                    windowManager?.removeView(overlayWindow)
+                }
                 isWindowVisible = false
-                bubbleView?.visibility = View.VISIBLE
             } catch (e: Exception) {
                 Log.e(TAG, "Cannot hide overlay window", e)
             }

@@ -14,7 +14,7 @@
         android:visibility="visible"
         android:background="#E6131B2E" />
 
-    <!-- Top Bar: LoLChess Style Header (Close + Title + Opacity Slider) -->
+    <!-- Top Bar: LoLChess Style Header (Title + Opacity Slider) -->
     <LinearLayout
         android:id="@+id/layout_window_header"
         android:layout_width="match_parent"
@@ -22,17 +22,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:background="#E6131B2E"
-        android:paddingHorizontal="10dp">
-
-        <!-- Close / Collapse Button -->
-        <ImageView
-            android:id="@+id/img_window_close"
-            android:layout_width="26dp"
-            android:layout_height="26dp"
-            android:padding="3dp"
-            android:src="@drawable/ic_close_white_24dp"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Đóng về bong bóng" />
+        android:paddingHorizontal="12dp">
 
         <!-- Title -->
         <TextView
@@ -43,8 +33,7 @@
             android:text="AceChess Tool"
             android:textColor="@color/gold_primary"
             android:textSize="13sp"
-            android:textStyle="bold"
-            android:layout_marginStart="6dp" />
+            android:textStyle="bold" />
 
         <!-- Opacity Label & SeekBar -->
         <TextView
