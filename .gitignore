@@ -3,8 +3,8 @@
 *.apks
 *.idsig
 dist/*
-!dist/AceChess_VietHoa_v2.1.0.apk
-!dist/AceChess_VietHoa_PC.exe
+!dist/AceChess_Wiki.apk
+!dist/AceChess_Wiki.exe
 !dist/README.md
 
 # Build caches
