@@ -22,4 +22,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "HokviVietHoaV2"
 include(":app")
-include(":patcher")
