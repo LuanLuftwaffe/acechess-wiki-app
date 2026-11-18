@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:tag="layout/item_summoner_match_footer_0" android:background="@color/colorPrimaryDark" android:layout_width="match_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ProgressBar android:id="@id/pbLoadMore" android:tag="binding_1" android:paddingTop="10.0dp" android:paddingBottom="10.0dp" android:layout_width="match_parent" android:layout_height="match_parent" />
-    <com.google.android.material.button.MaterialButton android:id="@id/btnLoadMore" android:tag="binding_2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:layout_marginBottom="10.0dp" android:text="@string/load_more" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
-</FrameLayout>

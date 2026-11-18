@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/layoutMatchHeader" android:tag="layout/item_summoner_match_details_header_0" android:background="@color/colorPrimaryDark" android:paddingTop="5.0dp" android:paddingBottom="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="16.0dp" android:paddingEnd="16.0dp"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textAppearance="@style/TextAppearance.Material3.TitleLarge" android:textColor="@color/colorTextPrimary" android:id="@id/txtQueueName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/roboto_medium" />
-    <TextView android:textAppearance="@style/TextAppearance.Material3.LabelMedium" android:textColor="@color/colorTextSecondary" android:id="@id/txtMatchInfo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dp" />
-</LinearLayout>

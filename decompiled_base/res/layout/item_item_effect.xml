@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:tag="layout/item_item_effect_0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="10.0dp"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/imgEffectType" android:tag="binding_1" android:layout_width="16.0dp" android:layout_height="16.0dp" android:layout_marginEnd="3.0dp" />
-    <TextView android:textAppearance="@style/TextAppearance.Material3.LabelMedium" android:textSize="12.0sp" android:textColor="@color/colorTextSecondary" android:id="@id/txtEffectValue" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAlignment="viewStart" />
-</LinearLayout>

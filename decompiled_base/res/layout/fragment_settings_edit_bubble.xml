@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout android:tag="layout/fragment_settings_edit_bubble_0" android:layout_width="match_parent" android:layout_height="match_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <com.google.android.material.appbar.AppBarLayout android:background="@color/colorPrimaryDark" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="wrap_content" app:liftOnScroll="true">
-        <com.google.android.material.appbar.MaterialToolbar android:id="@id/toolbar" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_scrollEffect="compress" app:layout_scrollFlags="scroll|enterAlways|snap" app:navigationIcon="@drawable/ic_arrow_back_white_24dp" app:navigationIconTint="?colorOnPrimary" app:title="@string/edit_bubble_order" />
-    </com.google.android.material.appbar.AppBarLayout>
-    <androidx.recyclerview.widget.RecyclerView android:id="@id/rvEditBubble" android:layout_width="match_parent" android:layout_height="match_parent" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
-</androidx.coordinatorlayout.widget.CoordinatorLayout>

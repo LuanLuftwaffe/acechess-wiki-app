@@ -1,16 +1,17 @@
-# Thư Mục Scripts — Công Cụ Tự Động Hoá (Automation Tools)
+# Thư Mục Scripts — Công Cụ Triển Khai & Desktop App
 
-Thư mục này chứa toàn bộ các công cụ Python và PowerShell phục vụ quá trình dịch ngược, vá lỗi bytecode và đóng gói ứng dụng.
+Thư mục chứa các công cụ tự động hóa triển khai phát hành và mã nguồn ứng dụng máy tính Windows.
 
-## 1. Công cụ chính
-- `align_and_sign.py`: Script căn chỉnh (zipalign) và ký số (apksigner) file APK sau khi đóng gói.
-- `apply_rename_mod.py`: Đổi tên gói sang `com.lolchess.tft.mod` và đổi nhãn app sang Ace Chess Wiki.
-- `apply_adblock.py`: Tắt toàn bộ quảng cáo trong ứng dụng.
-- `worktree-agent.ps1`: Phân luồng Git Worktree cho đa agent (Claude, Codex, Antigravity).
+---
 
-## 2. Công cụ phân tích & Dịch ngược
-- Các script `check_*.py`, `find_*.py`, `inspect_*.py`, `parse_*.py`: Dùng để tra cứu chuỗi, opcode smali, navigation graph, manifest.
+## 1. Danh Mục Thành Phần
+- `desktop_app/`: Mã nguồn ứng dụng Windows Desktop (WebView2 & Trợ lý Bong bóng nổi).
+- `release_to_app_repo.py`: Script tự động tạo và tải các tệp binary (APK & EXE) lên GitHub Releases.
+- `manage_github_release.py`: Tiện ích quản lý và đồng bộ GitHub Release assets.
+- `check_github_releases.py`: Kiểm tra danh sách assets và trạng thái release trên GitHub.
 
-## 3. Quy tắc vận hành
+---
+
+## 2. Quy Tắc Vận Hành
 - Chạy các script từ thư mục gốc dự án: `python scripts/<tên_script>.py`
-- Mọi file đầu ra (APK) phải lưu vào `dist/`, không xuất ra thư mục gốc.
+- Mọi file đầu ra thành phẩm được lưu trữ tập trung tại `dist/`.

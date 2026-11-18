@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:tag="layout/item_trend_empty_0" android:layout_width="match_parent" android:layout_height="match_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/colorTextDisable" android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="25.0dp" android:text="@string/trend_empty" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
-</FrameLayout>

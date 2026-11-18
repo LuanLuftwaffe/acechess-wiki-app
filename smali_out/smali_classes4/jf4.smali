@@ -1,3 +1,0 @@
-.class public interface abstract Ljf4;
-.super Ljava/lang/Object;
-.source "SourceFile"

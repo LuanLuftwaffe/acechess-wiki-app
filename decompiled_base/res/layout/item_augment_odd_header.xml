@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:tag="layout/item_augment_odd_header_0" android:layout_width="match_parent" android:layout_height="40.0dp" android:weightSum="4.0"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textAppearance="@style/TextAppearance.Material3.LabelMedium" android:textColor="@color/colorTextSecondary" android:ellipsize="middle" android:gravity="center" android:layout_width="0.0dp" android:layout_height="match_parent" android:text="@string/probability" android:singleLine="true" android:layout_weight="1.0" />
-    <TextView android:textAppearance="@style/TextAppearance.Material3.LabelMedium" android:textColor="@color/colorTextSecondary" android:ellipsize="middle" android:gravity="center" android:id="@id/txtFirstAugment" android:tag="binding_1" android:layout_width="0.0dp" android:layout_height="match_parent" android:singleLine="true" android:layout_weight="1.0" />
-    <TextView android:textAppearance="@style/TextAppearance.Material3.LabelMedium" android:textColor="@color/colorTextSecondary" android:ellipsize="middle" android:gravity="center" android:id="@id/txtSecondAugment" android:tag="binding_2" android:layout_width="0.0dp" android:layout_height="match_parent" android:singleLine="true" android:layout_weight="1.0" />
-    <TextView android:textAppearance="@style/TextAppearance.Material3.LabelMedium" android:textColor="@color/colorTextSecondary" android:ellipsize="middle" android:gravity="center" android:id="@id/txtThirdAugment" android:tag="binding_3" android:layout_width="0.0dp" android:layout_height="match_parent" android:singleLine="true" android:layout_weight="1.0" />
-</LinearLayout>

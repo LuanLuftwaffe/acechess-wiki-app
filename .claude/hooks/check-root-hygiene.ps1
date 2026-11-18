@@ -1,5 +1,5 @@
-# Hook: Kiểm tra vi phạm thư mục gốc trên Windows PowerShell
-$AllowedFiles = @("AGENTS.md", "CLAUDE.md", ".gitignore", ".gitattributes", "desktop.ini", "build.gradle.kts", "settings.gradle.kts", "gradle.properties", "gradlew", "gradlew.bat", "local.properties")
+﻿# Hook: Kiểm tra vi phạm thư mục gốc trên Windows PowerShell
+$AllowedFiles = @("README.md", "AGENTS.md", "CLAUDE.md", ".gitignore", ".gitattributes", "desktop.ini", "build.gradle.kts", "settings.gradle.kts", "gradle.properties", "gradlew", "gradlew.bat", "local.properties")
 $RootFiles = Get-ChildItem -Path . -File -Force | Where-Object { 
     $AllowedFiles -notcontains $_.Name -and -not $_.Name.StartsWith(".") 
 }

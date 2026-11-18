@@ -20,5 +20,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "HokviVietHoaV2"
+rootProject.name = "AceChessWikiApp"
 include(":app")

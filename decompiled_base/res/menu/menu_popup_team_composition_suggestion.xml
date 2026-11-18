@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@id/action_filter_team_composition" android:title="@string/team_composition" />
-    <item android:id="@id/action_filter_my_builds" android:title="@string/my_builds" />
-    <item android:id="@id/action_filter_trend_composition" android:title="@string/trends" />
-    <item android:id="@id/action_filter_all" android:title="@string/all" />
-</menu>

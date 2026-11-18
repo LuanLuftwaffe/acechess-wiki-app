@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:layout_marginEnd="5.0dp"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <com.lolchess.tft.common.view.ChampionImageView android:layout_gravity="center" android:id="@id/imgChampionImage" android:layout_width="wrap_content" android:layout_height="wrap_content" app:ivCostSize="9.0sp" app:ivImageSize="42.0dp" app:ivPadding="2.0dp" />
-</LinearLayout>

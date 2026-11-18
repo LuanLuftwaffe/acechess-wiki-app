@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextView android:textAppearance="?textAppearanceBodyMedium" android:textColor="@color/colorTextSecondary" android:tag="layout/item_champion_pop_up_status_0" android:paddingTop="8.0dp" android:paddingBottom="8.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="12.0dp" android:paddingEnd="12.0dp"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

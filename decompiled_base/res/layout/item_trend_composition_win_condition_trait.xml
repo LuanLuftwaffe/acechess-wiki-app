@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:tag="layout/item_trend_composition_win_condition_trait_0" android:layout_width="match_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <FrameLayout android:layout_gravity="center" android:background="@drawable/shape_synergy_status_gold" android:layout_width="36.0dp" android:layout_height="36.0dp" android:foreground="@drawable/ripple_circle_background">
-        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:tag="binding_1" android:layout_width="18.0dp" android:layout_height="18.0dp" app:tint="@color/colorBlack" />
-    </FrameLayout>
-</FrameLayout>

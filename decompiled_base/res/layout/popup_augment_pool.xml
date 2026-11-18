@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView android:tag="layout/popup_augment_pool_0" android:layout_width="wrap_content" android:layout_height="wrap_content" app:cardBackgroundColor="@color/colorDrawer"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <LinearLayout android:orientation="vertical" android:paddingTop="8.0dp" android:paddingBottom="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <TextView android:textAppearance="@style/TextAppearance.Material3.BodyLarge" android:textColor="@color/colorTextPrimary" android:gravity="center_vertical" android:id="@id/txtRemoveAugment" android:layout_width="match_parent" android:layout_height="48.0dp" android:text="@string/remove_augment" android:drawablePadding="12.0dp" android:paddingStart="12.0dp" android:paddingEnd="12.0dp" app:drawableStartCompat="@drawable/ic_baseline_remove_24" app:drawableTint="@color/colorTextPrimary" />
-        <TextView android:textAppearance="@style/TextAppearance.Material3.BodyLarge" android:textColor="@color/colorTextPrimary" android:gravity="center_vertical" android:id="@id/txtAugmentInfo" android:layout_width="match_parent" android:layout_height="48.0dp" android:text="@string/augment_info" android:drawablePadding="12.0dp" android:paddingStart="12.0dp" android:paddingEnd="12.0dp" app:drawableStartCompat="@drawable/ic_info_outline_white_24dp" app:drawableTint="@color/colorTextPrimary" />
-    </LinearLayout>
-</com.google.android.material.card.MaterialCardView>

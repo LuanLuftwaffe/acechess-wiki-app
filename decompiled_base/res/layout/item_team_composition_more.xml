@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:layout_marginEnd="5.0dp"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <ImageView android:layout_gravity="center" android:id="@id/imgChampion" android:background="@drawable/shape_team_composition_more" android:layout_width="42.0dp" android:layout_height="42.0dp" />
-        <TextView android:textColor="@color/colorTextSecondary" android:layout_gravity="center" android:id="@id/txtChampionsRemained" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+5" />
-    </FrameLayout>
-</LinearLayout>

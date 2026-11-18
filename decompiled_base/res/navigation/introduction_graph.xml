@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<navigation android:id="@id/introduction_graph" app:startDestination="@id/introductionFragment"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <fragment android:label="IntroductionFragment" android:name="com.lolchess.tft.ui.intro.views.IntroductionFragment" android:id="@id/introductionFragment">
-        <argument android:name="isLanguageChange" android:defaultValue="false" app:argType="boolean" />
-        <action android:id="@id/action_introductionFragment_to_mainActivity" app:destination="@id/mainActivity" />
-    </fragment>
-    <activity android:label="MainActivity" android:name="com.lolchess.tft.MainActivity" android:id="@id/mainActivity" />
-</navigation>

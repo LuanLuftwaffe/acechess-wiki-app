@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.lolchess.tft.common.view.ChampionSquareView android:tag="layout/item_champion_minimal_image_custom_size_0" android:layout_width="@dimen/dimen0dp" android:layout_height="@dimen/dimen0dp" android:layout_marginTop="10.0dp" android:layout_marginEnd="5.0dp"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />
