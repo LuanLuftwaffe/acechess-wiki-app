@@ -20,6 +20,6 @@ Nơi lưu trữ các file cài đặt thành phẩm chính thức của hệ sin
 ---
 
 > **Lưu ý:**
-> - Toàn bộ các công cụ nạp bản dịch, patcher và dữ liệu can thiệp game (cả bản PC lẫn Android Add-on) đã được sao lưu toàn diện và lưu trữ an toàn trong thư mục `/backups/backup_20261118_Addon_Tool_VietHoa_PC_Mobile`.
+> - Hệ sinh thái AceChess Wiki được tinh gọn thuần tra cứu Cẩm Nang & Trợ lý nổi đa nền tảng (Android & Windows), sạch 100% không can thiệp hệ thống.
 > - Mọi file phát hành chính thức được đồng bộ lên GitHub Releases tại:
 >   https://github.com/LuanLuftwaffe/acechess_wiki/releases

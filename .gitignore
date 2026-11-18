@@ -3,7 +3,7 @@
 *.apks
 *.idsig
 dist/*
-!dist/LoLChess_1.383_Mod_SideBySide.apk.zip
+!dist/AceChess_VietHoa_v2.1.0.apk
 !dist/AceChess_VietHoa_PC.exe
 !dist/README.md
 
