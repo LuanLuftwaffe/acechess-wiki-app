@@ -1,48 +1,40 @@
-# AGENTS.md — Global Multi-Agent Architecture & Rules (AceChess Wiki App)
+# AceChess Wiki App
 
-> **BẢN HIẾN PHÁP CHUNG CHO TOÀN BỘ AI AGENT (CLAUDE CODE, CODEX, GOOGLE ANTIGRAVITY)**
-> Áp dụng cho dự án ứng dụng đa nền tảng: **AceChess Wiki App** (Android Kotlin & Windows Desktop).
+Ứng dụng Cẩm Nang Cờ Vương Giả đa nền tảng (Android Kotlin & Windows Desktop).
 
----
+<!-- layout:begin -->
+## Bản đồ thư mục
 
-## 1. NGUYÊN TẮC VÀNG TẠI THƯ MỤC GỐC (ROOT HYGIENE)
+Chuẩn chung: `LAYOUT.md`. Đọc bản đồ này TRƯỚC khi tạo hoặc chuyển file.
+Đặt file theo vai trò, không theo thói quen.
 
-1. **Thư mục gốc CHỈ ĐƯỢC CHỨA CÁC FILE CHUẨN DỰ ÁN:**
-   - `README.md` (Giới thiệu dự án cho GitHub)
-   - `AGENTS.md` (Bản hiến pháp chung cho mọi Agent)
-   - `CLAUDE.md` (Bộ quy tắc thực thi và tiêu chuẩn kiểm thử)
-   - Các file cấu hình Gradle bắt buộc: `build.gradle.kts`, `settings.gradle.kts`, `gradle.properties`, `gradlew`, `gradlew.bat`, `.gitignore`.
-2. **TUYỆT ĐỐI CẤM TẠO FILE RÁC TẠI THƯ MỤC GỐC:**
-   - Mọi tài liệu phân tích, spec giao diện, mã màu: **Lưu vào `/docs`**.
-   - Mọi script tự động hóa, phân tích: **Lưu vào `/scripts`**.
-   - Mọi file cài đặt sau khi đóng gói: **Lưu vào `/dist`**.
-3. **CẢNH BÁO TỰ ĐỘNG:** Sau khi thực thi bất kỳ tác vụ nào, Agent phải chạy hook `.claude/hooks/check-root-hygiene.ps1`.
+- Mã ứng dụng Android: app/
+- Mã ứng dụng Windows Desktop: scripts/desktop_app/
+- Tài nguyên ứng dụng: app/src/main/res/, scripts/desktop_app/
+- Dữ liệu và model: (chưa có)
+- Hạ tầng & Build Android: gradle/, build.gradle.kts, settings.gradle.kts, gradle.properties
+- Tài liệu lâu dài: docs/
+- Spec theo tính năng: specs/   (công cụ quản lý, giữ tên)
+- Script & Tiện ích: scripts/
+- Bản sao lưu an toàn: backups/
+- Sinh ra (gitignore): dist/, build/, .gradle/, .tmp/
 
----
+Luật tóm tắt:
+- Thêm thư mục mới: cập nhật bản đồ này trước.
+- Root chỉ có file cấu hình bắt buộc, AGENTS.md, CLAUDE.md, LAYOUT.md, README.md.
+- Không import vào thư mục nội bộ của miền khác; nói chuyện qua API hoặc giao thức riêng.
+- Không biết đặt file đâu thì hỏi, đừng đặt tạm ở root.
+<!-- layout:end -->
 
-## 2. PHÂN ĐỊNH RANH GIỚI TRÁCH NHIỆM (DOMAIN BOUNDARIES)
+## Lệnh
 
-| Thư mục | Trách nhiệm chính |
-|---|---|
-| `app/` | Mã nguồn ứng dụng Android (Kotlin, Jetpack Compose, FloatingBubbleService, WebView) |
-| `scripts/desktop_app/` | Mã nguồn ứng dụng Windows Desktop (WebView2, Floating Bubble Assistant) |
-| `dist/` | Nơi lưu trữ các file cài đặt chính thức (`AceChess_Wiki.apk`, `AceChess_Wiki.exe`) |
-| `docs/` | Trung tâm tài liệu kiến trúc, spec giao diện, hướng dẫn kỹ thuật |
-| `gradle/` | Gradle wrapper và cấu hình môi trường build Android |
+- Kiểm thử Android (Unit Test): `.\gradlew testDebugUnitTest`
+- Biên dịch APK Android Release: `.\gradlew assembleRelease`
+- Đóng gói Windows Desktop EXE: `pyinstaller scripts/desktop_app/AceChess_VietHoa_PC.spec`
+- Đóng gói Windows Floating Bubble EXE: `pyinstaller scripts/desktop_app/AceChess_Wiki_Bubble.spec`
 
----
+## Ghi chú riêng
 
-## 3. QUY TRÌNH BUILD & ĐÓNG GÓI CHUẨN
-
-1. **Kiểm thử đơn vị Android:**
-   ```powershell
-   .\gradlew testDebugUnitTest
-   ```
-2. **Biên dịch APK Android:**
-   ```powershell
-   .\gradlew assembleRelease
-   ```
-3. **Đóng gói Windows Desktop EXE:**
-   ```powershell
-   pyinstaller scripts/desktop_app/AceChess_VietHoa_PC.spec
-   ```
+- Dự án phục vụ tra cứu cẩm nang chiến thuật, tướng, trang bị game Cờ Vương Giả (AceChess).
+- Ứng dụng Android chạy dịch vụ bong bóng nổi `FloatingBubbleService` kết hợp WebView Jetpack Compose.
+- Ứng dụng Windows Desktop chạy giao diện bong bóng nổi `floating_bubble.py` kết hợp WebView2 WinForms trên STA thread.
